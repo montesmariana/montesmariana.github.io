@@ -1,4 +1,4 @@
-id	model.x	model.y	lemma	pos	sensekey	marisense	mbroad	wnbroad	mari2	mari3	wn2	wn3	wnsense	noweight
+id	model.x	model.y	lemma	pos	sensekey	marisense	mbroad	wnbroad	mari2	mari3	wn2	wn3	wnsense	text
 state/JJ/br-e21/1143	-0.027537511668359	-0.0181654822057674	state	JJ	state%5:00:02:public:00	A2	A	A	ABC	AB	ABC	AB	A2	 which the area is blessed. Just as the national and <font color=green>state</font>  parks place emphasis on features which are of national or
 state/JJ/br-e21/1154	-0.022035068850765	-0.00838044220921445	state	JJ	state%5:00:01:public:00	A3	A	A	ABC	AB	ABC	AB	A2	 parks place emphasis on features which are of national or <font color=green>state</font>  significance, counties should seek out these features which are distinctive
 state/JJ/br-e31/1555	-0.101770152147093	-0.0333837568385303	state	JJ	state%5:00:02:public:00	A2	A	A	ABC	AB	ABC	AB	A2	 to make their cooking easy and their sleeping comfortable. Harassed <font color=green>state</font>  park officials often have more campers than they know what

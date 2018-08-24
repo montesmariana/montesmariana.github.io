@@ -1,4 +1,4 @@
-id	model.x	model.y	lemma	pos	sensekey	marisense	mbroad	wnbroad	mari2	mari3	wn2	wn3	wnsense	noweight
+id	model.x	model.y	lemma	pos	sensekey	marisense	mbroad	wnbroad	mari2	mari3	wn2	wn3	wnsense	text
 state/JJ/br-d12/2233	-0.0141232017204723	-0.00278579206750517	state	JJ	Z	Z	Z	Z	Z	Z	Z	Z	Z	 the narrow sense of skillfulness in meeting a client 's <font color=green>stated</font>  needs as already noted? Our faculty and students pressed this
 state/JJ/br-e21/1143	-0.011783611027746	-0.00103710901531049	state	JJ	state%5:00:02:public:00	A2	A	A	ABC	AB	ABC	AB	A2	 which the area is blessed. Just as the national and <font color=green>state</font>  parks place emphasis on features which are of national or
 state/JJ/br-e21/1154	-0.00194283308310474	-0.00114974344814796	state	JJ	state%5:00:01:public:00	A3	A	A	ABC	AB	ABC	AB	A2	 parks place emphasis on features which are of national or <font color=green>state</font>  significance, counties should seek out these features which are distinctive

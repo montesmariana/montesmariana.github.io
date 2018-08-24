@@ -1,4 +1,4 @@
-id	model.x	model.y	lemma	pos	sensekey	marisense	mbroad	wnbroad	mari2	mari3	wn2	wn3	wnsense	noweight
+id	model.x	model.y	lemma	pos	sensekey	marisense	mbroad	wnbroad	mari2	mari3	wn2	wn3	wnsense	text
 state/JJ/br-e31/651	-0.0206488693733673	-0.0115374419350288	state	JJ	state%5:00:02:public:00	A3	A	A	ABC	AB	ABC	AB	A2	 the shooting development program have proudly participated in over 53 <font color=green>state</font>  and regional workshops, at which hundreds of school administrators, teachers
 state/JJ/br-g17/2327	-0.00617896487108333	-0.000896237423980383	state	JJ	state%5:00:02:public:00	A2	A	A	ABC	AB	ABC	AB	A2	 been the very last of the forty-eight to establish a <font color=green>state</font>  university? The state universities of Maine, New Hampshire, And Vermont
 state/JJ/br-g23/486	0.00676797908074027	0.0147555106821862	state	JJ	state%5:00:02:public:00	A2	A	A	ABC	AB	ABC	AB	A2	 The writer took a class of college students to the <font color=green>state</font>  hospital for the mentally ill in St. Joseph, Missouri. An

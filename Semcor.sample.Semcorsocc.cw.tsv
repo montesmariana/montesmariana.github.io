@@ -1,4 +1,4 @@
-id	model.x	model.y	lemma	pos	sensekey	marisense	mbroad	wnbroad	mari2	mari3	wn2	wn3	wnsense	noweight
+id	model.x	model.y	lemma	pos	sensekey	marisense	mbroad	wnbroad	mari2	mari3	wn2	wn3	wnsense	text
 church/NN/br-a10/1850	-0.0662821298199924	0.0533306573137727	church	NN	Z	C	C	Z	CDE	C	Z	Z	Z	 adding that the denomination had a national goal of one <font color=green>church</font>  for every 10000 persons.`` In this light we need 1000
 church/NN/br-a21/677	0.220473854109546	-0.132014305975764	church	NN	Z	D	D	Z	CDE	DE	Z	Z	Z	 for 10 a. m. tomorrow in St. Anne 's Catholic <font color=green>Church</font> , 31978 Mound, in Warren. The mother and daughter, who will
 church/NN/br-a31/1395	0.0622800384083351	-0.0603630030518534	church	NN	Z	D	D	Z	CDE	DE	Z	Z	Z	 from 4 to 8 p. m. Sunday at First Presbyterian <font color=green>Church</font> . At that time the second half of the Christian Youth

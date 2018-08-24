@@ -1,4 +1,4 @@
-id	model.x	model.y	lemma	pos	sensekey	marisense	mbroad	wnbroad	mari2	mari3	wn2	wn3	wnsense	noweight
+id	model.x	model.y	lemma	pos	sensekey	marisense	mbroad	wnbroad	mari2	mari3	wn2	wn3	wnsense	text
 church/NN/br-a01/2073	-0.15399190620999	-0.158138214834201	church	NN	church%1:04:00::	E	E	E	CDE	DE	CDE	DE	E	 said.`` Being at the polls was just like being at <font color=green>church</font> . I did n't smell a drop of liquor, and we
 church/NN/br-d01/1628	0.0112622132650838	-0.137796051201035	church	NN	church%1:14:00::	B	B	A	AB	AB	AB	AB	A	 age to whip men into a surrender to a particular <font color=green>church</font>  or church-state''. Apparently he does not intend that those who
 church/NN/br-d02/1641	0.193465268400657	0.0371917694581199	church	NN	church%1:14:00::	B	B	A	AB	AB	AB	AB	A	 concerned to stand squarely within the tradition of the apostolic <font color=green>church</font> , they have exhibited no willingness whatever to sacrifice their modernity
