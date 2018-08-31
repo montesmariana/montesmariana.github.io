@@ -8,12 +8,9 @@ body {
   padding-left: 70px;
 }
 .box {
-  border-style:ridge;
-  border-width: 7px;
-  border-color:snow;
+  border: 7px ridge snow;
   max-width: 1500px;
   padding: 20px;
-  background-color: snow;
 }
 .columns2 {
   column-count: 2;
@@ -44,6 +41,22 @@ h3 {
   color:darkcyan;
   font-weight: bold;
   font-family: arial;
+}
+th {
+  font-size: 16px;
+  color:darkcyan;
+  font-variant:small-caps;
+  border-bottom: 5px ridge snow;
+}
+.rowname {
+  color:darkcyan;
+  font-variant:small-caps;
+  font-weight:bold;
+  text-align: left;
+  border-right: 5px ridge snow;
+}
+td {
+  text-align: center;
 }
 p {
   font-size:16px;
@@ -81,21 +94,21 @@ a:visited {
 <h3>All tokens</h3>
 <table style='width:80%'>
   <tr>
-    <th>SOCC corpus</th>
+    <th class="rowname">SOCC corpus</th>
     <th>Threshold=1</th>
     <th>Threshold=2</th>
     <th>Threshold=2,5</th>
     <th>Threshold=3</th>
   </tr>
   <tr>
-    <td>COHA</td>
+    <td><p class="rowname">COHA<p></td>
     <td><p><a href="level1.html?type=Semcor.sample.COHAsocc.min1">Random</a></p><p><a href="level1.html?type=Semcor.sample.COHAsocc.nona.min1">sense-tagged tokens</a></p></td>
     <td><p><a href="level1.html?type=Semcor.sample.COHAsocc.min2">Random</a></p><p><a href="level1.html?type=Semcor.sample.COHAsocc.nona.min2">sense-tagged tokens</a></p></td>
     <td><p><a href="level1.html?type=Semcor.sample.COHAsocc.min2_5">Random</a></p><p><a href="level1.html?type=Semcor.sample.COHAsocc.nona.min2_5">sense-tagged tokens</a></p></td>
     <td><p><a href="level1.html?type=Semcor.sample.COHAsocc.min3">Random</a></p><p><a href="level1.html?type=Semcor.sample.COHAsocc.nona.min3">sense-tagged tokens</a></p></td>
   </tr>
   <tr>
-    <td>Semcor</td>
+    <td><p class="rowname">Semcor</p></td>
     <td><p><a href="level1.html?type=Semcor.sample.Semcorsocc.min1">Random</a></p><p><a href="level1.html?type=Semcor.sample.Semcorsocc.nona.min1">sense-tagged tokens</a></p></td>
     <td><p><a href="level1.html?type=Semcor.sample.Semcorsocc.min2">Random</a></p><p><a href="level1.html?type=Semcor.sample.Semcorsocc.nona.min2">sense-tagged tokens</a></p></td>
     <td><p><a href="level1.html?type=Semcor.sample.Semcorsocc.min2_5">Random</a></p><p><a href="level1.html?type=Semcor.sample.Semcorsocc.nona.min2_5">sense-tagged tokens</a></p></td>
