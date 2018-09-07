@@ -87,14 +87,15 @@ a:visited {
 <p><a href="http://www.evernote.com/l/Ad8rStkPjvRFdI0xbHsbihLX-QQGbc89900/">Hierarchies and frequencies of Mariana's senses</a></p>
 <p><a href="http://www.evernote.com/l/Ad-Rt5Y8mpRHcJJe3Kr8z9fCPxbui4kB4T4/">Mariana's definitions</a></p>
 </div>
-<div class=box>
+<hr>
+<div class="box">
 <h1>Clouds</h1>
-<p><a href="http://www.evernote.com/l/Ad9R0ACNNQlKkZ_0c-mQ7ypjdF6cXbGzHHI/">Information about the clouds</a></p>
-<h2>With intersect as socc features</h2>
-<!-- <table> -->
-  <!-- <caption><h3>All types</h3></caption>
+<p><a href="cloud_data_060918.csv">Clouds for all genres</a></p>
+<p><a href="cloud_data_070918.csv">Clouds by genre</a></p>
+<table>
+  <caption><h3>All types</h3></caption>
   <tr>
-    <th class="rowname">SOCC corpus</th>
+    <th class="rowname">Subset\Threshold</th>
     <th>Threshold=0</th>
     <th>Threshold=1</th>
     <th>Threshold=2</th>
@@ -102,80 +103,44 @@ a:visited {
     <th>Threshold=3</th>
   </tr>
   <tr>
-    <td><p class="rowname">COHA<p></td>
-    <td><p><a href="level1.html?type=Semcor.sample.COHAsocc.cw">Random sample</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.sample.COHAsocc.min1">Random sample</a></p><p><a href="level1.html?type=Semcor.sample.COHAsocc.nona.min1">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.sample.COHAsocc.min2">Random sample</a></p><p><a href="level1.html?type=Semcor.sample.COHAsocc.nona.min2">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.sample.COHAsocc.min2_5">Random sample</a></p><p><a href="level1.html?type=Semcor.sample.COHAsocc.nona.min2_5">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.sample.COHAsocc.min3">Random sample</a></p><p><a href="level1.html?type=Semcor.sample.COHAsocc.nona.min3">sense-tagged tokens</a></p></td>
+    <td><p class="rowname">Random<p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.min0">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.min1">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.min2">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.min2">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.min2_5">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.min2_5">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.min3">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.min3">Semcor</a></p></td>
   </tr>
   <tr>
-    <td><p class="rowname">Semcor</p></td>
-    <td><p><a href="level1.html?type=Semcor.sample.Semcorsocc.cw">Random sample</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.sample.Semcorsocc.min1">Random sample</a></p><p><a href="level1.html?type=Semcor.sample.Semcorsocc.nona.min1">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.sample.Semcorsocc.min2">Random sample</a></p><p><a href="level1.html?type=Semcor.sample.Semcorsocc.nona.min2">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.sample.Semcorsocc.min2_5">Random sample</a></p><p><a href="level1.html?type=Semcor.sample.Semcorsocc.nona.min2_5">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.sample.Semcorsocc.min3">Random sample</a></p><p><a href="level1.html?type=Semcor.sample.Semcorsocc.nona.min3">sense-tagged tokens</a></p></td>
+    <td><p class="rowname">WordNet sense-tagged<p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.nona.min0">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.nona.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.nona.min1">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.nona.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.nona.min2">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.nona.min2">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.nona.min2_5">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.nona.min2_5">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.nona.min3">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.nona.min3">Semcor</a></p></td>
   </tr>
-</table> -->
-
+  <tr>
+    <td><p class="rowname">Fiction<p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.fic.min0">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.fic.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.fic.min1">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.fic.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.fic.min2">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.fic.min2">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Non-Fiction<p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.nonfic.min0">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.nonfic.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.nonfic.min1">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.nonfic.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.nonfic.min2">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.nonfic.min2">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Press<p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.press.min0">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.press.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.press.min1">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.press.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.sample.COHAisocc.press.min2">COHA</a></p><p><a href="level1.html?type=Semcor.sample.Semcorisocc.press.min2">Semcor</a></p></td>
+  </tr>
+</table>
 <table>
   <caption><h3>State</h3></caption>
   <tr>
-    <th class="rowname">SOCC corpus</th>
-    <th>Threshold=0</th>
-    <!-- <th>Threshold=1</th>
-    <th>Threshold=2</th>
-    <th>Threshold=2,5</th>
-    <th>Threshold=3</th> -->
-  </tr>
-  <tr>
-    <td><p class="rowname">COHA</p></td>
-    <td><p><a href="level1.html?type=Semcor.state.sample.COHAisocc.min0">Random sample</a></p></td>
-    <!-- <td><p><a href="level1.html?type=Semcor.state.sample.COHAsocc.min1">Random sample</a></p><p><a href="level1.html?type=Semcor.state.COHAsocc.nona.min1">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state.sample.COHAsocc.min2">Random sample</a></p><p><a href="level1.html?type=Semcor.state.COHAsocc.nona.min2">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state.COHAsocc.min2_5">All tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state.COHAsocc.min3">All tokens</a></p></td> -->
-  </tr>
-  <tr>
-    <td><p class="rowname">Semcor</p></td>
-    <td><p><a href="level1.html?type=Semcor.state.sample.Semcorisocc.min0">Random sample</a></p></td>
-    <!-- <td><p><a href="level1.html?type=Semcor.state.sample.Semcorsocc.min1">Random sample</a></p><p><a href="level1.html?type=Semcor.state.Semcorsocc.nona.min1">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state.sample.Semcorsocc.min2">Random sample</a></p><p><a href="level1.html?type=Semcor.state.Semcorsocc.nona.min2">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state.Semcorsocc.min2_5">All tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state.Semcorsocc.min3">All tokens</a></p></td> -->
-  </tr>
-</table>
-
-<!-- <table>
-  <caption><h3>Country</h3></caption>
-  <tr>
-    <th class="rowname">SOCC corpus</th>
-    <th>Threshold=0</th>
-    <th>Threshold=1</th>
-    <th>Threshold=2</th>
-    <th>Threshold=2,5</th>
-  </tr>
-  <tr>
-    <td><p class="rowname">COHA</p></td>
-    <td><p><a href="level1.html?type=Semcor.country.COHAsocc.cw">All tokens</a></p><p><a href="level1.html?type=Semcor.country.COHAsocc.nona">Sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.country.COHAsocc.min1">All tokens</a></p><p><a href="level1.html?type=Semcor.country.COHAsocc.nona.min1">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.country.COHAsocc.min2">All tokens</a></p><p><a href="level1.html?type=Semcor.country.COHAsocc.nona.min2">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.country.COHAsocc.min2_5">All tokens</a></p></td>
-  </tr>
-  <tr>
-    <td><p class="rowname">Semcor</p></td>
-    <td><p><a href="level1.html?type=Semcor.country.Semcorsocc.cw">All tokens</a></p><p><a href="level1.html?type=Semcor.country.Semcorsocc.nona">Sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.country.Semcorsocc.min1">All tokens</a></p><p><a href="level1.html?type=Semcor.country.Semcorsocc.nona.min1">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.country.Semcorsocc.min2">All tokens</a></p><p><a href="level1.html?type=Semcor.country.Semcorsocc.nona.min2">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.country.Semcorsocc.min2_5">All tokens</a></p></td>
-  </tr>
-</table> -->
-
-<table>
-  <caption><h3>Church</h3></caption>
-  <tr>
-    <th class="rowname">SOCC corpus</th>
+    <th class="rowname">Subset\Threshold</th>
     <th>Threshold=0</th>
     <th>Threshold=1</th>
     <th>Threshold=2</th>
@@ -183,108 +148,19 @@ a:visited {
     <th>Threshold=3</th>
   </tr>
   <tr>
-    <td><p class="rowname">COHA</p></td>
-    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.min0">All tokens</a></p><p><a href="level1.html?type=Semcor.church.COHAisocc.nona.min0">Sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.min1">All tokens</a></p><p><a href="level1.html?type=Semcor.church.COHAisocc.nona.min1">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.min2">All tokens</a></p><p><a href="level1.html?type=Semcor.church.COHAisocc.nona.min2">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.min2_5">All tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.min3">All tokens</a></p></td>
+    <td><p class="rowname">Random/All<p></td>
+    <td><p><a href="level1.html?type=Semcor.state.COHAisocc.min0">COHA</a></p><p><a href="level1.html?type=Semcor.state.Semcorisocc.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state.COHAisocc.min1">COHA</a></p><p><a href="level1.html?type=Semcor.state.Semcorisocc.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state.COHAisocc.min2">COHA</a></p><p><a href="level1.html?type=Semcor.state.Semcorisocc.min2">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state.COHAisocc.min2_5">COHA</a></p><p><a href="level1.html?type=Semcor.state.Semcorisocc.min2_5">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state.COHAisocc.min3">COHA</a></p><p><a href="level1.html?type=Semcor.state.Semcorisocc.min3">Semcor</a></p></td>
   </tr>
   <tr>
-    <td><p class="rowname">Semcor</p></td>
-    <td><p><a href="level1.html?type=Semcor.church.Semcorisocc.min0">All tokens</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.nona.min0">Sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.church.Semcorisocc.min1">All tokens</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.nona.min1">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.church.Semcorisocc.min2">All tokens</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.nona.min2">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.church.Semcorisocc.min2_5">All tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.church.Semcorisocc.min3">All tokens</a></p></td>
-  </tr>
-</table>
-
-<!-- <table>
-  <caption><h3>Country & Church</h3></caption>
-  <tr>
-    <th class="rowname">SOCC corpus</th>
-    <th>Threshold=1</th>
-    <th>Threshold=2</th>
-    <th>Threshold=2,5</th>
-    <th>Threshold=3</th>
-  </tr>
-  <tr>
-    <td><p class="rowname">COHA</p></td>
-    <td><p><a href="level1.html?type=Semcor.country_church.sample.COHAsocc.min1">Random sample</a></p><p><a href="level1.html?type=Semcor.country_church.COHAsocc.nona.min1">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.country_church.sample.COHAsocc.min2">Random sample</a></p><p><a href="level1.html?type=Semcor.country_church.COHAsocc.nona.min2">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.country_church.COHAsocc.min2_5">All tokens</a></p><p><a href="level1.html?type=Semcor.country_church.COHAsocc.nona.min2_5">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.country_church.COHAsocc.min3">All tokens</a></p></td>
-  </tr>
-  <tr>
-    <td><p class="rowname">Semcor</p></td>
-    <td><p><a href="level1.html?type=Semcor.country_church.sample.Semcorsocc.min1">Random sample</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorsocc.nona.min1">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.country_church.sample.Semcorsocc.min2">Random sample</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorsocc.nona.min2">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.country_church.Semcorsocc.min2_5">All tokens</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorsocc.nona.min2_5">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.country_church.Semcorsocc.min3">All tokens</a></p></td>
-  </tr>
-</table> -->
-
-<!-- <table>
-  <caption><h3>State & Church</h3></caption>
-  <tr>
-    <th class="rowname">SOCC corpus</th>
-    <th>Threshold=1</th>
-    <th>Threshold=2</th>
-    <th>Threshold=2,5</th>
-    <th>Threshold=3</th>
-  </tr>
-  <tr>
-    <td><p class="rowname">COHA</p></td>
-    <td><p><a href="level1.html?type=Semcor.state_church.sample.COHAsocc.min1">Random sample</a></p><p><a href="level1.html?type=Semcor.state_church.COHAsocc.nona.min1">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state_church.sample.COHAsocc.min2_5">Random sample</a></p><p><a href="level1.html?type=Semcor.state_church.COHAsocc.nona.min2_5">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state_church.sample.COHAsocc.min2">Random sample</a></p><p><a href="level1.html?type=Semcor.state_church.COHAsocc.nona.min2">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state_church.COHAsocc.min3">All tokens</a></p></td>
-  </tr>
-  <tr>
-    <td><p class="rowname">Semcor</p></td>
-    <td><p><a href="level1.html?type=Semcor.state_church.sample.Semcorsocc.min1">Random sample</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorsocc.nona.min1">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state_church.sample.Semcorsocc.min2_5">Random sample</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorsocc.nona.min2_5">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state_church.sample.Semcorsocc.min2">Random sample</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorsocc.nona.min2">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state_church.Semcorsocc.min3">All tokens</a></p></td>
-  </tr>
-</table> -->
-
-<!-- <table>
-  <caption><h3>State & Country</h3></caption>
-  <tr>
-    <th class="rowname">SOCC corpus</th>
-    <th>Threshold=1</th>
-    <th>Threshold=2</th>
-    <th>Threshold=2,5</th>
-    <th>Threshold=3</th>
-  </tr>
-  <tr>
-    <td><p class="rowname">COHA</p></td>
-    <td><p><a href="level1.html?type=Semcor.state_country.sample.COHAsocc.min1">Random sample</a></p><p><a href="level1.html?type=Semcor.state_country.COHAsocc.nona.min1">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state_country.sample.COHAsocc.min2">Random sample</a></p><p><a href="level1.html?type=Semcor.state_country.COHAsocc.nona.min2">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state_country.sample.COHAsocc.min2_5">Random sample</a></p><p><a href="level1.html?type=Semcor.state_country.COHAsocc.nona.min2_5">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state_country.COHAsocc.min3">All tokens</a></p></td>
-  </tr>
-  <tr>
-    <td><p class="rowname">Semcor</p></td>
-    <td><p><a href="level1.html?type=Semcor.state_country.sample.Semcorsocc.min1">Random sample</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorsocc.nona.min1">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state_country.sample.Semcorsocc.min2">Random sample</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorsocc.nona.min2">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state_country.sample.Semcorsocc.min2_5">Random sample</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorsocc.nona.min2_5">sense-tagged tokens</a></p></td>
-    <td><p><a href="level1.html?type=Semcor.state_country.Semcorsocc.min3">All tokens</a></p></td>
-  </tr>
-</table>
-</div>
- -->
-
-<h2>By genre</h2>
-<table>
-  <caption><h3>State</h3></caption>
-  <tr>
-    <th class="rowname">Genre</th>
-    <th>Threshold=0</th>
-    <th>Threshold=1</th>
-    <th>Threshold=2</th>
+    <td><p class="rowname">WordNet sense-tagged<p></td>
+    <td><p><a href="level1.html?type=Semcor.state.COHAisocc.nona.min0">COHA</a></p><p><a href="level1.html?type=Semcor.state.Semcorisocc.nona.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state.COHAisocc.nona.min1">COHA</a></p><p><a href="level1.html?type=Semcor.state.Semcorisocc.nona.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state.COHAisocc.nona.min2">COHA</a></p><p><a href="level1.html?type=Semcor.state.Semcorisocc.nona.min2">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state.COHAisocc.nona.min2_5">COHA</a></p><p><a href="level1.html?type=Semcor.state.Semcorisocc.nona.min2_5">Semcor</a></p></td>
   </tr>
   <tr>
     <td><p class="rowname">Fiction<p></td>
@@ -305,7 +181,209 @@ a:visited {
     <td><p><a href="level1.html?type=Semcor.state.COHAisocc.press.min2">COHA</a></p><p><a href="level1.html?type=Semcor.state.Semcorisocc.press.min2">Semcor</a></p></td>
   </tr>
 </table>
-
+<table>
+  <caption><h3>Country</h3></caption>
+  <tr>
+    <th class="rowname">Subset\Threshold</th>
+    <th>Threshold=0</th>
+    <th>Threshold=1</th>
+    <th>Threshold=2</th>
+    <th>Threshold=2,5</th>
+  </tr>
+  <tr>
+    <td><p class="rowname">All tokens<p></td>
+    <td><p><a href="level1.html?type=Semcor.country.COHAisocc.min0">COHA</a></p><p><a href="level1.html?type=Semcor.country.Semcorisocc.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country.COHAisocc.min1">COHA</a></p><p><a href="level1.html?type=Semcor.country.Semcorisocc.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country.COHAisocc.min2">COHA</a></p><p><a href="level1.html?type=Semcor.country.Semcorisocc.min2">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country.COHAisocc.min2_5">COHA</a></p><p><a href="level1.html?type=Semcor.country.Semcorisocc.min2_5">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">WordNet sense-tagged<p></td>
+    <td><p><a href="level1.html?type=Semcor.country.COHAisocc.nona.min0">COHA</a></p><p><a href="level1.html?type=Semcor.country.Semcorisocc.nona.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country.COHAisocc.nona.min1">COHA</a></p><p><a href="level1.html?type=Semcor.country.Semcorisocc.nona.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country.COHAisocc.nona.min2">COHA</a></p><p><a href="level1.html?type=Semcor.country.Semcorisocc.nona.min2">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Non-Fiction<p></td>
+    <td><p><a href="level1.html?type=Semcor.country.COHAisocc.nonfic.min0">COHA</a></p><p><a href="level1.html?type=Semcor.country.Semcorisocc.nonfic.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country.COHAisocc.nonfic.min1">COHA</a></p><p><a href="level1.html?type=Semcor.country.Semcorisocc.nonfic.min1">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Press<p></td>
+    <td><p><a href="level1.html?type=Semcor.country.COHAisocc.press.min0">COHA</a></p><p><a href="level1.html?type=Semcor.country.Semcorisocc.press.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country.COHAisocc.press.min1">COHA</a></p><p><a href="level1.html?type=Semcor.country.Semcorisocc.press.min1">Semcor</a></p></td>
+  </tr>
+</table>
+<table>
+  <caption><h3>Church</h3></caption>
+  <tr>
+    <th class="rowname">Subset\Threshold</th>
+    <th>Threshold=0</th>
+    <th>Threshold=1</th>
+    <th>Threshold=2</th>
+    <th>Threshold=2,5</th>
+    <th>Threshold=3</th>
+  </tr>
+  <tr>
+    <td><p class="rowname">All tokens<p></td>
+    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.min0">COHA</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.min1">COHA</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.min2">COHA</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.min2">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.min2_5">COHA</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.min2_5">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.min3">COHA</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.min3">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">WordNet sense-tagged<p></td>
+    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.nona.min0">COHA</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.nona.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.nona.min1">COHA</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.nona.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.nona.min2">COHA</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.nona.min2">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Fiction<p></td>
+    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.fic.min0">COHA</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.fic.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.fic.min1">COHA</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.fic.min1">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Non-Fiction<p></td>
+    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.nonfic.min0">COHA</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.nonfic.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.nonfic.min1">COHA</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.nonfic.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.church.COHAisocc.nonfic.min2">COHA</a></p><p><a href="level1.html?type=Semcor.church.Semcorisocc.nonfic.min2">Semcor</a></p></td>
+  </tr>
+</table>
+<table>
+  <caption><h3>State & Country</h3></caption>
+  <tr>
+    <th class="rowname">Subset\Threshold</th>
+    <th>Threshold=0</th>
+    <th>Threshold=1</th>
+    <th>Threshold=2</th>
+    <th>Threshold=2,5</th>
+    <th>Threshold=3</th>
+  </tr>
+  <tr>
+    <td><p class="rowname">Random/All<p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.min0">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.min1">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.min2">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.min2">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.min2_5">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.min2_5">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.min3">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.min3">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">WordNet sense-tagged<p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.nona.min0">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.nona.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.nona.min1">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.nona.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.nona.min2">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.nona.min2">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.nona.min2_5">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.nona.min2_5">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Fiction<p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.fic.min0">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.fic.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.fic.min1">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.fic.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.fic.min2">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.fic.min2">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Non-Fiction<p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.nonfic.min0">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.nonfic.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.nonfic.min1">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.nonfic.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.nonfic.min2">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.nonfic.min2">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Press<p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.press.min0">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.press.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.press.min1">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.press.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_country.COHAisocc.press.min2">COHA</a></p><p><a href="level1.html?type=Semcor.state_country.Semcorisocc.press.min2">Semcor</a></p></td>
+  </tr>
+</table>
+<table>
+  <caption><h3>State & Church</h3></caption>
+  <tr>
+    <th class="rowname">Subset\Threshold</th>
+    <th>Threshold=0</th>
+    <th>Threshold=1</th>
+    <th>Threshold=2</th>
+    <th>Threshold=2,5</th>
+    <th>Threshold=3</th>
+  </tr>
+  <tr>
+    <td><p class="rowname">Random<p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.min0">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.min1">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.min2">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.min2">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.min2_5">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.min2_5">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.min3">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.min3">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">WordNet sense-tagged<p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.nona.min0">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.nona.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.nona.min1">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.nona.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.nona.min2">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.nona.min2">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.nona.min2_5">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.nona.min2_5">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.nona.min3">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.nona.min3">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Fiction<p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.fic.min0">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.fic.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.fic.min1">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.fic.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.fic.min2">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.fic.min2">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Non-Fiction<p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.nonfic.min0">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.nonfic.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.nonfic.min1">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.nonfic.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.nonfic.min2">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.nonfic.min2">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Press<p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.press.min0">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.press.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.press.min1">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.press.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.state_church.COHAisocc.press.min2">COHA</a></p><p><a href="level1.html?type=Semcor.state_church.Semcorisocc.press.min2">Semcor</a></p></td>
+  </tr>
+</table>
+<table>
+  <caption><h3>Country & Church</h3></caption>
+  <tr>
+    <th class="rowname">Subset\Threshold</th>
+    <th>Threshold=0</th>
+    <th>Threshold=1</th>
+    <th>Threshold=2</th>
+    <th>Threshold=2,5</th>
+    <th>Threshold=3</th>
+  </tr>
+  <tr>
+    <td><p class="rowname">Random/All<p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.min0">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.min1">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.min2">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.min2">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.min2_5">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.min2_5">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.min3">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.min3">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">WordNet sense-tagged<p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.nona.min0">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.nona.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.nona.min1">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.nona.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.nona.min2">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.nona.min2">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.nona.min2_5">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.nona.min2_5">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Fiction<p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.fic.min0">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.fic.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.fic.min1">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.fic.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.fic.min2">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.fic.min2">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Non-Fiction<p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.nonfic.min0">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.nonfic.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.nonfic.min1">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.nonfic.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.nonfic.min2">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.nonfic.min2">Semcor</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Press<p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.press.min0">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.press.min0">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.press.min1">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.press.min1">Semcor</a></p></td>
+    <td><p><a href="level1.html?type=Semcor.country_church.COHAisocc.press.min2">COHA</a></p><p><a href="level1.html?type=Semcor.country_church.Semcorisocc.press.min2">Semcor</a></p></td>
+  </tr>
+</table>
+</div>
 <h2><a href="Archive/archive.html">Archive</a></h2>
 </body>
 </html>
