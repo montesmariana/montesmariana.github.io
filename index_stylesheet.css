@@ -1,17 +1,78 @@
+/* General instruccions for the look of the page */
 body {
   padding-top: 40px;
-  padding-left: 70px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
-.box {
-  /* border: 7px ridge snow; */
-  /* max-width: 1000px; */
-  /* padding: 20px; */
-  clear: left;
+/*Header, with welcoming message and last-updated information*/
+div.header {
+  position:sticky;
+  top:0;
+  background-color: darkcyan;
+  width:auto;
+  height: 100px;
+  padding:20px;
 }
-.piece {
-  float: left;
-  padding: 5px 10px 5px 0px;
+div.welcome {
+  font-size: 40px;
+  font-variant: small-caps;
+  font-weight: bold;
+  color:ivory;
+  position: absolute;
+  top:75px;
 }
+div.message {
+  position:absolute;
+  top:90px;
+  right:10px;
+  border-color: darkcyan;
+  color: ivory;
+  text-align: right;
+}
+/*Menu with links to tables.*/
+div.menu{
+  position:sticky;
+  top:140px;
+  background-color: darkcyan;
+  border-top: ivory ridge 2px;
+  width:auto;
+  height:20px;
+  padding:2px;
+}
+ul.menu{
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+li.menu {
+  display: inline;
+}
+li.menu a{
+  padding:5px;
+  text-decoration: none;
+  color:ivory;
+  font-weight: bold;
+}
+li.menu a:active{
+  background-color: midnight;
+}
+li.menu::before{
+  content:none;
+}
+/*Main boxes to split the page in clouds vs info.*/
+div.left {
+  box-sizing: border-box;
+  float:left;
+  width: 60%;
+  padding:10px;
+}
+div.right {
+  box-sizing: border-box;
+  float: right;
+  width: 40%;
+  padding:10px;
+}
+/*Titles format.*/
 h1 {
   font-size:30px;
   color:#004d4d;
@@ -32,40 +93,52 @@ h3 {
   font-weight: bold;
   font-family: arial;
 }
+/*Tables format.*/
 th {
-  font-family: serif;
+  font-family:"georgia", serif;
   font-size: 16px;
   color:darkcyan;
   font-variant:small-caps;
   border-bottom: 1px solid #004d4d;
   padding: 5px;
 }
-
 td {
-  font-family: sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
   text-align: center;
   vertical-align: center;
   padding: 5px;
 }
-ul{
-  list-style-type: circle;
-}
 .rowname {
-  font-family: serif;
+  font-family:"georgia", serif;
   color:darkcyan;
   font-size: 16px;
   font-variant:small-caps;
   text-align: left;
 }
-.desc {
-  font-family:"georgia";
-  font-size:16px;
+/*Information descriptors format. Including code for hiding and showing.*/
+div.desc {
+  font-family:"georgia", serif;
   text-align: justify;
   padding: 10px;
-  max-width: 1000px;
+  max-width: 700px;
 }
+.placeholder{
+  font-size: 16px;
+  font-family: Verdana, Geneva, sans-serif;
+  text-align: center;
+  background-color: darkcyan;
+  padding: 5px;
+  max-width:700px;
+  color:ivory;
+}
+.hide{
+  color:midnightblue;
+  text-align: right;
+  font-weight: bold;
+}
+/*Basic text and links format.*/
 p {
-  font-family: "georgia";
+  font-family: "georgia", serif;
   font-size: 16px;
 }
 a:link {
@@ -74,27 +147,45 @@ a:link {
 }
 a:visited {
   color:slategray;
-  text-decoration: italic;
+  text-style: italic;
 }
-.message{
-  border-style: solid;
-  padding: 3px;
-  border-color: darkcyan;
-  background-color: ivory;
-  max-width: 400px;
-  text-align: center;
+/*Lists format, with little clouds as bullet points.*/
+ul{
+  list-style:none;
 }
-.placeholder{
-  font-size: 16px;
-  font-family: sans-serif;
-  text-align: center;
+
+li:before{
+  content: "\2601";
+  color: darkcyan;
+  padding-right: 5px;
+}
+/*Footer!*/
+div.footer{
+  position:fixed;
+  bottom:0;
   background-color: darkcyan;
-  padding: 5px;
-  max-width:1000px;
-  color:ivory;
+  border-top: ivory ridge 2px;
+  width:auto;
+  height:20px;
+  padding:2px;
 }
-.hide{
-  color:midnightblue;
-  text-align: right;
+ul.footer{
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+li.footer {
+  display: inline;
+}
+li.footer a{
+  padding:5px;
+  text-decoration: none;
+  color:ivory;
   font-weight: bold;
+}
+li.footer a:visited{
+  background-color: midnight;
+}
+li.footer::before{
+  content:none;
 }

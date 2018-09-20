@@ -4,20 +4,29 @@
 <link rel="stylesheet" type="text/css" href="index_stylesheet.css">
 </head>
 <body>
-  <div class="desc">
-  <p>Welcome to Church. Here you will find a table with the following clouds:</p>
-  <ul>
-    <li>Only of the token <i>church</i>.</li>
-    <li>From Semcor, with Semcor as source of the first order weighting values.</li>
-    <li>With either COHA or Semcor as source of the second order values.
-      In all cases the <i>same</i> context words were used,
-      only the ppmi values differ. These are all the 5795 content words with frequency over 10 in both corpora.</li>
-    <li>Without any other kind of subsetting: these are all the tokens.</li>
-  </ul>
-  <p>Each column indicates a different threshold in the first order weighting,
-    while each row indicates a different threshold in the second order weighting.
-  </div>
 <h1>Church</h1>
+<div class="desc">
+<p>Welcome to Church. Here you will find a table with the following clouds:</p>
+<ul>
+  <li>Only of the token <i>church</i>.</li>
+  <li>From Semcor, with Semcor as source of the first order weighting values.</li>
+  <li>With either COHA or Semcor as source of the second order values.
+    In all cases the <i>same</i> context words were used,
+    only the ppmi values differ. These are all the 5795 content words with frequency over 10 in both corpora.</li>
+  <li>Without any other kind of subsetting: these are all the tokens.</li>
+</ul>
+<p>Each column indicates a different threshold in the first order weighting,
+  while each row indicates a different threshold in the second order weighting.
+</div>
+<div class="message">
+<p>This page was last updated on <time id="lastmod"></time>.</p>
+<script>
+var lastmod = new Date(document.lastModified);
+var lastmodstring = lastmod.toDateString();
+document.getElementById("lastmod").innerHTML = lastmodstring;
+</script>
+</div>
+<br>
 <p><a href="cloud_data_170918.csv">Here</a> you can look at some metadata about the clouds.</p>
 <table>
   <caption><h3>Church clouds with different threshold in socc and weight</h3></caption>

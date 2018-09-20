@@ -9,45 +9,54 @@
   </style>
 </head>
 <body>
+  <div class="header">
+    <div class="welcome">Welcome to Mariana's stock of clouds!</div>
+    <div class="message">
+    <p>This page was last updated on <time id="lastmod"></time>.</p>
+    <script>
+    var lastmod = new Date(document.lastModified);
+    var lastmodstring = lastmod.toDateString();
+    document.getElementById("lastmod").innerHTML = lastmodstring;
+    </script>
+    </div>
+  </div>
 <div class="desc">
-<p> Welcome to Mariana's stock of clouds. This is the main index.
+<p>This is the main index.
 Here you will find:</p>
 <ul>
-  <li><a href="#References">Information about the coding in the clouds.</a></li>
-  <li><a href="#Clouds">The last clouds (see below for specific information).</a></li>
+  <li><a>Information about the coding in the clouds, in the right panel.</li>
+  <li><a>The last clouds (there's more information in the right panel).</a></li>
 </ul>
-<div class="message">
-<p>This page was last updated on <time id="lastmod"></time>.</p>
-<script>
-var lastmod = new Date(document.lastModified);
-var lastmodstring = lastmod.toDateString();
-document.getElementById("lastmod").innerHTML = lastmodstring;
-</script>
+</div>
+<div class="menu">
+  <ul class="menu">
+    <li class="menu"><a href="#AllTypes">All types</a></li>
+    <li class="menu"><a href="#State">State</a></li>
+    <li class="menu"><a href="#Country">Country</a></li>
+    <li class="menu"><a href="#Church">Church</a></li>
+    <li class="menu"><a href="#StateCountry">State & Country</a></li>
+    <li class="menu"><a href="#StateChurch">State & Church</a></li>
+    <li class="menu"><a href="#CountryChurch">Country & Church</a></li>
+  </ul>
 </div>
 <br>
 
-</div>
+<div class="right">
 <h1 id="References">References</h1>
-<ul>
-<li><p><a href="http://www.evernote.com/l/Ad_CM-q61cZO0bHvUy091X04rGLzDTBR0GY/">Correspondence of pos-tags and semantic tags</a></p></li>
-<li><p><a href="http://www.evernote.com/l/Ad84s2RmBX5N7LbyNfpKc0VG6GlTJy9zA0E/">Genres and file metadata</a></p></li>
-<li><p><a href="http://www.evernote.com/l/Ad-yA1xe4CxPjL2Md2OF_YPnlzB8tQ1yAyI/">Dataframes about cues and weights</a></p></li>
+<div class="desc">
+  <ul>
+<li><a href="http://www.evernote.com/l/Ad_CM-q61cZO0bHvUy091X04rGLzDTBR0GY/">Correspondence of pos-tags and semantic tags</a></li>
+<li><a href="http://www.evernote.com/l/Ad84s2RmBX5N7LbyNfpKc0VG6GlTJy9zA0E/">Genres and file metadata</a></li>
+<li><a href="http://www.evernote.com/l/Ad-yA1xe4CxPjL2Md2OF_YPnlzB8tQ1yAyI/">Dataframes about cues and weights</a></li>
 </ul>
-<div class="piece">
+</div>
 <h2>WordNet senses</h2>
 <p><a href="http://www.evernote.com/l/Ad_4l3SO6YxFoYOsrO7O_gFBC3xC4E3qi5Y/">Hierarchies and frequencies of WordNet senses</a></p>
 <p><a href="http://www.evernote.com/l/Ad9Ci-oPfyFGG6nHexQPrl_Z6EC2SInxsGo/">WordNet definitions</a></p>
-</div>
-<div class="piece">
-  <h2>Mariana's senses</h2>
+<h2>Mariana's senses</h2>
 <p><a href="http://www.evernote.com/l/Ad8rStkPjvRFdI0xbHsbihLX-QQGbc89900/">Hierarchies and frequencies of Mariana's senses</a></p>
 <p><a href="http://www.evernote.com/l/Ad-Rt5Y8mpRHcJJe3Kr8z9fCPxbui4kB4T4/">Mariana's definitions</a></p>
-</div>
-
 <br>
-
-<div class="box">
-<h1 id="Clouds">Clouds</h1>
 <p class="placeholder" id="button1" onclick="showDescription()">Click to show description of current clouds.</p>
 <div class="desc" id="cloud_description">
 <p>These clouds represent the similarity between tokens of <i>state</i>, <i>country</i> and <i>church</i>, either with all types at once, one at a time or only two combined.</p>
@@ -82,11 +91,14 @@ function showDescription(){
 }
 function hideDescription(){
   document.getElementById("cloud_description").style.display="none";
-  document.getElementById("button1").style.display="block";  
+  document.getElementById("button1").style.display="block";
 }
 </script>
+</div>
+<div class="left">
+  <h1 id="Clouds">Clouds</h1>
 <table>
-  <caption><h3>All types</h3></caption>
+  <caption id="AllTypes"><h3>All types</h3></caption>
   <tr>
     <th>Subset\Threshold</th>
     <th>Threshold=0</th>
@@ -131,7 +143,7 @@ function hideDescription(){
   </tr>
 </table>
 <table>
-  <caption><h3>State</h3></caption>
+  <caption id="State"><h3>State</h3></caption>
   <tr>
     <th>Subset\Threshold</th>
     <th>Threshold=0</th>
@@ -175,7 +187,7 @@ function hideDescription(){
   </tr>
 </table>
 <table>
-  <caption><h3>Country</h3></caption>
+  <caption id="Country"><h3>Country</h3></caption>
   <tr>
     <th>Subset\Threshold</th>
     <th>Threshold=0</th>
@@ -208,7 +220,7 @@ function hideDescription(){
   </tr>
 </table>
 <table>
-  <caption><h3><a href="church.html">Church</a></h3></caption>
+  <caption id="Church"><h3><a href="church.html">Church</a></h3></caption>
   <tr>
     <th>Subset\Threshold</th>
     <th>Threshold=0</th>
@@ -244,7 +256,7 @@ function hideDescription(){
   </tr>
 </table>
 <table>
-  <caption><h3>State & Country</h3></caption>
+  <caption id="StateCountry"><h3>State & Country</h3></caption>
   <tr>
     <th>Subset\Threshold</th>
     <th>Threshold=0</th>
@@ -288,7 +300,7 @@ function hideDescription(){
   </tr>
 </table>
 <table>
-  <caption><h3>State & Church</h3></caption>
+  <caption id="StateChurch"><h3>State & Church</h3></caption>
   <tr>
     <th>Subset\Threshold</th>
     <th>Threshold=0</th>
@@ -333,7 +345,7 @@ function hideDescription(){
   </tr>
 </table>
 <table>
-  <caption><h3>Country & Church</h3></caption>
+  <caption id="CountryChurch"><h3>Country & Church</h3></caption>
   <tr>
     <th>Subset\Threshold</th>
     <th>Threshold=0</th>
@@ -377,6 +389,10 @@ function hideDescription(){
   </tr>
 </table>
 </div>
-<h2><a href="Archive/archive.html">Archive</a></h2>
+<div class="footer">
+<ul class="footer">
+  <li class="footer"><a href="Archive/archive.html">Archive</a></li>
+</ul>
+</div>
 </body>
 </html>
