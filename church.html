@@ -1,80 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-body {
-  padding-top: 40px;
-  padding-left: 70px;
-}
-.box {
-  /* border: 7px ridge snow; */
-  /* max-width: 1000px; */
-  /* padding: 20px; */
-  clear: left;
-}
-.piece {
-  float: left;
-  padding: 5px 10px 5px 0px;
-}
-h1 {
-  font-size:30px;
-  color:#004d4d;
-  font-weight: bold;
-  font-family: arial;
-  font-variant:small-caps;
-}
-h2 {
-  font-size:25px;
-  color:darkcyan;
-  font-weight: bold;
-  font-family: arial;
-  font-variant:small-caps;
-}
-h3 {
-  font-size:20px;
-  color:darkcyan;
-  font-weight: bold;
-  font-family: arial;
-}
-th {
-  font-family: serif;
-  font-size: 16px;
-  color:darkcyan;
-  font-variant:small-caps;
-  border-bottom: 1px solid #004d4d;
-  padding: 5px;
-}
-
-td {
-  font-family: sans-serif;
-  text-align: center;
-  vertical-align: center;
-  padding: 5px;
-}
-.rowname {
-  font-family: serif;
-  color:darkcyan;
-  font-size: 16px;
-  font-variant:small-caps;
-  text-align: left;
-}
-p {
-  font-family: sans-serif;
-  font-size:16px;
-}
-a:link {
-  color:midnightblue;
-  text-decoration: none;
-}
-a:visited {
-  color:slategray;
-  text-decoration: italic;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="index_stylesheet.css">
 </head>
 <body>
+  <div class="desc">
+  <p>Welcome to Church. Here you will find a table with the following clouds:</p>
+  <ul>
+    <li>Only of the token <i>church</i>.</li>
+    <li>From Semcor, with Semcor as source of the first order weighting values.</li>
+    <li>With either COHA or Semcor as source of the second order values.
+      In all cases the <i>same</i> context words were used,
+      only the ppmi values differ. These are all the 5795 content words with frequency over 10 in both corpora.</li>
+    <li>Without any other kind of subsetting: these are all the tokens.</li>
+  </ul>
+  <p>Each column indicates a different threshold in the first order weighting,
+    while each row indicates a different threshold in the second order weighting.
+  </div>
 <h1>Church</h1>
-<p><a href="cloud_data_170918.csv">Clouds with socc threshold</a></p>
+<p><a href="cloud_data_170918.csv">Here</a> you can look at some metadata about the clouds.</p>
 <table>
   <caption><h3>Church clouds with different threshold in socc and weight</h3></caption>
   <tr>

@@ -1,86 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-body {
-  padding-top: 40px;
-  padding-left: 70px;
-}
-.box {
-  /* border: 7px ridge snow; */
-  /* max-width: 1000px; */
-  /* padding: 20px; */
-  clear: left;
-}
-.piece {
-  float: left;
-  padding: 5px 10px 5px 0px;
-}
-h1 {
-  font-size:30px;
-  color:#004d4d;
-  font-weight: bold;
-  font-family: arial;
-  font-variant:small-caps;
-}
-h2 {
-  font-size:25px;
-  color:darkcyan;
-  font-weight: bold;
-  font-family: arial;
-  font-variant:small-caps;
-}
-h3 {
-  font-size:20px;
-  color:darkcyan;
-  font-weight: bold;
-  font-family: arial;
-}
-th {
-  font-family: serif;
-  font-size: 16px;
-  color:darkcyan;
-  font-variant:small-caps;
-  border-bottom: 1px solid #004d4d;
-  padding: 5px;
-}
-
-td {
-  font-family: sans-serif;
-  text-align: center;
-  vertical-align: center;
-  padding: 5px;
-}
-.rowname {
-  font-family: serif;
-  color:darkcyan;
-  font-size: 16px;
-  font-variant:small-caps;
-  text-align: left;
-}
-p {
-  font-family: sans-serif;
-  font-size:16px;
-}
-a:link {
-  color:midnightblue;
-  text-decoration: none;
-}
-a:visited {
-  color:slategray;
-  text-decoration: italic;
-}
-</style>
+  <link rel="stylesheet" type="text/css" href="index_stylesheet.css">
+  <style>
+  #cloud_description{
+    display: none;
+  }
+  </style>
 </head>
 <body>
+<div class="desc">
+<p> Welcome to Mariana's stock of clouds. This is the main index.
+Here you will find:</p>
+<ul>
+  <li><a href="#References">Information about the coding in the clouds.</a></li>
+  <li><a href="#Clouds">The last clouds (see below for specific information).</a></li>
+</ul>
+<div class="message">
+<p>This page was last updated on <time id="lastmod"></time>.</p>
+<script>
+var lastmod = new Date(document.lastModified);
+var lastmodstring = lastmod.toDateString();
+document.getElementById("lastmod").innerHTML = lastmodstring;
+</script>
+</div>
+<br>
 
-<!-- <p><a href="level1.html?type=bestuurder_chauffeur">bestuurder_chauffeur</a> -->
-
-<h1>References</h1>
-<p><a href="http://www.evernote.com/l/Ad_CM-q61cZO0bHvUy091X04rGLzDTBR0GY/">Correspondence of pos-tags and semantic tags</a></p>
-<p><a href="http://www.evernote.com/l/Ad84s2RmBX5N7LbyNfpKc0VG6GlTJy9zA0E/">Genres and file metadata</a></p>
-<p><a href="http://www.evernote.com/l/Ad-yA1xe4CxPjL2Md2OF_YPnlzB8tQ1yAyI/">Dataframes about cues and weights</a></p>
-<div class=piece>
+</div>
+<h1 id="References">References</h1>
+<ul>
+<li><p><a href="http://www.evernote.com/l/Ad_CM-q61cZO0bHvUy091X04rGLzDTBR0GY/">Correspondence of pos-tags and semantic tags</a></p></li>
+<li><p><a href="http://www.evernote.com/l/Ad84s2RmBX5N7LbyNfpKc0VG6GlTJy9zA0E/">Genres and file metadata</a></p></li>
+<li><p><a href="http://www.evernote.com/l/Ad-yA1xe4CxPjL2Md2OF_YPnlzB8tQ1yAyI/">Dataframes about cues and weights</a></p></li>
+</ul>
+<div class="piece">
 <h2>WordNet senses</h2>
 <p><a href="http://www.evernote.com/l/Ad_4l3SO6YxFoYOsrO7O_gFBC3xC4E3qi5Y/">Hierarchies and frequencies of WordNet senses</a></p>
 <p><a href="http://www.evernote.com/l/Ad9Ci-oPfyFGG6nHexQPrl_Z6EC2SInxsGo/">WordNet definitions</a></p>
@@ -90,10 +43,48 @@ a:visited {
 <p><a href="http://www.evernote.com/l/Ad8rStkPjvRFdI0xbHsbihLX-QQGbc89900/">Hierarchies and frequencies of Mariana's senses</a></p>
 <p><a href="http://www.evernote.com/l/Ad-Rt5Y8mpRHcJJe3Kr8z9fCPxbui4kB4T4/">Mariana's definitions</a></p>
 </div>
+
+<br>
+
 <div class="box">
-<h1>Clouds</h1>
-<p><a href="cloud_data_060918.csv">Clouds for all genres</a></p>
-<p><a href="cloud_data_070918.csv">Clouds by genre</a></p>
+<h1 id="Clouds">Clouds</h1>
+<p class="placeholder" id="button1" onclick="showDescription()">Click to show description of current clouds.</p>
+<div class="desc" id="cloud_description">
+<p>These clouds represent the similarity between tokens of <i>state</i>, <i>country</i> and <i>church</i>, either with all types at once, one at a time or only two combined.</p>
+<p>The tokens come from the Semcor corpus. The ppmi values for first order weighting come from Semcor as well. The threshold indicated in the columns of the tables was applied to this weighting.
+  After applying the threshold, tokens that had lost all the weighted context words were dropped.
+</p>
+<p>The second-order co-occurrence (SOCC) ppmi values come from eithe Semcor or COHA, and it's indicated as the name of the link to the cloud. In all cases the <i>same</i> context words were used,
+only the ppmi values differ (and, apparently, not that much either). These are all the 5795 content words with frequency over 10 in both corpora.</p>
+<p><strong>The caption of the tables</strong> (for now only in <i>Church</i>) <strong>takes to to clouds with a ppmi threshold on the SOCC matrix.</strong></p>
+<p>The division by broad_genre comes from the first decision on September 4, 2018. It's problematic because the Brown-genre <i>popular_lore</i> is wrongly included as <i>fiction</i>.</p>
+<p>A further problem is the imperfect pos-tagging. A corrected version can be seen as <i>new_pos</i> variable.</p>
+<p>Now you're ready to enjoy the clouds. Please beware of saturation risk by looking at them for too long. Belgium has plenty of real clouds if you need to refresh your eyes.</p>
+<p><a href="cloud_data_060918.csv">Here</a> you can look at some metadata about the clouds that are not split by genre.</p>
+<p><a href="cloud_data_070918.csv">Here</a> you can look at some metadata about the clouds that are split by genre.</p>
+<p>These are (perfectly safe) csv files with the following information:
+  <ul>
+    <li>Filename of the dataframe.</li>
+    <li>Type included in the cloud.</li>
+    <li>Corpus used for the SOCC matrix (either Semcor or COHA, with an <i>i</i> ending meaning that the intersect was used for the features).</li>
+    <li>The subsetting applied: either <i>none</i>, <i>nona</i> (=only semantically tagged tokens) or the name of the genre.</li>
+    <li>How many tokens are included.</li>
+    <li>The threshold applied to the first order weighting.</li>
+    <li>The stress value from the multidimensional scaling.</li>
+  </ul>
+</p>
+<p class="hide" onclick="hideDescription()">Hide text</p>
+</div>
+<script>
+function showDescription(){
+  document.getElementById("cloud_description").style.display="block";
+  document.getElementById("button1").style.display="none";
+}
+function hideDescription(){
+  document.getElementById("cloud_description").style.display="none";
+  document.getElementById("button1").style.display="block";  
+}
+</script>
 <table>
   <caption><h3>All types</h3></caption>
   <tr>
