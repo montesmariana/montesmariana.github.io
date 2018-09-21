@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Tokencloud</title>
+		<title>Model selection</title>
 		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script src="d3.legend.js"></script>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -11,15 +11,6 @@
 		<link rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-		<!-- <script src="js/d3.min.js"></script>
-		<script src="js/d3-legend.min.js"></script>
-		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-
-		<link rel="stylesheet" href="css/bootstrap.min.css"> -->
-
-
 		<style type="text/css">
 			.axis path,
 			.axis line {
@@ -95,10 +86,6 @@
 				}
 			}
 		};
-
-		// Define dataframe file extension
-		var dfExtension = ".tsv"
-
 			//Width and height
 			var w = 600;
 			var h = 600;
@@ -109,24 +96,24 @@
     			.style("opacity", 0);
 			var dataset;
 			var firstRow;
-			var cset;
-			var sset;
-			var shset;
+			var l1cset;
+			var l1sset;
+			var l1shset;
 			var legendParam;
 			var type = getUrlParameter("type");
-			var cset = (localStorage.getItem("cset"+"-"+type) == null) ? undefined : JSON.parse(localStorage.getItem("cset"+"-"+type));
-			var shset = (localStorage.getItem("shset"+"-"+type) == null) ? undefined : JSON.parse(localStorage.getItem("shset"+"-"+type));
-			var sset = (localStorage.getItem("sset"+"-"+type) == null) ? undefined  : JSON.parse(localStorage.getItem("sset"+"-"+type));
+			var l1cset = (localStorage.getItem("l1cset"+"-"+type) == null) ? undefined : JSON.parse(localStorage.getItem("l1cset"+"-"+type));
+			var l1shset = (localStorage.getItem("l1shset"+"-"+type) == null) ? undefined : JSON.parse(localStorage.getItem("l1shset"+"-"+type));
+			var l1sset = (localStorage.getItem("l1sset"+"-"+type) == null) ? undefined  : JSON.parse(localStorage.getItem("l1sset"+"-"+type));
 			var selection = (localStorage.getItem("modselection"+"-"+type) == null) ? [] : JSON.parse(localStorage.getItem("modselection"+"-"+type));
-			d3.tsv(type.concat(dfExtension), function(error, data) {
+			d3.tsv(type+".tsv", function(error, data) {
 				dataset = data;
 			// Extracts the first token name, assumes this is the type and sets it as the page title
 			//var type = data[1]["_id"].match(/\w+/)
 //			var type = window.location.pathname.split("/")[2]
-			document.title = "Level 3: " + type + " tokencloud";
-			d3.select("body").select("h2").text("Level 3: " + type);
-// 			d3.select("body").select("p").append("a").attr("href", "level2.html?type="+type).text("down");
-// //			d3.select("body").select("p").append("p").text("isoMDS stress: " + data[0]["stress"]).style("font-size", "10px");
+			document.title = "Level 1: " + type + " tokencloud models";
+			d3.select("body").select("h2").text("Level 1: " + type);
+			d3.select("body").select("p").append("a").attr("href", "level2.html?type="+type).text("down");
+//			d3.select("body").select("p").append("p").text("isoMDS stress: " + data[0]["stress"]).style("font-size", "10px");
 			colnames = d3.keys(data[0]);
 			// Takes the first columns that end with ".x" and ".y"
 			xcol = colnames.filter(function(d) { return d.endsWith(".x"); })[0];
@@ -248,7 +235,7 @@
 			//    		return yScale(+d[ycol]);
 			//    })
 			// 	 .attr("r", 5)
-				.style("fill", function(d) { (cset === "undefined") ? out="#1f77b4" : out=getColors(d[cset]); return out; })
+				.style("fill", function(d) { (l1cset === "undefined") ? out="#1f77b4" : out=getColors(d[l1cset]); return out; })
 				.classed("selected", function(d) {
 					if (selection.length > 0) {
 						return !(selection.indexOf(d["id"]) > -1);
@@ -259,7 +246,7 @@
           		tooltip.transition()
 					.duration(200)
 					.style("opacity", .9);
-          		tooltip.html("<b>" + d["id"] + "</b><br>" + d["text"]) //+ (typeof sset  !== "undefined" ? "<p><b>"+sset+"</b>: " + d[sset] : "" ))
+          		tooltip.html("<b>" + d["id"] + "</b><br>" + d["text"]) //+ (typeof l1sset  !== "undefined" ? "<p><b>"+l1sset+"</b>: " + d[l1sset] : "" ))
 					.style("left", (d3.event.pageX + 20) + "px")
 					.style("top", (d3.event.pageY - 28) + "px");
 //				svg.select(".dot").selectAll("circle").style("opacity", .2);
@@ -318,22 +305,22 @@
  				//On menu change, update colour and/or size
 				d3.selectAll(".col").on("click", function() {
 					value = this.getAttribute("value");
-					(value == "reset") ? cset = null : cset = value
-					localStorage.setItem("cset"+"-"+type, JSON.stringify(cset));
-					legendParam = cset;
+					(value == "reset") ? l1cset = null : l1cset = value
+					localStorage.setItem("l1cset"+"-"+type, JSON.stringify(l1cset));
+					legendParam = l1cset;
 					updateData("colour");
 				});
 				d3.selectAll(".shape").on("click", function() {
 					value = this.getAttribute("value");
-					(value == "reset") ? shset = null : shset = value
-					localStorage.setItem("shset"+"-"+type, JSON.stringify(shset));
-					legendParam = shset;
+					(value == "reset") ? l1shset = null : l1shset = value
+					localStorage.setItem("l1shset"+"-"+type, JSON.stringify(l1shset));
+					legendParam = l1shset;
 					updateData("shape");
 				});
 				d3.selectAll(".siz").on("click", function() {
 					value = this.getAttribute("value");
-					(value == "reset") ? sset = null : sset = value
-					localStorage.setItem("sset"+"-"+type, JSON.stringify(sset));
+					(value == "reset") ? l1sset = null : l1sset = value
+					localStorage.setItem("l1sset"+"-"+type, JSON.stringify(l1sset));
 					updateData("size");
 				});
 				d3.select("#memory-clear").on("click", function() {
@@ -375,41 +362,41 @@
 							// 		.attr("cy", function(d) {
 							// 			return yScale(d[ycol]);
 							// 		})
-							// .attr("data-legend", function(d) { return d[cset]});
+							// .attr("data-legend", function(d) { return d[l1cset]});
 				// Refresh the scales
 				getColors = d3.scale.category10();
 				getClustSize = d3.scale.sqrt();
 				getShape = d3.scale.ordinal().range(["circle", "cross", "diamond", "square", "triangle-down", "triangle-up"]);
-				if (typeof sset !== "undefined" && typeof cset !== "undefined" && typeof shset !== "undefined") {
-					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return getShape(d[shset]); }).size(function (d) { return getClustSize(+d[sset])*32; })).style("fill", function(d) { return getColors(d[cset]); });
-					console.log("sset, shset and cset are not undefined")
-				} else if (typeof cset !== "undefined" && typeof sset == "undefined" && typeof shset !== "undefined") {
-					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return getShape(d[shset]); })).style("fill", function(d) { return getColors(d[cset]); });
-				} else if (typeof cset !== "undefined" && typeof sset !== "undefined" && shset == "undefined") {
-					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return "circle"; }).size(function (d) { return getClustSize(+d[sset])*32; })).style("fill", function(d) { return getColors(d[cset]); });
-				} else if (typeof cset == "undefined" && typeof sset !== "undefined" && shset !== "undefined") {
-					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return getShape(d[shset]); }).size(function (d) { return getClustSize(+d[sset])*32; })).style("fill", "#1f77b4");
-				} else if (typeof sset  !== "undefined") {
-					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return "circle"; }).size(function (d) { return getClustSize(+d[sset])*32; })).style("fill", "#1f77b4");
-					console.log("sset is not undefined");
-				} else if (typeof cset !== "undefined") {
-					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return "circle"; })).style("fill", function(d) { return getColors(d[cset]); });
-					console.log("cset is not undefined");
-				} else if (typeof shset !== "undefined") {
-					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return getShape(d[shset]); })).style("fill", "#1f77b4");
-					console.log("shset is not undefined");
+				if (typeof l1sset !== "undefined" && typeof l1cset !== "undefined" && typeof l1shset !== "undefined") {
+					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return getShape(d[l1shset]); }).size(function (d) { return getClustSize(+d[l1sset])*32; })).style("fill", function(d) { return getColors(d[l1cset]); });
+					console.log("l1sset, l1shset and l1cset are not undefined")
+				} else if (typeof l1cset !== "undefined" && typeof l1sset == "undefined" && typeof l1shset !== "undefined") {
+					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return getShape(d[l1shset]); })).style("fill", function(d) { return getColors(d[l1cset]); });
+				} else if (typeof l1cset !== "undefined" && typeof l1sset !== "undefined" && l1shset == "undefined") {
+					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return "circle"; }).size(function (d) { return getClustSize(+d[l1sset])*32; })).style("fill", function(d) { return getColors(d[l1cset]); });
+				} else if (typeof l1cset == "undefined" && typeof l1sset !== "undefined" && l1shset !== "undefined") {
+					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return getShape(d[l1shset]); }).size(function (d) { return getClustSize(+d[l1sset])*32; })).style("fill", "#1f77b4");
+				} else if (typeof l1sset  !== "undefined") {
+					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return "circle"; }).size(function (d) { return getClustSize(+d[l1sset])*32; })).style("fill", "#1f77b4");
+					console.log("l1sset is not undefined");
+				} else if (typeof l1cset !== "undefined") {
+					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return "circle"; })).style("fill", function(d) { return getColors(d[l1cset]); });
+					console.log("l1cset is not undefined");
+				} else if (typeof l1shset !== "undefined") {
+					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return getShape(d[l1shset]); })).style("fill", "#1f77b4");
+					console.log("l1shset is not undefined");
 				}
 				svg.selectAll("path").attr("data-legend", function(d) {
 					if (feature == "colour") {
-						return d[cset];
+						return d[l1cset];
 					} else if (feature == "shape") {
-						return d[shset];
+						return d[l1shset];
 					}
 				});
 				function createLegend(legendType) {
-					if (legendType == "cset") {
+					if (legendType == "l1cset") {
 						ypos = 30;
-					} else if (legendType == "shset") {
+					} else if (legendType == "l1shset") {
 						ypos = 100;
 					} else {
 						ypos = 30;
@@ -420,19 +407,19 @@
 						.style("font-size","12px")
 						.call(d3.legend);
 				}
-				// if (cset !== "undefined" | shset !== "undefined") {
+				// if (l1cset !== "undefined" | l1shset !== "undefined") {
 				// 	createLegend();
 				// }
-				// if (cset !== "undefined" | shset !=="undefined") {
-				// 	createLegend("cset");
-				// 	createLegend("shset");
-				// } else if (cset !== "undefined") {
-				// 	createLegend("cset");
-				// } else if (shset !== "undefined") {
-				// 	createLegend("shset");
+				// if (l1cset !== "undefined" | l1shset !=="undefined") {
+				// 	createLegend("l1cset");
+				// 	createLegend("l1shset");
+				// } else if (l1cset !== "undefined") {
+				// 	createLegend("l1cset");
+				// } else if (l1shset !== "undefined") {
+				// 	createLegend("l1shset");
 				// }
 //				Update legend or append if not created yet after necessary (!) delay
-				if (typeof cset !== "undefined") {
+				if (typeof l1cset !== "undefined") {
 					setTimeout(function() {
 						if (typeof legend !== "undefined") {
 							legend.call(d3.legend)
@@ -445,7 +432,7 @@
 						}
 					},100)
 				}
-				else if (typeof shset !== "undefined") {
+				else if (typeof l1shset !== "undefined") {
 					setTimeout(function() {
 						if (typeof legend !== "undefined") {
 							legend.call(d3.legend)
@@ -492,25 +479,28 @@
 				$('#dataframe').DataTable( {
 					"aaData" : dataset,
 					"aoColumns": [
-						{ mDataProp: "id", title='ID' },
-						{ mDataProp: "lemma", title='Lemma'},
-						{ mDataProp: "pos" , title='PoS'},
-						{ mDataProp: "marisense", title='Mari-sense'},
-						{ mDataProp: "mbroad", title='MS-broader' },
-						{ mDataProp: "mari3", title='MS-3' },
-						{ mDataProp: "mari2", title='MS-2' },
-						{ mDataProp: "sensekey", title='SenseKey (WN)' },
-						{ mDataProp: "wnsense", title='WordNet-sense' },
-						{ mDataProp: "wnbroad", title='WN-broader' },
-						{ mDataProp: "wn3", title='WN-3' },
-						{ mDataProp: "wn2", title='WN-2' },
-						{ mDataProp: "genre", title='Genre'},
-						{ mDataProp: "broad_genre", title='Genre-broader'},
-						{ mDataProp: "cues", title='Number of cues'},
-						{ mDataProp: "cues_with_weight", title='Weighted cues'},
-						{ mDataProp: "mean_weight", title='Mean ppmi weight'},
-						{ mDataProp: "weighted.cues_ratio", title='Ratio of weighted cues'},
-						{ mDataProp: "weighted_cw", title='Number of weighted context words'}
+						{ mDataProp: "id" },
+						{ mDataProp: "lemma"},
+						{ mDataProp: "wf"},
+						{ mDataProp: "pos" },
+						{ mDataProp: "marisense"},
+						{ mDataProp: "mbroad" },
+						{ mDataProp: "mari3" },
+						{ mDataProp: "mari2" },
+						{ mDataProp: "sensekey" },
+						{ mDataProp: "wnsense" },
+						{ mDataProp: "wnbroad" },
+						{ mDataProp: "wn3" },
+						{ mDataProp: "wn2" },
+						{ mDataProp: "genre"},
+						{ mDataProp: "broad_genre"},
+						{ mDataProp: "new_broad_genre"},
+						{ mDataProp: "new_pos"},
+						{ mDataProp: "cues"},
+						{ mDataProp: "cues_with_weight"},
+						{ mDataProp: "mean_weight_x100"},
+						{ mDataProp: "wcratio_x100"},
+						{ mDataProp: "weighted_cw"}
 					]
 				});
 			});
