@@ -9,8 +9,8 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="welcome">Welcome to Mariana's stock of clouds!</div>
+<div class="header">
+    <div class="welcome"><h1>Welcome to Mariana's stock of clouds!</h1></div>
     <div class="message">
     <p>This page was last updated on <time id="lastmod"></time>.</p>
     <script>
@@ -28,21 +28,9 @@ Here you will find:</p>
   <li><a>The last clouds (there's more information in the right panel).</a></li>
 </ul>
 </div>
-<div class="menu">
-  <ul class="menu">
-    <li class="menu"><a href="#AllTypes">All types</a></li>
-    <li class="menu"><a href="#State">State</a></li>
-    <li class="menu"><a href="#Country">Country</a></li>
-    <li class="menu"><a href="#Church">Church</a></li>
-    <li class="menu"><a href="#StateCountry">State & Country</a></li>
-    <li class="menu"><a href="#StateChurch">State & Church</a></li>
-    <li class="menu"><a href="#CountryChurch">Country & Church</a></li>
-  </ul>
-</div>
 <br>
-
 <div class="right">
-<h1 id="References">References</h1>
+<h2 id="References">References</h2>
 <div class="desc">
   <ul>
 <li><a href="http://www.evernote.com/l/Ad_CM-q61cZO0bHvUy091X04rGLzDTBR0GY/">Correspondence of pos-tags and semantic tags</a></li>
@@ -50,10 +38,10 @@ Here you will find:</p>
 <li><a href="http://www.evernote.com/l/Ad-yA1xe4CxPjL2Md2OF_YPnlzB8tQ1yAyI/">Dataframes about cues and weights</a></li>
 </ul>
 </div>
-<h2>WordNet senses</h2>
+<h3>WordNet senses</h3>
 <p><a href="http://www.evernote.com/l/Ad_4l3SO6YxFoYOsrO7O_gFBC3xC4E3qi5Y/">Hierarchies and frequencies of WordNet senses</a></p>
 <p><a href="http://www.evernote.com/l/Ad9Ci-oPfyFGG6nHexQPrl_Z6EC2SInxsGo/">WordNet definitions</a></p>
-<h2>Mariana's senses</h2>
+<h3>Mariana's senses</h3>
 <p><a href="http://www.evernote.com/l/Ad8rStkPjvRFdI0xbHsbihLX-QQGbc89900/">Hierarchies and frequencies of Mariana's senses</a></p>
 <p><a href="http://www.evernote.com/l/Ad-Rt5Y8mpRHcJJe3Kr8z9fCPxbui4kB4T4/">Mariana's definitions</a></p>
 <br>
@@ -95,17 +83,30 @@ function hideDescription(){
 }
 </script>
 </div>
+
 <div class="left">
-  <h1 id="Clouds">Clouds</h1>
-<table>
-  <caption id="AllTypes"><h3>All types</h3></caption>
+  <div class="menu">
+    <ul class="menu">
+      <li class="menu"><a href="#AllTypes">All types</a></li>
+      <li class="menu"><a href="#State">State</a></li>
+      <li class="menu"><a href="#Country">Country</a></li>
+      <li class="menu"><a href="#Church">Church</a></li>
+      <li class="menu"><a href="#StateCountry">State & Country</a></li>
+      <li class="menu"><a href="#StateChurch">State & Church</a></li>
+      <li class="menu"><a href="#CountryChurch">Country & Church</a></li>
+      <li class="menu"><a href="Archive/archive.html">Archive</a></li>
+    </ul>
+  </div>
+  <h2 id="Clouds">Clouds</h2>
+<div class="table"><table>
+  <caption id="AllTypes"><h4>All types</h4></caption>
   <tr>
     <th>Subset\Threshold</th>
-    <th>Threshold=0</th>
-    <th>Threshold=1</th>
-    <th>Threshold=2</th>
-    <th>Threshold=2,5</th>
-    <th>Threshold=3</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+    <th>3</th>
   </tr>
   <tr>
     <td class="rowname">Random</td>
@@ -141,16 +142,16 @@ function hideDescription(){
     <td><a href="level1.html?type=Semcor.sample.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.press.min1">Semcor</a></td>
     <td><a href="level1.html?type=Semcor.sample.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.press.min2">Semcor</a></td>
   </tr>
-</table>
-<table>
-  <caption id="State"><h3>State</h3></caption>
+</table></div>
+<div class="table"><table>
+  <caption id="State"><h4>State</h4></caption>
   <tr>
     <th>Subset\Threshold</th>
-    <th>Threshold=0</th>
-    <th>Threshold=1</th>
-    <th>Threshold=2</th>
-    <th>Threshold=2,5</th>
-    <th>Threshold=3</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+    <th>3</th>
   </tr>
   <tr>
     <td class="rowname">Random/All</td>
@@ -185,15 +186,15 @@ function hideDescription(){
     <td><a href="level1.html?type=Semcor.state.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.press.min1">Semcor</a></td>
     <td><a href="level1.html?type=Semcor.state.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.press.min2">Semcor</a></td>
   </tr>
-</table>
-<table>
-  <caption id="Country"><h3>Country</h3></caption>
+</table></div>
+<div class="table"><table>
+  <caption id="Country"><h4>Country</h4></caption>
   <tr>
     <th>Subset\Threshold</th>
-    <th>Threshold=0</th>
-    <th>Threshold=1</th>
-    <th>Threshold=2</th>
-    <th>Threshold=2,5</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
   </tr>
   <tr>
     <td class="rowname">All tokens</td>
@@ -218,16 +219,16 @@ function hideDescription(){
     <td><a href="level1.html?type=Semcor.country.COHAisocc.press.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country.Semcorisocc.press.min0">Semcor</a></td>
     <td><a href="level1.html?type=Semcor.country.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country.Semcorisocc.press.min1">Semcor</a></td>
   </tr>
-</table>
-<table>
-  <caption id="Church"><h3><a href="church.html">Church</a></h3></caption>
+</table></div>
+<div class="table"><table>
+  <caption id="Church"><h4><a href="church.html">Church</a></h4></caption>
   <tr>
     <th>Subset\Threshold</th>
-    <th>Threshold=0</th>
-    <th>Threshold=1</th>
-    <th>Threshold=2</th>
-    <th>Threshold=2,5</th>
-    <th>Threshold=3</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+    <th>3</th>
   </tr>
   <tr>
     <td class="rowname">All tokens</td>
@@ -254,16 +255,16 @@ function hideDescription(){
     <td><a href="level1.html?type=Semcor.church.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.nonfic.min1">Semcor</a></td>
     <td><a href="level1.html?type=Semcor.church.COHAisocc.nonfic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.nonfic.min2">Semcor</a></td>
   </tr>
-</table>
-<table>
-  <caption id="StateCountry"><h3>State & Country</h3></caption>
+</table></div>
+<div class="table"><table>
+  <caption id="StateCountry"><h4>State & Country</h4></caption>
   <tr>
     <th>Subset\Threshold</th>
-    <th>Threshold=0</th>
-    <th>Threshold=1</th>
-    <th>Threshold=2</th>
-    <th>Threshold=2,5</th>
-    <th>Threshold=3</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+    <th>3</th>
   </tr>
   <tr>
     <td class="rowname">Random/All</td>
@@ -298,16 +299,16 @@ function hideDescription(){
     <td><a href="level1.html?type=Semcor.state_country.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.Semcorisocc.press.min1">Semcor</a></td>
     <td><a href="level1.html?type=Semcor.state_country.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.Semcorisocc.press.min2">Semcor</a></td>
   </tr>
-</table>
-<table>
-  <caption id="StateChurch"><h3>State & Church</h3></caption>
+</table></div>
+<div class="table"><table>
+  <caption id="StateChurch"><h4>State & Church</h4></caption>
   <tr>
     <th>Subset\Threshold</th>
-    <th>Threshold=0</th>
-    <th>Threshold=1</th>
-    <th>Threshold=2</th>
-    <th>Threshold=2,5</th>
-    <th>Threshold=3</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+    <th>3</th>
   </tr>
   <tr>
     <td class="rowname">Random/All</td>
@@ -343,16 +344,16 @@ function hideDescription(){
     <td><a href="level1.html?type=Semcor.state_church.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.Semcorisocc.press.min1">Semcor</a></td>
     <td><a href="level1.html?type=Semcor.state_church.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.Semcorisocc.press.min2">Semcor</a></td>
   </tr>
-</table>
-<table>
-  <caption id="CountryChurch"><h3>Country & Church</h3></caption>
+</table></div>
+<div class="table"><table>
+  <caption id="CountryChurch"><h4>Country & Church</h4></caption>
   <tr>
     <th>Subset\Threshold</th>
-    <th>Threshold=0</th>
-    <th>Threshold=1</th>
-    <th>Threshold=2</th>
-    <th>Threshold=2,5</th>
-    <th>Threshold=3</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+    <th>3</th>
   </tr>
   <tr>
     <td class="rowname">Random/All</td>
@@ -387,12 +388,10 @@ function hideDescription(){
     <td><a href="level1.html?type=Semcor.country_church.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.press.min1">Semcor</a></td>
     <td><a href="level1.html?type=Semcor.country_church.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.press.min2">Semcor</a></td>
   </tr>
-</table>
+</table></div>
 </div>
 <div class="footer">
-<ul class="footer">
-  <li class="footer"><a href="Archive/archive.html">Archive</a></li>
-</ul>
+<span>Nephological Semantics Project - QLVL - KU Leuven</span>
 </div>
 </body>
 </html>

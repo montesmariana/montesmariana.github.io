@@ -1,42 +1,44 @@
 /* General instruccions for the look of the page */
 body {
-  padding-top: 40px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding:3vw;
 }
 /*Header, with welcoming message and last-updated information*/
 div.header {
-  position:sticky;
+  position:relative;
   top:0;
-  background-color: darkcyan;
-  width:auto;
+  background-color: steelblue;
+  width:inherit;
   height: 100px;
   padding:20px;
 }
-div.welcome {
-  font-size: 40px;
+div.welcome{
+  position: absolute;
+  top:20%;
+  padding:0;
+  margin:0;
+}
+h1 {
+  font-size: 3vw;
   font-variant: small-caps;
   font-weight: bold;
   color:ivory;
-  position: absolute;
-  top:75px;
 }
 div.message {
   position:absolute;
-  top:90px;
-  right:10px;
-  border-color: darkcyan;
+  top:70%;
+  right:1%;
+  border-color: steelblue;
   color: ivory;
   text-align: right;
 }
 /*Menu with links to tables.*/
 div.menu{
   position:sticky;
-  top:140px;
-  background-color: darkcyan;
+  top:0;
+  background-color: steelblue;
   border-top: ivory ridge 2px;
   width:auto;
-  height:20px;
+  max-height:60px;
   padding:2px;
 }
 ul.menu{
@@ -52,6 +54,7 @@ li.menu a{
   text-decoration: none;
   color:ivory;
   font-weight: bold;
+  font-size:0.9em;
 }
 li.menu a:active{
   background-color: midnight;
@@ -64,43 +67,51 @@ div.left {
   box-sizing: border-box;
   float:left;
   width: 60%;
-  padding:10px;
+  padding-right:1vw;
+  padding-top:0;
 }
 div.right {
   box-sizing: border-box;
   float: right;
   width: 40%;
-  padding:10px;
+  padding-left:1vw;
+  padding-top:0;
 }
 /*Titles format.*/
-h1 {
-  font-size:30px;
+h2 {
+  font-size:1.875em;
   color:#004d4d;
   font-weight: bold;
   font-family: arial;
   font-variant:small-caps;
+  line-height: 0.4;
 }
-h2 {
-  font-size:25px;
-  color:darkcyan;
+h3 {
+  font-size:1.5em;
+  color:steelblue;
   font-weight: bold;
   font-family: arial;
   font-variant:small-caps;
 }
-h3 {
-  font-size:20px;
-  color:darkcyan;
+h4 {
+  font-size:1.4em;
+  color:steelblue;
   font-weight: bold;
   font-family: arial;
 }
 /*Tables format.*/
+div.table{
+  max-width: 100%;
+  overflow-x: auto;
+}
 th {
   font-family:"georgia", serif;
-  font-size: 16px;
-  color:darkcyan;
+  font-size: 1em;
+  color:steelblue;
   font-variant:small-caps;
   border-bottom: 1px solid #004d4d;
   padding: 5px;
+  border-collapse: collapse;
 }
 td {
   font-family: Verdana, Geneva, sans-serif;
@@ -110,9 +121,12 @@ td {
 }
 .rowname {
   font-family:"georgia", serif;
-  color:darkcyan;
-  font-size: 16px;
+  color:steelblue;
+  font-size: 1em;
   font-variant:small-caps;
+  text-align: left;
+}
+caption {
   text-align: left;
 }
 /*Information descriptors format. Including code for hiding and showing.*/
@@ -122,11 +136,14 @@ div.desc {
   padding: 10px;
   max-width: 700px;
 }
+p a{
+  font-weight: bold;
+}
 .placeholder{
-  font-size: 16px;
+  font-size: 1em;
   font-family: Verdana, Geneva, sans-serif;
   text-align: center;
-  background-color: darkcyan;
+  background-color: steelblue;
   padding: 5px;
   max-width:700px;
   color:ivory;
@@ -139,7 +156,7 @@ div.desc {
 /*Basic text and links format.*/
 p {
   font-family: "georgia", serif;
-  font-size: 16px;
+  font-size: 1em;
 }
 a:link {
   color:midnightblue;
@@ -152,40 +169,24 @@ a:visited {
 /*Lists format, with little clouds as bullet points.*/
 ul{
   list-style:none;
+  padding:0;
+  margin:0;
 }
 
 li:before{
   content: "\2601";
-  color: darkcyan;
+  color: steelblue;
   padding-right: 5px;
 }
 /*Footer!*/
 div.footer{
   position:fixed;
   bottom:0;
-  background-color: darkcyan;
+  right:0;
+  background-color: steelblue;
   border-top: ivory ridge 2px;
   width:auto;
   height:20px;
-  padding:2px;
-}
-ul.footer{
-  list-style-type: none;
-  margin:0;
-  padding:0;
-}
-li.footer {
-  display: inline;
-}
-li.footer a{
   padding:5px;
-  text-decoration: none;
   color:ivory;
-  font-weight: bold;
-}
-li.footer a:visited{
-  background-color: midnight;
-}
-li.footer::before{
-  content:none;
 }
