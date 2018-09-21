@@ -1,6 +1,7 @@
 /* General instruccions for the look of the page */
 body {
   padding:3vw;
+  font-size:100%;
 }
 /*Header, with welcoming message and last-updated information*/
 div.header {
@@ -80,7 +81,7 @@ div.right {
 /*Titles format.*/
 h2 {
   font-size:1.875em;
-  color:#004d4d;
+  color:midnightblue;
   font-weight: bold;
   font-family: arial;
   font-variant:small-caps;
