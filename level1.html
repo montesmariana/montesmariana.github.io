@@ -305,21 +305,21 @@
  				//On menu change, update colour and/or size
 				d3.selectAll(".col").on("click", function() {
 					value = this.getAttribute("value");
-					(value == "reset") ? l1cset = null : l1cset = value
+					(value == "reset") ? l1cset = undefined : l1cset = value
 					localStorage.setItem("l1cset"+"-"+type, JSON.stringify(l1cset));
 					legendParam = l1cset;
 					updateData("colour");
 				});
 				d3.selectAll(".shape").on("click", function() {
 					value = this.getAttribute("value");
-					(value == "reset") ? l1shset = null : l1shset = value
+					(value == "reset") ? l1shset = undefined : l1shset = value
 					localStorage.setItem("l1shset"+"-"+type, JSON.stringify(l1shset));
 					legendParam = l1shset;
 					updateData("shape");
 				});
 				d3.selectAll(".siz").on("click", function() {
 					value = this.getAttribute("value");
-					(value == "reset") ? l1sset = null : l1sset = value
+					(value == "reset") ? l1sset = undefined : l1sset = value
 					localStorage.setItem("l1sset"+"-"+type, JSON.stringify(l1sset));
 					updateData("size");
 				});
@@ -372,9 +372,9 @@
 					console.log("l1sset, l1shset and l1cset are not undefined")
 				} else if (typeof l1cset !== "undefined" && typeof l1sset == "undefined" && typeof l1shset !== "undefined") {
 					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return getShape(d[l1shset]); })).style("fill", function(d) { return getColors(d[l1cset]); });
-				} else if (typeof l1cset !== "undefined" && typeof l1sset !== "undefined" && l1shset == "undefined") {
+				} else if (typeof l1cset !== "undefined" && typeof l1sset !== "undefined" && typeof l1shset == "undefined") {
 					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return "circle"; }).size(function (d) { return getClustSize(+d[l1sset])*32; })).style("fill", function(d) { return getColors(d[l1cset]); });
-				} else if (typeof l1cset == "undefined" && typeof l1sset !== "undefined" && l1shset !== "undefined") {
+				} else if (typeof l1cset == "undefined" && typeof l1sset !== "undefined" && typeof l1shset !== "undefined") {
 					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return getShape(d[l1shset]); }).size(function (d) { return getClustSize(+d[l1sset])*32; })).style("fill", "#1f77b4");
 				} else if (typeof l1sset  !== "undefined") {
 					svg.select(".dot").selectAll("path:not(.immutable)").attr("d", d3.svg.symbol().type(function(d) { return "circle"; }).size(function (d) { return getClustSize(+d[l1sset])*32; })).style("fill", "#1f77b4");
