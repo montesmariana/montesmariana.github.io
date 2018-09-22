@@ -48,31 +48,32 @@
 		</style>
 	</head>
 	<body>
-	<div id="wrap">
-		<div><button type="button" class="btn btn-default" id="memory-clear">Clear memory</button></div>
-		<div><button type="button" class="btn btn-default" id="clear-select">Clear selection</button></div>
-		<div><button type="button" class="btn btn-default" id="confirm-select">Confirm selection</button></div>
 
-		<div>
-		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select colour<span class="caret"></span></button>
-			<ul class="dropdown-menu" id="colour"></ul>
-		</div>
-		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select shape<span class="caret"></span></button>
-			<ul class="dropdown-menu" id="shape"></ul>
-		</div>
-		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select size<span class="caret"></span></button>
-			<ul class="dropdown-menu" id="size"></ul>
-		</div>
-		</div>
-	</div>
-	<br>
 
 	<div class="container">
 		<h2></h2>
+
+		<div id="wrap">
+			<div><button type="button" class="btn btn-default" id="memory-clear">Clear memory</button></div>
+			<div><button type="button" class="btn btn-default" id="clear-select">Clear selection</button></div>
+			<div><button type="button" class="btn btn-default" id="confirm-select">Confirm selection</button></div>
+
+			<div>
+			<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select colour<span class="caret"></span></button>
+				<ul class="dropdown-menu" id="colour"></ul>
+			</div>
+			<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select shape<span class="caret"></span></button>
+				<ul class="dropdown-menu" id="shape"></ul>
+			</div>
+			<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select size<span class="caret"></span></button>
+				<ul class="dropdown-menu" id="size"></ul>
+			</div>
+			</div>
+		</div>
+		<br>
+		<div class="filters"></div>
 		<p></p>
 	</div>
-
-
 		<script type="text/javascript">
 		var getUrlParameter = function getUrlParameter(sParam) {
 			var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -337,6 +338,14 @@
 					window.location = "level2.html?type="+type;
  				});
 				function updateData(feature) {
+					var str = 'Selected: <br/>';
+ 					if (typeof l1sset !== "undefined")
+ 						str+= " Size= <strong>" +l1sset + "</strong><br/>";
+ 					if (typeof l1cset !== "undefined")
+ 						str+= " Colour= <strong>" +l1cset + "</strong><br/>";
+ 					if (typeof l1shset !== "undefined")
+ 						str+= " Shape= <strong>" +l1shset + "</strong><br/>";
+ 					d3.select("body").select(".filters").html(str);
 				// 		//Update scale domains
 				// 		xScale.domain([d3.min(dataset, function(d) { return +d[xcol]; }) * 1.1, d3.max(dataset, function(d) { return +d[xcol]; }) * 1.1]);
 				// 		yScale.domain([d3.min(dataset, function(d) { return +d[ycol]; }) * 1.1, d3.max(dataset, function(d) { return +d[ycol]; }) * 1.1]);
