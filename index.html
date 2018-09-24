@@ -51,7 +51,7 @@ Here you will find:</p>
 <p>The tokens come from the Semcor corpus. The ppmi values for first order weighting come from Semcor as well. The threshold indicated in the columns of the tables was applied to this weighting.
   After applying the threshold, tokens that had lost all the weighted context words were dropped.
 </p>
-<p>The second-order co-occurrence (SOCC) ppmi values come from eithe Semcor or COHA, and it's indicated as the name of the link to the cloud. In all cases the <i>same</i> context words were used,
+<p>The second-order co-occurrence (SOCC) ppmi values come from either Semcor or COHA, and it's indicated as the name of the link to the cloud. In all cases the <i>same</i> context words were used,
 only the ppmi values differ (and, apparently, not that much either). These are all the 5795 content words with frequency over 10 in both corpora.</p>
 <p><strong>The caption of the tables</strong> (for now only in <i>Church</i>) <strong>takes to to clouds with a ppmi threshold on the SOCC matrix.</strong></p>
 <p>The division by broad_genre comes from the first decision on September 4, 2018. It's problematic because the Brown-genre <i>popular_lore</i> is wrongly included as <i>fiction</i>.</p>
@@ -87,14 +87,15 @@ function hideDescription(){
 <div class="left">
   <div class="menu">
     <ul class="menu">
-      <li class="menu"><a href="#AllTypes">All types</a></li>
+      <li class="menu"><a href="#AllTypes">All&nbsp;types</a></li>
       <li class="menu"><a href="#State">State</a></li>
       <li class="menu"><a href="#Country">Country</a></li>
       <li class="menu"><a href="#Church">Church</a></li>
-      <li class="menu"><a href="#StateCountry">State & Country</a></li>
-      <li class="menu"><a href="#StateChurch">State & Church</a></li>
-      <li class="menu"><a href="#CountryChurch">Country & Church</a></li>
-      <li class="menu"><a href="Archive/archive.html">Archive</a></li>
+      <li class="menu"><a href="#StateCountry">State&nbsp;&&nbsp;Country</a></li>
+      <li class="menu"><a href="#StateChurch">State&nbsp;&&nbsp;Church</a></li>
+      <li class="menu"><a href="#CountryChurch">Country&nbsp;&&nbsp;Church</a></li>
+      <li class="menu"><a href="COHAweight.html">COHA&nbsp;TypeWeight</a></li>
+      <li class="menu"><a href="archive.html">Archive</a></li>
     </ul>
   </div>
   <h2 id="Clouds">Clouds</h2>
@@ -110,37 +111,37 @@ function hideDescription(){
   </tr>
   <tr>
     <td class="rowname">Random</td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.min2">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.min2_5">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.min3">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.min3">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">WordNet sense-tagged</td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.nona.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.nona.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.nona.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.nona.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.nona.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.nona.min2">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.nona.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.nona.min2_5">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.nona.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.nona.min3">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.nona.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.nona.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.nona.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.nona.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.nona.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.nona.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.nona.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.nona.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.nona.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.nona.min3">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Fiction</td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.fic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.fic.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.fic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.fic.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.fic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.fic.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.fic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.fic.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.fic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.fic.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.fic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.fic.min2">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Non-Fiction</td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.nonfic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.nonfic.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.nonfic.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.nonfic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.nonfic.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.nonfic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.nonfic.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.nonfic.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.nonfic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.nonfic.min2">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Press</td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.press.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.press.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.press.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.sample.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.sample.Semcorisocc.press.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.press.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.press.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.press.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.sample.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.sample.Semcorisocc.press.min2">Semcor</a></td>
   </tr>
 </table></div>
 <div class="table"><table>
@@ -155,36 +156,36 @@ function hideDescription(){
   </tr>
   <tr>
     <td class="rowname">Random/All</td>
-    <td><a href="level1.html?type=Semcor.state.sample.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.sample.Semcorisocc.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state.sample.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.sample.Semcorisocc.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state.sample.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.sample.Semcorisocc.min2">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.min2_5">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.min3">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.sample.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.sample.Semcorisocc.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.sample.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.sample.Semcorisocc.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.sample.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.sample.Semcorisocc.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.min3">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">WordNet sense-tagged</td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.nona.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.nona.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.nona.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.nona.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.nona.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.nona.min2">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.nona.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.nona.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.nona.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.nona.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.nona.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.nona.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.nona.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.nona.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.nona.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.nona.min2_5">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Fiction</td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.fic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.fic.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.fic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.fic.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.fic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.fic.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.fic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.fic.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.fic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.fic.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.fic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.fic.min2">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Non-Fiction</td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.nonfic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.nonfic.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.nonfic.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.nonfic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.nonfic.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.nonfic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.nonfic.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.nonfic.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.nonfic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.nonfic.min2">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Press</td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.press.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.press.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.press.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state.Semcorisocc.press.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.press.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.press.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.press.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state.Semcorisocc.press.min2">Semcor</a></td>
   </tr>
 </table></div>
 <div class="table"><table>
@@ -198,26 +199,26 @@ function hideDescription(){
   </tr>
   <tr>
     <td class="rowname">All tokens</td>
-    <td><a href="level1.html?type=Semcor.country.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country.Semcorisocc.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country.Semcorisocc.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country.Semcorisocc.min2">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country.Semcorisocc.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country.Semcorisocc.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country.Semcorisocc.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country.Semcorisocc.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country.Semcorisocc.min2_5">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">WordNet sense-tagged</td>
-    <td><a href="level1.html?type=Semcor.country.COHAisocc.nona.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country.Semcorisocc.nona.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country.COHAisocc.nona.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country.Semcorisocc.nona.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country.COHAisocc.nona.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country.Semcorisocc.nona.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country.COHAisocc.nona.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country.Semcorisocc.nona.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country.COHAisocc.nona.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country.Semcorisocc.nona.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country.COHAisocc.nona.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country.Semcorisocc.nona.min2">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Non-Fiction</td>
-    <td><a href="level1.html?type=Semcor.country.COHAisocc.nonfic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country.Semcorisocc.nonfic.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country.Semcorisocc.nonfic.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country.COHAisocc.nonfic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country.Semcorisocc.nonfic.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country.Semcorisocc.nonfic.min1">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Press</td>
-    <td><a href="level1.html?type=Semcor.country.COHAisocc.press.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country.Semcorisocc.press.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country.Semcorisocc.press.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country.COHAisocc.press.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country.Semcorisocc.press.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country.Semcorisocc.press.min1">Semcor</a></td>
   </tr>
 </table></div>
 <div class="table"><table>
@@ -232,28 +233,28 @@ function hideDescription(){
   </tr>
   <tr>
     <td class="rowname">All tokens</td>
-    <td><a href="level1.html?type=Semcor.church.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.church.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.church.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.min2">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.church.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.min2_5">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.church.COHAisocc.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.min3">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.min3">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">WordNet sense-tagged</td>
-    <td><a href="level1.html?type=Semcor.church.COHAisocc.nona.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.nona.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.church.COHAisocc.nona.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.nona.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.church.COHAisocc.nona.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.nona.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.nona.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.nona.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.nona.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.nona.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.nona.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.nona.min2">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Fiction</td>
-    <td><a href="level1.html?type=Semcor.church.COHAisocc.fic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.fic.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.church.COHAisocc.fic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.fic.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.fic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.fic.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.fic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.fic.min1">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Non-Fiction</td>
-    <td><a href="level1.html?type=Semcor.church.COHAisocc.nonfic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.nonfic.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.church.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.nonfic.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.church.COHAisocc.nonfic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.church.Semcorisocc.nonfic.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.nonfic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.nonfic.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.nonfic.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.nonfic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.nonfic.min2">Semcor</a></td>
   </tr>
 </table></div>
 <div class="table"><table>
@@ -268,36 +269,36 @@ function hideDescription(){
   </tr>
   <tr>
     <td class="rowname">Random/All</td>
-    <td><a href="level1.html?type=Semcor.state_country.sample.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.sample.Semcorisocc.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_country.sample.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.sample.Semcorisocc.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_country.sample.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.sample.Semcorisocc.min2">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_country.sample.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.sample.Semcorisocc.min2_5">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_country.COHAisocc.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.Semcorisocc.min3">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.sample.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.sample.Semcorisocc.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.sample.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.sample.Semcorisocc.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.sample.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.sample.Semcorisocc.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.sample.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.sample.Semcorisocc.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.COHAisocc.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.Semcorisocc.min3">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">WordNet sense-tagged</td>
-    <td><a href="level1.html?type=Semcor.state_country.sample.COHAisocc.nona.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.sample.Semcorisocc.nona.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_country.COHAisocc.nona.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.Semcorisocc.nona.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_country.COHAisocc.nona.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.Semcorisocc.nona.min2">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_country.COHAisocc.nona.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.Semcorisocc.nona.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.sample.COHAisocc.nona.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.sample.Semcorisocc.nona.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.COHAisocc.nona.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.Semcorisocc.nona.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.COHAisocc.nona.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.Semcorisocc.nona.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.COHAisocc.nona.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.Semcorisocc.nona.min2_5">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Fiction</td>
-    <td><a href="level1.html?type=Semcor.state_country.COHAisocc.fic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.Semcorisocc.fic.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_country.COHAisocc.fic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.Semcorisocc.fic.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_country.COHAisocc.fic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.Semcorisocc.fic.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.COHAisocc.fic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.Semcorisocc.fic.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.COHAisocc.fic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.Semcorisocc.fic.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.COHAisocc.fic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.Semcorisocc.fic.min2">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Non-Fiction</td>
-    <td><a href="level1.html?type=Semcor.state_country.sample.COHAisocc.nonfic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.sample.Semcorisocc.nonfic.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_country.sample.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.sample.Semcorisocc.nonfic.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_country.COHAisocc.nonfic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.Semcorisocc.nonfic.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.sample.COHAisocc.nonfic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.sample.Semcorisocc.nonfic.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.sample.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.sample.Semcorisocc.nonfic.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.COHAisocc.nonfic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.Semcorisocc.nonfic.min2">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Press</td>
-    <td><a href="level1.html?type=Semcor.state_country.COHAisocc.press.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.Semcorisocc.press.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_country.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.Semcorisocc.press.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_country.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_country.Semcorisocc.press.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.COHAisocc.press.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.Semcorisocc.press.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.Semcorisocc.press.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_country.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_country.Semcorisocc.press.min2">Semcor</a></td>
   </tr>
 </table></div>
 <div class="table"><table>
@@ -312,37 +313,37 @@ function hideDescription(){
   </tr>
   <tr>
     <td class="rowname">Random/All</td>
-    <td><a href="level1.html?type=Semcor.state_church.sample.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.sample.Semcorisocc.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_church.sample.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.sample.Semcorisocc.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_church.sample.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.sample.Semcorisocc.min2">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_church.sample.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.sample.Semcorisocc.min2_5">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_church.COHAisocc.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.Semcorisocc.min3">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.Semcorisocc.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.Semcorisocc.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.Semcorisocc.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.Semcorisocc.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.COHAisocc.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.Semcorisocc.min3">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">WordNet sense-tagged</td>
-    <td><a href="level1.html?type=Semcor.state_church.sample.COHAisocc.nona.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.sample.Semcorisocc.nona.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_church.sample.COHAisocc.nona.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.sample.Semcorisocc.nona.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_church.COHAisocc.nona.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.Semcorisocc.nona.min2">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_church.COHAisocc.nona.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.Semcorisocc.nona.min2_5">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_church.COHAisocc.nona.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.Semcorisocc.nona.min3">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.COHAisocc.nona.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.Semcorisocc.nona.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.COHAisocc.nona.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.Semcorisocc.nona.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.COHAisocc.nona.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.Semcorisocc.nona.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.COHAisocc.nona.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.Semcorisocc.nona.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.COHAisocc.nona.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.Semcorisocc.nona.min3">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Fiction</td>
-    <td><a href="level1.html?type=Semcor.state_church.COHAisocc.fic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.Semcorisocc.fic.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_church.COHAisocc.fic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.Semcorisocc.fic.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_church.COHAisocc.fic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.Semcorisocc.fic.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.COHAisocc.fic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.Semcorisocc.fic.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.COHAisocc.fic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.Semcorisocc.fic.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.COHAisocc.fic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.Semcorisocc.fic.min2">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Non-Fiction</td>
-    <td><a href="level1.html?type=Semcor.state_church.sample.COHAisocc.nonfic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.sample.Semcorisocc.nonfic.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_church.sample.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.sample.Semcorisocc.nonfic.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_church.COHAisocc.nonfic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.Semcorisocc.nonfic.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.COHAisocc.nonfic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.Semcorisocc.nonfic.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.sample.Semcorisocc.nonfic.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.COHAisocc.nonfic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.Semcorisocc.nonfic.min2">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Press</td>
-    <td><a href="level1.html?type=Semcor.state_church.COHAisocc.press.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.Semcorisocc.press.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_church.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.Semcorisocc.press.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.state_church.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.state_church.Semcorisocc.press.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.COHAisocc.press.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.Semcorisocc.press.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.Semcorisocc.press.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.state_church.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.state_church.Semcorisocc.press.min2">Semcor</a></td>
   </tr>
 </table></div>
 <div class="table"><table>
@@ -357,36 +358,36 @@ function hideDescription(){
   </tr>
   <tr>
     <td class="rowname">Random/All</td>
-    <td><a href="level1.html?type=Semcor.country_church.sample.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.sample.Semcorisocc.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country_church.sample.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.sample.Semcorisocc.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country_church.sample.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.sample.Semcorisocc.min2">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.min2_5">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.min3">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.sample.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.sample.Semcorisocc.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.sample.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.sample.Semcorisocc.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.sample.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.sample.Semcorisocc.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.min3">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">WordNet sense-tagged</td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.nona.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.nona.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.nona.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.nona.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.nona.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.nona.min2">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.nona.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.nona.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.nona.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.nona.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.nona.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.nona.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.nona.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.nona.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.nona.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.nona.min2_5">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Fiction</td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.fic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.fic.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.fic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.fic.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.fic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.fic.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.fic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.fic.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.fic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.fic.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.fic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.fic.min2">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Non-Fiction</td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.nonfic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.nonfic.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.nonfic.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.nonfic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.nonfic.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.nonfic.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.nonfic.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.nonfic.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.nonfic.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.nonfic.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.nonfic.min2">Semcor</a></td>
   </tr>
   <tr>
     <td class="rowname">Press</td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.press.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.press.min0">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.press.min1">Semcor</a></td>
-    <td><a href="level1.html?type=Semcor.country_church.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Semcor.country_church.Semcorisocc.press.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.press.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.press.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.press.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.press.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.country_church.COHAisocc.press.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.country_church.Semcorisocc.press.min2">Semcor</a></td>
   </tr>
 </table></div>
 </div>
