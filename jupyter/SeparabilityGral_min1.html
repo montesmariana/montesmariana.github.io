@@ -8451,15 +8451,15 @@ label {
 }
 /* Flexible box model classes */
 /* Taken from Alex Russell http://infrequently.org/2009/08/css-3-progress/ */
-/* This file is a compatability layer.  It allows the usage of flexible box 
+/* This file is a compatability layer.  It allows the usage of flexible box
 model layouts accross multiple browsers, including older browsers.  The newest,
 universal implementation of the flexible box model is used when available (see
-`Modern browsers` comments below).  Browsers that are known to implement this 
+`Modern browsers` comments below).  Browsers that are known to implement this
 new spec completely include:
 
     Firefox 28.0+
     Chrome 29.0+
-    Internet Explorer 11+ 
+    Internet Explorer 11+
     Opera 17.0+
 
 Browsers not listed, including Safari, are supported via the styling under the
@@ -11233,7 +11233,7 @@ div#pager .ui-resizable-handle {
   background: #f7f7f7;
   border-top: 1px solid #cfcfcf;
   border-bottom: 1px solid #cfcfcf;
-  /* This injects handle bars (a short, wide = symbol) for 
+  /* This injects handle bars (a short, wide = symbol) for
         the resize handle. */
 }
 div#pager .ui-resizable-handle::after {
@@ -11676,7 +11676,7 @@ ul.typeahead-list > li > a {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
-    
+
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -11730,14 +11730,14 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
   }
-  div.output { 
+  div.output_wrapper {
     display: block;
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
   }
 }
 </style>
@@ -11771,7 +11771,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing code_cell rendered">
+<!-- <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
@@ -11783,17 +11783,26 @@ div#notebook {
 </div>
 </div>
 
-</div>
+</div> -->
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Separability-measures">Separability measures<a class="anchor-link" href="#Separability-measures">&#182;</a></h1><p>For a cloud with tokens from all types</p>
+<p>The functions can be interpreted as follows: <span style="font-family:monospace">{measure}_[tokvecs/clouds](class)</span>,
+with <em>tokvecs/clouds</em> indicating whether the measure was applied to the token matrix before or after MDS.</p>
+<h2 id="Index">Index</h2>
+<ul>
+<li><a href="#Distance-Ratio">Distance Ratio</a></li>
+<li><a href="#Silhouette-based">Silhouette</a></li>
+<li><a href="#Same-Class-Paths-based">Same Class Paths</a></li>
+<li><a href="#Same-Class-Items-among-k-Nearest-neighbours">Same Class Items among k Nearest neighbours</a></li>
+</ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<!-- <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
@@ -12137,7 +12146,7 @@ dist10 <span class="o">&lt;-</span>dist<span class="p">(</span>coord10<span clas
 </div>
 </div>
 
-</div>
+</div> -->
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12147,7 +12156,7 @@ dist10 <span class="o">&lt;-</span>dist<span class="p">(</span>coord10<span clas
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<!-- <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
@@ -12208,7 +12217,7 @@ dist10 <span class="o">&lt;-</span>dist<span class="p">(</span>coord10<span clas
 </div>
 </div>
 
-</div>
+</div> -->
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
@@ -14742,7 +14751,7 @@ GoIQAACohiAEAACqIQgBAIBqCEIAAKAaghAAAKj2/z0uH6JZuaotAAAAAElFTkSuQmCC"
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<!-- <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
@@ -14801,7 +14810,7 @@ GoIQAACohiAEAACqIQgBAIBqCEIAAKAaghAAAKj2/z0uH6JZuaotAAAAAElFTkSuQmCC"
 </div>
 </div>
 
-</div>
+</div> -->
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
@@ -17383,7 +17392,7 @@ wfCaZ8b6AAAAAElFTkSuQmCC"
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<!-- <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
@@ -17457,7 +17466,7 @@ wfCaZ8b6AAAAAElFTkSuQmCC"
 </div>
 </div>
 
-</div>
+</div> -->
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
@@ -17480,7 +17489,7 @@ wfCaZ8b6AAAAAElFTkSuQmCC"
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on lemma 
+<pre>Same Class Paths based separability, based on lemma
 k: 50; Backtracking: 1
                         6k_n  6k_q 10k_n 10k_q
 global separability      500 0.707   500 0.598
@@ -18883,7 +18892,7 @@ IQgBAEDXEIQAAKBrCEIAANA1BCEAAOja/wP7WxFPfRQJ9AAAAABJRU5ErkJggg=="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on lemma 
+<pre>Same Class Paths based separability, based on lemma
 k: 50; Backtracking: 1
                         6k_n  6k_q 10k_n 10k_q
 global separability      498 0.532   497 0.430
@@ -20281,7 +20290,7 @@ YII="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on newBroadGenre 
+<pre>Same Class Paths based separability, based on newBroadGenre
 k: 38; Backtracking: 1
                         6k_n  6k_q 10k_n 10k_q
 global separability      500 0.824   500 0.832
@@ -21606,7 +21615,7 @@ AABo2v8DRYf7F7HQOMAAAAAASUVORK5CYII="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on newBroadGenre 
+<pre>Same Class Paths based separability, based on newBroadGenre
 k: 37; Backtracking: 1
                         6k_n  6k_q 10k_n 10k_q
 global separability      498 0.868   497 0.831
@@ -22921,7 +22930,7 @@ AABJRU5ErkJggg=="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on newBroadGenre 
+<pre>Same Class Paths based separability, based on newBroadGenre
 k: 15; Backtracking: 1
                         6k_n  6k_q 10k_n 10k_q
 global separability      500 0.841   500 0.869
@@ -24226,7 +24235,7 @@ AABVQxACAICqIQgBAEDVEIQAAKBqCEIAAFC1/wdG+vkB0Wq8iQAAAABJRU5ErkJggg=="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on newBroadGenre 
+<pre>Same Class Paths based separability, based on newBroadGenre
 k: 15; Backtracking: 1
                         6k_n  6k_q 10k_n 10k_q
 global separability      498 0.890   497 0.844
@@ -25552,7 +25561,7 @@ AElFTkSuQmCC"
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on newBroadGenre 
+<pre>Same Class Paths based separability, based on newBroadGenre
 k: 10; Backtracking: 1
                         6k_n  6k_q 10k_n 10k_q
 global separability      500 0.862   500 0.878
@@ -26866,7 +26875,7 @@ AAAAAElFTkSuQmCC"
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on newBroadGenre 
+<pre>Same Class Paths based separability, based on newBroadGenre
 k: 10; Backtracking: 1
                         6k_n  6k_q 10k_n 10k_q
 global separability      498 0.896   497 0.848
@@ -28191,7 +28200,7 @@ QmCC"
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on newBroadGenre 
+<pre>Same Class Paths based separability, based on newBroadGenre
 k: 15; Backtracking: 2
                         6k_n  6k_q 10k_n 10k_q
 global separability      500 0.889   500 0.881
@@ -29504,7 +29513,7 @@ YII="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on newBroadGenre 
+<pre>Same Class Paths based separability, based on newBroadGenre
 k: 15; Backtracking: 2
                         6k_n  6k_q 10k_n 10k_q
 global separability      498 0.907   497 0.859
@@ -30838,7 +30847,7 @@ gKIhCAEAQNEQhAAAoGgIQgAAUDQEIQAAKNr/A2ACL/wBdqRhAAAAAElFTkSuQmCC"
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on broadGenre 
+<pre>Same Class Paths based separability, based on broadGenre
 k: 38; Backtracking: 1
                         6k_n  6k_q 10k_n 10k_q
 global separability      500 0.499   500 0.471
@@ -32240,7 +32249,7 @@ DA1BCAAAhoYgBAAAQ0MQAgCAoSEIAQDA0BCEAABgaP8PFv+HkOsLWDoAAAAASUVORK5CYII="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on broadGenre 
+<pre>Same Class Paths based separability, based on broadGenre
 k: 37; Backtracking: 1
                         6k_n  6k_q 10k_n 10k_q
 global separability      498 0.508   497 0.367
@@ -33632,7 +33641,7 @@ RK5CYII="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on broadGenre 
+<pre>Same Class Paths based separability, based on broadGenre
 k: 15; Backtracking: 1
                         6k_n  6k_q 10k_n 10k_q
 global separability      500 0.538   500 0.542
@@ -35039,7 +35048,7 @@ AABJRU5ErkJggg=="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on broadGenre 
+<pre>Same Class Paths based separability, based on broadGenre
 k: 15; Backtracking: 1
                         6k_n  6k_q 10k_n 10k_q
 global separability      498 0.553   497 0.420
@@ -36434,7 +36443,7 @@ AAAUDUEIAACKhiAEAABFQxACAICiIQgBAEDREIQAAKBoCEIAAFA0BCEAACgaghAAABTt/wGF
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on broadGenre 
+<pre>Same Class Paths based separability, based on broadGenre
 k: 10; Backtracking: 1
                         6k_n  6k_q 10k_n 10k_q
 global separability      500 0.566   500 0.568
@@ -37842,7 +37851,7 @@ GoIQAAA0DUEIAACahiAEAABN+/9CXm8dwU367wAAAABJRU5ErkJggg=="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on broadGenre 
+<pre>Same Class Paths based separability, based on broadGenre
 k: 10; Backtracking: 1
                         6k_n  6k_q 10k_n 10k_q
 global separability      498 0.572   497 0.440
@@ -39248,7 +39257,7 @@ AGBo/w/XzQi1y6k2PQAAAABJRU5ErkJggg=="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on broadGenre 
+<pre>Same Class Paths based separability, based on broadGenre
 k: 10; Backtracking: 2
                         6k_n  6k_q 10k_n 10k_q
 global separability      500 0.631   500 0.603
@@ -40668,7 +40677,7 @@ AIChIQgBAMDQ/j9daDQSfqvCPQAAAABJRU5ErkJggg=="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Paths based separability, based on broadGenre 
+<pre>Same Class Paths based separability, based on broadGenre
 k: 10; Backtracking: 2
                         6k_n  6k_q 10k_n 10k_q
 global separability      498 0.616   497 0.474
@@ -42057,7 +42066,7 @@ GoIQAABMDUEIAACmhiAEAABT+3/Z/arM5SP0CwAAAABJRU5ErkJggg=="
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<!-- <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
@@ -42131,7 +42140,7 @@ GoIQAABMDUEIAACmhiAEAABT+3/Z/arM5SP0CwAAAABJRU5ErkJggg=="
 </div>
 </div>
 
-</div>
+</div> -->
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[48]:</div>
@@ -42154,7 +42163,7 @@ GoIQAABMDUEIAACmhiAEAABT+3/Z/arM5SP0CwAAAABJRU5ErkJggg=="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Items among k Nearest neighbours based separability, based on lemma 
+<pre>Same Class Items among k Nearest neighbours based separability, based on lemma
 k: 50
                         6k_n  6k_q 10k_n 10k_q
 global separability      500 0.622   500 0.534
@@ -43475,7 +43484,7 @@ AKBqCEIAAFA1BCEAAKgaghAAAFTt/wHzt0t47M9xowAAAABJRU5ErkJggg=="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Items among k Nearest neighbours based separability, based on lemma 
+<pre>Same Class Items among k Nearest neighbours based separability, based on lemma
 k: 50
                         6k_n  6k_q 10k_n 10k_q
 global separability      498 0.621   497 0.501
@@ -44803,7 +44812,7 @@ AElFTkSuQmCC"
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Items among k Nearest neighbours based separability, based on newBroadGenre 
+<pre>Same Class Items among k Nearest neighbours based separability, based on newBroadGenre
 k: 38
                         6k_n  6k_q 10k_n 10k_q
 global separability      500 0.910   500 0.882
@@ -46053,7 +46062,7 @@ RK5CYII="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Items among k Nearest neighbours based separability, based on newBroadGenre 
+<pre>Same Class Items among k Nearest neighbours based separability, based on newBroadGenre
 k: 37
                         6k_n  6k_q 10k_n 10k_q
 global separability      498 0.899   497 0.849
@@ -47325,7 +47334,7 @@ AKr9P6Uq1N6rw6NCAAAAAElFTkSuQmCC"
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Items among k Nearest neighbours based separability, based on newBroadGenre 
+<pre>Same Class Items among k Nearest neighbours based separability, based on newBroadGenre
 k: 15
                         6k_n  6k_q 10k_n 10k_q
 global separability      500 0.909   500 0.880
@@ -48582,7 +48591,7 @@ cOEjSW4AAAAASUVORK5CYII="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Items among k Nearest neighbours based separability, based on newBroadGenre 
+<pre>Same Class Items among k Nearest neighbours based separability, based on newBroadGenre
 k: 15
                         6k_n  6k_q 10k_n 10k_q
 global separability      498 0.901   497 0.846
@@ -49848,7 +49857,7 @@ AAAAAElFTkSuQmCC"
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Items among k Nearest neighbours based separability, based on broadGenre 
+<pre>Same Class Items among k Nearest neighbours based separability, based on broadGenre
 k: 38
                         6k_n  6k_q 10k_n 10k_q
 global separability      500 0.557   500 0.497
@@ -51182,7 +51191,7 @@ rkJggg=="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Items among k Nearest neighbours based separability, based on broadGenre 
+<pre>Same Class Items among k Nearest neighbours based separability, based on broadGenre
 k: 37
                         6k_n  6k_q 10k_n 10k_q
 global separability      498 0.565   497 0.482
@@ -52505,7 +52514,7 @@ l3K0AAAAAElFTkSuQmCC"
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Items among k Nearest neighbours based separability, based on broadGenre 
+<pre>Same Class Items among k Nearest neighbours based separability, based on broadGenre
 k: 15
                         6k_n  6k_q 10k_n 10k_q
 global separability      500 0.588   500 0.546
@@ -53837,7 +53846,7 @@ AEDREIQAAKBoCEIAAFC0/w+WXDrEpY0N1AAAAABJRU5ErkJggg=="
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Same Class Items among k Nearest neighbours based separability, based on newBroadGenre 
+<pre>Same Class Items among k Nearest neighbours based separability, based on newBroadGenre
 k: 15
                         6k_n  6k_q 10k_n 10k_q
 global separability      498 0.901   497 0.846
@@ -55085,7 +55094,7 @@ AAAAAElFTkSuQmCC"
   </div>
 </body>
 
- 
+
 
 
 </html>
