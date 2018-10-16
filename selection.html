@@ -18,7 +18,13 @@
   </head>
 
   <body>
-    <div class="header">
+<script>
+var types, tokenL, tokenR;
+var twcorpus, twppmi, twllr, twL, twR;
+var socccorpus, soccppmi, soccllr, soccL, soccR;
+</script>
+
+    <!-- <div class="header">
         <div class="welcome"><h1>Welcome to Mariana's stock of clouds!</h1></div>
         <div class="message">
         <p>This page was last updated on <time id="lastmod"></time>.</p>
@@ -28,16 +34,16 @@
         document.getElementById("lastmod").innerHTML = lastmodstring;
         </script>
         </div>
-      </div>
+      </div> -->
 
 <!-- Boxes with buttons for filtering -->
 <div class="container">
 <h2>Choose a type or group of types for the cloud</h2>
   <div class="row">
     <!-- Clicking on more than one should select clouds with more than one type; re-clicking should unselect -->
-    <button type="button" class="btn btn-default" id="choose-state">State</button>
-    <button type="button" class="btn btn-default" id="choose-country">Country</button>
-    <button type="button" class="btn btn-default" id="choose-church">Church</button>
+    <button type="button" class="btn btn-default" id="choose-state" onclick="addType('state')">State</button>
+    <button type="button" class="btn btn-default" id="choose-country" onclick="addType('country')">Country</button>
+    <button type="button" class="btn btn-default" id="choose-church" onclick="addType('church')">Church</button>
   </div>
   <h2>Choose the first-order weighting parameters</h2>
   <div class="row">
@@ -132,6 +138,11 @@
 
 <!-- Work ok buttons: confirm selection of clouds-->
 <script type="text/javascript">
+function addType(type_name){
+    if (types.length > 0){types.push(type_name)} else {types = new Array(type_name)};
+    localStorage.setItem("types", types);
+    document.getElementById("choose"+ "-" + type_name).innerHTML = types;
+  };
 
     d3.select("#memory-clear").on("click", function() {
       localStorage.clear();
