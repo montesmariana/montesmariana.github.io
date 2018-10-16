@@ -139,7 +139,7 @@ var socccorpus, soccppmi, soccllr, soccL, soccR;
 <!-- Work ok buttons: confirm selection of clouds-->
 <script type="text/javascript">
 function addType(type_name){
-    if (types.length > 0){types.push(type_name)} else {types = new Array(type_name)};
+    if (types == null){types = new Array(type_name)} else {types.push(type_name)};
     localStorage.setItem("types", types);
     document.getElementById("choose"+ "-" + type_name).innerHTML = types;
   };
