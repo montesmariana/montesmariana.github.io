@@ -141,7 +141,8 @@ var socccorpus, soccppmi, soccllr, soccL, soccR;
 function addType(type_name){
     if (types == null){types = new Array(type_name)} else {types.push(type_name)};
     localStorage.setItem("types", types);
-    document.getElementById("choose"+ "-" + type_name).innerHTML = types;
+    extract = localStorage.getItem("types");
+    document.getElementById("choose"+ "-" + type_name).innerHTML = extract;
   };
 
     d3.select("#memory-clear").on("click", function() {
