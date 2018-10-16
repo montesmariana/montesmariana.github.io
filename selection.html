@@ -111,6 +111,9 @@
   		<button type="button" class="btn btn-default" id="confirm-select">Confirm model selection</button>
     </div>
   </div>
+<script>
+
+</script>
 
   <p id="demo"></p>
   <script>
@@ -119,10 +122,10 @@
   xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           var myObj = JSON.parse(this.responseText);
-          document.getElementById("demo").innerHTML = myObj.name;
+          document.getElementById("demo").innerHTML = myObj[0].filename;
       }
   };
-  xmlhttp.open("GET", "json_demo.txt", true);
+  xmlhttp.open("GET", "filenames.json", true);
   xmlhttp.send();
 
   </script>
