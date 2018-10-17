@@ -103,11 +103,11 @@ d3.tsv("filenames.tsv", function(error, data){
   {label: "Church", x: width * 0.7, y: height * 0.5, key : "church"}
 ];
 
-  var buttons_twcorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key; "coha1"},
-  {label: "Semcor", x: width * 0.6, y: height * 0.5, key; "semcor1"},
+  var buttons_twcorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key : "coha1"},
+  {label: "Semcor", x: width * 0.6, y: height * 0.5, key: "semcor1"},
 ];
-  var buttons_socccorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key; "coha2"},
-  {label: "Semcor", x: width * 0.6, y: height * 0.5, key; "semcor2"},
+  var buttons_socccorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key : "coha2"},
+  {label: "Semcor", x: width * 0.6, y: height * 0.5, key: "semcor2"},
 ];
 
   var buttonsvg_types = d3.select('#typebuttons').append('svg')
@@ -160,14 +160,14 @@ d3.tsv("filenames.tsv", function(error, data){
       .attr('class', 'button')
       .call(button);
 
-  var buttons1 = buttonsvg_twcorpus.selectAll('.button')
+  var buttons2 = buttonsvg_twcorpus.selectAll('.button')
       .data(buttons_twcorpus)
     .enter()
       .append('g')
       .attr('class', 'button')
       .call(button);
 
-  var buttons1 = buttonsvg_socccorpus.selectAll('.button')
+  var buttons3 = buttonsvg_socccorpus.selectAll('.button')
       .data(buttons_socccorpus)
     .enter()
       .append('g')
