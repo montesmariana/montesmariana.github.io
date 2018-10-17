@@ -146,7 +146,7 @@ d3.tsv("filenames.tsv", function(error, data){
     } else if (info["state"] == true && info["country"] != true && info["church"] != true){return "state";
     } else if (info["state"] != true && info["country"] == true && info["church"] != true){return "country";
     } else if (info["state"] != true && info["country"] != true && info["church"] == true){return "church";}
-  }; 
+  };
 
   function getmodels(modellist, type){
     var newlist = new Array();
