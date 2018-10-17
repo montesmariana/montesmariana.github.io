@@ -92,12 +92,10 @@ d3.tsv("filenames.tsv", function(error, data){
     state: undefined,
     country: undefined,
     church: undefined,
-    tw: {
-      "COHA": undefined,
-      "Semcor": undefined,},
-    socc: {
-      "COHA": undefined,
-    "Semcor": undefined,}
+    "COHA1": undefined,
+    "Semcor1": undefined,
+    "COHA2": undefined,
+    "Semcor2": undefined,
   };
 
   var buttons_types = [{label: "State", x: width * 0.3, y: height * 0.5, key : "state"},
@@ -105,11 +103,11 @@ d3.tsv("filenames.tsv", function(error, data){
   {label: "Church", x: width * 0.7, y: height * 0.5, key : "church"}
 ];
 
-  var buttons_twcorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key : "COHA"},
-  {label: "Semcor", x: width * 0.6, y: height * 0.5, key: "Semcor"},
+  var buttons_twcorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key : "COHA1"},
+  {label: "Semcor", x: width * 0.6, y: height * 0.5, key: "Semcor1"},
 ];
-  var buttons_socccorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key : "COHA"},
-  {label: "Semcor", x: width * 0.6, y: height * 0.5, key: "Semcor"},
+  var buttons_socccorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key : "COHA2"},
+  {label: "Semcor", x: width * 0.6, y: height * 0.5, key: "Semcor2"},
 ];
 
   var buttonsvg_types = d3.select('#typebuttons').append('svg')
@@ -128,12 +126,12 @@ d3.tsv("filenames.tsv", function(error, data){
         info[d.key] = true;
         types = update();
         selectedmodels = getmodels(dataset, types);
-        console.log("Pressed", d.label, d.key, info.tw, info.socc, types, selectedmodels)})
+        console.log("Pressed", d.label, d.key, types, selectedmodels)})
       .on('release', function(d) {
         info[d.key] = false;
         types = update();
         selectedmodels = getmodels(dataset, types);
-        console.log("Released", d.label, d.key, info.tw, info.socc, types, selectedmodels)});
+        console.log("Released", d.label, d.key, types, selectedmodels)});
 
   function update(){
     if ((info["state"] == true && info["country"] == true && info["church"] == true) ||
@@ -149,7 +147,9 @@ d3.tsv("filenames.tsv", function(error, data){
   function getmodels(modellist, type){
     var newlist = new Array();
     modellist.forEach(function(item){
-      if (item.type == type && info.tw[item.twcorpus] != false && info.socc[item.socccorpus] != false){
+      twcorp = item.twcorpus + "1"
+      socccorp = item.socccorpus + "2"
+      if (item.type == type && info[twcorp] != false && info[socccorp] != false){
         newlist.push(item.filename);
       }});
       return newlist;
