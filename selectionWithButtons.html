@@ -12,38 +12,30 @@
 
     <title>Models selection</title>
     <style>
-
     body {
       font-family: Univers, Arial, sans-serif;
     }
-
     .button rect {
       stroke: #999faa; /* navy 40% */
       stroke-width: 2px;
     }
-
     .button rect.pressed {
       fill: #000f2b; /* navy 100% */
     }
-
     .button #gradient-start {
       stop-color: #999faa; /* navy 40% */
       stop-opacity: 1;
     }
-
     .button #gradient-stop {
       stop-color: #4d576b; /* navy 70% */
       stop-opacity: 1;
     }
-
     .button #gradient-start.active, .button #gradient-start.pressed {
       stop-color: #4d576b; /* navy 70% */
     }
-
     .button #gradient-stop.active, .button #gradient-stop.pressed {
       stop-color: #000f2b; /* navy 100% */
     }
-
     .button text {
       font-size: 1em;
       fill: #eee;
@@ -53,7 +45,6 @@
       -webkit-user-select: none;
       -ms-user-select: none;
     }
-
     </style>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="js/d3.min.js"></script>
@@ -76,30 +67,16 @@
     <div class="container" id="socccorpusbuttons"></div>
     <h2>Submit</h2>
     <p>You have selected <span id="countmodels">0</span> models.</p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    <div class="container">
-      <button type="button" class="btn btn-default" id="memory-clear">Reset</button>
-  		<button type="button" class="btn btn-default" id="confirm-select">Confirm model selection</button>
-    </div>
->>>>>>> parent of 310c369... sbbb
-=======
->>>>>>> parent of b8cb596... trying other buttons and way to go to level2
 </div>
 <!-- <div class="container" id="modelcloud"></div> -->
 <script>
-
 d3.tsv("filenames.tsv", function(error, data){
   if (error) throw error;
   var dataset = data;
-
   // var models = new Array();
   // data.forEach(function(d){models.push(d.type);});
   // console.log(models, typeof models);
-
   var width = 500, height = 50;
-
   var info = {
     state: undefined,
     country: undefined,
@@ -109,30 +86,25 @@ d3.tsv("filenames.tsv", function(error, data){
     "COHA2": false,
     "Semcor2": false,
   };
-
   var buttons_types = [{label: "State", x: width * 0.3, y: height * 0.5, key : "state"},
   {label: "Country", x: width * 0.5, y: height * 0.5, key : "country"},
   {label: "Church", x: width * 0.7, y: height * 0.5, key : "church"}
 ];
-
   var buttons_twcorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key : "COHA1"},
   {label: "Semcor", x: width * 0.6, y: height * 0.5, key: "Semcor1"},
 ];
   var buttons_socccorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key : "COHA2"},
   {label: "Semcor", x: width * 0.6, y: height * 0.5, key: "Semcor2"},
 ];
-
   var buttonsvg_types = d3.select('#typebuttons').append('svg')
       .attr('width', width)
       .attr('height', height);
-
   var buttonsvg_twcorpus = d3.select('#twcorpusbuttons').append('svg')
       .attr('width', width)
       .attr('height', height);
   var buttonsvg_socccorpus = d3.select('#socccorpusbuttons').append('svg')
       .attr('width', width)
       .attr('height', height);
-
   var button = d3.button()
       .on('press', function(d) {
         info[d.key] = true;
@@ -146,7 +118,6 @@ d3.tsv("filenames.tsv", function(error, data){
         selectedmodels = getmodels(dataset, types);
         document.getElementById("countmodels").innerHTML = selectedmodels.length;
         console.log("Released", d.label, d.key, types, selectedmodels)});
-
   function update(){
     if ((info["state"] == true && info["country"] == true && info["church"] == true) ||
 (info["state"] == undefined && info["country"] == undefined && info["church"] == undefined)){return "sample";
@@ -157,7 +128,6 @@ d3.tsv("filenames.tsv", function(error, data){
     } else if (info["state"] != true && info["country"] == true && info["church"] != true){return "country";
     } else if (info["state"] != true && info["country"] != true && info["church"] == true){return "church";}
   };
-
   function getmodels(modellist, type){
     var newlist = new Array();
     modellist.forEach(function(item){
@@ -175,14 +145,12 @@ d3.tsv("filenames.tsv", function(error, data){
       .append('g')
       .attr('class', 'button')
       .call(button);
-
   var buttons2 = buttonsvg_twcorpus.selectAll('.button')
       .data(buttons_twcorpus)
     .enter()
       .append('g')
       .attr('class', 'button')
       .call(button);
-
   var buttons3 = buttonsvg_socccorpus.selectAll('.button')
       .data(buttons_socccorpus)
     .enter()
@@ -208,33 +176,13 @@ d3.tsv("filenames.tsv", function(error, data){
 </script>
   <!-- Work ok buttons: confirm selection of clouds -->
 <!-- <script type="text/javascript">
-
      d3.select("#memory-clear").on("click", function() {
        localStorage.clear();
        location.reload();
      });
-
      d3.select("#confirm-select").on("click", function() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
        localStorage.setItem("goToPlot"+"-"+type, JSON.parse(
          localStorage.getItem("modselection"+"-"+type))[0].substring(
-=======
-=======
->>>>>>> parent of 0f7a107... sbbb
-=======
->>>>>>> parent of 0f7a107... sbbb
-       localStorage.setItem("modselection"+"-"+types, selectedmodels)
-
-       localStorage.setItem("goToPlot"+"-"+types, JSON.parse(
-         localStorage.getItem("modselection"+"-"+types))[0].substring(
->>>>>>> parent of 0f7a107... sbbb
-=======
-       localStorage.setItem("goToPlot"+"-"+type, JSON.parse(
-         localStorage.getItem("modselection"+"-"+type))[0].substring(
->>>>>>> parent of b8cb596... trying other buttons and way to go to level2
            0, JSON.parse(localStorage.getItem(
              "modselection"+"-"+type))[0].length-2));
        window.location = "level2.html?type="+type;
