@@ -71,66 +71,56 @@
 </div>
 <div class="container" id="modelcloud"></div>
 <script>
+var width = 500, height = 50;
 
+var info = {
+  state: false,
+  country: false,
+  church: false,
+}
+var data = [{label: "State", x: width * 0.3, y: height / 2, key : "state"},
+            {label: "Country", x: width * 0.5, y: height / 2, key : "country"},
+          {label: "Church", x: width * 0.7, y: height / 2, key : "church"}];
+
+var buttonsvg = d3.select('#typebuttons').append('svg')
+    .attr('width', width)
+    .attr('height', height);
+
+var button = d3.button()
+    .on('press', function(d) {
+      info[d.key] = true;
+      types = update()
+      console.log("Pressed", d.label, d.key, info[d.key], types)})
+    .on('release', function(d) {
+      info[d.key] = false;
+      types = update();
+      console.log("Released", d.label, d.key, info[d.key], types)});
+
+function update(){
+  if (info["state"] == true && info["country"] == true && info["church"] == true){return "sample";
+  } else if (info["state"] == true && info["country"] == true && info["church"] != true){return "state_country";
+  } else if (info["state"] == true && info["country"] != true && info["church"] == true){return "state_church";
+  } else if (info["state"] != true && info["country"] == true && info["church"] == true){return "country_church";
+  } else if (info["state"] == true && info["country"] != true && info["church"] != true){return "state";
+  } else if (info["state"] != true && info["country"] == true && info["church"] != true){return "country";
+  } else if (info["state"] != true && info["country"] != true && info["church"] == true){return "church";}
+}
+
+// Add buttons
+var buttons = buttonsvg.selectAll('.button')
+    .data(data)
+  .enter()
+    .append('g')
+    .attr('class', 'button')
+    .call(button);
 
 d3.tsv("filenames.tsv", function(error, data){
   if (error) throw error;
-
-  var width = 500, height = 50;
-
-  var info = {
-    state: false,
-    country: false,
-    church: false,
-  }
-  var data = [{label: "State", x: width * 0.3, y: height / 2, key : "state"},
-              {label: "Country", x: width * 0.5, y: height / 2, key : "country"},
-            {label: "Church", x: width * 0.7, y: height / 2, key : "church"}];
-
-  var buttonsvg = d3.select('#typebuttons').append('svg')
-      .attr('width', width)
-      .attr('height', height);
-
-  var button = d3.button()
-      .on('press', function(d) {
-        info[d.key] = true;
-        types = update();
-        getmodels();
-        console.log("Pressed", d.label, d.key, info[d.key], types)})
-      .on('release', function(d) {
-        info[d.key] = false;
-        types = update();
-        getmodels();
-        console.log("Released", d.label, d.key, info[d.key], types)});
-
-  function update(){
-    if (info["state"] == true && info["country"] == true && info["church"] == true){return "sample";
-    } else if (info["state"] == true && info["country"] == true && info["church"] != true){return "state_country";
-    } else if (info["state"] == true && info["country"] != true && info["church"] == true){return "state_church";
-    } else if (info["state"] != true && info["country"] == true && info["church"] == true){return "country_church";
-    } else if (info["state"] == true && info["country"] != true && info["church"] != true){return "state";
-    } else if (info["state"] != true && info["country"] == true && info["church"] != true){return "country";
-    } else if (info["state"] != true && info["country"] != true && info["church"] == true){return "church";}
-  }
-
-  function getmodels(){
-    var models = new Array();
-    data.forEach(function(d){
-      if (d.type == types) {models.push(d.filename);};
-    console.log(models, typeof models);
-  })};
-
-
-
-  // Add buttons
-  var buttons = buttonsvg.selectAll('.button')
-      .data(data)
-    .enter()
-      .append('g')
-      .attr('class', 'button')
-      .call(button);
-
-
+  var models = new Array();
+  data.forEach(function(d){
+    models.push(d.type);
+  })
+  console.log(models, typeof models)
 
   // var cloudsvg = d3.select("#modelcloud").append("svg")
   //   .attr("width", 600)
