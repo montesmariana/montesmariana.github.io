@@ -137,7 +137,7 @@ d3.tsv("filenames.tsv", function(error, data){
       var soccvalue = info["COHA2"] || info["Semcor2"]
       if (item.type == type &&
         (info[twcorp] == true || twvalue != true) &&
-        (info[socccorp] == true || soccvalue != true){
+        (info[socccorp] == true || soccvalue != true)){
         newlist.push(item.filename);
       }});
       return newlist;
