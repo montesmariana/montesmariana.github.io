@@ -74,9 +74,9 @@
 
 d3.tsv("filenames.tsv", function(error, data){
   if (error) throw error;
-  var models = new Array();
-  data.forEach(function(d){models.push(d.type);});
-  console.log(models, typeof models);
+  // var models = new Array();
+  // data.forEach(function(d){models.push(d.type);});
+  // console.log(models, typeof models);
 
   var width = 500, height = 50;
 
@@ -98,12 +98,12 @@ d3.tsv("filenames.tsv", function(error, data){
       .on('press', function(d) {
         info[d.key] = true;
         types = update();
-        selectedmodels = getmodels(models, types);
+        selectedmodels = getmodels(data, types);
         console.log("Pressed", d.label, d.key, types, selectedmodels)})
       .on('release', function(d) {
         info[d.key] = false;
         types = update();
-        selectedmodels = getmodels(models, types);
+        selectedmodels = getmodels(data, types);
         console.log("Released", d.label, d.key, types, selectedmodels)});
 
   function update(){
@@ -119,8 +119,8 @@ d3.tsv("filenames.tsv", function(error, data){
   function getmodels(modellist, type){
     var newlist = new Array();
     modellist.forEach(function(item){
-      if (item == type){
-        newlist.push(item);
+      if (item.type == type){
+        newlist.push(item.filename);
       }});
       return newlist;
     };
@@ -146,25 +146,25 @@ d3.tsv("filenames.tsv", function(error, data){
   //     .attr("cx", function() {return Math.random() * 600;})
   //     .attr("cy", function() {return Math.random() * 300;})
 </script>
-  // Work ok buttons: confirm selection of clouds
-// <script type="text/javascript">
-//
-//     d3.select("#memory-clear").on("click", function() {
-//       localStorage.clear();
-//       location.reload();
-//     });
-//
-//     d3.select("#confirm-select").on("click", function() {
-//       localStorage.setItem("goToPlot"+"-"+type, JSON.parse(
-//         localStorage.getItem("modselection"+"-"+type))[0].substring(
-//           0, JSON.parse(localStorage.getItem(
-//             "modselection"+"-"+type))[0].length-2));
-//       window.location = "level2.html?type="+type;
-//     });
-// </script> -->
-//
-//     <!-- Optional JavaScript -->
-//     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- Work ok buttons: confirm selection of clouds -->
+<!-- <script type="text/javascript">
+
+     d3.select("#memory-clear").on("click", function() {
+       localStorage.clear();
+       location.reload();
+     });
+
+     d3.select("#confirm-select").on("click", function() {
+       localStorage.setItem("goToPlot"+"-"+type, JSON.parse(
+         localStorage.getItem("modselection"+"-"+type))[0].substring(
+           0, JSON.parse(localStorage.getItem(
+             "modselection"+"-"+type))[0].length-2));
+       window.location = "level2.html?type="+type;
+     });
+ </script> -->
+
+     <!-- Optional JavaScript -->
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
