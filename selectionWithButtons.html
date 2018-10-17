@@ -81,10 +81,10 @@ d3.tsv("filenames.tsv", function(error, data){
     state: undefined,
     country: undefined,
     church: undefined,
-    "COHA1": false,
-    "Semcor1": false,
-    "COHA2": false,
-    "Semcor2": false,
+    "COHA1": undefined,
+    "Semcor1": undefined,
+    "COHA2": undefined,
+    "Semcor2": undefined,
   };
   var buttons_types = [{label: "State", x: width * 0.3, y: height * 0.5, key : "state"},
   {label: "Country", x: width * 0.5, y: height * 0.5, key : "country"},
@@ -119,6 +119,10 @@ d3.tsv("filenames.tsv", function(error, data){
         document.getElementById("countmodels").innerHTML = selectedmodels.length;
         console.log("Released", d.label, d.key, types, selectedmodels)});
   function update(){
+    if (info["COHA1"] == true && info["Semcor1"] == undefined) {info["Semcor1"] = false;
+  } else if (info["Semcor1"] == true) && info["COHA1"] == undefined) {info["COHA1"] = false;}
+    if (info["COHA2"] == true && info["Semcor2"] == undefined) {info["Semcor2"] = false;
+  } else if (info["Semcor2"] == true) && info["COHA2"] == undefined) {info["COHA2"] = false;}
     if ((info["state"] == true && info["country"] == true && info["church"] == true) ||
 (info["state"] == undefined && info["country"] == undefined && info["church"] == undefined)){return "sample";
     } else if (info["state"] == true && info["country"] == true && info["church"] != true){return "state_country";
@@ -133,7 +137,7 @@ d3.tsv("filenames.tsv", function(error, data){
     modellist.forEach(function(item){
       twcorp = item.twcorpus + "1"
       socccorp = item.socccorpus + "2"
-      if (item.type == type && info[twcorp] == true && info[socccorp] == true){
+      if (item.type == type && info[twcorp] != false && info[socccorp] != false){
         newlist.push(item.filename);
       }});
       return newlist;
