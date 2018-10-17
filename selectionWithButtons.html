@@ -92,10 +92,12 @@ d3.tsv("filenames.tsv", function(error, data){
     state: undefined,
     country: undefined,
     church: undefined,
-    coha1: undefined,
-    semcor1: undefined,
-    coha2: undefined,
-    semcor2: undefined,
+    tw: {
+      "COHA": undefined,
+      "Semcor": undefined,},
+    socc: {
+      "COHA": undefined,
+    "Semcor": undefined,
   };
 
   var buttons_types = [{label: "State", x: width * 0.3, y: height * 0.5, key : "state"},
@@ -103,11 +105,11 @@ d3.tsv("filenames.tsv", function(error, data){
   {label: "Church", x: width * 0.7, y: height * 0.5, key : "church"}
 ];
 
-  var buttons_twcorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key : "coha1"},
-  {label: "Semcor", x: width * 0.6, y: height * 0.5, key: "semcor1"},
+  var buttons_twcorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key : "COHA"},
+  {label: "Semcor", x: width * 0.6, y: height * 0.5, key: "Semcor"},
 ];
-  var buttons_socccorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key : "coha2"},
-  {label: "Semcor", x: width * 0.6, y: height * 0.5, key: "semcor2"},
+  var buttons_socccorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key : "COHA"},
+  {label: "Semcor", x: width * 0.6, y: height * 0.5, key: "Semcor"},
 ];
 
   var buttonsvg_types = d3.select('#typebuttons').append('svg')
@@ -147,7 +149,7 @@ d3.tsv("filenames.tsv", function(error, data){
   function getmodels(modellist, type){
     var newlist = new Array();
     modellist.forEach(function(item){
-      if (item.type == type && info[item.twcorpus]!=false && info[item.socccorpus]!=false){
+      if (item.type == type && info.tw[item.twcorpus] != false && info.socc[item.socccorpus] != false){
         newlist.push(item.filename);
       }});
       return newlist;
