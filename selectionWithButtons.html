@@ -76,6 +76,10 @@
     <div class="container" id="socccorpusbuttons"></div>
     <h2>Submit</h2>
     <p>You have selected <span id="countmodels">0</span> models.</p>
+    <div class="container">
+      <button type="button" class="btn btn-default" id="memory-clear">Reset</button>
+  		<button type="button" class="btn btn-default" id="confirm-select">Confirm model selection</button>
+    </div>
 </div>
 <!-- <div class="container" id="modelcloud"></div> -->
 <script>
@@ -197,7 +201,7 @@ d3.tsv("filenames.tsv", function(error, data){
   //    };
 </script>
   <!-- Work ok buttons: confirm selection of clouds -->
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 
      d3.select("#memory-clear").on("click", function() {
        localStorage.clear();
@@ -205,13 +209,15 @@ d3.tsv("filenames.tsv", function(error, data){
      });
 
      d3.select("#confirm-select").on("click", function() {
-       localStorage.setItem("goToPlot"+"-"+type, JSON.parse(
-         localStorage.getItem("modselection"+"-"+type))[0].substring(
+       localStorage.setItem("modselection"+"-"+types, selectedmodels)
+
+       localStorage.setItem("goToPlot"+"-"+types, JSON.parse(
+         localStorage.getItem("modselection"+"-"+types))[0].substring(
            0, JSON.parse(localStorage.getItem(
-             "modselection"+"-"+type))[0].length-2));
+             "modselection"+"-"+types))[0].length-2));
        window.location = "level2.html?type="+type;
      });
- </script> -->
+ </script>
 
      <!-- Optional JavaScript -->
      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
