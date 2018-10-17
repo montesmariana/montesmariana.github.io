@@ -126,7 +126,8 @@ d3.tsv("filenames.tsv", function(error, data){
 
   dot = cloudsvg.append("g")
     .attr("class", "dot")
-    .data(dataset, function(d) {if (d.type == types) {return d["filename"]};})
+    // .data(dataset, function(d) {if (d.type == types) {return d["filename"]};})
+    .data(dataset, function(d) {return d["filename"]})
     .enter().append("dot")
       .style("fill", "steelblue")
       .attr("r", 8)
