@@ -101,12 +101,12 @@ d3.tsv("filenames.tsv", function(error, data){
         info[d.key] = true;
         types = update()
         console.log("Pressed", d.label, d.key, types, typeof types);
-      console.log(models.forEach(function(d){d==types;}));})
+      console.log(models.forEach(function(d){return d==types;}));})
       .on('release', function(d) {
         info[d.key] = false;
         types = update();
         console.log("Released", d.label, d.key, types, typeof types);
-      console.log(models.forEach(function(d){d==types;}));});
+      console.log(models.forEach(function(d){return d==types;}));});
 
   function update(){
     if (info["state"] == true && info["country"] == true && info["church"] == true){return "sample";
