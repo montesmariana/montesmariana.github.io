@@ -127,7 +127,6 @@ d3.tsv("filenames.tsv", function(error, data){
       });
       return newlist;
     };
-  }
   // Add buttons
   var buttons = buttonsvg.selectAll('.button')
       .data(data)
@@ -149,6 +148,7 @@ d3.tsv("filenames.tsv", function(error, data){
   //     .attr("cx", function() {return Math.random() * 600;})
   //     .attr("cy", function() {return Math.random() * 300;})
  });
+})
 </script>
   <!-- Work ok buttons: confirm selection of clouds-->
 <!-- <script type="text/javascript">
