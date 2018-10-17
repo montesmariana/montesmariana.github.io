@@ -1,4 +1,4 @@
-filename	type	twcorpus	twppmi	twllr	twL	twR	            socccorpus	soccppmi	soccllr	soccL	soccR	            length	tokenL	tokenR
+filename	type	twcorpus	twppmi	twllr	twL	twR	socccorpus	soccppmi	soccllr	soccL	soccR	length	tokenL	tokenR
 COHA.church.socc10k.min0	church	COHA	0		10	10	COHA			10	10	10k	10	10
 COHA.church.socc10k.min1	church	COHA	1		10	10	COHA			10	10	10k	10	10
 COHA.church.socc10k.min2	church	COHA	2		10	10	COHA			10	10	10k	10	10

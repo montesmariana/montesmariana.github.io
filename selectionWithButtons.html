@@ -118,6 +118,7 @@ d3.tsv("filenames.tsv", function(error, data){
   if (error) throw error;
   dataset = data;
   colnames = d3.keys(data[0]);
+  console.log(colnames);
   models = d3.entries(dataset).filter(function (d){return d["filename"];});
   console.log(models);
 
