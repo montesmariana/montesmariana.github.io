@@ -74,6 +74,8 @@
 
 d3.tsv("filenames.tsv", function(error, data){
   if (error) throw error;
+  var dataset = data;
+
   // var models = new Array();
   // data.forEach(function(d){models.push(d.type);});
   // console.log(models, typeof models);
@@ -86,7 +88,7 @@ d3.tsv("filenames.tsv", function(error, data){
     church: false,
   };
 
-  var data = [{label: "State", x: width * 0.3, y: height / 2, key : "state"},
+  var buttondata = [{label: "State", x: width * 0.3, y: height / 2, key : "state"},
               {label: "Country", x: width * 0.5, y: height / 2, key : "country"},
             {label: "Church", x: width * 0.7, y: height / 2, key : "church"}];
 
@@ -98,12 +100,12 @@ d3.tsv("filenames.tsv", function(error, data){
       .on('press', function(d) {
         info[d.key] = true;
         types = update();
-        selectedmodels = getmodels(data, types);
+        selectedmodels = getmodels(dataset, types);
         console.log("Pressed", d.label, d.key, types, typeof types, selectedmodels)})
       .on('release', function(d) {
         info[d.key] = false;
         types = update();
-        selectedmodels = getmodels(data, types);
+        selectedmodels = getmodels(dataset, types);
         console.log("Released", d.label, d.key, types, typeof types, selectedmodels)});
 
   function update(){
@@ -129,7 +131,7 @@ d3.tsv("filenames.tsv", function(error, data){
     };
   // Add buttons
   var buttons = buttonsvg.selectAll('.button')
-      .data(data)
+      .data(buttondata)
     .enter()
       .append('g')
       .attr('class', 'button')
