@@ -82,7 +82,7 @@ var data = [{label: "State", x: width * 0.3, y: height / 2, key : "state"},
             {label: "Country", x: width * 0.5, y: height / 2, key : "country"},
           {label: "Church", x: width * 0.7, y: height / 2, key : "church"}];
 
-var svg = d3.select('#typebuttons').append('svg')
+var buttonsvg = d3.select('#typebuttons').append('svg')
     .attr('width', width)
     .attr('height', height);
 
@@ -107,7 +107,7 @@ function update(){
 }
 
 // Add buttons
-var buttons = svg.selectAll('.button')
+var buttons = buttonsvg.selectAll('.button')
     .data(data)
   .enter()
     .append('g')
