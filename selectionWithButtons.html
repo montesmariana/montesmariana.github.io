@@ -101,11 +101,13 @@ d3.tsv("filenames.tsv", function(error, data){
         info[d.key] = true;
         types = update();
         selectedmodels = getmodels(dataset, types);
+        dot();
         console.log("Pressed", d.label, d.key, types, selectedmodels)})
       .on('release', function(d) {
         info[d.key] = false;
         types = update();
         selectedmodels = getmodels(dataset, types);
+        dot();
         console.log("Released", d.label, d.key, types, selectedmodels)});
 
   function update(){
@@ -138,7 +140,8 @@ d3.tsv("filenames.tsv", function(error, data){
      .attr("width", 600)
      .attr("height", 300)
 
-  dot = cloudsvg.append("g")
+  function dot() {
+    dot = cloudsvg.append("g")
      .attr("class", "dot")
      // .data(dataset, function(d) {if (d.type == types) {return d["filename"]};})
     .data(selectedmodels)
@@ -147,6 +150,7 @@ d3.tsv("filenames.tsv", function(error, data){
        .attr("r", 8)
        .attr("cx", function() {return Math.random() * 600;})
        .attr("cy", function() {return Math.random() * 300;})
+     };
 </script>
   <!-- Work ok buttons: confirm selection of clouds -->
 <!-- <script type="text/javascript">
