@@ -120,7 +120,7 @@ d3.tsv("filenames.tsv", function(error, data){
     var newlist = new Array();
     modellist.forEach(function(item){
       if (item.type == type){
-        newlist.push(item.filename);
+        newlist.push(item.type);
       }});
       return newlist;
     };
