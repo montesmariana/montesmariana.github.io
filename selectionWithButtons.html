@@ -117,23 +117,23 @@ var buttons = buttonsvg.selectAll('.button')
 d3.tsv("filenames.tsv", function(error, data){
   if (error) throw error;
   dataset = data;
-  console.log(dataset);
   colnames = d3.keys(data[0]);
   models = d3.entries(dataset).filter(function (d){return d["filename"];});
+  console.log(models);
 
-  var cloudsvg = d3.select("#modelcloud").append("svg")
-    .attr("width", 600)
-    .attr("height", 300)
-
-  dot = cloudsvg.append("g")
-    .attr("class", "dot")
-    // .data(dataset, function(d) {if (d.type == types) {return d["filename"]};})
-    .data(dataset, function(d) {return d["filename"]})
-    .enter().append("dot")
-      .style("fill", "steelblue")
-      .attr("r", 8)
-      .attr("cx", function() {return Math.random() * 600;})
-      .attr("cy", function() {return Math.random() * 300;})
+  // var cloudsvg = d3.select("#modelcloud").append("svg")
+  //   .attr("width", 600)
+  //   .attr("height", 300)
+  //
+  // dot = cloudsvg.append("g")
+  //   .attr("class", "dot")
+  //   .data(dataset, function(d) {if (d.type == types) {return d["filename"]};})
+  //   .data(dataset, function(d) {return d["filename"]})
+  //   .enter().append("dot")
+  //     .style("fill", "steelblue")
+  //     .attr("r", 8)
+  //     .attr("cx", function() {return Math.random() * 600;})
+  //     .attr("cy", function() {return Math.random() * 300;})
  });
 </script>
   <!-- Work ok buttons: confirm selection of clouds-->
