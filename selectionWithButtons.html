@@ -77,12 +77,15 @@
     <h2>Submit</h2>
     <p>You have selected <span id="countmodels">0</span> models.</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <div class="container">
       <button type="button" class="btn btn-default" id="memory-clear">Reset</button>
   		<button type="button" class="btn btn-default" id="confirm-select">Confirm model selection</button>
     </div>
 >>>>>>> parent of 310c369... sbbb
+=======
+>>>>>>> parent of b8cb596... trying other buttons and way to go to level2
 </div>
 <!-- <div class="container" id="modelcloud"></div> -->
 <script>
@@ -204,7 +207,7 @@ d3.tsv("filenames.tsv", function(error, data){
   //    };
 </script>
   <!-- Work ok buttons: confirm selection of clouds -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
      d3.select("#memory-clear").on("click", function() {
        localStorage.clear();
@@ -212,6 +215,7 @@ d3.tsv("filenames.tsv", function(error, data){
      });
 
      d3.select("#confirm-select").on("click", function() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -227,11 +231,15 @@ d3.tsv("filenames.tsv", function(error, data){
        localStorage.setItem("goToPlot"+"-"+types, JSON.parse(
          localStorage.getItem("modselection"+"-"+types))[0].substring(
 >>>>>>> parent of 0f7a107... sbbb
+=======
+       localStorage.setItem("goToPlot"+"-"+type, JSON.parse(
+         localStorage.getItem("modselection"+"-"+type))[0].substring(
+>>>>>>> parent of b8cb596... trying other buttons and way to go to level2
            0, JSON.parse(localStorage.getItem(
              "modselection"+"-"+type))[0].length-2));
        window.location = "level2.html?type="+type;
      });
- </script>
+ </script> -->
 
      <!-- Optional JavaScript -->
      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
