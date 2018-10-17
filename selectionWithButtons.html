@@ -141,7 +141,7 @@ d3.tsv("filenames.tsv", function(error, data){
      .attr("height", 300)
 
   function dot() {
-    dot = cloudsvg.append("g")
+    cloudsvg.append("g")
      .attr("class", "dot")
      // .data(dataset, function(d) {if (d.type == types) {return d["filename"]};})
     .data(selectedmodels)
