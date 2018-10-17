@@ -112,6 +112,7 @@ d3.tsv("filenames.tsv", function(error, data){
         types = update();
         selectedmodels = getmodels(dataset, types);
         document.getElementById("countmodels").innerHTML = selectedmodels.length;
+        localStorage.setItem("modselection"+ "-"+types, JSON.stringify(selectedmodels))
         console.log("Pressed", d.label, d.key, types, selectedmodels)})
       .on('release', function(d) {
         info[d.key] = false;
@@ -181,10 +182,10 @@ d3.tsv("filenames.tsv", function(error, data){
   <!-- Work ok buttons: confirm selection of clouds -->
 <script type="text/javascript">
      d3.select("#confirm-select").on("click", function() {
-       localStorage.setItem("goToPlot"+"-"+type, JSON.parse(
-         localStorage.getItem("modselection"+"-"+type))[0].substring(
+       localStorage.setItem("goToPlot"+"-"+types, JSON.parse(
+         localStorage.getItem("modselection"+"-"+types))[0].substring(
            0, JSON.parse(localStorage.getItem(
-             "modselection"+"-"+type))[0].length-2));
+             "modselection"+"-"+types))[0].length-2));
        window.location = "level2.html?type="+type;
      });
  </script>
