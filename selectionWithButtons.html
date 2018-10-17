@@ -119,9 +119,9 @@ d3.tsv("filenames.tsv", function(error, data){
   function getmodels(modellist, type){
     var newlist = new Array();
     modellist.forEach(function(item){
-      thistype = item.type;
-      thisfile = item.filename;
-      console.log(thistype, typeof thistype, thisfilename, typeof thisfilename);
+      var thistype = item.type;
+      var thisfile = item.filename;
+      console.log(thistype, typeof thistype, thisfilename, typeof thisfilename)
       if (thistype == type){
         newlist.push(thisfilename);
       }});
