@@ -128,12 +128,12 @@ d3.tsv("filenames.tsv", function(error, data){
         info[d.key] = true;
         types = update();
         selectedmodels = getmodels(dataset, types);
-        console.log("Pressed", d.label, d.key, types, selectedmodels)})
+        console.log("Pressed", d.label, d.key, info.tw, info.socc, types, selectedmodels)})
       .on('release', function(d) {
         info[d.key] = false;
         types = update();
         selectedmodels = getmodels(dataset, types);
-        console.log("Released", d.label, d.key, types, selectedmodels)});
+        console.log("Released", d.label, d.key, info.tw, info.socc, types, selectedmodels)});
 
   function update(){
     if ((info["state"] == true && info["country"] == true && info["church"] == true) ||
