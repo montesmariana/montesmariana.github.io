@@ -80,7 +80,6 @@ d3.tsv("filenames.tsv", function(error, data){
     models.push(d.type);
   })
   console.log(models, typeof models);
-  console.log(models.prototype.forEach(function(d){return d;}));
 
   var width = 500, height = 50;
 
@@ -100,14 +99,14 @@ d3.tsv("filenames.tsv", function(error, data){
   var button = d3.button()
       .on('press', function(d) {
         info[d.key] = true;
-        types = update()
-        console.log("Pressed", d.label, d.key, types, typeof types);
-      console.log(models.forEach(function(d){if (d == types) {return d};}));})
+        types = update();
+        selectedmodels = getmodels(models, types);
+        console.log("Pressed", d.label, d.key, types, selectedmodels);
       .on('release', function(d) {
         info[d.key] = false;
         types = update();
-        console.log("Released", d.label, d.key, types, typeof types);
-      console.log(models.forEach(function(d){if (d == types) {return d};}));});
+        selectedmodels = getmodels(models, types);
+        console.log("Released", d.label, d.key, types, selectedmodels);
 
   function update(){
     if (info["state"] == true && info["country"] == true && info["church"] == true){return "sample";
@@ -117,8 +116,18 @@ d3.tsv("filenames.tsv", function(error, data){
     } else if (info["state"] == true && info["country"] != true && info["church"] != true){return "state";
     } else if (info["state"] != true && info["country"] == true && info["church"] != true){return "country";
     } else if (info["state"] != true && info["country"] != true && info["church"] == true){return "church";}
-  }
+  };
 
+  function getmodels(modellist, type){
+    var newlist = new Array();
+    modellist.forEach(function(item){
+      if (item == type){
+        newlist.push(item);
+      }
+      });
+      return newlist;
+    })
+  }
   // Add buttons
   var buttons = buttonsvg.selectAll('.button')
       .data(data)
