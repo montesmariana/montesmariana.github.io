@@ -106,7 +106,7 @@ d3.tsv("filenames.tsv", function(error, data){
         info[d.key] = false;
         types = update();
         selectedmodels = getmodels(models, types);
-        console.log("Released", d.label, d.key, types, selectedmodels)
+        console.log("Released", d.label, d.key, types, selectedmodels);
 
   function update(){
     if (info["state"] == true && info["country"] == true && info["church"] == true){return "sample";
