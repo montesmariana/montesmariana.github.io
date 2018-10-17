@@ -121,9 +121,9 @@ d3.tsv("filenames.tsv", function(error, data){
     modellist.forEach(function(item){
       var thistype = item.type;
       var thisfile = item.filename;
-      console.log(thistype, typeof thistype, thisfilename, typeof thisfilename)
+      console.log(thistype, typeof thistype, thisfilename, typeof thisfile)
       if (thistype == type){
-        newlist.push(thisfilename);
+        newlist.push(thisfile);
       }});
       return newlist;
     };
