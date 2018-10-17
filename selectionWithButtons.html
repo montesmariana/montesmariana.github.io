@@ -120,9 +120,9 @@ d3.tsv("filenames.tsv", function(error, data){
         console.log("Released", d.label, d.key, types, selectedmodels)});
   function update(){
     if (info["COHA1"] == true && info["Semcor1"] == undefined) {info["Semcor1"] = false;
-  } else if (info["Semcor1"] == true) && info["COHA1"] == undefined) {info["COHA1"] = false;}
+  } else if (info["Semcor1"] == true && info["COHA1"] == undefined) {info["COHA1"] = false;}
     if (info["COHA2"] == true && info["Semcor2"] == undefined) {info["Semcor2"] = false;
-  } else if (info["Semcor2"] == true) && info["COHA2"] == undefined) {info["COHA2"] = false;}
+  } else if (info["Semcor2"] == true && info["COHA2"] == undefined) {info["COHA2"] = false;}
     if ((info["state"] == true && info["country"] == true && info["church"] == true) ||
 (info["state"] == undefined && info["country"] == undefined && info["church"] == undefined)){return "sample";
     } else if (info["state"] == true && info["country"] == true && info["church"] != true){return "state_country";
