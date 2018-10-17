@@ -117,8 +117,8 @@ var buttons = buttonsvg.selectAll('.button')
 d3.tsv("filenames.tsv", function(error, data){
   if (error) throw error;
   dataset = data;
-  var models = data.filter(function(d){return d["filename"];})[1];
-  console.log(models)
+  var models = data.filter(function(d){return d["filename"];})[2];
+  console.log(models, typeof models)
 
   // var cloudsvg = d3.select("#modelcloud").append("svg")
   //   .attr("width", 600)
