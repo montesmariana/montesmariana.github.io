@@ -79,7 +79,7 @@ d3.tsv("filenames.tsv", function(error, data){
   data.forEach(function(d){
     models.push(d.type);
   })
-  console.log(models, typeof models)
+  console.log(models, typeof models[0])
 
   var width = 500, height = 50;
 
