@@ -68,8 +68,14 @@
     <br>
     <h2>Please select one or more types</h2>
     <div class="container" id="typebuttons"></div>
+    <h2>First order weighting</h2>
+    <p>You may also select a corpus for first order weighting</p>
+    <div class="container" id="twcorpusbuttons"></div>
+    <h2>Second order weighting</h2>
+    <p>You may also select a corpus for second order weighting</p>
+    <div class="container" id="socccorpusbuttons"></div>
 </div>
-<div class="container" id="modelcloud"></div>
+<!-- <div class="container" id="modelcloud"></div> -->
 <script>
 
 d3.tsv("filenames.tsv", function(error, data){
@@ -83,16 +89,35 @@ d3.tsv("filenames.tsv", function(error, data){
   var width = 500, height = 50;
 
   var info = {
-    state: false,
-    country: false,
-    church: false,
+    state: undefined,
+    country: undefined,
+    church: undefined,
+    coha1: undefined,
+    semcor1: undefined,
+    coha2: undefined,
+    semcor2: undefined,
   };
 
-  var buttondata = [{label: "State", x: width * 0.3, y: height / 2, key : "state"},
-              {label: "Country", x: width * 0.5, y: height / 2, key : "country"},
-            {label: "Church", x: width * 0.7, y: height / 2, key : "church"}];
+  var buttons_types = [{label: "State", x: width * 0.3, y: height * 0.5, key : "state"},
+  {label: "Country", x: width * 0.5, y: height * 0.5, key : "country"},
+  {label: "Church", x: width * 0.7, y: height * 0.5, key : "church"}
+];
 
-  var buttonsvg = d3.select('#typebuttons').append('svg')
+  var buttons_twcorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key; "coha1"},
+  {label: "Semcor", x: width * 0.6, y: height * 0.5, key; "semcor1"},
+];
+  var buttons_socccorpus = [{label: "COHA", x: width * 0.4, y: height * 0.5, key; "coha2"},
+  {label: "Semcor", x: width * 0.6, y: height * 0.5, key; "semcor2"},
+];
+
+  var buttonsvg_types = d3.select('#typebuttons').append('svg')
+      .attr('width', width)
+      .attr('height', height);
+
+  var buttonsvg_twcorpus = d3.select('#twcorpusbuttons').append('svg')
+      .attr('width', width)
+      .attr('height', height);
+  var buttonsvg_socccorpus = d3.select('#socccorpusbuttons').append('svg')
       .attr('width', width)
       .attr('height', height);
 
@@ -101,17 +126,16 @@ d3.tsv("filenames.tsv", function(error, data){
         info[d.key] = true;
         types = update();
         selectedmodels = getmodels(dataset, types);
-        dot();
         console.log("Pressed", d.label, d.key, types, selectedmodels)})
       .on('release', function(d) {
         info[d.key] = false;
         types = update();
         selectedmodels = getmodels(dataset, types);
-        dot();
         console.log("Released", d.label, d.key, types, selectedmodels)});
 
   function update(){
-    if (info["state"] == true && info["country"] == true && info["church"] == true){return "sample";
+    if ((info["state"] == true && info["country"] == true && info["church"] == true) ||
+(info["state"] == undefined && info["country"] == undefined && info["church"] == undefined)){return "sample";
     } else if (info["state"] == true && info["country"] == true && info["church"] != true){return "state_country";
     } else if (info["state"] == true && info["country"] != true && info["church"] == true){return "state_church";
     } else if (info["state"] != true && info["country"] == true && info["church"] == true){return "country_church";
@@ -123,34 +147,48 @@ d3.tsv("filenames.tsv", function(error, data){
   function getmodels(modellist, type){
     var newlist = new Array();
     modellist.forEach(function(item){
-      if (item.type == type){
+      if (item.type == type && info[item.twcorpus]!=false && info[item.socccorpus]!=false){
         newlist.push(item.filename);
       }});
       return newlist;
     };
   // Add buttons
-  var buttons = buttonsvg.selectAll('.button')
-      .data(buttondata)
+  var buttons1 = buttonsvg_types.selectAll('.button')
+      .data(buttons_types)
+    .enter()
+      .append('g')
+      .attr('class', 'button')
+      .call(button);
+
+  var buttons1 = buttonsvg_twcorpus.selectAll('.button')
+      .data(buttons_twcorpus)
+    .enter()
+      .append('g')
+      .attr('class', 'button')
+      .call(button);
+
+  var buttons1 = buttonsvg_socccorpus.selectAll('.button')
+      .data(buttons_socccorpus)
     .enter()
       .append('g')
       .attr('class', 'button')
       .call(button);
   });
-  var cloudsvg = d3.select("#modelcloud").append("svg")
-     .attr("width", 600)
-     .attr("height", 300)
-
-  function dot() {
-    cloudsvg.append("g")
-     .attr("class", "dot")
-     // .data(dataset, function(d) {if (d.type == types) {return d["filename"]};})
-    .data(selectedmodels)
-    .enter().append("dot")
-       .style("fill", "steelblue")
-       .attr("r", 8)
-       .attr("cx", function() {return Math.random() * 600;})
-       .attr("cy", function() {return Math.random() * 300;})
-     };
+  // var cloudsvg = d3.select("#modelcloud").append("svg")
+  //    .attr("width", 600)
+  //    .attr("height", 300)
+  //
+  // function dot() {
+  //   cloudsvg.append("g")
+  //    .attr("class", "dot")
+  //    // .data(dataset, function(d) {if (d.type == types) {return d["filename"]};})
+  //   .data(selectedmodels)
+  //   .enter().append("dot")
+  //      .style("fill", "steelblue")
+  //      .attr("r", 8)
+  //      .attr("cx", function() {return Math.random() * 600;})
+  //      .attr("cy", function() {return Math.random() * 300;})
+  //    };
 </script>
   <!-- Work ok buttons: confirm selection of clouds -->
 <!-- <script type="text/javascript">
