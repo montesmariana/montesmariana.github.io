@@ -120,7 +120,7 @@ d3.tsv("filenames.tsv", function(error, data){
   console.log(data.columns);
   colnames = d3.keys(data[0]);
   console.log(colnames);
-  models = d3.entries(dataset).filter(function (d){return d.filename;});
+  models = d3.entries(data).filter(function (d){return d.filename;});
   console.log(models);
 
   // var cloudsvg = d3.select("#modelcloud").append("svg")
