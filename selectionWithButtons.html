@@ -80,7 +80,7 @@ d3.tsv("filenames.tsv", function(error, data){
     models.push(d.type);
   })
   console.log(models, typeof models);
-  console.log(models.forEach(function(d){return d;}));
+  console.log(models.prototype.forEach(function(d){return d;}));
 
   var width = 500, height = 50;
 
