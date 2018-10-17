@@ -90,11 +90,13 @@ var button = d3.button()
     .on('press', function(d) {
       info[d.key] = true;
       types = update()
-      console.log("Pressed", d.label, d.key, info[d.key], types)})
+      console.log("Pressed", d.label, d.key, types, typeof types);
+    console.log(models.forEach(function(d){d==types;}));})
     .on('release', function(d) {
       info[d.key] = false;
       types = update();
-      console.log("Released", d.label, d.key, info[d.key], types)});
+      console.log("Released", d.label, d.key, types, typeof types);
+    console.log(models.forEach(function(d){d==types;}));});
 
 function update(){
   if (info["state"] == true && info["country"] == true && info["church"] == true){return "sample";
