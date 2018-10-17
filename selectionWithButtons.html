@@ -117,8 +117,9 @@ d3.tsv("filenames.tsv", function(error, data){
     data.forEach(function(d){
       var models = new Array();
     if (d.type == types) {models.push(d.filename);};
+    console.log(models, typeof models);
   })};
-  console.log(models, typeof models)
+
 
 
   // Add buttons
