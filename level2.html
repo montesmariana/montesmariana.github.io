@@ -204,8 +204,7 @@ d3.tsv(type+".tsv", function(error, data) {
 	models = colnames.filter(function(d) { if (d.endsWith(".x")) { return d;} });
 
   var domainBySolution = {},
-      rownames = d3.keys(data[0]).filter(function(d) { return d.indexOf(type) == 0; }),
-      xnames = rownames.filter(function (d) { return d[d.length-1] == "x" })
+      xnames = d3.keys(data[0]).filter(function (d) { return d[d.length-1] == "x" })
 	  console.log(modselection);
 //      xnames.forEach(function(xname) {
 //	         solutions.push(xname.substring(0, xname.length-2));
