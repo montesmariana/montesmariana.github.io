@@ -123,7 +123,7 @@ d3.tsv("filenames.tsv", function(error, data){
 
   function update(){
     if (((info["state"] || info ["country"] || info["church"]) != true) ||
-  (info["state"] && info ["country"] && info["church"]) == true)){return "sample";
+  ((info["state"] && info ["country"] && info["church"]) == true)){return "sample";
     } else if (info["state"] == true && info["country"] == true && info["church"] != true){return "state_country";
     } else if (info["state"] == true && info["country"] != true && info["church"] == true){return "state_church";
     } else if (info["state"] != true && info["country"] == true && info["church"] == true){return "country_church";
