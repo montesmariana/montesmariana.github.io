@@ -66,11 +66,13 @@
     <p>You may also select a corpus for second order weighting</p>
     <div class="container" id="socccorpusbuttons"></div>
     <h2>Submit</h2>
-    <p>You have selected <span id="countmodels">0</span> models.</p>
+    <p>You have selected <span id="countmodels">18</span> models.</p>
     <button type="button" class="btn btn-default" id="confirm-select">Let's look at them!</button>
 </div>
 <!-- <div class="container" id="modelcloud"></div> -->
 <script>
+
+var types = "sample"
 d3.tsv("filenames.tsv", function(error, data){
   if (error) throw error;
   var dataset = data;
