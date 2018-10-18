@@ -109,15 +109,15 @@ d3.tsv("filenames.tsv", function(error, data){
   var button = d3.button()
       .on('press', function(d) {
         info[d.key] = true;
-        types = update();
-        selectedmodels = getmodels(dataset, types);
+        var types = update();
+        var selectedmodels = getmodels(dataset, types);
         document.getElementById("countmodels").innerHTML = selectedmodels.length;
         localStorage.setItem("modselection"+ "-"+types, JSON.stringify(selectedmodels))
         console.log("Pressed", d.label, d.key, types, selectedmodels)})
       .on('release', function(d) {
         info[d.key] = false;
-        types = update();
-        selectedmodels = getmodels(dataset, types);
+        var types = update();
+        var selectedmodels = getmodels(dataset, types);
         document.getElementById("countmodels").innerHTML = selectedmodels.length;
         console.log("Released", d.label, d.key, types, selectedmodels)});
 
@@ -134,8 +134,8 @@ d3.tsv("filenames.tsv", function(error, data){
   function getmodels(modellist, type){
     var newlist = new Array();
     modellist.forEach(function(item){
-      twcorp = item.twcorpus + "1"
-      socccorp = item.socccorpus + "2"
+      var twcorp = item.twcorpus + "1"
+      var socccorp = item.socccorpus + "2"
       var twvalue = info["COHA1"] || info["Semcor1"]
       var soccvalue = info["COHA2"] || info["Semcor2"]
       if (item.type == type &&
