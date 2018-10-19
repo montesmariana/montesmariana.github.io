@@ -402,9 +402,11 @@
 					.style("opacity", 1);
 				//tooltip.html(res)
 				//tooltip.html("<b>"+d["_id"] + "</b><br>" + res + (sset ? "<p><b>"+sset.split('.').slice(-1)[0]+"</b>: " + d[sset] : "" ) + ("<p><b>highest weight:</b><br> " + d[mset+".maxWeightedWord"]))
-				// tooltip.html("<b>"+d["_id"] + "</b><br>" + res + ("<p><b>highest weight:</b><br> " + d[mset+".maxWeightedWord"]))
-				// 	.style("left", (d3.event.pageX + 20) + "px")
-				// 	.style("top", (d3.event.pageY - 28) + "px");
+				tooltip.html("<b>"+d["_id"] + "</b><br>" + res
+				// + ("<p><b>highest weight:</b><br> " + d[mset+".maxWeightedWord"]
+			))
+					.style("left", (d3.event.pageX + 20) + "px")
+					.style("top", (d3.event.pageY - 28) + "px");
 //				svg.select(".dot").selectAll("path").style("opacity", .6);
 //				d3.select(this).style("opacity", 1).classed("selected", false);
 //				d3.select(this).moveToFront();
