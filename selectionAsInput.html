@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="./QLVLicon/favicon.ico" type="image/x-icon">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Models selection</title>
+    <style>
+    body {
+      font-family: Univers, Arial, sans-serif;
+    }
+    .button rect {
+      stroke: #999faa; /* navy 40% */
+      stroke-width: 2px;
+    }
+    .button rect.pressed {
+      fill: #000f2b; /* navy 100% */
+    }
+    .button #gradient-start {
+      stop-color: #999faa; /* navy 40% */
+      stop-opacity: 1;
+    }
+    .button #gradient-stop {
+      stop-color: #4d576b; /* navy 70% */
+      stop-opacity: 1;
+    }
+    .button #gradient-start.active, .button #gradient-start.pressed {
+      stop-color: #4d576b; /* navy 70% */
+    }
+    .button #gradient-stop.active, .button #gradient-stop.pressed {
+      stop-color: #000f2b; /* navy 100% */
+    }
+    .button text {
+      font-size: 1em;
+      fill: #eee;
+      pointer-events: none;
+      text-anchor: middle;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+    </style>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/d3.button.js"></script>
+		<script src="js/d3-legend.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+
+    <h1>Welcome to Mariana's stock of clouds</h1>
+    <p>On this site you can select a group of clouds based on some parameters (to increase soon).
+    The "Let's look at them!" button takes you to Thomas' level2 page, where you can compare the different models selected.</p>
+    <p>It doesn't work properly yet (I can't select tokens to see them in every cloud yet) but the minimum is done.</p>
+    <p>You can also go back to the pretty <a href="index.html">index</a> if you prefer the old system.</p>
+    <p>On October 19 I ordered the tokens in the files according to the number of models they showed up in
+    and created shorter (600 tokens) versions with the most popular ones.
+  The full files are still available and I could add an option to check them.</p>
+    <br>
+    <h2>Please select one or more types</h2>
+    <p>If you select one type, you will see clouds of only that type. If you select two, you will see the clouds that use tokens
+    of both types (not clouds of one type and clouds of the other). If you select the three, you will see clouds that use tokens
+  of all types.</p>
+  <div class="btn-group-toggle" data-toggle="buttons" id="typebuttons">
+  <label class="btn btn-secondary" onclick="updateSelection()">
+    <input type="checkbox" autocomplete="off" id="state"> State
+  </label>
+  <label class="btn btn-secondary" onclick="updateSelection()">
+    <input type="checkbox" autocomplete="off" id="country"> Country
+  </label>
+  <label class="btn btn-secondary" onclick="updateSelection()">
+    <input type="checkbox" autocomplete="off" id="church"> Church
+  </label>
+</div>
+    <h2>First order weighting</h2>
+    <p>You may also select a corpus for first order weighting.
+      If you choose one, it will filter the clouds to those using that corpus.
+      If you don't choose any or choose both, all clouds are considered.</p>
+      <div class="btn-group-toggle" data-toggle="buttons" id="twcorpusbuttons">
+      <label class="btn btn-secondary" onclick="updateSelection()">
+        <input type="checkbox" autocomplete="off" id="COHA1"> COHA
+      </label>
+      <label class="btn btn-secondary" onclick="updateSelection()">
+        <input type="checkbox" autocomplete="off" id="Semcor1"> Semcor
+      </label>
+    </div>
+    <h2>Second order weighting</h2>
+    <p>You may also select a corpus for second order weighting.
+      If you choose one, it will filter the clouds to those using that corpus.
+      If you don't choose any or choose both, all clouds are considered.</p>
+      <div class="btn-group-toggle" data-toggle="buttons" id="socccorpusbuttons">
+      <label class="btn btn-secondary" onclick="updateSelection()">
+        <input type="checkbox" autocomplete="off" id="COHA2"> COHA
+      </label>
+      <label class="btn btn-secondary" onclick="updateSelection()">
+        <input type="checkbox" autocomplete="off" id="Semcor2"> Semcor
+      </label>
+      </div>
+    <h2>Submit</h2>
+    <p>You have selected <span id="countmodels">0</span> models.</p>
+    <button type="button" class="btn btn-default" id="confirm-select">Let's look at them!</button>
+</div>
+<!-- <div class="container" id="modelcloud"></div> -->
+<script>
+function updateSelection(){
+  d3.tsv("models.tsv", function(error, data){
+    if (error) throw error;
+    var dataset = data;
+    // var models = new Array();
+    // data.forEach(function(d){models.push(d.type);});
+    // console.log(models, typeof models);
+    var width = 500, height = 50;
+
+    var info = {
+      "state": document.getElementById("state").checked,
+      "country": document.getElementById("country").checked,
+      "church": document.getElementById("church").checked,
+      "COHA1": document.getElementById("COHA1").checked,
+      "Semcor1": document.getElementById("Semcor1").checked,
+      "COHA2": document.getElementById("COHA2").checked,
+      "Semcor2": document.getElementById("Semcor2").checked,
+    };
+    types = update();
+    selectedmodels = getmodels(dataset, types);
+    document.getElementById("countmodels").innerHTML = selectedmodels.length;
+    localStorage.clear();
+    localStorage.setItem("modselection"+ "-"+types, JSON.stringify(selectedmodels));
+    console.log(types, selectedmodels);
+
+  function update(){
+    if (((info["state"] || info ["country"] || info["church"]) != true) ||
+  ((info["state"] && info ["country"] && info["church"]) == true)){return "sample";
+    } else if (info["state"] == true && info["country"] == true && info["church"] != true){return "state_country";
+    } else if (info["state"] == true && info["country"] != true && info["church"] == true){return "state_church";
+    } else if (info["state"] != true && info["country"] == true && info["church"] == true){return "country_church";
+    } else if (info["state"] == true && info["country"] != true && info["church"] != true){return "state";
+    } else if (info["state"] != true && info["country"] == true && info["church"] != true){return "country";
+    } else if (info["state"] != true && info["country"] != true && info["church"] == true){return "church";}
+  };
+  function getmodels(modellist, type){
+    var newlist = new Array();
+    modellist.forEach(function(item){
+      var twcorp = item.twcorpus + "1"
+      var socccorp = item.socccorpus + "2"
+      var twvalue = info["COHA1"] || info["Semcor1"]
+      var soccvalue = info["COHA2"] || info["Semcor2"]
+      if (item.type == type &&
+        (info[twcorp] == true || twvalue != true) &&
+        (info[socccorp] == true || soccvalue != true)){
+        newlist.push(item.filename);
+      }});
+      return newlist;
+    };
+  // Add buttons
+
+  });
+};
+  // var cloudsvg = d3.select("#modelcloud").append("svg")
+  //    .attr("width", 600)
+  //    .attr("height", 300)
+  //
+  // function dot() {
+  //   cloudsvg.append("g")
+  //    .attr("class", "dot")
+  //    // .data(dataset, function(d) {if (d.type == types) {return d["filename"]};})
+  //   .data(selectedmodels)
+  //   .enter().append("dot")
+  //      .style("fill", "steelblue")
+  //      .attr("r", 8)
+  //      .attr("cx", function() {return Math.random() * 600;})
+  //      .attr("cy", function() {return Math.random() * 300;})
+  //    };
+  // Work ok buttons: confirm selection of clouds -->
+     d3.select("#confirm-select").on("click", function() {
+       localStorage.setItem("goToPlot"+"-"+types, JSON.parse(
+         localStorage.getItem("modselection"+"-"+types))[0].substring(
+           0, JSON.parse(localStorage.getItem(
+             "modselection"+"-"+types))[0].length-2));
+       window.location = "level2.html?type="+types;
+     });
+ </script>
+
+     <!-- Optional JavaScript -->
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

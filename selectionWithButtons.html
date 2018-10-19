@@ -60,6 +60,9 @@
     The "Let's look at them!" button takes you to Thomas' level2 page, where you can compare the different models selected.</p>
     <p>It doesn't work properly yet (I can't select tokens to see them in every cloud yet) but the minimum is done.</p>
     <p>You can also go back to the pretty <a href="index.html">index</a> if you prefer the old system.</p>
+    <p>On October 19 I ordered the tokens in the files according to the number of models they showed up in
+    and created shorter (600 tokens) versions with the most popular ones.
+  The full files are still available and I could add an option to check them.</p>
     <br>
     <h2>Please select one or more types</h2>
     <p>If you select one type, you will see clouds of only that type. If you select two, you will see the clouds that use tokens
@@ -82,7 +85,7 @@
 </div>
 <!-- <div class="container" id="modelcloud"></div> -->
 <script>
-d3.tsv("filenames.tsv", function(error, data){
+d3.tsv("models.tsv", function(error, data){
   if (error) throw error;
   var dataset = data;
   // var models = new Array();
