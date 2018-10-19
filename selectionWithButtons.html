@@ -123,12 +123,14 @@ d3.tsv("filenames.tsv", function(error, data){
         types = update();
         selectedmodels = getmodels(dataset, types);
         document.getElementById("countmodels").innerHTML = selectedmodels.length;
-        localStorage.setItem("modselection"+ "-"+types, JSON.stringify(selectedmodels))
+        localStorage.clear();
+        localStorage.setItem("modselection"+ "-"+types, JSON.stringify(selectedmodels));
         console.log("Pressed", d.label, d.key, types, selectedmodels)})
       .on('release', function(d) {
         info[d.key] = false;
         types = update();
         selectedmodels = getmodels(dataset, types);
+        localStorage.clear()
         localStorage.setItem("modselection"+ "-"+types, JSON.stringify(selectedmodels));
         document.getElementById("countmodels").innerHTML = selectedmodels.length;
         console.log("Released", d.label, d.key, types, selectedmodels)});
