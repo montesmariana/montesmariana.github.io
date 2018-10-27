@@ -70,22 +70,21 @@
         <input type="checkbox" autocomplete="off" id="Semcor1"> Semcor
       </label>
     </div>
-    <br>
     <span>Would you like to set a threshold for ppmi weighting?</span>
-      <div class="btn-group-toggle" data-toggle="buttons" id="twppmibuttons">
-        <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons" id="twppmibuttons">
+        <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="twppmi0"> No, it's ok
       </label>
-      <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="twppmi1"> 1.0
       </label>
-      <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="twppmi2"> 2.0
       </label>
-      <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="twppmi2_5"> 2.5
       </label>
-      <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="twppmi3"> 3.0
       </label>
     </div>
@@ -114,16 +113,15 @@
         <input type="checkbox" autocomplete="off" id="Semcor2"> Semcor
       </label>
       </div>
-        <br>
       <span>Would you like to set a threshold for ppmi weighting?</span>
-        <div class="btn-group-toggle" data-toggle="buttons" id="soccppmibuttons">
-        <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons" id="soccppmibuttons">
+        <label class="btn shadow-sm btn-kulright m" onclick="updateSelection()">
           <input type="checkbox" autocomplete="off" id="soccppmi0"> No, it's ok
         </label>
-        <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+        <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
           <input type="checkbox" autocomplete="off" id="soccppmi1"> 1.0
         </label>
-        <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+        <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
           <input type="checkbox" autocomplete="off" id="soccppmi2"> 2.0
         </label>
       </div>
@@ -140,16 +138,15 @@
     </div>
   </div>
 <br>
-<div class="row shadow-sm border border-kuldefault bg-gradient-kulleft px-4 py-2 rounded">
-  <div class="col">
-    <h2 class="text-white text-center">Submit</h2>
-    <p class="text-white text-center">You have selected <span id="countmodels">0</span> models.</p>
-    <div class="text-center"><button type="button" class="btn shadow-sm btn-marigreen" id="confirm-select">Let's look at them!</button></div>
-  </div>
-  </div>
+<div class="fixed-bottom container shadow-sm border border-kuldefault bg-gradient-kulleft px-4 py-2 rounded" id="bottom">
+  <div class="col text-center">
+    <span class="text-white">You have selected <span id="countmodels">0</span> models.</span>
+    <button type="button" class="btn shadow-sm btn-marigreen" id="confirm-select">Let's look at them!</button>
     <br>
-    <div class="fixed-bottom pr-2 bg-kulright text-right text-white font-weight-bold">Nephological Semantics - QLVL - KU Leuven</div>
-</div>
+    <span class="text-right text-white font-weight-bold">Nephological Semantics - QLVL - KU Leuven</span>
+  </div>
+  </div>
+    </div>
 <!-- <div class="container" id="modelcloud"></div> -->
 <script>
 function updateSelection(){
@@ -253,8 +250,14 @@ function updateSelection(){
              "modselection"+"-"+types))[0].length-2));
        window.location = "level2.html?type="+types;
      });
+     updateSelection()
  </script>
 
+ <script>
+ document.addEventListener("DOMContentLoaded", function(event) {
+   $('body').css({'padding-bottom':$('#bottom').height()+'px'});
+});
+</script>
      <!-- Optional JavaScript -->
      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
