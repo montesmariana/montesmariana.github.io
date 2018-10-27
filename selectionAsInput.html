@@ -28,7 +28,7 @@
 
   <body>
     <div class="container p-4">
-    <div class="shadow bg-info p-2 rounded"><h1 class="text-white text-center">Welcome to Mariana's stock of clouds</h1></div>
+    <div class="row shadow bg-info p-2 rounded"><h1 class="text-white text-center">Welcome to Mariana's stock of clouds</h1></div>
 <div class="lead p-3">
     <p>On this site you can select a group of clouds based on some parameters (to increase soon).
     The "Let's look at them!" button takes you to Thomas' level2 page, where you can compare the different models selected.</p>
@@ -38,108 +38,114 @@
   <p>I also suspect I messed up in previous runs of the workflow, so the old clouds may not be really valid anyways.</p>
 </div>
     <br>
-    <div class="shadow-lg border border-kuldefault bg-gradient-bgblue p-4 rounded">
+    <div class="row shadow-lg border border-kuldefault bg-gradient-bgblue p-4 rounded">
     <h2 class="blueh2">Please select one or more types</h2>
-    <p>If you select one type, you will see clouds of only that type. If you select two, you will see the clouds that use tokens
+    <span>If you select one type, you will see clouds of only that type. If you select two, you will see the clouds that use tokens
     of both types (not clouds of one type and clouds of the other). If you select the three, you will see clouds that use tokens
-  of all types.</p>
+  of all types.</span>
   <div class="btn-group-toggle" data-toggle="buttons" id="typebuttons">
-  <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+  <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
     <input type="checkbox" autocomplete="off" id="state"> State
   </label>
-  <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+  <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
     <input type="checkbox" autocomplete="off" id="country"> Country
   </label>
-  <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+  <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
     <input type="checkbox" autocomplete="off" id="church"> Church
   </label>
 </div>
 </div>
 <br>
 <div class="row">
-<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 mr-2 rounded">
+<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
     <h2 class="blueh2">First order weighting</h2>
-    <p>You may also select a corpus for first order weighting.
+    <span>You may also select a corpus for first order weighting.
       If you choose one, it will filter the clouds to those using that corpus.
-      If you don't choose any or choose both, all clouds are considered.</p>
+      If you don't choose any or choose both, all clouds are considered.</span>
       <div class="btn-group-toggle" data-toggle="buttons" id="twcorpusbuttons">
-      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+      <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="COHA1"> COHA
       </label>
-      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+      <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="Semcor1"> Semcor
       </label>
     </div>
+    <br>
+    <span>Would you like to set a threshold for ppmi weighting?</span>
       <div class="btn-group-toggle" data-toggle="buttons" id="twppmibuttons">
-<p>Would you like to set a threshold for ppmi weighting?</p>
-      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+        <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="twppmi0"> No, it's ok
       </label>
-      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+      <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="twppmi1"> 1.0
       </label>
-      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+      <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="twppmi2"> 2.0
       </label>
-      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+      <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="twppmi2_5"> 2.5
       </label>
-      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+      <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="twppmi3"> 3.0
       </label>
     </div>
-    <p>What about a log-likelihood threshold of 1.0?</p>
+      <br>
+    <span>What about a log-likelihood threshold of 1.0?</span>
       <div class="btn-group-toggle" data-toggle="buttons" id="twllrbuttons">
-      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+      <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="twllr0"> No, it's ok
       </label>
-      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+      <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="twllr1"> Yes, please
       </label>
     </div>
   </div>
     <br>
-    <div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 ml-2 rounded">
+    <div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
     <h2 class="blueh2">Second order weighting</h2>
-    <p>You may also select a corpus for second order weighting.
+    <span>You may also select a corpus for second order weighting.
       If you choose one, it will filter the clouds to those using that corpus.
-      If you don't choose any or choose both, all clouds are considered.</p>
+      If you don't choose any or choose both, all clouds are considered.</span>
       <div class="btn-group-toggle" data-toggle="buttons" id="socccorpusbuttons">
-      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+      <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="COHA2"> COHA
       </label>
-      <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+      <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
         <input type="checkbox" autocomplete="off" id="Semcor2"> Semcor
       </label>
       </div>
-      <p>Would you like to set a threshold for ppmi weighting?</p>
+        <br>
+      <span>Would you like to set a threshold for ppmi weighting?</span>
         <div class="btn-group-toggle" data-toggle="buttons" id="soccppmibuttons">
-        <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+        <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
           <input type="checkbox" autocomplete="off" id="soccppmi0"> No, it's ok
         </label>
-        <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+        <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
           <input type="checkbox" autocomplete="off" id="soccppmi1"> 1.0
         </label>
-        <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+        <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
           <input type="checkbox" autocomplete="off" id="soccppmi2"> 2.0
         </label>
       </div>
-      <p>What about a log-likelihood threshold of 1.0?</p>
+        <br>
+      <span>What about a log-likelihood threshold of 1.0?</span>
         <div class="btn-group-toggle" data-toggle="buttons" id="soccllrbuttons">
-        <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+        <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
           <input type="checkbox" autocomplete="off" id="soccllr0"> No, it's ok
         </label>
-        <label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+        <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
           <input type="checkbox" autocomplete="off" id="soccllr1"> Yes, please
         </label>
       </div>
     </div>
   </div>
 <br>
-<div class="shadow-sm border border-kuldefault bg-gradient-kulleft px-4 py-2 rounded">
-    <h2 class="text-white">Submit</h2>
-    <p class="text-white">You have selected <span id="countmodels">0</span> models.</p>
-    <button type="button" class="btn shadow-sm btn-marigreen" id="confirm-select">Let's look at them!</button>
+<div class="row shadow-sm border border-kuldefault bg-gradient-kulleft px-4 py-2 rounded">
+  <div class="col">
+    <h2 class="text-white text-center">Submit</h2>
+    <p class="text-white text-center">You have selected <span id="countmodels">0</span> models.</p>
+    <div class="text-center"><button type="button" class="btn shadow-sm btn-marigreen" id="confirm-select">Let's look at them!</button></div>
+  </div>
   </div>
     <br>
     <div class="fixed-bottom pr-2 bg-kulright text-right text-white font-weight-bold">Nephological Semantics - QLVL - KU Leuven</div>
