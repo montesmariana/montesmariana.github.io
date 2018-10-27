@@ -137,14 +137,12 @@
       </div>
     </div>
   </div>
+  <span class="text-right font-weight-bold">Nephological Semantics - QLVL - KU Leuven</span>
 <br>
-<div class="fixed-bottom container shadow-sm border border-kuldefault bg-gradient-kulleft px-4 py-2 rounded" id="bottom">
+<div class="btn fixed-bottom container shadow-sm border px-4 py-2 btn-marigreen rounded" id="confirm-select">
   <div class="col text-center">
     <span class="text-white">You have selected <span id="countmodels">0</span> models.</span>
-    <button type="button" class="btn shadow-sm btn-marigreen" id="confirm-select">Let's look at them!</button>
-    <br>
-    <span class="text-right text-white font-weight-bold">Nephological Semantics - QLVL - KU Leuven</span>
-  </div>
+    <strong class="shadow-sm">Let's look at them!</strong>
   </div>
     </div>
 <!-- <div class="container" id="modelcloud"></div> -->
@@ -255,7 +253,7 @@ function updateSelection(){
 
  <script>
  document.addEventListener("DOMContentLoaded", function(event) {
-   $('body').css({'padding-bottom':$('#bottom').height()+'px'});
+   $('body').css({'padding-bottom':$('#confirm-select').height()+'px'});
 });
 </script>
      <!-- Optional JavaScript -->
