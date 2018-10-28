@@ -92,10 +92,10 @@
     <span>What about a log-likelihood threshold of 1.0?</span>
       <div class="btn-group-toggle" data-toggle="buttons" id="twllrbuttons">
       <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-        <input type="checkbox" autocomplete="off" id="twllr0"> No, it's ok
+        <input type="checkbox" autocomplete="off" id="twll0"> No, it's ok
       </label>
       <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-        <input type="checkbox" autocomplete="off" id="twllr1"> Yes, please
+        <input type="checkbox" autocomplete="off" id="twll1"> Yes, please
       </label>
     </div>
   </div>
@@ -129,10 +129,10 @@
       <span>What about a log-likelihood threshold of 1.0?</span>
         <div class="btn-group-toggle" data-toggle="buttons" id="soccllrbuttons">
         <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-          <input type="checkbox" autocomplete="off" id="soccllr0"> No, it's ok
+          <input type="checkbox" autocomplete="off" id="soccll0"> No, it's ok
         </label>
         <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-          <input type="checkbox" autocomplete="off" id="soccllr1"> Yes, please
+          <input type="checkbox" autocomplete="off" id="soccll1"> Yes, please
         </label>
       </div>
     </div>
@@ -169,13 +169,13 @@ function updateSelection(){
       "twppmi2": document.getElementById("twppmi2").checked,
       "twppmi2_5": document.getElementById("twppmi2_5").checked,
       "twppmi3": document.getElementById("twppmi3").checked,
-      "twllr0": document.getElementById("twllr0").checked,
-      "twllr1": document.getElementById("twllr1").checked,
+      "twll0": document.getElementById("twll0").checked,
+      "twll1": document.getElementById("twll1").checked,
       "soccppmi0": document.getElementById("soccppmi0").checked,
       "soccppmi1": document.getElementById("soccppmi1").checked,
       "soccppmi2": document.getElementById("soccppmi2").checked,
-      "soccllr0": document.getElementById("soccllr0").checked,
-      "soccllr1": document.getElementById("soccllr1").checked
+      "soccll0": document.getElementById("soccll0").checked,
+      "soccll1": document.getElementById("soccll1").checked
     };
     types = update();
     selectedmodels = getmodels(dataset, types);
@@ -199,16 +199,16 @@ function updateSelection(){
     modellist.forEach(function(item){
       var twcorp = item.twcorpus + "1"
       var socccorp = item.socccorpus + "2"
-      var twppmi = "twppmi" + item.twppmi
-      var twllr = "twllr" + item.twllr
-      var soccppmi = "soccppmi" + item.soccppmi
-      var soccllr = "soccllr" + item.soccllr
+      var twppmi = "tw" + item.twppmi
+      var twllr = "tw" + item.twllr
+      var soccppmi = "socc" + item.soccppmi
+      var soccllr = "socc" + item.soccllr
       var twcorpvalue = info["COHA1"] || info["Semcor1"]
       var socccorpvalue = info["COHA2"] || info["Semcor2"]
       var twppmivalue = info["twppmi0"] || info["twppmi1"] || info["twppmi2"] || info["twppmi2_5"] || info["twppmi3"]
-      var twllrvalue = info["twllr0"] || info["twllr1"]
+      var twllrvalue = info["twll0"] || info["twll1"]
       var soccppmivalue = info["soccppmi0"] || info["soccppmi1"] || info["soccppmi2"]
-      var soccllrvalue = info["soccllr0"] || info["soccllr1"]
+      var soccllrvalue = info["soccll0"] || info["soccll1"]
       if (item.type == type &&
         (info[twcorp] == true || twcorpvalue != true) &&
         (info[socccorp] == true || socccorpvalue != true) &&
