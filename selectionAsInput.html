@@ -209,7 +209,7 @@ function updateSelection(){
       var twllrvalue = info["twll0"] || info["twll1"]
       var soccppmivalue = info["soccppmi0"] || info["soccppmi1"] || info["soccppmi2"]
       var soccllrvalue = info["soccll0"] || info["soccll1"]
-      if (item.type == type &&
+      if (item.lemma == type &&
         (info[twcorp] == true || twcorpvalue != true) &&
         (info[socccorp] == true || socccorpvalue != true) &&
         (info[twppmi] == true || twppmivalue != true) &&
