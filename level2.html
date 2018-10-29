@@ -181,7 +181,7 @@ d3.tsv(type+".tsv", function(error, data) {
   //var type = window.location.pathname.split("/")[2]
   document.title = "Level 2: " + type + " scatterplot matrix";
   d3.select("body").select("h2").text("Level 2: " + type);
-  d3.select("body").select("p").append("a").attr("href", "selectionWithButtons.html").text("up ");
+  d3.select("body").select("p").append("a").attr("href", "selectionAsInput.html").text("up ");
   d3.select("body").select("p").append("a").attr("href", "level3.html?type="+type).text(" down");
 
 	if (modselection == null) { //Stop loading the page if selection is empty.
