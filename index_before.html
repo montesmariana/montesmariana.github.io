@@ -30,103 +30,100 @@
     <div class="row shadow bg-info p-2 rounded"><h1 class="text-white text-center">Welcome to Mariana's clouds of <em>church</em>!</h1></div>
     <div class="lead p-3">
     	<p>On this site you can select a group of clouds based on some parameters (to increase soon).
-            The buttons act as filters: between buttons of the same group there's an OR relation; between groups, an AND relation.
     	The "Let's look at them!" button takes you to Thomas' level2 page, where you can compare the different models selected.</p>
     	<p>These clouds were created on November 9 and are only for the type <em>church</em>.</p>
     </div>
+    <br>
+    <div class="row shadow-lg border border-kuldefault bg-gradient-bgblue p-4 rounded">
+    	<h2 class="blueh2">Please select a vector length</h2>
+    	<span>Please select the number of second-order features for your vectors.</span>
+    	<div class="btn-group-toggle" data-toggle="buttons" id="lengthbuttons">
+    		<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    			<input type="checkbox" autocomplete="off" id="23k"> 23k-intersect
+    		</label>
+    		<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    			<input type="checkbox" autocomplete="off" id="5k"> Top 5k
+    		</label>
+    	</div>
+    </div>
+    <br>
     <div class="row">
     	<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
     		<h2 class="blueh2">First order weighting</h2>
-    		<p>There are some options for first order weighting paramenters, but not all combinations are present at the same time.</p>
-    		<span>You may select a corpus for first order weighting.</span>
-            <br>
+    		<span>You may also select a corpus for first order weighting.
+    			If you choose one, it will filter the clouds to those using that corpus.
+    		If you don't choose any or choose both, all clouds are considered.</span>
     		<div class="btn-group-toggle" data-toggle="buttons" id="twcorpusbuttons">
     			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="twppmic"> COHA
+    				<input type="checkbox" autocomplete="off" id="COHA1"> COHA
     			</label>
     			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="twppmis"> Semcor
+    				<input type="checkbox" autocomplete="off" id="Semcor1"> Semcor
     			</label>
     		</div>
-            <p></p>
-    		<span>Would you like to set a threshold for ppmi weighting? (Only available for Semcor weights)</span>
-            <br>
+    		<span>Would you like to set a threshold for ppmi weighting?</span>
     		<div class="btn-group btn-group-toggle" data-toggle="buttons" id="twppmibuttons">
     			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="twppmi0"> No weighting
+    				<input type="checkbox" autocomplete="off" id="twppmi0"> No, it's ok
     			</label>
     			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
     				<input type="checkbox" autocomplete="off" id="twppmi1"> 1.0
     			</label>
     			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="twppmi1_5"> 1.5
+    				<input type="checkbox" autocomplete="off" id="twppmi2"> 2.0
+    			</label>
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="twppmi2_5"> 2.5
+    			</label>
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="twppmi3"> 3.0
     			</label>
     		</div>
-            <p></p>
-            <span>What about a log-likelihood threshold?</span><br>
-            <span>This only affects models with Semcor weights, but the values may come from COHA.</span><br>
-            <span>The 'No weighting' option only affects models with no ppmi weighitng.</span>
-            <br>
+    		<br>
+    		<span>What about a log-likelihood threshold of 1.0?</span>
     		<div class="btn-group-toggle" data-toggle="buttons" id="twllrbuttons">
     			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="twll0"> No threshold
+    				<input type="checkbox" autocomplete="off" id="twll0"> No, it's ok
     			</label>
     			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="twlls1"> Semcor's 1.0
-    			</label>
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="twllc0"> COHA's 0.0
-    			</label>
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="twllc1"> COHA's 1.0
+    				<input type="checkbox" autocomplete="off" id="twll1"> Yes, please
     			</label>
     		</div>
     	</div>
     	<br>
     	<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
     		<h2 class="blueh2">Second order weighting</h2>
-    		<span>You may also select parameters for second order weighting. First, for example, the corpus for the weights.</span>
+    		<span>You may also select a corpus for second order weighting.
+    			If you choose one, it will filter the clouds to those using that corpus.
+    		If you don't choose any or choose both, all clouds are considered.</span>
     		<div class="btn-group-toggle" data-toggle="buttons" id="socccorpusbuttons">
     			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="soccc"> COHA
+    				<input type="checkbox" autocomplete="off" id="COHA2"> COHA
     			</label>
     			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="soccs"> Semcor
+    				<input type="checkbox" autocomplete="off" id="Semcor2"> Semcor
     			</label>
     		</div>
-            <p></p>
-    		<span>There are also different options for the second order features.</span><br>
-    		<span>Top5k content-words is only available for COHA.</span><br>
-            <span>'27k intersect' refers to the 27676 contentwords present in both corpora and with minimum frequency of 10 in COHA.</span>
-    		<div class="btn-group-toggle" data-toggle="buttons" id="socclengthbuttons">
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="top5kcont"> Top 5k content words
-    			</label>
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="top5k"> Top 5k words
-    			</label>
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="intersect"> 27k intersect
-    			</label>
-    		</div>
-            <p></p>
     		<span>Would you like to set a threshold for ppmi weighting?</span>
     		<div class="btn-group btn-group-toggle" data-toggle="buttons" id="soccppmibuttons">
     			<label class="btn shadow-sm btn-kulright m" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="soccppmi0"> No, no threshold
+    				<input type="checkbox" autocomplete="off" id="soccppmi0"> No, it's ok
     			</label>
     			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
     				<input type="checkbox" autocomplete="off" id="soccppmi1"> 1.0
     			</label>
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="soccppmi2"> 2.0
+    			</label>
     		</div>
-    		<p></p>
-    		<span>What about a log-likelihood threshold (from the chosen corpus)?</span>
+    		<br>
+    		<span>What about a log-likelihood threshold of 1.0?</span>
     		<div class="btn-group-toggle" data-toggle="buttons" id="soccllrbuttons">
     			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="soccll0"> No, no threshold
+    				<input type="checkbox" autocomplete="off" id="soccll0"> No, it's ok
     			</label>
     			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="soccll1"> 1.0
+    				<input type="checkbox" autocomplete="off" id="soccll1"> Yes, please
     			</label>
     		</div>
     	</div>
@@ -149,56 +146,65 @@
     			// console.log(models, typeof models);
 
     			var info = {
-    				"twppmic": document.getElementById("twppmic").checked,
-    				"twppmis": document.getElementById("twppmis").checked,
-    				"twll0": document.getElementById("twll0").checked,
-    				"twlls1": document.getElementById("twlls1").checked,
-    				"twllc0": document.getElementById("twllc0").checked,
-    				"twllc1": document.getElementById("twllc1").checked,
+    				"state": document.getElementById("state").checked,
+    				"country": document.getElementById("country").checked,
+    				"church": document.getElementById("church").checked,
+    				"COHA1": document.getElementById("COHA1").checked,
+    				"Semcor1": document.getElementById("Semcor1").checked,
+    				"COHA2": document.getElementById("COHA2").checked,
+    				"Semcor2": document.getElementById("Semcor2").checked,
     				"twppmi0": document.getElementById("twppmi0").checked,
     				"twppmi1": document.getElementById("twppmi1").checked,
-    				"twppmi1_5": document.getElementById("twppmi1_5").checked,
-    				"soccc": document.getElementById("soccc").checked,
-    				"soccs": document.getElementById("soccs").checked,
-    				"top5kcont": document.getElementById("top5kcont").checked,
-    				"top5k": document.getElementById("top5k").checked,
-    				"intersect": document.getElementById("intersect").checked,
+    				"twppmi2": document.getElementById("twppmi2").checked,
+    				"twppmi2_5": document.getElementById("twppmi2_5").checked,
+    				"twppmi3": document.getElementById("twppmi3").checked,
+    				"twll0": document.getElementById("twll0").checked,
+    				"twll1": document.getElementById("twll1").checked,
     				"soccppmi0": document.getElementById("soccppmi0").checked,
     				"soccppmi1": document.getElementById("soccppmi1").checked,
+    				"soccppmi2": document.getElementById("soccppmi2").checked,
     				"soccll0": document.getElementById("soccll0").checked,
     				"soccll1": document.getElementById("soccll1").checked
     			};
-    			selectedmodels = getmodels(dataset);
+    			types = update();
+    			selectedmodels = getmodels(dataset, types);
     			document.getElementById("countmodels").innerHTML = selectedmodels.length;
     			localStorage.clear();
-    			localStorage.setItem("modselection-church", JSON.stringify(selectedmodels));
-    			console.log(selectedmodels);
+    			localStorage.setItem("modselection"+ "-"+types, JSON.stringify(selectedmodels));
+    			console.log(types, selectedmodels);
 
-    			function getmodels(modellist){
+    			function update(){
+    				if (((info["state"] || info ["country"] || info["church"]) != true) ||
+    					((info["state"] && info ["country"] && info["church"]) == true)){return "sample";}
+    				else if (info["state"] == true && info["country"] == true && info["church"] != true){return "state_country";}
+    				else if (info["state"] == true && info["country"] != true && info["church"] == true){return "state_church";}
+    				else if (info["state"] != true && info["country"] == true && info["church"] == true){return "country_church";}
+    				else if (info["state"] == true && info["country"] != true && info["church"] != true){return "state";}
+    				else if (info["state"] != true && info["country"] == true && info["church"] != true){return "country";}
+    				else if (info["state"] != true && info["country"] != true && info["church"] == true){return "church";}
+    			};
+    			function getmodels(modellist, type){
     				var newlist = new Array();
     				modellist.forEach(function(item){
-    					var twcorp = "twppmi" + item.twppmi.slice(0,1)
-    					var socccorp = "socc" + item.socccorpus
-    					var twppmi = "twppmi" + item.twppmi.slice(1)
+    					var twcorp = item.twcorpus + "1"
+    					var socccorp = item.socccorpus + "2"
+    					var twppmi = "twppmi" + item.twppmi
     					var twllr = "twll" + item.twllr
     					var soccppmi = "soccppmi" + item.soccppmi
     					var soccllr = "soccll" + item.soccllr
-                        var vectorlength = item.length
-    					var twcorpvalue = info["twppmic"] || info["twppmis"]
-    					var socccorpvalue = info["soccc"] || info["soccs"]
-    					var twppmivalue = info["twppmi0"] || info["twppmi1"] || info["twppmi1_5"]
-    					var twllrvalue = info["twllc0"] || info["twllc1"] || info["twlls0"] || info["twlls1"]
-    					var soccppmivalue = info["soccppmi0"] || info["soccppmi1"]
+    					var twcorpvalue = info["COHA1"] || info["Semcor1"]
+    					var socccorpvalue = info["COHA2"] || info["Semcor2"]
+    					var twppmivalue = info["twppmi0"] || info["twppmi1"] || info["twppmi2"] || info["twppmi2_5"] || info["twppmi3"]
+    					var twllrvalue = info["twll0"] || info["twll1"]
+    					var soccppmivalue = info["soccppmi0"] || info["soccppmi1"] || info["soccppmi2"]
     					var soccllrvalue = info["soccll0"] || info["soccll1"]
-                        var lengthvalue = info['intersect'] || info['top5k'] || info['top5kcont']
-                        if(item.twppmi.slice(0,1) == item.twllr.slice(0,1) && item.twppmi.slice(1) == item.twllr.slice(1) == "0"){twllr = 'twll0'}
-    					if ((info[twcorp] == true || twcorpvalue != true) &&
+    					if (item.lemma == type &&
+    						(info[twcorp] == true || twcorpvalue != true) &&
     						(info[socccorp] == true || socccorpvalue != true) &&
     						(info[twppmi] == true || twppmivalue != true) &&
     						(info[twllr] == true || twllrvalue != true) &&
     						(info[soccppmi] == true || soccppmivalue != true) &&
-    						(info[soccllr] == true || soccllrvalue != true) &&
-                            (info[vectorlength] == true || lengthvalue != true)
+    						(info[soccllr] == true || soccllrvalue != true)
     						){
     						newlist.push(item.filename);
     					}});
@@ -207,11 +213,11 @@
     		});
 		};
 		d3.select("#confirm-select").on("click", function() {
-			localStorage.setItem("goToPlot-church", JSON.parse(
-				localStorage.getItem("modselection-church"))[0].substring(
+			localStorage.setItem("goToPlot"+"-"+types, JSON.parse(
+				localStorage.getItem("modselection"+"-"+types))[0].substring(
 				0, JSON.parse(localStorage.getItem(
-					"modselection-church"))[0].length-2));
-			window.location = "level2.html?type=church";
+					"modselection"+"-"+types))[0].length-2));
+			window.location = "level2.html?type="+types;
 		});
 		updateSelection()
 	</script>
