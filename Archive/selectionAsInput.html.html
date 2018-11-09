@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="./QLVLicon/favicon.ico" type="image/x-icon">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="custom.css">
+    <title>Models selection</title>
+
+    <style>
+    .selector-for-some-widget {
+      box-sizing: content-box;
+    }
+    .btn.focus {
+  outline: none !important;
+}
+    </style>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/d3-legend.min.js"></script>
+</head>
+<body>
+	<div class="container p-4">
+    <div class="row shadow bg-info p-2 rounded"><h1 class="text-white text-center">Welcome to Mariana's stock of clouds</h1></div>
+    <div class="lead p-3">
+    	<p>On this site you can select a group of clouds based on some parameters (to increase soon).
+    	The "Let's look at them!" button takes you to Thomas' level2 page, where you can compare the different models selected.</p>
+    	<p>These clouds were created on October 26: the context words on all levels are a >23k intersect of all contentwords that show up
+    		in both corpus and have frequency over 10 in COHA. That should cover words like <em>spire</em>, <em>steeple</em> and <em>denomination</em>,
+    	that were not showing up in previous models.</p>
+    	<p>I also suspect I messed up in previous runs of the workflow, so the old clouds may not be really valid anyways.</p>
+    </div>
+    <br>
+    <div class="row shadow-lg border border-kuldefault bg-gradient-bgblue p-4 rounded">
+    	<h2 class="blueh2">Please select one or more types</h2>
+    	<span>If you select one type, you will see clouds of only that type. If you select two, you will see the clouds that use tokens
+    		of both types (not clouds of one type and clouds of the other). If you select the three, you will see clouds that use tokens
+    	of all types.</span>
+    	<div class="btn-group-toggle" data-toggle="buttons" id="typebuttons">
+    		<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    			<input type="checkbox" autocomplete="off" id="state"> State
+    		</label>
+    		<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    			<input type="checkbox" autocomplete="off" id="country"> Country
+    		</label>
+    		<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    			<input type="checkbox" autocomplete="off" id="church"> Church
+    		</label>
+    	</div>
+    </div>
+    <br>
+    <div class="row">
+    	<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
+    		<h2 class="blueh2">First order weighting</h2>
+    		<span>You may also select a corpus for first order weighting.
+    			If you choose one, it will filter the clouds to those using that corpus.
+    		If you don't choose any or choose both, all clouds are considered.</span>
+    		<div class="btn-group-toggle" data-toggle="buttons" id="twcorpusbuttons">
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="COHA1"> COHA
+    			</label>
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="Semcor1"> Semcor
+    			</label>
+    		</div>
+    		<span>Would you like to set a threshold for ppmi weighting?</span>
+    		<div class="btn-group btn-group-toggle" data-toggle="buttons" id="twppmibuttons">
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="twppmi0"> No, it's ok
+    			</label>
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="twppmi1"> 1.0
+    			</label>
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="twppmi2"> 2.0
+    			</label>
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="twppmi2_5"> 2.5
+    			</label>
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="twppmi3"> 3.0
+    			</label>
+    		</div>
+    		<br>
+    		<span>What about a log-likelihood threshold of 1.0?</span>
+    		<div class="btn-group-toggle" data-toggle="buttons" id="twllrbuttons">
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="twll0"> No, it's ok
+    			</label>
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="twll1"> Yes, please
+    			</label>
+    		</div>
+    	</div>
+    	<br>
+    	<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
+    		<h2 class="blueh2">Second order weighting</h2>
+    		<span>You may also select a corpus for second order weighting.
+    			If you choose one, it will filter the clouds to those using that corpus.
+    		If you don't choose any or choose both, all clouds are considered.</span>
+    		<div class="btn-group-toggle" data-toggle="buttons" id="socccorpusbuttons">
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="COHA2"> COHA
+    			</label>
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="Semcor2"> Semcor
+    			</label>
+    		</div>
+    		<span>Would you like to set a threshold for ppmi weighting?</span>
+    		<div class="btn-group btn-group-toggle" data-toggle="buttons" id="soccppmibuttons">
+    			<label class="btn shadow-sm btn-kulright m" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="soccppmi0"> No, it's ok
+    			</label>
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="soccppmi1"> 1.0
+    			</label>
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="soccppmi2"> 2.0
+    			</label>
+    		</div>
+    		<br>
+    		<span>What about a log-likelihood threshold of 1.0?</span>
+    		<div class="btn-group-toggle" data-toggle="buttons" id="soccllrbuttons">
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="soccll0"> No, it's ok
+    			</label>
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="soccll1"> Yes, please
+    			</label>
+    		</div>
+    	</div>
+    </div>
+    <span class="text-right font-weight-bold">Nephological Semantics - QLVL - KU Leuven</span>
+    <br>
+    <div class="btn fixed-bottom container shadow-sm border px-4 py-2 btn-marigreen rounded" id="confirm-select">
+    	<div class="col text-center">
+    		<span class="text-white">You have selected <span id="countmodels">0</span> models.</span>
+    		<strong class="shadow-sm">Let's look at them!</strong>
+    	</div>
+    </div>
+    <script>
+    	function updateSelection(){
+    		d3.tsv("models.tsv", function(error, data){
+    			if (error) throw error;
+    			var dataset = data;
+    			// var models = new Array();
+    			// data.forEach(function(d){models.push(d.type);});
+    			// console.log(models, typeof models);
+
+    			var info = {
+    				"state": document.getElementById("state").checked,
+    				"country": document.getElementById("country").checked,
+    				"church": document.getElementById("church").checked,
+    				"COHA1": document.getElementById("COHA1").checked,
+    				"Semcor1": document.getElementById("Semcor1").checked,
+    				"COHA2": document.getElementById("COHA2").checked,
+    				"Semcor2": document.getElementById("Semcor2").checked,
+    				"twppmi0": document.getElementById("twppmi0").checked,
+    				"twppmi1": document.getElementById("twppmi1").checked,
+    				"twppmi2": document.getElementById("twppmi2").checked,
+    				"twppmi2_5": document.getElementById("twppmi2_5").checked,
+    				"twppmi3": document.getElementById("twppmi3").checked,
+    				"twll0": document.getElementById("twll0").checked,
+    				"twll1": document.getElementById("twll1").checked,
+    				"soccppmi0": document.getElementById("soccppmi0").checked,
+    				"soccppmi1": document.getElementById("soccppmi1").checked,
+    				"soccppmi2": document.getElementById("soccppmi2").checked,
+    				"soccll0": document.getElementById("soccll0").checked,
+    				"soccll1": document.getElementById("soccll1").checked
+    			};
+    			types = update();
+    			selectedmodels = getmodels(dataset, types);
+    			document.getElementById("countmodels").innerHTML = selectedmodels.length;
+    			localStorage.clear();
+    			localStorage.setItem("modselection"+ "-"+types, JSON.stringify(selectedmodels));
+    			console.log(types, selectedmodels);
+
+    			function update(){
+    				if (((info["state"] || info ["country"] || info["church"]) != true) ||
+    					((info["state"] && info ["country"] && info["church"]) == true)){return "sample";}
+    				else if (info["state"] == true && info["country"] == true && info["church"] != true){return "state_country";}
+    				else if (info["state"] == true && info["country"] != true && info["church"] == true){return "state_church";}
+    				else if (info["state"] != true && info["country"] == true && info["church"] == true){return "country_church";}
+    				else if (info["state"] == true && info["country"] != true && info["church"] != true){return "state";}
+    				else if (info["state"] != true && info["country"] == true && info["church"] != true){return "country";}
+    				else if (info["state"] != true && info["country"] != true && info["church"] == true){return "church";}
+    			};
+    			function getmodels(modellist, type){
+    				var newlist = new Array();
+    				modellist.forEach(function(item){
+    					var twcorp = item.twcorpus + "1"
+    					var socccorp = item.socccorpus + "2"
+    					var twppmi = "twppmi" + item.twppmi
+    					var twllr = "twll" + item.twllr
+    					var soccppmi = "soccppmi" + item.soccppmi
+    					var soccllr = "soccll" + item.soccllr
+    					var twcorpvalue = info["COHA1"] || info["Semcor1"]
+    					var socccorpvalue = info["COHA2"] || info["Semcor2"]
+    					var twppmivalue = info["twppmi0"] || info["twppmi1"] || info["twppmi2"] || info["twppmi2_5"] || info["twppmi3"]
+    					var twllrvalue = info["twll0"] || info["twll1"]
+    					var soccppmivalue = info["soccppmi0"] || info["soccppmi1"] || info["soccppmi2"]
+    					var soccllrvalue = info["soccll0"] || info["soccll1"]
+    					if (item.lemma == type &&
+    						(info[twcorp] == true || twcorpvalue != true) &&
+    						(info[socccorp] == true || socccorpvalue != true) &&
+    						(info[twppmi] == true || twppmivalue != true) &&
+    						(info[twllr] == true || twllrvalue != true) &&
+    						(info[soccppmi] == true || soccppmivalue != true) &&
+    						(info[soccllr] == true || soccllrvalue != true)
+    						){
+    						newlist.push(item.filename);
+    					}});
+    				return newlist;
+    			};
+    		});
+		};
+		d3.select("#confirm-select").on("click", function() {
+			localStorage.setItem("goToPlot"+"-"+types, JSON.parse(
+				localStorage.getItem("modselection"+"-"+types))[0].substring(
+				0, JSON.parse(localStorage.getItem(
+					"modselection"+"-"+types))[0].length-2));
+			window.location = "level2.html?type="+types;
+		});
+		updateSelection()
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function(event) {
+			$('body').css({'padding-bottom':$('#confirm-select').height()+'px'});
+		});
+	</script>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

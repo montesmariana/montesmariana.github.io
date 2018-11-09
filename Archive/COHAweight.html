@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>COHAweight clouds</title>
+  <link rel="icon" href="./QLVLicon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="index_stylesheet.css">
+  <style>
+  #cloud_description{
+    display: none;
+  }
+  </style>
+</head>
+<body>
+<div class="header">
+    <div class="welcome"><h1>Welcome to the COHA-weighted clouds!</h1></div>
+    <div class="message">
+    <p>This page was last updated on <time id="lastmod"></time>.</p>
+    <script>
+    var lastmod = new Date(document.lastModified);
+    var lastmodstring = lastmod.toDateString();
+    document.getElementById("lastmod").innerHTML = lastmodstring;
+    </script>
+    </div>
+  </div>
+<div class="desc">
+<p>This is the main index.
+Here you will find:</p>
+<ul>
+  <li><a>Information about the coding in the clouds, in the right panel.</li>
+  <li><a>Clouds generated on September 24 and October 2nd 2018 (there's more information in the right panel).</a></li>
+  <li><a>Separability measure analysis for some of the clouds (there's more information in the right panel).</li>
+</ul>
+</div>
+<br>
+<div class="right">
+<h2 id="References">References</h2>
+<div class="desc">
+  <ul>
+<li><a href="http://www.evernote.com/l/Ad_CM-q61cZO0bHvUy091X04rGLzDTBR0GY/">Correspondence of pos-tags and semantic tags</a></li>
+<li><a href="http://www.evernote.com/l/Ad84s2RmBX5N7LbyNfpKc0VG6GlTJy9zA0E/">Genres and file metadata</a></li>
+<li><a href="http://www.evernote.com/l/Ad-yA1xe4CxPjL2Md2OF_YPnlzB8tQ1yAyI/">Dataframes about cues and weights</a></li>
+</ul>
+</div>
+<h3>WordNet senses</h3>
+<p><a href="http://www.evernote.com/l/Ad_4l3SO6YxFoYOsrO7O_gFBC3xC4E3qi5Y/">Hierarchies and frequencies of WordNet senses</a></p>
+<p><a href="http://www.evernote.com/l/Ad9Ci-oPfyFGG6nHexQPrl_Z6EC2SInxsGo/">WordNet definitions</a></p>
+<h3>Mariana's senses</h3>
+<p><a href="http://www.evernote.com/l/Ad8rStkPjvRFdI0xbHsbihLX-QQGbc89900/">Hierarchies and frequencies of Mariana's senses</a></p>
+<p><a href="http://www.evernote.com/l/Ad-Rt5Y8mpRHcJJe3Kr8z9fCPxbui4kB4T4/">Mariana's definitions</a></p>
+<h3>Separability measures</h3>
+<p>Next to the links to the clouds, there are some links titled <em>Semvar</em>, where you can find semvar code output (and the code, in a jupyter notebook) looking at
+separability measures for clouds.
+The measures are taken for the distance matrices both before and after dimensionality reduction; there are global and local measures (with different <em>k</em>);
+the classes analyzed are lemmas (for clouds of all types) or mbroad (for clouds of single types), broadGenre and newBroadGenre.</p>
+<br>
+<p>On October 12th I added the latest (hopefully last) sense-coding of <em>church</em> to the <a href="#Church">church</a> clouds, as well as extra variables
+  that might code extra context features (definiteness, modifiers) or sense-dimensions (building, community, organization...).</p>
+<p class="placeholder" id="button1" onclick="showDescription()">Click to show description of current clouds.</p>
+<div class="desc" id="cloud_description">
+<p>These clouds represent the similarity between tokens of <i>state</i>, <i>country</i> and <i>church</i>, either with all types at once, one at a time or only two combined.</p>
+<p>The tokens come from the Semcor corpus. <strong>The ppmi values for first order weighting come from COHA.</strong> The threshold indicated in the columns of the tables was applied to this weighting.
+  After applying the threshold, tokens that had lost all the weighted context words were dropped.
+</p>
+<p>The second-order co-occurrence (SOCC) ppmi values come from COHA. '6k' indicates that the token vectors have 5795 features (the same as the clouds in the main index,
+  with the intersect), while '10k' indicates that they have 10000 features (the 10 thousand most frequent contentwords from COHA).</p>
+<p>Now you're ready to enjoy the clouds. Please beware of saturation risk by looking at them for too long. Belgium has plenty of real clouds if you need to refresh your eyes.</p>
+<p><a href="cloud_data_240918.csv">Here</a> you can look at some metadata about the clouds that are not separated by genre
+  generated on <strong>September 24 2018</strong>.</p>
+<p><a href="cloud_data_021018.csv">Here</a> you can look at some metadata about the clouds that are not separated by genre
+    generated on <strong>October 2nd 2018</strong>.</p>
+<p>You can find information about the columns in the main index.</p>
+<p class="hide" onclick="hideDescription()">Hide text</p>
+</div>
+<script>
+function showDescription(){
+  document.getElementById("cloud_description").style.display="block";
+  document.getElementById("button1").style.display="none";
+}
+function hideDescription(){
+  document.getElementById("cloud_description").style.display="none";
+  document.getElementById("button1").style.display="block";
+}
+</script>
+</div>
+
+<div class="left">
+  <div class="menu">
+    <ul class="menu">
+      <li class="menu"><a href="#AllTypes">All&nbsp;types</a></li>
+      <li class="menu"><a href="#State">State</a></li>
+      <li class="menu"><a href="#Country">Country</a></li>
+      <li class="menu"><a href="#Church">Church</a></li>
+      <li class="menu"><a href="#StateCountry">State&nbsp;&&nbsp;Country</a></li>
+      <li class="menu"><a href="#StateChurch">State&nbsp;&&nbsp;Church</a></li>
+      <li class="menu"><a href="#CountryChurch">Country&nbsp;&&nbsp;Church</a></li>
+      <li class="menu"><a href="archive.html">Archive</a></li>
+      <li class="menu"><a href="index.html">Back&nbsp;to&nbsp;index</a></li>
+    </ul>
+  </div>
+  <h2 id="Clouds">Clouds</h2>
+<div class="table"><table>
+  <caption id="AllTypes"><h4>All types</h4></caption>
+  <tr>
+    <th>Subset\Threshold</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+  </tr>
+  <tr>
+    <td class="rowname">Random</td>
+    <td><a href="level1.html?type=COHAweight/COHA.sample.socc6k.min0">6k</a>&nbsp;&#9884;&nbsp;
+      <a href="jupyter/SeparabilityGral_min0.html">Semvar</a>&nbsp;&#9884;&nbsp;
+      <a href="level1.html?type=COHAweight/COHA.sample.socc10k.min0">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.sample.socc6k.min1">6k</a>&nbsp;&#9884;&nbsp;
+      <a href="jupyter/SeparabilityGral_min1.html">Semvar</a>&nbsp;&#9884;&nbsp;
+      <a href="level1.html?type=COHAweight/COHA.sample.socc10k.min1">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.sample.socc6k.min2">6k</a>
+      &nbsp;&#9884;&nbsp;<a href="jupyter/SeparabilityGral_min2.html">Semvar</a>&nbsp;&#9884;&nbsp;
+      <a href="level1.html?type=COHAweight/COHA.sample.socc10k.min2">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.sample.socc6k.min2_5">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.sample.socc10k.min2_5">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">WordNet sense-tagged</td>
+    <td><a href="level1.html?type=COHAweight/COHA.sample.socc6k.nona.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.sample.socc10k.nona.min0">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.sample.socc6k.nona.min1">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.sample.socc10k.nona.min1">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Informative texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.sample.socc6k.info.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.sample.socc10k.info.min0">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Imaginative texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.sample.socc6k.imag.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.sample.socc10k.imag.min0">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Technical texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.sample.socc6k.tech.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.sample.socc10k.tech.min0">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Other texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.sample.socc6k.others.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.sample.socc10k.others.min0">10k</a></td>
+  </tr>
+</table></div>
+<div class="table"><table>
+  <caption id="State"><h4>State</h4></caption>
+  <tr>
+    <th>Subset\Threshold</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+  </tr>
+  <tr>
+    <td class="rowname">Random/All</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state.sample.socc6k.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state.sample.socc10k.min0">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.state.sample.socc6k.min1">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state.sample.socc10k.min1">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.state.socc6k.min2">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state.socc10k.min2">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.state.socc6k.min2_5">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state.socc10k.min2_5">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">WordNet sense-tagged</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state.socc6k.nona.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state.socc10k.nona.min0">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.state.socc6k.nona.min1">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state.socc10k.nona.min1">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Informative texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state.sample.socc6k.info.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state.sample.socc10k.info.min0">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Technical texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state.socc6k.tech.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state.socc10k.tech.min0">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Other texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state.socc6k.others.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state.socc10k.others.min0">10k</a></td>
+  </tr>
+</table></div>
+<div class="table"><table>
+  <caption id="Country"><h4>Country</h4></caption>
+  <tr>
+    <th>Subset\Threshold</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+  </tr>
+  <tr>
+    <td class="rowname">All tokens</td>
+    <td><a href="level1.html?type=COHAweight/COHA.country.socc6k.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country.socc10k.min0">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.country.socc6k.min1">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country.socc10k.min1">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.country.socc6k.min2">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country.socc10k.min2">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.country.socc6k.min2_5">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country.socc10k.min2_5">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">WordNet sense-tagged</td>
+    <td><a href="level1.html?type=COHAweight/COHA.country.socc6k.nona.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country.socc10k.nona.min0">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.country.socc6k.nona.min1">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country.socc10k.nona.min1">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Informative texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.country.socc6k.info.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country.socc10k.info.min0">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Other texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.country.socc6k.others.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country.socc10k.others.min0">10k</a></td>
+  </tr>
+</table></div>
+<div class="table"><table>
+  <caption id="Church"><h4>Church</h4></caption>
+  <tr>
+    <th>Subset\Threshold</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+  </tr>
+  <tr>
+    <td class="rowname">All tokens</td>
+    <td><a href="level1.html?type=COHAweight/COHA.church.socc6k.min0">6k</a>&nbsp;&#9884;&nbsp;
+      <a href="level1.html?type=COHAweight/COHA.church.socc10k.min0">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.church.socc6k.min1">6k</a>&nbsp;&#9884;&nbsp;
+      <a href="jupyter/Separability_church2.html">Semvar</a>&nbsp;&#9884;&nbsp;
+      <a href="level1.html?type=COHAweight/COHA.church.socc10k.min1">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.church.socc6k.min2">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.church.socc10k.min2">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.church.socc6k.min2_5">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.church.socc10k.min2_5">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">WordNet sense-tagged</td>
+    <td><a href="level1.html?type=COHAweight/COHA.church.socc6k.nona.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.church.socc10k.nona.min0">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.church.socc6k.nona.min1">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.church.socc10k.nona.min1">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Informative texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.church.socc6k.info.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.church.socc10k.info.min0">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Other texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.church.socc6k.others.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.church.socc10k.others.min0">10k</a></td>
+  </tr>
+</table></div>
+<div class="table"><table>
+  <caption id="StateCountry"><h4>State & Country</h4></caption>
+  <tr>
+    <th>Subset\Threshold</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+  </tr>
+  <tr>
+    <td class="rowname">Random</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_country.sample.socc6k.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_country.sample.socc10k.min0">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_country.sample.socc6k.min1">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_country.sample.socc10k.min1">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_country.sample.socc6k.min2">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_country.sample.socc10k.min2">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_country.sample.socc6k.min2_5">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_country.sample.socc10k.min2_5">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">WordNet sense-tagged</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_country.socc6k.nona.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_country.socc10k.nona.min0">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_country.socc6k.nona.min1">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_country.socc10k.nona.min1">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Informative texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_country.sample.socc6k.info.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_country.sample.socc10k.info.min0">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Technical texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_country.sample.socc6k.tech.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_country.sample.socc10k.tech.min0">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Other texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_country.sample.socc6k.others.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_country.sample.socc10k.others.min0">10k</a></td>
+  </tr>
+</table></div>
+<div class="table"><table>
+  <caption id="StateChurch"><h4>State & Church</h4></caption>
+  <tr>
+    <th>Subset\Threshold</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+  </tr>
+  <tr>
+    <td class="rowname">Random</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_church.sample.socc6k.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_church.sample.socc10k.min0">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_church.sample.socc6k.min1">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_church.sample.socc10k.min1">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_church.sample.socc6k.min2">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_church.sample.socc10k.min2">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_church.sample.socc6k.min2_5">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_church.sample.socc10k.min2_5">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">WordNet sense-tagged</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_church.sample.socc6k.nona.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_church.sample.socc10k.nona.min0">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_church.socc6k.nona.min1">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_church.socc10k.nona.min1">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Informative texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_church.sample.socc6k.info.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_church.sample.socc10k.info.min0">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Technical texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_church.socc6k.tech.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_church.socc10k.tech.min0">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Other texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.state_church.sample.socc6k.others.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.state_church.sample.socc10k.others.min0">10k</a></td>
+  </tr>
+</table></div>
+<div class="table"><table>
+  <caption id="CountryChurch"><h4>Country & Church</h4></caption>
+  <tr>
+    <th>Subset\Threshold</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+  </tr>
+  <tr>
+    <td class="rowname">Random/All</td>
+    <td><a href="level1.html?type=COHAweight/COHA.country_church.sample.socc6k.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country_church.sample.socc10k.min0">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.country_church.sample.socc6k.min1">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country_church.sample.socc10k.min1">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.country_church.sample.socc6k.min2">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country_church.sample.socc10k.min2">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.country_church.socc6k.min2_5">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country_church.socc10k.min2_5">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">WordNet sense-tagged</td>
+    <td><a href="level1.html?type=COHAweight/COHA.country_church.socc6k.nona.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country_church.socc10k.nona.min0">10k</a></td>
+    <td><a href="level1.html?type=COHAweight/COHA.country_church.socc6k.nona.min1">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country_church.socc10k.nona.min1">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Informative texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.country_church.sample.socc6k.info.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country_church.sample.socc10k.info.min0">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Technical texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.country_church.socc6k.tech.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country_church.socc10k.tech.min0">10k</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">Other texts</td>
+    <td><a href="level1.html?type=COHAweight/COHA.country_church.socc6k.others.min0">6k</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=COHAweight/COHA.country_church.socc10k.others.min0">10k</a></td>
+  </tr>
+</table></div>
+</div>
+<div class="footer">
+<span>Nephological Semantics Project - QLVL - KU Leuven</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Archived clouds</title>
+  <link rel="icon" href="./QLVLicon/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../index_stylesheet.css">
+<style>
+#cloud_description{
+  display: none;
+}
+</style>
+</head>
+<body>
+  <div class="header">
+      <div class="welcome"><h1>Welcome to the Archive!</h1></div>
+      <div class="message">
+      <p>This page was last updated on <time id="lastmod"></time>. (Just style, the clouds are older).</p>
+      <script>
+      var lastmod = new Date(document.lastModified);
+      var lastmodstring = lastmod.toDateString();
+      document.getElementById("lastmod").innerHTML = lastmodstring;
+      </script>
+      </div>
+    </div>
+  <div class="desc">
+  <p>This is the main index.
+  Here you will find:</p>
+  <ul>
+    <li><a>Information about the coding in the clouds, in the right panel.</li>
+    <li><a>The clouds generated on August 30 and September 5 2018 (there's more information in the right panel).</a></li>
+  </ul>
+  </div>
+  <br>
+<div class="right">
+
+<h2>References</h2>
+<div class="desc">
+  <ul>
+<li><a href="http://www.evernote.com/l/Ad_CM-q61cZO0bHvUy091X04rGLzDTBR0GY/">Correspondence of pos-tags and semantic tags</a></li>
+<li><a href="http://www.evernote.com/l/Ad84s2RmBX5N7LbyNfpKc0VG6GlTJy9zA0E/">Genres and file metadata</a></li>
+<li><a href="http://www.evernote.com/l/Ad-yA1xe4CxPjL2Md2OF_YPnlzB8tQ1yAyI/">Dataframes about cues and weights</a></li>
+</ul>
+</div>
+<h3>WordNet senses</h3>
+<a href="http://www.evernote.com/l/Ad_4l3SO6YxFoYOsrO7O_gFBC3xC4E3qi5Y/">Hierarchies and frequencies of WordNet senses</a>
+<a href="http://www.evernote.com/l/Ad9Ci-oPfyFGG6nHexQPrl_Z6EC2SInxsGo/">WordNet definitions</a>
+<h3>Mariana's senses</h3>
+<a href="http://www.evernote.com/l/Ad8rStkPjvRFdI0xbHsbihLX-QQGbc89900/">Hierarchies and frequencies of Mariana's senses</a>
+<a href="http://www.evernote.com/l/Ad-Rt5Y8mpRHcJJe3Kr8z9fCPxbui4kB4T4/">Mariana's definitions</a>
+<br>
+<p>On October 12th I added the latest (hopefully last) sense-coding of <em>church</em> to the <a href="#Church">church</a> clouds, as well as extra variables
+  that might code extra context features (definiteness, modifiers) or sense-dimensions (building, community, organization...).</p>
+<p class="placeholder" id="button1" onclick="showDescription()">Click to show description of current clouds.</p>
+<div class="desc" id="cloud_description">
+<p>These clouds represent the similarity between tokens of <i>state</i>, <i>country</i> and <i>church</i>, either with all types at once, one at a time or only two combined.</p>
+<p>The tokens come from the Semcor corpus. The ppmi values for first order weighting come from Semcor as well. The threshold indicated in the columns of the tables was applied to this weighting.
+  After applying the threshold, tokens that had lost all the weighted context words were dropped.
+</p>
+<p>The second-order co-occurrence (SOCC) ppmi values come from eithe Semcor or COHA.
+  In COHA's case, the 10 thousand more frequent content words were used as feature words.
+For Semcor, all 6860 contentwords with frequency over 10.</p>
+<p>In each cell, 'random' indicates a random sample or all tokens, while 'ST' indicates that it only contains tokens that were semantically tagged in Semcor.</p>
+<p>Now you're ready to enjoy the clouds. Please beware of saturation risk by looking at them for too long. Belgium has plenty of real clouds if you need to refresh your eyes.</p>
+<a href="http://www.evernote.com/l/Ad_2xCl17P5OVJVg16GazNPIsKxVvOZxBc8/">Here</a> you can look at some metadata about the clouds with no threshold in weighting,
+  generated on <strong>August 30 2018</strong>.</p>
+<a href="http://www.evernote.com/l/Ad_Js57_Y1dF5a7Soly3cgLFeAkKgM6jXbU/">Here</a> you can look at some metadata about the clouds with threshold in the weighting,
+  generated on <strong>September 05 2018</strong>.</p>
+<p>These are Evernote notes with information on the amount of tokens, stress values from the multidimensional scaling and that kind of thing. Go to the main index to find about more if you're really curious.</p>
+<p class="hide" onclick="hideDescription()">Hide text</p>
+</div>
+<script>
+function showDescription(){
+  document.getElementById("cloud_description").style.display="block";
+  document.getElementById("button1").style.display="none";
+}
+function hideDescription(){
+  document.getElementById("cloud_description").style.display="none";
+  document.getElementById("button1").style.display="block";
+}
+</script>
+</div>
+</div>
+
+<div class="left">
+  <div class="menu">
+    <ul class="menu">
+      <li class="menu"><a href="#AllTypes">All&nbsp;types</a></li>
+      <li class="menu"><a href="#State">State</a></li>
+      <li class="menu"><a href="#Country">Country</a></li>
+      <li class="menu"><a href="#Church">Church</a></li>
+      <li class="menu"><a href="#StateCountry">State&nbsp;&&nbsp;Country</a></li>
+      <li class="menu"><a href="#StateChurch">State&nbsp;&&nbsp;Church</a></li>
+      <li class="menu"><a href="#CountryChurch">Country&nbsp;&&nbsp;Church</a></li>
+      <li class="menu"><a href="index.html">Back&nbsp;to&nbsp;index</a></li>
+    </ul>
+  </div>
+  <h2 id="Clouds">Clouds</h2>
+<div class="table"><table>
+  <caption id="AllTypes"><h4>All types</h4></caption>
+  <tr>
+    <th class="rowname">SOCC\Threshold</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+    <th>3</th>
+  </tr>
+  <tr>
+    <td><p class="rowname">COHA<p></td>
+    <td><a href="level1.html?type=Archive/Semcor.sample.COHAsocc.cw">random</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.sample.COHAsocc.min1">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.sample.COHAsocc.nona.min1">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.sample.COHAsocc.min2">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.sample.COHAsocc.nona.min2">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.sample.COHAsocc.min2_5">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.sample.COHAsocc.nona.min2_5">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.sample.COHAsocc.min3">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.sample.COHAsocc.nona.min3">ST</a></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Semcor</p></td>
+    <td><a href="level1.html?type=Archive/Semcor.sample.Semcorsocc.cw">random</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.sample.Semcorsocc.min1">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.sample.Semcorsocc.nona.min1">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.sample.Semcorsocc.min2">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.sample.Semcorsocc.nona.min2">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.sample.Semcorsocc.min2_5">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.sample.Semcorsocc.nona.min2_5">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.sample.Semcorsocc.min3">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.sample.Semcorsocc.nona.min3">ST</a></td>
+  </tr>
+</table></div>
+
+<div class="table"><table>
+  <caption id="State"><h4>State</h4></caption>
+  <tr>
+    <th class="rowname">SOCC\Threshold</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+    <th>3</th>
+  </tr>
+  <tr>
+    <td><p class="rowname">COHA</p></td>
+    <td><a href="level1.html?type=Archive/Semcor.state.COHAsocc.nona">ST</a>
+      <a href="level1.html?type=Archive/Semcor.state.sample.COHAsocc.cw">random</a>
+    </td>
+    <td><a href="level1.html?type=Archive/Semcor.state.sample.COHAsocc.min1">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state.COHAsocc.nona.min1">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state.sample.COHAsocc.min2">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state.COHAsocc.nona.min2">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state.COHAsocc.min2_5">random</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state.COHAsocc.min3">random</a></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Semcor</p></td>
+    <td><a href="level1.html?type=Archive/Semcor.state.Semcorsocc.nona">ST</a>
+      <a href="level1.html?type=Archive/Semcor.state.sample.Semcorsocc.cw">random</a>
+    </td>
+    <td><a href="level1.html?type=Archive/Semcor.state.sample.Semcorsocc.min1">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state.Semcorsocc.nona.min1">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state.sample.Semcorsocc.min2">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state.Semcorsocc.nona.min2">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state.Semcorsocc.min2_5">random</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state.Semcorsocc.min3">random</a></td>
+  </tr>
+</table></div>
+
+<div class="table"><table>
+  <caption id="Country"><h4>Country</h4></caption>
+  <tr>
+    <th class="rowname">SOCC\Threshold</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+  </tr>
+  <tr>
+    <td><p class="rowname">COHA</p></td>
+    <td><a href="level1.html?type=Archive/Semcor.country.COHAsocc.cw">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.country.COHAsocc.nona">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.country.COHAsocc.min1">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.country.COHAsocc.nona.min1">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.country.COHAsocc.min2">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.country.COHAsocc.nona.min2">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.country.COHAsocc.min2_5">random</a></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Semcor</p></td>
+    <td><a href="level1.html?type=Archive/Semcor.country.Semcorsocc.cw">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.country.Semcorsocc.nona">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.country.Semcorsocc.min1">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.country.Semcorsocc.nona.min1">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.country.Semcorsocc.min2">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.country.Semcorsocc.nona.min2">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.country.Semcorsocc.min2_5">random</a></td>
+  </tr>
+</table></div>
+
+<div class="table"><table>
+  <caption id="Church"><h4>Church</h4></caption>
+  <tr>
+    <th class="rowname">SOCC\Threshold</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+  </tr>
+  <tr>
+    <td><p class="rowname">COHA</p></td>
+    <td><a href="level1.html?type=Archive/Semcor.church.COHAsocc.cw">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.church.COHAsocc.nona">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.church.COHAsocc.min1">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.church.COHAsocc.nona.min1">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.church.COHAsocc.min2">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.church.COHAsocc.nona.min2">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.church.COHAsocc.min2_5">random</a></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Semcor</p></td>
+    <td><a href="level1.html?type=Archive/Semcor.church.Semcorsocc.cw">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.church.Semcorsocc.nona">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.church.Semcorsocc.min1">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.church.Semcorsocc.nona.min1">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.church.Semcorsocc.min2">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.church.Semcorsocc.nona.min2">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.church.Semcorsocc.min2_5">random</a></td>
+  </tr>
+</table></div>
+
+<div class="table"><table>
+  <caption id="CountryChurch"><h4>Country & Church</h4></caption>
+  <tr>
+    <th class="rowname">SOCC\Threshold</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+    <th>3</th>
+  </tr>
+  <tr>
+    <td><p class="rowname">COHA</p></td>
+    <td><a href="level1.html?type=Archive/Semcor.country_church.sample.COHAsocc.min1">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.country_church.COHAsocc.nona.min1">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.country_church.sample.COHAsocc.min2">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.country_church.COHAsocc.nona.min2">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.country_church.COHAsocc.min2_5">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.country_church.COHAsocc.nona.min2_5">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.country_church.COHAsocc.min3">random</a></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Semcor</p></td>
+    <td><a href="level1.html?type=Archive/Semcor.country_church.sample.Semcorsocc.min1">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.country_church.Semcorsocc.nona.min1">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.country_church.sample.Semcorsocc.min2">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.country_church.Semcorsocc.nona.min2">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.country_church.Semcorsocc.min2_5">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.country_church.Semcorsocc.nona.min2_5">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.country_church.Semcorsocc.min3">random</a></td>
+  </tr>
+</table></div>
+
+<div class="table"><table>
+  <caption id="StateChurch"><h4>State & Church</h4></caption>
+  <tr>
+    <th class="rowname">SOCC\Threshold</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+    <th>3</th>
+  </tr>
+  <tr>
+    <td><p class="rowname">COHA</p></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_church.sample.COHAsocc.min1">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state_church.COHAsocc.nona.min1">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_church.sample.COHAsocc.min2_5">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state_church.COHAsocc.nona.min2_5">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_church.sample.COHAsocc.min2">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state_church.COHAsocc.nona.min2">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_church.COHAsocc.min3">random</a></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Semcor</p></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_church.sample.Semcorsocc.min1">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state_church.Semcorsocc.nona.min1">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_church.sample.Semcorsocc.min2_5">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state_church.Semcorsocc.nona.min2_5">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_church.sample.Semcorsocc.min2">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state_church.Semcorsocc.nona.min2">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_church.Semcorsocc.min3">random</a></td>
+  </tr>
+</table></div>
+
+<div class="table"><table>
+  <caption id="StateCountry"><h4>State & Country</h4></caption>
+  <tr>
+    <th class="rowname">SOCC\Threshold</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+    <th>3</th>
+  </tr>
+  <tr>
+    <td><p class="rowname">COHA</p></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_country.sample.COHAsocc.min1">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state_country.COHAsocc.nona.min1">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_country.sample.COHAsocc.min2">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state_country.COHAsocc.nona.min2">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_country.sample.COHAsocc.min2_5">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state_country.COHAsocc.nona.min2_5">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_country.COHAsocc.min3">random</a></td>
+  </tr>
+  <tr>
+    <td><p class="rowname">Semcor</p></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_country.sample.Semcorsocc.min1">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state_country.Semcorsocc.nona.min1">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_country.sample.Semcorsocc.min2">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state_country.Semcorsocc.nona.min2">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_country.sample.Semcorsocc.min2_5">random</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=Archive/Semcor.state_country.Semcorsocc.nona.min2_5">ST</a></td>
+    <td><a href="level1.html?type=Archive/Semcor.state_country.Semcorsocc.min3">random</a></td>
+  </tr>
+</table></div>
+</div>
+<!-- <h2> No first order ppmi threshold</h2>
+<div class="piece">
+<h4>random</h4> -->
+<!-- <a href="level1.html?type=TSVFILE">COHA socc; all tokens</a>
+<a href="level1.html?type=TSVFILE">COHA socc; sense-tagged tokens</a>
+<a href="level1.html?type=TSVFILE">Semcor socc; all tokens</a>
+<a href="level1.html?type=TSVFILE">Semcor socc; sense-tagged tokens</a> -->
+<!-- <a href="level1.html?type=Archive/Semcor.sample.COHAsocc.cw">COHA socc: 20% of tokens</a>
+<a href="level1.html?type=Archive/Semcor.sample.Semcorsocc.cw">Semcor socc; 20% of tokens</a>
+</div>
+<div class="piece">
+<h4>State</h4> -->
+<!-- <a href="level1.html?type=Archive/Semcor.state.COHAsocc.cw">COHA socc: all tokens</a>
+<a href="level1.html?type=Archive/Semcor.state.COHAsocc.nona">COHA socc: sense-tagged tokens</a>
+<a href="level1.html?type=Archive/Semcor.state.sample.COHAsocc.cw">COHA socc: 30% of tokens</a>
+<a href="level1.html?type=Archive/Semcor.state.Semcorsocc.cw">Semcor socc: all tokens</a>
+<a href="level1.html?type=Archive/Semcor.state.Semcorsocc.nona">Semcor socc: sense-tagged tokens</a>
+<a href="level1.html?type=Archive/Semcor.state.sample.Semcorsocc.cw">Semcor socc: 30% of tokens</a>
+</div>
+<div class="piece"> -->
+<!-- <h4>Country</h4>
+<a href="level1.html?type=Archive/Semcor.country.COHAsocc.cw">COHA socc: all tokens</a>
+<a href="level1.html?type=Archive/Semcor.country.COHAsocc.nona">COHA socc: sense-tagged tokens</a>
+<a href="level1.html?type=Archive/Semcor.country.Semcorsocc.cw">Semcor socc: all tokens</a>
+<a href="level1.html?type=Archive/Semcor.country.Semcorsocc.nona">Semcor socc: sense-tagged tokens</a>
+</div>
+<div class="piece"> -->
+<!-- <h4>Church</h4>
+<a href="level1.html?type=Archive/Semcor.church.COHAsocc.cw">COHA socc: all tokens</a>
+<a href="level1.html?type=Archive/Semcor.church.COHAsocc.nona">COHA socc: sense-tagged tokens</a>
+<a href="level1.html?type=Archive/Semcor.church.Semcorsocc.cw">Semcor socc: all tokens</a>
+<a href="level1.html?type=Archive/Semcor.church.Semcorsocc.nona">Semcor socc: sense-tagged tokens</a>
+</div> <div style="clear:left">
+<h2>Old, ugly clouds</h2>
+<a href="level1.html?type=Archive/Semcor.church.COHAsocc">church_with_COHA</a>
+<a href="level1.html?type=Archive/Semcor.church.Semcorsocc">church_with_Semcor</a>
+<a href="level1.html?type=Archive/Semcor.country.COHAsocc">country_with_COHA</a>
+<a href="level1.html?type=Archive/Semcor.country.Semcorsocc">country_with_Semcor</a>
+<a href="level1.html?type=Archive/Semcor.state.COHAsocc">state_with_COHA</a>
+<a href="level1.html?type=Archive/Semcor.state.Semcorsocc">state_with_Semcor</a>
+<a href="level1.html?type=COHAsocc">sample_COHAsocc2</a>
+<a href="level1.html?type=Archive/Semcorsocc">SEMCORsocc</a>
+</div>-->
+
+</div>
+</body>
+</html>

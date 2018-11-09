@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Church clouds</title>
+<link rel="icon" href="./QLVLicon/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="index_stylesheet.css">
+</head>
+<body>
+  <div class="header">
+      <div class="welcome"><h1>Welcome to Church!</h1></div>
+      <div class="message">
+      <p>This page was last updated on <time id="lastmod"></time>.</p>
+      <script>
+      var lastmod = new Date(document.lastModified);
+      var lastmodstring = lastmod.toDateString();
+      document.getElementById("lastmod").innerHTML = lastmodstring;
+      </script>
+      </div>
+    </div>
+<div class="desc">
+<p>Here you will find a table with the following clouds:</p>
+<ul>
+  <li>Only of the token <i>church</i>.</li>
+  <li>From Semcor, with Semcor as source of the first order weighting values.</li>
+  <li>With either COHA or Semcor as source of the second order values.
+    In all cases the <i>same</i> context words were used,
+    only the ppmi values differ. These are all the 5795 content words with frequency over 10 in both corpora.</li>
+  <li>Without any other kind of subsetting: these are all the tokens.</li>
+</ul>
+<p>Each column indicates a different threshold in the first order weighting,
+  while each row indicates a different threshold in the second order weighting.</p>
+<p>On October 12th I added the latest (hopefully last) sense-coding of <em>church</em> to the clouds, as well as extra variables
+    that might code extra context features (definiteness, modifiers) or sense-dimensions (building, community, organization...).</p>
+</div>
+<br>
+
+<div class="right">
+<h2 id="References">References</h2>
+<p><a href="cloud_data_170918.csv">Here</a> you can look at some metadata about the clouds.</p>
+</div>
+<div class="left">
+  <div class="menu">
+    <ul class="menu">
+      <li class="menu"><a href="index.html">Back to index</a></li>
+    </ul>
+  </div>
+  <h2 id="Clouds">Clouds</h2>
+<div class="table"><table>
+  <caption><h4>Church clouds with different threshold in socc and weight</h4></caption>
+  <tr>
+    <th>SOCC\Weight</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>2,5</th>
+    <th>3</th>
+  </tr>
+  <tr>
+    <td class="rowname">0</td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc.min3">Semcor</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">1</td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc1.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc1.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc1.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc1.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc1.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc1.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc1.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc1.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc1.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc1.min3">Semcor</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">2</td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc2.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc2.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc2.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc2.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc2.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc2.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc2.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc2.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc2.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc2.min3">Semcor</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">2,5</td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc25.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc25.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc25.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc25.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc25.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc25.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc25.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc25.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc25.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc25.min3">Semcor</a></td>
+  </tr>
+  <tr>
+    <td class="rowname">3</td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc3.min0">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc3.min0">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc3.min1">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc3.min1">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc3.min2">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc3.min2">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc3.min2_5">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc3.min2_5">Semcor</a></td>
+    <td><a href="level1.html?type=IntersectSOCC/Semcor.church.COHAisocc3.min3">COHA</a>&nbsp;&#9884;&nbsp;<a href="level1.html?type=IntersectSOCC/Semcor.church.Semcorisocc3.min3">Semcor</a></td>
+  </tr>
+</table></div>
+</div>
+
+</body>
+</html>
