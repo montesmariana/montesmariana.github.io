@@ -20,9 +20,10 @@
     .selector-for-some-widget {
       box-sizing: content-box;
     }
-    .btn.focus {
-  outline: none !important;
-}
+    /* .btn.focus {
+      outline: none !important;
+    } */
+
     </style>
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -38,6 +39,26 @@
     	The "Let's look at them!" button takes you to Thomas' level2 page, where you can compare the different models selected.</p>
     	<p>These clouds were created on November 9 and are only for the type <em>church</em>.</p>
     </div>
+    <div class="row">
+      <div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
+    		<h2 class="blueh2">Possible context words</h2>
+    		<span>Before applying any sort of weighting, you can choose the length of the frequency dictionary
+          from which the first order context words were selected. In both cases, we are talking about words
+          that show up in both COHA and Semcor.</span >
+            <br>
+    		<div class="btn-group btn-group-toggle" data-toggle="buttons" id="twcwbuttons">
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="twfeatures27k"> 27k
+    			</label>
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="twfeatures10k"> 10k
+    			</label>
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="twfeatures5k"> 5k
+    			</label>
+    		</div>
+    </div>
+  </div>
     <div class="row">
     	<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
     		<h2 class="blueh2">First order weighting</h2>
@@ -153,6 +174,9 @@
     			// console.log(models, typeof models);
 
     			var info = {
+            "twfeatures27k": document.getElementById("twfeatures27k").checked,
+            "twfeatures10k": document.getElementById("twfeatures10k").checked,
+            "twfeatures5k": document.getElementById("twfeatures5k").checked,
     				"twppmic": document.getElementById("twppmic").checked,
     				"twppmis": document.getElementById("twppmis").checked,
     				"twll0": document.getElementById("twll0").checked,
@@ -172,6 +196,7 @@
     				"soccll0": document.getElementById("soccll0").checked,
     				"soccll1": document.getElementById("soccll1").checked
     			};
+          darkenbuttons();
     			selectedmodels = getmodels(dataset);
     			document.getElementById("countmodels").innerHTML = selectedmodels.length;
     			localStorage.clear();
@@ -181,35 +206,45 @@
     			function getmodels(modellist){
     				var newlist = new Array();
     				modellist.forEach(function(item){
+              var twfeature = "twfeatures" + item.twfeatures
     					var twcorp = "twppmi" + item.twppmi.slice(0,1)
     					var socccorp = "socc" + item.socccorpus
     					var twppmi = "twppmi" + item.twppmi.slice(1)
     					var twllr = "twll" + item.twllr
     					var soccppmi = "soccppmi" + item.soccppmi
     					var soccllr = "soccll" + item.soccllr
-                        var vectorlength = item.length
+              var vectorlength = item.length
     					var twcorpvalue = info["twppmic"] || info["twppmis"]
     					var socccorpvalue = info["soccc"] || info["soccs"]
     					var twppmivalue = info["twppmi0"] || info["twppmi1"] || info["twppmi1_5"]
     					var twllrvalue = info["twllc0"] || info["twllc1"] || info["twlls0"] || info["twlls1"]
     					var soccppmivalue = info["soccppmi0"] || info["soccppmi1"]
     					var soccllrvalue = info["soccll0"] || info["soccll1"]
-                        var lengthvalue = info['intersect'] || info['top5k'] || info['top5kcont']
-                        if(item.twppmi.slice(0,1) == item.twllr.slice(0,1) && item.twppmi.slice(1) == item.twllr.slice(1) == "0"){twllr = 'twll0'}
+              var lengthvalue = info['intersect'] || info['top5k'] || info['top5kcont']
+              var featurevalue = info['twfeatures5k'] || info['twfeatures10k'] || info['twfeatures27k']
+              if(item.twppmi.slice(0,1) == item.twllr.slice(0,1) && item.twppmi.slice(1) == item.twllr.slice(1) == "0"){twllr = 'twll0'}
     					if ((info[twcorp] == true || twcorpvalue != true) &&
     						(info[socccorp] == true || socccorpvalue != true) &&
     						(info[twppmi] == true || twppmivalue != true) &&
     						(info[twllr] == true || twllrvalue != true) &&
     						(info[soccppmi] == true || soccppmivalue != true) &&
     						(info[soccllr] == true || soccllrvalue != true) &&
-                            (info[vectorlength] == true || lengthvalue != true)
+                (info[vectorlength] == true || lengthvalue != true) &&
+                (info[twfeature] == true || featurevalue != true)
     						){
     						newlist.push(item.filename);
     					}});
     				return newlist;
     			};
+
+          function darkenbuttons(){
+            if (info["twfeatures27k"]) {
+            document.getElementById('twf5').style.opacity = 0.5
+          };};
     		});
 		};
+
+
 		d3.select("#confirm-select").on("click", function() {
 			localStorage.setItem("goToPlot-church", JSON.parse(
 				localStorage.getItem("modselection-church"))[0].substring(
