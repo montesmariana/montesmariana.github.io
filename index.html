@@ -91,7 +91,6 @@
     		</div>
             <p></p>
             <span>What about a log-likelihood threshold?</span><br>
-            <span>This only affects models with Semcor weights, but the values may come from COHA.</span><br>
             <span>The 'No weighting' option only affects models with no ppmi weighitng.</span>
             <br>
     		<div class="btn-group-toggle" data-toggle="buttons" id="twllrbuttons">
@@ -219,7 +218,7 @@
     					var twcorpvalue = info["twppmic"] || info["twppmis"]
     					var socccorpvalue = info["soccc"] || info["soccs"]
     					var twppmivalue = info["twppmi0"] || info["twppmi1"] || info["twppmi1_5"]
-    					var twllrvalue = info["twllc0"] || info["twllc1"] || info["twlls0"] || info["twlls1"]
+    					var twllrvalue = info["twllc0"] || info["twllc1"] || info["twll0"] || info["twlls1"]
     					var soccppmivalue = info["soccppmi0"] || info["soccppmi1"]
     					var soccllrvalue = info["soccll0"] || info["soccll1"]
               var lengthvalue = info['intersect'] || info['top5k'] || info['top5kcont']
