@@ -212,6 +212,7 @@
     					var socccorp = "socc" + item.socccorpus
     					var twppmi = "twppmi" + item.twppmi.slice(1)
     					var twllr = "twll" + item.twllr
+              if (twppmi == "twppmi0" && (twllr == "twllc0" || twllr == "twlls0")){twllr = "twll0"}
     					var soccppmi = "soccppmi" + item.soccppmi
     					var soccllr = "soccll" + item.soccllr
               var vectorlength = item.length
@@ -223,7 +224,7 @@
     					var soccllrvalue = info["soccll0"] || info["soccll1"]
               var lengthvalue = info['intersect'] || info['top5k'] || info['top5kcont']
               var featurevalue = info['twfeatures5k'] || info['twfeatures10k'] || info['twfeatures27k']
-              if(item.twppmi.slice(0,1) == item.twllr.slice(0,1) && item.twppmi.slice(1) == item.twllr.slice(1) == "0"){twllr = 'twll0'}
+              // if(item.twppmi.slice(0,1) == item.twllr.slice(0,1) && item.twppmi.slice(1) == item.twllr.slice(1) == "0"){twllr = "twll0"}
     					if ((info[twcorp] == true || twcorpvalue != true) &&
     						(info[socccorp] == true || socccorpvalue != true) &&
     						(info[twppmi] == true || twppmivalue != true) &&
