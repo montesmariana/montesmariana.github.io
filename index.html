@@ -35,14 +35,14 @@
 </head>
 <body>
 	<div class="container p-4">
-    <div class="row shadow bg-gradient-info p-2 rounded"><h1 class="text-white text-center">Welcome to Mariana's clouds of <em>church</em>!</h1></div>
-    <div class="lead p-3">
-    	<p>On this site you can select a group of clouds based on some parameters (to increase soon).</p>
+    <div class="row shadow bg-gradient-kulright p-2 rounded"><h1 class="text-white">Welcome to Mariana's clouds of <em>church</em>!</h1></div>
+    <div class="lead p-3 shadow rounded">
+    	<p>On this site you can select a group of clouds based on some parameters.</p>
       <p>The buttons act as filters: between buttons of the same group there's an OR relation; between groups, an AND relation.
         When a filter is activated, incompatible combinations will look unavailable, but the buttons are not disabled (they may be used
         in combination with other parameters).</p>
     	<p>The "Let's look at them!" button takes you to Thomas' level2 page, where you can compare the different models selected.</p>
-    	<p>These clouds were created on November 9 and are only for the type <em>church</em>.</p>
+    	<p>These clouds were created on November 9 (27k possible context words) and 12 (the rest) and are only for the type <em>church</em>.</p>
     </div>
     <div class="row">
       <div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
@@ -79,7 +79,7 @@
     			</label>
     		</div>
             <p></p>
-    		<span>Would you like to set a threshold for ppmi weighting? (Only available for Semcor weights)</span>
+    		<span>Would you like to set a threshold for ppmi weighting? (Only affects Semcor weights)</span>
             <br>
     		<div class="btn-group btn-group-toggle" data-toggle="buttons" id="twppmibuttons">
     			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
@@ -245,43 +245,37 @@
           function darkenbuttons(){
             // if COHA for first order weighting and not Semcor
             var cond1 = info["twppmic"] && !info["twppmis"];
-            lowerOpacity(cond1, "twpt1_5");
-            lowerOpacity(cond1, "twls1");
             // if 1.5 as first order ppmi weighting and not others
             var cond2 = info["twppmi1_5"] && !(info["twppmi0"] || info["twppmi1"]);
-            lowerOpacity(cond2, "twpc");
-            lowerOpacity(cond2, "twls1");
-            lowerOpacity(cond2, "twf5");
             // if semcor 1.0 as first order llr weighting and not others
             var cond3 = info["twlls1"] && !(info["twllc0"] | info["twllc1"]);
-            lowerOpacity(cond3, "twpc");
             // if semcor 0.0 or 1.0 as first order llr weighting and not others
             var cond4 = (info["twlls1"] || (info["twll0"] && info["twppmis"])) && !(info["twllc1"] || info["twllc0"]);
-            lowerOpacity(cond4, "twpt1_5");
             // if semcor 0.0 as first order llr weighting and not others
             var cond5 = (info["twll0"] && info["twppmis"]) && !(info["twlls1"] || info["twllc1"] || info["twllc0"]);
-            lowerOpacity(cond5, "twpt1");
             // if semcor as second order weighting and not COHA
             var cond6 = info["soccs"] && !(info["soccc"]);
-            lowerOpacity(cond6, "length5c");
             // if length of final vector is 5kcont and not others
             var cond7 = info["top5kcont"] && !(info["intersect"] || info["top5k"]);
-            lowerOpacity(cond7, "socs");
             // if second order ppmi weighting is not 0
             var cond8 = info["soccppmi1"] && !(info["soccppmi0"]);
-            lowerOpacity(cond8, "twf10")
-            lowerOpacity(cond8, "twf5");
             // if first order features are only 5k
             var cond9 = info["twfeatures5k"] && !(info["twfeatures10k"] || info["twfeatures27k"]);
-            lowerOpacity(cond9, "twpt1_5")
             // if first order features are only 10k
             var cond11 = (info["twfeatures10k"] || info["twfeatures5k"]) && !(info["twfeatures27k"]);
-            lowerOpacity(cond11, "socp1");
-            lowerOpacity(cond11, 'socl1');
             // if second order llr weighting is not 0
             var cond12 = info["soccll1"] && !(info["soccll0"]);
-            lowerOpacity(cond12, "twf10")
-            lowerOpacity(cond12, "twf5");
+
+            lowerOpacity((cond2 || cond3), "twpc");
+            lowerOpacity((cond1 || cond4 || cond9), "twpt1_5");
+            lowerOpacity((cond1 || cond2), "twls1");
+            lowerOpacity((cond2 || cond8 || cond12), "twf5");
+            lowerOpacity(cond5, "twpt1");
+            lowerOpacity(cond6, "length5c");
+            lowerOpacity(cond7, "socs");
+            lowerOpacity((cond8 || cond12), "twf10");
+            lowerOpacity(cond11, "socp1");
+            lowerOpacity(cond11, 'socl1');
           };
           function lowerOpacity(condition, buttonid){
             if (condition){
