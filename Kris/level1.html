@@ -120,7 +120,7 @@
 			ycol = colnames.filter(function(d) { return d.endsWith(".y"); })[0];
 			othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
 			firstRow = d3.entries(dataset[1]).filter(function(d) { if (othercols.indexOf(d.key) >= 0) {return d.value;}; });
-			models = d3.entries(dataset).filter(function (d) {return d["id"]});
+			models = d3.entries(dataset).filter(function (d) {return d["_id"]});
 		  function isNumber(obj) { return !isNaN(parseFloat(obj)) }
 			nominals = firstRow.filter(function(d) { if (!isNumber(d.value) && !d.key.startsWith("_")) { return d.key; } });
 			numericals = firstRow.filter(function(d) { if (isNumber(d.value)) { return d.key; } });
@@ -223,7 +223,7 @@
 			dot = container.append("g")
 				.attr("class", "dot")
 				.selectAll("path")
-				.data(dataset, function(d) { return d["id"]; })
+				.data(dataset, function(d) { return d["_id"]; })
 				.enter()
 				.append("path")
 				.attr("transform", function(d) { return "translate(" + xScale(d[xcol]) + "," + yScale(d[ycol]) + ")"; })
@@ -238,7 +238,7 @@
 				.style("fill", function(d) { (l1cset === "undefined") ? out="#1f77b4" : out=getColors(d[l1cset]); return out; })
 				.classed("selected", function(d) {
 					if (selection.length > 0) {
-						return !(selection.indexOf(d["id"]) > -1);
+						return !(selection.indexOf(d["_id"]) > -1);
 					}
 				 })
 				 .attr("data-legend", " ")
@@ -246,7 +246,7 @@
           		tooltip.transition()
 					.duration(200)
 					.style("opacity", .9);
-          		tooltip.html("<b>" + d["id"] + "</b><br>" + d["text"]) //+ (typeof l1sset  !== "undefined" ? "<p><b>"+l1sset+"</b>: " + d[l1sset] : "" ))
+          		tooltip.html("<b>" + d["_id"] + "</b><br>" + d["_text"]) //+ (typeof l1sset  !== "undefined" ? "<p><b>"+l1sset+"</b>: " + d[l1sset] : "" ))
 					.style("left", (d3.event.pageX + 20) + "px")
 					.style("top", (d3.event.pageY - 28) + "px");
 //				svg.select(".dot").selectAll("circle").style("opacity", .2);
@@ -266,7 +266,7 @@
 					.style("opacity", 0);
 				if (selection.length > 0) {
 					d3.select(this).classed("selected", function(d) {
-						return (selection.indexOf(d["id"]) === -1);
+						return (selection.indexOf(d["_id"]) === -1);
 					});
 				}
 //				svg.select(".dot").selectAll("circle").style("opacity", 1);
@@ -277,17 +277,17 @@
 					// 	window.location = "level2.html";
 					// });
 					.on("click", function(d) {
-							if (selection.indexOf(d["id"]) === -1) {
-								selection.push(d["id"]);
+							if (selection.indexOf(d["_id"]) === -1) {
+								selection.push(d["_id"]);
 							} else {
-								var index = selection.indexOf(d["id"]);
+								var index = selection.indexOf(d["_id"]);
 								if (index > -1) {
 									selection.splice(index, 1);
 								}
 							}
 							if (selection.length > 0) {
 								svg.select(".dot").selectAll("path:not(.selector)").classed("selected", function(d) {
-									return !(selection.indexOf(d["id"]) > -1);
+									return !(selection.indexOf(d["_id"]) > -1);
 								})
 							}
 							localStorage.setItem("modselection"+"-"+type, JSON.stringify(selection));
@@ -487,28 +487,10 @@
 				$('#dataframe').DataTable( {
 					"aaData" : dataset,
 					"aoColumns": [
-						{ mDataProp: "id", title:"TokenId"},
-						{ mDataProp: "lemma", title:"Lemma"},
-						{ mDataProp: "wf", title:"Wordform"},
-						{ mDataProp: "pos", title:"OriginalPos"},
-						{ mDataProp: "marisense", title:"MariSense"},
-						{ mDataProp: "mbroad", title:"MBroad"},
-						{ mDataProp: "mari3", title:"Mari3" },
-						{ mDataProp: "mari2", title:"Mari2" },
-						{ mDataProp: "sensekey", title:"SenseKey" },
-						{ mDataProp: "wnsense", title:"WNSense" },
-						{ mDataProp: "wnbroad", title:"WNBroad" },
-						{ mDataProp: "wn3" , title:"WN3"},
-						{ mDataProp: "wn2", title:"WN2" },
-						{ mDataProp: "genre", title:"Genre"},
-						{ mDataProp: "broadGenre", title:"Broad Genre"},
-						{ mDataProp: "newBroadGenre", title:"New Broad Genre"},
-						{ mDataProp: "newPos", title:"NewPos"},
-						{ mDataProp: "cues", title:"Cues"},
-						{ mDataProp: "cuesWithWeight", title:"Weighted Cues"},
-						{ mDataProp: "meanWeight", title:"Mean Weight"},
-						{ mDataProp: "weightedCuesRatio", title:"WCW/Cues Ratio"},
-						{ mDataProp: "weightedCW", title:"Weighted ContextWords"}
+						{ mDataProp: "_id", title:"TokenId"},
+						{ mDataProp: "word", title:"Word"},
+						{ mDataProp: "country", title:"Country"},
+						{ mDataProp: "year", title:"Year"}
 					]
 				});
 			});
