@@ -1,8 +1,8 @@
-c.model1_semcw.10k_all.10_10	0.229994632992021
-c.model1_semcw.10k_all.5_5	0.246143477098377
-c.model1_semcw.10k_dvnj.10_10	0.233624427946249
-c.model1_semcw.10k_dvnj.5_5	0.247757087383503
-s.model1_semcw.10k_all.10_10	0.302839742380395
-s.model1_semcw.10k_all.5_5	0.323088215501258
-s.model1_semcw.10k_dvnj.10_10	0.307371040824136
-s.model1_semcw.10k_dvnj.5_5	0.326368042107343
+c.model1_semcw.10k_all.10_10	c	10k	all	10	10	0.229795426348924
+c.model1_semcw.10k_all.5_5	c	10k	all	5	5	0.246143477098377
+c.model1_semcw.10k_dvnj.10_10	c	10k	dvnj	10	10	0.232692388353926
+c.model1_semcw.10k_dvnj.5_5	c	10k	dvnj	5	5	0.247757087383503
+s.model1_semcw.10k_all.10_10	s	10k	all	10	10	0.302684332449182
+s.model1_semcw.10k_all.5_5	s	10k	all	5	5	0.323088215501258
+s.model1_semcw.10k_dvnj.10_10	s	10k	dvnj	10	10	0.307371040824136
+s.model1_semcw.10k_dvnj.5_5	s	10k	dvnj	5	5	0.326368042107343
