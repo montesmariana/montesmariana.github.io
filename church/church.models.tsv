@@ -1,0 +1,5 @@
+model	corpus	settings	length	pos	soccleft	soccright	weight	tokleft	tokright	compounds	stress
+c.model1_semcw.10k_all.5_5.noweight.5_5.nocomp	c	model1	10k	all	5	5	noweight	5	5	nocomp	0.0628534369020796
+c.model1_semcw.10k_dvnj.5_5.noweight.5_5.nocomp	c	model1	10k	dvnj	5	5	noweight	5	5	nocomp	0.0627558484263468
+s.model1_semcw.10k_all.5_5.noweight.5_5.nocomp	s	model1	10k	all	5	5	noweight	5	5	nocomp	0.285755471847573
+s.model1_semcw.10k_dvnj.5_5.noweight.5_5.nocomp	s	model1	10k	dvnj	5	5	noweight	5	5	nocomp	0.289365169633491
