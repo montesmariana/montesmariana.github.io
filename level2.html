@@ -783,7 +783,7 @@ d3.tsv(type+".tsv", function(error, data) {
 
   d3.select(self.frameElement).style("height", size * n + padding + 20 + "px");
 
-  d3.tsv("models.tsv", function(error, data) {
+  d3.tsv(type + ".models.tsv", function(error, data) {
   	mdata = data.filter(function(d) {return (modselection.indexOf(d._id) > -1)})
   	colnames = d3.keys(mdata[0]);
   	othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
