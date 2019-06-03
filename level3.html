@@ -388,12 +388,13 @@
 				 })
       	 .on("mouseover", function(d) {
 			 target = type.split(".")[0]
-			 splitted = String(d["_text"]).split(" ")
-			 i = splitted.indexOf("<span class='hit'>"+target+"</span>")
-			 windowsize = 10;
-			 before = splitted.slice(i-windowsize, i)
-			 after = splitted.slice(i+1, i+windowsize)
-			 res = before.join(" ") + " <span class='hit'>"+target+"</span> " + after.join(" ");
+			//  splitted = String(d["_text"]).split(" ")
+			//  i = splitted.indexOf("<span class='hit'>"+target+"</span>")
+			//  windowsize = 5;
+			//  before = splitted.slice(i-windowsize, i)
+			//  after = splitted.slice(i+1, i+windowsize)
+			//  res = before.join(" ") + " <span class='hit'>"+target+"</span> " + after.join(" ");
+			res = String(d["_text"])
 			 console.log(res);
 			 //res = d["_text"]
 
