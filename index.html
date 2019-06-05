@@ -41,35 +41,13 @@
       <p>The buttons act as filters: between buttons of the same group there's an OR relation; between groups, an AND relation.
         When a filter is activated, incompatible combinations will look unavailable, but the buttons are not disabled (they may be used
 				in combination with other parameters).</p>
-				<p>While I did register many settings, I didn't vary along all of them. The clouds gathered here
-					are all based on type level vectors of 10k features, with frequencies based on L5R5 windows on all levels
-					(first and second order weighting and token level context word selection.).
-					At token level, sentence delimiters were applied (succesfully, I hope), but not at type level.
+				<p>While I did register many settings, I didn't vary along all of them. These clouds have no first order ppmi weighting;
+					for the first order type level vectors, a window of 5-5 was used for 3-3 token level, and 10-10 for 10-10 token level.
 				</p>
     	<p>The "Let's look at them!" button takes you to Thomas' level2 page, where you can compare the different models selected.</p>
-			<p><a href="church/all_tokens/index.html">These clouds</a> were created on May 31st 2019 and are only for the type <em>church</em>,
-				and only when it is not part of a compound; the ones here were created on June 4 with way more filters.</p>
-    </div>
-    <!-- <div class="row">
-      <div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
-				<h2 class="blueh2">Possible context words</h2>
-				<span>Before applying any sort of weighting, you may choose the length of the frequency dictionary
-          from which the first order context words were selected. In both cases, we are talking about words
-          that show up in both COHA and Semcor.</span>
-            <br>
-    		<div class="btn-group btn-group-toggle" data-toggle="buttons" id="twcwbuttons">
-    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="twfeatures27k"> 27k
-    			</label>
-    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()" id="twf10">
-    				<input type="checkbox" autocomplete="off" id="twfeatures10k"> 10k
-    			</label>
-    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()" id="twf5">
-    				<input type="checkbox" autocomplete="off" id="twfeatures5k"> 5k
-    			</label>
-				</div>
+			<p>These clouds were created on June 4 and are only for the type <em>church</em>,
+				and only when it is not part of a compound; the ones <a href="church/all_tokens/index.html">here</a> were created on May 31 with less filters.</p>
 			</div>
-		</div> -->
     <div class="row">
     	<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
     		<h2 class="blueh2">First order selection</h2>
@@ -104,29 +82,8 @@
     			</label>
     			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()" id="twpt1">
     				<input type="checkbox" autocomplete="off" id="twppmi"> PPMI (0)
-    			</label> 
-    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()" id="twpt1_5">
-    				<input type="checkbox" autocomplete="off" id="twppmi1_5"> 1.5
-    			</label> 
+    			</label>
     		</div>-->
-            <!-- <p></p>
-            <span>What about a log-likelihood threshold?</span><br>
-            <span>The 'No weighting' option only affects models with no ppmi weighitng.</span>
-            <br>
-    		<div class="btn-group-toggle" data-toggle="buttons" id="twllrbuttons">
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="twll0"> No threshold
-    			</label>
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()" id="twls1">
-    				<input type="checkbox" autocomplete="off" id="twlls1"> Semcor's 1.0
-    			</label>
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="twllc0"> COHA's 0.0
-    			</label>
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="twllc1"> COHA's 1.0
-    			</label>
-    		</div> -->
     	</div>
     	<br>
     	<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
@@ -141,38 +98,25 @@
     			</label>
     		</div>
             <p></p>
-    		<span>There are also two options for the second order features.</span><br>
-    		<div class="btn-group-toggle" data-toggle="buttons" id="soccposbuttons">
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()" id="length5c">
-    				<input type="checkbox" autocomplete="off" id="allpos"> All types
+    		<span>Select the length of the second order vectors.</span><br>
+    		<div class="btn-group-toggle" data-toggle="buttons" id="socclengthbuttons">
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="socc5k"> Top 5 thousand
     			</label>
     			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="dvnj"> Determiners, verbs, nouns and adjectives
+    				<input type="checkbox" autocomplete="off" id="socc10k"> Top 10 thousand
     			</label>
-    			<!-- <label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="intersect"> 27k intersect
-    			</label> -->
-    		</div>
-            <!-- <p></p>
-    		<span>Would you like to set a threshold for ppmi weighting?</span>
-    		<div class="btn-group btn-group-toggle" data-toggle="buttons" id="soccppmibuttons">
-    			<label class="btn shadow-sm btn-kulright m" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="soccppmi0"> No, no threshold
-    			</label>
-    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()" id="socp1">
-    				<input type="checkbox" autocomplete="off" id="soccppmi1"> 1.0
-    			</label>
-    		</div>
-    		<p></p>
-    		<span>What about a log-likelihood threshold (from the chosen corpus)?</span>
-    		<div class="btn-group btn-group-toggle" data-toggle="buttons" id="soccllrbuttons">
-    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="soccll0"> No, no threshold
-    			</label>
-    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()" id="socl1">
-    				<input type="checkbox" autocomplete="off" id="soccll1"> 1.0
-    			</label>
-    		</div> -->
+				</div>
+				<p></p>
+    		<span>Select the window for the ppmi values of the second order vectors.</span><br>
+				<div class="btn-group-toggle" data-toggle="buttons" id="soccwinbuttons">
+						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+							<input type="checkbox" autocomplete="off" id="soccwin5"> 5-5 window
+						</label>
+						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+							<input type="checkbox" autocomplete="off" id="soccwin10"> 10-10 window
+						</label>
+					</div>
     	</div>
     </div>
     <span class="text-right font-weight-bold">Nephological Semantics - QLVL - KU Leuven</span>
@@ -194,35 +138,20 @@
     			// console.log(models, typeof models);
 
     			var info = {
-            // "twfeatures27k": document.getElementById("twfeatures27k").checked,
-            // "twfeatures10k": document.getElementById("twfeatures10k").checked,
-            // "twfeatures5k": document.getElementById("twfeatures5k").checked,
-    				// "twppmic": document.getElementById("twppmic").checked,
-    				// "twppmis": document.getElementById("twppmis").checked,
-    				// "twll0": document.getElementById("twll0").checked,
-    				// "twlls1": document.getElementById("twlls1").checked,
-    				// "twllc0": document.getElementById("twllc0").checked,
-    				// "twllc1": document.getElementById("twllc1").checked,
-    				// "twppmi0": document.getElementById("twppmi0").checked,
-    				// "twppmi1": document.getElementById("twppmi1").checked,
-    				// "twppmi1_5": document.getElementById("twppmi1_5").checked,
 						"nvj" : document.getElementById("tw-one").checked,
 						"nvjid" : document.getElementById("tw-two").checked,
 						"bound" : document.getElementById("bound").checked,
 						"nobound" : document.getElementById("nobound").checked,
-    				"soccc": document.getElementById("soccc").checked,
-    				"soccs": document.getElementById("soccs").checked,
+    				"soccc" : document.getElementById("soccc").checked,
+    				"soccs" : document.getElementById("soccs").checked,
+						"5k" : document.getElementById("socc5k").checked,
+						"10k" : document.getElementById("socc10k").checked,
+						"soccwin5" : document.getElementById("soccwin5").checked,
+						"soccwin10" : document.getElementById("soccwin10").checked,
 						// "all": document.getElementById("allpos").checked,
     				// "dvnj": document.getElementById("dvnj").checked,
 						// "noweight": document.getElementById("twno").checked,
     				// "ppmi0": document.getElementById("twppmi").checked
-    				// "top5kcont": document.getElementById("top5kcont").checked,
-    				// "top5k": document.getElementById("top5k").checked,
-    				// "intersect": document.getElementById("intersect").checked,
-    				// "soccppmi0": document.getElementById("soccppmi0").checked,
-    				// "soccppmi1": document.getElementById("soccppmi1").checked,
-    				// "soccll0": document.getElementById("soccll0").checked,
-    				// "soccll1": document.getElementById("soccll1").checked
     			};
           // darkenbuttons();
     			selectedmodels = getmodels(dataset);
@@ -236,40 +165,32 @@
     				modellist.forEach(function(item){
 							// FIRST define variables that extract the values of the settings in models and
 							//// make them equivalent to the keys in info
-              // var twfeature = "twfeatures" + item.twfeatures
-    					// var twcorp = "twppmi" + item.twppmi.slice(0,1)
     					var twmodel = item.tokpos
 							var twbound = item.sentbound
-							var socccorp = "socc" + item.corpus
-							var soccpos = item.pos
+							var socccorp = "socc" + item.socccorpus
+							//var soccpos = item.pos
+							var socclength = item.socclength
+							var soccwindow = "soccwin" + item.soccleft
 							// var tw = item.weight
-    					// var twppmi = "twppmi" + item.twppmi.slice(1)
-    					// var twllr = "twll" + item.twllr
-              // if (twppmi == "twppmi0" && (twllr == "twllc0" || twllr == "twlls0")){twllr = "twll0"}
-    					// var soccppmi = "soccppmi" + item.soccppmi
-    					// var soccllr = "soccll" + item.soccllr
-              // var vectorlength = item.length
-
+    					
 							// SECOND define variables that are true if one of the buttons has been clicked (for each setting)
     					// var twcorpvalue = info["twppmic"] || info["twppmis"]
-    					var twmodelvalue = info["tw-one"] || info["tw-two"]
+    					var twmodelvalue = info["nvj"] || info["nvjid"]
 							var twboundvalue = info["bound"] || info["nobound"]
 							var socccorpvalue = info["soccc"] || info["soccs"]
-							var soccposvalue = info["all"] || info["dvnj"]
+							//var soccposvalue = info["all"] || info["dvnj"]
+							var socclengthvalue = info["5k"] || info["10k"]
+							var soccwinvalue = info["soccwin5"] || info["soccwin10"]
 							// var twvalue = info["noweight"] || info["ppmi0"]
-    					// var twppmivalue = info["twppmi0"] || info["twppmi1"] || info["twppmi1_5"]
-    					// var twllrvalue = info["twllc0"] || info["twllc1"] || info["twll0"] || info["twlls1"]
-    					// var soccppmivalue = info["soccppmi0"] || info["soccppmi1"]
-    					// var soccllrvalue = info["soccll0"] || info["soccll1"]
-              // var lengthvalue = info['intersect'] || info['top5k'] || info['top5kcont']
-              // var featurevalue = info['twfeatures5k'] || info['twfeatures10k'] || info['twfeatures27k']
-              // if(item.twppmi.slice(0,1) == item.twllr.slice(0,1) && item.twppmi.slice(1) == item.twllr.slice(1) == "0"){twllr = "twll0"}
+    					
     					if (
 								// For each setting, check if the value in the current row is true or if none is true
     						(info[twmodel] == true || twmodelvalue != true) &&
 								(info[twbound] == true || twboundvalue != true) &&
 								(info[socccorp] == true || socccorpvalue != true) &&
-    						(info[soccpos] == true || soccposvalue != true)
+    						//(info[soccpos] == true || soccposvalue != true) &&
+								(info[socclength] == true || socclengthvalue != true) &&
+								(info[soccwindow] == true || soccwinvalue != true)
 								//(info[tw] == true || twvalue != true)
     						){
     						newlist.push(item.model);
