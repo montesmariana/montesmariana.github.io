@@ -72,20 +72,29 @@
 		</div> -->
     <div class="row">
     	<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
-    		<h2 class="blueh2">First order weighting</h2>
-    		<p>There are two options for first order weighting.</p>
-    		<!-- <span>You may select a corpus for first order weighting.</span>
+    		<h2 class="blueh2">First order selection</h2>
+    		<span>There are two main models for first order context word selection.</span>
             <br>
-    		<div class="btn-group-toggle" data-toggle="buttons" id="twcorpusbuttons">
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()" id="twpc">
-    				<input type="checkbox" autocomplete="off" id="twppmic"> COHA
+    		<div class="btn-group-toggle" data-toggle="buttons" id="twmodelbuttons">
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()" id="tw-model">
+    				<input type="checkbox" autocomplete="off" id="tw-one"> 10-10 Window (Nouns, adjectives, verbs)
     			</label>
     			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="twppmis"> Semcor
+    				<input type="checkbox" autocomplete="off" id="tw-two"> 3-3 Window (Nouns, adjectives, verbs, determiners, prepositions)
     			</label>
     		</div>
-            <p></p>-->
-    		<span>Note that the corpus used for the weighting is the same that you may choose for the second
+						<p></p>
+						<span>You may also decide to go beyond sentence borders or not.</span>
+            <br>
+    		<div class="btn-group-toggle" data-toggle="buttons" id="twsentbuttons">
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()" id="twbound">
+    				<input type="checkbox" autocomplete="off" id="bound"> Use sentence boundaries
+    			</label>
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="nobound"> Go beyond the sentence
+    			</label>
+    		</div>
+    		<!-- <span>Note that the corpus used for the weighting is the same that you may choose for the second
 					order context words (but does not apply if you choose 'no weighting').
 				</span>
             <br>
@@ -95,11 +104,11 @@
     			</label>
     			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()" id="twpt1">
     				<input type="checkbox" autocomplete="off" id="twppmi"> PPMI (0)
-    			</label>
-    			<!-- <label class="btn shadow-sm btn-kulright" onclick="updateSelection()" id="twpt1_5">
+    			</label> 
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()" id="twpt1_5">
     				<input type="checkbox" autocomplete="off" id="twppmi1_5"> 1.5
-    			</label> -->
-    		</div>
+    			</label> 
+    		</div>-->
             <!-- <p></p>
             <span>What about a log-likelihood threshold?</span><br>
             <span>The 'No weighting' option only affects models with no ppmi weighitng.</span>
@@ -197,12 +206,16 @@
     				// "twppmi0": document.getElementById("twppmi0").checked,
     				// "twppmi1": document.getElementById("twppmi1").checked,
     				// "twppmi1_5": document.getElementById("twppmi1_5").checked,
+						"nvj" : document.getElementById("tw-one").checked,
+						"nvjid" : document.getElementById("tw-two").checked,
+						"bound" : document.getElementById("bound").checked,
+						"nobound" : document.getElementById("nobound").checked,
     				"soccc": document.getElementById("soccc").checked,
     				"soccs": document.getElementById("soccs").checked,
-						"all": document.getElementById("allpos").checked,
-    				"dvnj": document.getElementById("dvnj").checked,
-						"noweight": document.getElementById("twno").checked,
-    				"ppmi0": document.getElementById("twppmi").checked
+						// "all": document.getElementById("allpos").checked,
+    				// "dvnj": document.getElementById("dvnj").checked,
+						// "noweight": document.getElementById("twno").checked,
+    				// "ppmi0": document.getElementById("twppmi").checked
     				// "top5kcont": document.getElementById("top5kcont").checked,
     				// "top5k": document.getElementById("top5k").checked,
     				// "intersect": document.getElementById("intersect").checked,
@@ -225,9 +238,11 @@
 							//// make them equivalent to the keys in info
               // var twfeature = "twfeatures" + item.twfeatures
     					// var twcorp = "twppmi" + item.twppmi.slice(0,1)
-    					var socccorp = "socc" + item.corpus
+    					var twmodel = item.tokpos
+							var twbound = item.sentbound
+							var socccorp = "socc" + item.corpus
 							var soccpos = item.pos
-							var tw = item.weight
+							// var tw = item.weight
     					// var twppmi = "twppmi" + item.twppmi.slice(1)
     					// var twllr = "twll" + item.twllr
               // if (twppmi == "twppmi0" && (twllr == "twllc0" || twllr == "twlls0")){twllr = "twll0"}
@@ -237,9 +252,11 @@
 
 							// SECOND define variables that are true if one of the buttons has been clicked (for each setting)
     					// var twcorpvalue = info["twppmic"] || info["twppmis"]
-    					var socccorpvalue = info["soccc"] || info["soccs"]
+    					var twmodelvalue = info["tw-one"] || info["tw-two"]
+							var twboundvalue = info["bound"] || info["nobound"]
+							var socccorpvalue = info["soccc"] || info["soccs"]
 							var soccposvalue = info["all"] || info["dvnj"]
-							var twvalue = info["noweight"] || info["ppmi0"]
+							// var twvalue = info["noweight"] || info["ppmi0"]
     					// var twppmivalue = info["twppmi0"] || info["twppmi1"] || info["twppmi1_5"]
     					// var twllrvalue = info["twllc0"] || info["twllc1"] || info["twll0"] || info["twlls1"]
     					// var soccppmivalue = info["soccppmi0"] || info["soccppmi1"]
@@ -249,9 +266,11 @@
               // if(item.twppmi.slice(0,1) == item.twllr.slice(0,1) && item.twppmi.slice(1) == item.twllr.slice(1) == "0"){twllr = "twll0"}
     					if (
 								// For each setting, check if the value in the current row is true or if none is true
-    						(info[socccorp] == true || socccorpvalue != true) &&
-    						(info[soccpos] == true || soccposvalue != true) &&
-								(info[tw] == true || twvalue != true)
+    						(info[twmodel] == true || twmodelvalue != true) &&
+								(info[twbound] == true || twboundvalue != true) &&
+								(info[socccorp] == true || socccorpvalue != true) &&
+    						(info[soccpos] == true || soccposvalue != true)
+								//(info[tw] == true || twvalue != true)
     						){
     						newlist.push(item.model);
     					}});
