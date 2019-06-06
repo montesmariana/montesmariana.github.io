@@ -1,33 +1,289 @@
-model	compounds	tokleft	tokright	tokpos	sentbound	weight	mincws	socccorpus	socclength	soccleft	soccright	stress	tokens
-nocomp.10_10_nvj_bound.noweight.1.c.10k_all.10_10	nocomp	10	10	nvj	bound	noweight	1	c	10k	10	10	0.215770686240871	248
-nocomp.10_10_nvj_bound.noweight.1.c.10k_all.5_5	nocomp	10	10	nvj	bound	noweight	1	c	10k	5	5	0.228111628294967	248
-nocomp.10_10_nvj_bound.noweight.1.c.5k_all.10_10	nocomp	10	10	nvj	bound	noweight	1	c	5k	10	10	0.199305000942889	248
-nocomp.10_10_nvj_bound.noweight.1.c.5k_all.5_5	nocomp	10	10	nvj	bound	noweight	1	c	5k	5	5	0.222483888795748	248
-nocomp.10_10_nvj_bound.noweight.1.s.10k_all.10_10	nocomp	10	10	nvj	bound	noweight	1	s	10k	10	10	0.257855299656017	248
-nocomp.10_10_nvj_bound.noweight.1.s.10k_all.5_5	nocomp	10	10	nvj	bound	noweight	1	s	10k	5	5	0.2610199078496	248
-nocomp.10_10_nvj_bound.noweight.1.s.5k_all.10_10	nocomp	10	10	nvj	bound	noweight	1	s	5k	10	10	0.242753134470037	248
-nocomp.10_10_nvj_bound.noweight.1.s.5k_all.5_5	nocomp	10	10	nvj	bound	noweight	1	s	5k	5	5	0.251591727542321	248
-nocomp.10_10_nvj_nobound.noweight.1.c.10k_all.10_10	nocomp	10	10	nvj	nobound	noweight	1	c	10k	10	10	0.215863786289657	249
-nocomp.10_10_nvj_nobound.noweight.1.c.10k_all.5_5	nocomp	10	10	nvj	nobound	noweight	1	c	10k	5	5	0.228543661726233	249
-nocomp.10_10_nvj_nobound.noweight.1.c.5k_all.10_10	nocomp	10	10	nvj	nobound	noweight	1	c	5k	10	10	0.199500168024296	249
-nocomp.10_10_nvj_nobound.noweight.1.c.5k_all.5_5	nocomp	10	10	nvj	nobound	noweight	1	c	5k	5	5	0.222518928032585	249
-nocomp.10_10_nvj_nobound.noweight.1.s.10k_all.10_10	nocomp	10	10	nvj	nobound	noweight	1	s	10k	10	10	0.255151940370546	249
-nocomp.10_10_nvj_nobound.noweight.1.s.10k_all.5_5	nocomp	10	10	nvj	nobound	noweight	1	s	10k	5	5	0.261094821591061	249
-nocomp.10_10_nvj_nobound.noweight.1.s.5k_all.10_10	nocomp	10	10	nvj	nobound	noweight	1	s	5k	10	10	0.242783134639178	249
-nocomp.10_10_nvj_nobound.noweight.1.s.5k_all.5_5	nocomp	10	10	nvj	nobound	noweight	1	s	5k	5	5	0.251619391828957	249
-nocomp.3_3_nvjid_bound.noweight.1.c.10k_all.10_10	nocomp	3	3	nvjid	bound	noweight	1	c	10k	10	10	0.23193641451721	239
-nocomp.3_3_nvjid_bound.noweight.1.c.10k_all.5_5	nocomp	3	3	nvjid	bound	noweight	1	c	10k	5	5	0.241437716096502	239
-nocomp.3_3_nvjid_bound.noweight.1.c.5k_all.10_10	nocomp	3	3	nvjid	bound	noweight	1	c	5k	10	10	0.226042003536079	239
-nocomp.3_3_nvjid_bound.noweight.1.c.5k_all.5_5	nocomp	3	3	nvjid	bound	noweight	1	c	5k	5	5	0.237007955770121	239
-nocomp.3_3_nvjid_bound.noweight.1.s.10k_all.10_10	nocomp	3	3	nvjid	bound	noweight	1	s	10k	10	10	0.245707879286218	239
-nocomp.3_3_nvjid_bound.noweight.1.s.10k_all.5_5	nocomp	3	3	nvjid	bound	noweight	1	s	10k	5	5	0.228429372662076	239
-nocomp.3_3_nvjid_bound.noweight.1.s.5k_all.10_10	nocomp	3	3	nvjid	bound	noweight	1	s	5k	10	10	0.256383468751367	239
-nocomp.3_3_nvjid_bound.noweight.1.s.5k_all.5_5	nocomp	3	3	nvjid	bound	noweight	1	s	5k	5	5	0.245867568510145	239
-nocomp.3_3_nvjid_nobound.noweight.1.c.10k_all.10_10	nocomp	3	3	nvjid	nobound	noweight	1	c	10k	10	10	0.231273238583473	244
-nocomp.3_3_nvjid_nobound.noweight.1.c.10k_all.5_5	nocomp	3	3	nvjid	nobound	noweight	1	c	10k	5	5	0.23353327451266	244
-nocomp.3_3_nvjid_nobound.noweight.1.c.5k_all.10_10	nocomp	3	3	nvjid	nobound	noweight	1	c	5k	10	10	0.22065610043594	244
-nocomp.3_3_nvjid_nobound.noweight.1.c.5k_all.5_5	nocomp	3	3	nvjid	nobound	noweight	1	c	5k	5	5	0.229300605236341	244
-nocomp.3_3_nvjid_nobound.noweight.1.s.10k_all.10_10	nocomp	3	3	nvjid	nobound	noweight	1	s	10k	10	10	0.244623049828069	244
-nocomp.3_3_nvjid_nobound.noweight.1.s.10k_all.5_5	nocomp	3	3	nvjid	nobound	noweight	1	s	10k	5	5	0.226760947089984	244
-nocomp.3_3_nvjid_nobound.noweight.1.s.5k_all.10_10	nocomp	3	3	nvjid	nobound	noweight	1	s	5k	10	10	0.254326875575502	244
-nocomp.3_3_nvjid_nobound.noweight.1.s.5k_all.5_5	nocomp	3	3	nvjid	nobound	noweight	1	s	5k	5	5	0.242174778511933	244
+model	register	compounds	tokleft	tokright	tokpos	sentbound	weight	mincws	socccorpus	socclength	soccleft	soccright	stress	tokens
+nocomp.10_10_nvj_bound.noweight.1.c.10k_all.10_10.imag	imag	nocomp	10	10	nvj	bound	noweight	1	c	10k	10	10	0.217623647791415	68
+nocomp.10_10_nvj_bound.noweight.1.c.10k_all.10_10.info	info	nocomp	10	10	nvj	bound	noweight	1	c	10k	10	10	0.259428400127255	181
+nocomp.10_10_nvj_bound.noweight.1.c.10k_all.10_10.all	all	nocomp	10	10	nvj	bound	noweight	1	c	10k	10	10	0.234224257755321	249
+nocomp.10_10_nvj_bound.noweight.1.c.10k_all.5_5.imag	imag	nocomp	10	10	nvj	bound	noweight	1	c	10k	5	5	0.226133996124433	68
+nocomp.10_10_nvj_bound.noweight.1.c.10k_all.5_5.info	info	nocomp	10	10	nvj	bound	noweight	1	c	10k	5	5	0.261129017529463	181
+nocomp.10_10_nvj_bound.noweight.1.c.10k_all.5_5.all	all	nocomp	10	10	nvj	bound	noweight	1	c	10k	5	5	0.247250481026046	249
+nocomp.10_10_nvj_bound.noweight.1.c.5k_all.10_10.imag	imag	nocomp	10	10	nvj	bound	noweight	1	c	5k	10	10	0.211370452790675	68
+nocomp.10_10_nvj_bound.noweight.1.c.5k_all.10_10.info	info	nocomp	10	10	nvj	bound	noweight	1	c	5k	10	10	0.240653808649489	181
+nocomp.10_10_nvj_bound.noweight.1.c.5k_all.10_10.all	all	nocomp	10	10	nvj	bound	noweight	1	c	5k	10	10	0.22079701728021	249
+nocomp.10_10_nvj_bound.noweight.1.c.5k_all.5_5.imag	imag	nocomp	10	10	nvj	bound	noweight	1	c	5k	5	5	0.226493335232135	68
+nocomp.10_10_nvj_bound.noweight.1.c.5k_all.5_5.info	info	nocomp	10	10	nvj	bound	noweight	1	c	5k	5	5	0.25480909290225	181
+nocomp.10_10_nvj_bound.noweight.1.c.5k_all.5_5.all	all	nocomp	10	10	nvj	bound	noweight	1	c	5k	5	5	0.245774930138209	249
+nocomp.10_10_nvj_bound.noweight.1.s.10k_all.10_10.imag	imag	nocomp	10	10	nvj	bound	noweight	1	s	10k	10	10	0.249855232637509	68
+nocomp.10_10_nvj_bound.noweight.1.s.10k_all.10_10.info	info	nocomp	10	10	nvj	bound	noweight	1	s	10k	10	10	0.25988599987913	181
+nocomp.10_10_nvj_bound.noweight.1.s.10k_all.10_10.all	all	nocomp	10	10	nvj	bound	noweight	1	s	10k	10	10	0.252793357206155	249
+nocomp.10_10_nvj_bound.noweight.1.s.10k_all.5_5.imag	imag	nocomp	10	10	nvj	bound	noweight	1	s	10k	5	5	0.256426240414721	68
+nocomp.10_10_nvj_bound.noweight.1.s.10k_all.5_5.info	info	nocomp	10	10	nvj	bound	noweight	1	s	10k	5	5	0.261518583058959	181
+nocomp.10_10_nvj_bound.noweight.1.s.10k_all.5_5.all	all	nocomp	10	10	nvj	bound	noweight	1	s	10k	5	5	0.260812966440218	249
+nocomp.10_10_nvj_bound.noweight.1.s.5k_all.10_10.imag	imag	nocomp	10	10	nvj	bound	noweight	1	s	5k	10	10	0.238263628504058	68
+nocomp.10_10_nvj_bound.noweight.1.s.5k_all.10_10.info	info	nocomp	10	10	nvj	bound	noweight	1	s	5k	10	10	0.254977155932315	181
+nocomp.10_10_nvj_bound.noweight.1.s.5k_all.10_10.all	all	nocomp	10	10	nvj	bound	noweight	1	s	5k	10	10	0.246704173308351	249
+nocomp.10_10_nvj_bound.noweight.1.s.5k_all.5_5.imag	imag	nocomp	10	10	nvj	bound	noweight	1	s	5k	5	5	0.256435005469088	68
+nocomp.10_10_nvj_bound.noweight.1.s.5k_all.5_5.info	info	nocomp	10	10	nvj	bound	noweight	1	s	5k	5	5	0.263159687505214	181
+nocomp.10_10_nvj_bound.noweight.1.s.5k_all.5_5.all	all	nocomp	10	10	nvj	bound	noweight	1	s	5k	5	5	0.258660420113105	249
+nocomp.10_10_nvj_bound.noweight.2.c.10k_all.10_10.imag	imag	nocomp	10	10	nvj	bound	noweight	2	c	10k	10	10	0.217599142362088	68
+nocomp.10_10_nvj_bound.noweight.2.c.10k_all.10_10.info	info	nocomp	10	10	nvj	bound	noweight	2	c	10k	10	10	0.26035123451551	181
+nocomp.10_10_nvj_bound.noweight.2.c.10k_all.10_10.all	all	nocomp	10	10	nvj	bound	noweight	2	c	10k	10	10	0.234224257755321	249
+nocomp.10_10_nvj_bound.noweight.2.c.10k_all.5_5.imag	imag	nocomp	10	10	nvj	bound	noweight	2	c	10k	5	5	0.22613372581084	68
+nocomp.10_10_nvj_bound.noweight.2.c.10k_all.5_5.info	info	nocomp	10	10	nvj	bound	noweight	2	c	10k	5	5	0.260052824156019	181
+nocomp.10_10_nvj_bound.noweight.2.c.10k_all.5_5.all	all	nocomp	10	10	nvj	bound	noweight	2	c	10k	5	5	0.247540622073434	249
+nocomp.10_10_nvj_bound.noweight.2.c.5k_all.10_10.imag	imag	nocomp	10	10	nvj	bound	noweight	2	c	5k	10	10	0.212119523483789	68
+nocomp.10_10_nvj_bound.noweight.2.c.5k_all.10_10.info	info	nocomp	10	10	nvj	bound	noweight	2	c	5k	10	10	0.240702396046006	181
+nocomp.10_10_nvj_bound.noweight.2.c.5k_all.10_10.all	all	nocomp	10	10	nvj	bound	noweight	2	c	5k	10	10	0.221515828395679	249
+nocomp.10_10_nvj_bound.noweight.2.c.5k_all.5_5.imag	imag	nocomp	10	10	nvj	bound	noweight	2	c	5k	5	5	0.226494202539538	68
+nocomp.10_10_nvj_bound.noweight.2.c.5k_all.5_5.info	info	nocomp	10	10	nvj	bound	noweight	2	c	5k	5	5	0.25477852478729	181
+nocomp.10_10_nvj_bound.noweight.2.c.5k_all.5_5.all	all	nocomp	10	10	nvj	bound	noweight	2	c	5k	5	5	0.2425130188173	249
+nocomp.10_10_nvj_bound.noweight.2.s.10k_all.10_10.imag	imag	nocomp	10	10	nvj	bound	noweight	2	s	10k	10	10	0.249855232637509	68
+nocomp.10_10_nvj_bound.noweight.2.s.10k_all.10_10.info	info	nocomp	10	10	nvj	bound	noweight	2	s	10k	10	10	0.260003103040955	181
+nocomp.10_10_nvj_bound.noweight.2.s.10k_all.10_10.all	all	nocomp	10	10	nvj	bound	noweight	2	s	10k	10	10	0.252395790700504	249
+nocomp.10_10_nvj_bound.noweight.2.s.10k_all.5_5.imag	imag	nocomp	10	10	nvj	bound	noweight	2	s	10k	5	5	0.256218785263725	68
+nocomp.10_10_nvj_bound.noweight.2.s.10k_all.5_5.info	info	nocomp	10	10	nvj	bound	noweight	2	s	10k	5	5	0.261473726636383	181
+nocomp.10_10_nvj_bound.noweight.2.s.10k_all.5_5.all	all	nocomp	10	10	nvj	bound	noweight	2	s	10k	5	5	0.260051920303649	249
+nocomp.10_10_nvj_bound.noweight.2.s.5k_all.10_10.imag	imag	nocomp	10	10	nvj	bound	noweight	2	s	5k	10	10	0.238957491989344	68
+nocomp.10_10_nvj_bound.noweight.2.s.5k_all.10_10.info	info	nocomp	10	10	nvj	bound	noweight	2	s	5k	10	10	0.254388938593593	181
+nocomp.10_10_nvj_bound.noweight.2.s.5k_all.10_10.all	all	nocomp	10	10	nvj	bound	noweight	2	s	5k	10	10	0.247748993796491	249
+nocomp.10_10_nvj_bound.noweight.2.s.5k_all.5_5.imag	imag	nocomp	10	10	nvj	bound	noweight	2	s	5k	5	5	0.256435005469088	68
+nocomp.10_10_nvj_bound.noweight.2.s.5k_all.5_5.info	info	nocomp	10	10	nvj	bound	noweight	2	s	5k	5	5	0.262127068774897	181
+nocomp.10_10_nvj_bound.noweight.2.s.5k_all.5_5.all	all	nocomp	10	10	nvj	bound	noweight	2	s	5k	5	5	0.258095119572608	249
+nocomp.10_10_nvj_nobound.noweight.1.c.10k_all.10_10.imag	imag	nocomp	10	10	nvj	nobound	noweight	1	c	10k	10	10	0.217607647217001	68
+nocomp.10_10_nvj_nobound.noweight.1.c.10k_all.10_10.info	info	nocomp	10	10	nvj	nobound	noweight	1	c	10k	10	10	0.260847808331585	181
+nocomp.10_10_nvj_nobound.noweight.1.c.10k_all.10_10.all	all	nocomp	10	10	nvj	nobound	noweight	1	c	10k	10	10	0.234224257755321	249
+nocomp.10_10_nvj_nobound.noweight.1.c.10k_all.5_5.imag	imag	nocomp	10	10	nvj	nobound	noweight	1	c	10k	5	5	0.226134048177086	68
+nocomp.10_10_nvj_nobound.noweight.1.c.10k_all.5_5.info	info	nocomp	10	10	nvj	nobound	noweight	1	c	10k	5	5	0.259964981267767	181
+nocomp.10_10_nvj_nobound.noweight.1.c.10k_all.5_5.all	all	nocomp	10	10	nvj	nobound	noweight	1	c	10k	5	5	0.246918042843602	249
+nocomp.10_10_nvj_nobound.noweight.1.c.5k_all.10_10.imag	imag	nocomp	10	10	nvj	nobound	noweight	1	c	5k	10	10	0.21137121502975	68
+nocomp.10_10_nvj_nobound.noweight.1.c.5k_all.10_10.info	info	nocomp	10	10	nvj	nobound	noweight	1	c	5k	10	10	0.240709264025352	181
+nocomp.10_10_nvj_nobound.noweight.1.c.5k_all.10_10.all	all	nocomp	10	10	nvj	nobound	noweight	1	c	5k	10	10	0.221515828395679	249
+nocomp.10_10_nvj_nobound.noweight.1.c.5k_all.5_5.imag	imag	nocomp	10	10	nvj	nobound	noweight	1	c	5k	5	5	0.226493435988067	68
+nocomp.10_10_nvj_nobound.noweight.1.c.5k_all.5_5.info	info	nocomp	10	10	nvj	nobound	noweight	1	c	5k	5	5	0.254728097718232	181
+nocomp.10_10_nvj_nobound.noweight.1.c.5k_all.5_5.all	all	nocomp	10	10	nvj	nobound	noweight	1	c	5k	5	5	0.245457011907354	249
+nocomp.10_10_nvj_nobound.noweight.1.s.10k_all.10_10.imag	imag	nocomp	10	10	nvj	nobound	noweight	1	s	10k	10	10	0.249432299517531	68
+nocomp.10_10_nvj_nobound.noweight.1.s.10k_all.10_10.info	info	nocomp	10	10	nvj	nobound	noweight	1	s	10k	10	10	0.259970706465619	181
+nocomp.10_10_nvj_nobound.noweight.1.s.10k_all.10_10.all	all	nocomp	10	10	nvj	nobound	noweight	1	s	10k	10	10	0.252621588608889	249
+nocomp.10_10_nvj_nobound.noweight.1.s.10k_all.5_5.imag	imag	nocomp	10	10	nvj	nobound	noweight	1	s	10k	5	5	0.255368797597188	68
+nocomp.10_10_nvj_nobound.noweight.1.s.10k_all.5_5.info	info	nocomp	10	10	nvj	nobound	noweight	1	s	10k	5	5	0.261767935308975	181
+nocomp.10_10_nvj_nobound.noweight.1.s.10k_all.5_5.all	all	nocomp	10	10	nvj	nobound	noweight	1	s	10k	5	5	0.260379439592747	249
+nocomp.10_10_nvj_nobound.noweight.1.s.5k_all.10_10.imag	imag	nocomp	10	10	nvj	nobound	noweight	1	s	5k	10	10	0.238804406205736	68
+nocomp.10_10_nvj_nobound.noweight.1.s.5k_all.10_10.info	info	nocomp	10	10	nvj	nobound	noweight	1	s	5k	10	10	0.254082773023819	181
+nocomp.10_10_nvj_nobound.noweight.1.s.5k_all.10_10.all	all	nocomp	10	10	nvj	nobound	noweight	1	s	5k	10	10	0.246592512600042	249
+nocomp.10_10_nvj_nobound.noweight.1.s.5k_all.5_5.imag	imag	nocomp	10	10	nvj	nobound	noweight	1	s	5k	5	5	0.255767628252823	68
+nocomp.10_10_nvj_nobound.noweight.1.s.5k_all.5_5.info	info	nocomp	10	10	nvj	nobound	noweight	1	s	5k	5	5	0.263079966133072	181
+nocomp.10_10_nvj_nobound.noweight.1.s.5k_all.5_5.all	all	nocomp	10	10	nvj	nobound	noweight	1	s	5k	5	5	0.258499142250881	249
+nocomp.10_10_nvj_nobound.noweight.2.c.10k_all.10_10.imag	imag	nocomp	10	10	nvj	nobound	noweight	2	c	10k	10	10	0.217858735628921	68
+nocomp.10_10_nvj_nobound.noweight.2.c.10k_all.10_10.info	info	nocomp	10	10	nvj	nobound	noweight	2	c	10k	10	10	0.259925547975498	181
+nocomp.10_10_nvj_nobound.noweight.2.c.10k_all.10_10.all	all	nocomp	10	10	nvj	nobound	noweight	2	c	10k	10	10	0.234224257755321	249
+nocomp.10_10_nvj_nobound.noweight.2.c.10k_all.5_5.imag	imag	nocomp	10	10	nvj	nobound	noweight	2	c	10k	5	5	0.226133818401324	68
+nocomp.10_10_nvj_nobound.noweight.2.c.10k_all.5_5.info	info	nocomp	10	10	nvj	nobound	noweight	2	c	10k	5	5	0.261166449394027	181
+nocomp.10_10_nvj_nobound.noweight.2.c.10k_all.5_5.all	all	nocomp	10	10	nvj	nobound	noweight	2	c	10k	5	5	0.247540622073434	249
+nocomp.10_10_nvj_nobound.noweight.2.c.5k_all.10_10.imag	imag	nocomp	10	10	nvj	nobound	noweight	2	c	5k	10	10	0.21136426463953	68
+nocomp.10_10_nvj_nobound.noweight.2.c.5k_all.10_10.info	info	nocomp	10	10	nvj	nobound	noweight	2	c	5k	10	10	0.240628001299414	181
+nocomp.10_10_nvj_nobound.noweight.2.c.5k_all.10_10.all	all	nocomp	10	10	nvj	nobound	noweight	2	c	5k	10	10	0.220458155340668	249
+nocomp.10_10_nvj_nobound.noweight.2.c.5k_all.5_5.imag	imag	nocomp	10	10	nvj	nobound	noweight	2	c	5k	5	5	0.226521946329765	68
+nocomp.10_10_nvj_nobound.noweight.2.c.5k_all.5_5.info	info	nocomp	10	10	nvj	nobound	noweight	2	c	5k	5	5	0.255055904075344	181
+nocomp.10_10_nvj_nobound.noweight.2.c.5k_all.5_5.all	all	nocomp	10	10	nvj	nobound	noweight	2	c	5k	5	5	0.242732034753091	249
+nocomp.10_10_nvj_nobound.noweight.2.s.10k_all.10_10.imag	imag	nocomp	10	10	nvj	nobound	noweight	2	s	10k	10	10	0.249379777986252	68
+nocomp.10_10_nvj_nobound.noweight.2.s.10k_all.10_10.info	info	nocomp	10	10	nvj	nobound	noweight	2	s	10k	10	10	0.259792760230365	181
+nocomp.10_10_nvj_nobound.noweight.2.s.10k_all.10_10.all	all	nocomp	10	10	nvj	nobound	noweight	2	s	10k	10	10	0.254701279517469	249
+nocomp.10_10_nvj_nobound.noweight.2.s.10k_all.5_5.imag	imag	nocomp	10	10	nvj	nobound	noweight	2	s	10k	5	5	0.256426240414721	68
+nocomp.10_10_nvj_nobound.noweight.2.s.10k_all.5_5.info	info	nocomp	10	10	nvj	nobound	noweight	2	s	10k	5	5	0.262530673799972	181
+nocomp.10_10_nvj_nobound.noweight.2.s.10k_all.5_5.all	all	nocomp	10	10	nvj	nobound	noweight	2	s	10k	5	5	0.260463081096296	249
+nocomp.10_10_nvj_nobound.noweight.2.s.5k_all.10_10.imag	imag	nocomp	10	10	nvj	nobound	noweight	2	s	5k	10	10	0.239175569866903	68
+nocomp.10_10_nvj_nobound.noweight.2.s.5k_all.10_10.info	info	nocomp	10	10	nvj	nobound	noweight	2	s	5k	10	10	0.254507327974126	181
+nocomp.10_10_nvj_nobound.noweight.2.s.5k_all.10_10.all	all	nocomp	10	10	nvj	nobound	noweight	2	s	5k	10	10	0.246423558515393	249
+nocomp.10_10_nvj_nobound.noweight.2.s.5k_all.5_5.imag	imag	nocomp	10	10	nvj	nobound	noweight	2	s	5k	5	5	0.256435005469088	68
+nocomp.10_10_nvj_nobound.noweight.2.s.5k_all.5_5.info	info	nocomp	10	10	nvj	nobound	noweight	2	s	5k	5	5	0.26277265554436	181
+nocomp.10_10_nvj_nobound.noweight.2.s.5k_all.5_5.all	all	nocomp	10	10	nvj	nobound	noweight	2	s	5k	5	5	0.258296988883017	249
+nocomp.3_3_nvjid_bound.noweight.1.c.10k_all.10_10.imag	imag	nocomp	3	3	nvjid	bound	noweight	1	c	10k	10	10	0.199863908586132	65
+nocomp.3_3_nvjid_bound.noweight.1.c.10k_all.10_10.info	info	nocomp	3	3	nvjid	bound	noweight	1	c	10k	10	10	0.223278712048273	180
+nocomp.3_3_nvjid_bound.noweight.1.c.10k_all.10_10.all	all	nocomp	3	3	nvjid	bound	noweight	1	c	10k	10	10	0.232362564938147	245
+nocomp.3_3_nvjid_bound.noweight.1.c.10k_all.5_5.imag	imag	nocomp	3	3	nvjid	bound	noweight	1	c	10k	5	5	0.20189716214623	65
+nocomp.3_3_nvjid_bound.noweight.1.c.10k_all.5_5.info	info	nocomp	3	3	nvjid	bound	noweight	1	c	10k	5	5	0.242756263900831	180
+nocomp.3_3_nvjid_bound.noweight.1.c.10k_all.5_5.all	all	nocomp	3	3	nvjid	bound	noweight	1	c	10k	5	5	0.233034631482441	245
+nocomp.3_3_nvjid_bound.noweight.1.c.5k_all.10_10.imag	imag	nocomp	3	3	nvjid	bound	noweight	1	c	5k	10	10	0.195311177314111	65
+nocomp.3_3_nvjid_bound.noweight.1.c.5k_all.10_10.info	info	nocomp	3	3	nvjid	bound	noweight	1	c	5k	10	10	0.221432841865782	180
+nocomp.3_3_nvjid_bound.noweight.1.c.5k_all.10_10.all	all	nocomp	3	3	nvjid	bound	noweight	1	c	5k	10	10	0.22324375505584	245
+nocomp.3_3_nvjid_bound.noweight.1.c.5k_all.5_5.imag	imag	nocomp	3	3	nvjid	bound	noweight	1	c	5k	5	5	0.200485541254261	65
+nocomp.3_3_nvjid_bound.noweight.1.c.5k_all.5_5.info	info	nocomp	3	3	nvjid	bound	noweight	1	c	5k	5	5	0.233665308139648	180
+nocomp.3_3_nvjid_bound.noweight.1.c.5k_all.5_5.all	all	nocomp	3	3	nvjid	bound	noweight	1	c	5k	5	5	0.228078862854333	245
+nocomp.3_3_nvjid_bound.noweight.1.s.10k_all.10_10.imag	imag	nocomp	3	3	nvjid	bound	noweight	1	s	10k	10	10	0.218861982530425	65
+nocomp.3_3_nvjid_bound.noweight.1.s.10k_all.10_10.info	info	nocomp	3	3	nvjid	bound	noweight	1	s	10k	10	10	0.245468421341731	180
+nocomp.3_3_nvjid_bound.noweight.1.s.10k_all.10_10.all	all	nocomp	3	3	nvjid	bound	noweight	1	s	10k	10	10	0.244509879554124	245
+nocomp.3_3_nvjid_bound.noweight.1.s.10k_all.5_5.imag	imag	nocomp	3	3	nvjid	bound	noweight	1	s	10k	5	5	0.215878389396858	65
+nocomp.3_3_nvjid_bound.noweight.1.s.10k_all.5_5.info	info	nocomp	3	3	nvjid	bound	noweight	1	s	10k	5	5	0.218400202320181	180
+nocomp.3_3_nvjid_bound.noweight.1.s.10k_all.5_5.all	all	nocomp	3	3	nvjid	bound	noweight	1	s	10k	5	5	0.226720860486279	245
+nocomp.3_3_nvjid_bound.noweight.1.s.5k_all.10_10.imag	imag	nocomp	3	3	nvjid	bound	noweight	1	s	5k	10	10	0.231897421706351	65
+nocomp.3_3_nvjid_bound.noweight.1.s.5k_all.10_10.info	info	nocomp	3	3	nvjid	bound	noweight	1	s	5k	10	10	0.257260386822968	180
+nocomp.3_3_nvjid_bound.noweight.1.s.5k_all.10_10.all	all	nocomp	3	3	nvjid	bound	noweight	1	s	5k	10	10	0.255532161255668	245
+nocomp.3_3_nvjid_bound.noweight.1.s.5k_all.5_5.imag	imag	nocomp	3	3	nvjid	bound	noweight	1	s	5k	5	5	0.222833096185689	65
+nocomp.3_3_nvjid_bound.noweight.1.s.5k_all.5_5.info	info	nocomp	3	3	nvjid	bound	noweight	1	s	5k	5	5	0.238911342697041	180
+nocomp.3_3_nvjid_bound.noweight.1.s.5k_all.5_5.all	all	nocomp	3	3	nvjid	bound	noweight	1	s	5k	5	5	0.242124022913509	245
+nocomp.3_3_nvjid_bound.noweight.2.c.10k_all.10_10.imag	imag	nocomp	3	3	nvjid	bound	noweight	2	c	10k	10	10	0.209876022751624	59
+nocomp.3_3_nvjid_bound.noweight.2.c.10k_all.10_10.info	info	nocomp	3	3	nvjid	bound	noweight	2	c	10k	10	10	0.254264217665031	168
+nocomp.3_3_nvjid_bound.noweight.2.c.10k_all.10_10.all	all	nocomp	3	3	nvjid	bound	noweight	2	c	10k	10	10	0.24658606302832	227
+nocomp.3_3_nvjid_bound.noweight.2.c.10k_all.5_5.imag	imag	nocomp	3	3	nvjid	bound	noweight	2	c	10k	5	5	0.213143116734225	59
+nocomp.3_3_nvjid_bound.noweight.2.c.10k_all.5_5.info	info	nocomp	3	3	nvjid	bound	noweight	2	c	10k	5	5	0.25493629632055	168
+nocomp.3_3_nvjid_bound.noweight.2.c.10k_all.5_5.all	all	nocomp	3	3	nvjid	bound	noweight	2	c	10k	5	5	0.247510920499208	227
+nocomp.3_3_nvjid_bound.noweight.2.c.5k_all.10_10.imag	imag	nocomp	3	3	nvjid	bound	noweight	2	c	5k	10	10	0.208469485898211	59
+nocomp.3_3_nvjid_bound.noweight.2.c.5k_all.10_10.info	info	nocomp	3	3	nvjid	bound	noweight	2	c	5k	10	10	0.244228648963219	168
+nocomp.3_3_nvjid_bound.noweight.2.c.5k_all.10_10.all	all	nocomp	3	3	nvjid	bound	noweight	2	c	5k	10	10	0.23705293030312	227
+nocomp.3_3_nvjid_bound.noweight.2.c.5k_all.5_5.imag	imag	nocomp	3	3	nvjid	bound	noweight	2	c	5k	5	5	0.214543756254265	59
+nocomp.3_3_nvjid_bound.noweight.2.c.5k_all.5_5.info	info	nocomp	3	3	nvjid	bound	noweight	2	c	5k	5	5	0.253106507152869	168
+nocomp.3_3_nvjid_bound.noweight.2.c.5k_all.5_5.all	all	nocomp	3	3	nvjid	bound	noweight	2	c	5k	5	5	0.245894430425888	227
+nocomp.3_3_nvjid_bound.noweight.2.s.10k_all.10_10.imag	imag	nocomp	3	3	nvjid	bound	noweight	2	s	10k	10	10	0.215724514839144	59
+nocomp.3_3_nvjid_bound.noweight.2.s.10k_all.10_10.info	info	nocomp	3	3	nvjid	bound	noweight	2	s	10k	10	10	0.245981952595284	168
+nocomp.3_3_nvjid_bound.noweight.2.s.10k_all.10_10.all	all	nocomp	3	3	nvjid	bound	noweight	2	s	10k	10	10	0.242027951694813	227
+nocomp.3_3_nvjid_bound.noweight.2.s.10k_all.5_5.imag	imag	nocomp	3	3	nvjid	bound	noweight	2	s	10k	5	5	0.207691338518743	59
+nocomp.3_3_nvjid_bound.noweight.2.s.10k_all.5_5.info	info	nocomp	3	3	nvjid	bound	noweight	2	s	10k	5	5	0.216611902581127	168
+nocomp.3_3_nvjid_bound.noweight.2.s.10k_all.5_5.all	all	nocomp	3	3	nvjid	bound	noweight	2	s	10k	5	5	0.227997258935749	227
+nocomp.3_3_nvjid_bound.noweight.2.s.5k_all.10_10.imag	imag	nocomp	3	3	nvjid	bound	noweight	2	s	5k	10	10	0.221403347660496	59
+nocomp.3_3_nvjid_bound.noweight.2.s.5k_all.10_10.info	info	nocomp	3	3	nvjid	bound	noweight	2	s	5k	10	10	0.258680264869608	168
+nocomp.3_3_nvjid_bound.noweight.2.s.5k_all.10_10.all	all	nocomp	3	3	nvjid	bound	noweight	2	s	5k	10	10	0.251096014673939	227
+nocomp.3_3_nvjid_bound.noweight.2.s.5k_all.5_5.imag	imag	nocomp	3	3	nvjid	bound	noweight	2	s	5k	5	5	0.21503650568455	59
+nocomp.3_3_nvjid_bound.noweight.2.s.5k_all.5_5.info	info	nocomp	3	3	nvjid	bound	noweight	2	s	5k	5	5	0.238777872385661	168
+nocomp.3_3_nvjid_bound.noweight.2.s.5k_all.5_5.all	all	nocomp	3	3	nvjid	bound	noweight	2	s	5k	5	5	0.242849214259231	227
+nocomp.3_3_nvjid_nobound.noweight.1.c.10k_all.10_10.imag	imag	nocomp	3	3	nvjid	nobound	noweight	1	c	10k	10	10	0.199860399597561	65
+nocomp.3_3_nvjid_nobound.noweight.1.c.10k_all.10_10.info	info	nocomp	3	3	nvjid	nobound	noweight	1	c	10k	10	10	0.223377527735541	180
+nocomp.3_3_nvjid_nobound.noweight.1.c.10k_all.10_10.all	all	nocomp	3	3	nvjid	nobound	noweight	1	c	10k	10	10	0.231842203913254	245
+nocomp.3_3_nvjid_nobound.noweight.1.c.10k_all.5_5.imag	imag	nocomp	3	3	nvjid	nobound	noweight	1	c	10k	5	5	0.20189716214623	65
+nocomp.3_3_nvjid_nobound.noweight.1.c.10k_all.5_5.info	info	nocomp	3	3	nvjid	nobound	noweight	1	c	10k	5	5	0.243089556409965	180
+nocomp.3_3_nvjid_nobound.noweight.1.c.10k_all.5_5.all	all	nocomp	3	3	nvjid	nobound	noweight	1	c	10k	5	5	0.233860506879313	245
+nocomp.3_3_nvjid_nobound.noweight.1.c.5k_all.10_10.imag	imag	nocomp	3	3	nvjid	nobound	noweight	1	c	5k	10	10	0.195152722309709	65
+nocomp.3_3_nvjid_nobound.noweight.1.c.5k_all.10_10.info	info	nocomp	3	3	nvjid	nobound	noweight	1	c	5k	10	10	0.221432841865782	180
+nocomp.3_3_nvjid_nobound.noweight.1.c.5k_all.10_10.all	all	nocomp	3	3	nvjid	nobound	noweight	1	c	5k	10	10	0.219555891865923	245
+nocomp.3_3_nvjid_nobound.noweight.1.c.5k_all.5_5.imag	imag	nocomp	3	3	nvjid	nobound	noweight	1	c	5k	5	5	0.200476005939306	65
+nocomp.3_3_nvjid_nobound.noweight.1.c.5k_all.5_5.info	info	nocomp	3	3	nvjid	nobound	noweight	1	c	5k	5	5	0.233631595099832	180
+nocomp.3_3_nvjid_nobound.noweight.1.c.5k_all.5_5.all	all	nocomp	3	3	nvjid	nobound	noweight	1	c	5k	5	5	0.226994127431394	245
+nocomp.3_3_nvjid_nobound.noweight.1.s.10k_all.10_10.imag	imag	nocomp	3	3	nvjid	nobound	noweight	1	s	10k	10	10	0.220307011398966	65
+nocomp.3_3_nvjid_nobound.noweight.1.s.10k_all.10_10.info	info	nocomp	3	3	nvjid	nobound	noweight	1	s	10k	10	10	0.245303462215235	180
+nocomp.3_3_nvjid_nobound.noweight.1.s.10k_all.10_10.all	all	nocomp	3	3	nvjid	nobound	noweight	1	s	10k	10	10	0.244509879554124	245
+nocomp.3_3_nvjid_nobound.noweight.1.s.10k_all.5_5.imag	imag	nocomp	3	3	nvjid	nobound	noweight	1	s	10k	5	5	0.215878389396858	65
+nocomp.3_3_nvjid_nobound.noweight.1.s.10k_all.5_5.info	info	nocomp	3	3	nvjid	nobound	noweight	1	s	10k	5	5	0.218400202320181	180
+nocomp.3_3_nvjid_nobound.noweight.1.s.10k_all.5_5.all	all	nocomp	3	3	nvjid	nobound	noweight	1	s	10k	5	5	0.226720860486279	245
+nocomp.3_3_nvjid_nobound.noweight.1.s.5k_all.10_10.imag	imag	nocomp	3	3	nvjid	nobound	noweight	1	s	5k	10	10	0.231912666606972	65
+nocomp.3_3_nvjid_nobound.noweight.1.s.5k_all.10_10.info	info	nocomp	3	3	nvjid	nobound	noweight	1	s	5k	10	10	0.257260386822968	180
+nocomp.3_3_nvjid_nobound.noweight.1.s.5k_all.10_10.all	all	nocomp	3	3	nvjid	nobound	noweight	1	s	5k	10	10	0.255423042322188	245
+nocomp.3_3_nvjid_nobound.noweight.1.s.5k_all.5_5.imag	imag	nocomp	3	3	nvjid	nobound	noweight	1	s	5k	5	5	0.221770212973278	65
+nocomp.3_3_nvjid_nobound.noweight.1.s.5k_all.5_5.info	info	nocomp	3	3	nvjid	nobound	noweight	1	s	5k	5	5	0.238911342697041	180
+nocomp.3_3_nvjid_nobound.noweight.1.s.5k_all.5_5.all	all	nocomp	3	3	nvjid	nobound	noweight	1	s	5k	5	5	0.242124022913509	245
+nocomp.3_3_nvjid_nobound.noweight.2.c.10k_all.10_10.imag	imag	nocomp	3	3	nvjid	nobound	noweight	2	c	10k	10	10	0.209876022751624	59
+nocomp.3_3_nvjid_nobound.noweight.2.c.10k_all.10_10.info	info	nocomp	3	3	nvjid	nobound	noweight	2	c	10k	10	10	0.254150667321028	168
+nocomp.3_3_nvjid_nobound.noweight.2.c.10k_all.10_10.all	all	nocomp	3	3	nvjid	nobound	noweight	2	c	10k	10	10	0.248946550704632	227
+nocomp.3_3_nvjid_nobound.noweight.2.c.10k_all.5_5.imag	imag	nocomp	3	3	nvjid	nobound	noweight	2	c	10k	5	5	0.213143116734225	59
+nocomp.3_3_nvjid_nobound.noweight.2.c.10k_all.5_5.info	info	nocomp	3	3	nvjid	nobound	noweight	2	c	10k	5	5	0.254786953632131	168
+nocomp.3_3_nvjid_nobound.noweight.2.c.10k_all.5_5.all	all	nocomp	3	3	nvjid	nobound	noweight	2	c	10k	5	5	0.247095757252883	227
+nocomp.3_3_nvjid_nobound.noweight.2.c.5k_all.10_10.imag	imag	nocomp	3	3	nvjid	nobound	noweight	2	c	5k	10	10	0.209051073982343	59
+nocomp.3_3_nvjid_nobound.noweight.2.c.5k_all.10_10.info	info	nocomp	3	3	nvjid	nobound	noweight	2	c	5k	10	10	0.244228648963219	168
+nocomp.3_3_nvjid_nobound.noweight.2.c.5k_all.10_10.all	all	nocomp	3	3	nvjid	nobound	noweight	2	c	5k	10	10	0.238495325026659	227
+nocomp.3_3_nvjid_nobound.noweight.2.c.5k_all.5_5.imag	imag	nocomp	3	3	nvjid	nobound	noweight	2	c	5k	5	5	0.214543327256014	59
+nocomp.3_3_nvjid_nobound.noweight.2.c.5k_all.5_5.info	info	nocomp	3	3	nvjid	nobound	noweight	2	c	5k	5	5	0.253311785843351	168
+nocomp.3_3_nvjid_nobound.noweight.2.c.5k_all.5_5.all	all	nocomp	3	3	nvjid	nobound	noweight	2	c	5k	5	5	0.245693871149621	227
+nocomp.3_3_nvjid_nobound.noweight.2.s.10k_all.10_10.imag	imag	nocomp	3	3	nvjid	nobound	noweight	2	s	10k	10	10	0.215724514839144	59
+nocomp.3_3_nvjid_nobound.noweight.2.s.10k_all.10_10.info	info	nocomp	3	3	nvjid	nobound	noweight	2	s	10k	10	10	0.246131446891521	168
+nocomp.3_3_nvjid_nobound.noweight.2.s.10k_all.10_10.all	all	nocomp	3	3	nvjid	nobound	noweight	2	s	10k	10	10	0.242027951694813	227
+nocomp.3_3_nvjid_nobound.noweight.2.s.10k_all.5_5.imag	imag	nocomp	3	3	nvjid	nobound	noweight	2	s	10k	5	5	0.207691338518743	59
+nocomp.3_3_nvjid_nobound.noweight.2.s.10k_all.5_5.info	info	nocomp	3	3	nvjid	nobound	noweight	2	s	10k	5	5	0.216805370511534	168
+nocomp.3_3_nvjid_nobound.noweight.2.s.10k_all.5_5.all	all	nocomp	3	3	nvjid	nobound	noweight	2	s	10k	5	5	0.229651749571393	227
+nocomp.3_3_nvjid_nobound.noweight.2.s.5k_all.10_10.imag	imag	nocomp	3	3	nvjid	nobound	noweight	2	s	5k	10	10	0.222497218551273	59
+nocomp.3_3_nvjid_nobound.noweight.2.s.5k_all.10_10.info	info	nocomp	3	3	nvjid	nobound	noweight	2	s	5k	10	10	0.258591727677646	168
+nocomp.3_3_nvjid_nobound.noweight.2.s.5k_all.10_10.all	all	nocomp	3	3	nvjid	nobound	noweight	2	s	5k	10	10	0.251013213050605	227
+nocomp.3_3_nvjid_nobound.noweight.2.s.5k_all.5_5.imag	imag	nocomp	3	3	nvjid	nobound	noweight	2	s	5k	5	5	0.21503650568455	59
+nocomp.3_3_nvjid_nobound.noweight.2.s.5k_all.5_5.info	info	nocomp	3	3	nvjid	nobound	noweight	2	s	5k	5	5	0.23829350381505	168
+nocomp.3_3_nvjid_nobound.noweight.2.s.5k_all.5_5.all	all	nocomp	3	3	nvjid	nobound	noweight	2	s	5k	5	5	0.242556603956001	227
+nocomp.5_5_nvj_bound.noweight.1.c.10k_all.10_10.imag	imag	nocomp	5	5	nvj	bound	noweight	1	c	10k	10	10	0.205097626212709	67
+nocomp.5_5_nvj_bound.noweight.1.c.10k_all.10_10.info	info	nocomp	5	5	nvj	bound	noweight	1	c	10k	10	10	0.233068746488684	179
+nocomp.5_5_nvj_bound.noweight.1.c.10k_all.10_10.all	all	nocomp	5	5	nvj	bound	noweight	1	c	10k	10	10	0.22512213991546	246
+nocomp.5_5_nvj_bound.noweight.1.c.10k_all.5_5.imag	imag	nocomp	5	5	nvj	bound	noweight	1	c	10k	5	5	0.220407257923659	67
+nocomp.5_5_nvj_bound.noweight.1.c.10k_all.5_5.info	info	nocomp	5	5	nvj	bound	noweight	1	c	10k	5	5	0.249078705338492	179
+nocomp.5_5_nvj_bound.noweight.1.c.10k_all.5_5.all	all	nocomp	5	5	nvj	bound	noweight	1	c	10k	5	5	0.241578038708221	246
+nocomp.5_5_nvj_bound.noweight.1.c.5k_all.10_10.imag	imag	nocomp	5	5	nvj	bound	noweight	1	c	5k	10	10	0.203650936937483	67
+nocomp.5_5_nvj_bound.noweight.1.c.5k_all.10_10.info	info	nocomp	5	5	nvj	bound	noweight	1	c	5k	10	10	0.229585778832044	179
+nocomp.5_5_nvj_bound.noweight.1.c.5k_all.10_10.all	all	nocomp	5	5	nvj	bound	noweight	1	c	5k	10	10	0.221102264704384	246
+nocomp.5_5_nvj_bound.noweight.1.c.5k_all.5_5.imag	imag	nocomp	5	5	nvj	bound	noweight	1	c	5k	5	5	0.215543433002611	67
+nocomp.5_5_nvj_bound.noweight.1.c.5k_all.5_5.info	info	nocomp	5	5	nvj	bound	noweight	1	c	5k	5	5	0.247064770964831	179
+nocomp.5_5_nvj_bound.noweight.1.c.5k_all.5_5.all	all	nocomp	5	5	nvj	bound	noweight	1	c	5k	5	5	0.237513948713345	246
+nocomp.5_5_nvj_bound.noweight.1.s.10k_all.10_10.imag	imag	nocomp	5	5	nvj	bound	noweight	1	s	10k	10	10	0.214512577456802	67
+nocomp.5_5_nvj_bound.noweight.1.s.10k_all.10_10.info	info	nocomp	5	5	nvj	bound	noweight	1	s	10k	10	10	0.265076572808746	179
+nocomp.5_5_nvj_bound.noweight.1.s.10k_all.10_10.all	all	nocomp	5	5	nvj	bound	noweight	1	s	10k	10	10	0.247323298736365	246
+nocomp.5_5_nvj_bound.noweight.1.s.10k_all.5_5.imag	imag	nocomp	5	5	nvj	bound	noweight	1	s	10k	5	5	0.217068815221279	67
+nocomp.5_5_nvj_bound.noweight.1.s.10k_all.5_5.info	info	nocomp	5	5	nvj	bound	noweight	1	s	10k	5	5	0.265739397673968	179
+nocomp.5_5_nvj_bound.noweight.1.s.10k_all.5_5.all	all	nocomp	5	5	nvj	bound	noweight	1	s	10k	5	5	0.248258272377036	246
+nocomp.5_5_nvj_bound.noweight.1.s.5k_all.10_10.imag	imag	nocomp	5	5	nvj	bound	noweight	1	s	5k	10	10	0.211803690937371	67
+nocomp.5_5_nvj_bound.noweight.1.s.5k_all.10_10.info	info	nocomp	5	5	nvj	bound	noweight	1	s	5k	10	10	0.26763601848024	179
+nocomp.5_5_nvj_bound.noweight.1.s.5k_all.10_10.all	all	nocomp	5	5	nvj	bound	noweight	1	s	5k	10	10	0.249211915927685	246
+nocomp.5_5_nvj_bound.noweight.1.s.5k_all.5_5.imag	imag	nocomp	5	5	nvj	bound	noweight	1	s	5k	5	5	0.222533348731114	67
+nocomp.5_5_nvj_bound.noweight.1.s.5k_all.5_5.info	info	nocomp	5	5	nvj	bound	noweight	1	s	5k	5	5	0.269604314035946	179
+nocomp.5_5_nvj_bound.noweight.1.s.5k_all.5_5.all	all	nocomp	5	5	nvj	bound	noweight	1	s	5k	5	5	0.254713414003891	246
+nocomp.5_5_nvj_bound.noweight.2.c.10k_all.10_10.imag	imag	nocomp	5	5	nvj	bound	noweight	2	c	10k	10	10	0.203717404491463	59
+nocomp.5_5_nvj_bound.noweight.2.c.10k_all.10_10.info	info	nocomp	5	5	nvj	bound	noweight	2	c	10k	10	10	0.235609745377482	170
+nocomp.5_5_nvj_bound.noweight.2.c.10k_all.10_10.all	all	nocomp	5	5	nvj	bound	noweight	2	c	10k	10	10	0.229495467635414	229
+nocomp.5_5_nvj_bound.noweight.2.c.10k_all.5_5.imag	imag	nocomp	5	5	nvj	bound	noweight	2	c	10k	5	5	0.213791204645124	59
+nocomp.5_5_nvj_bound.noweight.2.c.10k_all.5_5.info	info	nocomp	5	5	nvj	bound	noweight	2	c	10k	5	5	0.250048333889696	170
+nocomp.5_5_nvj_bound.noweight.2.c.10k_all.5_5.all	all	nocomp	5	5	nvj	bound	noweight	2	c	10k	5	5	0.24430857408307	229
+nocomp.5_5_nvj_bound.noweight.2.c.5k_all.10_10.imag	imag	nocomp	5	5	nvj	bound	noweight	2	c	5k	10	10	0.204362963518388	59
+nocomp.5_5_nvj_bound.noweight.2.c.5k_all.10_10.info	info	nocomp	5	5	nvj	bound	noweight	2	c	5k	10	10	0.231557670815886	170
+nocomp.5_5_nvj_bound.noweight.2.c.5k_all.10_10.all	all	nocomp	5	5	nvj	bound	noweight	2	c	5k	10	10	0.224540517059263	229
+nocomp.5_5_nvj_bound.noweight.2.c.5k_all.5_5.imag	imag	nocomp	5	5	nvj	bound	noweight	2	c	5k	5	5	0.210412997782403	59
+nocomp.5_5_nvj_bound.noweight.2.c.5k_all.5_5.info	info	nocomp	5	5	nvj	bound	noweight	2	c	5k	5	5	0.247737772400266	170
+nocomp.5_5_nvj_bound.noweight.2.c.5k_all.5_5.all	all	nocomp	5	5	nvj	bound	noweight	2	c	5k	5	5	0.240620459252997	229
+nocomp.5_5_nvj_bound.noweight.2.s.10k_all.10_10.imag	imag	nocomp	5	5	nvj	bound	noweight	2	s	10k	10	10	0.219538311820514	59
+nocomp.5_5_nvj_bound.noweight.2.s.10k_all.10_10.info	info	nocomp	5	5	nvj	bound	noweight	2	s	10k	10	10	0.262254243170535	170
+nocomp.5_5_nvj_bound.noweight.2.s.10k_all.10_10.all	all	nocomp	5	5	nvj	bound	noweight	2	s	10k	10	10	0.250071137935586	229
+nocomp.5_5_nvj_bound.noweight.2.s.10k_all.5_5.imag	imag	nocomp	5	5	nvj	bound	noweight	2	s	10k	5	5	0.225724971966134	59
+nocomp.5_5_nvj_bound.noweight.2.s.10k_all.5_5.info	info	nocomp	5	5	nvj	bound	noweight	2	s	10k	5	5	0.264551308033645	170
+nocomp.5_5_nvj_bound.noweight.2.s.10k_all.5_5.all	all	nocomp	5	5	nvj	bound	noweight	2	s	10k	5	5	0.252678546713186	229
+nocomp.5_5_nvj_bound.noweight.2.s.5k_all.10_10.imag	imag	nocomp	5	5	nvj	bound	noweight	2	s	5k	10	10	0.207554306320748	59
+nocomp.5_5_nvj_bound.noweight.2.s.5k_all.10_10.info	info	nocomp	5	5	nvj	bound	noweight	2	s	5k	10	10	0.262605800367428	170
+nocomp.5_5_nvj_bound.noweight.2.s.5k_all.10_10.all	all	nocomp	5	5	nvj	bound	noweight	2	s	5k	10	10	0.250281361334831	229
+nocomp.5_5_nvj_bound.noweight.2.s.5k_all.5_5.imag	imag	nocomp	5	5	nvj	bound	noweight	2	s	5k	5	5	0.229345532000196	59
+nocomp.5_5_nvj_bound.noweight.2.s.5k_all.5_5.info	info	nocomp	5	5	nvj	bound	noweight	2	s	5k	5	5	0.26880981487915	170
+nocomp.5_5_nvj_bound.noweight.2.s.5k_all.5_5.all	all	nocomp	5	5	nvj	bound	noweight	2	s	5k	5	5	0.258703296174464	229
+nocomp.5_5_nvj_nobound.noweight.1.c.10k_all.10_10.imag	imag	nocomp	5	5	nvj	nobound	noweight	1	c	10k	10	10	0.208625491148667	67
+nocomp.5_5_nvj_nobound.noweight.1.c.10k_all.10_10.info	info	nocomp	5	5	nvj	nobound	noweight	1	c	10k	10	10	0.23522031918364	179
+nocomp.5_5_nvj_nobound.noweight.1.c.10k_all.10_10.all	all	nocomp	5	5	nvj	nobound	noweight	1	c	10k	10	10	0.22556774718956	246
+nocomp.5_5_nvj_nobound.noweight.1.c.10k_all.5_5.imag	imag	nocomp	5	5	nvj	nobound	noweight	1	c	10k	5	5	0.219236274268743	67
+nocomp.5_5_nvj_nobound.noweight.1.c.10k_all.5_5.info	info	nocomp	5	5	nvj	nobound	noweight	1	c	10k	5	5	0.253865240200652	179
+nocomp.5_5_nvj_nobound.noweight.1.c.10k_all.5_5.all	all	nocomp	5	5	nvj	nobound	noweight	1	c	10k	5	5	0.241140394045234	246
+nocomp.5_5_nvj_nobound.noweight.1.c.5k_all.10_10.imag	imag	nocomp	5	5	nvj	nobound	noweight	1	c	5k	10	10	0.203633253399044	67
+nocomp.5_5_nvj_nobound.noweight.1.c.5k_all.10_10.info	info	nocomp	5	5	nvj	nobound	noweight	1	c	5k	10	10	0.229585778832044	179
+nocomp.5_5_nvj_nobound.noweight.1.c.5k_all.10_10.all	all	nocomp	5	5	nvj	nobound	noweight	1	c	5k	10	10	0.22174075685727	246
+nocomp.5_5_nvj_nobound.noweight.1.c.5k_all.5_5.imag	imag	nocomp	5	5	nvj	nobound	noweight	1	c	5k	5	5	0.215182438692341	67
+nocomp.5_5_nvj_nobound.noweight.1.c.5k_all.5_5.info	info	nocomp	5	5	nvj	nobound	noweight	1	c	5k	5	5	0.247597708376588	179
+nocomp.5_5_nvj_nobound.noweight.1.c.5k_all.5_5.all	all	nocomp	5	5	nvj	nobound	noweight	1	c	5k	5	5	0.237320039501349	246
+nocomp.5_5_nvj_nobound.noweight.1.s.10k_all.10_10.imag	imag	nocomp	5	5	nvj	nobound	noweight	1	s	10k	10	10	0.215044412743097	67
+nocomp.5_5_nvj_nobound.noweight.1.s.10k_all.10_10.info	info	nocomp	5	5	nvj	nobound	noweight	1	s	10k	10	10	0.265720346892501	179
+nocomp.5_5_nvj_nobound.noweight.1.s.10k_all.10_10.all	all	nocomp	5	5	nvj	nobound	noweight	1	s	10k	10	10	0.247764617839142	246
+nocomp.5_5_nvj_nobound.noweight.1.s.10k_all.5_5.imag	imag	nocomp	5	5	nvj	nobound	noweight	1	s	10k	5	5	0.217302529487903	67
+nocomp.5_5_nvj_nobound.noweight.1.s.10k_all.5_5.info	info	nocomp	5	5	nvj	nobound	noweight	1	s	10k	5	5	0.266257867927561	179
+nocomp.5_5_nvj_nobound.noweight.1.s.10k_all.5_5.all	all	nocomp	5	5	nvj	nobound	noweight	1	s	10k	5	5	0.247732853814072	246
+nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.10_10.imag	imag	nocomp	5	5	nvj	nobound	noweight	1	s	5k	10	10	0.211802924909884	67
+nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.10_10.info	info	nocomp	5	5	nvj	nobound	noweight	1	s	5k	10	10	0.269140118504646	179
+nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.10_10.all	all	nocomp	5	5	nvj	nobound	noweight	1	s	5k	10	10	0.24960263036237	246
+nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.5_5.imag	imag	nocomp	5	5	nvj	nobound	noweight	1	s	5k	5	5	0.22287299254275	67
+nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.5_5.info	info	nocomp	5	5	nvj	nobound	noweight	1	s	5k	5	5	0.269800697173275	179
+nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.5_5.all	all	nocomp	5	5	nvj	nobound	noweight	1	s	5k	5	5	0.254456943846839	246
+nocomp.5_5_nvj_nobound.noweight.2.c.10k_all.10_10.imag	imag	nocomp	5	5	nvj	nobound	noweight	2	c	10k	10	10	0.203202742752898	59
+nocomp.5_5_nvj_nobound.noweight.2.c.10k_all.10_10.info	info	nocomp	5	5	nvj	nobound	noweight	2	c	10k	10	10	0.235458182569994	170
+nocomp.5_5_nvj_nobound.noweight.2.c.10k_all.10_10.all	all	nocomp	5	5	nvj	nobound	noweight	2	c	10k	10	10	0.228481348368114	229
+nocomp.5_5_nvj_nobound.noweight.2.c.10k_all.5_5.imag	imag	nocomp	5	5	nvj	nobound	noweight	2	c	10k	5	5	0.213791261314326	59
+nocomp.5_5_nvj_nobound.noweight.2.c.10k_all.5_5.info	info	nocomp	5	5	nvj	nobound	noweight	2	c	10k	5	5	0.249148476058776	170
+nocomp.5_5_nvj_nobound.noweight.2.c.10k_all.5_5.all	all	nocomp	5	5	nvj	nobound	noweight	2	c	10k	5	5	0.244347880508481	229
+nocomp.5_5_nvj_nobound.noweight.2.c.5k_all.10_10.imag	imag	nocomp	5	5	nvj	nobound	noweight	2	c	5k	10	10	0.204382307221731	59
+nocomp.5_5_nvj_nobound.noweight.2.c.5k_all.10_10.info	info	nocomp	5	5	nvj	nobound	noweight	2	c	5k	10	10	0.230983268067169	170
+nocomp.5_5_nvj_nobound.noweight.2.c.5k_all.10_10.all	all	nocomp	5	5	nvj	nobound	noweight	2	c	5k	10	10	0.224523185572571	229
+nocomp.5_5_nvj_nobound.noweight.2.c.5k_all.5_5.imag	imag	nocomp	5	5	nvj	nobound	noweight	2	c	5k	5	5	0.210412211908454	59
+nocomp.5_5_nvj_nobound.noweight.2.c.5k_all.5_5.info	info	nocomp	5	5	nvj	nobound	noweight	2	c	5k	5	5	0.25051437549003	170
+nocomp.5_5_nvj_nobound.noweight.2.c.5k_all.5_5.all	all	nocomp	5	5	nvj	nobound	noweight	2	c	5k	5	5	0.240637607958563	229
+nocomp.5_5_nvj_nobound.noweight.2.s.10k_all.10_10.imag	imag	nocomp	5	5	nvj	nobound	noweight	2	s	10k	10	10	0.220662326272344	59
+nocomp.5_5_nvj_nobound.noweight.2.s.10k_all.10_10.info	info	nocomp	5	5	nvj	nobound	noweight	2	s	10k	10	10	0.262247037411694	170
+nocomp.5_5_nvj_nobound.noweight.2.s.10k_all.10_10.all	all	nocomp	5	5	nvj	nobound	noweight	2	s	10k	10	10	0.249912017261137	229
+nocomp.5_5_nvj_nobound.noweight.2.s.10k_all.5_5.imag	imag	nocomp	5	5	nvj	nobound	noweight	2	s	10k	5	5	0.229388171934428	59
+nocomp.5_5_nvj_nobound.noweight.2.s.10k_all.5_5.info	info	nocomp	5	5	nvj	nobound	noweight	2	s	10k	5	5	0.261662060132116	170
+nocomp.5_5_nvj_nobound.noweight.2.s.10k_all.5_5.all	all	nocomp	5	5	nvj	nobound	noweight	2	s	10k	5	5	0.251306715675295	229
+nocomp.5_5_nvj_nobound.noweight.2.s.5k_all.10_10.imag	imag	nocomp	5	5	nvj	nobound	noweight	2	s	5k	10	10	0.207586809950676	59
+nocomp.5_5_nvj_nobound.noweight.2.s.5k_all.10_10.info	info	nocomp	5	5	nvj	nobound	noweight	2	s	5k	10	10	0.262820336529991	170
+nocomp.5_5_nvj_nobound.noweight.2.s.5k_all.10_10.all	all	nocomp	5	5	nvj	nobound	noweight	2	s	5k	10	10	0.25017633202199	229
+nocomp.5_5_nvj_nobound.noweight.2.s.5k_all.5_5.imag	imag	nocomp	5	5	nvj	nobound	noweight	2	s	5k	5	5	0.231642137529488	59
+nocomp.5_5_nvj_nobound.noweight.2.s.5k_all.5_5.info	info	nocomp	5	5	nvj	nobound	noweight	2	s	5k	5	5	0.268042567334083	170
+nocomp.5_5_nvj_nobound.noweight.2.s.5k_all.5_5.all	all	nocomp	5	5	nvj	nobound	noweight	2	s	5k	5	5	0.258440168137978	229
