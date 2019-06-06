@@ -7,7 +7,8 @@
 		<link rel="icon" href="./QLVLicon/favicon.ico" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="custom.css">
 
 		<title>Level 2?</title>
 		
@@ -17,34 +18,34 @@
   </head>
   <body>
 		
-		<div class="container-fluid">
+		<div class="container">
 				<h1>Level 2!</h1>
 				<div class="row">
 					<div class="col">
 						<!-- <div class="btn-group"> -->
-							<button type="button" class="btn btn-default" id="update-select">Update model selection</button>
-							<button type="button" class="btn btn-default" id="clear-select">Clear item selection</button>
+							<button type="button" class="btn shadow-sm btn-secondary" id="update-select">Update model selection</button>
+							<button type="button" class="btn shadow-sm btn-secondary" id="clear-select">Clear item selection</button>
 						<!-- </div> -->
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-4">
+					<div class="col-sm">
 						<div class="btn-group">
-							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Go to model</button>
+							<button type="button" class="btn shadow-sm btn-kulright m-1 dropdown-toggle" data-toggle="dropdown">Go to model</button>
 							<ul class="dropdown-menu" id="model"></ul>
 		
-							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select colour</button>
+							<button type="button" class="btn shadow-sm btn-kulright m-1 dropdown-toggle" data-toggle="dropdown">Select colour</button>
 							<ul class="dropdown-menu" id="colour"></ul>
 		
-							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select shape</button>
+							<button type="button" class="btn shadow-sm btn-kulright m-1 dropdown-toggle" data-toggle="dropdown">Select shape</button>
 							<ul class="dropdown-menu" id="shape"></ul>
 		
-							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select size</button>
+							<button type="button" class="btn shadow-sm btn-kulright m-1 dropdown-toggle" data-toggle="dropdown">Select size</button>
 							<ul class="dropdown-menu" id="size"></ul>
 						</div>
 					</div>
-					<div class="col-sm-4">
-						Selection tool:
+					<div class="col-sm">
+						<strong>Selection tool</strong>
 						<form>
 							<label class="radio-inline"><input type="radio" name="optradio" id="brush-enab">brush</label>
 							<label class="radio-inline"><input type="radio" name="optradio" id="click-select">click</label>
