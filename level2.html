@@ -597,7 +597,53 @@ d3.tsv(type+".tsv", function(error, data) {
   		      window.location = "level3.html?type="+type;
   		    });
 	}
+	function updateLegends() {
+					// Remove remains of previous legends
+					svg.selectAll(".legendCells").remove();
 
+					// Create colour legend
+					container.append("g")
+						.attr("class", "legendOrdinalColor")
+						.attr("transform", "translate(480,50)");
+
+					var legendOrdinalColor = d3.legendColor()
+						.shape("path", d3.symbol().type(defaultShape).size(150)())
+						.shapePadding(10)
+						.scale(getColors);
+
+					// Create shape legend
+					container.append("g")
+						.attr("class", "legendOrdinalShape")
+						.attr("transform", "translate(480,250)");
+
+					var triangleU = d3.symbol().type(d3.symbolTriangle)(),
+						circle = d3.symbol().type(d3.symbolCircle)(),
+						cross = d3.symbol().type(d3.symbolCross)(),
+						diamond = d3.symbol().type(d3.symbolDiamond)(),
+						star = d3.symbol().type(d3.symbolStar)(),
+						square = d3.symbol().type(d3.symbolSquare)();
+
+					var symbolScale = d3.scaleOrdinal([circle, cross, diamond, triangleU, star]);
+
+					var legendOrdinalShape = d3.legendSymbol()
+						.shapePadding(10)
+						.scale(symbolScale);
+
+					if (typeof(cset) !== "undefined") {
+						svg.select(".legendOrdinalColor").call(legendOrdinalColor);
+					} else {
+						svg.selectAll(".legendOrdinalColor").remove();
+					}
+					if (typeof(shset) !== "undefined") {
+						svg.select(".legendOrdinalShape").call(legendOrdinalShape);
+						console.log("called the shape legend");
+					} else {
+						svg.selectAll(".legendOrdinalShape").remove();
+					}
+				}
+
+				// Create/update legends on load
+				updateLegends();
  //  function updatePlots() {
  //   // Refresh the scales
  //   getColors = d3.scale.category10();

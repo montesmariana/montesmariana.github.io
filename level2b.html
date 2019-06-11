@@ -9,81 +9,151 @@
     <!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="custom.css">
-
-		<title>Level 2?</title>
 		
-		<script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="js/d3.min.js"></script>
-    <script src="js/d3-legend.min.js"></script>
+		
   </head>
   <body>
 		
 		<div class="container">
-				<h1>Level 2!</h1>
-				<div class="row">
-					<div class="col">
-						<!-- <div class="btn-group"> -->
-							<button type="button" class="btn shadow-sm btn-secondary" id="update-select">Update model selection</button>
-							<button type="button" class="btn shadow-sm btn-secondary" id="clear-select">Clear item selection</button>
-						<!-- </div> -->
+			<h1>Level 2!</h1>
+			<div class="row align-items-end">
+				<div class="col-sm-6">
+					<div class="btn-toolbar">
+						<button type="button" class="btn shadow-sm btn-secondary m-1" id="update-select">Update model selection</button>
+						<button type="button" class="btn shadow-sm btn-secondary m-1" id="clear-select">Clear item selection</button>
+					</div>
+					<div class="btn-group-toggle">
+						<button type="button" class="btn shadow-sm btn-kulright m-1 dropdown-toggle" data-toggle="dropdown">Go to model</button>
+						<ul class="dropdown-menu" id="model"></ul>
+	
+						<button type="button" class="btn shadow-sm btn-kulright  dropdown-toggle" data-toggle="dropdown">Select colour</button>
+						<ul class="dropdown-menu" id="colour"></ul>
+	
+						<button type="button" class="btn shadow-sm btn-kulright  dropdown-toggle" data-toggle="dropdown">Select shape</button>
+						<ul class="dropdown-menu" id="shape"></ul>
+	
+						<button type="button" class="btn shadow-sm btn-kulright  dropdown-toggle" data-toggle="dropdown">Select size</button>
+						<ul class="dropdown-menu" id="size"></ul>
+					</div>
+					<div class="btn-toolbar">
+						<a class="btn shadow-sm btn-kuldefault m-1" href="index.html" role="button">Up</a>
+						<a class="btn shadow-sm btn-kuldefault m-1" id="godown" role="button">Down</a>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-sm">
-						<div class="btn-group">
-							<button type="button" class="btn shadow-sm btn-kulright m-1 dropdown-toggle" data-toggle="dropdown">Go to model</button>
-							<ul class="dropdown-menu" id="model"></ul>
-		
-							<button type="button" class="btn shadow-sm btn-kulright m-1 dropdown-toggle" data-toggle="dropdown">Select colour</button>
-							<ul class="dropdown-menu" id="colour"></ul>
-		
-							<button type="button" class="btn shadow-sm btn-kulright m-1 dropdown-toggle" data-toggle="dropdown">Select shape</button>
-							<ul class="dropdown-menu" id="shape"></ul>
-		
-							<button type="button" class="btn shadow-sm btn-kulright m-1 dropdown-toggle" data-toggle="dropdown">Select size</button>
-							<ul class="dropdown-menu" id="size"></ul>
-						</div>
-					</div>
-					<div class="col-sm">
-						<strong>Selection tool</strong>
-						<form>
-							<label class="radio-inline"><input type="radio" name="optradio" id="brush-enab">brush</label>
-							<label class="radio-inline"><input type="radio" name="optradio" id="click-select">click</label>
-						</form>
+				<div class="col-sm text-center">
+					<h3>Selection tool</h3>
+					<div class="btn-group-toggle" data-toggle="buttons">
+						<label class="btn btn-marigreen">
+							<input type="radio" name="optradio" id="brush-enab" autocomplete="off"> Brush
+						</label>
+						<label class="btn btn-marigreen">
+							<input type="radio" name="optradio" id="click-select" autocomplete="off"> Click
+						</label>
 					</div>
 				</div>
 			</div>
 				
-		<!-- <div class="container">
-			<h2></h2>
-			<p></p>
-		</div> -->
-		
-		<!-- <div id="plot"></div> -->
-		<!-- <div id="tablecontainer"></div> -->
+			<div class="row">
+				<div id="plot"></div>
+			</div>
+			<div class="row">
+				<div id="tablecontainer"></div>
+			</div>
 
-    <!-- Optional JavaScript -->
+	  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="js/d3.min.js"></script>
+		<script src="js/d3-legend.min.js"></script>
+		<script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+		<link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+		<script src="//cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+
+	<script>
+		// define a function to extrat parameters of the search attribute in the current
+		// url; it splits it by &, and then the items by =, using the first part as the
+		// parameter name and returning the second one (e.g. level2?type=church;
+		// getUrlParameter("type") returns "church")
+		var getUrlParameter = function getUrlParameter(sParam) {
+			var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+			sURLVariables = sPageURL.split('&'),
+			sParameterName,
+			i;
+
+		for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+			if (sParameterName[0] === sParam) {
+				return sParameterName[1] === undefined ? true : sParameterName[1];
+			}
+		};
+		};
+		
+		var type = getUrlParameter("type");
+		document.title = "Level 2: " + type + " scatterplot matrix";
+		document.getElementById("godown").href = "level3.html?type="+type;
+		document.getElementsByTagName("h1")[0].innerHTML = "Level 2: " + type;
+
+		// The following lines set information to be stored in localStorage for communication
+		// between levels (cset = colors, shset = shape, sset = size, modselection = model)
+		var cset = (localStorage.getItem("cset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("cset"+"-"+type)));
+		var shset = (localStorage.getItem("shset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("shset"+"-"+type)));
+		var sset = (localStorage.getItem("sset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("sset"+"-"+type)));
+
+		var modselection = JSON.parse(localStorage.getItem("modselection"+"-"+type));
+		var goToPlot = (modselection == null) ? undefined : modselection[0];
+		var selection = (localStorage.getItem("selection"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("selection"+"-"+type)));
+
+		// Load models.tsv and generate a table
+		d3.tsv(type + ".models.tsv", function(error, data) {
+		mdata = data.filter(function(d) {return (modselection.indexOf(d.model) > -1)})
+		colnames = d3.keys(mdata[0]);
+		console.log(mdata);
+		
+		var table = d3.select("#tablecontainer")
+			.append("table")
+			.attr("id", "dataframe")
+			.attr("class", "table table-striped table-bordered")
+			.attr("cellspacing", "0")
+			.attr("width", "150%")
+			.append("thead")
+			.selectAll("tr")
+			.data(mdata)
+			.enter()
+			.text(function (d) { return d; });
+			
+		$(document).ready(function() {
+			tableContent = $('#dataframe').DataTable( {
+				select : true,
+				"aaData" : mdata,
+				"aaSorting" : [],
+				"aoColumns": [
+					{ mDataProp: "model", title: "ID"  },
+					{ mDataProp: "register", title: "register" },
+					{ mDataProp: "tokleft", title: "focc window"},
+					{ mDataProp: "tokpos", title: "focc pos"},
+					{ mDataProp: "mincws", title: "min cws"},
+					{ mDataProp: "socccorpus", title: "socc corpus"},
+					{ mDataProp: "socclength", title: "socc v length"},
+					{ mDataProp: "soccleft", title: "socc window"},
+					{ mDataProp: "stress", title: "MDS stress"},
+					{ mDataProp: "tokens", title: "N"}
+					]
+					});
+				});
+			})
+
+
+	</script>
+
   </body>
 </html>
 
 
 
 	<!-- <head>
-		<meta charset="utf-8">
-		<title></title>
-		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src="d3.legend.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-	  <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-	  <link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
-		<script src="//cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
-		
 		<style type="text/css">
 		svg {
 			font: 10px sans-serif;
@@ -146,23 +216,31 @@
 		</style>
 	</head> -->
 
-
+<!--
 <script>
-// var getUrlParameter = function getUrlParameter(sParam) {
-// 	var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-// 		sURLVariables = sPageURL.split('&'),
-// 		sParameterName,
-// 		i;
+	// define a function to extrat parameters of the search attribute in the current
+	// url; it splits it by &, and then the items by =, using the first part as the
+	// parameter name and returning the second one (e.g. level2?type=church;
+	// getUrlParameter("type") returns "church")
+var getUrlParameter = function getUrlParameter(sParam) {
+	var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+		sURLVariables = sPageURL.split('&'),
+		sParameterName,
+		i;
 
-// 	for (i = 0; i < sURLVariables.length; i++) {
-// 		sParameterName = sURLVariables[i].split('=');
+	for (i = 0; i < sURLVariables.length; i++) {
+		sParameterName = sURLVariables[i].split('=');
 
-// 		if (sParameterName[0] === sParam) {
-// 			return sParameterName[1] === undefined ? true : sParameterName[1];
-// 		}
-// 	}
-// };
+		if (sParameterName[0] === sParam) {
+			return sParameterName[1] === undefined ? true : sParameterName[1];
+		}
+	}
+};
 
+var type = getUrlParameter("type");
+document.title = "Level 2: " + type + " scatterplot matrix";
+document.getElementById("godown").href = "level3.html?type="+type;
+document.getElementsByTagName("h1")[0].innerHTML = "Level 2: " + type;
 // var width = 2420,
 //     size = 375,
 //     padding = 50;
@@ -193,45 +271,41 @@
 
 // var brushCell;
 
-// var type = getUrlParameter("type");
+// The following lines set information to be stored in localStorage for communication
+// between levels (cset = colors, shset = shape, sset = size, modselection = model)
+var cset = (localStorage.getItem("cset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("cset"+"-"+type)));
+var shset = (localStorage.getItem("shset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("shset"+"-"+type)));
+var sset = (localStorage.getItem("sset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("sset"+"-"+type)));
 
-// var cset = (localStorage.getItem("cset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("cset"+"-"+type)));
-// var shset = (localStorage.getItem("shset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("shset"+"-"+type)));
-// var sset = (localStorage.getItem("sset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("sset"+"-"+type)));
-
-// var modselection = JSON.parse(localStorage.getItem("modselection"+"-"+type));
-// var goToPlot = (modselection == null) ? undefined : modselection[0];
-// var selection = (localStorage.getItem("selection"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("selection"+"-"+type)));
+var modselection = JSON.parse(localStorage.getItem("modselection"+"-"+type));
+var goToPlot = (modselection == null) ? undefined : modselection[0];
+var selection = (localStorage.getItem("selection"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("selection"+"-"+type)));
 
 // var dataset;
 
 // d3.tsv(type+".tsv", function(error, data) {
-//   dataset = data;
-  // Extracts the first token name, assumes this is the type and sets it as the page title
-  // document.title = "Level 2: " + type + " scatterplot matrix";
-  // d3.select("body").select("h2").text("Level 2: " + type);
-  // d3.select("body").select("p").append("a").attr("href", "index.html").text("up ");
-  // d3.select("body").select("p").append("a").attr("href", "level3.html?type="+type).text(" down");
+/* I understand this section
+	dataset = data;
+	if (modselection == null) { //Stop loading the page if selection is empty.
+		window.alert("No models found in selection. Return to the previous level.");
+		return false;
+	}
 
-	// if (modselection == null) { //Stop loading the page if selection is empty.
-	// 	window.alert("No models found in selection. Return to the previous level.");
-	// 	return false;
-	// }
+	colnames = d3.keys(data[0]);
+	othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
+	firstRow = d3.entries(data[1]).filter(function(d) { if (othercols.indexOf(d.key) >= 0) {return d.value;}; });
+	function isNumber(obj) { return !isNaN(parseFloat(obj)) }
 
-	// colnames = d3.keys(data[0]);
-	// othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
-	// firstRow = d3.entries(data[1]).filter(function(d) { if (othercols.indexOf(d.key) >= 0) {return d.value;}; });
-	// function isNumber(obj) { return !isNaN(parseFloat(obj)) }
+	nominals = firstRow.filter(function(d) { if (!isNumber(d.value) && !d.key.startsWith("_")) { return d.key; } });
+	var nomSet = new Set();
+	nominals.forEach(function (d) { nomSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
 
-	// nominals = firstRow.filter(function(d) { if (!isNumber(d.value) && !d.key.startsWith("_")) { return d.key; } });
-	// var nomSet = new Set();
-	// nominals.forEach(function (d) { nomSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
+	numericals = firstRow.filter(function(d) { if (isNumber(d.value)) { return d.key; } });
+	var numSet = new Set();
+	numericals.forEach(function (d) { numSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
 
-	// numericals = firstRow.filter(function(d) { if (isNumber(d.value)) { return d.key; } });
-	// var numSet = new Set();
-	// numericals.forEach(function (d) { numSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
-
-	// models = colnames.filter(function(d) { if (d.endsWith(".x")) { return d;} });
+	models = colnames.filter(function(d) { if (d.endsWith(".x")) { return d;} });
+*/
 
   // var domainBySolution = {},
   //     xnames = d3.keys(data[0]).filter(function (d) { return d[d.length-1] == "x" })
@@ -807,42 +881,43 @@
 
 //   d3.select(self.frameElement).style("height", size * n + padding + 20 + "px");
 
-//   d3.tsv(type + ".models.tsv", function(error, data) {
-//   	mdata = data.filter(function(d) {return (modselection.indexOf(d._id) > -1)})
-//   	colnames = d3.keys(mdata[0]);
-//   	othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
-//   	console.log(mdata);
-
-//   	var table = d3.select("#tablecontainer")
-//   					.append("table")
-//   					.attr("id", "dataframe")
-//   					.attr("class", "table table-striped table-bordered")
-//   					.attr("cellspacing", "0")
-//   					.attr("width", "150%")
-//   					.append("thead")
-//   					.selectAll("tr")
-//   					.data(mdata)
-//   					.enter();
-//   //					.text(function (d) { return d; });
-
-//   	$(document).ready(function() {
-//   		tableContent = $('#dataframe').DataTable( {
-//   			select : true,
-//   			"aaData" : mdata,
-// 				"aaSorting" : [],
-//   			"aoColumns": [
-//   				{ mDataProp: "_id", title: "ID"  },
-// 					{ mDataProp: "weighted", title: "weighted" },
-//   				{ mDataProp: "first-order weighting", title: "first-order weighting"},
-//   				{ mDataProp: "context window size", title: "context window size"},
-//   				{ mDataProp: "second-order window size", title: "second-order window size"},
-//   				{ mDataProp: "second-order scheme", title: "second-order scheme"},
-//   				{ mDataProp: "MDS stress", title: "MDS stress"},
-//   				{ mDataProp: "Same Class Path ratio", title: "Same Class Path ratio"}
-//   			]
-//   		});
-//   	})
-//   })
+d3.tsv(type + ".models.tsv", function(error, data) {
+	mdata = data.filter(function(d) {return (modselection.indexOf(d.model) > -1)})
+	colnames = d3.keys(mdata[0]);
+	console.log(mdata);
+	
+	var table = d3.select("#tablecontainer")
+	  .append("table")
+	  .attr("id", "dataframe")
+	  .attr("class", "table table-striped table-bordered")
+	  .attr("cellspacing", "0")
+	  .attr("width", "150%")
+	  .append("thead")
+	  .selectAll("tr")
+	  .data(mdata)
+	  .enter()
+	  .text(function (d) { return d; });
+	  
+	$(document).ready(function() {
+		tableContent = $('#dataframe').DataTable( {
+			select : true,
+			"aaData" : mdata,
+			"aaSorting" : [],
+			"aoColumns": [
+				{ mDataProp: "model", title: "ID"  },
+				{ mDataProp: "register", title: "register" },
+				{ mDataProp: "tokleft", title: "focc window"},
+				{ mDataProp: "tokpos", title: "focc pos"},
+				{ mDataProp: "mincws", title: "min cws"},
+				{ mDataProp: "socccorpus", title: "socc corpus"},
+				{ mDataProp: "socclength", title: "socc v length"},
+				{ mDataProp: "soccleft", title: "socc window"},
+				{ mDataProp: "stress", title: "MDS stress"},
+				{ mDataProp: "tokens", title: "N"}
+				]
+				});
+			});
+		})
 
 // });
-//  </script>
+  </script>-->
