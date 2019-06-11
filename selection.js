@@ -13,14 +13,17 @@ function updateSelection(){
                 "focc3" : document.getElementById("tw-three").checked,
                 // "bound" : document.getElementById("bound").checked,
                 // "nobound" : document.getElementById("nobound").checked,
-            "soccc" : document.getElementById("soccc").checked,
-            "soccs" : document.getElementById("soccs").checked,
+                "soccc" : document.getElementById("soccc").checked,
+                "soccs" : document.getElementById("soccs").checked,
                 "5k" : document.getElementById("socc5k").checked,
                 "10k" : document.getElementById("socc10k").checked,
                 "soccwin5" : document.getElementById("soccwin5").checked,
                 "soccwin10" : document.getElementById("soccwin10").checked,
                 "reginfo" : document.getElementById("reg-info").checked,
                 "regimag" : document.getElementById("reg-imag").checked,
+                "regmfiction" : document.getElementById("reg-mfiction").checked,
+                "regmnonfiction" : document.getElementById("reg-mnonfiction").checked,
+                "regmpress" : document.getElementById("reg-mpress").checked,
                 "regall" : document.getElementById("reg-all").checked,
                 "cw1" : document.getElementById("cw1").checked,
                 "cw2" : document.getElementById("cw2").checked,
@@ -59,22 +62,22 @@ function updateSelection(){
                     //var soccposvalue = info["all"] || info["dvnj"]
                     var socclengthvalue = info["5k"] || info["10k"]
                     var soccwinvalue = info["soccwin5"] || info["soccwin10"]
-                    var registervalue = info["reginfo"] || info["regimag"] || info["regall"]
+                    var registervalue = info["reginfo"] || info["regimag"] || info["regall"] || info["regmfiction"]|| info["regmnonfiction"]|| info["regmpress"]
                     var cwminvalue = info["cw1"] || info["cw2"]
                     // var twvalue = info["noweight"] || info["ppmi0"]
                 
                 if (
-                        // For each setting, check if the value in the current row is true or if none is true
+                    // For each setting, check if the value in the current row is true or if none is true
                     item.sentbound == 'bound' &&
-                        (info[twmodel] == true || twmodelvalue != true) &&
-                        // (info[twbound] == true || twboundvalue != true) &&
-                        (info[socccorp] == true || socccorpvalue != true) &&
+                    (info[twmodel] == true || twmodelvalue != true) &&
+                    // (info[twbound] == true || twboundvalue != true) &&
+                    (info[socccorp] == true || socccorpvalue != true) &&
                     //(info[soccpos] == true || soccposvalue != true) &&
-                        (info[socclength] == true || socclengthvalue != true) &&
-                        (info[soccwindow] == true || soccwinvalue != true) &&
-                        (info[register] == true || registervalue != true) &&
-                        (info[cwmin] == true || cwminvalue != true)
-                        //(info[tw] == true || twvalue != true)
+                    (info[socclength] == true || socclengthvalue != true) &&
+                    (info[soccwindow] == true || soccwinvalue != true) &&
+                    (info[register] == true || registervalue != true) &&
+                    (info[cwmin] == true || cwminvalue != true)
+                    //(info[tw] == true || twvalue != true)
                     ){
                     newlist.push(item.model);
                 }});
