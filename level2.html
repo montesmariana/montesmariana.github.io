@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src="d3.legend.js"></script>
+    <script src="js/d3-legend.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -35,7 +35,11 @@ svg {
   fill: none;
   stroke: #aaa;
 }
-
+.legend rect {
+  			fill:white;
+  			stroke:black;
+  			opacity:0.8;
+			}
 path {
   fill-opacity: .8;
 }
@@ -597,53 +601,7 @@ d3.tsv(type+".tsv", function(error, data) {
   		      window.location = "level3.html?type="+type;
   		    });
 	}
-	function updateLegends() {
-					// Remove remains of previous legends
-					svg.selectAll(".legendCells").remove();
-
-					// Create colour legend
-					container.append("g")
-						.attr("class", "legendOrdinalColor")
-						.attr("transform", "translate(480,50)");
-
-					var legendOrdinalColor = d3.legendColor()
-						.shape("path", d3.symbol().type(defaultShape).size(150)())
-						.shapePadding(10)
-						.scale(getColors);
-
-					// Create shape legend
-					container.append("g")
-						.attr("class", "legendOrdinalShape")
-						.attr("transform", "translate(480,250)");
-
-					var triangleU = d3.symbol().type(d3.symbolTriangle)(),
-						circle = d3.symbol().type(d3.symbolCircle)(),
-						cross = d3.symbol().type(d3.symbolCross)(),
-						diamond = d3.symbol().type(d3.symbolDiamond)(),
-						star = d3.symbol().type(d3.symbolStar)(),
-						square = d3.symbol().type(d3.symbolSquare)();
-
-					var symbolScale = d3.scaleOrdinal([circle, cross, diamond, triangleU, star]);
-
-					var legendOrdinalShape = d3.legendSymbol()
-						.shapePadding(10)
-						.scale(symbolScale);
-
-					if (typeof(cset) !== "undefined") {
-						svg.select(".legendOrdinalColor").call(legendOrdinalColor);
-					} else {
-						svg.selectAll(".legendOrdinalColor").remove();
-					}
-					if (typeof(shset) !== "undefined") {
-						svg.select(".legendOrdinalShape").call(legendOrdinalShape);
-						console.log("called the shape legend");
-					} else {
-						svg.selectAll(".legendOrdinalShape").remove();
-					}
-				}
-
-				// Create/update legends on load
-				updateLegends();
+	
  //  function updatePlots() {
  //   // Refresh the scales
  //   getColors = d3.scale.category10();
@@ -828,11 +786,12 @@ d3.tsv(type+".tsv", function(error, data) {
 //   }
 
   d3.select(self.frameElement).style("height", size * n + padding + 20 + "px");
+})
 
   d3.tsv(type + ".models.tsv", function(error, data) {
-  	mdata = data.filter(function(d) {return (modselection.indexOf(d._id) > -1)})
+  	mdata = data.filter(function(d) {return (modselection.indexOf(d.model) > -1)})
   	colnames = d3.keys(mdata[0]);
-  	othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
+  	//othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
   	console.log(mdata);
 
   	var table = d3.select("#tablecontainer")
@@ -847,24 +806,29 @@ d3.tsv(type+".tsv", function(error, data) {
   					.enter();
   //					.text(function (d) { return d; });
 
-  	$(document).ready(function() {
-  		tableContent = $('#dataframe').DataTable( {
-  			select : true,
-  			"aaData" : mdata,
+  $(document).ready(function() {
+			tableContent = $('#dataframe').DataTable( {
+				select : true,
+				"aaData" : mdata,
 				"aaSorting" : [],
-  			"aoColumns": [
-  				{ mDataProp: "_id", title: "ID"  },
-					{ mDataProp: "weighted", title: "weighted" },
-  				{ mDataProp: "first-order weighting", title: "first-order weighting"},
-  				{ mDataProp: "context window size", title: "context window size"},
-  				{ mDataProp: "second-order window size", title: "second-order window size"},
-  				{ mDataProp: "second-order scheme", title: "second-order scheme"},
-  				{ mDataProp: "MDS stress", title: "MDS stress"},
-  				{ mDataProp: "Same Class Path ratio", title: "Same Class Path ratio"}
-  			]
-  		});
-  	})
-  })
+				"aoColumns": [
+					{ mDataProp: "model", title: "ID"  },
+					{ mDataProp: "register", title: "register" },
+					{ mDataProp: "tokleft", title: "focc window"},
+					{ mDataProp: "tokpos", title: "focc pos"},
+					{ mDataProp: "mincws", title: "min cws"},
+					{ mDataProp: "socccorpus", title: "socc corpus"},
+					{ mDataProp: "socclength", title: "socc v length"},
+					{ mDataProp: "soccleft", title: "socc window"},
+					{ mDataProp: "stress", title: "MDS stress"},
+					{ mDataProp: "tokens", title: "N"}
+					]
+					});
+				});
+			})
 
-});
-</script>
+
+	</script>
+
+  </body>
+</html>

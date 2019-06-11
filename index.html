@@ -67,25 +67,35 @@
 							<input type="checkbox" autocomplete="off" id="reg-imag"> Imaginative texts
 						</label>
 						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+							<input type="checkbox" autocomplete="off" id="reg-mfiction"> Mostly fiction
+						</label>
+						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+							<input type="checkbox" autocomplete="off" id="reg-mnonfiction"> Mostly nonfiction
+						</label>
+						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+							<input type="checkbox" autocomplete="off" id="reg-mpress"> Mostly press
+						</label>
+						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
 								<input type="checkbox" autocomplete="off" id="reg-all"> All texts
-							</label>
+						</label>
 					</div>
 				</div>
 			</div>
     <div class="row">
     	<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
     		<h2 class="blueh2">First order selection</h2>
-    		<span>There are two main models for first order context word selection.</span>
+			<span>There are three main models for first order context word selection.</span>
+			<p>"NAV" = nouns, adjectives and verbs; "NAVID" adds prepositions, subordinate conjunctions and determiners</p>
             <br>
     		<div class="btn-group-toggle" data-toggle="buttons" id="twmodelbuttons">
     			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="tw-one"> 10-10 Window (Nouns, adjectives, verbs)
+    				<input type="checkbox" autocomplete="off" id="tw-one"> 10-10 Window (NAV)
     			</label>
     			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="tw-two"> 5-5 Window (Nouns, adjectives, verbs)
+    				<input type="checkbox" autocomplete="off" id="tw-two"> 5-5 Window (NAV)
 					</label>
 					<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-							<input type="checkbox" autocomplete="off" id="tw-three"> 3-3 Window (Nouns, adjectives, verbs, determiners, prepositions)
+							<input type="checkbox" autocomplete="off" id="tw-three"> 3-3 Window (NAVID)
 						</label>
     		</div>
 						<!-- <p></p>
