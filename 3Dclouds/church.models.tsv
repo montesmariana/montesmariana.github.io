@@ -95,3 +95,11 @@ nocomp.5_5_nvj_nobound.noweight.2.s.10k_all.10_10	nocomp	5	5	nvj	nobound	noweigh
 nocomp.5_5_nvj_nobound.noweight.2.s.10k_all.5_5	nocomp	5	5	nvj	nobound	noweight	2	s	10k	5	5	0.194347482878998	229
 nocomp.5_5_nvj_nobound.noweight.2.s.5k_all.10_10	nocomp	5	5	nvj	nobound	noweight	2	s	5k	10	10	0.191456072119716	229
 nocomp.5_5_nvj_nobound.noweight.2.s.5k_all.5_5	nocomp	5	5	nvj	nobound	noweight	2	s	5k	5	5	0.197641794770131	229
+nocomp.10_10_nvj_nobound.noweight.1.c.1095_all.10_10	nocomp	10	10	nvj	nobound	noweight	1	c	1095	10	10	0.156746209801575	249
+nocomp.10_10_nvj_nobound.noweight.1.c.1095_all.5_5	nocomp	10	10	nvj	nobound	noweight	1	c	1095	5	5	0.168278938440879	249
+nocomp.10_10_nvj_nobound.noweight.1.s.1166_all.10_10	nocomp	10	10	nvj	nobound	noweight	1	s	1166	10	10	0.200837983978039	249
+nocomp.10_10_nvj_nobound.noweight.1.s.1166_all.5_5	nocomp	10	10	nvj	nobound	noweight	1	s	1166	5	5	0.209037607753047	249
+nocomp.5_5_nvj_nobound.noweight.1.c.626_all.10_10	nocomp	5	5	nvj	nobound	noweight	1	c	626	10	10	0.174115353727562	246
+nocomp.5_5_nvj_nobound.noweight.1.c.626_all.5_5	nocomp	5	5	nvj	nobound	noweight	1	c	626	5	5	0.184681830076005	246
+nocomp.5_5_nvj_nobound.noweight.1.s.659_all.10_10	nocomp	5	5	nvj	nobound	noweight	1	s	659	10	10	0.228236974626714	246
+nocomp.5_5_nvj_nobound.noweight.1.s.659_all.5_5	nocomp	5	5	nvj	nobound	noweight	1	s	659	5	5	0.233747565338027	246
