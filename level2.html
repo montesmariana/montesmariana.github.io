@@ -11,6 +11,8 @@
 	  <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 	  <link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
 	  <script src="//cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
 
     <style type="text/css">
 svg {
@@ -99,7 +101,7 @@ div {
 	  		<ul class="dropdown-menu" id="size"></ul>
   		</div>
 	</div>
-</div
+</div>
 
 <div id="wrap">
   <div>
@@ -113,6 +115,10 @@ div {
 
 <div class="container">
 	<h2></h2>
+	<div class="btn-toolbar">
+	<a class="btn shadow-sm btn-kulright m-1" id="goup" role="button"><i class="fas fa-arrow-alt-circle-up"></i> UP</a>
+	<!-- <a class="btn shadow-sm btn-kulright m-1" id="godown" role="button"><i class="fas fa-arrow-alt-circle-down"></i> DOWN</a> -->
+</div>
 	<p></p>
 </div>
 
@@ -168,6 +174,11 @@ var brushCell;
 
 var type = getUrlParameter("type");
 
+document.title = "Level 2: " + type + " scatterplot matrix";
+d3.select("body").select("h2").text("Level 2: " + type);
+d3.select("#goup").attr("href", "level1.html?type="+type)
+d3.select("#godown").attr('href', "level3.html?type="+type)
+  
 var cset = (localStorage.getItem("cset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("cset"+"-"+type)));
 var shset = (localStorage.getItem("shset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("shset"+"-"+type)));
 var sset = (localStorage.getItem("sset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("sset"+"-"+type)));
@@ -183,10 +194,6 @@ d3.tsv(type+".tsv", function(error, data) {
   // Extracts the first token name, assumes this is the type and sets it as the page title
   //var type = data[1]["_id"].match(/\w+\/\w+/)[0]
   //var type = window.location.pathname.split("/")[2]
-  document.title = "Level 2: " + type + " scatterplot matrix";
-  d3.select("body").select("h2").text("Level 2: " + type);
-  d3.select("body").select("p").append("a").attr("href", "index.html").text("up ");
-  d3.select("body").select("p").append("a").attr("href", "level3.html?type="+type).text(" down");
 
 	if (modselection == null) { //Stop loading the page if selection is empty.
 		window.alert("No models found in selection. Return to the previous level.");
@@ -367,6 +374,7 @@ d3.tsv(type+".tsv", function(error, data) {
 	  if (index == -1) {
 		  modselection.push(model) // Make sure clicked model is in modselection even if it has been deselected before.
 		  localStorage.setItem("modselection"+"-"+type, JSON.stringify(modselection));
+		  console.log("Model was not in modselection");
 	  }
       localStorage.setItem("goToPlot"+"-"+type, model);
       window.location = "level3.html?type="+type;
@@ -812,16 +820,14 @@ d3.tsv(type+".tsv", function(error, data) {
 				"aaData" : mdata,
 				"aaSorting" : [],
 				"aoColumns": [
-					{ mDataProp: "model", title: "ID"  },
-					{ mDataProp: "register", title: "register" },
-					{ mDataProp: "tokleft", title: "focc window"},
-					{ mDataProp: "tokpos", title: "focc pos"},
-					{ mDataProp: "mincws", title: "min cws"},
-					{ mDataProp: "socccorpus", title: "socc corpus"},
-					{ mDataProp: "socclength", title: "socc v length"},
-					{ mDataProp: "soccleft", title: "socc window"},
-					{ mDataProp: "stress", title: "MDS stress"},
-					{ mDataProp: "tokens", title: "N"}
+				{ mDataProp: "model", title: "ID"  },
+						{ mDataProp: "token_window", title: "First Order Window"},
+						{ mDataProp: "mincws", title: "Minimum context words"},
+						{ mDataProp: "socccorpus", title: "Second Order Corpus"},
+						{ mDataProp: "socclength_group", title: "Second Order Vector length"},
+						{ mDataProp: "socc_window", title: "Second Order Window"},
+						{ mDataProp: "stress", title: "MDS Stress"},
+						{ mDataProp: "tokens", title: "Number of tokens"}
 					]
 					});
 				});

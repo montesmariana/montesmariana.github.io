@@ -8,25 +8,20 @@ function updateSelection(){
         // console.log(models, typeof models);
 
         var info = {
-                "focc10" : document.getElementById("tw-one").checked,
-                "focc5" : document.getElementById("tw-two").checked,
-                "focc3" : document.getElementById("tw-three").checked,
+                "focc10:10" : document.getElementById("tw-one").checked,
+                "focc5:5" : document.getElementById("tw-two").checked,
+                "focc3:3" : document.getElementById("tw-three").checked,
                 // "bound" : document.getElementById("bound").checked,
                 // "nobound" : document.getElementById("nobound").checked,
                 "soccc" : document.getElementById("soccc").checked,
                 "soccs" : document.getElementById("soccs").checked,
                 "5k" : document.getElementById("socc5k").checked,
                 "10k" : document.getElementById("socc10k").checked,
-                "soccwin5" : document.getElementById("soccwin5").checked,
-                "soccwin10" : document.getElementById("soccwin10").checked,
-                "reginfo" : document.getElementById("reg-info").checked,
-                "regimag" : document.getElementById("reg-imag").checked,
-                "regmfiction" : document.getElementById("reg-mfiction").checked,
-                "regmnonfiction" : document.getElementById("reg-mnonfiction").checked,
-                "regmpress" : document.getElementById("reg-mpress").checked,
-                "regall" : document.getElementById("reg-all").checked,
+                "focc" : document.getElementById("soccfocc").checked,
+                "soccwin5:5" : document.getElementById("soccwin5").checked,
+                "soccwin10:10" : document.getElementById("soccwin10").checked,
                 "cw1" : document.getElementById("cw1").checked,
-                "cw2" : document.getElementById("cw2").checked,
+                "cw2" : document.getElementById("cw2").checked
                 // "all": document.getElementById("allpos").checked,
             // "dvnj": document.getElementById("dvnj").checked,
                 // "noweight": document.getElementById("twno").checked,
@@ -44,42 +39,37 @@ function updateSelection(){
             modellist.forEach(function(item){
                     // FIRST define variables that extract the values of the settings in models and
                     //// make them equivalent to the keys in info
-                var twmodel = "focc" + item.tokleft
-                    var twbound = item.sentbound
-                    var socccorp = "socc" + item.socccorpus
+                    var twmodel = "focc" + item.token_window
+                    var socccorp = "socc" + item.socccorpus[0].toLowerCase()
                     //var soccpos = item.pos
-                    var socclength = item.socclength
-                    var soccwindow = "soccwin" + item.soccleft
-                    var register = "reg" + item.register
+                    var socclength = item.socclength_group
+                    var soccwindow = "soccwin" + item.socc_window
                     var cwmin = "cw" + item.mincws
                     // var tw = item.weight
                 
                     // SECOND define variables that are true if one of the buttons has been clicked (for each setting)
                 // var twcorpvalue = info["twppmic"] || info["twppmis"]
-                var twmodelvalue = info["focc3"] || info["focc5"] || info["focc10"]
+                    var twmodelvalue = info["focc3:3"] || info["focc5:5"] || info["focc10:10"]
                     // var twboundvalue = info["bound"] || info["nobound"]
                     var socccorpvalue = info["soccc"] || info["soccs"]
                     //var soccposvalue = info["all"] || info["dvnj"]
-                    var socclengthvalue = info["5k"] || info["10k"]
-                    var soccwinvalue = info["soccwin5"] || info["soccwin10"]
-                    var registervalue = info["reginfo"] || info["regimag"] || info["regall"] || info["regmfiction"]|| info["regmnonfiction"]|| info["regmpress"]
+                    var socclengthvalue = info["5k"] || info["10k"] || info["focc"]
+                    var soccwinvalue = info["soccwin5:5"] || info["soccwin10:10"]
                     var cwminvalue = info["cw1"] || info["cw2"]
                     // var twvalue = info["noweight"] || info["ppmi0"]
                 
                 if (
                     // For each setting, check if the value in the current row is true or if none is true
-                    item.sentbound == 'bound' &&
                     (info[twmodel] == true || twmodelvalue != true) &&
                     // (info[twbound] == true || twboundvalue != true) &&
                     (info[socccorp] == true || socccorpvalue != true) &&
                     //(info[soccpos] == true || soccposvalue != true) &&
                     (info[socclength] == true || socclengthvalue != true) &&
                     (info[soccwindow] == true || soccwinvalue != true) &&
-                    (info[register] == true || registervalue != true) &&
                     (info[cwmin] == true || cwminvalue != true)
                     //(info[tw] == true || twvalue != true)
                     ){
-                    newlist.push(item.model);
+                    newlist.push(item['model']);
                 }});
             return newlist;
         };

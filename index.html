@@ -10,7 +10,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="custom.css">
-    <title>Models selection</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Nephological semantics - clouds</title>
 
     <style>
     body {
@@ -37,151 +38,34 @@
 	<div class="container p-4">
     <div class="row shadow bg-gradient-kulright p-2 rounded"><h1 class="text-white">Welcome to Mariana's clouds of <em>church</em>!</h1></div>
     <div class="lead p-3 shadow rounded">
-    	<p>On this site you can select a group of clouds based on some parameters.</p>
-      <p>The buttons act as filters: between buttons of the same group there's an OR relation; between groups, an AND relation.
-        When a filter is activated, incompatible combinations will look unavailable, but the buttons are not disabled (they may be used
-				in combination with other parameters).</p>
-				<p>While I did register many settings, I didn't vary along all of them. These clouds have no first order ppmi weighting;
-					for the first order type level vectors, a window of 5-5 was used for 3-3/5-5 token level, and 10-10 for 10-10 token level.
+    	<p>This portal gives you access to 2D token-level clouds of the type <em>church</em>.</p>
+      <p>There are many clouds, created by varying along a number of parameters. If you want to explore different alternatives,
+        you have two options:</p>
+        <div class="btn-toolbar">
+						<a class="btn shadow-sm btn-kulright m-1" href="level1.html?type=church" role="button">Examine a cloud of models</a>
+						<a class="btn shadow-sm btn-kulright m-1" href="buttons_selection.html" role="button">Filter parameters with buttons</a>
+          </div>
+      <p>If you just want to play with the cloud from the ICLC19 poster, <a class="btn shadow-sm btn-kulright m-1" style = "color:white;" id="onecloud" role="button">Click here</a>.</p>
+          <p>These clouds were created on July 2019 and are only for the type <em>church</em>,
+                when it is not part of a compound, in the Semcor corpus. Enjoy!
 				</p>
-    	<p>The "Let's look at them!" button takes you to Thomas' level2 page, where you can compare the different models selected.</p>
-			<p>These clouds were created on June 6 and are only for the type <em>church</em>,
-				and only when it is not part of a compound; the ones <a href="church/June4/index.html">here</a> were created on June 4 without 2cws as filter
-				or registers,
-				and those <a href="church/all_tokens/index.html">here</a> were created on May 31 with less filters.</p>
-				<p>I also wanted to apply sentence boundaries for the first order features, but it didn't work (I don't have sentence boundaries in the corpus,
-					so I used a regular expression to select periods, exclamation and question marks, but it didn't catch).
-				</p>
-			</div>
-			<div class="row">
-				<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
-					<h2 class="blueh2">Register selection</h2>
-					<span>There are different clouds for all tokens, those from <em>imaginative</em> texts and those from <em>informative</em> texts.
-					The multidimensionality reduction was performed after subsetting the tokens.</span>
-							<br>
-					<div class="btn-group-toggle" data-toggle="buttons" id="registerbuttons">
-						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-							<input type="checkbox" autocomplete="off" id="reg-info"> Informative texts
-						</label>
-						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-							<input type="checkbox" autocomplete="off" id="reg-imag"> Imaginative texts
-						</label>
-						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-							<input type="checkbox" autocomplete="off" id="reg-mfiction"> Mostly fiction
-						</label>
-						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-							<input type="checkbox" autocomplete="off" id="reg-mnonfiction"> Mostly nonfiction
-						</label>
-						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-							<input type="checkbox" autocomplete="off" id="reg-mpress"> Mostly press
-						</label>
-						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-								<input type="checkbox" autocomplete="off" id="reg-all"> All texts
-						</label>
-					</div>
-				</div>
-			</div>
-    <div class="row">
-    	<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
-    		<h2 class="blueh2">First order selection</h2>
-			<span>There are three main models for first order context word selection.</span>
-			<p>"NAV" = nouns, adjectives and verbs; "NAVID" adds prepositions, subordinate conjunctions and determiners</p>
-            <br>
-    		<div class="btn-group-toggle" data-toggle="buttons" id="twmodelbuttons">
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="tw-one"> 10-10 Window (NAV)
-    			</label>
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="tw-two"> 5-5 Window (NAV)
-					</label>
-					<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-							<input type="checkbox" autocomplete="off" id="tw-three"> 3-3 Window (NAVID)
-						</label>
-    		</div>
-						<!-- <p></p>
-						<span>You may also decide to go beyond sentence borders or not.
-							(I suspect this did NOT work properly because there is no difference.)
-						</span>
-            <br>
-    		<div class="btn-group-toggle" data-toggle="buttons" id="twsentbuttons">
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()" id="twbound">
-    				<input type="checkbox" autocomplete="off" id="bound"> Use sentence boundaries
-    			</label>
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="nobound"> Go beyond the sentence
-    			</label>
-				</div> -->
-						<p></p>
-						<span>The threshold changes the number of selected contextwords per token, would you like to remove the poorest tokens?</span>
-            <br>
-    		<div class="btn-group-toggle" data-toggle="buttons" id="twsentbuttons">
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="cw1"> Only if they have one or none (default)
-    			</label>
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="cw2"> Also those that have only two
-    			</label>
-				</div>
-			</div>
-    		<!-- <span>Note that the corpus used for the weighting is the same that you may choose for the second
-					order context words (but does not apply if you choose 'no weighting').
-				</span>
-            <br>
-    		<div class="btn-group btn-group-toggle" data-toggle="buttons" id="twppmibuttons">
-    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="twno"> No weighting
-    			</label>
-    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()" id="twpt1">
-    				<input type="checkbox" autocomplete="off" id="twppmi"> PPMI (0)
-    			</label>
-    		</div>-->
-    	<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
-    		<h2 class="blueh2">Second order weighting</h2>
-    		<span>Select the corpus for the second order weights.</span>
-    		<div class="btn-group-toggle" data-toggle="buttons" id="socccorpusbuttons">
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="soccc"> COHA
-    			</label>
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()" id="socs">
-    				<input type="checkbox" autocomplete="off" id="soccs"> Semcor
-    			</label>
-    		</div>
-            <p></p>
-    		<span>Select the length of the second order vectors.</span><br>
-    		<div class="btn-group-toggle" data-toggle="buttons" id="socclengthbuttons">
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="socc5k"> Top 5 thousand
-    			</label>
-    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-    				<input type="checkbox" autocomplete="off" id="socc10k"> Top 10 thousand
-    			</label>
-				</div>
-				<p></p>
-    		<span>Select the window for the ppmi values of the second order vectors.</span><br>
-				<div class="btn-group-toggle" data-toggle="buttons" id="soccwinbuttons">
-						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-							<input type="checkbox" autocomplete="off" id="soccwin5"> 5-5 window
-						</label>
-						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
-							<input type="checkbox" autocomplete="off" id="soccwin10"> 10-10 window
-						</label>
-					</div>
-    	</div>
-    </div>
-    <span class="text-right font-weight-bold">Nephological Semantics - QLVL - KU Leuven</span>
+      </div>
+      <p style="text-align: center;font-weight: bold;">Nephological Semantics - QLVL - KU Leuven</p>
+      <p style="text-align: center;font-weight: bold;background-color:#116e8a;color:white;">
+        <i class="fas fa-envelope"></i> Contact: <a href="mailto:mariana.montes@kuleuven.be" style="color:white;">Mariana Montes</a></p>
     <br>
-    <div class="btn fixed-bottom container shadow-sm border px-4 py-2 btn-marigreen rounded" id="confirm-select">
-    	<div class="col text-center">
-    		<span class="text-white">You have selected <span id="countmodels">0</span> models.</span>
-    		<strong class="shadow-sm">Let's look at them!</strong>
-    	</div>
-		</div>
-
-		<script src="selection.js"></script>
 	<script>
 		document.addEventListener("DOMContentLoaded", function(event) {
 			$('body').css({'padding-bottom':$('#confirm-select').height()+'px'});
-		});
+    });
+    d3.select("#onecloud").on("click", function() {
+      localStorage.setItem("modselection-church", JSON.stringify(["nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.5_5"]));
+      localStorage.setItem("goToPlot-church", JSON.parse(
+        localStorage.getItem("modselection-church"))[0].substring(
+        0, JSON.parse(localStorage.getItem(
+            "modselection-church"))[0].length-2));
+    window.open("level3.html?type=church");
+});
 	</script>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

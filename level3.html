@@ -98,6 +98,10 @@
 		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select model<span class="caret"></span></button>
 			<ul class="dropdown-menu" id="model"></ul>
 		</div>
+
+		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select context<span class="caret"></span></button>
+			<ul class="dropdown-menu" id="context"></ul>
+		</div>
 	</div>
 
 	<br>
@@ -202,6 +206,8 @@
 
 				models = JSON.parse(localStorage.getItem("modselection"+"-"+type));
 
+				contexts = colnames.filter(function(d) {return (d.startsWith("_") && d != "_id")})
+
 				if (models.length == 0) { //Stop loading the page if selection is empty.
 					window.alert("No models found in selection. Return to the previous level.");
 					return false;
@@ -280,6 +286,17 @@
 											.attr("xlink:href", "#")
 											.attr("value", function(d) { return d; })
 											.text(function (d) { return d; });
+				var ctxtDropDown = d3.select("#context")
+											.attr("name", "Contexts")
+											.selectAll("option")
+											.data(contexts)
+											.enter()
+											.append("li")
+											.append("a")
+											.attr("class", "ctxt")
+											.attr("xlink:href", "#")
+											.attr("value", function(d) { return d; })
+											.text(function (d) { return d.slice(1); });
 
 			// Add a "reset" options to dropdown menus
 			function addReset(selector, reference) {
@@ -366,6 +383,11 @@
 			//Create shape scale
 			var getShape = d3.scaleOrdinal([d3.symbolCircle, d3.symbolCross, d3.symbolDiamond, d3.symbolSquare, d3.symbolTriangle, d3.symbolStar]);
 
+			d3.selectAll(".ctxt").on("click", function() {
+					value = this.getAttribute("value");
+					localStorage.setItem("ctxt"+"-"+type, JSON.stringify(value));
+				});
+
 			dot = container.append("g")
 			   .attr("class", "dot")
 			   .selectAll("path")
@@ -388,13 +410,14 @@
 				 })
       	 .on("mouseover", function(d) {
 			 target = type.split(".")[0]
+			 ctxt = JSON.parse(localStorage.getItem("ctxt"+"-"+type))
 			//  splitted = String(d["_text"]).split(" ")
 			//  i = splitted.indexOf("<span class='hit'>"+target+"</span>")
 			//  windowsize = 5;
 			//  before = splitted.slice(i-windowsize, i)
 			//  after = splitted.slice(i+1, i+windowsize)
 			//  res = before.join(" ") + " <span class='hit'>"+target+"</span> " + after.join(" ");
-			res = String(d["_text"])
+			res = String(d[ctxt])
 			 console.log(res);
 			 //res = d["_text"]
 
@@ -450,7 +473,7 @@
 				localStorage.setItem("selection"+"-"+type, JSON.stringify(selection));
 
 				// Display text field next/under the plot
-				res = "<b>" + d["_id"] + "</b><p>" + d["_text"]
+				res = "<b>" + d["_id"] + "</b><p>" + d[ctxt]
 				d3.select("#c2").select("p").html(res);
 			});
 

@@ -87,11 +87,11 @@ models.w.coords <- dst.MDS$points %>% as.data.frame %>% rownames_to_column %>% a
 models.w.coords %>% write_tsv('church.models.tsv')
 
 library(ggplot2)
-colnames(models.w.coords)
+colnames(models)
 models.w.coords <- models.w.coords %>% mutate(socclength_group = if_else(socclength == '10k', '10k', if_else(socclength == '5k', '5k', 'focc')))
 models.w.coords %>% count(soccleft)
-ggplot(models.w.coords) +
-  geom_point(aes(x = model.x, y = model.y, color = factor(soccleft), size = stress))
+ggplot(models) +
+  geom_point(aes(x = model.x, y = model.y, color = factor(socccorpus)))
 
 ## Write outputfiles
 # type = unlist(strsplit(files.names[1], "\\."))
