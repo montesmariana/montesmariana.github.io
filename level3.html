@@ -67,6 +67,8 @@
 			}
 		</style>
 		<link rel="stylesheet" href="css/user.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
 	</head>
 
 	<div id="wrap">
@@ -108,7 +110,8 @@
 
 	<div class="container">
 		<h2></h2>
-		<p></p>
+		<div class="btn-toolbar">
+		<a class="btn shadow-sm btn-kulright m-1" id="goup" role="button"><i class="fas fa-arrow-alt-circle-up"></i> UP</a>
 	</div>
 
 	<body>
@@ -168,6 +171,9 @@
 			var defaultShape = d3.symbolCircle;
 			var defaultSize = 150;
 
+			document.title = "Level 3: " + type + " tokencloud";
+			d3.select("body").select("h2").text("Level 3: " + type);
+			d3.select("#goup").attr("href", "level2.html?type="+type)
 
 //			d3.selection.prototype.moveToFront = function() {
 //				return this.each(function(){
@@ -182,10 +188,7 @@
 				// Internal function to determine whether variable is a number
 				function isNumber(obj) { return !isNaN(parseFloat(obj)) }
 
-				document.title = "Level 3: " + type + " tokencloud";
-				d3.select("body").select("p").append("a").attr("href", "level2.html?type="+type).text("up");
-				d3.select("body").select("h2").text("Level 3: " + type);
-
+				
 				colnames = d3.keys(data[0]);
 				othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
 				firstRow = d3.entries(dataset[1]).filter(function(d) { if (othercols.indexOf(d.key) >= 0) {return d.value;}; });

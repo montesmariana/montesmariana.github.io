@@ -116,10 +116,10 @@ div {
 <div class="container">
 	<h2></h2>
 	<div class="btn-toolbar">
-	<a class="btn shadow-sm btn-kulright m-1" id="goup" role="button"><i class="fas fa-arrow-alt-circle-up"></i> UP</a>
-	<!-- <a class="btn shadow-sm btn-kulright m-1" id="godown" role="button"><i class="fas fa-arrow-alt-circle-down"></i> DOWN</a> -->
+	<a class="btn shadow-sm btn-kulright m-1" id="gocloud" role="button"><i class="fas fa-cloud-upload-alt"></i> UP to cloud</a>
+	<a class="btn shadow-sm btn-kulright m-1" id="gobutton" role="button"><i class="fas fa-arrow-alt-circle-up"></i> UP to buttons</a>
+	<a class="btn shadow-sm btn-kulright m-1" id="godown" role="button"><i class="fas fa-arrow-alt-circle-down"></i> DOWN</a>
 </div>
-	<p></p>
 </div>
 
 <div id="plot"></div>
@@ -176,7 +176,8 @@ var type = getUrlParameter("type");
 
 document.title = "Level 2: " + type + " scatterplot matrix";
 d3.select("body").select("h2").text("Level 2: " + type);
-d3.select("#goup").attr("href", "level1.html?type="+type)
+d3.select("#gocloud").attr("href", "level1.html?type="+type)
+d3.select("#gobutton").attr("href", "buttons_selection.html")
 d3.select("#godown").attr('href', "level3.html?type="+type)
   
 var cset = (localStorage.getItem("cset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("cset"+"-"+type)));
@@ -186,6 +187,7 @@ var sset = (localStorage.getItem("sset"+"-"+type == null) ? [] : JSON.parse(loca
 var modselection = JSON.parse(localStorage.getItem("modselection"+"-"+type));
 var goToPlot = (modselection == null) ? undefined : modselection[0];
 var selection = (localStorage.getItem("selection"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("selection"+"-"+type)));
+localStorage.setItem("goToPlot" + "-" + type, goToPlot)
 
 var dataset;
 
@@ -443,6 +445,7 @@ d3.tsv(type+".tsv", function(error, data) {
 	d3.selectAll(".mod").on("click", function() {
 		localStorage.setItem("goToPlot"+"-"+type, this.getAttribute("value"));
 		console.log(this.getAttribute("value"));
+		localStorage.setItem("goToPlot" + "-" + type, value)
 		window.location = "level3.html?type="+type;
 	});
 

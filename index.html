@@ -60,10 +60,9 @@
     });
     d3.select("#onecloud").on("click", function() {
       localStorage.setItem("modselection-church", JSON.stringify(["nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.5_5"]));
-      localStorage.setItem("goToPlot-church", JSON.parse(
-        localStorage.getItem("modselection-church"))[0].substring(
-        0, JSON.parse(localStorage.getItem(
-            "modselection-church"))[0].length-2));
+      localStorage.setItem("goToPlot-church", "nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.5_5");
+      localStorage.setItem("cset-church", JSON.stringify("broadsense"));
+      localStorage.setItem("ctxt-church", JSON.stringify("_window5semcor"));
     window.open("level3.html?type=church");
 });
 	</script>
