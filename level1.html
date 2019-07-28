@@ -403,6 +403,9 @@
         // update model selection
         function updateModSelection(modselection) {
           // stores 'null' if it's empty and the list otherwise
+          if (modselection.length > 0 && modselection.indexOf("undefined") > -1) {
+            modselection.splice(modselection.indexOf("undefined"), 1)
+          }
           localStorage.setItem("modselection", modselection.length > 0 ? JSON.stringify(modselection) : JSON.stringify(null))
           // if something is selected everything else is translucent
           dot.classed("lighter", function(d) {return (modselection.length > 0 ? modselection.indexOf(d['_model']) === -1 : false)})
