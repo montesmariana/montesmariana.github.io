@@ -9,242 +9,258 @@
     <!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="custom.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 		
 		
   </head>
   <body>
-		
-		<div class="container">
-			<h1>Level 2!</h1>
-			<div class="row align-items-end">
-				<div class="col-sm-6">
-					<div class="btn-toolbar">
-						<button type="button" class="btn shadow-sm btn-secondary m-1" id="update-select">Update model selection</button>
-						<button type="button" class="btn shadow-sm btn-secondary m-1" id="clear-select">Clear item selection</button>
-					</div>
-					
-					<div class="btn-group">
-						<button type="button" class="btn shadow-sm btn-kulright m-1 dropdown-toggle" data-toggle="dropdown">Go to model</button>
-						<div class="dropdown-menu" id="model"></div>
-					</div>
-					<div class='btn-group'>
-						<button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select colour</button>
-						<div class="dropdown-menu" id="colour"></div>
-					</div>
-					<div class='btn-group'>
-						<button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select shape</button>
-						<div class="dropdown-menu" id="shape"></div>
-					</div>
-					<div class='btn-group'>
-						<button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select size</button>
-						<div class="dropdown-menu" id="size"></div>
-					</div>
-					<div class='btn-group'>
-							<button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select context on hover</button>
-							<div class="dropdown-menu" id="text"></div>
-					</div>
-					<div class="btn-toolbar">
-						<a class="btn shadow-sm btn-kuldefault m-1" href="index.html" role="button">Up</a>
-						<a class="btn shadow-sm btn-kuldefault m-1" id="godown" role="button">Down</a>
-					</div>
-				</div>
-				<div class="col-sm text-center">
-					<h3>Selection tool</h3>
-					<div class="btn-group-toggle" data-toggle="buttons">
-						<label class="btn btn-marigreen">
-							<input type="radio" name="optradio" id="brush-enab" autocomplete="off"> Brush
-						</label>
-						<label class="btn btn-marigreen">
-							<input type="radio" name="optradio" id="click-select" autocomplete="off"> Click
-						</label>
-					</div>
+	<style type="text/css">
+		body {
+			background-color: white;
+		}
+	</style>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm">
+				<h1>Level 2!</h1>
+			</div>
+			<div class="col-sm">
+				<div class="btn-toolbar">
+					<a class="btn shadow-sm btn-marigreen m-1" id="gocloud" role="button"><i class="fas fa-cloud-upload-alt"></i> UP to cloud</a>
+					<a class="btn shadow-sm btn-marigreen m-1" id="gobutton" role="button"><i class="fas fa-arrow-alt-circle-up"></i> UP to buttons</a>
+					<a class="btn shadow-sm btn-marigreen m-1" id="godown" role="button"><i class="fas fa-arrow-alt-circle-down"></i> DOWN</a>
 				</div>
 			</div>
+		</div>
+		<div class="row align-items-end">
+			<div class="col-sm-6">
+				<div class="btn-toolbar">
+					<button type="button" class="btn shadow-sm btn-secondary m-1" id="update-select">Update model selection</button>
+					<button type="button" class="btn shadow-sm btn-secondary m-1" id="clear-select">Clear item selection</button>
+				</div>
 				
-			<div class="row">
-				<div id="plot"></div>
+				<div class="btn-group">
+					<button type="button" class="btn shadow-sm btn-kulright m-1 dropdown-toggle" data-toggle="dropdown">Go to model</button>
+					<div class="dropdown-menu" id="model"></div>
+				</div>
+				<div class='btn-group'>
+					<button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select colour</button>
+					<div class="dropdown-menu" id="colour"></div>
+				</div>
+				<div class='btn-group'>
+					<button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select shape</button>
+					<div class="dropdown-menu" id="shape"></div>
+				</div>
+				<div class='btn-group'>
+					<button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select size</button>
+					<div class="dropdown-menu" id="size"></div>
+				</div>
+				<div class='btn-group'>
+						<button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select context on hover</button>
+						<div class="dropdown-menu" id="text"></div>
+				</div>
+				
 			</div>
-			<div class="row">
-				<div id="tablecontainer"></div>
+			<div class="col-sm text-center">
+				<h3>Selection tool</h3>
+				<div class="btn-group-toggle" data-toggle="buttons">
+					<label class="btn btn-marigreen">
+						<input type="radio" name="optradio" id="brush-enab" autocomplete="off"> Brush
+					</label>
+					<label class="btn btn-marigreen">
+						<input type="radio" name="optradio" id="click-select" autocomplete="off"> Click
+					</label>
+				</div>
 			</div>
-
-	  <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<script src="https://d3js.org/d3.v4.min.js"></script>
-		<script src="js/d3.min.js"></script>
-		<script src="js/d3-legend.min.js"></script>
-		<script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-		<link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
-		<script src="//cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
-
-	<script>
-		// define a function to extrat parameters of the search attribute in the current
-		// url; it splits it by &, and then the items by =, using the first part as the
-		// parameter name and returning the second one (e.g. level2?type=church;
-		// getUrlParameter("type") returns "church")
-		var getUrlParameter = function getUrlParameter(sParam) {
-			var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-			sURLVariables = sPageURL.split('&'),
-			sParameterName,
-			i;
-
-		for (i = 0; i < sURLVariables.length; i++) {
-			sParameterName = sURLVariables[i].split('=');
-			if (sParameterName[0] === sParam) {
-				return sParameterName[1] === undefined ? true : sParameterName[1];
-			}
-		};
-		};
-		
-		var type = getUrlParameter("type");
-		document.title = "Level 2: " + type + " scatterplot matrix";
-		document.getElementById("godown").href = "level3.html?type="+type;
-		document.getElementsByTagName("h1")[0].innerHTML = "Level 2: " + type;
-
-		// The following lines set information to be stored in localStorage for communication
-		// between levels (cset = colors, shset = shape, sset = size, modselection = model)
-		var cset = (localStorage.getItem("cset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("cset"+"-"+type)));
-		var shset = (localStorage.getItem("shset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("shset"+"-"+type)));
-		var sset = (localStorage.getItem("sset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("sset"+"-"+type)));
-
-		var modselection = JSON.parse(localStorage.getItem("modselection"+"-"+type));
-		
-		var goToPlot = (modselection == null) ? undefined : modselection[0];
-		var selection = (localStorage.getItem("selection"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("selection"+"-"+type)));
-		
-		// Load [type].tsv for the plot
-		d3.tsv(type + ".tsv", function(error, data) {
+		</div>
 			
-			if (modselection == null) { //Stop loading the page if selection is empty.
-				window.alert("No models found in selection. Return to the previous level.");
-				return false;
-			};
+		<div class="row">
+			<div id="plot"></div>
+		</div>
+		<div class="row">
+			<div id="tablecontainer"></div>
+		</div>
 
-			dataset = data
-			colnames = d3.keys(dataset[0]);
-			othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
-			firstRow = d3.entries(dataset[1]).filter(function(d) { if (othercols.indexOf(d.key) >= 0) {return d.value;}; });
-			function isNumber(obj) { return !isNaN(parseFloat(obj)) }
+	<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>	
+	<!-- <script src="js/d3.min.js"></script>
+	<script src="js/d3-legend.min.js"></script> -->
+	<script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+	<script src="//cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
 
-			nominals = firstRow.filter(function(d) { if (!isNumber(d.value) && !d.key.startsWith("_")) { return d.key; } });
-			var nomSet = new Set();
-			nominals.forEach(function (d) { nomSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
+<script>
+	// define a function to extrat parameters of the search attribute in the current
+	// url; it splits it by &, and then the items by =, using the first part as the
+	// parameter name and returning the second one (e.g. level2?type=church;
+	// getUrlParameter("type") returns "church")
+	var getUrlParameter = function getUrlParameter(sParam) {
+		var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+		sURLVariables = sPageURL.split('&'),
+		sParameterName,
+		i;
 
-			numericals = firstRow.filter(function(d) { if (isNumber(d.value)) { return d.key; } });
-			var numSet = new Set();
-			numericals.forEach(function (d) { numSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
+	for (i = 0; i < sURLVariables.length; i++) {
+		sParameterName = sURLVariables[i].split('=');
+		if (sParameterName[0] === sParam) {
+			return sParameterName[1] === undefined ? true : sParameterName[1];
+		}
+	};
+	};
+	
+	var type = getUrlParameter("type");
+	d3.select("body").select("h1").text("Level 2: " + type);
+	d3.select("#gocloud").attr("href", "level1.html?type="+type)
+	d3.select("#gobutton").attr("href", "buttons_selection.html")
+	d3.select("#godown").attr('href', "level3.html?type="+type)
+	
+	// The following lines set information to be stored in localStorage for communication
+	// between levels (cset = colors, shset = shape, sset = size, modselection = model)
+	var cset = (localStorage.getItem("cset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("cset"+"-"+type)));
+	var shset = (localStorage.getItem("shset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("shset"+"-"+type)));
+	var sset = (localStorage.getItem("sset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("sset"+"-"+type)));
 
-			contexts = colnames.filter(function(d) {if (d.startsWith('_')) {return d;}})
+	var modselection = JSON.parse(localStorage.getItem("modselection"+"-"+type));
+	
+	var goToPlot = (modselection == null) ? undefined : modselection[0];
+	var selection = (localStorage.getItem("selection"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("selection"+"-"+type)));
+	
+	var dataset, colnames, othercols, firstRow, nominals, numericals, contexts
 
-			// Selection menus
-			// COLOUR
-			d3.select("#colour").selectAll("a")
-			.data(Array.from(nomSet))
-			.enter()
-			.append("a")
-			.attr("class", "dropdown-item col")
-			.attr("xlink:href", "#")
-			.attr("value", function (d) { return(d); })
-			.text(function (d) { return(d); });
-
-			// SHAPE
-			d3.select("#shape").selectAll("a")
-			.data(Array.from(nomSet))
-			.enter()
-			.append("a")
-			.attr("class", "dropdown-item shape")
-			.attr("xlink:href", "#")
-			.attr("value", function (d) { return(d); })
-			.text(function (d) { return(d); });
-
-			// SIZE
-			d3.select("#size").selectAll("a")
-			.data(Array.from(numSet))
-			.enter()
-			.append("a")
-			.attr("class", "dropdown-item siz")
-			.attr("xlink:href", "#")
-			.attr("value", function (d) { return(d); })
-			.text(function (d) { return(d); });
-
-			// MODELS
-			models = JSON.parse(localStorage.getItem("modselection"+"-"+type));
-			d3.select("#model").selectAll("a")
-			.data(models)
-			.enter()
-			.append("a")
-			.attr("class", "dropdown-item mod")
-			.attr("xlink:href", "#")
-			.attr("value", function (d) { return(d); })
-			.text(function (d) { return(d); });
-
-			// TEXT
-			d3.select("#text").selectAll("a")
-			.data(contexts)
-			.enter()
-			.append("a")
-			.attr("class", "dropdown-item txt")
-			.attr("xlink:href", "#")
-			.attr("value", function (d) { return(d); })
-			.text(function (d) { return(d); });
-
-			// Add a "reset" option
-			function addReset(selector, reference) {
-				d3.select(selector)
-					.append("a")
-					.attr("class", "dropdown-item " + reference)
-					.attr("xlink:href", "#")
-					.attr("value", "reset")
-					.text("Reset");
-				}
-
-			addReset("#size", "siz");
-			addReset("#shape", "shape");
-			addReset("#colour", "col");
-		})
+	// Load [type].tsv for the plot
+	d3.tsv(type + ".tsv", function(error, data) {
 		
+		if (modselection == null) { //Stop loading the page if selection is empty.
+			window.alert("No models found in selection. Return to the previous level.");
+			return false;
+		};
 
-		// Load models.tsv and generate a table
-		d3.tsv(type + ".models.tsv", function(error, data) {
-		
-			mdata = data.filter(function(d) {return (modselection.indexOf(d.model) > -1)})
-			colnames = d3.keys(mdata[0]);
-			console.log(mdata);
-		
-			var table = d3.select("#tablecontainer")
-				.append("table")
-				.attr("id", "dataframe")
-				.attr("class", "table table-striped table-bordered")
-				.attr("cellspacing", "0")
-				.attr("width", "150%")
-				.append("thead")
-				.selectAll("tr")
-				.data(mdata)
-				.enter()
-				.text(function (d) { return d; });
-				
-			$(document).ready(function() {
-				tableContent = $('#dataframe').DataTable( {
-					select : true,
-					"aaData" : mdata,
-					"aaSorting" : [],
-					"aoColumns": [
-						{ mDataProp: "model", title: "ID"  },
-						{ mDataProp: "tokleft", title: "focc window"},
-						{ mDataProp: "tokpos", title: "focc pos"},
-						{ mDataProp: "mincws", title: "min cws"},
-						{ mDataProp: "socccorpus", title: "socc corpus"},
-						{ mDataProp: "socclength_group", title: "socc v length"},
-						{ mDataProp: "soccleft", title: "socc window"},
-						{ mDataProp: "stress", title: "MDS stress"},
-						{ mDataProp: "tokens", title: "N"}
-						]
-						});
+		dataset = data
+		colnames = d3.keys(dataset[0]);
+		othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
+		firstRow = d3.entries(dataset[1]).filter(function(d) { if (othercols.indexOf(d.key) >= 0) {return d.value;}; });
+		function isNumber(obj) { return !isNaN(parseFloat(obj)) }
+
+		nominals = firstRow.filter(function(d) { if (!isNumber(d.value) && !d.key.startsWith("_")) { return d.key; } });
+		var nomSet = new Set();
+		nominals.forEach(function (d) { nomSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
+
+		numericals = firstRow.filter(function(d) { if (isNumber(d.value)) { return d.key; } });
+		var numSet = new Set();
+		numericals.forEach(function (d) { numSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
+
+		contexts = colnames.filter(function(d) {if (d.startsWith('_')) {return d;}})
+
+		// Selection menus
+		// COLOUR
+		d3.select("#colour").selectAll("a")
+		.data(Array.from(nomSet))
+		.enter()
+		.append("a")
+		.attr("class", "dropdown-item col")
+		.attr("xlink:href", "#")
+		.attr("value", function (d) { return(d); })
+		.text(function (d) { return(d); });
+
+		// SHAPE
+		d3.select("#shape").selectAll("a")
+		.data(Array.from(nomSet))
+		.enter()
+		.append("a")
+		.attr("class", "dropdown-item shape")
+		.attr("xlink:href", "#")
+		.attr("value", function (d) { return(d); })
+		.text(function (d) { return(d); });
+
+		// SIZE
+		d3.select("#size").selectAll("a")
+		.data(Array.from(numSet))
+		.enter()
+		.append("a")
+		.attr("class", "dropdown-item siz")
+		.attr("xlink:href", "#")
+		.attr("value", function (d) { return(d); })
+		.text(function (d) { return(d); });
+
+		// MODELS
+		models = JSON.parse(localStorage.getItem("modselection"+"-"+type));
+		d3.select("#model").selectAll("a")
+		.data(models)
+		.enter()
+		.append("a")
+		.attr("class", "dropdown-item mod")
+		.attr("xlink:href", "#")
+		.attr("value", function (d) { return(d); })
+		.text(function (d) { return(d); });
+
+		// TEXT
+		d3.select("#text").selectAll("a")
+		.data(contexts)
+		.enter()
+		.append("a")
+		.attr("class", "dropdown-item txt")
+		.attr("xlink:href", "#")
+		.attr("value", function (d) { return(d); })
+		.text(function (d) { return(d); });
+
+		// Add a "reset" option
+		function addReset(selector, reference) {
+			d3.select(selector)
+				.append("a")
+				.attr("class", "dropdown-item " + reference)
+				.attr("xlink:href", "#")
+				.attr("value", "reset")
+				.text("Reset");
+			}
+
+		addReset("#size", "siz");
+		addReset("#shape", "shape");
+		addReset("#colour", "col");
+	})
+	
+
+	// Load models.tsv and generate a table
+	d3.tsv(type + ".models.tsv", function(error, data) {
+	
+		mdata = data.filter(function(d) {return (modselection.indexOf(d.model) > -1)})
+		colnames = d3.keys(mdata[0]);
+		console.log(mdata);
+	
+		var table = d3.select("#tablecontainer")
+			.append("table")
+			.attr("id", "dataframe")
+			.attr("class", "table table-striped table-bordered")
+			.attr("cellspacing", "0")
+			.attr("width", "150%")
+			.append("thead")
+			.selectAll("tr")
+			.data(mdata)
+			.enter()
+			.text(function (d) { return d; });
+			
+		$(document).ready(function() {
+			tableContent = $('#dataframe').DataTable( {
+				select : true,
+				"aaData" : mdata,
+				"aaSorting" : [],
+				"aoColumns": [
+					{ mDataProp: "model", title: "ID"  },
+					{ mDataProp: "token_window", title: "focc window"},
+					{ mDataProp: "tokpos", title: "focc pos"},
+					{ mDataProp: "mincws", title: "min cws"},
+					{ mDataProp: "socccorpus", title: "socc corpus"},
+					{ mDataProp: "socclength_group", title: "socc v length"},
+					{ mDataProp: "socc_window", title: "socc window"},
+					{ mDataProp: "stress", title: "MDS stress"},
+					{ mDataProp: "tokens", title: "N"}
+					]
 					});
-				})
+				});
+			})
 
 
 	</script>
@@ -319,29 +335,7 @@
 
 <!--
 <script>
-	// define a function to extrat parameters of the search attribute in the current
-	// url; it splits it by &, and then the items by =, using the first part as the
-	// parameter name and returning the second one (e.g. level2?type=church;
-	// getUrlParameter("type") returns "church")
-var getUrlParameter = function getUrlParameter(sParam) {
-	var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-		sURLVariables = sPageURL.split('&'),
-		sParameterName,
-		i;
 
-	for (i = 0; i < sURLVariables.length; i++) {
-		sParameterName = sURLVariables[i].split('=');
-
-		if (sParameterName[0] === sParam) {
-			return sParameterName[1] === undefined ? true : sParameterName[1];
-		}
-	}
-};
-
-var type = getUrlParameter("type");
-document.title = "Level 2: " + type + " scatterplot matrix";
-document.getElementById("godown").href = "level3.html?type="+type;
-document.getElementsByTagName("h1")[0].innerHTML = "Level 2: " + type;
 // var width = 2420,
 //     size = 375,
 //     padding = 50;
@@ -385,97 +379,12 @@ var selection = (localStorage.getItem("selection"+"-"+type == null) ? [] : JSON.
 // var dataset;
 
 // d3.tsv(type+".tsv", function(error, data) {
-/* I understand this section
-	dataset = data;
-	if (modselection == null) { //Stop loading the page if selection is empty.
-		window.alert("No models found in selection. Return to the previous level.");
-		return false;
-	}
-
-	colnames = d3.keys(data[0]);
-	othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
-	firstRow = d3.entries(data[1]).filter(function(d) { if (othercols.indexOf(d.key) >= 0) {return d.value;}; });
-	function isNumber(obj) { return !isNaN(parseFloat(obj)) }
-
-	nominals = firstRow.filter(function(d) { if (!isNumber(d.value) && !d.key.startsWith("_")) { return d.key; } });
-	var nomSet = new Set();
-	nominals.forEach(function (d) { nomSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
-
-	numericals = firstRow.filter(function(d) { if (isNumber(d.value)) { return d.key; } });
-	var numSet = new Set();
-	numericals.forEach(function (d) { numSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
-
-	models = colnames.filter(function(d) { if (d.endsWith(".x")) { return d;} });
-*/
 
   // var domainBySolution = {},
   //     xnames = d3.keys(data[0]).filter(function (d) { return d[d.length-1] == "x" })
 	//   console.log(modselection);
 
-	// Create selection menu for colour-coding
-// 	var colourDropDown = d3.select("#colour")
-// 		.attr("name", "Colour")
-// 		.selectAll("option")
-// 		.data(Array.from(nomSet))
-// 		.enter()
-// 		.append("li")
-// 		.append("a")
-// 		.attr("class", "col")
-// 		.attr("xlink:href", "#")
-// 		.attr("value", function (d) { return d; })
-// 		.text(function (d) { return d; });
 
-// 	var shapeDropDown = d3.select("#shape")
-// 		.attr("name", "Shape")
-// 		.selectAll("option")
-// 		.data(Array.from(nomSet))
-// 		.enter()
-// 		.append("li")
-// 		.append("a")
-// 		.attr("class", "shape")
-// 		.attr("xlink:href", "#")
-// 		.attr("value", function (d) { return d; })
-// 		.text(function (d) { return d; });
-
-// 	var sizeDropDown = d3.select("#size")
-// 		.attr("name", "Size")
-// 		.selectAll("option")
-// 		.data(Array.from(numSet))
-// 		.enter()
-// 		.append("li")
-// 		.append("a")
-// 		.attr("class", "siz")
-// 		.attr("xlink:href", "#")
-// 		.attr("value", function (d) { return d; })
-// 		.text(function (d) { return d; });
-
-// 	models = JSON.parse(localStorage.getItem("modselection"+"-"+type));
-// 	var modelDropDown = d3.select("#model")
-// 		.attr("name", "Model")
-// 		.selectAll("option")
-// 		.data(models)
-// 		.enter()
-// 		.append("li")
-// 		.append("a")
-// 		.attr("class", "mod")
-// 		.attr("xlink:href", "#")
-// 		.attr("value", function(d) { return d; })
-// 		.text(function (d) { return d; });
-
-// 	// Add a "reset" option
-// 	function addReset(selector, reference) {
-// 		d3.select(selector)
-// 			.append("li")
-// 			.append("a")
-// 			.attr("class", reference)
-// 			.attr("xlink:href", "#")
-// 			.attr("value", "reset")
-// 			.text("Reset");
-// 		}
-
-// 	addReset("#size", "siz");
-// 	addReset("#shape", "shape");
-// 	addReset("#colour", "col");
 
 // // Define the size of the matrix
 //       n = 3;

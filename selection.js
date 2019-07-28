@@ -31,7 +31,7 @@ function updateSelection(){
         selectedmodels = getmodels(dataset);
         document.getElementById("countmodels").innerHTML = selectedmodels.length;
         localStorage.clear();
-        localStorage.setItem("modselection-church", JSON.stringify(selectedmodels));
+        localStorage.setItem("modselection", JSON.stringify(selectedmodels));
         console.log(selectedmodels);
 
         function getmodels(modellist){
@@ -69,7 +69,7 @@ function updateSelection(){
                     (info[cwmin] == true || cwminvalue != true)
                     //(info[tw] == true || twvalue != true)
                     ){
-                    newlist.push(item['model']);
+                    newlist.push(item['_model']);
                 }});
             return newlist;
         };
@@ -121,9 +121,9 @@ function updateSelection(){
 
 d3.select("#confirm-select").on("click", function() {
     localStorage.setItem("goToPlot-church", JSON.parse(
-        localStorage.getItem("modselection-church"))[0].substring(
+        localStorage.getItem("modselection"))[0].substring(
         0, JSON.parse(localStorage.getItem(
-            "modselection-church"))[0].length-2));
+            "modselection"))[0].length-2));
     window.open("level2.html?type=church");
 });
 updateSelection()

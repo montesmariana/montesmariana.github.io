@@ -1,843 +1,671 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
+  <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <title></title>
-    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src="js/d3-legend.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-	  <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-	  <link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
-	  <script src="//cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
-	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
-
-    <style type="text/css">
-svg {
-  font: 10px sans-serif;
-  padding: 5px;
-}
-
-.axis,
-.frame {
-  shape-rendering: crispEdges;
-}
-
-.axis line {
-  stroke: #ddd;
-}
-
-.axis path {
-  display: none;
-}
-
-.frame {
-  fill: none;
-  stroke: #aaa;
-}
-.legend rect {
-  			fill:white;
-  			stroke:black;
-  			opacity:0.8;
-			}
-path {
-  fill-opacity: .8;
-}
-
-path.selected {
-  fill-opacity: .2;
-}
-
-.extent {
-  fill: #000;
-  fill-opacity: .125;
-  stroke: #fff;
-}
-
-.tooltip {
-    position: absolute;
-    width: 300px;
-    height: 100px;
-    font-size: 12px;
-    pointer-events: none;
-}
-
-#wrap{
-  border: 1px solid white;
-  width: 600px;
-}
-
-div {
-  float: left;
-}
-
-.legend rect {
-  fill:white;
-  stroke:black;
-  opacity:0.8;
-}
-
-</style>
-</head>
-
-<body>
-<div id="wrap">
-	<div><button type="button" class="btn btn-default" id="update-select">Update model selection</button></div>
-	<div><button type="button" class="btn btn-default" id="clear-select">Clear item selection</button></div>
-
-	<div>
-		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Goto model<span class="caret"></span></button>
-			<ul class="dropdown-menu" id="model"></ul>
-		</div>
-		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select colour<span class="caret"></span></button>
-	  		<ul class="dropdown-menu" id="colour"></ul>
-  		</div>
-  		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select shape<span class="caret"></span></button>
-	  		<ul class="dropdown-menu" id="shape"></ul>
-  		</div>
-  		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select size<span class="caret"></span></button>
-	  		<ul class="dropdown-menu" id="size"></ul>
-  		</div>
-	</div>
-</div>
-
-<div id="wrap">
-  <div>
-    Selection tool:
-  <form>
-    <label class="radio-inline"><input type="radio" name="optradio" id="brush-enab">brush</label>
-    <label class="radio-inline"><input type="radio" name="optradio" id="click-select">click</label>
-  </form>
-  </div>
-</div>
-
-<div class="container">
-	<h2></h2>
-	<div class="btn-toolbar">
-	<a class="btn shadow-sm btn-kulright m-1" id="gocloud" role="button"><i class="fas fa-cloud-upload-alt"></i> UP to cloud</a>
-	<a class="btn shadow-sm btn-kulright m-1" id="gobutton" role="button"><i class="fas fa-arrow-alt-circle-up"></i> UP to buttons</a>
-	<a class="btn shadow-sm btn-kulright m-1" id="godown" role="button"><i class="fas fa-arrow-alt-circle-down"></i> DOWN</a>
-</div>
-</div>
-
-<div id="plot"></div>
-<div id="tablecontainer"></div>
-
-
-<script>
-var getUrlParameter = function getUrlParameter(sParam) {
-	var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-		sURLVariables = sPageURL.split('&'),
-		sParameterName,
-		i;
-
-	for (i = 0; i < sURLVariables.length; i++) {
-		sParameterName = sURLVariables[i].split('=');
-
-		if (sParameterName[0] === sParam) {
-			return sParameterName[1] === undefined ? true : sParameterName[1];
-		}
-	}
-};
-
-var width = 2420,
-    size = 375,
-    padding = 50;
-
-var x = d3.scale.linear()
-    .range([padding / 2, size - padding / 2]);
-
-var y = d3.scale.linear()
-    .range([size - padding / 2, padding / 2]);
-
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom")
-    .ticks(5);
-
-var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient("left")
-    .ticks(5);
-
-var color = d3.scale.category10();
-
-// add the tooltip area to the webpage
-var tooltip = d3.select("body")
-	.append("div")
-	.attr("class", "tooltip")
-	.style("opacity", 0);
-
-var brushCell;
-
-var type = getUrlParameter("type");
-
-document.title = "Level 2: " + type + " scatterplot matrix";
-d3.select("body").select("h2").text("Level 2: " + type);
-d3.select("#gocloud").attr("href", "level1.html?type="+type)
-d3.select("#gobutton").attr("href", "buttons_selection.html")
-d3.select("#godown").attr('href', "level3.html?type="+type)
-  
-var cset = (localStorage.getItem("cset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("cset"+"-"+type)));
-var shset = (localStorage.getItem("shset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("shset"+"-"+type)));
-var sset = (localStorage.getItem("sset"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("sset"+"-"+type)));
-
-var modselection = JSON.parse(localStorage.getItem("modselection"+"-"+type));
-var goToPlot = (modselection == null) ? undefined : modselection[0];
-var selection = (localStorage.getItem("selection"+"-"+type == null) ? [] : JSON.parse(localStorage.getItem("selection"+"-"+type)));
-localStorage.setItem("goToPlot" + "-" + type, goToPlot)
-
-var dataset;
-
-d3.tsv(type+".tsv", function(error, data) {
-  dataset = data;
-  // Extracts the first token name, assumes this is the type and sets it as the page title
-  //var type = data[1]["_id"].match(/\w+\/\w+/)[0]
-  //var type = window.location.pathname.split("/")[2]
-
-	if (modselection == null) { //Stop loading the page if selection is empty.
-		window.alert("No models found in selection. Return to the previous level.");
-		return false;
-	}
-
-	colnames = d3.keys(data[0]);
-	othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
-	firstRow = d3.entries(data[1]).filter(function(d) { if (othercols.indexOf(d.key) >= 0) {return d.value;}; });
-	function isNumber(obj) { return !isNaN(parseFloat(obj)) }
-
-	nominals = firstRow.filter(function(d) { if (!isNumber(d.value) && !d.key.startsWith("_")) { return d.key; } });
-	var nomSet = new Set();
-	nominals.forEach(function (d) { nomSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
-
-	numericals = firstRow.filter(function(d) { if (isNumber(d.value)) { return d.key; } });
-	var numSet = new Set();
-	numericals.forEach(function (d) { numSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
-
-	models = colnames.filter(function(d) { if (d.endsWith(".x")) { return d;} });
-
-  var domainBySolution = {},
-      xnames = d3.keys(data[0]).filter(function (d) { return d[d.length-1] == "x" })
-	  console.log(modselection);
-//      xnames.forEach(function(xname) {
-//	         solutions.push(xname.substring(0, xname.length-2));
-//           solutions = modselection;
-//           solutions.reverse();
-//      }),
-
-	// Create selection menu for colour-coding
-	var colourDropDown = d3.select("#colour")
-		.attr("name", "Colour")
-		.selectAll("option")
-		.data(Array.from(nomSet))
-		.enter()
-		.append("li")
-		.append("a")
-		.attr("class", "col")
-		.attr("xlink:href", "#")
-		.attr("value", function (d) { return d; })
-		.text(function (d) { return d; });
-
-	var shapeDropDown = d3.select("#shape")
-		.attr("name", "Shape")
-		.selectAll("option")
-		.data(Array.from(nomSet))
-		.enter()
-		.append("li")
-		.append("a")
-		.attr("class", "shape")
-		.attr("xlink:href", "#")
-		.attr("value", function (d) { return d; })
-		.text(function (d) { return d; });
-
-	var sizeDropDown = d3.select("#size")
-		.attr("name", "Size")
-		.selectAll("option")
-		.data(Array.from(numSet))
-		.enter()
-		.append("li")
-		.append("a")
-		.attr("class", "siz")
-		.attr("xlink:href", "#")
-		.attr("value", function (d) { return d; })
-		.text(function (d) { return d; });
-
-	models = JSON.parse(localStorage.getItem("modselection"+"-"+type));
-	var modelDropDown = d3.select("#model")
-		.attr("name", "Model")
-		.selectAll("option")
-		.data(models)
-		.enter()
-		.append("li")
-		.append("a")
-		.attr("class", "mod")
-		.attr("xlink:href", "#")
-		.attr("value", function(d) { return d; })
-		.text(function (d) { return d; });
-
-	// Add a "reset" option
-	function addReset(selector, reference) {
-		d3.select(selector)
-			.append("li")
-			.append("a")
-			.attr("class", reference)
-			.attr("xlink:href", "#")
-			.attr("value", "reset")
-			.text("Reset");
-		}
-
-	addReset("#size", "siz");
-	addReset("#shape", "shape");
-	addReset("#colour", "col");
-
-// Define the size of the matrix
-      n = 3;
-
-      modselection.forEach(function(solution) {
-         domainBySolution[solution+".x"] = d3.extent(data, function(d) { return +d[solution+".x"]; });
-         domainBySolution[solution+".y"] = d3.extent(data, function(d) { return +d[solution+".y"]; });
-      });
-
-      xAxis.tickSize(size * n);
-      yAxis.tickSize(-size * n);
-
-      var brush = d3.svg.brush()
-          .x(x)
-          .y(y)
-          .on("brushstart", brushstart)
-          .on("brush", brushmove)
-          .on("brushend", brushend);
-
-	var svg = d3.select("#plot")
-		.append("svg")
-		.attr("width", size * n + padding)
-		.attr("height", size * n + padding)
-		.append("g")
-		.attr("transform", "translate(" + padding + "," + padding / 2 + ")");
-
-      svg.selectAll(".x.axis")
-      .data(modselection)
-      .enter().append("g")
-      .attr("class", "x axis")
-      .attr("transform", function(d, i) { return "translate(" + (n - i - 1) * size + ",0)"; })
-      .each(function(d) { x.domain(domainBySolution[d+".x"]); d3.select(this).call(xAxis); });
-
-      svg.selectAll(".y.axis")
-      .data(modselection)
-      .enter().append("g")
-      .attr("class", "y axis")
-      .attr("transform", function(d, i) { return "translate(0," + i * size + ")"; })
-      .each(function(d) { y.domain(domainBySolution[d+".y"]); d3.select(this).call(yAxis); });
-
-
-  var cell = svg.selectAll(".cell")
-      .data(combine(modselection))
-      .enter().append("g")
-      .attr("class", "cell")
-      .attr("transform", function(d) { return "translate(" + (n - +d.i - 1) * size + "," + +d.j * size + ")"; })
-      .each(plot);
-
-	function appendForeignObject() {
-		cell.append("foreignObject") //Browser support can be sketchy. Tested with Chrome and Firefox.
-			.attr("x", size-padding-5)
-			.attr("y", padding/2+2)
-			.attr("width", 18)
-			.attr("height", 20)
-			.append("xhtml:body")
-			.html("<form><input type=checkbox id=check checked=true></form>")
-			.on("click", function(d,i) {
-				model = d.x.substring(0, d.x.length-2);
-				index = modselection.indexOf(model);
-				if (index == -1) {
-					modselection.push(model)
-				} else {
-					modselection.splice(index, 1)
-				}
-				localStorage.setItem("modselection"+"-"+type, JSON.stringify(modselection));
-				if (modselection.length == 0) {
-					localStorage.setItem("goToPlot"+"-"+type, "");
-				}
-		});
-	}
-
-			appendForeignObject();
-
-// Titles for all plots.
-  cell.append("text")
-    .attr("x", padding-20)
-    .attr("y", padding-20)
-    .attr("dy", ".71em")
-    .text(function(d) { if (d.x.substring(0, d.x.length-2) != "undefined") { return d.x.substring(0, d.x.length-2); }})
-//    .on('click', function(d) {console.log(d.x.substring(0, d.x.length-2));});
-    .on('click', function(d) {
-	  model = d.x.substring(0, d.x.length-2);
-	  index = modselection.indexOf(model);
-	  if (index == -1) {
-		  modselection.push(model) // Make sure clicked model is in modselection even if it has been deselected before.
-		  localStorage.setItem("modselection"+"-"+type, JSON.stringify(modselection));
-		  console.log("Model was not in modselection");
-	  }
-      localStorage.setItem("goToPlot"+"-"+type, model);
-      window.location = "level3.html?type="+type;
-    });
-
-    function clearBrush(){
-      cell.selectAll('.brush').remove();
-    }
-
-    var brushEnab = false;
-    d3.select("#brush-enab").on("change", function() {
-              brushEnab = this.checked;
-              if (brushEnab) {
-                cell.append("g")
-                  .attr("class", "brush")
-                  .call(brush);
-              } else {
-//                location.reload();
-                clearBrush();
-				console.log("brush cleared");
-              }
-            });
-
-  var clickSelect = false;
-  d3.select("#click-select").on("change", function() {
-    clickSelect = this.checked;
-	brushEnab = false;
-//	cell.remove("brush");
-	clearBrush();
-  });
-
-  d3.select("#clear-select").on("click", function() {
-    clearBrush();
-    selection = []
-    localStorage.setItem("selection"+"-"+type, JSON.stringify(selection));
-    svg.selectAll(".selected").classed("selected", false);
-    //d3.selectAll('input').property('checked', false);
-    clickSelect = false;
-  });
-
-	d3.select("#update-select").on("click", function() {
-		location.reload()
-	});
-
-  d3.selectAll(".col").on("click", function() {
-	  value = this.getAttribute("value");
-	  (value == "reset") ? cset = null : cset = value
-	  localStorage.setItem("cset"+"-"+type, JSON.stringify(cset));
-	  updatePlots();
-  });
-
-  d3.selectAll(".shape").on("click", function() {
-	  value = this.getAttribute("value");
-	  (value == "reset") ? shset = null : shset = value
-	  localStorage.setItem("shset"+"-"+type, JSON.stringify(shset));
-	  updatePlots();
-  });
-
-  d3.selectAll(".siz").on("click", function() {
-	value = this.getAttribute("value");
-	(value == "reset") ? sset = null : sset = value
-	localStorage.setItem("sset"+"-"+type, JSON.stringify(sset));
-	updatePlots();
-  });
-
-	d3.selectAll(".mod").on("click", function() {
-		localStorage.setItem("goToPlot"+"-"+type, this.getAttribute("value"));
-		console.log(this.getAttribute("value"));
-		localStorage.setItem("goToPlot" + "-" + type, value)
-		window.location = "level3.html?type="+type;
-	});
-
-  //Create color scale
-  var getColors = d3.scale.category10();
-
-  //Create dot size scale
-  var getClustSize = d3.scale.sqrt();
-
-  //Create shape scale
-  var getShape = d3.scale.ordinal().range(["cross", "diamond", "square", "triangle-down", "triangle-up"]);
-
-  // d3.select("#ldown").on("click", function() {
-  //   window.location = "scatplot.html";
-  // });
-
-  function plot(p) {
-    var cell = d3.select(this);
-	getColors = d3.scale.category10();
-	getShape = d3.scale.ordinal().range(["circle", "cross", "diamond", "square", "triangle-down", "triangle-up"]);
-	getClustSize = d3.scale.sqrt();
-    try {
-    x.domain(domainBySolution[p.x]);
-    y.domain(domainBySolution[p.y]);
-
-    cell.append("rect")
-        .attr("class", "frame")
-        .attr("x", padding / 2)
-        .attr("y", padding / 2)
-        .attr("width", size - padding)
-        .attr("height", size - padding);
-
-    cell.selectAll("path")
-        .data(data)
-	    .enter()
-		.append("path")
-		.attr("transform", function(d) { return "translate(" + x(d[p.x]) + "," + y(d[p.y]) + ")"; })
-		.attr("d", d3.svg.symbol()
-			.type(function (d) { (shset === (undefined || null)) ? out="circle" : out=getShape(d[shset]); return out; })
-			.size(function (d) { (sset === (undefined || null)) ? out=64 : out=getClustSize(+d[p.mod+"."+sset])*32; return out; }))
-//		.attr("d", d3.svg.symbol("circle"))
-		  .style("fill", function(d) { (cset === (undefined || null)) ? out="#1f77b4" : out=getColors(d[cset]); return out; })
-        .classed("selected", function(d) {
-            if (selection.length > 0) {
-             return !(selection.indexOf(d["_id"]) > -1);
-           }
-        })
-        .attr("pointer-events", "all")
-//        .on("click", scatterplot(p));
-		.attr("data-legend", " ")
-        .on("click", function(d) {
-          if (clickSelect) {
-            if (selection.indexOf(d["_id"]) === -1) {
-                selection.push(d["_id"]);
-                console.log("push " + d["_id"]);
-          } else {
-                var index = selection.indexOf(d["_id"]);
-                if (index > -1) {
-                  selection.splice(index, 1);
-                }
-                console.log("splice " + d["_id"]);
-          }
-            if (selection.length > 0) {
-                svg.selectAll("path").classed("selected", function(d) {
-                    return !(selection.indexOf(d["_id"]) > -1);
-            })
-          }
-            localStorage.setItem("selection"+"-"+type, JSON.stringify(selection));
-          }
-          })
-      } catch (e) {
-        console.log("combinations missing " + e)
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="custom.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <title>Mariana's church clouds</title>
+
+    <style>
+      
+      body {
+        background-color: white;
       }
-  }
 
-  // Clear the previously-active brush, if any.
-  function brushstart(p) {
-    if (brushCell !== this) {
-      try {
-      d3.select(brushCell).call(brush.clear());
-      x.domain(domainBySolution[p.x]);
-      y.domain(domainBySolution[p.y]);
-      brushCell = this;
-    } catch (e) {
-      console.log("combinations missing")
-    }
-    }
-  }
+      path.lighter {
+        fill-opacity : .3;
+      }
 
-  // Highlight the selected paths.
-  function brushmove(p) {
-    var e = brush.extent();
-//    console.log(e);
-    svg.selectAll("path").classed("selected", function(d) {
-      return e[0][0] > d[p.x] || d[p.x] > e[1][0]
-          || e[0][1] > d[p.y] || d[p.y] > e[1][1];
-    });
-  }
+      .axis line {
+        stroke : 'none';
+      }
 
-  // If the brush is empty, select all paths.
-  function brushend() {
-    if (brush.empty()) {
-      svg.selectAll(".selected").classed("selected", false);
-    } else {
-      selection = [];
-      svg.selectAll("path").each(function(d) {
-        if (!(d3.select(this).classed("selected"))) {
-          if (selection.indexOf(d["_id"]) === -1) {
-              selection.push(d["_id"]);
-            }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1></h1>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <div class='btn-group'>
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select colour</button>
+              <div class="dropdown-menu" id="colour"></div>
+            </div>
+            <div class='btn-group'>
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select shape</button>
+              <div class="dropdown-menu" id="shape"></div>
+            </div>
+            <div class='btn-group'>
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select size</button>
+              <div class="dropdown-menu" id="size"></div>
+            </div>
+          </div>
+          <div class='row'>
+            <div class="btn-group btn-group-toggle" id = "selection" data-toggle="buttons">
+              <label class="btn btn-danger my-1 active">
+                <input type="radio" name="selection" value="click" autocomplete="off" checked> <i class="fas fa-mouse-pointer"></i> Click
+              </label>
+              <label class="btn btn-danger my-1">
+                <input type="radio" name="selection" value="brush" autocomplete="off"> <i class='fas fa-crop-alt'></i> Select area
+              </label>
+            </div>
+            <!-- <button type="button" class="btn shadow-sm btn-danger m-1" id="activate-brush"> Select area</button> -->
+            <button type="button" class="btn shadow-sm btn-secondary m-1" id="clear-select"><i class="fas fa-eraser"></i> Clear token selection</button>
+            <!-- <button type="button" class="btn shadow-sm btn-marigreen m-1" id="model-select"><i class="fas fa-arrow-alt-circle-down"></i> Confirm model selection</button> -->
+          </div>
+          <div class="row">
+            <button type="button" class="btn shadow-sm btn-marigreen m-1" id="to-level1"><i class="fas fa-arrow-alt-circle-up"></i> UP</button>
+            <div class='btn-group'>
+              <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle m-1" data-toggle="dropdown"><i class="fas fa-arrow-alt-circle-down"></i> Go to model</button>
+              <div class="dropdown-menu" id="models"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col" id="legendContainer">
+        </div>
+      </div>
+      <div class="row" id="svgContainer"></div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- General d3 (version 4) release -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- d3 component to deal with arrays (in particular, for 'extent'/'min'/'max'...) -->
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <!-- d3 component to generate axes -->
+    <script src="https://d3js.org/d3-axis.v1.min.js"></script>
+    <!-- d3 component to generate legends -->
+    <script src="d3-legend.min.js"></script>
+    <!-- d3 component for brush -->
+    <script src="https://d3js.org/d3-brush.v1.min.js"></script>
+
+    <script>
+      var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          sParameters = [],
+          i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+          if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
           }
-      });
-      localStorage.setItem("selection"+"-"+type, JSON.stringify(selection));
-    }
-  }
+          }
+        };
 
-  function combine(s) {
-    var c = [], n = s.length, i, j, k = 0;
-    for (j = -1; ++j < 3;) for (i = -1; ++i < 3;) if (k < n) c.push({mod: s[k], x: s[k]+".x", i: Math.abs(i-2), y: s[k]+".y", j: j}), ++k;
-      return c;
-    }
+      var type = getUrlParameter('type')
+      d3.select("h1").html("Level 2 (<em>" + type + "</em>)")
 
-	console.log(combine(modselection));
+      // Go back to previous level
+      d3.select("#to-level1").on("click", function() {
+        window.open("level1.html" + "?type=" + type, "_self")
+      })
 
-	function updatePlots() {
-		d3.selectAll(".cell").remove();
+      // first info from LocalStorage
+      var modselection = JSON.parse(localStorage.getItem("modselection"))
+        if (modselection == null) {
+          window.alert("No models found in selection, let's go back to Level 1!");
+          window.open("level1.html" + "?type=" + type, "_self");
+        } else if (modselection.length > 9) {
+          window.alert("You have selected too many models, only the first 9 will be used.");
+          modselection = modselection.slice(0, 9);
+          localStorage.setItem("modselection", JSON.stringify(modselection));
+          console.log(modselection.length);
+        }
 
-		var cell = svg.selectAll(".cell")
-			.data(combine(modselection))
-			.enter().append("g")
-	        .attr("class", "cell")
-	        .attr("transform", function(d) { return "translate(" + (n - +d.i - 1) * size + "," + +d.j * size + ")"; })
-	        .each(plot);
+      var ncol = 3 // number of columns in the grid
+      var nrow = Math.ceil(modselection.length/ncol) // number of rows in the grid
+      var width = 300;
+      var height = 300;
+      var padding = 30;
 
-		//appendForeignObject();
-		cell.append("foreignObject")
-			.attr("x", size-padding-5)
-			.attr("y", padding/2+2)
-			.attr("width", 18)
-			.attr("height", 20)
-	  		.append("xhtml:body")
-	  		.html("<form><input type=checkbox id=check checked=true></form>")
-	  		.on("click", function(d,i) {
-	  			model = d.x.substring(0, d.x.length-2);
-	  			index = modselection.indexOf(model);
-	  			if (index == -1) {
-	  				modselection.push(model)
-	  			} else {
-	  				modselection.splice(index, 1)
-	  			}
-	  			localStorage.setItem("modselection"+"-"+type, JSON.stringify(modselection));
-					if (modselection.length == 0) {
-						localStorage.setItem("goToPlot"+"-"+type, "");
-					}
-	  		});
+      // Use the data!
+      d3.tsv(type + ".tsv", function(data) {
+        // load the data
+        var dataset = data;
+        
+        // classify columns
+        var colnames = d3.keys(dataset[0]);
+        var xcol = colnames.filter(function(d) { return d.endsWith(".x"); })[0];
+        var ycol = colnames.filter(function(d) { return d.endsWith(".y"); })[0];
+        var othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y") && !d.startsWith("_"))});
 
-		cell.append("text")
-			.attr("x", padding)
-  		    .attr("y", padding)
-  		    .attr("dy", ".71em")
-  		    .text(function(d) { if (d.x.substring(0, d.x.length-2) != "undefined") { return d.x.substring(0, d.x.length-2); }})
-  		    .on('click', function(d) {
-  		      localStorage.setItem("goToPlot"+"-"+type, d.x.substring(0, d.x.length-2));
-  		      window.location = "level3.html?type="+type;
-  		    });
-	}
-	
- //  function updatePlots() {
- //   // Refresh the scales
- //   getColors = d3.scale.category10();
- //   getClustSize = d3.scale.sqrt();
- //   getShape = d3.scale.ordinal().range(["circle", "cross", "diamond", "square", "triangle-down", "triangle-up"]);
- //   //Hide tooltip
- // //   if (typeof legend !== "undefined") {
- // 	  svg.select("#tooltip").classed("selected", true);
- // //  	  }
- //   d3.selectAll(".cell")
- //   	.data(data)
- // 	.enter()
- // 	.remove();
- //
- //   	.selectAll("path")
- // 	.attr("d", d3.svg.symbol()
- // 		.type(function (d) { (shset === (undefined || null)) ? out="circle" : out=getShape(d[shset]); return out; })
- // 		.size(function (d) { (sset === (undefined || null)) ? out=64 : out=getClustSize(+d[p.mod+"."+sset])*32; return out; }))
- // 	.style("fill", function(d) { (cset === (undefined || null)) ? out="#1f77b4" : out=getColors(d[cset]); return out; })
- // 	.attr("data-legend", function(d) { return d[cset]});
- //
- //   //Update legend or append if not created yet after necessary (!) delay
- //   if (typeof cset !== "undefined") {
- // 	  setTimeout(function() {
- // 		  if (typeof legend !== "undefined") {
- // 			  legend.call(d3.legend)
- // 		  } else {
- // 				  legend = svg.append("g")
- // 					  .attr("class","legend")
- // 					  .attr("transform","translate(0,0)")
- // 					  .style("font-size","12px")
- // 					  .call(d3.legend)
- // 				  }
- // 	  },100)
- //   }
- //  }
+        var nominals = othercols.filter(function(d) {return (!(getValues(d).every(function(d) {return(!isNaN(d))})) && getValues(d).length <= 5)})
+        nominals.push('Reset')
 
-// // d3.select('button').on('click', function() {
-//   function scatplot(whatever) {
-//     d3.select("svg").remove();
-//     d3.select("div").remove();
-//
-//     // add the tooltip area to the webpage
-//     var tooltip = d3.select("body").append("div")
-//         .attr("class", "tooltip")
-//         .style("opacity", 0);
-//
-//     var dataset;
-//     d3.tsv("koper.tsv", function(data) {
-//     dataset = data;
-//
-//     //Width and height
-//     var width = 600;
-//     var height = 600;
-//     var padding = 30;
-//
-//     //Create scale functions
-//     var xScale = d3.scale.linear()
-//                .domain([d3.min(dataset, function(d) { return +d[whatever+".x"]; }) * 1.1, d3.max(dataset, function(d) { return +d[whatever+".x"]; }) * 1.1])
-//                //								 .domain(d3.extent(dataset, function(d) { return +d["LeNC44.ppmi.x"]; }))
-//                .range([padding, width - padding * 2]);
-//
-//     var yScale = d3.scale.linear()
-//                .domain([d3.min(dataset, function(d) { return +d[whatever+".y"]; }) * 1.1, d3.max(dataset, function(d) { return +d[whatever+".y"]; }) * 1.1])
-//                .range([height - padding, padding]);
-//
-//     //Define X axis
-//     var xAxis = d3.svg.axis()
-//               .scale(xScale)
-//               .orient("bottom")
-//               .ticks(10)
-//               .outerTickSize(0);
-//
-//     //Define Y axis
-//     var yAxis = d3.svg.axis()
-//               .scale(yScale)
-//               .orient("left")
-//               .ticks(10)
-//               .outerTickSize(0);
-//
-//     //Zoom
-//     var zoom = d3.behavior.zoom()
-//           .scaleExtent([1, 10])
-//           .on("zoom", zoomed);
-//
-//     //Create SVG element
-//     var svg = d3.select("body")
-//           .append("svg")
-//           .attr("width", width)
-//           .attr("height", height)
-//           .append("g")
-//           .call(zoom);
-//
-//     var rect = svg.append("rect")
-//           .attr("width", width)
-//           .attr("height", height)
-//           .style("fill", "none")
-//           .style("pointer-events", "all");
-//
-//     var container = svg.append("g");
-//
-//     //Create color scale
-//     var getColors = d3.scale.category10();
-//
-//     //Create dot size scale
-//     var getClustSize = d3.scale.sqrt();
-//
-//     var brush = d3.svg.brush()
-//         .x(xScale)
-//         .y(yScale)
-//         .on("brush", brushmove)
-//         .on("brushend", brushend);
-//
-//     dot = container.append("g")
-//        .attr("class", "dot")
-//        .selectAll("path")
-//        .data(dataset)
-//        .enter()
-//        .append("path")
-//        .attr("cx", function(d) {
-//           return xScale(+d[whatever+".x"]);
-//        })
-//        .attr("cy", function(d) {
-//           return yScale(+d[whatever+".y"]);
-//        })
-//        .attr("r", function(d) {return getClustSize(+d[whatever+".maxW"]*5);})
-// //				 .attr("r", 3)
-//        .style("fill", function(d) { return getColors(d.label); })
-//        .on("mouseover", function(d) {
-//             tooltip.transition()
-//               .duration(200)
-//               .style("opacity", .9);
-//               tooltip.html("<b>"+d["_id"]+"</b><br>"+d["_text"])
-//               .style("left", (d3.event.pageX + 20) + "px")
-//               .style("top", (d3.event.pageY - 28) + "px");
-//     svg.selectAll("path").style("opacity", .2);
-//     d3.select(this).attr("r", function(d) {return getClustSize(+d[whatever+".maxW"]*5);}).style("fill", "red").style("opacity", 1);
-//         })
-//         .on("mouseout", function(d) {
-//             tooltip.transition()
-//               .duration(500)
-//               .style("opacity", 0);
-//         svg.selectAll("path").attr("r", function(d) {return getClustSize(+d[whatever+".maxW"]*5);}).style("fill", function(d) { return getColors(d.label); }).style("opacity", 1);
-//         });
-//
-//     //Create X axis
-//     container.append("g")
-//       .attr("class", "x axis")
-//       .attr("transform", "translate(0," + (height - padding) + ")")
-//       .call(xAxis);
-//
-//     //Create Y axis
-//     container.append("g")
-//       .attr("class", "y axis")
-//       .attr("transform", "translate(" + padding + ",0)")
-//       .call(yAxis);
-//
-//     function zoomed() {
-//       container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-//     }
-//
-// //    container.append("g")
-// //        .attr("class", "brush")
-// //        .call(brush);
-//
-//     // Restore the previous brush selection
-//     svg.selectAll("path").classed("hidden", function(d) {
-//       return e[0][0] > +d[whatever+".x"] || +d[whatever+".x"] > e[1][0]
-//       || e[0][1] > +d[whatever+".y"] || +d[whatever+".y"] > e[1][1];
-//     });
-//
-//     // Highlight the selected paths.
-//     function brushmove() {}
-//
-//     // If the brush is empty, select all paths.
-//     function brushend() {
-//       if (brush.empty()) svg.selectAll(".hidden").classed("hidden", false);
-//     }
-//
-//
-//     });
-//   }
+        var numerals = othercols.filter(function(d) {return (getValues(d).every(function(d) {return(!isNaN(d))}))})
+        numerals.push('Reset')
+        
+        // information from localStorage
+        var colorvar = JSON.parse(localStorage.getItem("colorvar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("colorvar-" + type))
+        var colorvalues = typeof(colorvar) == 'string' ? getValues(colorvar) : +0
+        // var colorselection = JSON.parse(localStorage.getItem("colorsel")) == null ? [] : JSON.parse(localStorage.getItem("colorsel"))
 
-  d3.select(self.frameElement).style("height", size * n + padding + 20 + "px");
-})
+        var shapevar = JSON.parse(localStorage.getItem("shapevar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("shapevar-" + type))
+        var shapevalues = typeof(shapevar) == 'string' ? getValues(shapevar) : +0
+        // var shapeselection = JSON.parse(localStorage.getItem("shapesel")) == null ? [] : JSON.parse(localStorage.getItem("shapesel"))
+        
+        var sizevar = JSON.parse(localStorage.getItem("sizevar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("sizevar-" + type))
+        var sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0
+        //var sizeselection = JSON.parse(localStorage.getItem("sizesel")) == null ? [] : JSON.parse(localStorage.getItem("sizesel"))
+        
+        var tokselection = JSON.parse(localStorage.getItem("tokselection")) == null ? [] : JSON.parse(localStorage.getItem("tokselection"))
+        
+        // set up dropdowns
+        var colorDropdown = d3.select("#colour").selectAll("button")
+          .data(nominals)
+          .enter()
+          .append("button")
+          .attr("class", "dropdown-item col")
+          .attr("xlink:href", "#")
+          .attr("value", function (d) { return(d); })
+          .text(function (d) { return(d); });
 
-  d3.tsv(type + ".models.tsv", function(error, data) {
-  	mdata = data.filter(function(d) {return (modselection.indexOf(d.model) > -1)})
-  	colnames = d3.keys(mdata[0]);
-  	//othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
-  	console.log(mdata);
+        var shapeDropdown = d3.select("#shape").selectAll("button")
+          .data(nominals)
+          .enter()
+          .append("button")
+          .attr("class", "dropdown-item shape")
+          .attr("xlink:href", "#")
+          .attr("value", function (d) { return(d); })
+          .text(function (d) { return(d); });
 
-  	var table = d3.select("#tablecontainer")
-  					.append("table")
-  					.attr("id", "dataframe")
-  					.attr("class", "table table-striped table-bordered")
-  					.attr("cellspacing", "0")
-  					.attr("width", "150%")
-  					.append("thead")
-  					.selectAll("tr")
-  					.data(mdata)
-  					.enter();
-  //					.text(function (d) { return d; });
+        var sizeDropdown = d3.select("#size").selectAll("button")
+          .data(numerals)
+          .enter()
+          .append("button")
+          .attr("class", "dropdown-item size")
+          .attr("xlink:href", "#")
+          .attr("value", function (d) { return(d); })
+          .text(function (d) { return(d); });
 
-  $(document).ready(function() {
-			tableContent = $('#dataframe').DataTable( {
-				select : true,
-				"aaData" : mdata,
-				"aaSorting" : [],
-				"aoColumns": [
-				{ mDataProp: "model", title: "ID"  },
-						{ mDataProp: "token_window", title: "First Order Window"},
-						{ mDataProp: "mincws", title: "Minimum context words"},
-						{ mDataProp: "socccorpus", title: "Second Order Corpus"},
-						{ mDataProp: "socclength_group", title: "Second Order Vector length"},
-						{ mDataProp: "socc_window", title: "Second Order Window"},
-						{ mDataProp: "stress", title: "MDS Stress"},
-						{ mDataProp: "tokens", title: "Number of tokens"}
-					]
-					});
-				});
-			})
+        var modDropdown = d3.select("#models").selectAll("button")
+          .data(modselection)
+          .enter()
+          .append("button")
+          .attr("class", "dropdown-item size")
+          .attr("xlink:href", "#")
+          .attr("value", function (d) { return(d); })
+          .text(function (d) { return(d); });
+
+        //add tooltip (before the svg so it is not on top of it?)
+        tooltip = d3.select("body").append('div')
+          .attr("class", "tooltip")
+          .attr("width", 100)
+          .attr("height", 20)
+          .style('position', 'absolute')
+          .style("opacity", 0)
+
+        // Set up legend area next to it (horizontal and before plots)
+        var legendContainer = d3.select("#legendContainer").append("svg")
+          .attr("width", 500)
+          //.attr("height", 100)
+          .attr("transform", "translate(0, 0)")
+        
+        // Set up canvas
+        var svg = d3.select("#svgContainer").append("svg")
+          .attr("width", width*ncol)
+          .attr("height", height*nrow + padding*2)
+          //.style("background-color", "lightgray")
+          .attr("transform", "translate(0,0)")
+          .append("g")
+        
+        // Set up brush
+        var brushCell
+
+        var brush = d3.brush()
+          .extent([[0,0],[width, height]])
+          .on('start', brushstart)
+          .on('brush', brushing)
+          .on('end', brushed)
+
+        function brushstart(p) {
+          if(!(brushCell == this)){
+          if(!(brushCell == undefined)) {d3.selectAll('.brush').call(brush.move, null)}
+          tokselection = []
+          brushCell = this}
+        }
+
+        function brushing(p) {
+          e = d3.event.selection
+          if (!(e == null))
+          svg.selectAll('.dot').selectAll('path')
+            .classed('lighter', function(d) {
+              var xc = x(d[p.m + '.x'])
+              var yc = y(d[p.m + '.y'])
+              return (xc < e[0][0]+padding || xc > e[1][0]+padding || yc < e[0][1]+padding || yc > e[1][1]+padding)
+            })
+        }
+
+        function brushed(p) {
+          tokselection = []
+          svg.selectAll('.dot').selectAll('path')
+            .each(function(d) {
+              if(!(d3.select(this).classed("lighter"))) {
+                if (tokselection.indexOf(d['_id']) === -1){
+                  tokselection.push(d['_id']);
+                }
+              }
+            })
+          updateTokSelection(tokselection)
+        }
+        
+
+        // Set up pointing area so you can have zoom with the mouse in any point of the plot
+        // svg.append("rect")
+        //   .attr("width", width*ncol)
+        //   .attr("height", height*nrow)
+        //   .attr("transform", "translate(0,0)")
+        //   .style("pointer-events", "all")
+        //   .style("fill", "none")
+
+        // Set up scales (axes, color...) - coordinates multiplied to get some padding in a way
+        var xmin = []
+        var ymin = []
+        var xmax = []
+        var ymax = []
+        modselection.forEach(function(item) {
+          xmin.push(d3.min(dataset, function(d) {return +d[item + ".x"]}))
+          ymin.push(d3.min(dataset, function(d) {return +d[item + ".y"]}))
+          xmax.push(d3.max(dataset, function(d) {return +d[item + ".x"]}))
+          ymax.push(d3.max(dataset, function(d) {return +d[item + ".y"]}))
+          })
+        
+        var xrange = [d3.min(xmin) * 1.05, d3.max(xmax) * 1.05]
+        var yrange = [d3.min(ymin) * 1.05, d3.max(ymax) * 1.05]
+        
+
+        var x = d3.scaleLinear()
+          .domain(xrange)
+          .range([padding, width]);
+
+        var y = d3.scaleLinear()
+          .domain(yrange)
+          .range([height, padding]);
+
+        var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+        var shape = d3.scaleOrdinal(d3.symbols);
+
+        var size = d3.scaleLinear()
+          .range([40, 200]) // remember to set the domain (current variable) before assigning a value
+
+        // Vertical center
+
+        var i, j, m
+        var xAxis = d3.axisBottom(x).tickSizeOuter(0);
+        var yAxis = d3.axisLeft(y).tickSizeOuter(0);
+
+        function combine(modselection) {
+          var c = []
+          for (m = 0, i = 0, j = 0; m < modselection.length; m ++) {
+            c.push({m : modselection[m], i : i, j : j})
+            if (i == ncol-1) {
+            i = 0;
+            j += 1;
+          } else {
+            i += 1
+          }
+          }
+          return(c)
+        }
 
 
-	</script>
+        var cells = svg.selectAll(".cell")
+          .data(combine(modselection))
+          .enter()
+          .append('g')
+          .attr('class', 'cell')
+          .attr('transform', function(d) {
+            return('translate(' + (+d.i)*width + ", " + +((height+padding/2)*(+d.j)) + ")")
+          })
+          .attr('model', function(d) {return(d.m)})
+          .each(plotCell);
 
+        $(document).on('change', 'input[name="selection"]', function(event) {
+          var radio = d3.select(this).attr('value')
+          if(radio == 'brush') {
+              cells.append('g')
+                .attr("transform", "translate(" + padding + ", " + padding + ")")
+                .attr("class", "brush")
+                .call(brush)
+            } else {
+              svg.selectAll(".brush").remove()
+            }
+            selectionMode = radio
+            tokselection = []
+            updateTokSelection(tokselection)
+        })
+
+        function plotCell(p) {
+          var cell = d3.select(this)
+          
+          cell.append('text')
+          .attr('x', padding)
+          .attr('y', padding)
+          .attr('dy', '-0.5em')
+          .attr('font-size', '0.7em')
+          .style('cursor', 'pointer')
+          .text(function(d) {return(d.m)})
+          .on("click", function(d) {
+            window.open("level3.html" + "?type=" + type + "&model=" + d.m, "_self")
+          });
+
+          // Draw frame
+          cell.append('rect')
+            .attr('x', padding)
+            .attr('y', padding)
+            .attr('width', width-padding)
+            .attr('height', height-padding)
+            .style('fill',  'none')
+            .style('stroke', 'black')
+            .style("pointer-events", "all")
+            .style('stroke-width', 0.5)
+
+          cell.append('line')
+            .attr("class", "xCenter")
+            .attr("x1", x(0))
+            .attr("y1", padding)
+            .attr("x2", x(0))
+            .attr("y2", height)
+            .attr("stroke", "lightgray")
+            .attr("stroke-width", 1)  
+
+          cell.append('line')
+            .attr("class", "yCenter")
+            .attr("y1", y(0))
+            .attr("x1", padding)
+            .attr("y2", y(0))
+            .attr("x2", width)
+            .attr("stroke", "lightgray")
+            .attr("stroke-width", 1)
+
+          cell.append("g")
+            .attr("class", "axis xAxis")
+            .attr("transform", "translate(0, " + height + ")")
+            .call(xAxis);
+
+          cell.append("g")
+            .attr("class", "axis yAxis")
+            .attr("transform", "translate(" + padding + ", " + 0 +")")
+            .call(yAxis);
+
+          cell.append("g")
+            .attr("transform", "translate(0,0)")
+            .attr("class", "dot")
+            .selectAll("path")
+            .data(dataset)
+            .enter()
+            .append('path')
+            .attr("transform", function(d) {
+              return ("translate(" + x(d[cell.attr('model') + '.x']) + "," + y(d[cell.attr('model') + '.y']) + ")"); })
+            .attr("d", d3.symbol().type(function (d) {
+              return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle)}).size(function(d) {
+                if (typeof(sizevar) == 'string') {
+                  size.domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
+                  return(size(+d[sizevar]))
+                } else {
+                  return(50)
+                }}))
+            .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4")})
+            .style('opacity', .7)
+            .attr('model', modselection[m])
+            //.attr('token_id', function(d) {return(d['_id'])})
+            .classed("lighter", function(d) {return (tokselection.length > 0 ? tokselection.indexOf(d['_id']) === -1 : false)})
+            .on('mouseover', function(d) {
+              var thisModel = cell.attr('model')
+              var xcoord = "<b>x:</b> " + d3.format('.3r')(d[thisModel + '.x'])
+              var ycoord = "<b>y:</b> " + d3.format('.3r')(d[thisModel + '.y'])
+              tooltip.transition()
+              .duration(200)
+              .style("opacity", 1)
+              .style("background-color", "white")
+              .style("border", "solid")
+              .style("border-color", "lightgray");
+              tooltip.html("<b>" + d['_id'] + "</b><br>" + xcoord + ", " +  ycoord)
+                .style("left", (d3.event.pageX + 3) + "px")
+                .style("top", (d3.event.pageY - 50) + "px");
+            })
+            .on('mouseout', function() {
+              tooltip.transition()
+                .duration(200)
+                .style("opacity", 0);
+              d3.selectAll(".selector").remove();
+            })
+            .on('click', function(d) {
+              var tokId = d['_id'];
+              console.log(tokId)
+              var tokIndex = tokselection.indexOf(tokId);
+              if (tokIndex > -1) {
+                tokselection.splice(tokIndex, 1);
+              } else {
+                tokselection.push(tokId);
+              }
+              updateTokSelection(tokselection);
+            })
+          
+        }
+
+        
+        // what happens when we click on the dropdowns?
+        colorDropdown.on("click", function() {
+          this.value == 'Reset' ? colorvar = null : colorvar = this.value;
+          localStorage.setItem("colorvar-" + type, JSON.stringify(colorvar));
+          updatePlot();
+          updateLegend();
+        });
+
+        shapeDropdown.on("click", function() {
+          this.value == 'Reset' ? shapevar = null : shapevar = this.value;
+          localStorage.setItem("shapevar-" + type, JSON.stringify(shapevar));
+          updatePlot();
+          updateLegend();
+        });
+
+        sizeDropdown.on("click", function() {
+          this.value == 'Reset' ? sizevar = null : sizevar = this.value;
+          if (typeof(sizevar) == 'string') {
+            size.domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
+          }
+          localStorage.setItem("sizevar-" + type, JSON.stringify(sizevar));
+          updatePlot();
+          updateLegend();
+        });
+
+        modDropdown.on("click", function() {
+          window.open("level3.html" + '?type=' + type + '&model=' + this.value, "_self")
+        });
+
+        // clear selection of models
+        d3.select("#clear-select")
+          .on("click", function() {
+            tokselection = []
+            updateTokSelection(tokselection)
+          });
+
+        // Updating color, shape and size after every button clicking
+        function updatePlot() {
+          svg.selectAll('.dot').selectAll('path')
+            .style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4")})
+            .attr("d", d3.symbol().type(function(d) {
+              return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle)
+              }).size(function(d) {
+                return (typeof(sizevar) == 'string' ? size(+d[sizevar]) : 50)}))
+        };
+
+        // Generate complementary colors for the circle on hover
+        function compColor(col) {
+          res = d3.hsl(col);
+          hue = res['h'];
+          newHue = +hue < 180 ? +(hue + 180) : +(hue-180);
+          res['h'] = newHue;
+          return(res.toString());
+        };
+
+        // Short function to obtain the possible values of a variable
+        function getValues(colname) {
+          return(d3.map(dataset, function(d) {return d[colname]}).keys());
+        }
+
+        function cleanStor(item) {
+          localStorage.setItem(item, JSON.stringify(null))
+        }
+
+        // update token selection
+        function updateTokSelection(tokselection) {
+          // stores 'null' if it's empty and the list otherwise
+          localStorage.setItem("tokselection", tokselection.length > 0 ? JSON.stringify(tokselection) : JSON.stringify(null))
+          console.log(tokselection)
+          // if something is selected everything else is translucent
+          svg.selectAll(".dot").selectAll("path")
+            .classed("lighter", function(d) {return (tokselection.length > 0 ? tokselection.indexOf(d['_id']) === -1 : false)})
+        };
+
+        // Update Legends after each dropdown is changed
+
+        function updateLegend() {
+          var legendList = []
+          legendContainer.selectAll(".legend").remove()
+          colorvalues = typeof(colorvar) == 'string' ? getValues(colorvar) : +0
+          shapevalues = typeof(shapevar) == 'string' ? getValues(shapevar) : +0
+          sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0
+
+          // Update color legend
+          if (typeof(colorvalues) != 'number'){
+            colorvalues.sort()
+
+            colorscale = d3.scaleOrdinal()
+              .domain(colorvalues)
+              .range(colorvalues.map(color))
+            
+            var legendColor = d3.legendColor()
+              .shape("path", d3.symbol().type(d3.symbolCircle).size(50)())
+              .scale(colorscale)
+              .title(colorvar)
+              // .on("cellclick", function(d) {
+              //   if (colorselection.indexOf(d) > -1) {
+              //     colorselection.splice(colorselection.indexOf(d), 1)
+              //     } else {
+              //     colorselection.push(d)
+              //     }
+              //   localStorage.setItem("colorsel", JSON.stringify(colorselection))
+              //   if (colorselection.length > 0) {
+              //     modselection = d3.map(dataset, function(d) {if (colorselection.indexOf(d[colorvar]) > -1) {return(d['_model'])}}).keys()
+              //     } else {
+              //     modselection = []
+              //     }
+              //   updateModSelection(modselection)
+              // })
+         
+              legendContainer.append("g")
+              .attr("class", "legend")
+              .attr("id", "legendColor")
+              .attr("transform", "translate(" + 0 + ", " + padding/2 + ")")
+              .call(legendColor);
+
+            legendList.push('color')
+            
+              } else {
+                if(legendList.indexOf('color') > -1) {legendList.splice(indexOf('color'), 1);}
+                legendContainer.select("#legendColor").remove()
+              }
+          
+          // Update shape legend
+          if (typeof(shapevalues) != 'number'){
+            shapescale = d3.scaleOrdinal()
+              .domain(shapevalues)
+              .range(shapevalues.map(function(d) {
+                return(d3.symbol().type(shape(d))());
+              }))
+            
+            var legendShape = d3.legendSymbol()
+              .scale(shapescale)
+              .title(shapevar)
+              // .on("cellclick", function(d) {
+              //   if (shapeselection.indexOf(d) > -1) {
+              //     shapeselection.splice(shapeselection.indexOf(d), 1)
+              //     } else {
+              //     shapeselection.push(d)
+              //     }
+              //   localStorage.setItem("shapesel", JSON.stringify(shapeselection))
+              //   if (shapeselection.length > 0) {
+              //     modselection = d3.map(dataset, function(d) {if (shapeselection.indexOf(d[shapevar]) > -1) {return(d['_model'])}}).keys()
+              //     } else {
+              //     modselection = []
+              //     }
+              //   updateModSelection(modselection)
+              // })
+
+            var halign = legendList.indexOf('color') == -1 ? 0 : 150
+            
+            legendContainer.append("g")
+              .attr("class", "legend")
+              .attr("id", "legendShape")
+              .attr("transform", "translate(" + halign + ", " + padding/2 + ")")
+              .call(legendShape);
+
+            legendList.push('shape')
+            
+              } else {
+                if(legendList.indexOf('shape') > -1) {legendList.splice(legendList.indexOf('shape'), 1)}
+                legendContainer.select("#legendShape").remove()
+              }
+
+          // Update size legend
+          if (typeof(sizevalues) != 'number'){
+            sizescale = d3.scaleLinear()
+              .domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
+              .range([5, 8])
+            var sizevalues = sizevalues.map(function(d) {return +d;}).sort()
+            var smallNumbers = (sizescale.domain()[1]-sizescale.domain()[0])/(sizevalues.length-1) < 1
+            
+            var legendSize = d3.legendSize()
+              .shape('circle')
+              .scale(sizescale)
+              .title(sizevar)
+              .cells(sizevalues.length >= 5 ? 5 : sizevalues.length)
+              .labelFormat(smallNumbers ? ".04r" : ".0d")           
+              // no selection through size
+
+            var halign = 150*legendList.length
+            
+            legendContainer.append("g")
+              .attr("class", "legend")
+              .attr("id", "legendShape")
+              .attr("transform", "translate(" + halign + ", " + padding/2 + ")")
+              .call(legendSize);
+
+            legendList.push('size')
+            
+              } else {
+                if(legendList.indexOf('size') > -1) {legendList.splice(legendList.indexOf('size'), 1)}
+                legendContainer.select("#legendSize").remove()
+              }
+        }
+
+        updateLegend();
+        updateTokSelection(tokselection);
+       });
+      
+
+      
+    </script>
   </body>
 </html>

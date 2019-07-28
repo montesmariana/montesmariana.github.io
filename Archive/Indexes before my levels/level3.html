@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Tokencloud</title>
+
+		<script src="js/d3.min.js"></script>
+		<script src="js/d3-legend.min.js"></script>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+
+		<style type="text/css">
+			.axis path,
+			.axis line {
+				fill: none;
+				stroke: black;
+				shape-rendering: crispEdges;
+			}
+
+			.axis text {
+				font-family: sans-serif;
+				font-size: 11px;
+			}
+
+			.tooltip {
+  				position: absolute;
+  				width: 200px;
+  				height: 28px;
+  				pointer-events: none;
+				filter: alpha(opacity=100);
+			}
+
+			path {
+			  fill-opacity: .8;
+			}
+
+			path.selected {
+			  fill-opacity: .2;
+			}
+
+			#wrap{
+				border: 1px solid white;
+				width: 1200px;
+			}
+
+			div {
+    		float: left;
+			}
+
+			.legend rect {
+  			fill:white;
+  			stroke:black;
+  			opacity:0.8;
+			}
+
+			#c1 {
+				float:left;
+				background:red;
+			}
+
+			#c2 {
+				float: right
+				vertical-align: middle;
+				width: 600px;
+			}
+		</style>
+		<link rel="stylesheet" href="css/user.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+	</head>
+
+	<div id="wrap">
+		<div><button type="button" class="btn btn-default" id="clear-select">Clear selection</button></div>
+
+		<div>
+			<div class="dropdown">
+				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">X-axis data<span class="caret"></span></button>
+				<ul class="dropdown-menu" id="xdata"></ul>
+			</div>
+			<div class="dropdown">
+				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Y-axis data<span class="caret"></span></button>
+				<ul class="dropdown-menu" id="ydata"></ul>
+			</div>
+		</div>
+
+		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select colour<span class="caret"></span></button>
+			<ul class="dropdown-menu" id="colour"></ul>
+		</div>
+
+		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select shape<span class="caret"></span></button>
+			<ul class="dropdown-menu" id="shape"></ul>
+		</div>
+
+		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select size<span class="caret"></span></button>
+			<ul class="dropdown-menu" id="size"></ul>
+		</div>
+
+		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select model<span class="caret"></span></button>
+			<ul class="dropdown-menu" id="model"></ul>
+		</div>
+
+		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select context<span class="caret"></span></button>
+			<ul class="dropdown-menu" id="context"></ul>
+		</div>
+	</div>
+
+	<br>
+
+	<div class="container">
+		<h2></h2>
+		<div class="btn-toolbar">
+		<a class="btn shadow-sm btn-kulright m-1" id="goup" role="button"><i class="fas fa-arrow-alt-circle-up"></i> UP</a>
+	</div>
+
+	<body>
+		<script type="text/javascript">
+			var getUrlParameter = function getUrlParameter(sParam) {
+				var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+					sURLVariables = sPageURL.split('&'),
+					sParameterName,
+					i;
+
+				for (i = 0; i < sURLVariables.length; i++) {
+					sParameterName = sURLVariables[i].split('=');
+
+					if (sParameterName[0] === sParam) {
+						return sParameterName[1] === undefined ? true : sParameterName[1];
+					}
+				}
+			};
+
+			// Define dataframe file extension
+			var dfExtension = ".tsv"
+
+			//Width and height
+			var w = 600;
+			var h = 600;
+			var padding = 30;
+
+			// add the tooltip area to the webpage
+			var tooltip = d3.select("body").append("div")
+    			.attr("class", "tooltip")
+    			.style("opacity", 1);
+
+			var dataset;
+			var firstRow;
+
+			// Extracts the variable "type" from the url, "type=some_word.some_pos"
+			var type = getUrlParameter("type");
+
+			// Variable storing the model to load
+			var goToPlot = localStorage.getItem("goToPlot"+"-"+type) == null ? JSON.parse(localStorage.getItem("modselection"+"-"+type))[0] : localStorage.getItem("goToPlot"+"-"+type);
+
+			// Initialising variables to store the axes variables
+			var xset = localStorage.getItem("xset"+"-"+type) == null ? goToPlot + ".x" : JSON.parse(localStorage.getItem("xset"+"-"+type));
+			var yset = localStorage.getItem("yset"+"-"+type) == null ? goToPlot + ".y" : JSON.parse(localStorage.getItem("yset"+"-"+type));
+			var xvalue = "x";
+			var yvalue = "y";
+
+			// Initialise variables to store visualisation selections
+			var cset = localStorage.getItem("cset"+"-"+type) == null ? undefined : JSON.parse(localStorage.getItem("cset"+"-"+type));
+			var shset = localStorage.getItem("shset"+"-"+type) == null ? undefined : JSON.parse(localStorage.getItem("shset"+"-"+type));
+			var sset = localStorage.getItem("sset"+"-"+type) == null ? undefined : JSON.parse(localStorage.getItem("sset"+"-"+type));
+			var mset = goToPlot;
+			var selection = localStorage.getItem("selection"+"-"+type) == null ? [] : JSON.parse(localStorage.getItem("selection"+"-"+type));
+//			var legendParam;
+
+			var defaultColour = "#1f77b4";
+			var defaultShape = d3.symbolCircle;
+			var defaultSize = 150;
+
+			document.title = "Level 3: " + type + " tokencloud";
+			d3.select("body").select("h2").text("Level 3: " + type);
+			d3.select("#goup").attr("href", "level2.html?type="+type)
+
+//			d3.selection.prototype.moveToFront = function() {
+//				return this.each(function(){
+//				this.parentNode.appendChild(this);
+//				});
+//			};
+
+			d3.tsv(type.concat(dfExtension), function(data) {
+				// Make the dataset available outside the function scope
+				dataset = data;
+
+				// Internal function to determine whether variable is a number
+				function isNumber(obj) { return !isNaN(parseFloat(obj)) }
+
+				
+				colnames = d3.keys(data[0]);
+				othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
+				firstRow = d3.entries(dataset[1]).filter(function(d) { if (othercols.indexOf(d.key) >= 0) {return d.value;}; });
+
+				// Select the nominal variables
+				nominals = firstRow.filter(function(d) { if (!isNumber(d.value) && !d.key.startsWith("_")) { return d.key; } });
+				var nomSet = new Set();
+				nominals.forEach(function (d) { nomSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
+
+				// Select the numerical variables
+				numericals = firstRow.filter(function(d) { if (isNumber(d.value)) { return d.key; } });
+				var numSet = new Set();
+
+				// Text description of the first and second dimension as numerical variable
+				const firstAndSecondDimNames = ["first dimension", "second dimension"]
+				firstAndSecondDimNames.forEach(function (d) { numSet.add(d); })
+				numericals.forEach(function (d) { numSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
+
+				models = JSON.parse(localStorage.getItem("modselection"+"-"+type));
+
+				contexts = colnames.filter(function(d) {return (d.startsWith("_") && d != "_id")})
+
+				if (models.length == 0) { //Stop loading the page if selection is empty.
+					window.alert("No models found in selection. Return to the previous level.");
+					return false;
+				}
+
+				// Dropdown menus for axes data
+				var xAxisDropDown = d3.select("#xdata")
+										.attr("name", "X-axis data")
+										.selectAll("option")
+										.data(Array.from(numSet))
+										.enter()
+										.append("li")
+										.append("a")
+										.attr("class", "xdata")
+										.attr("xlink:href", "#")
+										.attr("value", function(d) { return d; })
+										.text(function (d) {return d; });
+
+				var yAxisDropDown = d3.select("#ydata")
+										.attr("name", "Y-axis data")
+										.selectAll("option")
+										.data(Array.from(numSet))
+										.enter()
+										.append("li")
+										.append("a")
+										.attr("class", "ydata")
+										.attr("xlink:href", "#")
+										.attr("value", function(d) { return d; })
+										.text(function (d) {return d; });
+
+				// Create selection menu for colour-coding
+				var colourDropDown = d3.select("#colour")
+											.attr("name", "Colour")
+											.selectAll("option")
+											.data(Array.from(nomSet))
+											.enter()
+											.append("li")
+											.append("a")
+											.attr("class", "col")
+											.attr("xlink:href", "#")
+											.attr("value", function (d) { return d; })
+											.text(function (d) { return d; });
+
+				var shapeDropDown = d3.select("#shape")
+								      .attr("name", "Shape")
+											.selectAll("option")
+											.data(Array.from(nomSet))
+											.enter()
+											.append("li")
+											.append("a")
+											.attr("class", "shape")
+											.attr("xlink:href", "#")
+											.attr("value", function (d) { return d; })
+											.text(function (d) { return d; });
+
+				var sizeDropDown = d3.select("#size")
+											.attr("name", "Size")
+											.selectAll("option")
+											.data(Array.from(numSet))
+											.enter()
+											.append("li")
+											.append("a")
+											.attr("class", "siz")
+											.attr("xlink:href", "#")
+											.attr("value", function (d) {return d;})
+											.text(function (d) {return d;});
+
+				var modelDropDown = d3.select("#model")
+											.attr("name", "Model")
+											.selectAll("option")
+											.data(models)
+											.enter()
+											.append("li")
+											.append("a")
+											.attr("class", "mod")
+											.attr("xlink:href", "#")
+											.attr("value", function(d) { return d; })
+											.text(function (d) { return d; });
+				var ctxtDropDown = d3.select("#context")
+											.attr("name", "Contexts")
+											.selectAll("option")
+											.data(contexts)
+											.enter()
+											.append("li")
+											.append("a")
+											.attr("class", "ctxt")
+											.attr("xlink:href", "#")
+											.attr("value", function(d) { return d; })
+											.text(function (d) { return d.slice(1); });
+
+			// Add a "reset" options to dropdown menus
+			function addReset(selector, reference) {
+				d3.select(selector)
+					.append("li")
+					.append("a")
+					.attr("class", reference)
+					.attr("xlink:href", "#")
+					.attr("value", "reset")
+					.text("Reset");
+			}
+
+			addReset("#size", "siz");
+			addReset("#shape", "shape");
+			addReset("#colour", "col");
+
+			//Create scale functions
+			var xScale = d3.scaleLinear()
+								 .domain([d3.min(dataset, function(d) { return +d[xset]; }) * 1.1, d3.max(dataset, function(d) { return +d[xset]; }) * 1.1])
+								 .range([padding, w - padding * 2]);
+
+			var yScale = d3.scaleLinear()
+								 .domain([d3.min(dataset, function(d) { return +d[yset]; }) * 1.1, d3.max(dataset, function(d) { return +d[yset]; }) * 1.1])
+								 .range([h - padding, padding]);
+
+			//Define X axis
+			var xAxis = d3.axisBottom(xScale)
+							.ticks(10)
+					 		.tickSizeOuter(0);
+
+			//Define Y axis
+			var yAxis = d3.axisLeft(yScale)
+					 		.ticks(10)
+					 		.tickSizeOuter(0);
+
+			//Zoom
+			var zoom = d3.zoom()
+						.scaleExtent([0, 10])
+						.translateExtent([[-100, -100], [w + 90, h + 100]])
+						.on("zoom", zoomed);
+
+			//Create SVG element
+			var svg = d3.select("body")
+						.append("div")
+						.attr("class", "container")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h)
+						.append("g")
+						.call(zoom);
+
+			var textWindow = d3.select("body")
+								.append("div")
+								.attr("id", "c2")
+								.attr("width", w)
+								.attr("height", h)
+								.append("p");
+
+			var rect = svg.append("rect")
+						.attr("width", w)
+						.attr("height", h)
+						.style("fill", "none")
+						.style("pointer-events", "all");
+
+			var container = svg.append("g");
+
+			//Add title above plot
+			container.append("text")
+				.attr("class", "modtitle")
+				.attr("x", padding)
+				.attr("y", padding)
+				.attr("dx", ".72em")
+				.attr("dy", ".72em")
+				.text(goToPlot)
+				.style("font-size", "12px")
+				.style("font-weight", "bold");
+
+			//Create color scale
+			var getColors = d3.scaleOrdinal(d3.schemeCategory10);
+
+			//Create dot size scale
+			var getClustSize = d3.scaleLinear();
+
+			//Create shape scale
+			var getShape = d3.scaleOrdinal([d3.symbolCircle, d3.symbolCross, d3.symbolDiamond, d3.symbolSquare, d3.symbolTriangle, d3.symbolStar]);
+
+			d3.selectAll(".ctxt").on("click", function() {
+					value = this.getAttribute("value");
+					localStorage.setItem("ctxt"+"-"+type, JSON.stringify(value));
+				});
+
+			dot = container.append("g")
+			   .attr("class", "dot")
+			   .selectAll("path")
+			   .data(dataset, function(d) { return d["_id"]; })
+			   .enter()
+			   .append("path")
+			  //  .attr("cx", function(d) {
+			  //  		return xScale(+d[xcol]);
+			  //  })
+			  //  .attr("cy", function(d) {
+			  //  		return yScale(+d[ycol]);
+			  //  })
+				.attr("transform", function(d) { return "translate(" + xScale(d[xset]) + "," + yScale(d[yset]) + ")"; })
+				.attr("d", d3.symbol().type(function(d) { (shset === (undefined || null )) ? out = d3.symbol().type(defaultShape) : out = getShape(d[shset]); return out; }))
+				.style("fill", function(d) { (cset === (undefined || null)) ? out=defaultColour : out=getColors(d[cset]); return out; })
+				.classed("selected", function(d) {
+					if (selection && selection.length > 0) {
+						return !(selection.indexOf(d["_id"]) > -1);
+					}
+				 })
+      	 .on("mouseover", function(d) {
+			 target = type.split(".")[0]
+			 ctxt = JSON.parse(localStorage.getItem("ctxt"+"-"+type))
+			//  splitted = String(d["_text"]).split(" ")
+			//  i = splitted.indexOf("<span class='hit'>"+target+"</span>")
+			//  windowsize = 5;
+			//  before = splitted.slice(i-windowsize, i)
+			//  after = splitted.slice(i+1, i+windowsize)
+			//  res = before.join(" ") + " <span class='hit'>"+target+"</span> " + after.join(" ");
+			res = String(d[ctxt])
+			 console.log(res);
+			 //res = d["_text"]
+
+          		tooltip.transition()
+					.duration(200)
+					.style("opacity", 1);
+				//tooltip.html(res)
+				//tooltip.html("<b>"+d["_id"] + "</b><br>" + res + (sset ? "<p><b>"+sset.split('.').slice(-1)[0]+"</b>: " + d[sset] : "" ) + ("<p><b>highest weight:</b><br> " + d[mset+".maxWeightedWord"]))
+				tooltip.html("<b>"+d["_id"] + "</b><br>" + res
+				// + ("<p><b>highest weight:</b><br> " + d[mset+".maxWeightedWord"])
+			)
+					.style("left", (d3.event.pageX + 20) + "px")
+					.style("top", (d3.event.pageY - 28) + "px");
+//				svg.select(".dot").selectAll("path").style("opacity", .6);
+//				d3.select(this).style("opacity", 1).classed("selected", false);
+//				d3.select(this).moveToFront();
+				svg.select(".dot")
+					.append("path")
+					.classed("selector", true)
+					.attr("transform", d3.select(this).attr("transform"))
+					.attr("d", d3.symbol().type(defaultShape).size(this.getTotalLength()+80))
+					.attr("fill", "none")
+					.attr("stroke", "red")
+					.attr("stroke-width", 3);
+			})
+      		.on("mouseout", function(d) {
+          		tooltip.transition()
+				.duration(500)
+				.style("opacity", 0);
+				if (selection.length > 0) {
+					d3.select(this).classed("selected", function(d) {
+						return (selection.indexOf(d["_id"]) == -1);
+					});
+				}
+//				svg.select(".dot").selectAll("path").style("opacity", 1);
+				svg.selectAll(".selector").remove();
+      		})
+			.on("click", function(d) {
+				// svg.selectAll(".selector").remove();
+				if (selection.indexOf(d["_id"]) === -1) {
+					selection.push(d["_id"]);
+				} else {
+					var index = selection.indexOf(d["_id"]);
+					if (index > -1) {
+						selection.splice(index, 1);
+					}
+				}
+				if (selection.length > 0) {
+					svg.select(".dot").selectAll("path:not(.selector)").classed("selected", function(d) {
+						return !(selection.indexOf(d["_id"]) > -1);
+					})
+				}
+				localStorage.setItem("selection"+"-"+type, JSON.stringify(selection));
+
+				// Display text field next/under the plot
+				res = "<b>" + d["_id"] + "</b><p>" + d[ctxt]
+				d3.select("#c2").select("p").html(res);
+			});
+
+			//Create X axis
+			container.append("g")
+				.attr("class", "x axis")
+				.attr("transform", "translate(0," + (h - padding) + ")")
+				.call(xAxis);
+
+			//Create Y axis
+			container.append("g")
+				.attr("class", "y axis")
+				.attr("transform", "translate(" + padding + ",0)")
+				.call(yAxis);
+
+				//On menu change plot new data
+				d3.selectAll(".xdata").on("click", function() {
+					xvalue = this.getAttribute("value");
+					if (xvalue == "first dimension") {
+						xset = mset + ".x";
+					} else if (xvalue == "second dimension") {
+						xset = mset + ".y";
+					} else if (colnames.indexOf(xset) === -1 && xset !== null) {
+						xset = mset + "." + xvalue;
+					}
+					localStorage.setItem("xset"+"-"+type, JSON.stringify(xset));
+					updateXaxis();
+				});
+
+				d3.selectAll(".ydata").on("click", function() {
+					yvalue = this.getAttribute("value");
+					if (yvalue == "first dimension") {
+						yset = mset + ".x";
+					} else if (yvalue == "second dimension") {
+						yset = mset + ".y";
+					} else if (colnames.indexOf(yset) === -1 && yset !== null) {
+						yset = mset + "." + yvalue;
+					}
+					localStorage.setItem("yset"+"-"+type, JSON.stringify(yset));
+					updateYaxis();
+				});
+
+ 				//On menu change, update colour and/or size
+				d3.selectAll(".col").on("click", function() {
+					value = this.getAttribute("value");
+					console.log(value);
+					if (value == "reset") {
+						cset = undefined;
+						localStorage.removeItem("cset"+"-"+type); // Remove from localStorage to avert parsing errors
+					}
+					else {
+						cset = value;
+						localStorage.setItem("cset"+"-"+type, JSON.stringify(cset));
+						//legendParam = cset;
+						//svg.select(".legendOrdinalColor").call(legendOrdinalColor);
+					}
+					if (colnames.indexOf(cset) === -1 && typeof cset !== "undefined") {
+						cset = mset + "." + value;
+					}
+					updateVisFeat();
+					updateLegends();
+				});
+
+				d3.selectAll(".shape").on("click", function() {
+					value = this.getAttribute("value");
+					if (value == "reset") {
+						shset = undefined;
+						localStorage.removeItem("shset"+"-"+type);
+					}
+					else {
+						shset = value;
+						localStorage.setItem("shset"+"-"+type, JSON.stringify(shset));
+						//legendParam = shset;
+					}
+					if (colnames.indexOf(shset) === -1 && typeof shset !== "undefined") {
+						shset = mset + "." + value;
+					}
+					updateVisFeat();
+					updateLegends();
+				});
+
+				d3.selectAll(".siz").on("click", function() {
+					value = this.getAttribute("value");
+					(value == "reset") ? sset = undefined : sset = value
+					localStorage.setItem("sset"+"-"+type, JSON.stringify(sset));
+					//To switch between levels, size needs to be saved to localStorage without model specification
+					if (colnames.indexOf(sset) === -1 && typeof sset !== "undefined") {
+						sset = mset + "." + value;
+					}
+					updateVisFeat();
+				});
+
+				d3.selectAll(".mod").on("click", function() {
+					mset = this.getAttribute("value");
+					console.log(mset);
+					xvalue != null ? xset = mset + "." + xvalue : xset = mset + ".x";
+					//xset = xcol;
+					yvalue != null ? yset = mset + "." + yvalue : yset = mset + ".y";
+					//yset = ycol;
+					updateData();
+				});
+
+ 				d3.select("#clear-select").on("click", function() {
+ 					selection = []
+ 					localStorage.setItem("selection"+"-"+type, JSON.stringify(selection));
+ 					svg.selectAll(".selected").classed("selected", false);
+ 				});
+
+				function updateXaxis(){
+					//Rescale and redraw the axis
+					xScale.domain([d3.min(dataset, function(d) { return +d[xset]; }) * 1.1, d3.max(dataset, function(d) { return +d[xset]; }) * 1.1])
+					svg.select("g.x.axis").call(xAxis.scale(xScale));
+
+					//Put x-axis label
+					container.select("text")
+						.attr("class", "x label")
+						.attr("transform", "translate(" + (w-padding-80) + " ," + (h-padding-20) + ")")
+						.style("text-anchor", "right")
+						.style("font-size", "10px")
+						.style("font-weight", "bold")
+						.text(xvalue);
+					updateData();
+				}
+
+				function updateYaxis(){
+					svg.select("text")
+						.attr("transform", "rotate(270)")
+						.style("font-size", "10px")
+						.style("font-weight", "bold")
+						.text(yvalue);
+					updateData();
+				}
+
+				function updateData() {
+					//Update all symbols
+					svg.selectAll("path")
+						.data(dataset)
+						.transition()
+						.duration(1000)
+						.attr("transform", function(d) { return "translate(" + xScale(d[xset]) + "," + yScale(d[yset]) + ")";})
+
+					// Update model titel
+					container.select("text.modtitle")
+						.text(mset);
+				}
+
+				function updateLegends() {
+					// Remove remains of previous legends
+					svg.selectAll(".legendCells").remove();
+
+					// Create colour legend
+					container.append("g")
+						.attr("class", "legendOrdinalColor")
+						.attr("transform", "translate(480,50)");
+
+					var legendOrdinalColor = d3.legendColor()
+						.shape("path", d3.symbol().type(defaultShape).size(150)())
+						.shapePadding(10)
+						.scale(getColors);
+
+					// Create shape legend
+					container.append("g")
+						.attr("class", "legendOrdinalShape")
+						.attr("transform", "translate(480,250)");
+
+					var triangleU = d3.symbol().type(d3.symbolTriangle)(),
+						circle = d3.symbol().type(d3.symbolCircle)(),
+						cross = d3.symbol().type(d3.symbolCross)(),
+						diamond = d3.symbol().type(d3.symbolDiamond)(),
+						star = d3.symbol().type(d3.symbolStar)(),
+						square = d3.symbol().type(d3.symbolSquare)();
+
+					var symbolScale = d3.scaleOrdinal([circle, cross, diamond, triangleU, star]);
+
+					var legendOrdinalShape = d3.legendSymbol()
+						.shapePadding(10)
+						.scale(symbolScale);
+
+					if (typeof(cset) !== "undefined") {
+						svg.select(".legendOrdinalColor").call(legendOrdinalColor);
+					} else {
+						svg.selectAll(".legendOrdinalColor").remove();
+					}
+					if (typeof(shset) !== "undefined") {
+						svg.select(".legendOrdinalShape").call(legendOrdinalShape);
+						console.log("called the shape legend");
+					} else {
+						svg.selectAll(".legendOrdinalShape").remove();
+					}
+				}
+
+				// Create/update legends on load
+				updateLegends();
+
+				function updateVisFeat() {
+					// Refresh the scales
+					getColors = d3.scaleOrdinal(d3.schemeCategory10);
+					getClustSize = d3.scaleLinear().range([0, 100]);
+					getShape = d3.scaleOrdinal([d3.symbolCircle, d3.symbolCross, d3.symbolDiamond, d3.symbolSquare, d3.symbolTriangle, d3.symbolStar]);
+
+//					getClustSize.domain([d3.min(dataset, function(d) { return +d[sset]; }), d3.max(dataset, function(d) { return +d[sset]; })]);
+//					svg.select(".dot").selectAll("path:not(.immutable)")
+//						.attr("d", d3.symbol().type(function(d) { return getShape(d[shset]); })
+//						.size(function (d) { return getClustSize(+d[sset]); }))
+//						.style("fill", function(d) { return getColors(d[cset]); });
+
+					if (typeof sset !== "undefined" && typeof cset !== "undefined" && typeof shset !== "undefined") {
+						getClustSize.domain([d3.min(dataset, function(d) { return +d[sset]; }), d3.max(dataset, function(d) { return +d[sset]; })]);
+						svg.select(".dot").selectAll("path:not(.immutable)")
+							.attr("d", d3.symbol().type(function(d) { return getShape(d[shset]); })
+							.size(function (d) { return getClustSize(+d[sset]); }))
+							.style("fill", function(d) { return getColors(d[cset]); });
+						console.log("sset, shset and cset are not undefined")
+					} else if (typeof cset !== "undefined" && typeof sset == "undefined" && typeof shset !== "undefined") {
+						svg.select(".dot").selectAll("path:not(.immutable)")
+							.attr("d", d3.symbol().type(function(d) { return getShape(d[shset]); }))
+							.style("fill", function(d) { return getColors(d[cset]); });
+							console.log("cset and shset are not undefined")
+					} else if (typeof cset !== "undefined" && typeof sset !== "undefined" && shset == "undefined") {
+						getClustSize.domain([d3.min(dataset, function(d) { return +d[sset]; }), d3.max(dataset, function(d) { return +d[sset]; })]);
+						svg.select(".dot").selectAll("path:not(.immutable)")
+							.attr("d", d3.symbol().type(defaultShape)
+							.size(function (d) { return getClustSize(+d[sset]); }))
+							.style("fill", function(d) { return getColors(d[cset]); });
+							console.log("cset and sset are not undefined")
+					} else if (typeof cset == "undefined" && typeof sset !== "undefined" && shset !== "undefined") {
+						getClustSize.domain([d3.min(dataset, function(d) { return +d[sset]; }), d3.max(dataset, function(d) { return +d[sset]; })]);
+						svg.select(".dot").selectAll("path:not(.immutable)")
+							.attr("d", d3.symbol().type(function(d) { return getShape(d[shset]); })
+							.size(function (d) { return getClustSize(+d[sset]); }))
+							.style("fill", defaultColour);
+							console.log("sset and shset are not undefined")
+					} else if (typeof cset !== "undefined" && typeof sset !== "undefined" && shset == "undefined") {
+						getClustSize.domain([d3.min(dataset, function(d) { return +d[sset]; }), d3.max(dataset, function(d) { return +d[sset]; })]);
+						svg.select(".dot").selectAll("path:not(.immutable)")
+							.attr("d", d3.symbol().type(defaultShape)
+							.size(function (d) { return getClustSize(+d[sset]); }))
+							.style("fill", function(d) {return getColors(d[cset]); });
+							console.log("cset and sset are not undefined")
+					} else if (typeof sset !== "undefined") {
+						getClustSize.domain([d3.min(dataset, function(d) { return +d[sset]; }), d3.max(dataset, function(d) { return +d[sset]; })]);
+						svg.select(".dot").selectAll("path:not(.immutable)")
+							.attr("d", d3.symbol().type(defaultShape)
+							.size(function (d) { return getClustSize(+d[sset]); }))
+							.style("fill", function(d) {return getColors(d[cset]); });
+						console.log("sset is not undefined");
+					} else if (typeof cset !== "undefined") {
+						svg.select(".dot").selectAll("path:not(.immutable)")
+							.attr("d", d3.symbol().type(defaultShape))
+							.style("fill", function(d) { return getColors(d[cset]); })
+						console.log("cset is not undefined");
+					} else if (typeof shset !== "undefined") {
+						svg.select(".dot").selectAll("path:not(.immutable)")
+							.attr("d", d3.symbol().type(function(d) { return getShape(d[shset]); }))
+							.style("fill", defaultColour);
+						console.log("shset is not undefined");
+					} else {
+						svg.select(".dot").selectAll("path:not(.immutable)")
+							.attr("d", d3.symbol().type(defaultShape))
+							.style("fill", defaultColour)
+						console.log("all visual variables seem to be undefined")
+					}
+				}
+
+				// function createLegend(legendType) {
+				// 	if (legendType == "cset") {
+				// 		ypos = 30;
+				// 	} else if (legendType == "shset") {
+				// 		ypos = 100;
+				// 	} else {
+				// 		ypos = 30;
+				// 	}
+				// 	legend = container.append("g")
+				// 		.attr("class","legend")
+				// 		.attr("transform","translate(500," + ypos + ")")
+				// 		.style("font-size","12px")
+				// 		.call(d3.legend);
+				// }
+
+			function zoomed() {
+				svg.selectAll(".selector").remove();
+				svg.select("g.x.axis").call(xAxis.scale(d3.event.transform.rescaleX(xScale)));
+				svg.select("g.y.axis").call(yAxis.scale(d3.event.transform.rescaleY(yScale)));
+				svg.selectAll("path:not(.immutable)").attr("transform", transform); //generates a lot of errors
+			}
+
+			function transform(d) {
+				// Dirty fix for empty path element
+				if (d !== null) {
+					new_xScale = d3.event.transform.rescaleX(xScale);
+					new_yScale = d3.event.transform.rescaleY(yScale);
+					return "translate(" + new_xScale(d[xset]) + "," + new_yScale(d[yset]) + ")";
+				}
+			}
+
+			// function orderByOccurrence(arr) {
+			// 	var counts = {};
+			// 	arr.forEach(function(value){
+			// 		if(!counts[value]) {
+			// 			counts[value] = 0;
+			// 		}
+			// 		counts[value]++;
+			// 	});
+            //
+			// 	return Object.keys(counts).sort(function(curKey,nextKey) {
+			// 		return counts[curKey] < counts[nextKey];
+    		// 	});
+			// }
+
+			});
+		</script>
+	</body>
+</html>

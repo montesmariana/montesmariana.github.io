@@ -1,807 +1,567 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Cloud of models</title>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-		<script src="js/d3.min.js"></script>
-		<script src="js/d3-legend.min.js"></script>
-		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery.dataTables.min.js"></script>
-		<script src="js/dataTables.bootstrap.min.js"></script>
-		<script src="js/fnFindCellRowIndexes.js"></script>
-
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="custom.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    
-
-		<style type="text/css">
-			.axis path,
-			.axis line {
-				fill: none;
-				stroke: black;
-				shape-rendering: crispEdges;
-			}
-
-			.axis text {
-				font-family: sans-serif;
-				font-size: 11px;
-			}
-
-			.tooltip {
-  				position: absolute;
-  				width: 200px;
-  				height: 28px;
-  				pointer-events: none;
-			}
-
-			path {
-			  fill-opacity: .8;
-			}
-
-			path.selected {
-			  fill-opacity: .2;
-			}
-
-			#wrap{
-				border: 1px solid white;
-				width: 600px;
-			}
-
-			div {
-    			float: left;
-			}
-
-			.legend rect {
-				fill:white;
-				stroke:black;
-				opacity:0.8;
-			}
-		</style>
-	</head>
-
-	<body>
-	<div id="wrap">
-		<div><button type="button" class="btn btn-default" id="memory-clear">Reset</button></div>
-		<div><button type="button" class="btn btn-default" id="clear-select">Clear model selection</button></div>
-		<div><button type="button" class="btn btn-default" id="confirm-select">Confirm model selection</button></div>
-		<div><button type="button" class="btn btn-default" id="download-localstorage">Download state</button></div>
-
-		<div>
-			<div class="dropdown">
-				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">X-axis data<span class="caret"></span></button>
-				<ul class="dropdown-menu" id="xdata"></ul>
-			</div>
-			<div class="dropdown">
-				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Y-axis data<span class="caret"></span></button>
-				<ul class="dropdown-menu" id="ydata"></ul>
-			</div>
-		</div>
-
-		<div>
-		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select colour<span class="caret"></span></button>
-			<ul class="dropdown-menu" id="colour"></ul>
-		</div>
-		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select shape<span class="caret"></span></button>
-			<ul class="dropdown-menu" id="shape"></ul>
-		</div>
-		<div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select size<span class="caret"></span></button>
-			<ul class="dropdown-menu" id="size"></ul>
-		</div>
-		</div>
-	</div>
-	<br>
-
-	<div class="container">
-		<h2></h2>
-		<button type="button" class="btn btn-default" id="home"><i class="fa fa-home"></i> Go back</button>
-		<button type="button" class="btn btn-default" id="tobut"><i class="fas fa-exchange-alt"></i> Go to selection with buttons</button>
-		<!-- <div><button type="button" class="btn btn-default" onclick="explanation()"><i class="fas fa-question-circle"></i> What is this?</button></div> -->
-	</div>
-	<div class="container" id="forplot">
-	</div>
-
-	<!-- <script>
-	function explanation() {
-		window.alert("This is a cloud of models. Each wye represents a token level model of the type church.");
-	};
-	</script> -->
-		<script type="text/javascript">
-		var getUrlParameter = function getUrlParameter(sParam) {
-			var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-				sURLVariables = sPageURL.split('&'),
-				sParameterName,
-				i;
-
-			for (i = 0; i < sURLVariables.length; i++) {
-				sParameterName = sURLVariables[i].split('=');
-
-				if (sParameterName[0] === sParam) {
-					return sParameterName[1] === undefined ? true : sParameterName[1];
-				}
-			}
-		};
-
-			//Width and height
-			var w = 600;
-			var h = 600;
-			var padding = 30;
-
-			// add the tooltip area to the webpage
-			var tooltip = d3.select("body").append("div")
-    			.attr("class", "tooltip")
-    			.style("opacity", 0);
-
-			var dataset;
-			var firstRow;
-
-			var l1cset;
-			var l1sset;
-			var l1shset;
-			var legendParam;
-
-			var type = getUrlParameter("type");
-
-			// Initialising variables to store the axes variables
-			var xvalue = "model.x";
-			var yvalue = "model.y";
-			var xset = xvalue; //= localStorage.getItem("xset"+"-"+type) == null ? goToPlot + ".x" : JSON.parse(localStorage.getItem("xset"+"-"+type));
-			var yset = yvalue; //= localStorage.getItem("yset"+"-"+type) == null ? goToPlot + ".y" : JSON.parse(localStorage.getItem("yset"+"-"+type));
-
-
-			var l1cset = (localStorage.getItem("l1cset"+"-"+type) == null) ? undefined : JSON.parse(localStorage.getItem("l1cset"+"-"+type));
-			var l1shset = (localStorage.getItem("l1shset"+"-"+type) == null) ? undefined : JSON.parse(localStorage.getItem("l1shset"+"-"+type));
-			var l1sset = (localStorage.getItem("l1sset"+"-"+type) == null) ? undefined  : JSON.parse(localStorage.getItem("l1sset"+"-"+type));
-
-			var selection = (localStorage.getItem("modselection"+"-"+type) == null) ? [] : JSON.parse(localStorage.getItem("modselection"+"-"+type));
-
-			d3.tsv(type+".models.tsv", function(error, data) {
-				dataset = data;
-
-			// Extracts the first token name, assumes this is the type and sets it as the page title
-			//var type = data[1]["model"].match(/\w+/)
-//			var type = window.location.pathname.split("/")[2]
-			document.title = "Level 1: " + type + " tokencloud models";
-			d3.select("body").select("h2").text("Level 1: " + type);
-			//d3.select("body").select("#down").append("a").attr("href", "level2.html?type="+type).text("down");
-//			d3.select("body").select("p").append("p").text("isoMDS stress: " + data[0]["stress"]).style("font-size", "10px");
-
-			colnames = d3.keys(data[0]);
-			// Takes the first columns that end with ".x" and ".y"
-			xcol = colnames.filter(function(d) { return d.endsWith(".x"); })[0];
-			ycol = colnames.filter(function(d) { return d.endsWith(".y"); })[0];
-			othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y"))});
-			firstRow = d3.entries(dataset[1]).filter(function(d) { if (othercols.indexOf(d.key) >= 0) {return d.value;}; });
-			models = d3.entries(dataset).filter(function (d) {return d["model"]});
-
-			function isNumber(obj) { return !isNaN(parseFloat(obj)) }
-
-			nominals = firstRow.filter(function(d) { if ((!isNumber(d.value) || parseFloat(d.value) % 1 == 0) && !d.key.startsWith("_")) { return d.key; } });
-
-			numericals = firstRow.filter(function(d) { if (isNumber(d.value) && parseFloat(d.value) % 1 != 0) { return d.key; } });
-			var numSet = new Set();
-			// Text description of the first and second dimension as numerical variable
-			const firstAndSecondDimNames = ["first dimension", "second dimension"]
-			firstAndSecondDimNames.forEach(function (d) { numSet.add(d); })
-			numericals.forEach(function (d) { numSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
-
-			console.log(numSet)
-			// colours = ["wWindow", "wScheme"];
-			// size = ["windowSize", "MDSstress"];
-
-			// Dropdown menus for axes data
-			var xAxisDropDown = d3.select("#xdata")
-									.attr("name", "X-axis data")
-									.selectAll("option")
-									.data(Array.from(numSet))
-									.enter()
-									.append("li")
-									.append("a")
-									.attr("class", "xdata")
-									.attr("xlink:href", "#")
-									.attr("value", function(d) { return d; })
-									.text(function (d) {return d; });
-
-			var yAxisDropDown = d3.select("#ydata")
-									.attr("name", "Y-axis data")
-									.selectAll("option")
-									.data(Array.from(numSet))
-									.enter()
-									.append("li")
-									.append("a")
-									.attr("class", "ydata")
-									.attr("xlink:href", "#")
-									.attr("value", function(d) { return d; })
-									.text(function (d) {return d; });
-
-			// Create selection menu for colour-coding
-			var colourDropDown = d3.select("#colour")
-									.attr("name", "Colour")
-									.selectAll("option")
-									.data(nominals)
-									.enter()
-									.append("li")
-									.append("a")
-									.attr("class", "col")
-									.attr("xlink:href", "#")
-									.attr("value", function (d) { return d.key; })
-									.text(function (d) { return d.key; });
-
-			var shapeDropDown = d3.select("#shape")
-									.attr("name", "Shape")
-									.selectAll("option")
-									.data(nominals)
-									.enter()
-									.append("li")
-									.append("a")
-									.attr("class", "shape")
-									.attr("xlink:href", "#")
-									.attr("value", function (d) { return d.key; })
-									.text(function (d) { return d.key; });
-
-			var sizeDropDown = d3.select("#size")
-									.attr("name", "Size")
-									.selectAll("option")
-									.data(numericals)
-									.enter()
-									.append("li")
-									.append("a")
-									.attr("class", "siz")
-									.attr("xlink:href", "#")
-									.attr("value", function (d) { return d.key; })
-									.text(function (d) { return d.key; });
-
-			// Add a "reset" option
-			function addReset(selector, reference) {
-				d3.select(selector)
-					.append("li")
-					.append("a")
-					.attr("class", reference)
-					.attr("xlink:href", "#")
-					.attr("value", "reset")
-					.text("Reset");
-			}
-
-			addReset("#size", "siz");
-			addReset("#shape", "shape");
-			addReset("#colour", "col");
-
-			//Create scale functions
-			var xScale = d3.scaleLinear()
-								 .domain([d3.min(dataset, function(d) { return +d[xcol]; }) * 1.1, d3.max(dataset, function(d) { return +d[xcol]; }) * 1.1])
-								 .range([padding, w - padding * 2]);
-
-			var yScale = d3.scaleLinear()
-								 .domain([d3.min(dataset, function(d) { return +d[ycol]; }) * 1.1, d3.max(dataset, function(d) { return +d[ycol]; }) * 1.1])
-								 .range([h - padding, padding]);
-
-			//Define X axis
-			var xAxis = d3.axisBottom(xScale)
-							.ticks(10)
-							.tickSizeOuter(0);
-
-			//Define Y axis
-			var yAxis = d3.axisLeft(yScale)
-							  .ticks(10)
-							  .tickSizeOuter(0);
-
-			//Zoom
-			var zoom = d3.zoom()
-						.scaleExtent([0, 10])
-						.translateExtent([[-100, -100], [w + 90, h + 100]])
-						.on("zoom", zoomed);
-
-			//Create SVG element
-			var svg = d3.select("#forplot")
-						// .append("div")
-						// .attr("class", "container")
-						.append("svg")
-						.attr("width", w)
-						.attr("height", h)
-						.append("g")
-						.call(zoom);
-
-			var rect = svg.append("rect")
-						.attr("width", w)
-						.attr("height", h)
-						.style("fill", "none")
-						.style("pointer-events", "all");
-
-			var container = svg.append("g");
-
-			//Create color scale
-			var getColors = d3.scaleOrdinal(d3.schemeCategory10);
-
-			//Create dot size scale
-			//var getClustSize = d3.scaleSqrt()
-			var getClustSize = d3.scaleLinear();
-
-			//Create shape scale
-			var getShape = d3.scaleOrdinal(["cross", "diamond", "square", "triangle-down", "triangle-up"]);
-
-			dot = container.append("g")
-				.attr("class", "dot")
-				.selectAll("path")
-				.data(dataset, function(d) { return d["model"]; })
-				.enter()
-				.append("path")
-				.attr("transform", function(d) { return "translate(" + xScale(d[xcol]) + "," + yScale(d[ycol]) + ")"; })
-				.attr("d", d3.symbol().type(d3.symbolWye))
-			//    .attr("cx", function(d) {
-			//    		return xScale(+d[xcol]);
-			//    })
-			//    .attr("cy", function(d) {
-			//    		return yScale(+d[ycol]);
-			//    })
-			// 	 .attr("r", 5)
-				.style("fill", function(d) { (l1cset === undefined) ? out="#1f77b4" : out=getColors(d[l1cset]); return out; })
-				.classed("selected", function(d) {
-					if (selection.length > 0) {
-						return !(selection.indexOf(d["model"]) > -1);
-					}
-				 })
-//				 .attr("data-legend", " ")
-      	 .on("mouseover", function(d) {
-          		tooltip.transition()
-					.duration(200)
-					.style("opacity", .9);
-          		tooltip.html("<b>" + d["model"] + "</b>" + (typeof l1sset  !== "undefined" ? "<p><b>"+l1sset+"</b>: " + d3.format(".3n")(d[l1sset]) : "" ))
-					.style("left", (d3.event.pageX + 20) + "px")
-					.style("top", (d3.event.pageY - 28) + "px");
-//				svg.select(".dot").selectAll("circle").style("opacity", .2);
-//				d3.select(this).style("opacity", 1).classed("selected", false);
-				svg.select(".dot")
-					.append("path")
-					.classed("selector", true)
-					.attr("transform", d3.select(this).attr("transform"))
-					.attr("d", d3.symbol().type(d3.symbolCircle).size(this.getTotalLength()+80))
-					.attr("fill", "none")
-					.attr("stroke", "red")
-					.attr("stroke-width", 2);
-      		})
-      		.on("mouseout", function(d) {
-          		tooltip.transition()
-					.duration(500)
-					.style("opacity", 0);
-				if (selection.length > 0) {
-					d3.select(this).classed("selected", function(d) {
-						return (selection.indexOf(d["model"]) === -1);
-					});
-				}
-//				svg.select(".dot").selectAll("circle").style("opacity", 1);
-				svg.selectAll(".selector").remove();
-      		})
-					// .on('click', function(d) {
-					// 	localStorage.setItem("goToPlot", d["_id"].substring(0, d["_id"].length-2));
-					// 	window.location = "level2.html";
-					// });
-					.on("click", function(d) {
-							if (selection.indexOf(d["model"]) === -1) {
-								selection.push(d["model"]);
-							} else {
-								var index = selection.indexOf(d["model"]);
-								if (index > -1) {
-									selection.splice(index, 1);
-								}
-							}
-							// Make the dataTables interaction happen
-							var tableIndex = $('#dataframe').dataTable().fnFindCellRowIndexes(d["model"], 0);
-							$(tableContent.row(tableIndex).node()).toggleClass("selected");
-
-							if (selection.length > 0) {
-								svg.select(".dot").selectAll("path:not(.selector)").classed("selected", function(d) {
-									return !(selection.indexOf(d["model"]) > -1);
-								})
-							}
-							localStorage.setItem("modselection"+"-"+type, JSON.stringify(selection));
-					});
-
-			//Create X axis
-			container.append("g")
-				.attr("class", "x axis")
-				.attr("transform", "translate(0," + (h - padding) + ")")
-				.call(xAxis);
-
-			//Create Y axis
-			container.append("g")
-				.attr("class", "y axis")
-				.attr("transform", "translate(" + padding + ",0)")
-				.call(yAxis);
-
-			//Create the legends if required
-			var legendOrdinalColor = d3.legendColor()
-				.shape("path", d3.symbol().type(d3.symbolWye).size(150)())
-				.shapePadding(10)
-				.scale(getColors);
-			var legendOrdinalShape = d3.legendSymbol()
-				.shapePadding(10)
-				.scale(getShape);
-			if (typeof(l1cset) !== "undefined") {
-				svg.select(".legendOrdinalColor")
-					.call(legendOrdinalColor);
-			} if (typeof(l1shset) !== "undefined") {
-				svg.select(".legendOrdinalShape")
-					.call(legendOrdinalShape);
-			}
-
-			//On menu change plot new data
-			d3.selectAll(".xdata").on("click", function() {
-				xvalue = this.getAttribute("value");
-				if (xvalue == "first dimension") {
-					xset = "model.x";
-				} else if (xvalue == "second dimension") {
-					xset = "model.y";
-				} else {//if (colnames.indexOf(xset) === -1 && xset !== null) {
-					xset = xvalue;
-				}
-				//localStorage.setItem("xset"+"-"+type, JSON.stringify(xset));
-				updateXaxis();
-			});
-
-			d3.selectAll(".ydata").on("click", function() {
-				yvalue = this.getAttribute("value");
-				if (yvalue == "first dimension") {
-					yset = "model.x";
-				} else if (yvalue == "second dimension") {
-					yset = "model.y";
-				} else  {//if (colnames.indexOf(yset) === -1 && yset !== null) {
-					yset = yvalue;
-				}
-				//localStorage.setItem("yset"+"-"+type, JSON.stringify(yset));
-				updateYaxis();
-			});
-
- 				//On menu change, update colour and/or size
-				d3.selectAll(".col").on("click", function() {
-					value = this.getAttribute("value");
-					(value == "reset") ? l1cset = null : l1cset = value
-					localStorage.setItem("l1cset"+"-"+type, JSON.stringify(l1cset));
-					legendParam = l1cset;
-					updateData("colour");
-				});
-
-				d3.selectAll(".shape").on("click", function() {
-					value = this.getAttribute("value");
-					(value == "reset") ? l1shset = null : l1shset = value
-					localStorage.setItem("l1shset"+"-"+type, JSON.stringify(l1shset));
-					legendParam = l1shset;
-					updateData("shape");
-				});
-
-				d3.selectAll(".siz").on("click", function() {
-					value = this.getAttribute("value");
-					(value == "reset") ? l1sset = null : l1sset = value
-					localStorage.setItem("l1sset"+"-"+type, JSON.stringify(l1sset));
-					updateData("size");
-				});
-
-				d3.select("#memory-clear").on("click", function() {
-					localStorage.clear();
-					location.reload();
-				});
-
- 				d3.select("#clear-select").on("click", function() {
- 					selection = []
- 					localStorage.setItem("modselection"+"-"+type, JSON.stringify(selection));
- 					svg.selectAll(".selected").classed("selected", false);
-					tableContent.deselectAll();
- 				});
-
-				d3.select("#confirm-select").on("click", function() {
-					localStorage.setItem("goToPlot"+"-"+type, JSON.parse(localStorage.getItem("modselection"+"-"+type))[0].substring(0, JSON.parse(localStorage.getItem("modselection"+"-"+type))[0].length-2));
-					window.location = "level2.html?type="+type;
- 				});
-
-				d3.select("#download-localstorage").on("click", function() {
-					console.save(localStorage, "tokenclouds" + Date.now() + ".txt");
-				});
-
-				d3.select("#home").on("click", function() {
-					window.open("index.html", target="_self")
-				})
-
-				d3.select("#tobut").on("click", function() {
-					window.open("buttons_selection.html", target="_self")
-				})
-
-				function updateXaxis(){
-					//Rescale and redraw the axis
-					xScale.domain([d3.min(dataset, function(d) { return +d[xset]; }) * 1.1, d3.max(dataset, function(d) { return +d[xset]; }) * 1.1])
-					svg.select("g.x.axis").call(xAxis.scale(xScale));
-
-					//Put x-axis label
-					container.select("text")
-						.attr("class", "x label")
-						.attr("transform", "translate(" + (w-padding-80) + " ," + (h-padding-20) + ")")
-						.style("text-anchor", "right")
-						.style("font-size", "10px")
-						.style("font-weight", "bold")
-						.text(xvalue);
-					updateData();
-				}
-
-				function updateYaxis(){
-					svg.select("text")
-						.attr("transform", "rotate(270)")
-						.style("font-size", "10px")
-						.style("font-weight", "bold")
-						.text(yvalue);
-					updateData();
-				}
-
-				function updateData(feature) {
-					svg.selectAll(".legendCells").remove();
-
-				// 		//Update scale domains
-				// 		xScale.domain([d3.min(dataset, function(d) { return +d[xcol]; }) * 1.1, d3.max(dataset, function(d) { return +d[xcol]; }) * 1.1]);
-				// 		yScale.domain([d3.min(dataset, function(d) { return +d[ycol]; }) * 1.1, d3.max(dataset, function(d) { return +d[ycol]; }) * 1.1]);
-				//
-				// 		//Update axis
-				// 		svg.select("g.x.axis")
-				// 			.call(xAxis);
-				//
-				// 		svg.select("g.y.axis")
-				// 			.call(yAxis);
-				//
-				// 		//Hide tooltip
-				// 		svg.select("#tooltip").classed("hidden", true);
-				//
-						//Update all circles
-						svg.selectAll("path")
-						   .data(data)
-						   .transition()
-	   					   .duration(1000)
-						  //  .attr("cx", function(d) {
-							// 			return xScale(d[xcol]);
-							// 		})
-							// 		.attr("cy", function(d) {
-							// 			return yScale(d[ycol]);
-							// 		})
-							// .attr("data-legend", function(d) { return d[l1cset]});
-
-				// Refresh the scales
-				getColors = d3.scaleOrdinal(d3.schemeCategory10);
-				getClustSize = d3.scaleLinear().range([0, 100]);
-				getShape = d3.scaleOrdinal([d3.symbolWye, d3.symbolCross, d3.symbolDiamond, d3.symbolSquare, d3.symbolTriangle, d3.symbolStar]);
-
-				if (typeof l1sset !== "undefined" && typeof l1cset !== "undefined" && typeof l1shset !== "undefined") {
-					getClustSize.domain([d3.min(dataset, function(d) { return +d[l1sset]; }), d3.max(dataset, function(d) { return +d[l1sset]; })]);
-					svg.select(".dot").selectAll("path:not(.immutable)")
-						.attr("d", d3.symbol().type(function(d) { return getShape(d[l1shset]); })
-						.size(function (d) { return getClustSize(+d[l1sset]); }))
-						.style("fill", function(d) { return getColors(d[l1cset]); })
-					console.log("l1sset, l1shset and l1cset are not undefined")
-				} else if (typeof l1cset !== "undefined" && typeof l1sset == "undefined" && typeof l1shset !== "undefined") {
-					svg.select(".dot").selectAll("path:not(.immutable)")
-						.attr("d", d3.symbol().type(function(d) { return getShape(d[l1shset]); }))
-						.style("fill", function(d) { return getColors(d[l1cset]); })
-				} else if (typeof l1cset !== "undefined" && typeof l1sset !== "undefined" && l1shset == "undefined") {
-					getClustSize.domain([d3.min(dataset, function(d) { return +d[l1sset]; }), d3.max(dataset, function(d) { return +d[l1sset]; })]);
-					svg.select(".dot").selectAll("path:not(.immutable)")
-						.attr("d", d3.symbol().type(d3.symbolWye)
-						.size(function (d) { return getClustSize(+d[l1sset]); }))
-						.style("fill", function(d) { return getColors(d[l1cset]); })
-				} else if (typeof l1cset == "undefined" && typeof l1sset !== "undefined" && l1shset !== "undefined") {
-					getClustSize.domain([d3.min(dataset, function(d) { return +d[l1sset]; }), d3.max(dataset, function(d) { return +d[l1sset]; })]);
-					svg.select(".dot").selectAll("path:not(.immutable)")
-						.attr("d", d3.symbol().type(function(d) { return getShape(d[l1shset]); })
-						.size(function (d) { return getClustSize(+d[l1sset]); }))
-						.style("fill", "#1f77b4")
-				} else if (typeof l1sset !== "undefined") {
-					getClustSize.domain([d3.min(dataset, function(d) { return +d[l1sset]; }), d3.max(dataset, function(d) { return +d[l1sset]; })]);
-					svg.select(".dot").selectAll("path:not(.immutable)")
-						.attr("d", d3.symbol().type(d3.symbolWye)
-						.size(function (d) { return getClustSize(+d[l1sset]); }))
-						.style("fill", "#1f77b4")
-						console.log("l1sset is not undefined");
-				} else if (typeof l1cset !== "undefined") {
-					svg.select(".dot").selectAll("path:not(.immutable)")
-						.attr("d", d3.symbol().type(d3.symbolWye))
-						.style("fill", function(d) { return getColors(d[l1cset]); })
-					console.log("l1cset is not undefined");
-				} else if (typeof l1shset !== "undefined") {
-					svg.select(".dot").selectAll("path:not(.immutable)")
-						.attr("d", d3.symbol().type(function(d) { return getShape(d[l1shset]); }))
-						.style("fill", "#1f77b4")
-					console.log("l1shset is not undefined");
-				}
-
-				// svg.selectAll("path").attr("data-legend", function(d) {
-				// 	if (feature == "colour") {
-				// 		return d[l1cset];
-				// 	} else if (feature == "shape") {
-				// 		return d[l1shset];
-				// 	}
-				// });
-
-				//var legendOrdinalColor = d3.legendColor()
-				//	.shape("path", d3.symbol().type(d3.symbolWye).size(150)())
-				//	.shapePadding(10)
-				//	.scale(getColors);
-
-				var triangleU = d3.symbol().type(d3.symbolTriangle)(),
-					circle = d3.symbol().type(d3.symbolCircle)(),
-					cross = d3.symbol().type(d3.symbolCross)(),
-					diamond = d3.symbol().type(d3.symbolDiamond)(),
-					star = d3.symbol().type(d3.symbolStar)();
-
-				var symbolScale = d3.scaleOrdinal([triangleU, circle, cross, diamond, star]);
-
-				//var legendOrdinalShape = d3.legendSymbol()
-				//	.shapePadding(10)
-				//	.scale(getShape);
-
-				if (typeof(l1cset) !== "undefined") {
-					svg.select(".legendOrdinalColor")
-						.call(legendOrdinalColor);
-				} if (typeof(l1shset) !== "undefined") {
-					svg.select(".legendOrdinalShape")
-						.call(legendOrdinalShape);
-				}
-
-				function createLegend(legendType) {
-					if (legendType == "l1cset") {
-						ypos = 30;
-					} else if (legendType == "l1shset") {
-						ypos = 100;
-					} else {
-						ypos = 30;
-					}
-					legend = container.append("g")
-						.attr("class","legend")
-						.attr("transform","translate(500," + ypos + ")")
-						.style("font-size","12px")
-						.call(d3.legend);
-				}
-
-				// if (l1cset !== undefined | l1shset !== undefined) {
-				// 	createLegend();
-				// }
-
-				// if (l1cset !== undefined | l1shset !==undefined) {
-				// 	createLegend("l1cset");
-				// 	createLegend("l1shset");
-				// } else if (l1cset !== undefined) {
-				// 	createLegend("l1cset");
-				// } else if (l1shset !== undefined) {
-				// 	createLegend("l1shset");
-				// }
-
-//				Update legend or append if not created yet after necessary (!) delay
-				// if (typeof l1cset !== undefined) {
-				// 	setTimeout(function() {
-				// 		if (typeof legend !== undefined) {
-				// 			legend.call(d3.legend)
-				// 		} else {
-				// 			legend = container.append("g")
-				// 				.attr("class","legend")
-				// 				.attr("transform","translate(480,30)")
-				// 				.style("font-size","12px")
-				// 				.call(d3.legend)
-				// 		}
-				// 	},100)
-				// }
-				// else if (typeof l1shset !== undefined) {
-				// 	setTimeout(function() {
-				// 		if (typeof legend !== undefined) {
-				// 			legend.call(d3.legend)
-				// 		} else {
-				// 			legend = container.append("g")
-				// 				.attr("class","legend")
-				// 				.attr("transform","translate(480,100)")
-				// 				.style("font-size","12px")
-				// 				.call(d3.legend)
-				// 		}
-				// 	},100)
-				// } else {
-				// 	d3.select(".legend").remove();
-				// }
-//				svg.call(zoom);
-			}
-
-			function zoomed() {
-				svg.selectAll(".selector").remove();
-				svg.select("g.x.axis").call(xAxis.scale(d3.event.transform.rescaleX(xScale)));
-				svg.select("g.y.axis").call(yAxis.scale(d3.event.transform.rescaleY(yScale)));
-				svg.selectAll("path:not(.immutable)").attr("transform", transform);
-			}
-
-			function transform(d) {
-				// Dirty fix for empty path element
-				if (d !== null) {
-					new_xScale = d3.event.transform.rescaleX(xScale);
-					new_yScale = d3.event.transform.rescaleY(yScale);
-					return "translate(" + new_xScale(d[xcol]) + "," + new_yScale(d[ycol]) + ")";
-				}
-			}
-
-			var table = d3.select("body")
-							.append("div")
-							.attr("class", "container")
-							.append("table")
-							.attr("id", "dataframe")
-							.attr("class", "table table-striped table-bordered")
-							.attr("cellspacing", "0")
-							.attr("width", "150%")
-							.append("thead")
-							.selectAll("tr")
-							.data(othercols)
-							.enter();
-//							.text(function (d) { return d; });
-
-			$(document).ready(function() {
-				tableContent = $('#dataframe').DataTable( {
-					select : true,
-					"aaData" : dataset.filter(function(d) {return selection.indexOf(d.model) >= 0}),
-					"aoColumns": [
-						{ mDataProp: "model", title: "ID"  },
-						{ mDataProp: "token_window", title: "First Order Window"},
-						{ mDataProp: "mincws", title: "Minimum context words"},
-						{ mDataProp: "socccorpus", title: "Second Order Corpus"},
-						{ mDataProp: "socclength_group", title: "Second Order Vector length"},
-						{ mDataProp: "socc_window", title: "Second Order Window"},
-						{ mDataProp: "stress", title: "MDS Stress"},
-						{ mDataProp: "tokens", title: "Number of tokens"}
-					]
-				});
-
-			$('#dataframe tbody').on('click', 'tr', function () {
-        		$(this).toggleClass('selected');
-						selectionID = tableContent.row(this).data()["model"];
-						if (selection.indexOf(selectionID) === -1) {
-							selection.push(selectionID);
-						} else {
-							var index = selection.indexOf(selectionID);
-							if (index > -1) {
-								selection.splice(index, 1);
-							}
-						}
-
-						if (selection.length > 0) {
-							svg.select(".dot").selectAll("path:not(.selector)").classed("selected", function(d) {
-								return !(selection.indexOf(d["model"]) > -1);
-							})
-						}
-				//updateData();
-						console.log( tableContent.row( this ).data()["model"] );
-						localStorage.setItem("modselection"+"-"+type, JSON.stringify(selection));
-    	});
-
-			tableContent.deselectAll = function () {
-				$('#dataframe tbody tr').removeClass('selected');
-			}
-		});
-	});
-
-	(function(console){
-
-	    console.save = function(data, filename){
-
-	        if(!data) {
-	            console.error('Console.save: No data')
-	            return;
-	        }
-
-	        if(!filename) filename = 'console.json'
-
-	        if(typeof data === "object"){
-	            data = JSON.stringify(data, undefined, 4)
-	        }
-
-	        var blob = new Blob([data], {type: 'text/json'}),
-	            e    = document.createEvent('MouseEvents'),
-	            a    = document.createElement('a')
-
-	        a.download = filename
-	        a.href = window.URL.createObjectURL(blob)
-	        a.dataset.downloadurl =  ['text/json', a.download, a.href].join(':')
-	        e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
-	        a.dispatchEvent(e)
-	    }
-	})(console)
-		</script>
-
-	</body>
+
+    <title>Mariana's church clouds</title>
+
+    <style>
+      
+      body {
+        background-color: white;
+      }
+
+      path.lighter {
+        fill-opacity : .3;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1></h1>
+      </div>
+      <div class="row">
+        <div class='btn-group'>
+          <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select colour</button>
+          <div class="dropdown-menu" id="colour"></div>
+        </div>
+        <div class='btn-group'>
+          <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select shape</button>
+          <div class="dropdown-menu" id="shape"></div>
+        </div>
+        <div class='btn-group'>
+          <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select size</button>
+          <div class="dropdown-menu" id="size"></div>
+        </div>
+      </div>
+      <div class="row">
+        <button type="button" class="btn shadow-sm btn-secondary m-1" id="clear-select"><i class="fas fa-eraser"></i> Clear model selection</button>
+        <button type="button" class="btn shadow-sm btn-marigreen m-1" id="go-to-index"><i class="fas fa-home"></i> HOME </button>
+        <button type="button" class="btn shadow-sm btn-marigreen m-1" id="go-to-buttons"><i class="fas fa-exchange-alt"></i> Buttons selection </button>
+        <button type="button" class="btn shadow-sm btn-marigreen m-1" id="model-select"><i class="fas fa-arrow-alt-circle-down"></i> DOWN </button>
+      </div>
+      <div class="row" id="svgContainer"></div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- General d3 (version 4) release -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- d3 component to deal with arrays (in particular, for 'extent'/'min'/'max'...) -->
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <!-- d3 component to generate axes -->
+    <script src="https://d3js.org/d3-axis.v1.min.js"></script>
+    <!-- d3 component to generate legends -->
+    <script src="d3-legend.min.js"></script>
+    <!-- d3 component for zoom -->
+    <script src="https://d3js.org/d3-zoom.v1.min.js"></script>
+
+    <script>
+
+      var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          sParameters = [],
+          i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+          if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+          }
+          }
+        };
+
+      var type = getUrlParameter('type')
+      d3.select("h1").html("Level 1 (<em>" + type + "</em>)")
+      var width = 600;
+      var height = 600;
+      var padding = 40;
+
+      // Use the data!!
+      d3.tsv(type + ".models.tsv", function(data) {
+        // set the base of the svg area
+        
+        // load the data
+        var dataset = data;
+        
+        // classify columns
+        var colnames = d3.keys(dataset[0]);
+        var xcol = colnames.filter(function(d) { return d.endsWith(".x"); })[0];
+        var ycol = colnames.filter(function(d) { return d.endsWith(".y"); })[0];
+        var othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y") && !d.startsWith("_"))});
+
+        var nominals = othercols.filter(function(d) {return (!getValues(d).every(function(d) {return(!isNaN(d))}))})
+        nominals.push('Reset')
+
+        var numerals = othercols.filter(function(d) {return (getValues(d).every(function(d) {return(!isNaN(d))}))})
+        numerals.push('Reset')
+        // var firstRow = d3.entries(dataset[1]).filter(function(d) { if (othercols.indexOf(d.key) >= 0) {return d.value;}; });
+
+        // var nominals = firstRow.filter(function(d) { if (isNaN(d.value) && !d.key.startsWith("_")) { return d.key; } });
+        // var nomSet = new Set();
+        // nominals.forEach(function (d) { nomSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
+        // nomSet.add('Reset')
+
+        // var numerals = firstRow.filter(function(d) { if (!isNaN(d.value)) { return d.key; } });
+        // var numSet = new Set();
+        // numerals.forEach(function (d) { numSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
+        // numSet.add('Reset')
+
+        // information from localStorage
+        var colorvar = JSON.parse(localStorage.getItem("colorvar-mod")) == null ? undefined : JSON.parse(localStorage.getItem("colorvar-mod"))
+        var colorvalues = typeof(colorvar) == 'string' ? getValues(colorvar) : +0
+        var colorselection = JSON.parse(localStorage.getItem("colorsel")) == null ? [] : JSON.parse(localStorage.getItem("colorsel"))
+
+        var shapevar = JSON.parse(localStorage.getItem("shapevar-mod")) == null ? undefined : JSON.parse(localStorage.getItem("shapevar-mod"))
+        var shapevalues = typeof(shapevar) == 'string' ? getValues(shapevar) : +0
+        var shapeselection = JSON.parse(localStorage.getItem("shapesel")) == null ? [] : JSON.parse(localStorage.getItem("shapesel"))
+        
+        var sizevar = JSON.parse(localStorage.getItem("sizevar-mod")) == null ? undefined : JSON.parse(localStorage.getItem("sizevar-mod"))
+        var sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0
+        //var sizeselection = JSON.parse(localStorage.getItem("sizesel")) == null ? [] : JSON.parse(localStorage.getItem("sizesel"))
+        
+        var modselection = JSON.parse(localStorage.getItem("modselection")) == null ? [] : JSON.parse(localStorage.getItem("modselection"))
+      
+        // set up dropdowns
+        var colorDropdown = d3.select("#colour").selectAll("button")
+          .data(nominals)
+          .enter()
+          .append("button")
+          .attr("class", "dropdown-item col")
+          .attr("xlink:href", "#")
+          .attr("value", function (d) { return(d); })
+          .text(function (d) { return(d); });
+
+        var shapeDropdown = d3.select("#shape").selectAll("button")
+          .data(nominals)
+          .enter()
+          .append("button")
+          .attr("class", "dropdown-item shape")
+          .attr("xlink:href", "#")
+          .attr("value", function (d) { return(d); })
+          .text(function (d) { return(d); });
+
+        var sizeDropdown = d3.select("#size").selectAll("button")
+          .data(numerals)
+          .enter()
+          .append("button")
+          .attr("class", "dropdown-item size")
+          .attr("xlink:href", "#")
+          .attr("value", function (d) { return(d); })
+          .text(function (d) { return(d); });
+
+        // add tooltip (before the svg so it is not on top of it?)
+        tooltip = d3.select("body").append('div')
+          .attr("class", "tooltip")
+          .attr("width", 100)
+          .attr("height", 20)
+          .style('position', 'absolute')
+          .style("opacity", 0)
+
+        // Set up canvas
+        var svg = d3.select("#svgContainer").append("svg")
+          .attr("width", width)
+          .attr("height", height)
+          .attr("transform", "translate(0,0)")
+          .append("g")
+          .call(d3.zoom().on('zoom', zoomed));
+        
+        // Set up legend area next to it (it goes downwards if there is no space)
+        var legendContainer = d3.select("#svgContainer").append("svg")
+          .attr("width", 200)
+          .attr("height", height)
+          .attr("transform", "translate(" + padding/2 + ", 0)")
+
+        // Set up pointing area so you can have zoom with the mouse in any point of the plot
+        svg.append("rect")
+          .attr("width", width)
+          .attr("height", height)
+          .attr("transform", "translate(0,0)")
+          .style("pointer-events", "all")
+          .style("fill", "none")
+          
+
+        // Set up scales (axes, color...) - coordinates multiplied to get some padding in a way
+        var xrange = [d3.min(dataset, function(d) {return +d['model.x'];}) * 1.1, d3.max(dataset, function(d) {return +d['model.x'];}) * 1.1]
+        var yrange = [d3.min(dataset, function(d) {return +d['model.y'];}) * 1.1, d3.max(dataset, function(d) {return +d['model.y'];}) * 1.1]
+
+        var x = d3.scaleLinear()
+          .domain(xrange)
+          .range([padding, width-padding]);
+
+        var y = d3.scaleLinear()
+          .domain(yrange)
+          .range([height-padding, padding]);
+
+        var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+        var shape = d3.scaleOrdinal(d3.symbols);
+
+        var size = d3.scaleLinear()
+          .range([40, 200]) // remember to set the domain (current variable) before assigning a value
+
+        // Vertical center
+        var xCenter = svg.append("line")
+          .attr("x1", x(0))
+          .attr("y1", padding)
+          .attr("x2", x(0))
+          .attr("y2", height-padding)
+          .attr("stroke", "lightgray")
+          .attr("stroke-width", 1)
+
+        // Horizontal center
+        var yCenter = svg.append("line")
+          .attr("x1", padding)
+          .attr("y1", y(0))
+          .attr("x2", width-padding)
+          .attr("y2", y(0))
+          .attr("stroke", "lightgray")
+          .attr("stroke-width", 1)
+
+        // Axes (tickSizeOuter(0) avoids overlap of axes)
+        var xAxis = d3.axisBottom(x).tickSizeOuter(0);
+        svg.append("g")
+          .attr("id", "xaxis")
+          .attr("transform", "translate(0, " + (height-padding) + ")")
+          .call(xAxis);
+
+        var yAxis = d3.axisLeft(y).tickSizeOuter(0);
+        svg.append("g")
+          .attr("id", "yaxis")
+          .attr("transform", "translate(" + padding + ", 0)")
+          .call(yAxis);
+
+        
+        // What happens with the zoom
+        function zoomed() {
+          newY = d3.event.transform.rescaleY(y)
+          newX = d3.event.transform.rescaleY(x)
+          svg.select('#xaxis').call(xAxis.scale(newX)); // x axis rescaled
+          svg.select('#yaxis').call(yAxis.scale(newY)); // y axis rescaled
+          dot.attr("transform", function(d) {
+            return("translate(" + newX(d['model.x']) +  ", " + newY(d['model.y']) + ")")
+          }) // dots repositioned
+          xCenter.attr("x1", newX(0)).attr("x2", newX(0)) // central x rescaled
+          yCenter.attr("y1", newY(0)).attr("y2", newY(0)) // central y rescaled
+        };
+        
+        
+        // Design of The Dot
+
+        var dot = svg.append("g")
+          .attr("class", "dot")
+          .selectAll("path")
+          .data(dataset)
+	        .enter()
+          .append('path')
+          .attr("transform", function(d) { return ("translate(" + x(d['model.x']) + "," + y(d['model.y']) + ")"); })
+          .attr("d", d3.symbol().type(function (d) {
+            return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolWye)}).size(function(d) {
+              if (typeof(sizevar) == 'string') {
+                size.domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
+                return(size(+d[sizevar]))
+              } else {
+                return(64)
+              }}))
+          .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4")})
+          .classed("lighter", function(d) {return (modselection.length > 0 ? modselection.indexOf(d['_model']) === -1 : false)})
+          .on("mouseover", function(d) {
+            tooltip.transition()
+              .duration(200)
+              .style("opacity", 1);
+            var colordata = (typeof(colorvar) == "string" ? "<br><b>"+colorvar+"</b>: " + d[colorvar] : "");
+            var shapedata = (typeof(shapevar) == "string" ? "<br><b>"+shapevar+"</b>: " + d[shapevar] : "");
+            var sizedata = (typeof(sizevar) == "string" ? "<br><b>"+sizevar+"</b>: " + d3.format(".3r")(+d[sizevar]) : "");
+            tooltip.html("<b>" + d['_model'] + "</b>" + colordata + shapedata + sizedata)
+              .style("left", (d3.event.pageX + 10) + "px")
+              .style("top", (d3.event.pageY - 20) + "px");
+            svg.select(".dot")
+              .append("path")
+              .attr("class", "selector")
+              .attr("transform", d3.select(this).attr("transform"))
+              .attr("d", d3.symbol().type(d3.symbolCircle).size(250))
+              .style("fill", "none")
+              .style("stroke", compColor(d3.select(this).style("fill")))
+              .style("stroke-width", 2);
+          })
+          .on('mouseout', function() {
+            tooltip.transition()
+              .duration(200)
+              .style("opacity", 0);
+            d3.selectAll(".selector").remove();
+          })
+          .on('click', function(d) {
+            modName = d['_model']
+            modIndex = modselection.indexOf(modName)
+            if (modIndex > -1) {
+              modselection.splice(modIndex, 1)
+            } else {
+              modselection.push(modName)
+            }
+            updateModSelection(modselection)
+          })
+
+        // what happens when we click on the dropdowns?
+        colorDropdown.on("click", function() {
+          this.value == 'Reset' ? colorvar = null : colorvar = this.value;
+          localStorage.setItem("colorvar-mod", JSON.stringify(colorvar));
+          colorselection = [];
+          cleanStor('colorsel')
+          updatePlot();
+          updateLegend();
+        });
+
+        shapeDropdown.on("click", function() {
+          this.value == 'Reset' ? shapevar = null : shapevar = this.value;
+          localStorage.setItem("shapevar-mod", JSON.stringify(shapevar));
+          shapeselection = [];
+          cleanStor('shapesel')
+          updatePlot();
+          updateLegend();
+        });
+
+        sizeDropdown.on("click", function() {
+          this.value == 'Reset' ? sizevar = null : sizevar = this.value;
+          if (typeof(sizevar) == 'string') {
+            size.domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
+          }
+          localStorage.setItem("sizevar-mod", JSON.stringify(sizevar));
+          //sizevarselection = []
+          //localStorage.setItem("sizesel", JSON.stringify(null))
+          updatePlot();
+          updateLegend();
+        });
+
+        // clear selection of models
+        d3.select("#clear-select")
+          .on("click", function() {
+            modselection = []
+            colorselection = []
+            shapeselection = []
+            cleanStor('colorsel')
+            cleanStor('shapesel')
+            updateModSelection(modselection)
+          });
+
+        d3.select("#model-select")
+          .on("click", function() {
+            window.open("level2.html" + "?type=" + type, "_self")
+          })
+
+        d3.select("#go-to-index")
+          .on("click", function() {
+            window.open("index.html", "_self")
+          })
+
+        d3.select("#go-to-buttons")
+          .on("click", function() {
+            window.open("buttons_selection.html", "_self")
+          })
+
+        // Updating color, shape and size after every button clicking
+        function updatePlot() {
+          dot.style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4")})
+            .attr("d", d3.symbol().type(function(d) {
+              return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolWye)
+              }).size(function(d) {
+                return (typeof(sizevar) == 'string' ? size(+d[sizevar]) : 64)}))
+        };
+
+        // Generate complementary colors for the circle on hover
+        function compColor(col) {
+          res = d3.hsl(col);
+          hue = res['h'];
+          newHue = +hue < 180 ? +(hue + 180) : +(hue-180);
+          res['h'] = newHue;
+          return(res.toString());
+        };
+
+        // Short function to obtain the possible values of a variable
+        function getValues(colname) {
+          return(d3.map(dataset, function(d) {return d[colname]}).keys());
+        }
+
+        function cleanStor(item) {
+          localStorage.setItem(item, JSON.stringify(null))
+        }
+
+        // update model selection
+        function updateModSelection(modselection) {
+          // stores 'null' if it's empty and the list otherwise
+          localStorage.setItem("modselection", modselection.length > 0 ? JSON.stringify(modselection) : JSON.stringify(null))
+          // if something is selected everything else is translucent
+          dot.classed("lighter", function(d) {return (modselection.length > 0 ? modselection.indexOf(d['_model']) === -1 : false)})
+        };
+
+        // Update Legends after each dropdown is changed
+
+        function updateLegend() {
+          var legendList = []
+          legendContainer.selectAll(".legend").remove()
+          colorvalues = typeof(colorvar) == 'string' ? getValues(colorvar) : +0
+          shapevalues = typeof(shapevar) == 'string' ? getValues(shapevar) : +0
+          sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0
+
+          // Update color legend
+          if (typeof(colorvalues) != 'number'){
+            colorscale = d3.scaleOrdinal()
+              .domain(colorvalues)
+              .range(colorvalues.map(color))
+            
+            var legendColor = d3.legendColor()
+              .shape("path", d3.symbol().type(d3.symbolWye).size(64)())
+              .scale(colorscale)
+              .title(colorvar)
+              .on("cellclick", function(d) {
+                if (colorselection.indexOf(d) > -1) {
+                  colorselection.splice(colorselection.indexOf(d), 1)
+                  } else {
+                  colorselection.push(d)
+                  }
+                localStorage.setItem("colorsel", JSON.stringify(colorselection))
+                if (colorselection.length > 0) {
+                  modselection = d3.map(dataset, function(d) {if (colorselection.indexOf(d[colorvar]) > -1) {return(d['_model'])}}).keys()
+                  } else {
+                  modselection = []
+                  }
+                updateModSelection(modselection)
+              })
+         
+              legendContainer.append("g")
+              .attr("class", "legend")
+              .attr("id", "legendColor")
+              .style('cursor', 'pointer')
+              .attr("transform", "translate(0, "+ padding + ")")
+              .call(legendColor);
+
+            legendList.push('color')
+            
+              } else {
+                if(legendList.indexOf('color') > -1) {legendList.splice(indexOf('color'), 1);}
+                legendContainer.select("#legendColor").remove()
+              }
+          
+          // Update shape legend
+          if (typeof(shapevalues) != 'number'){
+            shapescale = d3.scaleOrdinal()
+              .domain(shapevalues)
+              .range(shapevalues.map(function(d) {
+                return(d3.symbol().type(shape(d))());
+              }))
+            
+            var legendShape = d3.legendSymbol()
+              .scale(shapescale)
+              .title(shapevar)
+              .on("cellclick", function(d) {
+                if (shapeselection.indexOf(d) > -1) {
+                  shapeselection.splice(shapeselection.indexOf(d), 1)
+                  } else {
+                  shapeselection.push(d)
+                  }
+                localStorage.setItem("shapesel", JSON.stringify(shapeselection))
+                if (shapeselection.length > 0) {
+                  modselection = d3.map(dataset, function(d) {if (shapeselection.indexOf(d[shapevar]) > -1) {return(d['_model'])}}).keys()
+                  } else {
+                  modselection = []
+                  }
+                updateModSelection(modselection)
+              })
+
+            var valign = legendList.indexOf('color') == -1 ? +padding : +(padding + 200)
+            
+            legendContainer.append("g")
+              .attr("class", "legend")
+              .attr("id", "legendShape")
+              .style('cursor', 'pointer')
+              .attr("transform", "translate(0, " + valign + ")")
+              .call(legendShape);
+
+            legendList.push('shape')
+            
+              } else {
+                if(legendList.indexOf('shape') > -1) {legendList.splice(legendList.indexOf('shape'), 1)}
+                legendContainer.select("#legendShape").remove()
+              }
+
+          // Update size legend
+          if (typeof(sizevalues) != 'number'){
+            sizescale = d3.scaleLinear()
+              .domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
+              .range([5, 8])
+            var sizevalues = sizevalues.map(function(d) {return +d;}).sort()
+            var smallNumbers = (sizescale.domain()[1]-sizescale.domain()[0])/(sizevalues.length-1) < 1
+            
+            var legendSize = d3.legendSize()
+              .shape('circle')
+              .scale(sizescale)
+              .title(sizevar)
+              .cells(smallNumbers ? 5 : sizevalues)
+              .labelFormat(smallNumbers ? ".04r" : ".0d")           
+              // no selection through size
+
+            var valign = +(padding + 200*legendList.length)
+            
+            legendContainer.append("g")
+              .attr("class", "legend")
+              .attr("id", "legendShape")
+              .attr("transform", "translate(0, " + valign + ")")
+              .call(legendSize);
+
+            legendList.push('size')
+            
+              } else {
+                if(legendList.indexOf('size') > -1) {legendList.splice(legendList.indexOf('size'), 1)}
+                legendContainer.select("#legendSize").remove()
+              }
+        }
+
+        updateLegend();
+        updateModSelection(modselection);
+      });
+      
+      // svg.append("rect")
+      //   .attr("x", padding)
+      //   .attr("y", padding)
+      //   .attr("width", width-(padding*2))
+      //   .attr("height", height-(padding*2))
+      //   .attr("fill", "white");
+
+      // svg.append("line")
+      //   .attr("x1", padding)
+      //   .attr("y1", padding)
+      //   .attr("x2", width-padding)
+      //   .attr("y2", height-padding)
+      //   .style("stroke", "rgb(255,0,0)")
+      //   .style("stroke-width", 2);
+
+      // svg.append("circle")
+      //   .attr("cx", width-(padding*2))
+      //   .attr("cy", padding*2)
+      //   .attr("r", 20)
+      //   .attr("fill", "green");
+
+      // svg.append("circle")
+      //   .attr("cx", padding*2)
+      //   .attr("cy", height-(padding*2))
+      //   .attr("r", 5)
+      //   .attr("fill", "green");
+
+      
+    </script>
+  </body>
 </html>

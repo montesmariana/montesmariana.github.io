@@ -55,16 +55,17 @@
         <i class="fas fa-envelope"></i> Contact: <a href="mailto:mariana.montes@kuleuven.be" style="color:white;">Mariana Montes</a></p>
     <br>
 	<script>
+    localStorage.setItem("modselection", JSON.stringify(null))
 		document.addEventListener("DOMContentLoaded", function(event) {
 			$('body').css({'padding-bottom':$('#confirm-select').height()+'px'});
     });
     d3.select("#onecloud").on("click", function() {
-      localStorage.setItem("modselection-church", JSON.stringify(["nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.5_5"]));
-      localStorage.setItem("goToPlot-church", "nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.5_5");
-      localStorage.setItem("cset-church", JSON.stringify("broadsense"));
-      localStorage.setItem("ctxt-church", JSON.stringify("_window5semcor"));
-    window.open("level3.html?type=church");
-});
+      localStorage.setItem("modselection", JSON.stringify(["nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.5_5"]));
+      localStorage.setItem("colorvar-church", JSON.stringify("broadsense"));
+      localStorage.setItem("ctxtvar-church", JSON.stringify("_window5semcor"));
+      localStorage.setItem("tokselection", JSON.stringify(null));
+      window.open("level3.html?type=church&model=nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.5_5", "_self");
+  });
 	</script>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
