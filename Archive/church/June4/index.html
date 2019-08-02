@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../../QLVLicon/favicon.ico" type="image/x-icon">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../custom.css">
+    <title>Models selection</title>
+
+    <style>
+    body {
+      background-image: url("../../copenhagechurchsmaller.jpg");
+      background-size: cover;
+    }
+    .selector-for-some-widget {
+      box-sizing: content-box;
+    }
+    .lead{
+      background-color:rgba(199, 243, 254, 0.50);
+    }
+    /* .btn.focus {
+      outline: none !important;
+    } */
+
+    </style>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="../../js/d3.min.js"></script>
+    <script src="../../js/d3-legend.min.js"></script>
+</head>
+<body>
+	<div class="container p-4">
+    <div class="row shadow bg-gradient-kulright p-2 rounded"><h1 class="text-white">Welcome to Mariana's clouds of <em>church</em>!</h1></div>
+    <div class="lead p-3 shadow rounded">
+    	<p>On this site you can select a group of clouds based on some parameters.</p>
+      <p>The buttons act as filters: between buttons of the same group there's an OR relation; between groups, an AND relation.
+        When a filter is activated, incompatible combinations will look unavailable, but the buttons are not disabled (they may be used
+				in combination with other parameters).</p>
+				<p>While I did register many settings, I didn't vary along all of them. These clouds have no first order ppmi weighting;
+					for the first order type level vectors, a window of 5-5 was used for 3-3/5-5 token level, and 10-10 for 10-10 token level.
+				</p>
+    	<p>The "Let's look at them!" button takes you to Thomas' level2 page, where you can compare the different models selected.</p>
+			<p>These clouds were created on June 4 without 2cws as filter
+				or registers,
+				while those <a href="../all_tokens/index.html">here</a> were created on May 31 with less filters.</p>
+			</div>
+			<!-- <div class="row">
+				<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
+					<h2 class="blueh2">Register selection</h2>
+					<span>There are different clouds for all tokens, those from <em>imaginative</em> texts and those from <em>informative</em> texts.
+					The multidimensionality reduction was performed after subsetting the tokens.</span>
+							<br>
+					<div class="btn-group-toggle" data-toggle="buttons" id="registerbuttons">
+						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()" id="regs">
+							<input type="checkbox" autocomplete="off" id="reg-info"> Informative texts
+						</label>
+						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+							<input type="checkbox" autocomplete="off" id="reg-imag"> Imaginative texts
+						</label>
+						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+								<input type="checkbox" autocomplete="off" id="reg-all"> All texts
+							</label>
+					</div>
+				</div>
+			</div> -->
+    <div class="row">
+    	<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
+    		<h2 class="blueh2">First order selection</h2>
+    		<span>There are two main models for first order context word selection.</span>
+            <br>
+    		<div class="btn-group-toggle" data-toggle="buttons" id="twmodelbuttons">
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()" id="tw-model">
+    				<input type="checkbox" autocomplete="off" id="tw-one"> 10-10 Window (Nouns, adjectives, verbs)
+    			</label>
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="tw-two"> 5-5 Window (Nouns, adjectives, verbs)
+					</label>
+					<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+							<input type="checkbox" autocomplete="off" id="tw-three"> 3-3 Window (Nouns, adjectives, verbs, determiners, prepositions)
+						</label>
+    		</div>
+						<!-- <p></p>
+						<span>You may also decide to go beyond sentence borders or not.
+							(I suspect this did NOT work properly because there is no difference.)
+						</span>
+            <br>
+    		<div class="btn-group-toggle" data-toggle="buttons" id="twsentbuttons">
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()" id="twbound">
+    				<input type="checkbox" autocomplete="off" id="bound"> Use sentence boundaries
+    			</label>
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="nobound"> Go beyond the sentence
+    			</label>
+				</div> -->
+						<!-- <p></p>
+						<span>The threshold changes the number of selected contextwords per token, would you like to remove the poorest tokens?</span>
+            <br>
+    		<div class="btn-group-toggle" data-toggle="buttons" id="twsentbuttons">
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()" id="cwminimum">
+    				<input type="checkbox" autocomplete="off" id="cw1"> Only if they have one or none (default)
+    			</label>
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="cw2"> Also those that have only two
+    			</label>
+				</div> -->
+			</div>
+    		<!-- <span>Note that the corpus used for the weighting is the same that you may choose for the second
+					order context words (but does not apply if you choose 'no weighting').
+				</span>
+            <br>
+    		<div class="btn-group btn-group-toggle" data-toggle="buttons" id="twppmibuttons">
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="twno"> No weighting
+    			</label>
+    			<label class="btn shadow-sm btn-kulright" onclick="updateSelection()" id="twpt1">
+    				<input type="checkbox" autocomplete="off" id="twppmi"> PPMI (0)
+    			</label>
+    		</div>-->
+    	<div class="col shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded">
+    		<h2 class="blueh2">Second order weighting</h2>
+    		<span>Select the corpus for the second order weights.</span>
+    		<div class="btn-group-toggle" data-toggle="buttons" id="socccorpusbuttons">
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="soccc"> COHA
+    			</label>
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()" id="socs">
+    				<input type="checkbox" autocomplete="off" id="soccs"> Semcor
+    			</label>
+    		</div>
+            <p></p>
+    		<span>Select the length of the second order vectors.</span><br>
+    		<div class="btn-group-toggle" data-toggle="buttons" id="socclengthbuttons">
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="socc5k"> Top 5 thousand
+    			</label>
+    			<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+    				<input type="checkbox" autocomplete="off" id="socc10k"> Top 10 thousand
+    			</label>
+				</div>
+				<p></p>
+    		<span>Select the window for the ppmi values of the second order vectors.</span><br>
+				<div class="btn-group-toggle" data-toggle="buttons" id="soccwinbuttons">
+						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+							<input type="checkbox" autocomplete="off" id="soccwin5"> 5-5 window
+						</label>
+						<label class="btn shadow-sm btn-kulright m-1" onclick="updateSelection()">
+							<input type="checkbox" autocomplete="off" id="soccwin10"> 10-10 window
+						</label>
+					</div>
+    	</div>
+    </div>
+    <span class="text-right font-weight-bold">Nephological Semantics - QLVL - KU Leuven</span>
+    <br>
+    <div class="btn fixed-bottom container shadow-sm border px-4 py-2 btn-marigreen rounded" id="confirm-select">
+    	<div class="col text-center">
+    		<span class="text-white">You have selected <span id="countmodels">0</span> models.</span>
+    		<strong class="shadow-sm">Let's look at them!</strong>
+    	</div>
+    </div>
+    <script>
+			var type = 'church'
+    	function updateSelection(){
+    		d3.tsv(type+".models.tsv", function(error, data){
+    			if (error) throw error;
+    			var dataset = data;
+    			// var models = new Array();
+    			// data.forEach(function(d){models.push(d.type);});
+    			// console.log(models, typeof models);
+
+    			var info = {
+						"focc10" : document.getElementById("tw-one").checked,
+						// "focc5" : document.getElementById("tw-two").checked,
+						"focc3" : document.getElementById("tw-three").checked,
+						// "bound" : document.getElementById("bound").checked,
+						// "nobound" : document.getElementById("nobound").checked,
+    				"soccc" : document.getElementById("soccc").checked,
+    				"soccs" : document.getElementById("soccs").checked,
+						"5k" : document.getElementById("socc5k").checked,
+						"10k" : document.getElementById("socc10k").checked,
+						"soccwin5" : document.getElementById("soccwin5").checked,
+						"soccwin10" : document.getElementById("soccwin10").checked,
+						// "reginfo" : document.getElementById("reg-info").checked,
+						// "regimag" : document.getElementById("reg-imag").checked,
+						// "regall" : document.getElementById("reg-all").checked,
+						// "cw1" : document.getElementById("cw1").checked,
+						// "cw2" : document.getElementById("cw2").checked,
+						// "all": document.getElementById("allpos").checked,
+    				// "dvnj": document.getElementById("dvnj").checked,
+						// "noweight": document.getElementById("twno").checked,
+    				// "ppmi0": document.getElementById("twppmi").checked
+    			};
+          // darkenbuttons();
+    			selectedmodels = getmodels(dataset);
+    			document.getElementById("countmodels").innerHTML = selectedmodels.length;
+    			localStorage.clear();
+    			localStorage.setItem("modselection-church", JSON.stringify(selectedmodels));
+    			console.log(selectedmodels);
+
+    			function getmodels(modellist){
+    				var newlist = new Array();
+    				modellist.forEach(function(item){
+							// FIRST define variables that extract the values of the settings in models and
+							//// make them equivalent to the keys in info
+    					var twmodel = "focc" + item.tokleft
+							var twbound = item.sentbound
+							var socccorp = "socc" + item.socccorpus
+							//var soccpos = item.pos
+							var socclength = item.socclength
+							var soccwindow = "soccwin" + item.soccleft
+							// var register = "reg" + item.register
+							// var cwmin = "cw" + item.mincws
+							// var tw = item.weight
+    					
+							// SECOND define variables that are true if one of the buttons has been clicked (for each setting)
+    					// var twcorpvalue = info["twppmic"] || info["twppmis"]
+    					var twmodelvalue = info["focc3"] || info["focc10"]
+							// var twboundvalue = info["bound"] || info["nobound"]
+							var socccorpvalue = info["soccc"] || info["soccs"]
+							//var soccposvalue = info["all"] || info["dvnj"]
+							var socclengthvalue = info["5k"] || info["10k"]
+							var soccwinvalue = info["soccwin5"] || info["soccwin10"]
+							// var registervalue = info["reginfo"] || info["regimag"] || info["regall"]
+							// var cwminvalue = info["cw1"] || info["cw2"]
+							// var twvalue = info["noweight"] || info["ppmi0"]
+    					
+    					if (
+								// For each setting, check if the value in the current row is true or if none is true
+    						item.sentbound == 'bound' &&
+								(info[twmodel] == true || twmodelvalue != true) &&
+								// (info[twbound] == true || twboundvalue != true) &&
+								(info[socccorp] == true || socccorpvalue != true) &&
+    						//(info[soccpos] == true || soccposvalue != true) &&
+								(info[socclength] == true || socclengthvalue != true) &&
+								(info[soccwindow] == true || soccwinvalue != true) 
+								// (info[register] == true || registervalue != true) &&
+								// (info[cwmin] == true || cwminvalue != true)&&
+								//(info[tw] == true || twvalue != true)
+    						){
+    						newlist.push(item.model);
+    					}});
+    				return newlist;
+    			};
+
+          // function darkenbuttons(){
+          //   // if COHA for first order weighting and not Semcor
+          //   var cond1 = info["twppmic"] && !info["twppmis"];
+          //   // if 1.5 as first order ppmi weighting and not others
+          //   var cond2 = info["twppmi1_5"] && !(info["twppmi0"] || info["twppmi1"]);
+          //   // if semcor 1.0 as first order llr weighting and not others
+          //   var cond3 = info["twlls1"] && !(info["twllc0"] | info["twllc1"]);
+          //   // if semcor 0.0 or 1.0 as first order llr weighting and not others
+          //   var cond4 = (info["twlls1"] || (info["twll0"] && info["twppmis"])) && !(info["twllc1"] || info["twllc0"]);
+          //   // if semcor 0.0 as first order llr weighting and not others
+          //   var cond5 = (info["twll0"] && info["twppmis"]) && !(info["twlls1"] || info["twllc1"] || info["twllc0"]);
+          //   // if semcor as second order weighting and not COHA
+          //   var cond6 = info["soccs"] && !(info["soccc"]);
+          //   // if length of final vector is 5kcont and not others
+          //   var cond7 = info["top5kcont"] && !(info["intersect"] || info["top5k"]);
+          //   // if second order ppmi weighting is not 0
+          //   var cond8 = info["soccppmi1"] && !(info["soccppmi0"]);
+          //   // if first order features are only 5k
+          //   var cond9 = info["twfeatures5k"] && !(info["twfeatures10k"] || info["twfeatures27k"]);
+          //   // if first order features are only 10k
+          //   var cond11 = (info["twfeatures10k"] || info["twfeatures5k"]) && !(info["twfeatures27k"]);
+          //   // if second order llr weighting is not 0
+          //   var cond12 = info["soccll1"] && !(info["soccll0"]);
+
+          //   lowerOpacity((cond2 || cond3), "twpc");
+          //   lowerOpacity((cond1 || cond4 || cond9), "twpt1_5");
+          //   lowerOpacity((cond1 || cond2), "twls1");
+          //   lowerOpacity((cond2 || cond8 || cond12), "twf5");
+          //   lowerOpacity(cond5, "twpt1");
+          //   lowerOpacity(cond6, "length5c");
+          //   lowerOpacity(cond7, "socs");
+          //   lowerOpacity((cond8 || cond12), "twf10");
+          //   lowerOpacity(cond11, "socp1");
+          //   lowerOpacity(cond11, 'socl1');
+          // };
+          // function lowerOpacity(condition, buttonid){
+          //   if (condition){
+          //     document.getElementById(buttonid).style.opacity = 0.5} else {
+          //       document.getElementById(buttonid).style.opacity = 1.0;
+          //     };
+          //   };
+    		});
+		};
+
+
+		d3.select("#confirm-select").on("click", function() {
+			localStorage.setItem("goToPlot-church", JSON.parse(
+				localStorage.getItem("modselection-church"))[0].substring(
+				0, JSON.parse(localStorage.getItem(
+					"modselection-church"))[0].length-2));
+			window.open("level2.html?type=church");
+		});
+		updateSelection()
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function(event) {
+			$('body').css({'padding-bottom':$('#confirm-select').height()+'px'});
+		});
+	</script>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

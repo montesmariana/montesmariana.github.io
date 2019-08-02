@@ -30,27 +30,49 @@
       <div class="row">
         <h1></h1>
       </div>
-      <div class="row">
-        <div class='btn-group'>
-          <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select colour</button>
-          <div class="dropdown-menu" id="colour"></div>
-        </div>
-        <div class='btn-group'>
-          <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select shape</button>
-          <div class="dropdown-menu" id="shape"></div>
-        </div>
-        <div class='btn-group'>
-          <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select size</button>
-          <div class="dropdown-menu" id="size"></div>
-        </div>
+      <div class="lead p-3 shadow rounded">
+          <p>On this site you can select a group of clouds based on some parameters.</p>
+          <p>The buttons act as filters: between buttons of the same group there's an OR relation; between groups, an AND relation.</p>
+          <p>While I did register many settings, I didn't vary along all of them. These clouds were created on Aug 1st, 2019.</p>
+          <button type="button" class="btn shadow-sm btn-secondary m-1" id="hide-buttons"> Hide filtering buttons </button>
       </div>
       <div class="row">
-        <button type="button" class="btn shadow-sm btn-secondary m-1" id="clear-select"><i class="fas fa-eraser"></i> Clear model selection</button>
-        <button type="button" class="btn shadow-sm btn-marigreen m-1" id="go-to-index"><i class="fas fa-home"></i> HOME </button>
-        <button type="button" class="btn shadow-sm btn-marigreen m-1" id="go-to-buttons"><i class="fas fa-exchange-alt"></i> Buttons selection </button>
-        <button type="button" class="btn shadow-sm btn-marigreen m-1" id="model-select"><i class="fas fa-arrow-alt-circle-down"></i> DOWN </button>
+        <div class="col" id="buttons-selection">
+          <div class="row shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded" id="foccrow">
+            <h3 class="blueh2">First order context words</h3><hr>
+          </div>
+          <div class="row shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded" id="soccrow">
+            <h3 class="blueh2">Second order context words</h3><hr>
+          </div>
+          <div class="row shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded" id="finalrow">
+            <h3 class="blueh2">Final tokens</h3><hr>
+          </div>
+        </div>
+        <div class="col">
+          <br>
+          <div class="row">
+            <div class='btn-group'>
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select colour</button>
+              <div class="dropdown-menu" id="colour"></div>
+            </div>
+            <div class='btn-group'>
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select shape</button>
+              <div class="dropdown-menu" id="shape"></div>
+            </div>
+            <div class='btn-group'>
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select size</button>
+              <div class="dropdown-menu" id="size"></div>
+            </div>
+          </div>
+          <div class="row">
+            <button type="button" class="btn shadow-sm btn-secondary m-1" id="clear-select"><i class="fas fa-eraser"></i> Clear model selection</button>
+            <button type="button" class="btn shadow-sm btn-marigreen m-1" id="go-to-index"><i class="fas fa-home"></i> HOME </button>
+            <!-- <button type="button" class="btn shadow-sm btn-marigreen m-1" id="go-to-buttons"><i class="fas fa-exchange-alt"></i> Buttons selection </button> -->
+            <button type="button" class="btn shadow-sm btn-marigreen m-1" id="model-select"><i class="fas fa-arrow-alt-circle-down"></i> DOWN </button>
+          </div>
+          <div class="row" id="svgContainer"></div>
+        </div>
       </div>
-      <div class="row" id="svgContainer"></div>
     </div>
 
     <!-- Optional JavaScript -->
@@ -70,6 +92,18 @@
     <script src="https://d3js.org/d3-zoom.v1.min.js"></script>
 
     <script>
+
+      d3.select("#hide-buttons").on("click", function() {
+        console.log(d3.select("#buttons-selection").style('display'))
+        if (d3.select("#buttons-selection").style('display') == 'block') {
+          d3.select("#buttons-selection").style('display', 'none')
+          d3.select(this).text('Show filtering buttons')
+        } else {
+          d3.select("#buttons-selection").style('display', 'block')
+          d3.select(this).text('Hide filtering buttons')
+        }
+        //d3.select("#buttons-selection").style('display', 'none')
+      })
 
       var getUrlParameter = function getUrlParameter(sParam) {
         var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -105,10 +139,13 @@
         var ycol = colnames.filter(function(d) { return d.endsWith(".y"); })[0];
         var othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y") && !d.startsWith("_"))});
 
-        var nominals = othercols.filter(function(d) {return (!getValues(d).every(function(d) {return(!isNaN(d))}))})
+        var nominals = othercols.filter(function(d) {return (!getValues(d).every(function(d) {return(!isNaN(d))}) && getValues(d).length > 1)})
+        // This happens to work with my clouds, might not always be the case
+        var focc = nominals.filter(function(d) {return (!d.startsWith('socc'))})
+        var socc = nominals.filter(function(d) {return (d.startsWith('socc'))})
         nominals.push('Reset')
 
-        var numerals = othercols.filter(function(d) {return (getValues(d).every(function(d) {return(!isNaN(d))}))})
+        var numerals = othercols.filter(function(d) {return (getValues(d).every(function(d) {return(!isNaN(d))}) && getValues(d).length > 1)})
         numerals.push('Reset')
         // var firstRow = d3.entries(dataset[1]).filter(function(d) { if (othercols.indexOf(d.key) >= 0) {return d.value;}; });
 
@@ -136,6 +173,103 @@
         //var sizeselection = JSON.parse(localStorage.getItem("sizesel")) == null ? [] : JSON.parse(localStorage.getItem("sizesel"))
         
         var modselection = JSON.parse(localStorage.getItem("modselection")) == null ? [] : JSON.parse(localStorage.getItem("modselection"))
+
+
+        // set up buttons selection
+        var foccButtons = d3.select("#foccrow").selectAll("div")
+          .data(focc)
+          .enter()
+          .append("div")
+          .attr("class", "btn-group-toggle mr-3 mt-2")
+          .attr("data-toggle", "buttons")
+          .each(appendCheckbox)
+
+        var soccButtons = d3.select("#soccrow").selectAll("div")
+          .data(socc)
+          .enter()
+          .append("div")
+          .attr("class", "btn-group-toggle mr-3 mt-2")
+          .attr("data-toggle", "buttons")
+          .each(appendCheckbox)
+
+        var finButtons = d3.select("#finalrow").selectAll("div")
+          .data(['minimum_contextwords']) //Tailored to my data, sorry
+          .enter()
+          .append("div")
+          .attr("class", "btn-group-toggle mr-3 mt-2")
+          .attr("data-toggle", "buttons")
+          .each(appendCheckbox)
+
+        function appendCheckbox(p) {
+          butgroup = d3.select(this)
+
+          buttext = p.startsWith("socc") ? p.split("_")[1] : p.split("_").join(" ")
+
+          butgroup.append("h4").text("Select " + buttext)
+
+          butgroup.selectAll("label")
+            .data(getValues(p))
+            .enter()
+            .append("label")
+            .attr("class", "btn shadow-sm btn-kulright m-1")
+            .attr("parent", p)
+            .text(function(d) {return(d)})
+            .append("input")
+            .attr("type", "checkbox")
+            .attr("autocomplete", "off")
+            .attr("id", function(d) {return(p + ":" + d)})
+        }
+
+        var valselection = [], filtmodand = []
+        var filteredvars, filtvalues, filtmodor, modstemp
+
+        $(document).on('change', 'input', function(event){
+          checked = d3.select(this).attr('id')
+          if (valselection.indexOf(checked) == -1) {
+            valselection.push(checked)
+          } else {
+            valselection.splice(valselection.indexOf(checked), 1)
+          }
+          console.log(valselection)
+          updateModButtons()
+          // var vals = getValues(p)
+          // var selectedvals = vals.filter(function(d) {return(d3.select("#check" + d).property("checked"))})
+          // console.log(d3.selectAll("input:checked").attr("id"))
+        })
+
+        function updateModButtons(){
+          var newsel = []
+          filteredvars = focc.concat(socc).concat(['minimum_contextwords']).filter(function(d) {
+            return(valselection.filter(function(x) {return(x.startsWith(d))}).length > 0)
+          })
+          console.log(filteredvars)
+          filtmodand = []
+          filteredvars.forEach(function(d) {
+            filtvalues = valselection
+              .filter(function(x) {return(x.startsWith(d))})
+              .map(function(x) {return(x.split(':')[1])})
+            filtmodor = []
+            filtvalues.forEach(function(v) {
+              modstemp = d3.map(dataset, function(row) {
+                if (row[d] == v) {return(row['_model'])}
+              }).keys()
+              filtmodor = filtmodor.concat(modstemp)
+              filtmodor.splice(filtmodor.indexOf('undefined'), 1)
+            })
+            filtmodand = filtmodand.length > 0 ? filtmodor.filter(function(x) {return(filtmodand.indexOf(x) > -1)}) : filtmodor
+          })
+          console.log(filtmodand.length)
+          updateModSelection(filtmodand)
+
+        }
+
+
+        // $(document).on('change', 'input', function(event) {
+        //   var val = d3.select(this).attr('id')
+        //   if (varselection.indexOf(val) > -1) {
+        //   }
+        //   console.log(val)
+        // })
       
         // set up dropdowns
         var colorDropdown = d3.select("#colour").selectAll("button")
@@ -506,14 +640,14 @@
             sizescale = d3.scaleLinear()
               .domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
               .range([5, 8])
-            var sizevalues = sizevalues.map(function(d) {return +d;}).sort()
+            sizevalues = sizevalues.map(function(d) {return +d;}).sort()
             var smallNumbers = (sizescale.domain()[1]-sizescale.domain()[0])/(sizevalues.length-1) < 1
             
             var legendSize = d3.legendSize()
               .shape('circle')
               .scale(sizescale)
               .title(sizevar)
-              .cells(smallNumbers ? 5 : sizevalues)
+              .cells(sizevalues.length >= 5 ? 5 : sizevalues)
               .labelFormat(smallNumbers ? ".04r" : ".0d")           
               // no selection through size
 

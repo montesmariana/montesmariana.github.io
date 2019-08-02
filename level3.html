@@ -43,9 +43,13 @@
           <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select size</button>
           <div class="dropdown-menu" id="size"></div>
         </div>
-        <div class='btn-group'>
+        <!-- <div class='btn-group'>
           <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select context</button>
           <div class="dropdown-menu" id="ctxt"></div>
+        </div> -->
+        <div class='btn-group'>
+          <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Tailored contexts</button>
+          <div class="dropdown-menu" id="ctxt2"></div>
         </div>
       </div>
       <div class="row">
@@ -134,8 +138,6 @@
         var sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0
         // var sizeselection = JSON.parse(localStorage.getItem("sizesel-" + type)) == null ? [] : JSON.parse(localStorage.getItem("sizesel-" + type))
 
-        var ctxtvar = JSON.parse(localStorage.getItem("ctxtvar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("ctxtvar-" + type))
-
         var modselection = JSON.parse(localStorage.getItem("modselection")) == null ? [] : JSON.parse(localStorage.getItem("modselection"))
         var model = getUrlParameter('model')
         d3.select("#modelName")
@@ -143,6 +145,23 @@
           .html("<b>Model: </b>" + model)
           .style("border", "solid lightgray")
           .style("padding", "3px")
+      
+        var modelparameters = model.split('.')
+
+        var ctxtvar = JSON.parse(localStorage.getItem("ctxtvar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("ctxtvar-" + type))
+
+        // TAILOR THE NEXT FEW LINES IF YOU WANT TAILORED CONTEXTS
+        var tokenwindow = modelparameters[1]
+        var tailoredcontext = [modelparameters[5], modelparameters[2], modelparameters[1], modelparameters[3]].join('.')
+        var tailoredcontexts = [
+          {"key" : "raw",  "value" : "_raw." + tokenwindow},
+          {"key" : "cues",  "value" : "_cues." + tokenwindow},
+          {"key" : "model", "value" : "_" + tailoredcontext}
+          ]
+        ctxtvar = tailoredcontexts.map(function(d) {return(d.value)}).indexOf(ctxtvar) == -1 ? undefined : ctxtvar
+        numerals = [tailoredcontext + '_count', 'Reset']
+        sizevar = numerals.indexOf(sizevar) == -1 ? undefined : sizevar
+        // This last lines are only if you use the 'ctxt2' dropdown instead of 'ctxt' (for tailored contexts, that is, matched to the cloud)
 
         var tokselection = JSON.parse(localStorage.getItem("tokselection")) == null ? [] : JSON.parse(localStorage.getItem("tokselection"))
        
@@ -174,14 +193,25 @@
           .attr("value", function (d) { return(d); })
           .text(function (d) { return(d); });
 
-        var ctxtDropdown = d3.select("#ctxt").selectAll("button")
-          .data(contexts)
+        // Use this dropdown for 'ctxt' (all possible contexts)
+        // var ctxtDropdown = d3.select("#ctxt").selectAll("button")
+        //   .data(contexts)
+        //   .enter()
+        //   .append("button")
+        //   .attr("class", "dropdown-item ctxt")
+        //   .attr("xlink:href", "#")
+        //   .attr("value", function (d) { return(d); })
+        //   .text(function(d) {return(d.slice(1))});
+
+        // Use this dropdown for ctxt2 (context tailored to the cloud)
+        var ctxtDropdown = d3.select("#ctxt2").selectAll("button")
+          .data(tailoredcontexts)
           .enter()
           .append("button")
           .attr("class", "dropdown-item ctxt")
           .attr("xlink:href", "#")
-          .attr("value", function (d) { return(d); })
-          .text(function(d) {return(d.slice(7))});
+          .attr("value", function (d) { return(d.value); })
+          .text(function(d) {return(d.key)});
 
         var modDropdown = d3.select("#models").selectAll("button")
           .data(modselection)
@@ -298,7 +328,7 @@
           .append('path')
           .attr("transform", function(d) { return ("translate(" + x(d[model + '.x']) + "," + y(d[model + '.y']) + ")"); })
           .attr("d", d3.symbol().type(function (d) {
-            return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolWye)}).size(function(d) {
+            return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle)}).size(function(d) {
               if (typeof(sizevar) == 'string') {
                 size.domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
                 return(size(+d[sizevar]))
@@ -387,7 +417,7 @@
         function updatePlot() {
           dot.style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4")})
             .attr("d", d3.symbol().type(function(d) {
-              return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolWye)
+              return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle)
               }).size(function(d) {
                 return (typeof(sizevar) == 'string' ? size(+d[sizevar]) : 64)}))
         };
@@ -452,7 +482,7 @@
               .range(colorvalues.map(color))
             
             var legendColor = d3.legendColor()
-              .shape("path", d3.symbol().type(d3.symbolWye).size(64)())
+              .shape("path", d3.symbol().type(d3.symbolCircle).size(64)())
               .scale(colorscale)
               .title(colorvar)
               .on("cellclick", function(d) {

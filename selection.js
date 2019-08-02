@@ -1,4 +1,4 @@
-    var type = 'church'
+var type = 'church'
 function updateSelection(){
     d3.tsv(type+".models.tsv", function(error, data){
         if (error) throw error;
