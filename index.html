@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="./QLVLicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 
     <!-- Bootstrap CSS -->
@@ -29,10 +29,6 @@
     } */
 
     </style>
-
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="js/d3.min.js"></script>
-    <script src="js/d3-legend.min.js"></script>
 </head>
 <body>
 	<div class="container p-4">
@@ -43,28 +39,15 @@
         The last update was on clouds built on August 1st, 2019.</p>
       <p> As a new feature, the old level1 plot and my buttons-selection portal are fully integrated
         (and more automatized). Enjoy!</p>
-        <div class="btn-toolbar">
-						<a class="btn shadow-sm btn-kulright m-1" href="level1.html?type=church" role="button">Examine a cloud of models</a>
-						<!-- <a class="btn shadow-sm btn-kulright m-1" href="buttons_selection.html" role="button">Filter parameters with buttons</a> -->
-          </div>
+      <div class="btn-toolbar px-10" style = "justify-content: center">
+        <a class="btn shadow-sm btn-kulright m-1" href="level1.html?type=church" role="button">Examine a cloud of models</a>
+        <!-- <a class="btn shadow-sm btn-kulright m-1" href="buttons_selection.html" role="button">Filter parameters with buttons</a> -->
+      </div>
       </div>
       <p style="text-align: center;font-weight: bold;">Nephological Semantics - QLVL - KU Leuven</p>
       <p style="text-align: center;font-weight: bold;background-color:#116e8a;color:white;">
         <i class="fas fa-envelope"></i> Contact: <a href="mailto:mariana.montes@kuleuven.be" style="color:white;">Mariana Montes</a></p>
     <br>
-	<script>
-    localStorage.setItem("modselection", JSON.stringify(null))
-		document.addEventListener("DOMContentLoaded", function(event) {
-			$('body').css({'padding-bottom':$('#confirm-select').height()+'px'});
-    });
-    d3.select("#onecloud").on("click", function() {
-      localStorage.setItem("modselection", JSON.stringify(["nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.5_5"]));
-      localStorage.setItem("colorvar-church", JSON.stringify("broadsense"));
-      localStorage.setItem("ctxtvar-church", JSON.stringify("_window5semcor"));
-      localStorage.setItem("tokselection", JSON.stringify(null));
-      window.open("level3.html?type=church&model=nocomp.5_5_nvj_nobound.noweight.1.s.5k_all.5_5", "_self");
-  });
-	</script>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
