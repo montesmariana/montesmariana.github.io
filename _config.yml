@@ -16,26 +16,15 @@
 title: Mariana Montes
 email: mariana.montes@kuleuven.be
 
-sass:
-  sass_dir: _sass
-plainwhite:
-  name: Mariana Montes
-  tagline: PhD student, Linguistics
-  date_format: "%b %-d, %Y"
-  sitemap: true # set to true to generate sitemap.xml content
-
-  # generate social links in footer
-  social_links:
-    twitter: roblerobusto
-    github:  montesmariana
-    linkedIn: in/mariana-montes-a373637b/
+twitter-handle: roblerobusto
+github-user:  montesmariana
+linkedIn: in/mariana-montes-a373637b/
+qlvl: https://www.arts.kuleuven.be/ling/qlvl/people/pages/00118974
 
 # Build settings
 markdown: kramdown
-remote_theme: thelehhman/plainwhite-jekyll
-theme: plainwhite
+theme: minima
 plugins:
-  - jekyll-seo-tag
   - jekyll-feed
 
 # Exclude from processing.

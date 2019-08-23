@@ -10,6 +10,14 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
+  --pal1: #fef9d9;
+  --pal2: #ce7d00;
+  --pal3: #935900;
+  --pal4: #00541a;
+  --pal5: #ffffb5;
+  --pal6: #616f39;
+  --pal7: #6b8c42;
+  --pal8: #5a3921;
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -85,11 +93,44 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #ebedef;
+  background-color: var(--pal1);
 }
 
 [tabindex="-1"]:focus {
   outline: 0 !important;
+}
+
+.main {
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  background-color: var(--pal2);
+  border-style: none solid solid solid;
+  border-width: 3px 3px 10px 3px;
+  border-color: var(--pal8);
+}
+
+.homelead {
+  height: 200px;
+  padding: 30px;
+  background-color: var(--pal8);
+}
+
+.block {
+  margin: 10px 0px 5px 5px;
+  padding: 5px;
+  background-color: var(--pal3);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--pal8);
+}
+
+.news {
+  margin: 10px 5px 15px 0px;
+  padding: 10px;
+  background-color: var(--pal6);
+  border-style: solid;
+  border-color: var(--pal4);
 }
 
 hr {
@@ -179,15 +220,16 @@ sup {
 }
 
 a {
-  color: #007bff;
+  color: var(--pal1);
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 a:hover {
-  color: #0056b3;
+  color:var(--pal2);
   text-decoration: underline;
 }
+
 
 a:not([href]):not([tabindex]) {
   color: inherit;

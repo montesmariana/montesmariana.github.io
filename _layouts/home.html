@@ -1,43 +1,37 @@
 ---
 layout: default
+title: Mariana Montes
 ---
 
-{%- if page.title -%}
-<h1 class="page-heading">{{ page.title }}</h1>
-{%- endif -%}
-
-{{ content }}
-
-{%- if site.posts.size > 0 -%}
-<ul class="posts">
-  <li>
-    <h1 id="posts-label">posts</h1>
-  </li>
-
-  {%- for post in site.posts -%}
-  <li>
-    {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
-    <a class="post-link" href="{{ post.url | relative_url }}">
-      <h2 class="post-title">{{ post.title | escape }}</h2>
-    </a>
-    <div class="post-meta">
-      <ul class="post-categories">
-        {%- for tag in post.categories -%}
-        <li>{{ tag }}</li>
-        {%- endfor -%}
-      </ul>
-      <div class="post-date"><i class="icon-calendar"></i>{{ post.date | date: date_format }}</div>
+<div class="row homelead">
+  <div class="col-9">
+    <h1 style="font-size:4em;">{{ page.title }}</h1>
+    <h2><a href="{{ site.qlvl }}">PhD Student in Linguistics</a></h2>
+  </div>
+  <div class="col-2">
+    <img src="{{ '/assets/portfolio.png' | relative_url }}" alt="I'm smiling here" style="width:150px; height:150px;">
+  </div>
+  <div class="col-1" style="font-size: 2em;">
+    <ul style="list-style-type: none; padding:0;">
+      <li><a href="http://github.com/{{ site.github-user }}"><i class="fab fa-github"></i></a></li>
+      <li><a href="http://twitter.com/{{ site.twitter-handle }}"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="mailto:{{ site.email }}"><i class="fas fa-at"></i></a></li>
+    </ul>
+  </div>
+</div>
+<div class="row m-10">
+  <div class="col-8">
+    <div class="block">
+      {% include about.html %}
     </div>
-    <div class="post">
-      {%- if site.show_excerpts -%}
-      {{ post.excerpt }}
-      {%- endif -%}
+    <div class="block">
+      <h2>Publications</h2>
+      <p><a style="font-weight: 700" href="publications.html">Here</a> you can see some conference presentations.</p>
     </div>
-  </li>
-  {%- endfor -%}
-</ul>
-
-<!-- <p class="feed-subscribe"><svg class="svg-icon orange">
-		<use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
-	</svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p> -->
-{%- endif -%}
+  </div>
+  <div class="col-4">
+    <div class="news">
+      {% include nephovis.html %}
+    </div>
+  </div>
+</div>
