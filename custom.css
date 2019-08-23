@@ -111,7 +111,7 @@ body {
 }
 
 .homelead {
-  height: 200px;
+  /* height: 200px; */
   padding: 30px;
   background-color: var(--pal8);
 }
