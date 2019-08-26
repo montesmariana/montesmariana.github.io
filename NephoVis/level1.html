@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="cloud1.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -37,7 +37,7 @@
           <button type="button" class="btn shadow-sm btn-secondary m-1" id="hide-buttons"> Hide filtering buttons </button>
       </div>
       <div class="row">
-        <div class="col" id="buttons-selection">
+        <div class="col-sm-4" id="buttons-selection">
           <div class="row shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded" id="foccrow">
             <h3 class="blueh2">First order context words</h3><hr>
           </div>
@@ -48,7 +48,7 @@
             <h3 class="blueh2">Final tokens</h3><hr>
           </div>
         </div>
-        <div class="col">
+        <div class="col-sm-8">
           <br>
           <div class="row">
             <div class='btn-group'>
@@ -92,6 +92,34 @@
     <script src="https://d3js.org/d3-zoom.v1.min.js"></script>
 
     <script>
+
+      // Make svg responsive with script from: https://brendansudol.com/writing/responsive-d3
+      function responsivefy(svg) {
+      // get container + svg aspect ratio
+        var container = d3.select(svg.node().parentNode),
+          width = parseInt(svg.style("width")),
+          height = parseInt(svg.style("height")),
+          aspect = width / height;
+
+        // add viewBox and preserveAspectRatio properties,
+        // and call resize so that svg resizes on inital page load
+        svg.attr("viewBox", "0 0 " + width + " " + height)
+          .attr("perserveAspectRatio", "xMinYMid")
+          .call(resize);
+
+        // to register multiple listeners for same event type, 
+        // you need to add namespace, i.e., 'click.foo'
+        // necessary if you call invoke this function for multiple svgs
+        // api docs: https://github.com/mbostock/d3/wiki/Selections#on
+        d3.select(window).on("resize." + container.attr("id"), resize);
+
+        // get width of container and resize svg to fit it
+        function resize() {
+          var targetWidth = parseInt(container.style("width"));
+          svg.attr("width", targetWidth);
+          svg.attr("height", Math.round(targetWidth / aspect));
+        }
+      }
 
       d3.select("#hide-buttons").on("click", function() {
         console.log(d3.select("#buttons-selection").style('display'))
@@ -141,7 +169,7 @@
 
         var nominals = othercols.filter(function(d) {return (!getValues(d).every(function(d) {return(!isNaN(d))}) && getValues(d).length > 1)})
         // This happens to work with my clouds, might not always be the case
-        var focc = nominals.filter(function(d) {return (!d.startsWith('socc'))})
+        var focc = nominals.filter(function(d) {return (d.startsWith('focc'))})
         var socc = nominals.filter(function(d) {return (d.startsWith('socc'))})
         nominals.push('Reset')
 
@@ -203,7 +231,7 @@
         function appendCheckbox(p) {
           butgroup = d3.select(this)
 
-          buttext = p.startsWith("socc") ? p.split("_")[1] : p.split("_").join(" ")
+          buttext = (p.startsWith("socc") || p.startsWith("focc")) ? p.split("_").splice(1).join(" ") : p.split("_").join(" ")
 
           butgroup.append("h4").text("Select " + buttext)
 
@@ -311,6 +339,7 @@
         var svg = d3.select("#svgContainer").append("svg")
           .attr("width", width)
           .attr("height", height)
+          .call(responsivefy)
           .attr("transform", "translate(0,0)")
           .append("g")
           .call(d3.zoom().on('zoom', zoomed));

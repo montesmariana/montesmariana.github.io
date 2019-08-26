@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="cloud2.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,6 +21,10 @@
 
       path.lighter {
         fill-opacity : .3;
+      }
+
+      path.lost {
+        fill-opacity : 0;
       }
 
       .axis line {
@@ -75,7 +79,9 @@
         <div class="col" id="legendContainer">
         </div>
       </div>
-      <div class="row" id="svgContainer"></div>
+      <div class="row">
+        <div class='col' style='max-width: 700px;'id="svgContainer"></div>
+      </div>
     </div>
 
     <!-- Optional JavaScript -->
@@ -95,6 +101,33 @@
     <script src="https://d3js.org/d3-brush.v1.min.js"></script>
 
     <script>
+
+      function responsivefy(svg) {
+      // get container + svg aspect ratio
+        var container = d3.select(svg.node().parentNode),
+          width = parseInt(svg.style("width")),
+          height = parseInt(svg.style("height")),
+          aspect = width / height;
+
+        // add viewBox and preserveAspectRatio properties,
+        // and call resize so that svg resizes on inital page load
+        svg.attr("viewBox", "0 0 " + width + " " + height)
+          .attr("perserveAspectRatio", "xMinYMid")
+          .call(resize);
+
+        // to register multiple listeners for same event type, 
+        // you need to add namespace, i.e., 'click.foo'
+        // necessary if you call invoke this function for multiple svgs
+        // api docs: https://github.com/mbostock/d3/wiki/Selections#on
+        d3.select(window).on("resize." + container.attr("id"), resize);
+
+        // get width of container and resize svg to fit it
+        function resize() {
+          var targetWidth = parseInt(container.style("width"));
+          svg.attr("width", targetWidth);
+          svg.attr("height", Math.round(targetWidth / aspect));
+        }
+      }
       var getUrlParameter = function getUrlParameter(sParam) {
         var sPageURL = decodeURIComponent(window.location.search.substring(1)),
           sURLVariables = sPageURL.split('&'),
@@ -223,6 +256,7 @@
         var svg = d3.select("#svgContainer").append("svg")
           .attr("width", width*ncol)
           .attr("height", height*nrow + padding*2)
+          .call(responsivefy)
           //.style("background-color", "lightgray")
           .attr("transform", "translate(0,0)")
           .append("g")
@@ -244,14 +278,14 @@
         }
 
         function brushing(p) {
-          e = d3.event.selection
-          if (!(e == null))
+          var e = d3.event.selection
+          if (!(e == null)){
           svg.selectAll('.dot').selectAll('path')
             .classed('lighter', function(d) {
               var xc = x(d[p.m + '.x'])
               var yc = y(d[p.m + '.y'])
               return (xc < e[0][0]+padding || xc > e[1][0]+padding || yc < e[0][1]+padding || yc > e[1][1]+padding)
-            })
+            })}
         }
 
         function brushed(p) {
@@ -327,6 +361,10 @@
           return(c)
         }
 
+        function exists(t, c) {
+              thisModel = c.attr('model')
+              return (d3.format('.3r')(t[thisModel + '.x']) != '0.00' || d3.format('.3r')(t[thisModel + '.y']) != '0.00')
+            }
 
         var cells = svg.selectAll(".cell")
           .data(combine(modselection))
@@ -425,10 +463,13 @@
                   return(50)
                 }}))
             .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4")})
-            .style('opacity', .7)
+            .style('opacity', 0.7)
             .attr('model', modselection[m])
             //.attr('token_id', function(d) {return(d['_id'])})
-            .classed("lighter", function(d) {return (tokselection.length > 0 ? tokselection.indexOf(d['_id']) === -1 : false)})
+            .classed("lighter", function(d) {
+              return (tokselection.length > 0 ? (tokselection.indexOf(d['_id']) === -1 && exists(d, cell)) : false)
+              })
+            .classed("lost", function(d) {return(!exists(d, cell))})
             .on('mouseover', function(d) {
               var thisModel = cell.attr('model')
               var xcoord = "<b>x:</b> " + d3.format('.3r')(d[thisModel + '.x'])
@@ -439,7 +480,8 @@
               .style("background-color", "white")
               .style("border", "solid")
               .style("border-color", "lightgray");
-              tooltip.html("<b>" + d['_id'] + "</b><br>" + xcoord + ", " +  ycoord)
+              // tooltip.html("<b>" + d['_id'] + "</b><br>" + xcoord + ", " +  ycoord)
+              tooltip.html("<b>exists:</b>" + exists(d, cell))
                 .style("left", (d3.event.pageX + 3) + "px")
                 .style("top", (d3.event.pageY - 50) + "px");
             })
