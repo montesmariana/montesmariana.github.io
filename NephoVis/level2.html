@@ -80,7 +80,8 @@
         </div>
       </div>
       <div class="row">
-        <div class='col' style='max-width: 700px;'id="svgContainer"></div>
+        <div class='col-sm-9' style='max-width: 700px;'id="svgContainer"></div>
+        <div class='col-sm-3' id='cwsFreq'></div>
       </div>
     </div>
 
@@ -99,6 +100,9 @@
     <script src="d3-legend.min.js"></script>
     <!-- d3 component for brush -->
     <script src="https://d3js.org/d3-brush.v1.min.js"></script>
+    <!-- for pretty tables -->
+    <script src="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
     <script>
 
@@ -172,7 +176,7 @@
       // Use the data!
       d3.tsv(type + ".tsv", function(data) {
         // load the data
-        var dataset = data;
+        dataset = data;
         
         // classify columns
         var colnames = d3.keys(dataset[0]);
@@ -201,6 +205,19 @@
         
         var tokselection = JSON.parse(localStorage.getItem("tokselection")) == null ? [] : JSON.parse(localStorage.getItem("tokselection"))
         
+        // Obtain context words
+        var table_cols = ['Feature']
+        modselection.forEach(function(x) {table_cols.push(modselection.indexOf(x)+1)})
+        var cws = []
+        var cwsFreq = []
+        // Add frequency table of context words
+        var table = d3.select("#cwsFreq").append("table");
+        headers = table.append('thead').append('tr')
+          .selectAll('th')
+          .data(table_cols).enter()
+          .append("th")
+          .text(function(d) {return(d)});
+
         // set up dropdowns
         var colorDropdown = d3.select("#colour").selectAll("button")
           .data(nominals)
@@ -274,6 +291,7 @@
           if(!(brushCell == this)){
           if(!(brushCell == undefined)) {d3.selectAll('.brush').call(brush.move, null)}
           tokselection = []
+          updateTokSelection(tokselection)
           brushCell = this}
         }
 
@@ -401,7 +419,7 @@
           .attr('dy', '-0.5em')
           .attr('font-size', '0.7em')
           .style('cursor', 'pointer')
-          .text(function(d) {return(d.m)})
+          .text(function(d) {return(modselection.indexOf(d.m)+1 + ': ' + d.m)})
           .on("click", function(d) {
             window.open("level3.html" + "?type=" + type + "&model=" + d.m, "_self")
           });
@@ -570,6 +588,24 @@
           localStorage.setItem(item, JSON.stringify(null))
         }
 
+        // function countCws(cws){
+        //   cwsFreq = [];
+        //   var mySet = new Set(cws.join(";").split(";"));
+        //   console.log(mySet)
+        //   mySet.forEach(function(d) {
+        //     cwsFreq.push({'cw' : d})})
+          
+        //     'tokens' : cws.filter(function(a) {
+        //       return(a.split(';').indexOf(d) > -1)
+        //     }).length})
+        //   })
+        // }
+
+        function shortParam(m) {
+          var mp = m.split('.')
+          return(['_cws', mp[5], mp[2], mp[1], mp[3]].join('.'))
+        }
+
         // update token selection
         function updateTokSelection(tokselection) {
           // stores 'null' if it's empty and the list otherwise
@@ -578,6 +614,49 @@
           // if something is selected everything else is translucent
           svg.selectAll(".dot").selectAll("path")
             .classed("lighter", function(d) {return (tokselection.length > 0 ? tokselection.indexOf(d['_id']) === -1 : false)})
+          cws = []
+          cwsFreq = []
+          if (tokselection.length > 0){
+            var cws_columns = modselection.map(shortParam)
+            console.log(cws_columns)
+            dataset.filter(function(d) {
+              return(tokselection.indexOf(d['_id'])>-1)
+            }).forEach(function(d){
+              cws_columns.forEach(function(c) {
+                cws.push(d[c])
+              })
+            })
+            var mySet = new Set(cws.join(";").split(";"));
+            mySet.forEach(function(d) {
+              cwsFreq.push({'cws' : d})
+            })
+            cwsFreq.forEach(function(d) {
+              modselection.forEach(function(m) {
+                this_cws = []
+                dataset.filter(function(row) {
+                  return(tokselection.indexOf(row['_id'])>-1)
+                }).forEach(function(row) {this_cws.push(row[shortParam(m)])})
+                d[m] = this_cws.filter(function(a) {
+                  return(a.split(';').indexOf(d['cws']) > -1)
+                  }).length}
+              )
+              })
+              }
+            console.log(cwsFreq)
+            d3.select('tbody').remove()
+            rows = table.append('tbody').selectAll('tr')
+            .data(cwsFreq).enter()
+            .append('tr');
+            rows.selectAll('td')
+              .data(function(d) {
+                return(d3.keys(cwsFreq[0]).map(function(k) {
+                  return({'name' : k, 'value' : d[k]});
+                }));
+              }).enter()
+              .append('td')
+              .attr('data-th', function(d) {return(d.name)})
+              .text(function(d) {return(d.value);})
+            $("table").DataTable();
         };
 
         // Update Legends after each dropdown is changed
