@@ -1,6 +1,6 @@
 The files in this folder allow you to visualize 2D scatterplots **as long as they respect a certain format**.
 This file gives you the necessary instructions to reuse this somewhere else.
-Last update (of this file): August 2nd, 2019
+Last update (of this file): August 27th, 2019
 
 One note: when I use square brackets, it means you fill in information inside, but you shouldn't write the brackets.
 
@@ -8,7 +8,7 @@ One note: when I use square brackets, it means you fill in information inside, b
 To effectively use this visualization tool, you need:
 - the level1.html, level2.html, level3.html files
 - custom.css (CSS file)
-- QLVLlogo.png (for the logo in the title)
+- favicon.ico (for the logo in the title)
 - d3-legend.min.js (d3 file for legends; the rest of the sources are obtained online... so you do need internet!)
 For each of the types you want to visualize,
 - a file with the name [type].models.tsv (described below, item 3)
@@ -31,10 +31,8 @@ But what you need is a web server, doesn't need to be github. I use apache to te
     - on this repository, check semevalProcrustes.R for the code to generate it based on the list of models and the [type].tsv file
 - columns with parameters to filter and color-, shape- or sizecode the scatterplot
     NOTE: I've recently managed to automatize the generation of filtering buttons;
-    for now, the code assumes that parameters for the SOCC level have a 'socc_' prefix and those for the FOCC level don't;
+    for now, the code assumes that parameters for the FOCC and SOCC level have 'focc_' and 'socc_' prefixes and those for the final level, none;
     the filter for the 'resulting token level matrix', in this case, was added ad hoc.
-    Eventually, it would be useful to add as requirement that all parameters have focc_/socc_/token_ prefixes
-    to organize the buttons. (Other workaround suggestions are welcome)
 
 4. WHAT SHOULD [TYPE].TSV LOOK LIKE?
 "[type].tsv" should be a tab-separated-file with:
@@ -49,6 +47,12 @@ But what you need is a web server, doesn't need to be github. I use apache to te
     Right now, they are commented and replaced by a dropdown with options tailored for the model (5:5 window for a 5:5 model, for instance)
     The tailoring is sensitive to the name of my models right now, but it's quite straightforward to comment those lines
     (they are signed in the script) and uncomment the ones for normal context
+- columns with semicolon-separated contextwords, prefixed by '_cws'
+    For now, I was not so systematic in the order of the settings in the model and variable names, so the code is a bit messy there,
+    but ideally we choose a define order for the parameters that characterize a selection of cws (for the tailored context and these cws)
+    and we have variables
+        - starting with '_cws', and then dot separated parameters, for the list of contextwords (to make the table with their frequencies)
+        - starting with '_ctxt', and then dot separated parameters, for the tailored context
 
 5. WHAT SHOULD THE INDEX LOOK LIKE?
 Whatever you like. What you need, mainly, is an easy way to access the following url:
