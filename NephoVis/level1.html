@@ -39,13 +39,13 @@
       <div class="row">
         <div class="col-sm-4" id="buttons-selection">
           <div class="row shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded" id="foccrow">
-            <h3 class="blueh2">First order context words</h3><hr>
+            <h3 class="blueh2">First order context words</h3>
           </div>
           <div class="row shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded" id="soccrow">
-            <h3 class="blueh2">Second order context words</h3><hr>
+            <h3 class="blueh2">Second order context words</h3>
           </div>
           <div class="row shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded" id="finalrow">
-            <h3 class="blueh2">Final tokens</h3><hr>
+            <h3 class="blueh2">Final tokens</h3>
           </div>
         </div>
         <div class="col-sm-8">
@@ -155,7 +155,7 @@
       var padding = 40;
 
       // Use the data!!
-      d3.tsv(type + ".models.tsv", function(data) {
+      d3.tsv(type + '/' + type + ".models.tsv", function(data) {
         // set the base of the svg area
         
         // load the data
@@ -208,7 +208,7 @@
           .data(focc)
           .enter()
           .append("div")
-          .attr("class", "btn-group-toggle mr-3 mt-2")
+          .attr("class", "btn-group-toggle mt-2")
           .attr("data-toggle", "buttons")
           .each(appendCheckbox)
 
@@ -216,7 +216,7 @@
           .data(socc)
           .enter()
           .append("div")
-          .attr("class", "btn-group-toggle mr-3 mt-2")
+          .attr("class", "btn-group-toggle mt-2")
           .attr("data-toggle", "buttons")
           .each(appendCheckbox)
 
@@ -224,7 +224,7 @@
           .data(['minimum_contextwords']) //Tailored to my data, sorry
           .enter()
           .append("div")
-          .attr("class", "btn-group-toggle mr-3 mt-2")
+          .attr("class", "btn-group-toggle mt-2")
           .attr("data-toggle", "buttons")
           .each(appendCheckbox)
 

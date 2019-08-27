@@ -11,8 +11,11 @@ To effectively use this visualization tool, you need:
 - favicon.ico (for the logo in the title)
 - d3-legend.min.js (d3 file for legends; the rest of the sources are obtained online... so you do need internet!)
 For each of the types you want to visualize,
-- a file with the name [type].models.tsv (described below, item 3)
-- a file with the name [type].tsv (described below, item 4)
+- a directory with the name [type], containing the following files:
+    - a file with the name [type].models.tsv (described below, item 3)
+    - a file with the name [type].tsv (described below, item 4)
+    - files with a name format to be defined (now it's 'ppmi.[type].[window].[corpus].tsv') with the ppmi values of the context words.
+    I still have to figure out a straightforward way of matching a given model to the right weighting system.
 Finally (or for starters) you need an index file with the links to access the clouds (see item 5).
 It doesn't need to be the one I designed, but if you use it, adapt the background picture
 (or show the church and keep 'copenhagechurch.jpg').
@@ -42,17 +45,13 @@ But what you need is a web server, doesn't need to be github. I use apache to te
     and where the values are the x and y coordinates of the tokens in said model.
     Missing tokens (present in only some models) should have coordinates 0.0 (and will be there until we come up with an alternative).
 - columns with variables to filter and color-, shape- or sizecode the scatterplot
-- columns with context, prefixed by '_'
+- columns with context, prefixed by '_ctxt.'
     There are some commented lines in the script that generate a button for 'contexts' and a dropdown for the options
-    Right now, they are commented and replaced by a dropdown with options tailored for the model (5:5 window for a 5:5 model, for instance)
-    The tailoring is sensitive to the name of my models right now, but it's quite straightforward to comment those lines
-    (they are signed in the script) and uncomment the ones for normal context
-- columns with semicolon-separated contextwords, prefixed by '_cws'
-    For now, I was not so systematic in the order of the settings in the model and variable names, so the code is a bit messy there,
-    but ideally we choose a define order for the parameters that characterize a selection of cws (for the tailored context and these cws)
-    and we have variables
-        - starting with '_cws', and then dot separated parameters, for the list of contextwords (to make the table with their frequencies)
-        - starting with '_ctxt', and then dot separated parameters, for the tailored context
+    Right now, they are commented and replaced by a dropdown with options tailored for the model (5:5 window for a 5:5 model, for instance),
+    * 'model' has to be a variable that starts with '_ctxt.' where the rest of the name matches the beginning of the name of the model
+    * 'raw' has to be a variable that starts with '_ctxt.' and ends with '.raw' where the rest of the name matches the beginning of the name of the model
+    * 'cues' has to be a variable that starts with '_ctxt.' and ends with '.cues' where the rest of the name matrches the beginning of the name of the model
+- columns with semicolon-separated contextwords, prefixed by '_cws.', where the rest of the name matches the beginning of the name of the model
 
 5. WHAT SHOULD THE INDEX LOOK LIKE?
 Whatever you like. What you need, mainly, is an easy way to access the following url:

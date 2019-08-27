@@ -77,7 +77,15 @@
       <div class="row" id="modelName"></div>
       <div class="row">
         <div class="col-sm-8" id="svgContainer"></div>
-        <div class="col-sm-4" id="cwsFreq"></div>
+        <div class="col-sm-4">
+          <div id='cwsFreq'></div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id='findtokens_cw' placeholder="Type a context word" aria-label="Context word" aria-describedby="search tokens with this context word">
+            <div class="input-group-append">
+              <button class="btn btn-danger" type="button" id='findtokens_btn'>Find tokens</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -157,7 +165,7 @@
       d3.select("h1").html("Level 3 (<em>" + type + "</em>)")
 
       // Use the data!!
-      d3.tsv(type + ".tsv", function(data) {
+      d3.tsv(type + '/' + type + ".tsv", function(data) {
         // load the data
         var dataset = data;
 
@@ -196,34 +204,50 @@
           .style("border", "solid lightgray")
           .style("padding", "3px")
       
-        var modelparameters = model.split('.')
+        // var modelparameters = model.split('.')
 
         var ctxtvar = JSON.parse(localStorage.getItem("ctxtvar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("ctxtvar-" + type))
 
         // TAILOR THE NEXT FEW LINES IF YOU WANT TAILORED CONTEXTS
-        var tokenwindow = modelparameters[1]
-        var tailoredcontext = [modelparameters[5], modelparameters[2], modelparameters[1], modelparameters[3]].join('.')
-        var tailoredcontexts = [
-          {"key" : "raw",  "value" : "_raw." + tokenwindow},
-          {"key" : "cues",  "value" : "_cues." + tokenwindow},
-          {"key" : "model", "value" : "_" + tailoredcontext}
-          ]
-        ctxtvar = tailoredcontexts.map(function(d) {return(d.value)}).indexOf(ctxtvar) == -1 ? undefined : ctxtvar
-        numerals = [tailoredcontext + '_count', 'Reset']
-        sizevar = numerals.indexOf(sizevar) == -1 ? undefined : sizevar
+        // var tokenwindow = modelparameters[1]
+        // var tailoredcontext = [modelparameters[5], modelparameters[2], modelparameters[1], modelparameters[3]].join('.')
+        // var tailoredcontexts = [
+        //   {"key" : "raw",  "value" : "_raw." + tokenwindow},
+        //   {"key" : "cues",  "value" : "_cues." + tokenwindow},
+        //   {"key" : "model", "value" : "_" + tailoredcontext}
+        //   ]
+        // ctxtvar = tailoredcontexts.map(function(d) {return(d.value)}).indexOf(ctxtvar) == -1 ? undefined : ctxtvar
+        // numerals = [tailoredcontext + '_count', 'Reset']
+        // sizevar = numerals.indexOf(sizevar) == -1 ? undefined : sizevar
+        tailoredcontexts = [
+          {'key' : 'model', 'value' : contexts.filter(function(d) {return(model.search(d.slice(6)) == 0)})[0]},
+          {'key' : 'raw', 'value' : contexts.filter(function(d) {return(d.endsWith('.raw') && model.search(d.slice(6, d.length-4)) == 0)})[0]},
+          {'key' : 'cues', 'value' : contexts.filter(function(d) {return(d.endsWith('.cues') && model.search(d.slice(6, d.length-5)) == 0)})[0]}
+        ]
+        console.log(tailoredcontexts)
+        numerals = numerals.filter(function(d) {
+          return(!d.endsWith('_count') || model.search(d.slice(0, d.length-6)) == 0)
+        })
+        console.log(numerals)
         // This last lines are only if you use the 'ctxt2' dropdown instead of 'ctxt' (for tailored contexts, that is, matched to the cloud)
 
         var tokselection = JSON.parse(localStorage.getItem("tokselection")) == null ? [] : JSON.parse(localStorage.getItem("tokselection"))
        
         // Obtain context words
-        var cws_column = ['_cws', modelparameters[5], modelparameters[2], modelparameters[1], modelparameters[3]].join('.')
+        var cws_column = colnames.filter(function(d) {
+          return(d.startsWith('_cws') && model.search(d.slice(5)) == 0)
+        })
         var cws = []
         var cwsFreq = []
+        var weights = tailoredcontexts[1]['value']
+        weights = weights.slice(6, weights.length-4)
+        weights = ['ppmi', weights, ['c', 's'].filter(function(x) {return(model.split('.').indexOf(x) > -1);})[0]].join('.')
+        
         // Add frequency table of context words
         var table = d3.select("#cwsFreq").append("table");
         headers = table.append('thead').append('tr')
           .selectAll('th')
-          .data(["Feature", "Tokens"]).enter()
+          .data(["Feature", "Tokens", "PPMI"]).enter()
           .append("th")
           .text(function(d) {return(d)});
 
@@ -482,18 +506,6 @@
           updateTokSelection(tokselection)
         }
 
-        function countCws(cws){
-          cwsFreq = [];
-          var mySet = new Set(cws.join(";").split(";"));
-          console.log(mySet)
-          mySet.forEach(function(d) {
-            cwsFreq.push({'cw' : d,
-            'tokens' : cws.filter(function(a) {
-              return(a.split(';').indexOf(d) > -1)
-            }).length})
-          })
-        }
-
 
         // what happens when we click on the dropdowns?
         colorDropdown.on("click", function() {
@@ -580,36 +592,78 @@
           localStorage.setItem(item, JSON.stringify(null))
         }
 
+        var cw_to_search = d3.select("#findtokens_cw").on('input', function() {
+         return(this.value)
+        })
+
+        d3.select("#findtokens_btn").on('click', function() {
+          var result = dataset.filter(function(d) {
+            return(d[cws_column].split(';').indexOf(cw_to_search.property('value')) > -1)
+          });
+          if (result.length > 0) {
+            tokselection = d3.map(result, function(d) {return(d['_id'])}).keys();
+            updateTokSelection(tokselection);
+          } else {
+            window.alert('Sorry, "' + cw_to_search.property('value') + '" is not present as a feature in this model.')
+          }
+          })
+
         // update model selection
         function updateTokSelection(tokselection) {
           // stores 'null' if it's empty and the list otherwise
+          tokselection = tokselection.filter(function(t) {return(exists(t));});
           localStorage.setItem("tokselection", tokselection.length > 0 ? JSON.stringify(tokselection) : JSON.stringify(null))
           // if something is selected everything else is translucent
-          dot.classed("lighter", function(d) {return (tokselection.length > 0 ? (tokselection.indexOf(d['_id']) === -1 && exists(d)) : false)})
-          cws = []
-          cwsFreq = []
-          if (tokselection.length > 0){
-          dot.each(function(d) {
-            if(tokselection.indexOf(d['_id']) > -1) {
-              cws.push(d[cws_column])
-              countCws(cws)
-            }
-          })}
-          d3.select('tbody').remove()
-          rows = table.append('tbody').selectAll('tr')
-          .data(cwsFreq).enter()
-          .append('tr');
-          rows.selectAll('td')
-            .data(function(d) {
-              return(d3.keys(cwsFreq[0]).map(function(k) {
-                return({'name' : k, 'value' : d[k]});
-              }));
-            }).enter()
-            .append('td')
-            .attr('data-th', function(d) {return(d.name)})
-            .text(function(d) {return(d.value);})
-          $("table").DataTable();
+          dot.classed("lighter", function(d) {return (tokselection.length > 0 ? (tokselection.indexOf(d['_id']) === -1) : false)})
+          drawTable(tokselection);
         };
+
+        function drawTable(tokselection) {
+
+          d3.tsv(type + '/' + weights + '.tsv', function(data) {
+            cws = [];
+            d3.select('tbody').remove();
+            if (tokselection.length > 0){
+              dot.each(function(d) {
+                if(tokselection.indexOf(d['_id']) > -1) {
+                  cws.push(d[cws_column]);
+                  countCws(cws);
+                }
+              });
+              rows = table.append('tbody').selectAll('tr')
+                .data(cwsFreq).enter()
+                .append('tr');
+              rows.selectAll('td')
+                .data(function(d) {
+                  return(d3.keys(cwsFreq[0]).map(function(k) {
+                    return({'name' : k, 'value' : d[k]});
+                    }));
+                  }).enter()
+                .append('td')
+                .attr('data-th', function(d) {return(d.name)})
+                .text(function(d) {return(d.value);})
+            }
+                        
+            $("table").DataTable({
+              'destroy' : true,
+              'order' : [[1, 'desc']]
+            });
+            
+            function countCws(cws){
+              cwsFreq = [];
+              var mySet = new Set(cws.join(";").split(";"));
+              mySet.forEach(function(d) {
+                cwsFreq.push({'cw' : d,
+                'tokens' : cws.filter(function(a) {
+                  return(a.split(';').indexOf(d) > -1)
+                  }).length,
+                'ppmi' : d3.format('.3')(data.filter(function(p) {
+                  return(p.cw == d)})[0]['ppmi'])
+                  });
+                });
+                }
+          })
+        }
 
         // Update Legends after each dropdown is changed
 
