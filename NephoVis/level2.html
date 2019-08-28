@@ -40,7 +40,7 @@
         <h1></h1>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col-sm-6">
           <div class="row">
             <div class='btn-group'>
               <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select colour</button>
@@ -76,12 +76,10 @@
             </div>
           </div>
         </div>
-        <div class="col" id="legendContainer">
+        <div class="col-sm-6" id="legendContainer">
         </div>
       </div>
-      <div class="row">
-        <div class='col-sm-9' style='max-width: 700px;'id="svgContainer"></div>
-        <div class='col-sm-3' id='cwsFreq'></div>
+      <div class="row" id="svgContainer">
       </div>
     </div>
 
@@ -130,6 +128,34 @@
       d3.select("#to-level1").on("click", function() {
         window.open("level1.html" + "?type=" + type, "_self")
       });
+
+      // Make svg responsive with script from: https://brendansudol.com/writing/responsive-d3
+      function responsivefy(svg) {
+      // get container + svg aspect ratio
+        var container = d3.select('.container'),
+          width = parseInt(svg.style("width")),
+          height = parseInt(svg.style("height")),
+          aspect = width / height;
+
+        // add viewBox and preserveAspectRatio properties,
+        // and call resize so that svg resizes on inital page load
+        svg.attr("viewBox", "0 0 " + width + " " + height)
+          .attr("perserveAspectRatio", "xMinYMid")
+          .call(resize);
+
+        // to register multiple listeners for same event type, 
+        // you need to add namespace, i.e., 'click.foo'
+        // necessary if you call invoke this function for multiple svgs
+        // api docs: https://github.com/mbostock/d3/wiki/Selections#on
+        d3.select(window).on("resize." + container.attr("id"), resize);
+
+        // get width of container and resize svg to fit it
+        function resize() {
+          var targetWidth = parseInt(container.style("width"));
+          svg.attr("width", targetWidth);
+          svg.attr("height", Math.round(targetWidth / aspect));
+        }
+      }
 
       // first info from LocalStorage
       modselection = JSON.parse(localStorage.getItem("modselection"));
@@ -245,6 +271,7 @@
         svg = d3.select("#svgContainer").append("svg")
           .attr("width", width*ncol)
           .attr("height", height*nrow + padding*2)
+          .call(responsivefy)
           //.style("background-color", "lightgray")
           .attr("transform", "translate(0,0)")
           .append("g");

@@ -51,6 +51,7 @@ But what you need is a web server, doesn't need to be github. I use apache to te
     * 'model' has to be a variable that starts with '_ctxt.' where the rest of the name matches the beginning of the name of the model
     * 'raw' has to be a variable that starts with '_ctxt.' and ends with '.raw' where the rest of the name matches the beginning of the name of the model
     * 'cues' has to be a variable that starts with '_ctxt.' and ends with '.cues' where the rest of the name matrches the beginning of the name of the model
+    The text in the cells can have any kind of html tags (they will be read), but one suggestion is that the target word (and only that) be enclosed by some tag with class "target"
 - columns with semicolon-separated contextwords, prefixed by '_cws.', where the rest of the name matches the beginning of the name of the model
 
 5. WHAT SHOULD THE INDEX LOOK LIKE?
