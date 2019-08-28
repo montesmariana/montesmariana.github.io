@@ -4,14 +4,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="cloud3.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../custom.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-    <title>Mariana's church clouds</title>
+    <title>NephoVis Level 3</title>
 
     <style>
       
@@ -21,6 +21,10 @@
 
       path.lighter {
         fill-opacity : .3;
+      }
+
+      path.lost {
+        fill-opacity : 0;
       }
 
     </style>
@@ -54,6 +58,16 @@
       </div>
       <div class="row">
         <button type="button" class="btn shadow-sm btn-secondary m-1" id="clear-select"><i class="fas fa-eraser"></i> Clear token selection</button>
+        <div class="btn-group btn-group-toggle" id = "selection" data-toggle="buttons">
+          <label class="btn btn-danger my-1 active">
+            <input type="radio" name="selection" value="click" autocomplete="off" checked> <i class="fas fa-mouse-pointer"></i> Click
+          </label>
+          <label class="btn btn-danger my-1">
+            <input type="radio" name="selection" value="brush" autocomplete="off"> <i class='fas fa-crop-alt'></i> Select area
+          </label>
+        </div>
+      </div>
+      <div class='row'>
         <button type="button" class="btn shadow-sm btn-marigreen m-1" id="model-select"><i class="fas fa-arrow-alt-circle-up"></i> UP </button>
         <div class='btn-group'>
           <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle m-1" data-toggle="dropdown"><i class="fas fa-random"></i> Switch to model</button>
@@ -61,7 +75,21 @@
         </div>
       </div>
       <div class="row" id="modelName"></div>
-      <div class="row" id="svgContainer"></div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div id='svgContainer'></div>
+          <div id='legendContainer'></div>
+        </div>
+        <div class="col-sm-4">
+          <div id='cwsFreq'></div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id='findtokens_cw' placeholder="Type a context word" aria-label="Context word" aria-describedby="search tokens with this context word">
+            <div class="input-group-append">
+              <button class="btn btn-danger" type="button" id='findtokens_btn'>Find tokens</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Optional JavaScript -->
@@ -79,16 +107,51 @@
     <script src="d3-legend.min.js"></script>
     <!-- d3 component for zoom -->
     <script src="https://d3js.org/d3-zoom.v1.min.js"></script>
+    <!-- for pretty tables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
 
     <script>
-      
+      var type;
+      var width, height, padding;
+
+      // Make svg responsive with script from: https://brendansudol.com/writing/responsive-d3
+      function responsivefy(svg) {
+      // get container + svg aspect ratio
+        var container = d3.select(svg.node().parentNode),
+          width = parseInt(svg.style("width")),
+          height = parseInt(svg.style("height")),
+          aspect = width / height;
+
+        // add viewBox and preserveAspectRatio properties,
+        // and call resize so that svg resizes on inital page load
+        svg.attr("viewBox", "0 0 " + width + " " + height)
+          .attr("perserveAspectRatio", "xMinYMid")
+          .call(resize);
+
+        // to register multiple listeners for same event type, 
+        // you need to add namespace, i.e., 'click.foo'
+        // necessary if you call invoke this function for multiple svgs
+        // api docs: https://github.com/mbostock/d3/wiki/Selections#on
+        d3.select(window).on("resize." + container.attr("id"), resize);
+
+        // get width of container and resize svg to fit it
+        function resize() {
+          var targetWidth = parseInt(container.style("width"));
+          svg.attr("width", targetWidth);
+          svg.attr("height", Math.round(targetWidth / aspect));
+        }
+      }
+
       // set the base of the svg area
-      var width = 600;
-        var height = 600;
-        var padding = 40;
+
+      width = 600;
+      height = 600;
+      padding = 40;
 
       // EXTRACT THE NAME OF THE MODEL FROM THE URL!!   
-      var getUrlParameter = function getUrlParameter(sParam) {
+      function getUrlParameter(sParam) {
 			var sPageURL = decodeURIComponent(window.location.search.substring(1)),
 				sURLVariables = sPageURL.split('&'),
 				sParameterName,
@@ -101,72 +164,98 @@
 					return sParameterName[1] === undefined ? true : sParameterName[1];
 				}
         }
-      };
+      }
 
-      var type = getUrlParameter('type')
-      d3.select("h1").html("Level 3 (<em>" + type + "</em>)")
+      type = getUrlParameter('type');
+      d3.select("h1").html("Level 3 (<em>" + type + "</em>)");
 
       // Use the data!!
-      d3.tsv(type + ".tsv", function(data) {
+      d3.tsv(type + '/' + type + ".tsv", function(data) {
+        var dataset;
+        var colnames, othercols, nominals, numerals, contexts;
+        var colorvar, colorvalues, colorselection, shapevar, shapevalues, shapeselection, sizevar, sizevalues;
+        var modselection, model, tokselection;
+        var ctxtvar, tailoredcontexts;
+        var cws_column, cws = [], cwsFreq = [], weights;
+        var svg, table, rows, tooltip, legendContainer, dot, brush;
+        var colorDropdown, shapeDropdown, sizeDropdown, ctxtDropdown, modDropdown;
+        var x, y, xrange, yrange, color, shape, size; //set scales
+        var xCenter, yCenter, xAxis, yAxis;  
+        var legendList, legendColor, legendShape, legendSize, halign;
+        
         // load the data
-        var dataset = data;
+        dataset = data;
 
         // classify columns
-        var colnames = d3.keys(dataset[0]);
-        var xcol = colnames.filter(function(d) { return d.endsWith(".x"); })[0];
-        var ycol = colnames.filter(function(d) { return d.endsWith(".y"); })[0];
-        var othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y") && !d.startsWith("_"))});
+        colnames = d3.keys(dataset[0]);
+        othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y") && !d.startsWith("_")); });
 
-        var nominals = othercols.filter(function(d) {return (!getValues(d).every(function(d) {return(!isNaN(d))}))})
-        nominals.push('Reset')
+        nominals = othercols.filter(function(d) {return (!getValues(d).every(function(d) {return(!isNaN(d)); })); });
+        nominals.push('Reset');
 
-        var numerals = othercols.filter(function(d) {return (getValues(d).every(function(d) {return(!isNaN(d))}))})
-        numerals.push('Reset')
+        numerals = othercols.filter(function(d) {return (getValues(d).every(function(d) {return(!isNaN(d)); })); });
+        numerals.push('Reset');
 
-        var contexts = colnames.filter(function(d) {return (d.startsWith('_') && d != '_id')})
+        contexts = colnames.filter(function(d) {return (d.startsWith('_') && d != '_id'); });
 
         // information from localStorage
-        var colorvar = JSON.parse(localStorage.getItem("colorvar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("colorvar-" + type))
-        var colorvalues = typeof(colorvar) == 'string' ? getValues(colorvar) : +0
-        var colorselection = JSON.parse(localStorage.getItem("colorsel-" + type)) == null ? [] : JSON.parse(localStorage.getItem("colorsel-" + type))
+        colorvar = JSON.parse(localStorage.getItem("colorvar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("colorvar-" + type));
+        colorvalues = typeof(colorvar) == 'string' ? getValues(colorvar) : +0;
+        colorselection = JSON.parse(localStorage.getItem("colorsel-" + type)) == null ? [] : JSON.parse(localStorage.getItem("colorsel-" + type));
 
-        var shapevar = JSON.parse(localStorage.getItem("shapevar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("shapevar-" + type))
-        var shapevalues = typeof(shapevar) == 'string' ? getValues(shapevar) : +0
-        var shapeselection = JSON.parse(localStorage.getItem("shapesel-" + type)) == null ? [] : JSON.parse(localStorage.getItem("shapesel-" + type))
+        shapevar = JSON.parse(localStorage.getItem("shapevar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("shapevar-" + type));
+        shapevalues = typeof(shapevar) == 'string' ? getValues(shapevar) : +0;
+        shapeselection = JSON.parse(localStorage.getItem("shapesel-" + type)) == null ? [] : JSON.parse(localStorage.getItem("shapesel-" + type));
         
-        var sizevar = JSON.parse(localStorage.getItem("sizevar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("sizevar-" + type))
-        var sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0
+        sizevar = JSON.parse(localStorage.getItem("sizevar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("sizevar-" + type));
+        sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0;
         // var sizeselection = JSON.parse(localStorage.getItem("sizesel-" + type)) == null ? [] : JSON.parse(localStorage.getItem("sizesel-" + type))
 
-        var modselection = JSON.parse(localStorage.getItem("modselection")) == null ? [] : JSON.parse(localStorage.getItem("modselection"))
-        var model = getUrlParameter('model')
+        modselection = JSON.parse(localStorage.getItem("modselection")) == null ? [] : JSON.parse(localStorage.getItem("modselection"));
+        model = getUrlParameter('model');
         d3.select("#modelName")
           .append("p")
           .html("<b>Model: </b>" + model)
           .style("border", "solid lightgray")
-          .style("padding", "3px")
+          .style("padding", "3px");
       
-        var modelparameters = model.split('.')
+        ctxtvar = JSON.parse(localStorage.getItem("ctxtvar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("ctxtvar-" + type));
 
-        var ctxtvar = JSON.parse(localStorage.getItem("ctxtvar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("ctxtvar-" + type))
-
-        // TAILOR THE NEXT FEW LINES IF YOU WANT TAILORED CONTEXTS
-        var tokenwindow = modelparameters[1]
-        var tailoredcontext = [modelparameters[5], modelparameters[2], modelparameters[1], modelparameters[3]].join('.')
-        var tailoredcontexts = [
-          {"key" : "raw",  "value" : "_raw." + tokenwindow},
-          {"key" : "cues",  "value" : "_cues." + tokenwindow},
-          {"key" : "model", "value" : "_" + tailoredcontext}
-          ]
-        ctxtvar = tailoredcontexts.map(function(d) {return(d.value)}).indexOf(ctxtvar) == -1 ? undefined : ctxtvar
-        numerals = [tailoredcontext + '_count', 'Reset']
-        sizevar = numerals.indexOf(sizevar) == -1 ? undefined : sizevar
+        // UNCOMMENT THE NEXT FEW LINES IF YOU WANT TAILORED CONTEXTS
+        tailoredcontexts = [
+          {'key' : 'model', 'value' : contexts.filter(function(d) {return(model.search(d.slice(6)) == 0)})[0]},
+          {'key' : 'raw', 'value' : contexts.filter(function(d) {return(d.endsWith('.raw') && model.search(d.slice(6, d.length-4)) == 0)})[0]},
+          {'key' : 'cues', 'value' : contexts.filter(function(d) {return(d.endsWith('.cues') && model.search(d.slice(6, d.length-5)) == 0)})[0]}
+        ];
+        numerals = numerals.filter(function(d) {
+          return(!d.endsWith('_count') || model.search(d.slice(0, d.length-6)) == 0);
+        });
         // This last lines are only if you use the 'ctxt2' dropdown instead of 'ctxt' (for tailored contexts, that is, matched to the cloud)
 
-        var tokselection = JSON.parse(localStorage.getItem("tokselection")) == null ? [] : JSON.parse(localStorage.getItem("tokselection"))
+        tokselection = JSON.parse(localStorage.getItem("tokselection")) == null ? [] : JSON.parse(localStorage.getItem("tokselection"))
        
+        // Obtain context words
+        cws_column = colnames.filter(function(d) {
+          return(d.startsWith('_cws') && model.search(d.slice(5)) == 0)
+        })
+        
+        // Identify name of correct weights-file (FIND A BETTE WAY!!)
+        weights = [
+          'ppmi',
+          tailoredcontexts[1]['value'].slice(6, this.length-4),
+          ['c', 's'].filter(function(x) {return(model.split('.').indexOf(x) > -1); })[0]
+          ].join('.');
+        
+        // Add frequency table of context words
+        table = d3.select("#cwsFreq").append("table");
+        table.append('thead').append('tr')
+          .selectAll('th')
+          .data(["Feature", "Tokens", "PPMI"]).enter()
+          .append("th")
+          .text(function(d) {return(d); });
+
         // set up dropdowns
-        var colorDropdown = d3.select("#colour").selectAll("button")
+        colorDropdown = d3.select("#colour").selectAll("button")
           .data(nominals)
           .enter()
           .append("button")
@@ -175,7 +264,7 @@
           .attr("value", function (d) { return(d); })
           .text(function (d) { return(d); });
 
-        var shapeDropdown = d3.select("#shape").selectAll("button")
+        shapeDropdown = d3.select("#shape").selectAll("button")
           .data(nominals)
           .enter()
           .append("button")
@@ -184,7 +273,7 @@
           .attr("value", function (d) { return(d); })
           .text(function (d) { return(d); });
 
-        var sizeDropdown = d3.select("#size").selectAll("button")
+        sizeDropdown = d3.select("#size").selectAll("button")
           .data(numerals)
           .enter()
           .append("button")
@@ -204,23 +293,23 @@
         //   .text(function(d) {return(d.slice(1))});
 
         // Use this dropdown for ctxt2 (context tailored to the cloud)
-        var ctxtDropdown = d3.select("#ctxt2").selectAll("button")
+        ctxtDropdown = d3.select("#ctxt2").selectAll("button")
           .data(tailoredcontexts)
           .enter()
           .append("button")
           .attr("class", "dropdown-item ctxt")
           .attr("xlink:href", "#")
           .attr("value", function (d) { return(d.value); })
-          .text(function(d) {return(d.key)});
+          .text(function(d) {return(d.key); });
 
-        var modDropdown = d3.select("#models").selectAll("button")
+        modDropdown = d3.select("#models").selectAll("button")
           .data(modselection)
           .enter()
           .append("button")
           .attr("class", "dropdown-item mod")
           .attr("xlink:href", "#")
           .attr("value", function (d) { return(d); })
-          .text(function(d) {return(d.slice(7))});
+          .text(function(d) {return(d.slice(7)); });
 
         // add tooltip (before the svg so it is not on top of it?)
         tooltip = d3.select("body").append('div')
@@ -228,21 +317,22 @@
           .attr("width", 100)
           .attr("height", 20)
           .style('position', 'absolute')
-          .style("opacity", 0)
-
+          .style("opacity", 0);
+        
         // Set up canvas
-        var svg = d3.select("#svgContainer").append("svg")
+        svg = d3.select("#svgContainer").append("svg")
           .attr("width", width)
           .attr("height", height)
+          .call(responsivefy)
           .attr("transform", "translate(0,0)")
           .append("g")
           .call(d3.zoom().on('zoom', zoomed));
         
         // Set up legend area next to it (it goes downwards if there is no space)
-        var legendContainer = d3.select("#svgContainer").append("svg")
-          .attr("width", 200)
-          .attr("height", height)
-          .attr("transform", "translate(" + padding/2 + ", 0)")
+        legendContainer = d3.select("#legendContainer").append("svg")
+          .attr("width", width)
+          .attr("height", 200)
+          .attr("transform", "translate(" + padding/2 + ", 0)");
 
         // Set up pointing area so you can have zoom with the mouse in any point of the plot
         svg.append("rect")
@@ -250,93 +340,115 @@
           .attr("height", height)
           .attr("transform", "translate(0,0)")
           .style("pointer-events", "all")
-          .style("fill", "none")
-          
+          .style("fill", "none");
 
         // Set up scales (axes, color...) - coordinates multiplied to get some padding in a way
-        var xrange = [d3.min(dataset, function(d) {return +d[model + '.x'];}) * 1.1, d3.max(dataset, function(d) {return +d[model + '.x'];}) * 1.1]
-        var yrange = [d3.min(dataset, function(d) {return +d[model + '.y'];}) * 1.1, d3.max(dataset, function(d) {return +d[model + '.y'];}) * 1.1]
+        xrange = [d3.min(dataset, function(d) {return (+d[model + '.x']); }) * 1.1, d3.max(dataset, function(d) {return (+d[model + '.x']); }) * 1.1];
+        yrange = [d3.min(dataset, function(d) {return (+d[model + '.y']); }) * 1.1, d3.max(dataset, function(d) {return (+d[model + '.y']); }) * 1.1];
 
-        var x = d3.scaleLinear()
+        x = d3.scaleLinear()
           .domain(xrange)
           .range([padding, width-padding]);
 
-        var y = d3.scaleLinear()
+        y = d3.scaleLinear()
           .domain(yrange)
           .range([height-padding, padding]);
 
-        var color = d3.scaleOrdinal(d3.schemeCategory10);
+        color = d3.scaleOrdinal(d3.schemeCategory10);
 
-        var shape = d3.scaleOrdinal(d3.symbols);
+        shape = d3.scaleOrdinal(d3.symbols);
 
-        var size = d3.scaleLinear()
-          .range([40, 200]) // remember to set the domain (current variable) before assigning a value
+        size = d3.scaleLinear()
+          .range([40, 200]); // remember to set the domain (current variable) before assigning a value
 
         // Vertical center
-        var xCenter = svg.append("line")
+        xCenter = svg.append("line")
           .attr("x1", x(0))
           .attr("y1", padding)
           .attr("x2", x(0))
           .attr("y2", height-padding)
           .attr("stroke", "lightgray")
-          .attr("stroke-width", 1)
+          .attr("stroke-width", 1);
 
         // Horizontal center
-        var yCenter = svg.append("line")
+        yCenter = svg.append("line")
           .attr("x1", padding)
           .attr("y1", y(0))
           .attr("x2", width-padding)
           .attr("y2", y(0))
           .attr("stroke", "lightgray")
-          .attr("stroke-width", 1)
+          .attr("stroke-width", 1);
 
         // Axes (tickSizeOuter(0) avoids overlap of axes)
-        var xAxis = d3.axisBottom(x).tickSizeOuter(0);
+        xAxis = d3.axisBottom(x).tickSizeOuter(0);
         svg.append("g")
           .attr("id", "xaxis")
           .attr("transform", "translate(0, " + (height-padding) + ")")
           .call(xAxis);
 
-        var yAxis = d3.axisLeft(y).tickSizeOuter(0);
+        yAxis = d3.axisLeft(y).tickSizeOuter(0);
         svg.append("g")
           .attr("id", "yaxis")
           .attr("transform", "translate(" + padding + ", 0)")
           .call(yAxis);
 
+        // Select brush or click
+        $(document).on('change', 'input[name="selection"]', function(event) {
+          var radio = d3.select(this).attr('value');
+          if(radio == 'brush') {
+            svg.append('g')
+              .attr("transform", "translate(" + padding + ", " + padding + ")")
+              .attr("class", "brush")
+              .call(brush);
+            } else {
+              svg.selectAll(".brush").remove();
+            }
+            tokselection = [];
+            updateTokSelection(tokselection);
+        });
         
         // What happens with the zoom
         function zoomed() {
-          newY = d3.event.transform.rescaleY(y)
-          newX = d3.event.transform.rescaleY(x)
+          newY = d3.event.transform.rescaleY(y);
+          newX = d3.event.transform.rescaleY(x);
           svg.select('#xaxis').call(xAxis.scale(newX)); // x axis rescaled
           svg.select('#yaxis').call(yAxis.scale(newY)); // y axis rescaled
-          dot.attr("transform", function(d) {
-            return("translate(" + newX(d[model + '.x']) +  ", " + newY(d[model + '.y']) + ")")
-          }) // dots repositioned
-          xCenter.attr("x1", newX(0)).attr("x2", newX(0)) // central x rescaled
-          yCenter.attr("y1", newY(0)).attr("y2", newY(0)) // central y rescaled
+          dot
+            .attr('xcoord', function(d) {return (newX(d[model + '.x'])); })
+            .attr('ycoord', function(d) {return (newY(d[model + '.y'])); })
+            .attr("transform", function(d) { return ("translate(" + d3.select(this).attr('xcoord') + "," + d3.select(this).attr('ycoord') + ")"); }); // dots repositioned
+          xCenter.attr("x1", newX(0)).attr("x2", newX(0)); // central x rescaled
+          yCenter.attr("y1", newY(0)).attr("y2", newY(0)); // central y rescaled
+          svg.selectAll(".brush").remove();
         };
-        
-        
+
         // Design of The Dot
 
-        var dot = svg.append("g")
+        function exists(t) {
+            return (d3.format('.3r')(t[model + '.x']) != '0.00' || d3.format('.3r')(t[model + '.y']) != '0.00');
+          }
+
+        dot = svg.append("g")
           .attr("class", "dot")
           .selectAll("path")
           .data(dataset)
 	        .enter()
           .append('path')
-          .attr("transform", function(d) { return ("translate(" + x(d[model + '.x']) + "," + y(d[model + '.y']) + ")"); })
-          .attr("d", d3.symbol().type(function (d) {
-            return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle)}).size(function(d) {
+          .attr('xcoord', function(d) {return (x(d[model + '.x'])); })
+          .attr('ycoord', function(d) {return (y(d[model + '.y'])); })
+          .attr("transform", function(d) { return ("translate(" + d3.select(this).attr('xcoord') + "," + d3.select(this).attr('ycoord') + ")"); })
+          .attr("d", d3.symbol()
+            .type(function (d) {return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle);})
+            .size(function(d) {
               if (typeof(sizevar) == 'string') {
-                size.domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
-                return(size(+d[sizevar]))
+                size.domain(d3.extent(dataset, function(d) {return +d[sizevar]; }));
+                return(size(+d[sizevar]));
               } else {
-                return(64)
+                return(64);
               }}))
-          .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4")})
-          .classed("lighter", function(d) {return (tokselection.length > 0 ? tokselection.indexOf(d['_id']) === -1 : false)})
+          .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4"); })
+          .classed("lighter", function(d) {return (tokselection.length > 0 ? (tokselection.indexOf(d['_id']) === -1 && exists(d)) : false); })
+          .classed("lost", function(d) {return (!exists(d)); })
           .on("mouseover", showContext)
           .on('mouseout', function() {
             tooltip.transition()
@@ -345,22 +457,60 @@
             d3.selectAll(".selector").remove();
           })
           .on('click', function(d) {
-            modName = d['_id']
-            modIndex = tokselection.indexOf(modName)
+            var modName = d['_id'];
+            var modIndex = tokselection.indexOf(modName);
             if (modIndex > -1) {
-              tokselection.splice(modIndex, 1)
+              tokselection.splice(modIndex, 1);
             } else {
-              tokselection.push(modName)
+              tokselection.push(modName);
             }
-            updateTokSelection(tokselection)
-          })
+            updateTokSelection(tokselection);
+          });
+        
+        // Set up brush
+        brush = d3.brush()
+          .extent([[0,0],[width, height]])
+          .on('start', brushstart)
+          .on('brush', brushing)
+          .on('end', brushed);
+
+        function brushstart() {
+          tokselection = [];
+          cws = [];
+          cwsFreq = [];
+        }
+
+        function brushing() {
+          var e = d3.event.selection;
+          if (!(e == null)){
+          dot.classed('lighter', function(d) {
+            var xc = d3.select(this).attr('xcoord');
+            var yc = d3.select(this).attr('ycoord');
+            return ((xc < e[0][0]+padding ||
+              xc > e[1][0]+padding ||
+              yc < e[0][1]+padding ||
+              yc > e[1][1]+padding) &&
+              exists(d));
+            });
+            }
+        }
+
+        function brushed(p) {
+          tokselection = [];
+          dot.each(function(d) {
+            if(!(d3.select(this).classed("lighter")) && exists(d)) {
+              tokselection.push(d['_id']);
+              }
+            });
+          updateTokSelection(tokselection);
+        }
 
         // what happens when we click on the dropdowns?
         colorDropdown.on("click", function() {
           this.value == 'Reset' ? colorvar = null : colorvar = this.value;
           localStorage.setItem("colorvar-" + type, JSON.stringify(colorvar));
           colorselection = [];
-          cleanStor('colorsel-' + type)
+          cleanStor('colorsel-' + type);
           updatePlot();
           updateLegend();
         });
@@ -369,7 +519,7 @@
           this.value == 'Reset' ? shapevar = null : shapevar = this.value;
           localStorage.setItem("shapevar-" + type, JSON.stringify(shapevar));
           shapeselection = [];
-          cleanStor('shapesel-' + type)
+          cleanStor('shapesel-' + type);
           updatePlot();
           updateLegend();
         });
@@ -377,11 +527,9 @@
         sizeDropdown.on("click", function() {
           this.value == 'Reset' ? sizevar = null : sizevar = this.value;
           if (typeof(sizevar) == 'string') {
-            size.domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
+            size.domain(d3.extent(dataset, function(d) {return (+d[sizevar]); }));
           }
           localStorage.setItem("sizevar-" + type, JSON.stringify(sizevar));
-          //sizevarselection = []
-          //localStorage.setItem("sizesel-" + type, JSON.stringify(null))
           updatePlot();
           updateLegend();
         });
@@ -389,38 +537,37 @@
         ctxtDropdown.on("click", function() {
           this.value == 'Reset' ? ctxtvar = null : ctxtvar = this.value;
           localStorage.setItem("ctxtvar-" + type, JSON.stringify(ctxtvar));
-          dot.on("mouseover", showContext)
+          dot.on("mouseover", showContext);
         });
 
         modDropdown.on("click", function() {
           model = this.value;
-          window.open("level3.html" + "?type=" + type + "&model=" + model, "_self")
+          window.open("level3.html" + "?type=" + type + "&model=" + model, "_self");
         });
 
         // clear selection of models
         d3.select("#clear-select")
           .on("click", function() {
-            tokselection = []
-            colorselection = []
-            shapeselection = []
-            cleanStor('colorsel-' + type)
-            cleanStor('shapesel-' + type)
-            updateTokSelection(tokselection)
+            tokselection = [];
+            colorselection = [];
+            shapeselection = [];
+            cleanStor('colorsel-' + type);
+            cleanStor('shapesel-' + type);
+            updateTokSelection(tokselection);
           });
 
         d3.select("#model-select")
           .on("click", function() {
-            window.open("level2.html" + "?type=" + type, "_self")
-          })
+            window.open("level2.html" + "?type=" + type, "_self");
+          });
 
         // Updating color, shape and size after every button clicking
         function updatePlot() {
-          dot.style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4")})
-            .attr("d", d3.symbol().type(function(d) {
-              return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle)
-              }).size(function(d) {
-                return (typeof(sizevar) == 'string' ? size(+d[sizevar]) : 64)}))
-        };
+          dot.style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4"); })
+            .attr("d", d3.symbol()
+              .type(function(d) {return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle); })
+              .size(function(d) {return (typeof(sizevar) == 'string' ? size(+d[sizevar]) : 64); }));
+        }
 
         // Generate complementary colors for the circle on hover
         function compColor(col) {
@@ -429,7 +576,7 @@
           newHue = +hue < 180 ? +(hue + 180) : +(hue-180);
           res['h'] = newHue;
           return(res.toString());
-        };
+        }
 
         // Short function to obtain the possible values of a variable
         function getValues(colname) {
@@ -437,16 +584,79 @@
         }
 
         function cleanStor(item) {
-          localStorage.setItem(item, JSON.stringify(null))
+          localStorage.setItem(item, JSON.stringify(null));
         }
+
+        d3.select("#findtokens_btn").on('click', function() {
+          var cw_to_search = d3.select("#findtokens_cw").property('value');
+          var result = dataset.filter(function(d) {
+            return(d[cws_column].split(';').indexOf(cw_to_search) > -1);
+          });
+          if (result.length > 0) {
+            tokselection = d3.map(result, function(d) {return(d['_id']); }).keys();
+            updateTokSelection(tokselection);
+          } else {
+            window.alert('Sorry, "' + cw_to_search + '" is not present as a feature in this model.');
+          }
+          })
 
         // update model selection
         function updateTokSelection(tokselection) {
-          // stores 'null' if it's empty and the list otherwise
-          localStorage.setItem("tokselection", tokselection.length > 0 ? JSON.stringify(tokselection) : JSON.stringify(null))
+          // stores 'null' if it's empty and the list otherwise, also checking if the token occurs in the model
+          tokselection = tokselection.filter(function(t) {return(exists(t)); });
+          localStorage.setItem("tokselection", tokselection.length > 0 ? JSON.stringify(tokselection) : JSON.stringify(null));
           // if something is selected everything else is translucent
-          dot.classed("lighter", function(d) {return (tokselection.length > 0 ? tokselection.indexOf(d['_id']) === -1 : false)})
+          dot.classed("lighter", function(d) {return (tokselection.length > 0 ? (tokselection.indexOf(d['_id']) === -1) : false); });
+          drawTable(tokselection);
         };
+
+        function drawTable(tokselection) {
+
+          d3.tsv(type + '/' + weights + '.tsv', function(data) {
+            cws = [];
+            d3.select('tbody').remove();
+            if (tokselection.length > 0){
+              dot.each(function(d) {
+                if(tokselection.indexOf(d['_id']) > -1) {
+                  cws.push(d[cws_column]);
+                  countCws(cws);
+                }
+              });
+              rows = table.append('tbody').selectAll('tr')
+                .data(cwsFreq).enter()
+                .append('tr');
+              rows.selectAll('td')
+                .data(function(d) {
+                  return(d3.keys(cwsFreq[0]).map(function(k) {
+                    return({'name' : k, 'value' : d[k]});
+                    }));
+                  }).enter()
+                .append('td')
+                .attr('data-th', function(d) {return(d.name); })
+                .text(function(d) {return(d.value); });
+            }
+                        
+            $("table").DataTable({
+              'destroy' : true,
+              'order' : [[1, 'desc']]
+            });
+            
+            function countCws(cws){
+              cwsFreq = [];
+              var mySet = new Set(cws.join(";").split(";"));
+              mySet.forEach(function(d) {
+                var ppmi = data.filter(function(p) {return(p.cw == d); })[0];
+                cwsFreq.push({
+                  'cw' : d,
+                  'tokens' : cws.filter(function(a) {
+                    return(a.split(';').indexOf(d) > -1);
+                    }).length,
+                  'ppmi' : ppmi == undefined ? 'NA' : d3.format('.3')(ppmi['ppmi'])
+                  });
+                });
+              }
+          });
+        }
 
         // Update Legends after each dropdown is changed
 
@@ -469,127 +679,128 @@
           }
 
         function updateLegend() {
-          var legendList = []
-          legendContainer.selectAll(".legend").remove()
-          colorvalues = typeof(colorvar) == 'string' ? getValues(colorvar) : +0
-          shapevalues = typeof(shapevar) == 'string' ? getValues(shapevar) : +0
-          sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0
+          legendList = [];
+          legendContainer.selectAll(".legend").remove();
+          colorvalues = typeof(colorvar) == 'string' ? getValues(colorvar) : +0;
+          shapevalues = typeof(shapevar) == 'string' ? getValues(shapevar) : +0;
+          sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0;
 
           // Update color legend
           if (typeof(colorvalues) != 'number'){
-            colorscale = d3.scaleOrdinal()
+            var colorscale = d3.scaleOrdinal()
               .domain(colorvalues)
-              .range(colorvalues.map(color))
+              .range(colorvalues.map(color));
             
-            var legendColor = d3.legendColor()
+            legendColor = d3.legendColor()
               .shape("path", d3.symbol().type(d3.symbolCircle).size(64)())
               .scale(colorscale)
               .title(colorvar)
               .on("cellclick", function(d) {
                 if (colorselection.indexOf(d) > -1) {
-                  colorselection.splice(colorselection.indexOf(d), 1)
+                  colorselection.splice(colorselection.indexOf(d), 1);
                   } else {
-                  colorselection.push(d)
+                  colorselection.push(d);
                   }
-                localStorage.setItem("colorsel-" + type, JSON.stringify(colorselection))
+                localStorage.setItem("colorsel-" + type, JSON.stringify(colorselection));
                 if (colorselection.length > 0) {
-                  tokselection = d3.map(dataset, function(d) {if (colorselection.indexOf(d[colorvar]) > -1) {return(d['_id'])}}).keys()
+                  tokselection = d3.map(dataset, function(d) {if (colorselection.indexOf(d[colorvar]) > -1) {return(d['_id']); }}).keys();
                   } else {
-                  tokselection = []
+                  tokselection = [];
                   }
-                updateTokSelection(tokselection)
-              })
+                updateTokSelection(tokselection);
+              });
          
-              legendContainer.append("g")
+            legendContainer.append("g")
               .attr("class", "legend")
               .style('cursor', 'pointer')
               .attr("id", "legendColor")
               .attr("transform", "translate(0, "+ padding + ")")
               .call(legendColor);
 
-            legendList.push('color')
+            legendList.push('color');
             
               } else {
                 if(legendList.indexOf('color') > -1) {legendList.splice(indexOf('color'), 1);}
-                legendContainer.select("#legendColor").remove()
+                legendContainer.select("#legendColor").remove();
               }
           
           // Update shape legend
           if (typeof(shapevalues) != 'number'){
-            shapescale = d3.scaleOrdinal()
+            var shapescale = d3.scaleOrdinal()
               .domain(shapevalues)
               .range(shapevalues.map(function(d) {
                 return(d3.symbol().type(shape(d))());
-              }))
+              }));
             
-            var legendShape = d3.legendSymbol()
+            legendShape = d3.legendSymbol()
               .scale(shapescale)
               .title(shapevar)
               .on("cellclick", function(d) {
                 if (shapeselection.indexOf(d) > -1) {
-                  shapeselection.splice(shapeselection.indexOf(d), 1)
+                  shapeselection.splice(shapeselection.indexOf(d), 1);
                   } else {
-                  shapeselection.push(d)
+                  shapeselection.push(d);
                   }
-                localStorage.setItem("shapesel-" + type, JSON.stringify(shapeselection))
+                localStorage.setItem("shapesel-" + type, JSON.stringify(shapeselection));
                 if (shapeselection.length > 0) {
-                  tokselection = d3.map(dataset, function(d) {if (shapeselection.indexOf(d[shapevar]) > -1) {return(d['_id'])}}).keys()
+                  tokselection = d3.map(dataset, function(d) {if (shapeselection.indexOf(d[shapevar]) > -1) {return(d['_id']); }}).keys();
                   } else {
-                  tokselection = []
+                  tokselection = [];
                   }
-                updateTokSelection(tokselection)
+                updateTokSelection(tokselection);
               })
 
-            var valign = legendList.indexOf('color') == -1 ? +padding : +(padding + 200)
+            halign = legendList.indexOf('color') == -1 ? 0 : 150;
             
             legendContainer.append("g")
               .attr("class", "legend")
               .attr("id", "legendShape")
               .style('cursor', 'pointer')
-              .attr("transform", "translate(0, " + valign + ")")
+              .attr("transform", "translate(" + halign + ", " + padding + ")")
               .call(legendShape);
 
-            legendList.push('shape')
+            legendList.push('shape');
             
               } else {
-                if(legendList.indexOf('shape') > -1) {legendList.splice(legendList.indexOf('shape'), 1)}
-                legendContainer.select("#legendShape").remove()
+                if(legendList.indexOf('shape') > -1) {legendList.splice(legendList.indexOf('shape'), 1); }
+                legendContainer.select("#legendShape").remove();
               }
 
           // Update size legend
           if (typeof(sizevalues) != 'number'){
-            sizescale = d3.scaleLinear()
-              .domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
-              .range([5, 8])
-            var sizevalues = sizevalues.map(function(d) {return +d;}).sort()
-            var smallNumbers = (sizescale.domain()[1]-sizescale.domain()[0])/(sizevalues.length-1) < 1
+            var sizescale = d3.scaleLinear()
+              .domain(d3.extent(dataset, function(d) {return (+d[sizevar]); }))
+              .range([5, 8]);
+            var sizevalues = sizevalues.map(function(d) {return (+d); }).sort();
+            var smallNumbers = (sizescale.domain()[1]-sizescale.domain()[0])/(sizevalues.length-1) < 1;
             
-            var legendSize = d3.legendSize()
+            legendSize = d3.legendSize()
               .shape('circle')
               .scale(sizescale)
               .title(sizevar)
               .cells(sizevalues.length >= 5 ? 5 : sizevalues)
-              .labelFormat(smallNumbers ? ".04r" : ".0d")           
+              .labelFormat(smallNumbers ? ".04r" : ".0d");
               // no selection through size
 
-            var valign = +(padding + 200*legendList.length)
+            halign = 150*legendList.length;
             
             legendContainer.append("g")
               .attr("class", "legend")
               .attr("id", "legendShape")
-              .attr("transform", "translate(0, " + valign + ")")
+              .attr("transform", "translate(" + halign + ", " + padding + ")")
               .call(legendSize);
 
-            legendList.push('size')
+            legendList.push('size');
             
               } else {
-                if(legendList.indexOf('size') > -1) {legendList.splice(legendList.indexOf('size'), 1)}
-                legendContainer.select("#legendSize").remove()
+                if(legendList.indexOf('size') > -1) {legendList.splice(legendList.indexOf('size'), 1); }
+                legendContainer.select("#legendSize").remove();
               }
         }
 
         updateLegend();
         updateTokSelection(tokselection);
+
       });
       
     </script>
