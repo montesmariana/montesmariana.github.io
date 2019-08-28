@@ -105,34 +105,10 @@
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
 
     <script>
+      var type, modselection, tokselection;
+      var ncol, nrow, width, height, padding;
 
-      // function responsivefy(svg) {
-      // // get container + svg aspect ratio
-      //   var container = d3.select(svg.node().parentNode),
-      //     width = parseInt(svg.style("width")),
-      //     height = parseInt(svg.style("height")),
-      //     aspect = width / height;
-
-      //   // add viewBox and preserveAspectRatio properties,
-      //   // and call resize so that svg resizes on inital page load
-      //   svg.attr("viewBox", "0 0 " + width + " " + height)
-      //     .attr("perserveAspectRatio", "xMinYMid")
-      //     .call(resize);
-
-      //   // to register multiple listeners for same event type, 
-      //   // you need to add namespace, i.e., 'click.foo'
-      //   // necessary if you call invoke this function for multiple svgs
-      //   // api docs: https://github.com/mbostock/d3/wiki/Selections#on
-      //   d3.select(window).on("resize." + container.attr("id"), resize);
-
-      //   // get width of container and resize svg to fit it
-      //   function resize() {
-      //     var targetWidth = parseInt(container.style("width"));
-      //     svg.attr("width", targetWidth);
-      //     svg.attr("height", Math.round(targetWidth / aspect));
-      //   }
-      // }
-      var getUrlParameter = function getUrlParameter(sParam) {
+      function getUrlParameter(sParam) {
         var sPageURL = decodeURIComponent(window.location.search.substring(1)),
           sURLVariables = sPageURL.split('&'),
           sParameterName,
@@ -147,79 +123,75 @@
           }
         };
 
-      var type = getUrlParameter('type')
-      d3.select("h1").html("Level 2 (<em>" + type + "</em>)")
+      type = getUrlParameter('type');
+      d3.select("h1").html("Level 2 (<em>" + type + "</em>)");
 
       // Go back to previous level
       d3.select("#to-level1").on("click", function() {
         window.open("level1.html" + "?type=" + type, "_self")
-      })
+      });
 
       // first info from LocalStorage
-      var modselection = JSON.parse(localStorage.getItem("modselection"))
-        if (modselection == null) {
-          window.alert("No models found in selection, let's go back to Level 1!");
-          window.open("level1.html" + "?type=" + type, "_self");
-        } else if (modselection.length > 9) {
-          window.alert("You have selected too many models, only the first 9 will be used.");
-          modselection = modselection.slice(0, 9);
-          localStorage.setItem("modselection", JSON.stringify(modselection));
-          console.log(modselection.length);
-        }
+      modselection = JSON.parse(localStorage.getItem("modselection"));
+      if (modselection == null) {
+        window.alert("No models found in selection, let's go back to Level 1!");
+        window.open("level1.html" + "?type=" + type, "_self");
+      } else if (modselection.length > 9) {
+        window.alert("You have selected too many models, only the first 9 will be used.");
+        modselection = modselection.slice(0, 9);
+        localStorage.setItem("modselection", JSON.stringify(modselection));
+        console.log(modselection.length);
+      }
 
-      var ncol = 3 // number of columns in the grid
-      var nrow = Math.ceil(modselection.length/ncol) // number of rows in the grid
-      var width = 300;
-      var height = 300;
-      var padding = 30;
+      ncol = 3; // number of columns in the grid
+      nrow = Math.ceil(modselection.length/ncol); // number of rows in the grid
+      width = 300, height = 300, padding = 30;
 
       // Use the data!
       d3.tsv(type + '/' + type + ".tsv", function(data) {
+        var dataset;
+        var colnames, othercols, nominals, numerals;
+        var colorvar, colorvalues, shapevar, shapevalues, sizevar, sizevalues;
+        var colorDropdown, shapeDropdown, sizeDropdown, modDropdown;
+        var tooltip;
+        var svg, legendContainer, cells;
+        var brush, brushCell;
+        var xmin = [], ymin = [], xmax = [], ymax = []; // to scale the plots
+        var xAxis, yAxis;
+        var x, y, xrange, yrange, color, shape, size; // for scales
+        var i, j, m; // to iterate over the models
+        var legendList, legendColor, legendSize, legendShape, halign; // for legends
+
         // load the data
-        var dataset = data;
+        dataset = data;
         
         // classify columns
-        var colnames = d3.keys(dataset[0]);
-        var xcol = colnames.filter(function(d) { return d.endsWith(".x"); })[0];
-        var ycol = colnames.filter(function(d) { return d.endsWith(".y"); })[0];
-        var othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y") && !d.startsWith("_"))});
+        colnames = d3.keys(dataset[0]);
+        othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y") && !d.startsWith("_")); });
 
-        var nominals = othercols.filter(function(d) {return (!(getValues(d).every(function(d) {return(!isNaN(d))})) && getValues(d).length <= 5)})
-        nominals.push('Reset')
+        nominals = othercols.filter(function(d) {return (!(getValues(d).every(function(d) {return(!isNaN(d)); })) && getValues(d).length <= 5); });
+        nominals.push('Reset');
 
-        var numerals = othercols.filter(function(d) {return (getValues(d).every(function(d) {return(!isNaN(d))}))})
-        numerals.push('Reset')
+        numerals = othercols.filter(function(d) {return (getValues(d).every(function(d) {return(!isNaN(d)); })); });
+        numerals.push('Reset');
         
         // information from localStorage
-        var colorvar = JSON.parse(localStorage.getItem("colorvar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("colorvar-" + type))
-        var colorvalues = typeof(colorvar) == 'string' ? getValues(colorvar) : +0
-        // var colorselection = JSON.parse(localStorage.getItem("colorsel")) == null ? [] : JSON.parse(localStorage.getItem("colorsel"))
+        colorvar = JSON.parse(localStorage.getItem("colorvar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("colorvar-" + type));
+        colorvalues = typeof(colorvar) == 'string' ? getValues(colorvar) : +0;
+        // var colorselection = JSON.parse(localStorage.getItem("colorsel")) == null ? [] : JSON.parse(localStorage.getItem("colorsel"));
 
-        var shapevar = JSON.parse(localStorage.getItem("shapevar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("shapevar-" + type))
-        var shapevalues = typeof(shapevar) == 'string' ? getValues(shapevar) : +0
+        shapevar = JSON.parse(localStorage.getItem("shapevar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("shapevar-" + type));
+        shapevalues = typeof(shapevar) == 'string' ? getValues(shapevar) : +0;
         // var shapeselection = JSON.parse(localStorage.getItem("shapesel")) == null ? [] : JSON.parse(localStorage.getItem("shapesel"))
         
-        var sizevar = JSON.parse(localStorage.getItem("sizevar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("sizevar-" + type))
-        var sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0
+        sizevar = JSON.parse(localStorage.getItem("sizevar-" + type)) == null ? undefined : JSON.parse(localStorage.getItem("sizevar-" + type));
+        sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0;
         //var sizeselection = JSON.parse(localStorage.getItem("sizesel")) == null ? [] : JSON.parse(localStorage.getItem("sizesel"))
         
-        var tokselection = JSON.parse(localStorage.getItem("tokselection")) == null ? [] : JSON.parse(localStorage.getItem("tokselection"))
+        tokselection = JSON.parse(localStorage.getItem("tokselection")) == null ? [] : JSON.parse(localStorage.getItem("tokselection"));
         
-        // Obtain context words
-        // var table_cols = ['Feature']
-        // modselection.forEach(function(x) {table_cols.push(modselection.indexOf(x)+1)})
-        // var cws = []
-        // var cwsFreq = []
-        // Add frequency table of context words
-        // var table = d3.select("#cwsFreq").append("table");
-        // headers = table.append('thead').append('tr')
-        //   .selectAll('th')
-        //   .data(table_cols).enter()
-        //   .append("th")
-        //   .text(function(d) {return(d)});
-
         // set up dropdowns
-        var colorDropdown = d3.select("#colour").selectAll("button")
+        colorDropdown = d3.select("#colour").selectAll("button")
           .data(nominals)
           .enter()
           .append("button")
@@ -228,7 +200,7 @@
           .attr("value", function (d) { return(d); })
           .text(function (d) { return(d); });
 
-        var shapeDropdown = d3.select("#shape").selectAll("button")
+        shapeDropdown = d3.select("#shape").selectAll("button")
           .data(nominals)
           .enter()
           .append("button")
@@ -237,7 +209,7 @@
           .attr("value", function (d) { return(d); })
           .text(function (d) { return(d); });
 
-        var sizeDropdown = d3.select("#size").selectAll("button")
+        sizeDropdown = d3.select("#size").selectAll("button")
           .data(numerals)
           .enter()
           .append("button")
@@ -246,7 +218,7 @@
           .attr("value", function (d) { return(d); })
           .text(function (d) { return(d); });
 
-        var modDropdown = d3.select("#models").selectAll("button")
+        modDropdown = d3.select("#models").selectAll("button")
           .data(modselection)
           .enter()
           .append("button")
@@ -261,167 +233,147 @@
           .attr("width", 100)
           .attr("height", 20)
           .style('position', 'absolute')
-          .style("opacity", 0)
+          .style("opacity", 0);
 
         // Set up legend area next to it (horizontal and before plots)
-        var legendContainer = d3.select("#legendContainer").append("svg")
+        legendContainer = d3.select("#legendContainer").append("svg")
           .attr("width", 500)
           //.attr("height", 100)
-          .attr("transform", "translate(0, 0)")
+          .attr("transform", "translate(0, 0)");
         
         // Set up canvas
-        var svg = d3.select("#svgContainer").append("svg")
+        svg = d3.select("#svgContainer").append("svg")
           .attr("width", width*ncol)
           .attr("height", height*nrow + padding*2)
           //.style("background-color", "lightgray")
           .attr("transform", "translate(0,0)")
-          .append("g")
+          .append("g");
         
         // Set up brush
-        var brushCell
-
-        var brush = d3.brush()
+        brush = d3.brush()
           .extent([[0,0],[width, height]])
           .on('start', brushstart)
           .on('brush', brushing)
-          .on('end', brushed)
+          .on('end', brushed);
 
         function brushstart(p) {
           if(!(brushCell == this)){
-          if(!(brushCell == undefined)) {d3.selectAll('.brush').call(brush.move, null)}
-          tokselection = []
-          updateTokSelection(tokselection)
-          brushCell = this}
+          if(!(brushCell == undefined)) {d3.selectAll('.brush').call(brush.move, null); }
+          tokselection = [];
+          updateTokSelection(tokselection);
+          brushCell = this;
+          }
         }
 
         function brushing(p) {
-          var e = d3.event.selection
+          var e = d3.event.selection;
           if (!(e == null)){
           svg.selectAll('.dot').selectAll('path')
             .classed('lighter', function(d) {
-              var xc = x(d[p.m + '.x'])
-              var yc = y(d[p.m + '.y'])
-              return (xc < e[0][0]+padding || xc > e[1][0]+padding || yc < e[0][1]+padding || yc > e[1][1]+padding)
-            })}
+              var xc = x(d[p.m + '.x']);
+              var yc = y(d[p.m + '.y']);
+              return (xc < e[0][0]+padding || xc > e[1][0]+padding || yc < e[0][1]+padding || yc > e[1][1]+padding);
+            }); }
         }
 
         function brushed(p) {
-          tokselection = []
+          tokselection = [];
           svg.selectAll('.dot').selectAll('path')
             .each(function(d) {
-              if(!(d3.select(this).classed("lighter"))) {
-                if (tokselection.indexOf(d['_id']) === -1){
-                  tokselection.push(d['_id']);
-                }
+              if(!(d3.select(this).classed("lighter")) && tokselection.indexOf(d['_id']) === -1) {
+                tokselection.push(d['_id']);
               }
-            })
-          updateTokSelection(tokselection)
+            });
+          updateTokSelection(tokselection);
         }
-        
-
-        // Set up pointing area so you can have zoom with the mouse in any point of the plot
-        // svg.append("rect")
-        //   .attr("width", width*ncol)
-        //   .attr("height", height*nrow)
-        //   .attr("transform", "translate(0,0)")
-        //   .style("pointer-events", "all")
-        //   .style("fill", "none")
-
+    
         // Set up scales (axes, color...) - coordinates multiplied to get some padding in a way
-        var xmin = []
-        var ymin = []
-        var xmax = []
-        var ymax = []
         modselection.forEach(function(item) {
-          xmin.push(d3.min(dataset, function(d) {return +d[item + ".x"]}))
-          ymin.push(d3.min(dataset, function(d) {return +d[item + ".y"]}))
-          xmax.push(d3.max(dataset, function(d) {return +d[item + ".x"]}))
-          ymax.push(d3.max(dataset, function(d) {return +d[item + ".y"]}))
-          })
+          xmin.push(d3.min(dataset, function(d) {return (+d[item + ".x"]); }));
+          ymin.push(d3.min(dataset, function(d) {return (+d[item + ".y"]); }));
+          xmax.push(d3.max(dataset, function(d) {return (+d[item + ".x"]);}));
+          ymax.push(d3.max(dataset, function(d) {return (+d[item + ".y"]);}));
+          });
         
-        var xrange = [d3.min(xmin) * 1.05, d3.max(xmax) * 1.05]
-        var yrange = [d3.min(ymin) * 1.05, d3.max(ymax) * 1.05]
+        xrange = [d3.min(xmin) * 1.05, d3.max(xmax) * 1.05];
+        yrange = [d3.min(ymin) * 1.05, d3.max(ymax) * 1.05];
         
-
-        var x = d3.scaleLinear()
+        x = d3.scaleLinear()
           .domain(xrange)
           .range([padding, width]);
 
-        var y = d3.scaleLinear()
+        y = d3.scaleLinear()
           .domain(yrange)
           .range([height, padding]);
 
-        var color = d3.scaleOrdinal(d3.schemeCategory10);
+        color = d3.scaleOrdinal(d3.schemeCategory10);
 
-        var shape = d3.scaleOrdinal(d3.symbols);
+        shape = d3.scaleOrdinal(d3.symbols);
 
-        var size = d3.scaleLinear()
-          .range([40, 200]) // remember to set the domain (current variable) before assigning a value
+        size = d3.scaleLinear()
+          .range([40, 200]); // remember to set the domain (current variable) before assigning a value
 
         // Vertical center
-
-        var i, j, m
-        var xAxis = d3.axisBottom(x).tickSizeOuter(0);
-        var yAxis = d3.axisLeft(y).tickSizeOuter(0);
+        xAxis = d3.axisBottom(x).tickSizeOuter(0);
+        yAxis = d3.axisLeft(y).tickSizeOuter(0);
 
         function combine(modselection) {
-          var c = []
+          var c = [];
           for (m = 0, i = 0, j = 0; m < modselection.length; m ++) {
-            c.push({m : modselection[m], i : i, j : j})
+            c.push({m : modselection[m], i : i, j : j});
             if (i == ncol-1) {
             i = 0;
             j += 1;
           } else {
-            i += 1
+            i += 1;
           }
           }
-          return(c)
+          return(c);
         }
 
         function exists(t, c) {
-              thisModel = c.attr('model')
-              return (d3.format('.3r')(t[thisModel + '.x']) != '0.00' || d3.format('.3r')(t[thisModel + '.y']) != '0.00')
-            }
+          var thisModel = c.attr('model');
+          return (d3.format('.3r')(t[thisModel + '.x']) != '0.00' || d3.format('.3r')(t[thisModel + '.y']) != '0.00');
+        }
 
-        var cells = svg.selectAll(".cell")
+        cells = svg.selectAll(".cell")
           .data(combine(modselection))
           .enter()
           .append('g')
           .attr('class', 'cell')
           .attr('transform', function(d) {
-            return('translate(' + (+d.i)*width + ", " + +((height+padding/2)*(+d.j)) + ")")
+            return('translate(' + (+d.i)*width + ", " + +((height+padding/2)*(+d.j)) + ")");
           })
           .attr('model', function(d) {return(d.m)})
           .each(plotCell);
 
         $(document).on('change', 'input[name="selection"]', function(event) {
-          var radio = d3.select(this).attr('value')
+          var radio = d3.select(this).attr('value');
           if(radio == 'brush') {
               cells.append('g')
                 .attr("transform", "translate(" + padding + ", " + padding + ")")
                 .attr("class", "brush")
-                .call(brush)
+                .call(brush);
             } else {
-              svg.selectAll(".brush").remove()
+              svg.selectAll(".brush").remove();
             }
-            selectionMode = radio
-            tokselection = []
-            updateTokSelection(tokselection)
+          tokselection = [];
+          updateTokSelection(tokselection);
         })
 
         function plotCell(p) {
-          var cell = d3.select(this)
+          var cell = d3.select(this);
           
           cell.append('text')
-          .attr('x', padding)
-          .attr('y', padding)
-          .attr('dy', '-0.5em')
-          .attr('font-size', '0.7em')
-          .style('cursor', 'pointer')
-          .text(function(d) {return(modselection.indexOf(d.m)+1 + ': ' + d.m)})
-          .on("click", function(d) {
-            window.open("level3.html" + "?type=" + type + "&model=" + d.m, "_self")
-          });
+            .attr('x', padding)
+            .attr('y', padding)
+            .attr('dy', '-0.5em')
+            .attr('font-size', '0.7em')
+            .style('cursor', 'pointer')
+            .text(function(d) { return (modselection.indexOf(d.m)+1 + ': ' + d.m); })
+            .on("click", function(d) {
+              window.open("level3.html" + "?type=" + type + "&model=" + d.m, "_self");
+            });
 
           // Draw frame
           cell.append('rect')
@@ -432,7 +384,7 @@
             .style('fill',  'none')
             .style('stroke', 'black')
             .style("pointer-events", "all")
-            .style('stroke-width', 0.5)
+            .style('stroke-width', 0.5);
 
           cell.append('line')
             .attr("class", "xCenter")
@@ -441,7 +393,7 @@
             .attr("x2", x(0))
             .attr("y2", height)
             .attr("stroke", "lightgray")
-            .attr("stroke-width", 1)  
+            .attr("stroke-width", 1);
 
           cell.append('line')
             .attr("class", "yCenter")
@@ -450,7 +402,7 @@
             .attr("y2", y(0))
             .attr("x2", width)
             .attr("stroke", "lightgray")
-            .attr("stroke-width", 1)
+            .attr("stroke-width", 1);
 
           cell.append("g")
             .attr("class", "axis xAxis")
@@ -471,32 +423,33 @@
             .append('path')
             .attr("transform", function(d) {
               return ("translate(" + x(d[cell.attr('model') + '.x']) + "," + y(d[cell.attr('model') + '.y']) + ")"); })
-            .attr("d", d3.symbol().type(function (d) {
-              return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle)}).size(function(d) {
+            .attr("d", d3.symbol()
+              .type(function (d) {return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle); })
+              .size(function(d) {
                 if (typeof(sizevar) == 'string') {
-                  size.domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
-                  return(size(+d[sizevar]))
+                  size.domain(d3.extent(dataset, function(d) {return (+d[sizevar]); }));
+                  return(size(+d[sizevar]));
                 } else {
-                  return(50)
+                  return(50);
                 }}))
-            .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4")})
+            .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4"); })
             .style('opacity', 0.7)
             .attr('model', modselection[m])
             //.attr('token_id', function(d) {return(d['_id'])})
             .classed("lighter", function(d) {
-              return (tokselection.length > 0 ? (tokselection.indexOf(d['_id']) === -1 && exists(d, cell)) : false)
+              return (tokselection.length > 0 ? (tokselection.indexOf(d['_id']) === -1 && exists(d, cell)) : false);
               })
-            .classed("lost", function(d) {return(!exists(d, cell))})
+            .classed("lost", function(d) {return(!exists(d, cell)); })
             .on('mouseover', function(d) {
-              var thisModel = cell.attr('model')
-              var xcoord = "<b>x:</b> " + d3.format('.3r')(d[thisModel + '.x'])
-              var ycoord = "<b>y:</b> " + d3.format('.3r')(d[thisModel + '.y'])
+              var thisModel = cell.attr('model');
+              var xcoord = "<b>x:</b> " + d3.format('.3r')(d[thisModel + '.x']);
+              var ycoord = "<b>y:</b> " + d3.format('.3r')(d[thisModel + '.y']);
               tooltip.transition()
-              .duration(200)
-              .style("opacity", 1)
-              .style("background-color", "white")
-              .style("border", "solid")
-              .style("border-color", "lightgray");
+                .duration(200)
+                .style("opacity", 1)
+                .style("background-color", "white")
+                .style("border", "solid")
+                .style("border-color", "lightgray");
               // tooltip.html("<b>" + d['_id'] + "</b><br>" + xcoord + ", " +  ycoord)
               tooltip.html("<b>exists:</b>" + exists(d, cell))
                 .style("left", (d3.event.pageX + 3) + "px")
@@ -510,7 +463,6 @@
             })
             .on('click', function(d) {
               var tokId = d['_id'];
-              console.log(tokId)
               var tokIndex = tokselection.indexOf(tokId);
               if (tokIndex > -1) {
                 tokselection.splice(tokIndex, 1);
@@ -518,10 +470,8 @@
                 tokselection.push(tokId);
               }
               updateTokSelection(tokselection);
-            })
-          
+            }); 
         }
-
         
         // what happens when we click on the dropdowns?
         colorDropdown.on("click", function() {
@@ -541,7 +491,7 @@
         sizeDropdown.on("click", function() {
           this.value == 'Reset' ? sizevar = null : sizevar = this.value;
           if (typeof(sizevar) == 'string') {
-            size.domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
+            size.domain(d3.extent(dataset, function(d) {return (+d[sizevar]); }));
           }
           localStorage.setItem("sizevar-" + type, JSON.stringify(sizevar));
           updatePlot();
@@ -549,25 +499,25 @@
         });
 
         modDropdown.on("click", function() {
-          window.open("level3.html" + '?type=' + type + '&model=' + this.value, "_self")
+          window.open("level3.html" + '?type=' + type + '&model=' + this.value, "_self");
         });
 
         // clear selection of models
         d3.select("#clear-select")
           .on("click", function() {
-            tokselection = []
-            updateTokSelection(tokselection)
+            tokselection = [];
+            updateTokSelection(tokselection);
           });
 
         // Updating color, shape and size after every button clicking
         function updatePlot() {
           svg.selectAll('.dot').selectAll('path')
-            .style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4")})
+            .style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4"); })
             .attr("d", d3.symbol().type(function(d) {
-              return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle)
+              return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle);
               }).size(function(d) {
-                return (typeof(sizevar) == 'string' ? size(+d[sizevar]) : 50)}))
-        };
+                return (typeof(sizevar) == 'string' ? size(+d[sizevar]) : 50); }));
+        }
 
         // Generate complementary colors for the circle on hover
         function compColor(col) {
@@ -576,7 +526,7 @@
           newHue = +hue < 180 ? +(hue + 180) : +(hue-180);
           res['h'] = newHue;
           return(res.toString());
-        };
+        }
 
         // Short function to obtain the possible values of a variable
         function getValues(colname) {
@@ -587,153 +537,64 @@
           localStorage.setItem(item, JSON.stringify(null))
         }
 
-        // function countCws(cws){
-        //   cwsFreq = [];
-        //   var mySet = new Set(cws.join(";").split(";"));
-        //   console.log(mySet)
-        //   mySet.forEach(function(d) {
-        //     cwsFreq.push({'cw' : d})})
-          
-        //     'tokens' : cws.filter(function(a) {
-        //       return(a.split(';').indexOf(d) > -1)
-        //     }).length})
-        //   })
-        // }
-
-        function shortParam(m) {
-          var mp = m.split('.')
-          return(['_cws', mp[5], mp[2], mp[1], mp[3]].join('.'))
-        }
-
         // update token selection
         function updateTokSelection(tokselection) {
           // stores 'null' if it's empty and the list otherwise
-          localStorage.setItem("tokselection", tokselection.length > 0 ? JSON.stringify(tokselection) : JSON.stringify(null))
-          console.log(tokselection)
+          localStorage.setItem("tokselection", tokselection.length > 0 ? JSON.stringify(tokselection) : JSON.stringify(null));
+          console.log(tokselection);
           // if something is selected everything else is translucent
           svg.selectAll(".dot").selectAll("path")
-            .classed("lighter", function(d) {return (tokselection.length > 0 ? tokselection.indexOf(d['_id']) === -1 : false)})
-          // cws = []
-          // cwsFreq = []
-          // if (tokselection.length > 0){
-          //   var cws_columns = modselection.map(shortParam)
-          //   console.log(cws_columns)
-          //   dataset.filter(function(d) {
-          //     return(tokselection.indexOf(d['_id'])>-1)
-          //   }).forEach(function(d){
-          //     cws_columns.forEach(function(c) {
-          //       cws.push(d[c])
-          //     })
-          //   })
-          //   var mySet = new Set(cws.join(";").split(";"));
-          //   mySet.forEach(function(d) {
-          //     cwsFreq.push({'cws' : d})
-          //   })
-          //   cwsFreq.forEach(function(d) {
-          //     modselection.forEach(function(m) {
-          //       this_cws = []
-          //       dataset.filter(function(row) {
-          //         return(tokselection.indexOf(row['_id'])>-1)
-          //       }).forEach(function(row) {this_cws.push(row[shortParam(m)])})
-          //       d[m] = this_cws.filter(function(a) {
-          //         return(a.split(';').indexOf(d['cws']) > -1)
-          //         }).length}
-          //     )
-          //     })
-          //     }
-          //   console.log(cwsFreq)
-          //   d3.select('tbody').remove()
-          //   rows = table.append('tbody').selectAll('tr')
-          //   .data(cwsFreq).enter()
-          //   .append('tr');
-          //   rows.selectAll('td')
-          //     .data(function(d) {
-          //       return(d3.keys(cwsFreq[0]).map(function(k) {
-          //         return({'name' : k, 'value' : d[k]});
-          //       }));
-          //     }).enter()
-          //     .append('td')
-          //     .attr('data-th', function(d) {return(d.name)})
-          //     .text(function(d) {return(d.value);})
-          //   $("table").DataTable();
-        };
+            .classed("lighter", function(d) {return (tokselection.length > 0 ? tokselection.indexOf(d['_id']) === -1 : false); });
+        }
 
         // Update Legends after each dropdown is changed
 
         function updateLegend() {
-          var legendList = []
-          legendContainer.selectAll(".legend").remove()
-          colorvalues = typeof(colorvar) == 'string' ? getValues(colorvar) : +0
-          shapevalues = typeof(shapevar) == 'string' ? getValues(shapevar) : +0
-          sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0
+          legendList = [];
+          legendContainer.selectAll(".legend").remove();
+          colorvalues = typeof(colorvar) == 'string' ? getValues(colorvar) : +0;
+          shapevalues = typeof(shapevar) == 'string' ? getValues(shapevar) : +0;
+          sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0;
 
           // Update color legend
           if (typeof(colorvalues) != 'number'){
-            colorvalues.sort()
+            colorvalues.sort();
 
-            colorscale = d3.scaleOrdinal()
+            var colorscale = d3.scaleOrdinal()
               .domain(colorvalues)
-              .range(colorvalues.map(color))
+              .range(colorvalues.map(color));
             
-            var legendColor = d3.legendColor()
+            legendColor = d3.legendColor()
               .shape("path", d3.symbol().type(d3.symbolCircle).size(50)())
               .scale(colorscale)
-              .title(colorvar)
-              // .on("cellclick", function(d) {
-              //   if (colorselection.indexOf(d) > -1) {
-              //     colorselection.splice(colorselection.indexOf(d), 1)
-              //     } else {
-              //     colorselection.push(d)
-              //     }
-              //   localStorage.setItem("colorsel", JSON.stringify(colorselection))
-              //   if (colorselection.length > 0) {
-              //     modselection = d3.map(dataset, function(d) {if (colorselection.indexOf(d[colorvar]) > -1) {return(d['_model'])}}).keys()
-              //     } else {
-              //     modselection = []
-              //     }
-              //   updateModSelection(modselection)
-              // })
+              .title(colorvar);
          
-              legendContainer.append("g")
+            legendContainer.append("g")
               .attr("class", "legend")
               .attr("id", "legendColor")
               .attr("transform", "translate(" + 0 + ", " + padding/2 + ")")
               .call(legendColor);
 
-            legendList.push('color')
+            legendList.push('color');
             
               } else {
-                if(legendList.indexOf('color') > -1) {legendList.splice(indexOf('color'), 1);}
-                legendContainer.select("#legendColor").remove()
+                if(legendList.indexOf('color') > -1) {legendList.splice(indexOf('color'), 1); }
+                legendContainer.select("#legendColor").remove();
               }
           
           // Update shape legend
           if (typeof(shapevalues) != 'number'){
-            shapescale = d3.scaleOrdinal()
+            var shapescale = d3.scaleOrdinal()
               .domain(shapevalues)
               .range(shapevalues.map(function(d) {
                 return(d3.symbol().type(shape(d))());
-              }))
+              }));
             
-            var legendShape = d3.legendSymbol()
+            legendShape = d3.legendSymbol()
               .scale(shapescale)
-              .title(shapevar)
-              // .on("cellclick", function(d) {
-              //   if (shapeselection.indexOf(d) > -1) {
-              //     shapeselection.splice(shapeselection.indexOf(d), 1)
-              //     } else {
-              //     shapeselection.push(d)
-              //     }
-              //   localStorage.setItem("shapesel", JSON.stringify(shapeselection))
-              //   if (shapeselection.length > 0) {
-              //     modselection = d3.map(dataset, function(d) {if (shapeselection.indexOf(d[shapevar]) > -1) {return(d['_model'])}}).keys()
-              //     } else {
-              //     modselection = []
-              //     }
-              //   updateModSelection(modselection)
-              // })
+              .title(shapevar);
 
-            var halign = legendList.indexOf('color') == -1 ? 0 : 150
+            halign = legendList.indexOf('color') == -1 ? 0 : 150;
             
             legendContainer.append("g")
               .attr("class", "legend")
@@ -741,30 +602,30 @@
               .attr("transform", "translate(" + halign + ", " + padding/2 + ")")
               .call(legendShape);
 
-            legendList.push('shape')
+            legendList.push('shape');
             
               } else {
-                if(legendList.indexOf('shape') > -1) {legendList.splice(legendList.indexOf('shape'), 1)}
-                legendContainer.select("#legendShape").remove()
+                if(legendList.indexOf('shape') > -1) {legendList.splice(legendList.indexOf('shape'), 1); }
+                legendContainer.select("#legendShape").remove();
               }
 
           // Update size legend
           if (typeof(sizevalues) != 'number'){
-            sizescale = d3.scaleLinear()
+            var sizescale = d3.scaleLinear()
               .domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
-              .range([5, 8])
-            var sizevalues = sizevalues.map(function(d) {return +d;}).sort()
-            var smallNumbers = (sizescale.domain()[1]-sizescale.domain()[0])/(sizevalues.length-1) < 1
+              .range([5, 8]);
+            sizevalues = sizevalues.map(function(d) {return +d;}).sort();
+            var smallNumbers = (sizescale.domain()[1]-sizescale.domain()[0])/(sizevalues.length-1) < 1;
             
-            var legendSize = d3.legendSize()
+            legendSize = d3.legendSize()
               .shape('circle')
               .scale(sizescale)
               .title(sizevar)
               .cells(sizevalues.length >= 5 ? 5 : sizevalues.length)
-              .labelFormat(smallNumbers ? ".04r" : ".0d")           
+              .labelFormat(smallNumbers ? ".04r" : ".0d");           
               // no selection through size
 
-            var halign = 150*legendList.length
+            halign = 150*legendList.length;
             
             legendContainer.append("g")
               .attr("class", "legend")
@@ -772,11 +633,11 @@
               .attr("transform", "translate(" + halign + ", " + padding/2 + ")")
               .call(legendSize);
 
-            legendList.push('size')
+            legendList.push('size');
             
               } else {
-                if(legendList.indexOf('size') > -1) {legendList.splice(legendList.indexOf('size'), 1)}
-                legendContainer.select("#legendSize").remove()
+                if(legendList.indexOf('size') > -1) {legendList.splice(legendList.indexOf('size'), 1); }
+                legendContainer.select("#legendSize").remove();
               }
         }
 
