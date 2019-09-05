@@ -243,7 +243,7 @@
         weights = [
           'ppmi',
           tailoredcontexts[1]['value'].slice(6, this.length-4),
-          ['c', 's'].filter(function(x) {return(model.split('.').indexOf(x) > -1); })[0]
+          ['COHA', 'Semcor'].filter(function(x) {return(model.split('.').indexOf(x) > -1); })[0]
           ].join('.');
         
         // Add frequency table of context words

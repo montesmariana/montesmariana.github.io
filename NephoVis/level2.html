@@ -69,6 +69,7 @@
             <!-- <button type="button" class="btn shadow-sm btn-marigreen m-1" id="model-select"><i class="fas fa-arrow-alt-circle-down"></i> Confirm model selection</button> -->
           </div>
           <div class="row">
+            <button type="button" class="btn shadow-sm btn-secondary m-1" id="show-matrix"> Hide distance matrix </button>
             <button type="button" class="btn shadow-sm btn-marigreen m-1" id="to-level1"><i class="fas fa-arrow-alt-circle-up"></i> UP</button>
             <div class='btn-group'>
               <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle m-1" data-toggle="dropdown"><i class="fas fa-arrow-alt-circle-down"></i> Go to model</button>
@@ -79,7 +80,9 @@
         <div class="col-sm-6" id="legendContainer">
         </div>
       </div>
-      <div class="row" id="svgContainer">
+      <div class="row">
+        <div class="col-sm-8" style="padding : 0px;" id="svgContainer"></div>
+        <div class="col-sm-4" id="distMatrix" style="display:block;"><h3>Distance matrix</h3></div>
       </div>
     </div>
 
@@ -121,6 +124,18 @@
           }
         };
 
+      d3.select("#show-matrix").on("click", function() {
+        console.log(d3.select("#distMatrix").style('display'));
+        if (d3.select("#distMatrix").style('display') == 'block') {
+          d3.select("#distMatrix").style('display', 'none');
+          d3.select(this).text('Show distance matrix');
+        } else {
+          d3.select("#distMatrix").style('display', 'block');
+          d3.select(this).text('Hide distance matrix');
+        }
+        //d3.select("#buttons-selection").style('display', 'none')
+      });
+
       type = getUrlParameter('type');
       d3.select("h1").html("Level 2 (<em>" + type + "</em>)");
 
@@ -132,7 +147,7 @@
       // Make svg responsive with script from: https://brendansudol.com/writing/responsive-d3
       function responsivefy(svg) {
       // get container + svg aspect ratio
-        var container = d3.select('.container'),
+        var container = d3.select(svg.node().parentNode),
           width = parseInt(svg.style("width")),
           height = parseInt(svg.style("height")),
           aspect = width / height;
@@ -392,14 +407,32 @@
           var cell = d3.select(this);
           
           cell.append('text')
-            .attr('x', padding)
+            .attr('x', padding*1.5)
             .attr('y', padding)
             .attr('dy', '-0.5em')
             .attr('font-size', '0.7em')
             .style('cursor', 'pointer')
-            .text(function(d) { return (modselection.indexOf(d.m)+1 + ': ' + d.m); })
+            .text(function(d) { 
+              return (d.m.length > 45 ? d.m.substring(0, 43) + '...' : d.m); })
             .on("click", function(d) {
               window.open("level3.html" + "?type=" + type + "&model=" + d.m, "_self");
+            })
+            .on('mouseover', function(d) {
+              tooltip.transition()
+                .duration(200)
+                .style("opacity", 1)
+                .style("background-color", "white")
+                .style("border", "solid")
+                .style("border-color", "lightgray");
+              tooltip.html(d.m)
+                .style("left", (d3.event.pageX + 3) + "px")
+                .style("top", (d3.event.pageY -3 ) + "px");
+            })
+            .on('mouseout', function() {
+              tooltip.transition()
+                .duration(200)
+                .style("opacity", 0);
+              d3.selectAll(".selector").remove();
             });
 
           // Draw frame
@@ -441,6 +474,21 @@
             .attr("transform", "translate(" + padding + ", " + 0 +")")
             .call(yAxis);
 
+          var circle = cell.append('circle')
+            .attr('cx', padding)
+            .attr('cy', padding)
+            .attr('r', padding/2)
+            .style('fill', color(0));
+
+          cell.append('text')
+            .attr('x', padding)
+            .attr('y', padding)
+            .attr('dx', '-0.3em')
+            .attr('dy', '0.3em')
+            .text(function(d) {return (modselection.indexOf(d.m)+1); })
+            .style('fill', 'white')
+            .style('font-weight', 'bold');
+
           cell.append("g")
             .attr("transform", "translate(0,0)")
             .attr("class", "dot")
@@ -477,8 +525,7 @@
                 .style("background-color", "white")
                 .style("border", "solid")
                 .style("border-color", "lightgray");
-              // tooltip.html("<b>" + d['_id'] + "</b><br>" + xcoord + ", " +  ycoord)
-              tooltip.html("<b>exists:</b>" + exists(d, cell))
+              tooltip.html("<b>" + d['_id'] + "</b><br>" + xcoord + ", " +  ycoord)
                 .style("left", (d3.event.pageX + 3) + "px")
                 .style("top", (d3.event.pageY - 50) + "px");
             })
@@ -671,8 +718,91 @@
         updateLegend();
         updateTokSelection(tokselection);
        });
-      
 
+      d3.tsv(type + "/" + type + ".models.dist.tsv", function(data) {
+        var distances, distMatrix, distCols, distRows, rows;
+        var miniWidth, miniHeight, color;
+        var distWidth = 200,
+          distHeight = 200,
+          distPad = 10
+
+        distances = data.filter(function(d) {return (modselection.indexOf(d['_model']) > -1); });
+
+        distMatrix = d3.select("#distMatrix").append("svg")
+          .attr("width", distWidth)
+          .attr("height", distHeight)
+          .attr("padding", distPad*2)
+          .call(responsivefy)
+          .attr("transform", "translate(0,0)");
+
+        miniWidth = (distWidth-3*distPad)/distances.length;
+        miniHeight = (distHeight-3*distPad)/distances.length;
+
+        distCols = distMatrix.append('g')
+
+        distCols.selectAll('text')
+          .data(modselection).enter()
+          .append('text')
+          .attr('x', function(d) {return (distPad + miniWidth*(modselection.indexOf(d)+0.5)); })
+          .attr('y', distPad*0.7)
+          .style('font-size', '0.6em')
+          .text(function(d) {return (modselection.indexOf(d)+1); });
+
+        distRows = distMatrix.append('g')
+
+        distRows.selectAll('text')
+          .data(modselection).enter()
+          .append('text')
+          .attr('x', 0)
+          .attr('y', function(d) {return (distPad + miniHeight *(modselection.indexOf(d)+0.5)); })
+          .style('font-size', '0.6em')
+          .text(function(d) {return (modselection.indexOf(d)+1); });
+
+        color = d3.scaleLinear()
+          .domain([1, 0.5, 0])
+          .range(['#d73027', '#fee08b', '#1a9850'])
+          .interpolate(d3.interpolateHcl);
+
+        rows = distMatrix.append("g")
+          .selectAll(".distrowrow")
+          .data(distances)
+          .enter()
+          .append("g")
+            .attr('class', 'distrow')
+            .attr('transform', function(d) {
+              return('translate(' + 10 + ',' + (10 + miniHeight * modselection.indexOf(d['_model'])) + ')'); })
+            .each(fillRow)
+        
+        function fillRow(p) {
+          var row = d3.select(this);
+          var rowData = [];
+          modselection.forEach(function(d) {
+            rowData.push({'model' : d, 'value' : p[d]})
+          });
+          console.log(rowData);
+
+          row.selectAll("rect")
+            .data(rowData)
+            .enter()
+            .append('rect')
+            .attr('width', miniWidth)
+            .attr('height', miniHeight)
+            .attr('transform', function(d) {
+              return ('translate(' + miniWidth * (modselection.indexOf(d.model)) + ', 0)'); 
+            })
+            .style('fill', function(d) {return (color(d.value)); });
+
+          row.selectAll('text')
+            .data(rowData).enter()
+            .append('text')
+            .attr('x', function(d) {return (miniWidth * (modselection.indexOf(d.model)+0.3)); })
+            .attr('y', miniHeight/2)
+            .text(function(d) {return (d3.format('.3f')(d.value)); })
+            .style('font-size', (1/modselection.length)*2  + 'em')
+            .style('fill', 'white')
+            .style('font-weight', 'bold');
+        }
+      });
       
     </script>
   </body>

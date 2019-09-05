@@ -1,4 +1,4 @@
-_model	model.x	model.y	minimum_contextwords	part_of_speech	sent_bound	socc_corpus	socc_length	socc_length_num	socc_window	token_window	tokens	type	weighting	stress
+_model	model.x	model.y	minimum_contextwords	focc_part_of_speech	focc_sent_bound	socc_corpus	socc_length	socc_length_num	socc_window	focc_token_window	tokens	type	focc_weighting	stress
 church_nocomp.5_5.nvj.ppmi.nobound.c.5_5.5000.2	-0.17669264794684653	-0.13015671026523726	2	nvj	FALSE	c	5000	2878	5_5	5_5	177	church_nocomp	ppmi	0.21738441278578677
 church_nocomp.5_5.nvj.ppmi.nobound.c.5_5.5000.3	-0.19171321517064388	-0.1334257022694765	3	nvj	FALSE	c	5000	2878	5_5	5_5	105	church_nocomp	ppmi	0.18928683469461824
 church_nocomp.5_5.nvj.ppmi.nobound.c.5_5.10000.2	-0.1801840421530437	-0.13309393517747203	2	nvj	FALSE	c	10000	2878	5_5	5_5	177	church_nocomp	ppmi	0.2172594984291266
