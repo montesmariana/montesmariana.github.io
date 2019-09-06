@@ -617,7 +617,7 @@
             d3.select('tbody').remove();
             if (tokselection.length > 0){
               dot.each(function(d) {
-                if(tokselection.indexOf(d['_id']) > -1) {
+                if(tokselection.indexOf(d['_id']) > -1 && exists(d)) {
                   cws.push(d[cws_column]);
                   countCws(cws);
                 }

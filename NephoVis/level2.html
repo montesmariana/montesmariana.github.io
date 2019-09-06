@@ -69,8 +69,7 @@
             <!-- <button type="button" class="btn shadow-sm btn-marigreen m-1" id="model-select"><i class="fas fa-arrow-alt-circle-down"></i> Confirm model selection</button> -->
           </div>
           <div class="row">
-            <button type="button" class="btn shadow-sm btn-secondary m-1" id="show-matrix"> Hide distance matrix </button>
-            <button type="button" class="btn shadow-sm btn-marigreen m-1" id="to-level1"><i class="fas fa-arrow-alt-circle-up"></i> UP</button>
+            <button type="button" class="btn shadow-sm btn-marigreen my-1" id="to-level1"><i class="fas fa-arrow-alt-circle-up"></i> UP</button>
             <div class='btn-group'>
               <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle m-1" data-toggle="dropdown"><i class="fas fa-arrow-alt-circle-down"></i> Go to model</button>
               <div class="dropdown-menu" id="models"></div>
@@ -80,9 +79,13 @@
         <div class="col-sm-6" id="legendContainer">
         </div>
       </div>
+      <br>
       <div class="row">
         <div class="col-sm-8" style="padding : 0px;" id="svgContainer"></div>
-        <div class="col-sm-4" id="distMatrix" style="display:block;"><h3>Distance matrix</h3></div>
+        <div class="col-sm-4">
+          <button type="button" class="btn shadow-sm btn-secondary my-1" id="show-matrix"> Hide distance matrix </button>
+          <div id="distMatrix" style="display:block;"><h3>Distance matrix</h3></div>
+        </div>
       </div>
     </div>
 
@@ -101,10 +104,9 @@
     <script src="d3-legend.min.js"></script>
     <!-- d3 component for brush -->
     <script src="https://d3js.org/d3-brush.v1.min.js"></script>
-    <!-- for pretty tables -->
-    <!-- <script src="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
-
+    <!-- d3 component for sequential color palettes -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    
     <script>
       var type, modselection, tokselection;
       var ncol, nrow, width, height, padding;
@@ -125,7 +127,6 @@
         };
 
       d3.select("#show-matrix").on("click", function() {
-        console.log(d3.select("#distMatrix").style('display'));
         if (d3.select("#distMatrix").style('display') == 'block') {
           d3.select("#distMatrix").style('display', 'none');
           d3.select(this).text('Show distance matrix');
@@ -181,7 +182,6 @@
         window.alert("You have selected too many models, only the first 9 will be used.");
         modselection = modselection.slice(0, 9);
         localStorage.setItem("modselection", JSON.stringify(modselection));
-        console.log(modselection.length);
       }
 
       ncol = 3; // number of columns in the grid
@@ -615,7 +615,6 @@
         function updateTokSelection(tokselection) {
           // stores 'null' if it's empty and the list otherwise
           localStorage.setItem("tokselection", tokselection.length > 0 ? JSON.stringify(tokselection) : JSON.stringify(null));
-          console.log(tokselection);
           // if something is selected everything else is translucent
           svg.selectAll(".dot").selectAll("path")
             .classed("lighter", function(d) {return (tokselection.length > 0 ? tokselection.indexOf(d['_id']) === -1 : false); });
@@ -719,19 +718,24 @@
         updateTokSelection(tokselection);
        });
 
-      d3.tsv(type + "/" + type + ".models.dist.tsv", function(data) {
+      d3.tsv(type + "/" + type + ".models.dist.tsv", function(error, data) {
+        if (error && error.target.status === 404) {
+          d3.select("#distMatrix").text("Distance matrix not available.");
+          throw error;
+        }
+
         var distances, distMatrix, distCols, distRows, rows;
         var miniWidth, miniHeight, color;
         var distWidth = 200,
           distHeight = 200,
-          distPad = 10
+          distPad = 10;
 
         distances = data.filter(function(d) {return (modselection.indexOf(d['_model']) > -1); });
 
         distMatrix = d3.select("#distMatrix").append("svg")
           .attr("width", distWidth)
           .attr("height", distHeight)
-          .attr("padding", distPad*2)
+          .attr("padding", distPad)
           .call(responsivefy)
           .attr("transform", "translate(0,0)");
 
@@ -758,10 +762,7 @@
           .style('font-size', '0.6em')
           .text(function(d) {return (modselection.indexOf(d)+1); });
 
-        color = d3.scaleLinear()
-          .domain([1, 0.5, 0])
-          .range(['#d73027', '#fee08b', '#1a9850'])
-          .interpolate(d3.interpolateHcl);
+        color = d3.scaleSequential(d3.interpolateGreens)
 
         rows = distMatrix.append("g")
           .selectAll(".distrowrow")
@@ -771,15 +772,14 @@
             .attr('class', 'distrow')
             .attr('transform', function(d) {
               return('translate(' + 10 + ',' + (10 + miniHeight * modselection.indexOf(d['_model'])) + ')'); })
-            .each(fillRow)
-        
+            .each(fillRow);
+
         function fillRow(p) {
           var row = d3.select(this);
           var rowData = [];
           modselection.forEach(function(d) {
             rowData.push({'model' : d, 'value' : p[d]})
           });
-          console.log(rowData);
 
           row.selectAll("rect")
             .data(rowData)
@@ -797,9 +797,14 @@
             .append('text')
             .attr('x', function(d) {return (miniWidth * (modselection.indexOf(d.model)+0.3)); })
             .attr('y', miniHeight/2)
-            .text(function(d) {return (d3.format('.3f')(d.value)); })
-            .style('font-size', (1/modselection.length)*2  + 'em')
-            .style('fill', 'white')
+            .attr('dy', (1/modselection.length) + 'em')
+            .attr('dx', '-' + (1/modselection.length) + 'em')
+            .text(function(d) {return (d3.format('.2f')(d.value)); })
+            .style('font-size', (1/modselection.length)*3  + 'em')
+            .style('fill', function(d) {
+              var light = d3.hsl(color(d.value))['l'];
+              return(light <= 0.5 ? 'white' : 'black');
+            })
             .style('font-weight', 'bold');
         }
       });
