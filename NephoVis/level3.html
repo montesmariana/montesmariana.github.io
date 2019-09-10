@@ -662,8 +662,8 @@
 
         function showContext(d) {
             var tooltipcolor = typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4"
-            var tooltiptext = typeof(ctxtvar) == 'string' ? d[ctxtvar].replace(/<em>/g, "<em style='color:" +tooltipcolor + ";font-weight:bold;'>") : ""
-            // var tooltiptext = typeof(ctxtvar) == 'string' ? d[ctxtvar].replace(/class=["']target["']/g, "<style='color:" +tooltipcolor + ";font-weight:bold;'>") : ""
+            // var tooltiptext = typeof(ctxtvar) == 'string' ? d[ctxtvar].replace(/<em>/g, "<em style='color:" +tooltipcolor + ";font-weight:bold;'>") : ""
+            var tooltiptext = typeof(ctxtvar) == 'string' ? d[ctxtvar].replace(/class=["']target["']/g, "style='color:" +tooltipcolor + ";font-weight:bold;'") : ""
             tooltip.transition()
               .duration(200)
               .style("opacity", 1);
