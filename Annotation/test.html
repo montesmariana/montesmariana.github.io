@@ -155,7 +155,10 @@
                 });
 
             function start(){
-                var workspace, tabs, conc, buttons, conf, annotations, reminder;
+                var workspace, tabs,
+                    conc, annotations, inputtext,
+                    conf, cues, reminder,
+                    buttons;
 
                 workspace = d3.select("#concordance");
 
@@ -188,12 +191,16 @@
                         .attr("role", "tabpanel")
                         .attr("aria-labelledby", function(d) {return(d + "-tab"); });
 
+                // OVERVIEW TAB
+
                 d3.select("#overview")
                     .classed("active", true)
                     .selectAll("div")
                     .data(concordances).enter()
-                        .append("div").attr("class", "row no-gutters")
+                        .append("div").attr("class", "row no-gutters justify-content-sm-center")
                         .each(concordancer);
+
+                // SENSE ANNOTATION TAB
 
                 conc = d3.select("#senses").append("div").attr("class", "row mt-5")
                     .append("div").attr("class", "col-sm-12").selectAll("div")
@@ -203,7 +210,7 @@
                 conc.style('display', function(d) {
                         return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
                         })
-                    .append("div").attr("class", "row no-gutters").each(concordancer);
+                    .append("div").attr("class", "row no-gutters justify-content-sm-center").each(concordancer);
 
                 annotations = conc.append("div").attr("class", "row");
 
@@ -227,7 +234,8 @@
                     .append("h4").text("How confident are you?")
                     .append("div")
                     .attr("class", "btn-group-toggle mt-2")
-                    .attr("data-toggle", "buttons");
+                    .attr("data-toggle", "buttons")
+                    .attr("disabled", true);
 
                 conf.append("span")
                     .style('font-size', '0.7em')
@@ -248,17 +256,21 @@
                     .style('font-weight', 'bold')
                     .text(' Completely');
 
-                conc.append("br");
+                inputtext = conc.append("div").attr("class", "row").append("div").attr("class", "col-sm-auto");
+                // inputtext.append("br");
 
-                conc.append("p").text("Any observations about this concordance?")
-                conc.append("div").append("input")
+                inputtext.append("p").text("Any observations about this concordance?")
+                inputtext.append("div").append("input")
                     .attr("class", "form-control")
+                    .attr("disabled", true)
                     .attr("id", function(d) {return(d.id + "_comment"); })
                     .attr("name", "comments")
                     .attr("placeholder", "No comments")
                     .attr("aria-label", "Comments");
                 
                 addButtons('senses');
+
+                // CUES TAB
 
                 cues = d3.select("#cues")
                     .append("div").attr("class", "row")
@@ -270,8 +282,9 @@
                         return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
                         });
                 
-                reminder = cues.append("div").attr("class", "row")
-                    .append("p")
+                reminder = cues.append("div").attr("class", "row my-2")
+                    .append("div").attr("class", "col-sm-12")
+                    .append("p").attr('class', 'text-sm-center')
                     .html(function(d) {
                         var this_token = text[d.id];
                         if (this_token == undefined) {
@@ -339,7 +352,6 @@
                         } else { //if you are unclicking
                             cues_list.splice(cues_list.indexOf(answer), 1);
                         }
-                        console.log(text[analized]);
                     });
 
                 addButtons('cues');
@@ -366,14 +378,16 @@
                     var t = tab == 'senses' ? conc : cues;
 
                     buttons = d3.select("#" + tab).append("div")
-                        .attr("class", "btn-group mt-2");
+                        .attr("class", "row justify-content-sm-center")
+                        .append("div").attr("class", "col-sm-auto")
+                        .append("div").attr("class", "btn-group mt-2");
                     
                     buttons.append("button")
                         .attr("type", "button")
                         .attr("class", "btn shadow-sm btn-secondary")
                         .text("Previous")
                         .on("click", function() {
-                            toClassify > 0 ? toClassify -= 1 : toClassify = 0;
+                            toClassify > 0 ? toClassify -= 1 : toClassify = concordances.length-1;
                             t.style('display', function(d) {
                                 return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
                             });
@@ -384,7 +398,7 @@
                         .attr("class", "btn shadow-sm btn-secondary")
                         .text("Next")
                         .on("click", function() {
-                            toClassify < concordances.length ? toClassify += 1 : toClassify = toClassify;
+                            toClassify < concordances.length-1 ? toClassify += 1 : toClassify = 0;
                             t.style('display', function(d) {
                                 return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
                             });
@@ -394,10 +408,23 @@
                 $(document).on('change', 'input[name="sense"]', function(event) {
                     var analized = concordances[toClassify]['id'];
                     var answer = d3.select(this).attr('value');
+                    // register data
                     text[analized] = {};
                     text[analized]['sense'] = answer;
                     text[analized]['cues'] = [];
-                    cues.selectAll('.btn-group-toggle').attr('disabled', null);
+
+                    // enable further notes
+                    cues.selectAll('.btn-group-toggle').attr('disabled', function(d) {
+                        return(d3.keys(text).indexOf(d.id) > -1 ? null : true);
+                    });
+                    conf.attr("disabled", function(d) {
+                        return(d3.keys(text).indexOf(d.id) > -1 ? null : true);
+                    });
+                    conc.selectAll('.form-control').attr('disabled', function(d) {
+                        return(d3.keys(text).indexOf(d.id) > -1 ? null : true);
+                    });
+
+                    // 
                     reminder.html(function(d) {
                         var this_token = text[d.id];
                         if (this_token == undefined) {
@@ -411,13 +438,7 @@
                 $(document).on('change', 'input[name="confidence"]', function(event) {
                     var analized = concordances[toClassify]['id'];
                     var answer = d3.select(this).property('value');
-                    if (text[analized] == undefined) {
-                        window.alert("You have to assign a sense first!");
-                        d3.select(this).property('checked', false);
-                        // HOW TO REALLY UNCHECK IT???
-                    } else {
-                        text[analized]['confidence'] = answer;
-                    }
+                    text[analized]['confidence'] = answer;
                     console.log(text);
                 });
 
@@ -432,6 +453,8 @@
                     console.log(text);
                 });
             }
+
+            start();
 
         });
     </script>
