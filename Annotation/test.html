@@ -39,7 +39,7 @@
     <div class="container">
         <h1>Disambiguating churches</h1>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6" id="left-column">
                 <p>Please type your username (firstname.lastname), like in your student e-mail.</p>
                 <div class="input-group mb-3 ui-widget">
                     <div>
@@ -59,13 +59,12 @@
                         <label class="custom-file-label" for="filename" id="filelabel">Choose file</label>
                     </div>
                 </div>
+                <div id="type-selection"></div>
             </div>
-            <div class="col-sm-6" id="sense_codes" style="text-align:right;">
-                <h3>Sense tags</h3>
+            <div class="col-sm-6" id="right-column" style="text-align:right;">
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12" id="concordance"></div>
+        <div class="row" id="concordance-row">
         </div>
         <div class="row">
             <div class="col">
@@ -86,8 +85,7 @@
 
     <script>
         var dropdown,
-            text = {}, users,
-            type = 'church',
+            text = {}, users, this_user,
             definitions = {};
 
         d3.select("#uploadfile").on("click", function() {
@@ -126,25 +124,73 @@
                 {name : 'organization', label : "The church condemns eating chocolate."}
             ]
 
-        d3.tsv(type + ".tsv", function(data) {
-            var dataset, sense_options, conc,
-                concordances = [],
-                toClassify = 0;
+        d3.select("#submitName").on('click', function() {
+            text['user'] = d3.select("#username").property("value");
+            var names = d3.map(users, function(d) {return(d.name); }).keys();
+            $("#type-selection").remove();
+            $("#concordance").remove();
+            $("#sense_codes").remove();
 
-            d3.select("#submitName").on('click', function() {
-                text['user'] = d3.select("#username").property("value");
-                var names = d3.map(users, function(d) {return(d.name); }).keys();
-                if (names.indexOf(text['user']) == -1) {
-                    window.alert("I don't know you, get out");
-                    } else {
-                        start();
-                    }
-                // text.push({'user' : lastname + '_' + firstname})
-                });
+            if (names.indexOf(text['user']) == -1) {
+                window.alert("I don't know you, get out");
+                } else {
+                    this_user = users.filter(function(d) {return(d.name == text['user'])})[0];
+                    offerTypes();
+                }
+            // text.push({'user' : lastname + '_' + firstname})
+            });
+            
+        function offerTypes() {
+            var this_types = d3.keys(this_user['tokens']),
+                typesel;
+            
+            typesel = d3.select("#left-column").append("div").attr("id", "type-selection");
+            typesel.append("h3").text("Select a type, please");
+            typesel.append("div").attr("class", "btn-group-toggle mt-2")
+                .attr("data-toggle", "buttons")
+                .selectAll("label")
+                .data(this_types)
+                    .enter()
+                    .append("label")
+                    .attr("class", "btn shadow-sm btn-success m-1")
+                    .text(function(d) {return(d); })
+                    .append("input")
+                    .attr("type", "radio")
+                    .attr("autocomplete", "off")
+                    .attr("name", "type")
+                    .attr("value", function(d) {return(d)});
 
-            concordances = data.slice(0, 10);
+            $(document).on("change", "input[name='type']", function(event) {
+                start(d3.select(this).property('value'));
+            });
+        }
+
+        function start(type) {
+            
+            $("#concordance").remove();
+            $("#sense_codes").remove();
+
+            d3.select("#concordance-row").append("div")
+                .attr("class", "col-sm-12")
+                .attr("id", "concordance");
+
+            d3.select("#right-column").append("div").attr("id", "sense_codes")
+
+            d3.tsv(type + ".tsv", function(data) {
+            var concordances = [],
+                toClassify = 0,
+                workspace, tabs,
+                sense_options, conc, annotations, inputtext,
+                conf, cues, reminder,
+                buttons;
+
+            concordances = data.filter(function(d) {return(this_user['tokens'][type].indexOf(d.id)>-1); });
             
             sense_options = definitions[type];
+
+            
+
+            d3.select("#sense_codes").append("h3").text("Sense tags")
 
             d3.select("#sense_codes").selectAll("p")
                 .data(sense_options)
@@ -153,308 +199,303 @@
                 .html(function(d) {
                     return("<b>" + d.name + "</b> ('" + d.label + "')")
                 });
+                
+            workspace = d3.select("#concordance");
 
-            function start(){
-                var workspace, tabs,
-                    conc, annotations, inputtext,
-                    conf, cues, reminder,
-                    buttons;
+            workspace.append("h2").text("Let's disambiguate!");
 
-                workspace = d3.select("#concordance");
+            tabs = workspace.append("ul")
+                .attr("class", "nav nav-tabs")
+                .attr("role", "tablist");
+                
+            tabs.selectAll("li")
+                .data(["overview", "senses", "cues"]).enter()
+                .append("li")
+                .attr("class", "nav-item")
+                .append("a")
+                    .attr("class", "nav-link")
+                    .attr("id", function(d) {return(d + "-tab"); })
+                    .attr("data-toggle", "tab")
+                    .attr("href", function(d) {return("#" + d); })
+                    .attr("role", "tab")
+                    .attr("aria-controls", function(d) {return(d); })
+                    .text(function(d) {return(d.toUpperCase()); });
 
-                workspace.append("h2").text("Let's disambiguate!");
+            workspace.append("div").attr("class", "tab-content")
+                .selectAll("div")
+                .data(["overview", "senses", "cues"]).enter()
+                .append("div")
+                    .attr("class", "tab-pane")
+                    .attr("id", function(d) {return(d); })
+                    .attr("width", "100vp")
+                    .attr("role", "tabpanel")
+                    .attr("aria-labelledby", function(d) {return(d + "-tab"); });
 
-                tabs = workspace.append("ul")
-                    .attr("class", "nav nav-tabs")
-                    .attr("role", "tablist");
-                    
-                tabs.selectAll("li")
-                    .data(["overview", "senses", "cues"]).enter()
-                    .append("li")
-                    .attr("class", "nav-item")
-                    .append("a")
-                        .attr("class", "nav-link")
-                        .attr("id", function(d) {return(d + "-tab"); })
-                        .attr("data-toggle", "tab")
-                        .attr("href", function(d) {return("#" + d); })
-                        .attr("role", "tab")
-                        .attr("aria-controls", function(d) {return(d); })
-                        .text(function(d) {return(d.toUpperCase()); });
+            // OVERVIEW TAB
 
-                workspace.append("div").attr("class", "tab-content")
-                    .selectAll("div")
-                    .data(["overview", "senses", "cues"]).enter()
-                    .append("div")
-                        .attr("class", "tab-pane")
-                        .attr("id", function(d) {return(d); })
-                        .attr("width", "100vp")
-                        .attr("role", "tabpanel")
-                        .attr("aria-labelledby", function(d) {return(d + "-tab"); });
+            d3.select("#overview")
+                .classed("active", true)
+                .selectAll("div")
+                .data(concordances).enter()
+                    .append("div").attr("class", "row no-gutters justify-content-sm-center")
+                    .each(concordancer);
 
-                // OVERVIEW TAB
+            // SENSE ANNOTATION TAB
 
-                d3.select("#overview")
-                    .classed("active", true)
-                    .selectAll("div")
+            conc = d3.select("#senses").append("div").attr("class", "row mt-5")
+                .append("div").attr("class", "col-sm-12").selectAll("div")
+                .data(concordances).enter()
+                    .append("div");
+
+            conc.style('display', function(d) {
+                    return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
+                    })
+                .append("div").attr("class", "row no-gutters justify-content-sm-center").each(concordancer);
+
+            annotations = conc.append("div").attr("class", "row");
+
+            annotations.append("div").attr("class", "col-sm-6")
+                .append("div").attr("class", "btn-group-toggle mt-2")
+                .attr("data-toggle", "buttons")
+                .selectAll("label")
+                .data(sense_options)
+                    .enter()
+                    .append("label")
+                    .attr("class", "btn shadow-sm btn-success m-1")
+                    .text(function(d) {return(d.name); })
+                    .append("input")
+                    .attr("type", "radio")
+                    .attr("autocomplete", "off")
+                    .attr("name", "sense")
+                    .attr("value", function(d) {return(d.name)});
+
+            conf = annotations.append("div").attr("id", "confidence")
+                .attr("class", "col-sm-6 mt-2")
+                .append("h4").text("How confident are you?")
+                .append("div")
+                .attr("class", "btn-group-toggle mt-2")
+                .attr("data-toggle", "buttons")
+                .attr("disabled", true);
+
+            conf.append("span")
+                .style('font-size', '0.7em')
+                .style('font-weight', 'bold')
+                .text("Not at all ");
+
+            conf.selectAll("label")
+                .data([0, 1, 2, 3, 4, 5]).enter()
+                    .append("label")
+                    .attr("class", "btn shadow-sm btn-warning")
+                    .text(function(d) {return(d); })
+                    .append("input").attr("type", "radio")
+                    .attr("autocomplete", "off").attr("name", "confidence")
+                    .attr("value", function(d) {return (d); });
+
+            conf.append("span")
+                .style('font-size', '0.7em')
+                .style('font-weight', 'bold')
+                .text(' Completely');
+
+            inputtext = conc.append("div").attr("class", "row").append("div").attr("class", "col-sm-auto");
+            // inputtext.append("br");
+
+            inputtext.append("p").text("Any observations about this concordance?")
+            inputtext.append("div").append("input")
+                .attr("class", "form-control")
+                .attr("disabled", true)
+                .attr("id", function(d) {return(d.id + "_comment"); })
+                .attr("name", "comments")
+                .attr("placeholder", "No comments")
+                .attr("aria-label", "Comments");
+            
+            addButtons('senses');
+
+            // CUES TAB
+
+            cues = d3.select("#cues")
+                .append("div").attr("class", "row")
+                .append("div").attr("class", "col-sm-12")
+                .selectAll("div")
                     .data(concordances).enter()
-                        .append("div").attr("class", "row no-gutters justify-content-sm-center")
-                        .each(concordancer);
-
-                // SENSE ANNOTATION TAB
-
-                conc = d3.select("#senses").append("div").attr("class", "row mt-5")
-                    .append("div").attr("class", "col-sm-12").selectAll("div")
-                    .data(concordances).enter()
-                        .append("div");
-
-                conc.style('display', function(d) {
-                        return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
-                        })
-                    .append("div").attr("class", "row no-gutters justify-content-sm-center").each(concordancer);
-
-                annotations = conc.append("div").attr("class", "row");
-
-                annotations.append("div").attr("class", "col-sm-6")
-                    .append("div").attr("class", "btn-group-toggle mt-2")
-                    .attr("data-toggle", "buttons")
-                    .selectAll("label")
-                    .data(sense_options)
-                        .enter()
-                        .append("label")
-                        .attr("class", "btn shadow-sm btn-success m-1")
-                        .text(function(d) {return(d.name); })
-                        .append("input")
-                        .attr("type", "radio")
-                        .attr("autocomplete", "off")
-                        .attr("name", "sense")
-                        .attr("value", function(d) {return(d.name)});
-
-                conf = annotations.append("div").attr("id", "confidence")
-                    .attr("class", "col-sm-6 mt-2")
-                    .append("h4").text("How confident are you?")
                     .append("div")
-                    .attr("class", "btn-group-toggle mt-2")
-                    .attr("data-toggle", "buttons")
-                    .attr("disabled", true);
-
-                conf.append("span")
-                    .style('font-size', '0.7em')
-                    .style('font-weight', 'bold')
-                    .text("Not at all ");
-
-                conf.selectAll("label")
-                    .data([0, 1, 2, 3, 4, 5]).enter()
-                        .append("label")
-                        .attr("class", "btn shadow-sm btn-warning")
-                        .text(function(d) {return(d); })
-                        .append("input").attr("type", "radio")
-                        .attr("autocomplete", "off").attr("name", "confidence")
-                        .attr("value", function(d) {return (d); });
-
-                conf.append("span")
-                    .style('font-size', '0.7em')
-                    .style('font-weight', 'bold')
-                    .text(' Completely');
-
-                inputtext = conc.append("div").attr("class", "row").append("div").attr("class", "col-sm-auto");
-                // inputtext.append("br");
-
-                inputtext.append("p").text("Any observations about this concordance?")
-                inputtext.append("div").append("input")
-                    .attr("class", "form-control")
-                    .attr("disabled", true)
-                    .attr("id", function(d) {return(d.id + "_comment"); })
-                    .attr("name", "comments")
-                    .attr("placeholder", "No comments")
-                    .attr("aria-label", "Comments");
-                
-                addButtons('senses');
-
-                // CUES TAB
-
-                cues = d3.select("#cues")
-                    .append("div").attr("class", "row")
-                    .append("div").attr("class", "col-sm-12")
-                    .selectAll("div")
-                        .data(concordances).enter()
-                        .append("div")
-                        .style('display', function(d) {
-                        return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
-                        });
-                
-                reminder = cues.append("div").attr("class", "row my-2")
-                    .append("div").attr("class", "col-sm-12")
-                    .append("p").attr('class', 'text-sm-center')
-                    .html(function(d) {
-                        var this_token = text[d.id];
-                        if (this_token == undefined) {
-                            return("You haven't annotated this occurrence yet.");
-                        } else {
-                            return("You have assigned the sense <b>" + this_token['sense'] + "</b> to this occurrence.");
-                        }
-                    });                    
-                
-                cues.append("div").attr("class", "row")
-                    .each(function(d) {
-                        var line = d3.select(this),
-                            left_context = [], right_context = [],
-                            left_source = d.left.split(' '),
-                            right_source = d.right.split(' ');
-                        
-                        for (i = 0; i < left_source.length; i++) {
-                            var cw_idx = left_source.length-i-1;
-                            left_context.push({'index' : 'L'+cw_idx.toString(), 'cw' : left_source[i]});
-                        }
-
-                        for (i = 0; i < right_source.length; i++) {
-                            right_context.push({'index' : 'R'+(i).toString(), 'cw' : right_source[i]});
-                        }
-
-                        line.append("div").attr("class", "col-sm-auto")
-                            .append("div").attr("class", "btn-group-toggle")
-                            .attr("data-toggle", "buttons")
-                            .attr("disabled", true)
-                            .selectAll("label")
-                            .data(left_context).enter()
-                                .append("label").attr("class", "btn btn-cue p-0")
-                                .text(function(d) {return(d.cw); })
-                                .append("input").attr("type", "checkbox")
-                                .attr("autocomplete", "off")
-                                .attr("value", function(d) {return (d.index); });
-
-                        line.append("div").attr("class", "col-sm-auto px-0")
-                            .append("p").attr("class", "text-sm-center")
-                            .style("font-weight", "bold")
-                            .style("color", "#1f77b4")
-                            .text(function(d) {return (d.target); });
-
-                        line.append("div").attr("class", "col-sm-auto")
-                            .append("div").attr("class", "btn-group-toggle")
-                            .attr("data-toggle", "buttons")
-                            .attr("disabled", true)
-                            .selectAll("label")
-                            .data(right_context).enter()
-                                .append("label").attr("class", "btn btn-cue p-0")
-                                .text(function(d) {return(d.cw); })
-                                .append("input").attr("type", "checkbox")
-                                .attr("autocomplete", "off")
-                                .attr("value", function(d) {return (d.index); });
-
+                    .style('display', function(d) {
+                    return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
                     });
-
-                    $("#cues").on("change", "input[type='checkbox']", function(event){
-                        var analized = concordances[toClassify]['id'];
-                        var answer = d3.select(this).attr('value');
-                        
-                        var cues_list = text[analized]['cues'];
-                        if (cues_list.indexOf(answer) === -1) {
-                            cues_list.push(answer);
-                        } else { //if you are unclicking
-                            cues_list.splice(cues_list.indexOf(answer), 1);
-                        }
-                    });
-
-                addButtons('cues');
-
-                function concordancer(c) {
-                    var line = d3.select(this);
+            
+            reminder = cues.append("div").attr("class", "row my-2")
+                .append("div").attr("class", "col-sm-12")
+                .append("p").attr('class', 'text-sm-center')
+                .html(function(d) {
+                    var this_token = text[d.id];
+                    if (this_token == undefined) {
+                        return("You haven't annotated this occurrence yet.");
+                    } else {
+                        return("You have assigned the sense <b>" + this_token['sense'] + "</b> to this occurrence.");
+                    }
+                });                    
+            
+            cues.append("div").attr("class", "row")
+                .each(function(d) {
+                    var line = d3.select(this),
+                        left_context = [], right_context = [],
+                        left_source = d.left.split(' '),
+                        right_source = d.right.split(' ');
                     
-                    line.append("div").attr("class", "col-sm-6")
-                        .append("p").attr("class", "text-sm-right")
-                        .text(function(d) {return (d.left); });
-                    
-                    line.append("div").attr("class", "col-sm-1 px-0")
+                    for (i = 0; i < left_source.length; i++) {
+                        var cw_idx = left_source.length-i-1;
+                        left_context.push({'index' : 'L'+cw_idx.toString(), 'cw' : left_source[i]});
+                    }
+
+                    for (i = 0; i < right_source.length; i++) {
+                        right_context.push({'index' : 'R'+(i).toString(), 'cw' : right_source[i]});
+                    }
+
+                    line.append("div").attr("class", "col-sm-auto")
+                        .append("div").attr("class", "btn-group-toggle")
+                        .attr("data-toggle", "buttons")
+                        .attr("disabled", true)
+                        .selectAll("label")
+                        .data(left_context).enter()
+                            .append("label").attr("class", "btn btn-cue p-0")
+                            .text(function(d) {return(d.cw); })
+                            .append("input").attr("type", "checkbox")
+                            .attr("autocomplete", "off")
+                            .attr("value", function(d) {return (d.index); });
+
+                    line.append("div").attr("class", "col-sm-auto px-0")
                         .append("p").attr("class", "text-sm-center")
                         .style("font-weight", "bold")
                         .style("color", "#1f77b4")
                         .text(function(d) {return (d.target); });
 
-                    line.append("div").attr("class", "col-sm-5")
-                        .append("p").attr("class", "text-sm-left")
-                        .text(function(d) {return (d.right); });
-                }
+                    line.append("div").attr("class", "col-sm-auto")
+                        .append("div").attr("class", "btn-group-toggle")
+                        .attr("data-toggle", "buttons")
+                        .attr("disabled", true)
+                        .selectAll("label")
+                        .data(right_context).enter()
+                            .append("label").attr("class", "btn btn-cue p-0")
+                            .text(function(d) {return(d.cw); })
+                            .append("input").attr("type", "checkbox")
+                            .attr("autocomplete", "off")
+                            .attr("value", function(d) {return (d.index); });
 
-                function addButtons(tab) {
-                    var t = tab == 'senses' ? conc : cues;
+                });
 
-                    buttons = d3.select("#" + tab).append("div")
-                        .attr("class", "row justify-content-sm-center")
-                        .append("div").attr("class", "col-sm-auto")
-                        .append("div").attr("class", "btn-group mt-2");
-                    
-                    buttons.append("button")
-                        .attr("type", "button")
-                        .attr("class", "btn shadow-sm btn-secondary")
-                        .text("Previous")
-                        .on("click", function() {
-                            toClassify > 0 ? toClassify -= 1 : toClassify = concordances.length-1;
-                            t.style('display', function(d) {
-                                return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
-                            });
-                        });
-
-                    buttons.append("button")
-                        .attr("type", "button")
-                        .attr("class", "btn shadow-sm btn-secondary")
-                        .text("Next")
-                        .on("click", function() {
-                            toClassify < concordances.length-1 ? toClassify += 1 : toClassify = 0;
-                            t.style('display', function(d) {
-                                return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
-                            });
-                        });
-                }
-
-                $(document).on('change', 'input[name="sense"]', function(event) {
+                $("#cues").on("change", "input[type='checkbox']", function(event){
                     var analized = concordances[toClassify]['id'];
                     var answer = d3.select(this).attr('value');
-                    // register data
-                    text[analized] = {};
-                    text[analized]['sense'] = answer;
-                    text[analized]['cues'] = [];
-
-                    // enable further notes
-                    cues.selectAll('.btn-group-toggle').attr('disabled', function(d) {
-                        return(d3.keys(text).indexOf(d.id) > -1 ? null : true);
-                    });
-                    conf.attr("disabled", function(d) {
-                        return(d3.keys(text).indexOf(d.id) > -1 ? null : true);
-                    });
-                    conc.selectAll('.form-control').attr('disabled', function(d) {
-                        return(d3.keys(text).indexOf(d.id) > -1 ? null : true);
-                    });
-
-                    // 
-                    reminder.html(function(d) {
-                        var this_token = text[d.id];
-                        if (this_token == undefined) {
-                            return("You haven't annotated this occurrence yet.");
-                        } else {
-                            return("You have assigned the sense <b>" + this_token['sense'] + "</b> to this occurrence.");
-                        }
-                    });
-                });
-
-                $(document).on('change', 'input[name="confidence"]', function(event) {
-                    var analized = concordances[toClassify]['id'];
-                    var answer = d3.select(this).property('value');
-                    text[analized]['confidence'] = answer;
-                    console.log(text);
-                });
-
-                $(document).on('change', 'input[name="comments"]', function(event) {
-                    var analized = concordances[toClassify]['id'];
-                    var answer = d3.select(this).property('value');
-                    if (text[analized] == undefined) {
-                        window.alert("You have to assign a sense first!");
-                    } else {
-                        text[analized]['comments'] = answer;
+                    
+                    var cues_list = text[analized]['cues'];
+                    if (cues_list.indexOf(answer) === -1) {
+                        cues_list.push(answer);
+                    } else { //if you are unclicking
+                        cues_list.splice(cues_list.indexOf(answer), 1);
                     }
-                    console.log(text);
                 });
+
+            addButtons('cues');
+
+            function concordancer(c) {
+                var line = d3.select(this);
+                
+                line.append("div").attr("class", "col-sm-6")
+                    .append("p").attr("class", "text-sm-right")
+                    .text(function(d) {return (d.left); });
+                
+                line.append("div").attr("class", "col-sm-1 px-0")
+                    .append("p").attr("class", "text-sm-center")
+                    .style("font-weight", "bold")
+                    .style("color", "#1f77b4")
+                    .text(function(d) {return (d.target); });
+
+                line.append("div").attr("class", "col-sm-5")
+                    .append("p").attr("class", "text-sm-left")
+                    .text(function(d) {return (d.right); });
             }
 
+            function addButtons(tab) {
+                var t = tab == 'senses' ? conc : cues;
+
+                buttons = d3.select("#" + tab).append("div")
+                    .attr("class", "row justify-content-sm-center")
+                    .append("div").attr("class", "col-sm-auto")
+                    .append("div").attr("class", "btn-group mt-2");
+                
+                buttons.append("button")
+                    .attr("type", "button")
+                    .attr("class", "btn shadow-sm btn-secondary")
+                    .text("Previous")
+                    .on("click", function() {
+                        toClassify > 0 ? toClassify -= 1 : toClassify = concordances.length-1;
+                        t.style('display', function(d) {
+                            return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
+                        });
+                    });
+
+                buttons.append("button")
+                    .attr("type", "button")
+                    .attr("class", "btn shadow-sm btn-secondary")
+                    .text("Next")
+                    .on("click", function() {
+                        toClassify < concordances.length-1 ? toClassify += 1 : toClassify = 0;
+                        t.style('display', function(d) {
+                            return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
+                        });
+                    });
+            }
+
+            $(document).on('change', 'input[name="sense"]', function(event) {
+                var analized = concordances[toClassify]['id'];
+                var answer = d3.select(this).attr('value');
+                // register data
+                text[analized] = {};
+                text[analized]['sense'] = answer;
+                text[analized]['cues'] = [];
+
+                // enable further notes
+                cues.selectAll('.btn-group-toggle').attr('disabled', function(d) {
+                    return(d3.keys(text).indexOf(d.id) > -1 ? null : true);
+                });
+                conf.attr("disabled", function(d) {
+                    return(d3.keys(text).indexOf(d.id) > -1 ? null : true);
+                });
+                conc.selectAll('.form-control').attr('disabled', function(d) {
+                    return(d3.keys(text).indexOf(d.id) > -1 ? null : true);
+                });
+
+                // 
+                reminder.html(function(d) {
+                    var this_token = text[d.id];
+                    if (this_token == undefined) {
+                        return("You haven't annotated this occurrence yet.");
+                    } else {
+                        return("You have assigned the sense <b>" + this_token['sense'] + "</b> to this occurrence.");
+                    }
+                });
+            });
+
+            $(document).on('change', 'input[name="confidence"]', function(event) {
+                var analized = concordances[toClassify]['id'];
+                var answer = d3.select(this).property('value');
+                text[analized]['confidence'] = answer;
+                console.log(text);
+            });
+
+            $(document).on('change', 'input[name="comments"]', function(event) {
+                var analized = concordances[toClassify]['id'];
+                var answer = d3.select(this).property('value');
+                if (text[analized] == undefined) {
+                    window.alert("You have to assign a sense first!");
+                } else {
+                    text[analized]['comments'] = answer;
+                }
+                console.log(text);
+            });
         });
+        }
+
+        
     </script>
   </body>
 </html>
