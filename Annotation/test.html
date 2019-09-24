@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-    <title>Downloadtest</title>
+    <title>Sense annotation</title>
 
     <style>
     
@@ -37,18 +37,9 @@
   </head>
   <body>
     <div class="container">
-        <h1>Disambiguating churches</h1>
+        <h1>Senses annotation</h1>
         <div class="row">
             <div class="col-sm-6" id="left-column">
-                <!-- <p>Please type your username (firstname.lastname), like in your student e-mail.</p>
-                <div class="input-group mb-3 ui-widget">
-                    <div>
-                    <input type="text" class="form-control" id='username' placeholder="mariana.montes" aria-label="username" aria-describedby="input username">
-                    </div>
-                    <div class="input-group-append">
-                        <button class="btn btn-danger" type="button" id='submitName'>That's me</button>
-                    </div>
-                </div> -->
                 <p>If you've already started, you may upload the file with your progress.</p>
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -113,6 +104,19 @@
             {name : 'congregation', label : "My aunt belongs to that church."},
             {name : 'organization', label : "The church condemns eating chocolate."}
         ];
+
+        definitions['goedkoop'] = [
+            {name: 'laag in prijs', label : "Goedkope wijn."},
+            {name: 'geen hoge prijzen vragend', label: "Een goedkoop winkeltje."},
+            {name: 'waar de prijzen laag zijn', label: "Een goedkope buurt."},
+            {name: 'van weinig waarde', label: "Goedkope succes"}
+        ];
+
+        definitions['heet'] = [
+            {name: 'sense1', label : "First sense ever"},
+            {name: 'sense2', label : "A less interesting sense"},
+            {name: 'sense3', label : "Not true, all senses are interesting"}
+        ]
         
         d3.json("users.json", function(data) {
             users = data;
@@ -197,10 +201,9 @@
                 buttons;
 
             concordances = data.filter(function(d) {return(this_user['tokens'][type].indexOf(d.id)>-1); });
-            
-            sense_options = definitions[type];
-
-            
+            console.log(this_user['tokens'][type]);
+            console.log(data);
+            sense_options = definitions[type];        
 
             d3.select("#sense_codes").append("h3").text("Sense tags")
 

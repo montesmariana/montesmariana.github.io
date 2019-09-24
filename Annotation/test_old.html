@@ -124,7 +124,14 @@
                 {name : 'building', label : "There is a pretty altar in the church."},
                 {name : 'congregation', label : "My aunt belongs to that church."},
                 {name : 'organization', label : "The church condemns eating chocolate."}
-            ]
+            ];
+        
+        definitions['goedkoop'] = [
+            {name: 'laag in prijs', label : "Goedkope wijn."},
+            {name: 'geen hoge prijzen vragend', label: "Een goedkoop winkeltje."},
+            {name: 'waar de prijzen laag zijn', label: "Een goedkope buurt."},
+            {name: 'van weinig waarde', label: "Goedkope succes"}
+        ],
 
         d3.select("#submitName").on('click', function() {
             text['user'] = d3.select("#username").property("value");
@@ -191,10 +198,8 @@
                 buttons;
 
             concordances = data.filter(function(d) {return(this_user['tokens'][type].indexOf(d.id)>-1); });
-            
+            console.log(concordances);
             sense_options = definitions[type];
-
-            
 
             d3.select("#sense_codes").append("h3").text("Sense tags")
 

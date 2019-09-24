@@ -1,77 +1,175 @@
 [{
     "name" : "mariana.montes",
-    "tokens" : {"church" : [
-        "church/N/br-a07/1487",
-        "church/N/br-a09/1417",
-        "church/N/br-a10/1918",
-        "church/N/br-a10/1980",
-        "church/N/br-a10/1984",
-        "church/N/br-a10/2022",
-        "church/N/br-a17/2228",
-        "church/N/br-a31/1594",
-        "church/N/br-a31/2120",
-        "church/N/br-a31/2212"
+    "tokens" : {
+        "church" : [
+            "church/N/br-a07/1487",
+            "church/N/br-a09/1417",
+            "church/N/br-a10/1918",
+            "church/N/br-a10/1980",
+            "church/N/br-a10/1984",
+            "church/N/br-a10/2022",
+            "church/N/br-a17/2228",
+            "church/N/br-a31/1594",
+            "church/N/br-a31/2120",
+            "church/N/br-a31/2212"
+            ],
+        "goedkoop" : [
+            "goedkoop/adj/de_standaard_20021218_01_121/172",
+            "goedkoop/adj/het_nieuwsblad_20030712_01_515/431",
+            "goedkoop/adj/nrc_handelsblad_20020226_87/113",
+            "goedkoop/adj/algemeen_dagblad_20000323_44/378",
+            "goedkoop/adj/het_nieuwsblad_20010113_01_571/215",
+            "goedkoop/adj/volkskrant_19990526_39/298",
+            "goedkoop/adj/parool_20020522_30/187",
+            "goedkoop/adj/parool_20001208_87/219",
+            "goedkoop/adj/algemeen_dagblad_20020103_124/145"
+            ],
+        "heet" : [
+            "heet/adj/de_morgen_20031119_01_52/76",
+            "heet/adj/het_nieuwsblad_20020326_01_186/204",
+            "heet/adj/de_morgen_20010627_01_29/1493",
+            "heet/adj/volkskrant_20010507_72/293",
+            "heet/adj/volkskrant_20010717_34/463"
         ]}
 },
 {
     "name" : "alex.scigalszky",
-    "tokens" : {"church" : [
-        "church/N/br-a31/2241",
-        "church/N/br-b08/1804",
-        "church/N/br-b08/1866",
-        "church/N/br-b12/2009",
-        "church/N/br-b12/2217",
-        "church/N/br-b12/2221",
-        "church/N/br-b12/2239",
-        "church/N/br-b12/2243",
-        "church/N/br-b22/1233",
-        "church/N/br-b22/1245"
-    ]}
+    "tokens" : {
+        "church" : [
+            "church/N/br-a31/2241",
+            "church/N/br-b08/1804",
+            "church/N/br-b08/1866",
+            "church/N/br-b12/2009",
+            "church/N/br-b12/2217",
+            "church/N/br-b12/2221",
+            "church/N/br-b12/2239",
+            "church/N/br-b12/2243",
+            "church/N/br-b22/1233",
+            "church/N/br-b22/1245"
+        ],
+        "goedkoop" :[
+            "goedkoop/adj/het_nieuwsblad_20020910_01_150/380",
+            "goedkoop/adj/de_standaard_19990421_01_30/3",
+            "goedkoop/adj/nrc_handelsblad_19991106_140/843",
+            "goedkoop/adj/parool_20001013_36/36",
+            "goedkoop/adj/nrc_handelsblad_20020118_74/120",
+            "goedkoop/adj/parool_20020726_51/281",
+            "goedkoop/adj/parool_20020313_176/522",
+            "goedkoop/adj/volkskrant_20040407_42/46",
+            "goedkoop/adj/de_morgen_20000323_01_19/291",
+            "goedkoop/adj/nrc_handelsblad_20000907_58/275",
+            "goedkoop/adj/parool_19991027_17/757"
+            ]}
 },
 {
     "name" : "dirk.geeraerts",
-    "tokens" : {"church" : [
-        "church/N/br-b22/1318",
-        "church/N/br-b22/1326",
-        "church/N/br-d03/1051",
-        "church/N/br-d03/1063",
-        "church/N/br-d03/110",
-        "church/N/br-d03/1472",
-        "church/N/br-d03/1883",
-        "church/N/br-d03/1908",
-        "church/N/br-d03/1913",
-        "church/N/br-d03/2335"
-    ]}
+    "tokens" : {
+        "church" : [
+            "church/N/br-b22/1318",
+            "church/N/br-b22/1326",
+            "church/N/br-d03/1051",
+            "church/N/br-d03/1063",
+            "church/N/br-d03/110",
+            "church/N/br-d03/1472",
+            "church/N/br-d03/1883",
+            "church/N/br-d03/1908",
+            "church/N/br-d03/1913",
+            "church/N/br-d03/2335"
+        ],
+        "goedkoop" :[
+            "goedkoop/adj/de_standaard_20021218_01_121/172",
+            "goedkoop/adj/het_nieuwsblad_20030712_01_515/431",
+            "goedkoop/adj/nrc_handelsblad_20020226_87/113",
+            "goedkoop/adj/algemeen_dagblad_20000323_44/378",
+            "goedkoop/adj/het_nieuwsblad_20010113_01_571/215",
+            "goedkoop/adj/parool_20020313_176/522",
+            "goedkoop/adj/volkskrant_20040407_42/46",
+            "goedkoop/adj/de_morgen_20000323_01_19/291",
+            "goedkoop/adj/nrc_handelsblad_20000907_58/275",
+            "goedkoop/adj/parool_19991027_17/757"
+            ],
+        "heet" : [
+            "heet/adj/algemeen_dagblad_20030729_03/65",
+            "heet/adj/nrc_handelsblad_19991106_87/128",
+            "heet/adj/de_standaard_20040405_01_97/81",
+            "heet/adj/de_morgen_20040319_01_9/641",
+            "heet/adj/de_morgen_20010811_01_27/281",
+            "heet/adj/volkskrant_19991220_66/9"
+        ]}
 },
 {
-    "name" : "danqing.huang",
-    "tokens" : {"church" : [
-        "church/N/br-a10/1984",
-        "church/N/br-a10/2022",
-        "church/N/br-a17/2228",
-        "church/N/br-a31/1594",
-        "church/N/br-a31/2120",
-        "church/N/br-a31/2212",
-        "church/N/br-a31/2241",
-        "church/N/br-b08/1804",
-        "church/N/br-b08/1866",
-        "church/N/br-b12/2009",
-        "church/N/br-b12/2217"
-    ]}
+    "name" : "benedikt.szmrecsanyi",
+    "tokens" : {
+        "church" : [
+            "church/N/br-a10/1984",
+            "church/N/br-a10/2022",
+            "church/N/br-a17/2228",
+            "church/N/br-a31/1594",
+            "church/N/br-a31/2120",
+            "church/N/br-a31/2212",
+            "church/N/br-a31/2241",
+            "church/N/br-b08/1804",
+            "church/N/br-b08/1866",
+            "church/N/br-b12/2009",
+            "church/N/br-b12/2217"
+        ],
+        "goedkoop" : [
+            "goedkoop/adj/volkskrant_19990526_39/298",
+            "goedkoop/adj/parool_20020522_30/187",
+            "goedkoop/adj/parool_20001208_87/219",
+            "goedkoop/adj/algemeen_dagblad_20020103_124/145",
+            "goedkoop/adj/het_nieuwsblad_20020910_01_150/380",
+            "goedkoop/adj/de_standaard_19990421_01_30/3",
+            "goedkoop/adj/nrc_handelsblad_19991106_140/843",
+            "goedkoop/adj/parool_20001013_36/36",
+            "goedkoop/adj/nrc_handelsblad_20020118_74/120",
+            "goedkoop/adj/parool_20020726_51/281"
+            ]}
+},
+{
+    "name" : "dirk.speelman",
+    "tokens" : {
+        "church" : [
+            "church/N/br-b12/2217",
+            "church/N/br-b12/2221",
+            "church/N/br-b12/2239",
+            "church/N/br-b12/2243",
+            "church/N/br-b22/1233",
+            "church/N/br-b22/1245",
+            "church/N/br-b22/1318",
+            "church/N/br-b22/1326",
+            "church/N/br-d03/1051",
+            "church/N/br-d03/1063",
+            "church/N/br-d03/110"
+            ],
+        "heet" : [
+            "heet/adj/volkskrant_19991220_66/9",
+            "heet/adj/parool_20020330_75/297",
+            "heet/adj/volkskrant_20010120_85/111",
+            "heet/adj/de_morgen_20000729_01_50/1754",
+            "heet/adj/volkskrant_19990514_64/389",
+            "heet/adj/nrc_handelsblad_20001116_178/439",
+            "heet/adj/volkskrant_20020810_162/109",
+            "heet/adj/volkskrant_20030916_98/268",
+            "heet/adj/de_morgen_20020111_01_20/46",
+            "heet/adj/de_morgen_20001021_01_9/1335"
+        ]
+        }
 },
 {
     "name" : "taihou.tomita",
-    "tokens" : {"church" : [
-        "church/N/br-b12/2217",
-        "church/N/br-b12/2221",
-        "church/N/br-b12/2239",
-        "church/N/br-b12/2243",
-        "church/N/br-b22/1233",
-        "church/N/br-b22/1245",
-        "church/N/br-b22/1318",
-        "church/N/br-b22/1326",
-        "church/N/br-d03/1051",
-        "church/N/br-d03/1063",
-        "church/N/br-d03/110"
-        ]}
+    "tokens" : {
+        "heet" : [
+            "heet/adj/de_morgen_20031119_01_52/76",
+            "heet/adj/het_nieuwsblad_20020326_01_186/204",
+            "heet/adj/de_morgen_20010627_01_29/1493",
+            "heet/adj/volkskrant_20010507_72/293",
+            "heet/adj/volkskrant_20010717_34/463",
+            "heet/adj/algemeen_dagblad_20030729_03/65",
+            "heet/adj/nrc_handelsblad_19991106_87/128",
+            "heet/adj/de_standaard_20040405_01_97/81",
+            "heet/adj/de_morgen_20040319_01_9/641",
+            "heet/adj/de_morgen_20010811_01_27/281"
+        ] 
+    }
 }]
