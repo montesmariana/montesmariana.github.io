@@ -40,7 +40,7 @@
         <h1>Disambiguating churches</h1>
         <div class="row">
             <div class="col-sm-6" id="left-column">
-                <!-- <p>Please type your username (firstname.lastname), like in your student e-mail.</p>
+                <p>Please type your username (firstname.lastname), like in your student e-mail.</p>
                 <div class="input-group mb-3 ui-widget">
                     <div>
                     <input type="text" class="form-control" id='username' placeholder="mariana.montes" aria-label="username" aria-describedby="input username">
@@ -48,7 +48,7 @@
                     <div class="input-group-append">
                         <button class="btn btn-danger" type="button" id='submitName'>That's me</button>
                     </div>
-                </div> -->
+                </div>
                 <p>If you've already started, you may upload the file with your progress.</p>
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -87,8 +87,7 @@
 
     <script>
         var dropdown,
-            text = {}, saved = JSON.stringify(text),
-            users, this_user, names,
+            text = {}, users, this_user,
             definitions = {};
 
         d3.select("#uploadfile").on("click", function() {
@@ -100,57 +99,52 @@
             // console.log(reader.result);
         });
 
+        d3.select("#filename").on("change", function() {
+            d3.select("#filelabel").text(d3.select(this).property('files')[0]['name']);
+        });
+
         d3.select("#download").on("click", function() {
-            saved = JSON.stringify(text);
-            console.log(saved);
-            d3.select(this).attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(saved))
+            var file = JSON.stringify(text);
+            console.log(file);
+            d3.select(this).attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(file))
                 .attr("download", text['user'] + ".json");
         });
 
-        definitions['church'] = [
-            {name : 'service', label : "I go to church."},
-            {name : 'building', label : "There is a pretty altar in the church."},
-            {name : 'congregation', label : "My aunt belongs to that church."},
-            {name : 'organization', label : "The church condemns eating chocolate."}
-        ];
-        
         d3.json("users.json", function(data) {
             users = data;
-            names = d3.map(users, function(d) {return(d.name); }).keys();
-            Swal.fire({
-                title: "Welcome!",
-                text: "Please enter your username",
-                input: "text",
-                inputPlaceholder: "mariana.montes",
-                showCancelButton: true,
-                inputValidator: (value) => {
-                    if (names.indexOf(value) == -1) {
-                        return "Invalid username, please try again."
-                    }
-                }
-            }).then((result) => {
-                if (result.value) {
-                    Swal.fire({
-                        title: "Login succesful!",
-                        type: "success",
-                        confirmButtonText: "Let's start!"
-                    });
-                    this_user = result.value;
-                    text['user'] = result.value;
-                    saved = JSON.stringify(text);
+
+            $( function() {
+                var names = d3.map(users, function(d) {return(d.name); }).keys();
+            $("#username").autocomplete({source: names});
+        });
+        });
+
+        definitions['church'] = [
+                {name : 'service', label : "I go to church."},
+                {name : 'building', label : "There is a pretty altar in the church."},
+                {name : 'congregation', label : "My aunt belongs to that church."},
+                {name : 'organization', label : "The church condemns eating chocolate."}
+            ]
+
+        d3.select("#submitName").on('click', function() {
+            text['user'] = d3.select("#username").property("value");
+            var names = d3.map(users, function(d) {return(d.name); }).keys();
+            $("#type-selection").remove();
+            $("#concordance").remove();
+            $("#sense_codes").remove();
+
+            if (names.indexOf(text['user']) == -1) {
+                Swal.fire({
+                    title: 'Failed login',
+                    text: "I don't recognize the username, please try again.",
+                    type: 'error'
+                });
+                } else {
                     this_user = users.filter(function(d) {return(d.name == text['user'])})[0];
                     offerTypes();
                 }
+            // text.push({'user' : lastname + '_' + firstname})
             });
-        });
-
-        window.onbeforeunload = function(){
-            if (saved != JSON.stringify(text)) {
-                return("No please No!!");
-            } else {
-                return;
-            }
-        };
             
         function offerTypes() {
             var this_types = d3.keys(this_user['tokens']),
@@ -464,7 +458,7 @@
                 text[analized] = {};
                 text[analized]['sense'] = answer;
                 text[analized]['cues'] = [];
-                
+
                 // enable further notes
                 cues.selectAll('.btn-group-toggle').attr('disabled', function(d) {
                     return(d3.keys(text).indexOf(d.id) > -1 ? null : true);
