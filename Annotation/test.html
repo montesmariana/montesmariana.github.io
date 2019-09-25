@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -98,6 +99,7 @@
                     if (uploaded_text['user'] == text['user']){
                         text = uploaded_text;
                         saved = JSON.stringify(text);
+                        localStorage.setItem("annotations-" + text['user'], saved);
                         Swal.fire({
                             title: "File uploaded",
                             type: "success"
@@ -119,6 +121,7 @@
 
         d3.select("#download").on("click", function() {
             saved = JSON.stringify(text);
+            localStorage.setItem("annotations-" + text['user'], saved);
             console.log(text);
             d3.select(this).attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(saved))
                 .attr("download", text['user'] + ".json");
@@ -151,6 +154,9 @@
                     });
                     this_user = result.value;
                     text['user'] = result.value;
+                    if (JSON.parse(localStorage.getItem("annotations-" + text['user'])) != null) {
+                        text = JSON.parse(localStorage.getItem("annotations-" + text['user']));
+                        }
                     saved = JSON.stringify(text);
                     this_user = users.filter(function(d) {return(d.name == text['user'])})[0];
                     offerTypes(this_user);
@@ -430,6 +436,8 @@
                     } else { //if you are unclicking
                         cues_list.splice(cues_list.indexOf(answer), 1);
                     }
+
+                    localStorage.setItem("annotations-" + text['user'], JSON.stringify(text));
                 });
 
             addButtons('cues');
@@ -512,6 +520,18 @@
                         return("You have assigned the sense <b>" + this_token['sense'] + "</b> to this occurrence.");
                     }
                 });
+
+                localStorage.setItem("annotations-" + text['user'], JSON.stringify(text));
+
+                if (d3.keys(text[type]).length == concordances.length) {
+                    var congratulations = ["Well done!", "Awesome!", "Great!",
+                        "Proficiat!", "Indrukwekkend!"]
+                    Swal.fire({
+                        title: congratulations[Math.floor(Math.random()* congratulations.length)],
+                        html: "You finished annotating <em>" + type + "</em>, thank you!",
+                        type: "success"
+                    });
+                }
             });
 
             $(document).on('change', 'input[name="confidence"]', function(event) {
