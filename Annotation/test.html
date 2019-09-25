@@ -40,7 +40,8 @@
         <h1>Senses annotation</h1>
         <div class="row">
             <div class="col-sm-6" id="left-column">
-                <p>If you've already started, you may upload the file with your progress.</p>
+                    <button type="button" class="btn shadow-sm btn-primary m-1"><a id="uploadfile">Upload progress</a></button>
+                <!-- <p>If you've already started, you may upload the file with your progress.</p>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="uploadfile">Upload</span>
@@ -49,8 +50,8 @@
                         <input type="file" class="custom-file-input" id="filename" aria-describedby="inputGroupFileAddon01">
                         <label class="custom-file-label" for="filename" id="filelabel">Choose file</label>
                     </div>
-                </div>
-                <div id="type-selection"></div>
+                </div> -->
+                <div id="type_selection"></div>
             </div>
             <div class="col-sm-6" id="right-column" style="text-align:right;">
             </div>
@@ -82,41 +83,50 @@
             users, this_user, names,
             definitions = {};
 
-        d3.select("#uploadfile").on("click", function() {
-            var reader = new FileReader();
-            var file = d3.select("#filename").property('files')[0];
-            reader.onload = function(e) {text = reader.result; }
-            reader.readAsText(file);
-            console.log("clicked");
-            // console.log(reader.result);
+        d3.select("#uploadfile").on("click", function(){
+            Swal.fire({
+                title: 'Select your file',
+                input: 'file',
+                inputAttributes: {
+                    accept: '*.json'
+                }
+            }).then((file) => {
+                if (file.value){
+                var reader = new FileReader();
+                reader.onload = (e) => {
+                    uploaded_text = JSON.parse(reader.result);
+                    if (uploaded_text['user'] == text['user']){
+                        text = uploaded_text;
+                        saved = JSON.stringify(text);
+                        Swal.fire({
+                            title: "File uploaded",
+                            type: "success"
+                        });
+                    } else {
+                        Swal.fire({
+                            title: "Wrong file",
+                            text: "Username doesn't match",
+                            type: "error"
+                        });
+                    }
+                    
+                }
+                reader.readAsText(file.value);
+            }
+            });
+            console.log(text);
         });
 
         d3.select("#download").on("click", function() {
             saved = JSON.stringify(text);
-            console.log(saved);
+            console.log(text);
             d3.select(this).attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(saved))
                 .attr("download", text['user'] + ".json");
         });
 
-        definitions['church'] = [
-            {name : 'service', label : "I go to church."},
-            {name : 'building', label : "There is a pretty altar in the church."},
-            {name : 'congregation', label : "My aunt belongs to that church."},
-            {name : 'organization', label : "The church condemns eating chocolate."}
-        ];
-
-        definitions['goedkoop'] = [
-            {name: 'laag in prijs', label : "Goedkope wijn."},
-            {name: 'geen hoge prijzen vragend', label: "Een goedkoop winkeltje."},
-            {name: 'waar de prijzen laag zijn', label: "Een goedkope buurt."},
-            {name: 'van weinig waarde', label: "Goedkope succes"}
-        ];
-
-        definitions['heet'] = [
-            {name: 'sense1', label : "First sense ever"},
-            {name: 'sense2', label : "A less interesting sense"},
-            {name: 'sense3', label : "Not true, all senses are interesting"}
-        ]
+        d3.json("definitions.json", function(data) {
+            definitions = data;
+        });
         
         d3.json("users.json", function(data) {
             users = data;
@@ -143,7 +153,7 @@
                     text['user'] = result.value;
                     saved = JSON.stringify(text);
                     this_user = users.filter(function(d) {return(d.name == text['user'])})[0];
-                    offerTypes();
+                    offerTypes(this_user);
                 }
             });
         });
@@ -156,11 +166,11 @@
             }
         };
             
-        function offerTypes() {
+        function offerTypes(this_user) {
             var this_types = d3.keys(this_user['tokens']),
                 typesel;
             
-            typesel = d3.select("#left-column").append("div").attr("id", "type-selection");
+            typesel = d3.select("#left-column").append("div").attr("id", "type_selection");
             typesel.append("h3").text("Select a type, please");
             typesel.append("div").attr("class", "btn-group-toggle mt-2")
                 .attr("data-toggle", "buttons")
@@ -194,15 +204,15 @@
 
             d3.tsv(type + ".tsv", function(data) {
             var concordances = [],
-                toClassify = 0,
+                toClassify = this_user['tokens'][type], viewing = 0,
                 workspace, tabs,
                 sense_options, conc, annotations, inputtext,
                 conf, cues, reminder,
                 buttons;
 
-            concordances = data.filter(function(d) {return(this_user['tokens'][type].indexOf(d.id)>-1); });
-            console.log(this_user['tokens'][type]);
-            console.log(data);
+            concordances = data.filter(function(d) {return(toClassify.indexOf(d.id)>-1); });
+            if (d3.keys(text).indexOf(type) == -1) {text[type] = {}; }
+            console.log(text);
             sense_options = definitions[type];        
 
             d3.select("#sense_codes").append("h3").text("Sense tags")
@@ -263,11 +273,12 @@
                     .append("div");
 
             conc.style('display', function(d) {
-                    return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
+                    return(toClassify.indexOf(d.id) == viewing ? 'block' : 'none');
                     })
                 .append("div").attr("class", "row no-gutters justify-content-sm-center").each(concordancer);
 
-            annotations = conc.append("div").attr("class", "row");
+            annotations = conc.append("div").attr("class", "row")
+                .attr("token_id", function(d) {return (d.id); });
 
             annotations.append("div").attr("class", "col-sm-6")
                 .append("div").attr("class", "btn-group-toggle mt-2")
@@ -277,6 +288,11 @@
                     .enter()
                     .append("label")
                     .attr("class", "btn shadow-sm btn-success m-1")
+                    .classed("active", function(d) {
+                        var here = d3.select(this.parentNode.parentNode.parentNode).attr("token_id");
+                        var chosen = d3.keys(text[type]).indexOf(here) > -1 && text[type][here]['sense'] == d.name;
+                        return (chosen ? true : null);
+                    })
                     .text(function(d) {return(d.name); })
                     .append("input")
                     .attr("type", "radio")
@@ -286,14 +302,17 @@
 
             conf = annotations.append("div").attr("id", "confidence")
                 .attr("class", "col-sm-6 mt-2")
-                .append("h4").text("How confident are you?")
                 .append("div")
                 .attr("class", "btn-group-toggle mt-2")
                 .attr("data-toggle", "buttons")
-                .attr("disabled", true);
+                .attr("disabled", function() {
+                    var here = d3.select(this.parentNode.parentNode).attr("token_id");
+                    return (d3.keys(text[type]).indexOf(here) === -1 ? true : null);
+                });
+
+            conf.append("h4").text("How confident are you?");
 
             conf.append("span")
-                .style('font-size', '0.7em')
                 .style('font-weight', 'bold')
                 .text("Not at all ");
 
@@ -307,17 +326,21 @@
                     .attr("value", function(d) {return (d); });
 
             conf.append("span")
-                .style('font-size', '0.7em')
                 .style('font-weight', 'bold')
                 .text(' Completely');
 
-            inputtext = conc.append("div").attr("class", "row").append("div").attr("class", "col-sm-auto");
+            inputtext = conc.append("div").attr("class", "row")
+                .append("div").attr("class", "col-sm-auto")
+                .attr("token_id", function(d) {return (d.id); });
             // inputtext.append("br");
 
             inputtext.append("p").text("Any observations about this concordance?")
             inputtext.append("div").append("input")
                 .attr("class", "form-control")
-                .attr("disabled", true)
+                .attr("disabled", function() {
+                    var here = d3.select(this.parentNode.parentNode).attr("token_id");
+                    return (d3.keys(text[type]).indexOf(here) == -1 ? true : null);
+                })
                 .attr("id", function(d) {return(d.id + "_comment"); })
                 .attr("name", "comments")
                 .attr("placeholder", "No comments")
@@ -334,14 +357,14 @@
                     .data(concordances).enter()
                     .append("div")
                     .style('display', function(d) {
-                    return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
+                    return(toClassify.indexOf(d.id) == viewing ? 'block' : 'none');
                     });
             
             reminder = cues.append("div").attr("class", "row my-2")
                 .append("div").attr("class", "col-sm-12")
                 .append("p").attr('class', 'text-sm-center')
                 .html(function(d) {
-                    var this_token = text[d.id];
+                    var this_token = text[type][d.id];
                     if (this_token == undefined) {
                         return("You haven't annotated this occurrence yet.");
                     } else {
@@ -398,10 +421,10 @@
                 });
 
                 $("#cues").on("change", "input[type='checkbox']", function(event){
-                    var analized = concordances[toClassify]['id'];
+                    var analized = toClassify[viewing];
                     var answer = d3.select(this).attr('value');
                     
-                    var cues_list = text[analized]['cues'];
+                    var cues_list = text[type][analized]['cues'];
                     if (cues_list.indexOf(answer) === -1) {
                         cues_list.push(answer);
                     } else { //if you are unclicking
@@ -442,9 +465,9 @@
                     .attr("class", "btn shadow-sm btn-secondary")
                     .text("Previous")
                     .on("click", function() {
-                        toClassify > 0 ? toClassify -= 1 : toClassify = concordances.length-1;
+                        viewing > 0 ? viewing -= 1 : viewing = toClassify.length-1;
                         t.style('display', function(d) {
-                            return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
+                            return(toClassify.indexOf(d.id) == viewing ? 'block' : 'none');
                         });
                     });
 
@@ -453,35 +476,36 @@
                     .attr("class", "btn shadow-sm btn-secondary")
                     .text("Next")
                     .on("click", function() {
-                        toClassify < concordances.length-1 ? toClassify += 1 : toClassify = 0;
+                        viewing < toClassify.length-1 ? viewing += 1 : viewing = 0;
                         t.style('display', function(d) {
-                            return(concordances.indexOf(d) == toClassify ? 'block' : 'none');
+                            return(toClassify.indexOf(d.id) == viewing ? 'block' : 'none');
                         });
                     });
             }
 
             $(document).on('change', 'input[name="sense"]', function(event) {
-                var analized = concordances[toClassify]['id'];
+                console.log(d3.select(this.parentNode.parentNode.parentNode.parentNode).attr("class"));
+                var analized = d3.select(this.parentNode.parentNode.parentNode.parentNode).attr("token_id");
                 var answer = d3.select(this).attr('value');
                 // register data
-                text[analized] = {};
-                text[analized]['sense'] = answer;
-                text[analized]['cues'] = [];
+                text[type][analized] = {};
+                text[type][analized]['sense'] = answer;
+                text[type][analized]['cues'] = [];
                 
                 // enable further notes
                 cues.selectAll('.btn-group-toggle').attr('disabled', function(d) {
-                    return(d3.keys(text).indexOf(d.id) > -1 ? null : true);
+                    return(d3.keys(text[type]).indexOf(d.id) > -1 ? null : true);
                 });
                 conf.attr("disabled", function(d) {
-                    return(d3.keys(text).indexOf(d.id) > -1 ? null : true);
+                    return(d3.keys(text[type]).indexOf(d.id) > -1 ? null : true);
                 });
                 conc.selectAll('.form-control').attr('disabled', function(d) {
-                    return(d3.keys(text).indexOf(d.id) > -1 ? null : true);
+                    return(d3.keys(text[type]).indexOf(d.id) > -1 ? null : true);
                 });
 
                 // 
                 reminder.html(function(d) {
-                    var this_token = text[d.id];
+                    var this_token = text[type][d.id];
                     if (this_token == undefined) {
                         return("You haven't annotated this occurrence yet.");
                     } else {
@@ -491,19 +515,22 @@
             });
 
             $(document).on('change', 'input[name="confidence"]', function(event) {
-                var analized = concordances[toClassify]['id'];
+                var analized = d3.select(this.parentNode.parentNode.parentNode.parentNode).attr("token_id");
+                console.log(analized);
+                console.log(d3.keys(text[type]));
+                console.log(d3.keys(text[type]).indexOf(analized));
                 var answer = d3.select(this).property('value');
-                text[analized]['confidence'] = answer;
+                text[type][analized]['confidence'] = answer;
                 console.log(text);
             });
 
             $(document).on('change', 'input[name="comments"]', function(event) {
-                var analized = concordances[toClassify]['id'];
+                var analized = d3.select(this.parentNode.parentNode).attr("token_id");
                 var answer = d3.select(this).property('value');
-                if (text[analized] == undefined) {
+                if (text[type][analized] == undefined) {
                     window.alert("You have to assign a sense first!");
                 } else {
-                    text[analized]['comments'] = answer;
+                    text[type][analized]['comments'] = answer;
                 }
                 console.log(text);
             });

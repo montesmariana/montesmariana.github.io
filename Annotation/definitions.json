@@ -1,0 +1,19 @@
+{
+    "church" : [
+        {"name" : "service", "label" : "I go to church."},
+        {"name" : "building", "label" : "There is a pretty altar in the church."},
+        {"name" : "congregation", "label" : "My aunt belongs to that church."},
+        {"name" : "organization", "label" : "The church condemns eating chocolate."}
+    ],
+    "goedkoop" : [
+        {"name": "laag in prijs", "label" : "Goedkope wijn."},
+        {"name": "geen hoge prijzen vragend", "label": "Een goedkoop winkeltje."},
+        {"name": "waar de prijzen laag zijn", "label": "Een goedkope buurt."},
+        {"name": "van weinig waarde", "label": "Goedkope succes"}
+    ],
+    "heet" : [
+        {"name": "sense1", "label" : "First sense ever"},
+        {"name": "sense2", "label" : "A less interesting sense"},
+        {"name": "sense3", "label" : "Not true, all senses are interesting"}
+]
+}
