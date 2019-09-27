@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- FontAwesomeIcons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+    <title>Sense annotation</title>
+
+    <style>
+    
+    #download {
+        color : white;
+    }
+
+    .btn-cue {
+        color : black;
+        background : white;
+        border-color : none;
+    }
+
+    .btn-cue:hover, .btn-cue:active, .btn-cue.active {
+        color: white;
+        background: #1f77b4;
+        border-color: #1f77b4;
+    }
+
+    .btn-cue:active, .btn-cue.active {
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row justify-content-sm-center">
+            <h1>Senses annotation</h1>
+        </div>
+        <div class="row justify-content-sm-end">
+            <button type="button" class="btn shadow-sm btn-primary m-1"><a id="uploadfile">Upload progress</a></button>
+        </div>
+        <div class="row justify-content-sm-center" id="playground">
+            <div class="col-sm-2" id="type_selection"></div>
+            <div class="col-sm-10" id="concordance"></div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- General d3 (version 4) release -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- Sweet alert (for nice alerts) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+    <script>
+        var dropdown,
+            text = {}, saved = JSON.stringify(text),
+            users, this_user, names, achievements,
+            definitions = {};
+
+        // Upload a file
+
+        d3.select("#uploadfile").on("click", function(){
+            Swal.fire({
+                title: 'Select your file',
+                input: 'file',
+                inputAttributes: {
+                    accept: '*.json'
+                }
+            }).then((file) => {
+                if (file.value){
+                var reader = new FileReader();
+                reader.onload = (e) => {
+                    uploaded_text = JSON.parse(reader.result);
+                    if (uploaded_text['user'] == text['user']){ // if the uploaded file fits the current user
+                        text = uploaded_text;
+                        saved = JSON.stringify(text);
+                        saveInLS();
+                        Swal.fire({
+                            title: "File uploaded",
+                            type: "success"
+                        });
+                    } else {
+                        Swal.fire({
+                            title: "Wrong file",
+                            text: "Username doesn't match",
+                            type: "error"
+                        });
+                    }
+                }
+                reader.readAsText(file.value);
+            }
+            });
+        });
+
+        // Upload definitions
+        d3.json("definitions.json", function(data) {
+            definitions = data;
+        });
+        
+        // Upload user's data
+        d3.json("users.json", function(data) {
+            users = data;
+            names = d3.map(users, function(d) {return(d.name); }).keys();
+            Swal.fire({
+                title: "Welcome!",
+                text: "Please enter your username",
+                input: "text",
+                inputPlaceholder: "mariana.montes",
+                showCancelButton: true,
+                inputValidator: (value) => { // only accept names included in users.json
+                    if (names.indexOf(value) == -1) {
+                        return "Invalid username, please try again."
+                    }
+                }
+            }).then((result) => {
+                if (result.value) {
+                    Swal.fire({ // I don't know if this message is necessary
+                        title: "Login succesful!",
+                        type: "success",
+                        confirmButtonText: "Let's start!"
+                    });
+                    text['user'] = result.value;
+                    if (typeof(Storage) !== 'undefined' && JSON.parse(localStorage.getItem("annotations-" + text['user'])) != null) {
+                        text = JSON.parse(localStorage.getItem("annotations-" + text['user']));
+                        }
+                    saved = JSON.stringify(text);
+                    this_user = users.filter(function(d) {return(d.name == text['user'])})[0];
+                    offerTypes(this_user);
+                }
+            });
+        });
+
+        // Create radio buttons with options of types, with first one as default choice
+        function offerTypes(this_user) {
+            var this_types = d3.keys(this_user['tokens']), // tailored to this user
+                typesel;
+            
+            typesel = d3.select("#type_selection")
+            typesel.append("h3").text("Types");
+            typesel.append("div").attr("class", "btn-group-vertical btn-group-toggle")
+                .attr("data-toggle", "buttons")
+                .selectAll("label")
+                .data(this_types)
+                    .enter()
+                    .append("label")
+                    .attr("class", "btn shadow-sm btn-success")
+                    .classed("active", function(d) {return (this_types.indexOf(d) == 0); })
+                    .text(function(d) {return(d); })
+                    .append("input")
+                    .attr("type", "radio")
+                    .attr("autocomplete", "off")
+                    .attr("name", "type")
+                    .attr("value", function(d) {return(d)});
+
+            typesel.append("br");
+            typesel.append("button")
+                .attr("class", "btn shadow-sm btn-primary m-1")
+                .append("a").attr("id", "download")
+                .text("Download")
+                .on("click", function() {
+                    saved = JSON.stringify(text);
+                    saveInLS();
+                    d3.select(this).attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(saved))
+                        .attr("download", text['user'] + ".json");
+                });
+
+            // React to changes in the radio buttons
+            $(document).on("change", "input[name='type']", function(event) { 
+                type = d3.select(this).property('value'); 
+                start();
+            });
+
+            // Start with first type by default
+            type = this_types[0];
+            start();
+        }
+
+        // The main thing goes here
+        function start() {
+            
+            // Remove and recreate concordance to avoid accumulation
+            $("#concordance").remove();
+
+            d3.select("#playground").append("div")
+                .attr("class", "col-sm-10")
+                .attr("id", "concordance");
+
+            // Load the file of the corresponding type
+            d3.tsv(type + ".tsv", function(data) {
+                var concordances, // will be the subset for the user
+                    toClassify = this_user['tokens'][type], viewing = 0, // to control what we see
+                    workspace, tabs, overview, // spaces
+                    sense_options, conc, annotations, inputtext, //annotations
+                    conf, cues, reminder, legend, // sets to manipulate
+                    buttons;
+
+                // Filter the data
+                concordances = data.filter(function(d) {return(toClassify.indexOf(d.id)>-1); });
+                if (d3.keys(text).indexOf(type) == -1) {text[type] = {}; } // Create a dictionary within 'text' for this type
+                
+                // Select the senses for this type
+                senses = definitions[type];
+                senses.push({ // Add 'idk' option
+                    'name' : "None",
+                    'label' : "None of the above."
+                })
+    
+                workspace = d3.select("#concordance");
+
+                // Create tabs, with 'overview' selected by default
+                tabs = workspace.append("ul")
+                    .attr("class", "nav nav-tabs")
+                    .attr("role", "tablist");
+                    
+                tabs.selectAll("li")
+                    .data(["overview", "annotation"]).enter()
+                    .append("li")
+                    .attr("class", "nav-item")
+                    .append("a")
+                        .attr("class", "nav-link")
+                        .attr("id", function(d) {return(d + "-tab"); })
+                        .classed("active", function (d) {return (d == 'overview'); })
+                        .attr("data-toggle", "tab")
+                        .attr("href", function(d) {return("#" + d); })
+                        .attr("role", "tab")
+                        .attr("aria-controls", function(d) {return(d); })
+                        .text(function(d) {return(d.toUpperCase()); });
+
+                workspace.append("div").attr("class", "tab-content")
+                    .selectAll("div")
+                    .data(["overview", "annotation"]).enter()
+                    .append("div")
+                        .attr("class", "tab-pane")
+                        .attr("id", function(d) {return(d); })
+                        .classed("active", function (d) {return (d == 'overview'); })
+                        .attr("width", "100vp")
+                        .attr("role", "tabpanel")
+                        .attr("aria-labelledby", function(d) {return(d + "-tab"); });
+
+                // OVERVIEW TAB
+
+                // Include legend of colors of the target word
+                legend = d3.select("#overview").append("div").attr("class", "row justify-content-sm-center mt-3");
+                legend.append("div").attr("class", "col-sm-auto px-3 m-1")
+                    .append("tex").style("color", '#b2182b').style("font-weight", "bold").text("Not annotated");
+                legend.append("div").attr("class", "col-sm-auto px-3 m-1")
+                    .append("span").style("color", '#ef8a62').style("font-weight", "bold").text("Partially annotated");
+                legend.append("div").attr("class", "col-sm-auto px-3 m-1")
+                    .append("span").style("color", '#2166ac').style("font-weight", "bold").text("Done!");
+                
+                d3.select("#overview").append("hr");
+
+                // Create scrollable space for concordances (also to separate from legend)
+                overview = d3.select("#overview").append("div").style("height", "80vh").style("overflow", "auto");
+
+                // For each concordance we get a row, with a left, target and right column
+                // 'target' column shows how far the progress is with colors and is clickable to take you to that occurrence
+                overview.selectAll("div")
+                    .data(concordances).enter()
+                        .append("div").attr("class", "row no-gutters justify-content-sm-center")
+                        .each(function(d) {
+                            var line = d3.select(this);
+                            
+                            line.append("div").attr("class", "col-md-5")
+                                .append("p").attr("class", "text-sm-right")
+                                .text(function(d) {return (d.left); });
+                            
+                            line.append("div").attr("class", "col-md-2 px-0")
+                                .append("p").attr("class", "text-sm-center")
+                                .style("font-weight", "bold")
+                                .style("color", function(d) { // function updateTargetColor() redoes this when called
+                                    if (!is_annotated(d.id, type)) {
+                                        return('#b2182b');
+                                    } else if (!(has_cues(d.id, type) && has_conf(d.id, type))) {
+                                        return('#ef8a62');
+                                    } else {return("#2166ac")}
+                                })
+                                .text(function(d) {return (d.target); })
+                                .style('cursor', 'pointer')
+                                .on("click", function(d) {
+                                    tabs.selectAll(".nav-link").classed("active", function() {
+                                        return(d3.select(this).attr("id") == "annotation-tab");
+                                    })
+                                    workspace.selectAll(".tab-pane").classed("active", function() {
+                                        return(d3.select(this).attr("id") == "annotation");
+                                    });
+                                    viewing = toClassify.indexOf(d.id);
+                                    displayConc();
+                                });
+
+                            line.append("div").attr("class", "col-md-5")
+                                .append("p").attr("class", "text-sm-left")
+                                .text(function(d) {return (d.right); });
+                        });
+                    
+                
+                // SENSE ANNOTATION TAB
+
+                // Store in the 'conc' variable the set of divs tied to the concordance, to which we'll add everything else
+                conc = d3.select("#annotation").append("div").attr("class", "row justify-content-sm-center mt-5")
+                    .append("div").attr("class", "col-sm-12").selectAll("div")
+                    .data(concordances).enter()
+                        .append("div")
+                        .attr("token_id", function(d) {return (d.id); }); // The 'token_id' attribute makes it available for nested elements
+
+                displayConc(); // displays the concordance that corresponds to the current token
+
+                // FIRST we add the reminder to add cues if the sense is annotated
+                reminder = conc.append('p')
+                    .attr('class', 'text-md-center')
+                    .style('color', 'red')
+                    .text("Click on the words to select the cues or click on the sad smiley if there are none.");
+                
+                displayReminder(); // displays the reminder as must
+
+                reminder.append("button") // add the smiley (maybe doesn't need to be a button?)
+                    .attr("class", "btn btn-default m-1")
+                    .append("i").attr("class", "fas fa-sad-tear")
+                    .style("font-size", "1.5em")
+                    .on("click", function(d) {
+                        text[type][d.id]['cues'] = ['none'];
+                        displayReminder();
+                        updateTargetColor();
+                    });
+
+                // SECOND we show the concordance, in a variable called 'cues' because it's also clickable to register cues
+
+                cues = conc.append("div").attr("class", "row no-gutters justify-content-sm-center")
+                    .each(function(d) {
+                        var line = d3.select(this),
+                            left_context = [], right_context = [],
+                            left_source = d.left.split(' '), right_source = d.right.split(' '); // turns the lines into lists of context words
+                        
+                        // Each context word is represented by an 'index' (what gets registered), comprised of
+                        // a letter ('L' for left, 'R' for right) and the distance to the target (starting with 1)
+                        left_source.forEach(function(d) {
+                            var cw_idx = left_source.length-left_source.indexOf(d)-1;
+                            left_context.push({'index' : 'L'+cw_idx.toString(), 'cw' : d});
+                        });
+                        right_source.forEach(function(d) {
+                            right_context.push({'index' : 'R'+right_source.indexOf(d).toString(), 'cw' : d});
+                        });
+
+                        halfLine(left_context, 'right');
+
+                        line.append("div").attr("class", "col-sm-2 px-0")
+                            .append("p").attr("class", "text-sm-center")
+                            .style("font-weight", "bold")
+                            .style("color", "#1f77b4")
+                            .text(function(d) {return (d.target); });
+
+                        halfLine(right_context, 'left');
+
+                        function halfLine(context, alignment) {
+                            line.append("div").attr("class", "col-sm-5 text-md-" + alignment)
+                                .append("div").attr("class", "btn-group-toggle")
+                                .attr("data-toggle", "buttons")
+                                .attr("disabled", function(d) {
+                                    return(d3.keys(text[type]).indexOf(d.id) > -1 ? null : true);
+                                })
+                                .selectAll("label")
+                                .data(context).enter()
+                                    .append("label").attr("class", "btn btn-cue p-0")
+                                    .classed("active", function(d) {
+                                        var here = d3.select(this.parentNode.parentNode.parentNode.parentNode).attr('token_id');
+                                        var chosen = is_annotated(here, type) && text[type][here]['cues'].indexOf(d.index) > -1;
+                                        return (chosen ? true : null);
+                                    })
+                                    .text(function(d) {return(d.cw); })
+                                    .append("input").attr("type", "checkbox")
+                                    .attr("name", "cues")
+                                    .attr("autocomplete", "off")
+                                    .attr("value", function(d) {return (d.index); });
+                        }
+
+                    });
+
+                // Control of results when the 'cues' change
+                $(document).on("change", "input[name='cues']", function(event){
+                    var analized = d3.select(this.parentNode.parentNode.parentNode.parentNode.parentNode).attr("token_id");
+                    var answer = d3.select(this).attr('value');
+                    
+                    var cues_list = text[type][analized]['cues'];
+                    if (cues_list.indexOf('none') == 0) {cues_list.splice(0, 1); }
+
+                    if (cues_list.indexOf(answer) === -1) {
+                        cues_list.push(answer);
+                    } else { //if you are unclicking
+                        cues_list.splice(cues_list.indexOf(answer), 1);
+                    }
+                    console.log(text[type][analized]);
+                    
+                    if (cues_list.length == 1) {AnnounceAchievement();}
+                    updateTargetColor();
+                    displayReminder();
+                    saveInLS();
+                });
+
+                conc.append("hr");
+
+                // THIRD we add the sense annotation
+
+                conc.append("div").attr("class", "row no-gutters justify-content-sm-center")
+                    .append("div").attr("class", "btn-group-vertical btn-group-toggle mt-2")
+                    .attr("data-toggle", "buttons")
+                    .selectAll("label")
+                    .data(senses)
+                        .enter()
+                        .append("label")
+                        .attr("class", "btn shadow-md btn-secondary")
+                        .classed("active", function(d) {
+                            var here = d3.select(this.parentNode.parentNode.parentNode).attr("token_id");
+                            var chosen = is_annotated(here, type) && text[type][here]['sense'] == d.name;
+                            return (chosen ? true : null);
+                        })
+                        .text(function(d) {return(d.name + ": " + d.label); })
+                        .append("input")
+                        .attr("type", "radio")
+                        .attr("autocomplete", "off")
+                        .attr("name", "sense")
+                        .attr("value", function(d) {return(d.name)});
+
+                // Control de results when sense changes
+                $(document).on('change', 'input[name="sense"]', function(event) {
+                    var analized = d3.select(this.parentNode.parentNode.parentNode.parentNode).attr("token_id");
+                    var answer = d3.select(this).attr('value');
+                    // register data
+                    text[type][analized] = {};
+                    text[type][analized]['sense'] = answer;
+                    text[type][analized]['cues'] = [];
+                    
+                    // enable further notes
+                    cues.selectAll('.btn-group-toggle').attr('disabled', function(d) { // enable cues
+                        return(is_annotated(d.id, type) ? null : true);
+                    });
+                    conf.attr("disabled", function(d) { // enable confidence buttons
+                        return(is_annotated(d.id, type) ? null : true);
+                    });
+                    conc.selectAll('.form-control').attr('disabled', function(d) { // enable extra comments
+                        return(is_annotated(d.id, type) ? null : true);
+                    });
+                    // none_reasons.style('display', function() {
+                    //     var here = d3.select(this.parentNode).attr("token_id");
+                    //     var chosen = d3.keys(text[type]).indexOf(here) > -1 && text[type][here]['sense'] == 'None of the others';
+                    //     return (chosen ? 'block' : 'none');
+                    // });
+
+                    updateTargetColor();
+                    displayReminder();
+                    saveInLS();
+                    AnnounceAchievement();
+                    
+                });
+
+                // FOURTH we add the confidence radio buttons, although I WOULD like the star rating...
+
+                conf = conc.append("div").attr("class", "row no-gutters justify-content-sm-center")
+                    .append("div").attr("id", "confidence")
+                    .attr("class", "btn-group-toggle mt-2")
+                    .attr("data-toggle", "buttons")
+                    .attr("disabled", function() {
+                        var here = d3.select(this.parentNode.parentNode).attr("token_id");
+                        return (is_annotated(here, type) ? null : true);
+                    });
+
+                conf.append("h4").text("How confident are you?");
+
+                conf.append("span")
+                    .style('font-weight', 'bold')
+                    .text("Not at all ");
+
+                conf.selectAll("label")
+                    .data([0, 1, 2, 3, 4, 5]).enter()
+                        .append("label")
+                        .attr("class", "btn shadow-sm btn-warning")
+                        .text(function(d) {return(d); })
+                        .append("input").attr("type", "radio")
+                        .attr("autocomplete", "off").attr("name", "confidence")
+                        .attr("value", function(d) {return (d); });
+
+                conf.append("span")
+                    .style('font-weight', 'bold')
+                    .text(' Completely');
+
+                // Control when confidence changes
+                $(document).on('change', 'input[name="confidence"]', function(event) {
+                    var analized = d3.select(this.parentNode.parentNode.parentNode.parentNode).attr("token_id");
+                    var answer = d3.select(this).property('value');
+                    text[type][analized]['confidence'] = answer;
+                    updateTargetColor();
+                    AnnounceAchievement();
+                });
+
+                // FIFTH we add an option of comments, although there is no control here since it is not compulsory
+
+                inputtext = conc.append("div").attr("class", "row")
+                    .append("div").attr("class", "col-sm-auto")
+                    .attr("token_id", function(d) {return (d.id); });
+                // inputtext.append("br");
+
+                inputtext.append("p").text("Any observations about this concordance?")
+                inputtext.append("div").append("input")
+                    .attr("class", "form-control")
+                    .attr("disabled", function() {
+                        var here = d3.select(this.parentNode.parentNode).attr("token_id");
+                        return (is_annotated(here, type) ? null : true);
+                    })
+                    .attr("id", function(d) {return(d.id + "_comment"); })
+                    .attr("name", "comments")
+                    .attr("placeholder", "No comments")
+                    .attr("aria-label", "Comments");
+
+                // control when comments change
+                $(document).on('change', 'input[name="comments"]', function(event) {
+                    var analized = d3.select(this.parentNode.parentNode).attr("token_id");
+                    var answer = d3.select(this).property('value');
+                    if (text[type][analized] == undefined) {
+                        window.alert("You have to assign a sense first!");
+                    } else {
+                        text[type][analized]['comments'] = answer;
+                    }
+                });
+
+                // FINALLY we add 'previous' and 'next' buttons
+
+                buttons = d3.select("#annotation").append("div")
+                    .attr("class", "row justify-content-sm-center")
+                    .append("div").attr("class", "col-sm-auto")
+                    .append("div").attr("class", "btn-group mt-2");
+                
+                buttons.append("button") // PREVIOUS
+                    .attr("type", "button")
+                    .attr("class", "btn shadow-sm btn-secondary")
+                    .text("Previous")
+                    .on("click", function() {
+                        viewing > 0 ? viewing -= 1 : viewing = toClassify.length-1;
+                        displayConc();
+                    });
+
+                buttons.append("button") // NEXT
+                    .attr("type", "button")
+                    .attr("class", "btn shadow-sm btn-secondary")
+                    .text("Next")
+                    .on("click", function() {
+                        viewing < toClassify.length-1 ? viewing += 1 : viewing = 0;
+                        displayConc();
+                    });
+                
+                // ==============================================================================================================
+                // SOME FUNCTIONS
+                
+                // Update color of target item in the overview concordance
+                function updateTargetColor(t) {
+                    d3.select("#overview").selectAll("p.text-sm-center")
+                        .style("color", function(d) {
+                            if (!is_annotated(d.id, type)) {
+                                return('#b2182b');
+                            } else if (!(has_cues(d.id, type) && has_conf(d.id, type))) {
+                                return('#ef8a62');
+                            } else {return("#2166ac")}
+                        });
+                }
+
+                // Update display of reminder to annotate cues
+                function displayReminder() {
+                    reminder.style("display", function(d) {
+                        var here = d3.select(this.parentNode).attr("token_id");
+                        return (is_annotated(here, type) && text[type][here]['cues'].length == 0 ? 'block' : 'none');
+                    });
+                }
+
+                // update display of ocncordances
+                function displayConc() {
+                    conc.style('display', function(d) {
+                        return(toClassify.indexOf(d.id) == viewing ? 'block' : 'none');
+                    });
+                }
+
+                // Check if all the tokens of a type have been assigned with senses
+                function all_senses(t) {return (d3.keys(text[t]).length == this_user['tokens'][t].length);}
+                
+                // Check if a particular token has been annotated
+                function is_annotated(token_id, t) {
+                    return (d3.keys(text[t]).indexOf(token_id) > -1);
+                }
+
+                // Check if a particular token has been assigned with cues
+                function has_cues(token_id, t) {
+                    return (text[t][token_id]['cues'].length > 0);
+                }
+
+                // Check if a particular token has been assigned with confidence
+                function has_conf(token_id, t) {
+                    return (d3.keys(text[t][token_id]).indexOf('confidence') > -1);
+                }
+
+                // Check status of a type (all annotated, all senses but not all extras, or not all senses)
+                function CheckAchievements(t) {
+                    var goal = this_user['tokens'][t];
+                    var annotated_tokens = goal.filter(function(d) {return (is_annotated(d, t)); });
+                    var tokens_with_cues = goal.filter(function(d) {return (has_cues(d, t)); });
+                    var tokens_with_conf = goal.filter(function(d) {return (has_conf(d, t)); });
+
+                    if (annotated_tokens.length == goal.length) {
+                        if (tokens_with_cues.length == tokens_with_conf.length == goal.length) {
+                            return('done'); // Has everything
+                        } else {
+                            return('halfdone'); // Has all senses but not all cues and all confidence values
+                        }
+                    } else {
+                        return('notdone'); // Does not have all senses
+                    }
+                }
+                
+                // Fire an alert when a type is finished
+                function AnnounceAchievement() {        
+                    var congratulations = ["Well done!", "Awesome!", "Great!",
+                            "Proficiat!", "Indrukwekkend!"];
+                    var encouragement = ["Keep it up!", "Almost there!", "Great job!"]
+
+                    if (all_senses(type)) {
+                        var status = CheckAchievements(type);
+                        var message, congrats;
+
+                        if (status == 'done') {
+                            congrats = congratulations;
+                            var full_types = this_types.filter(function(d) {
+                                return (CheckAchievements(d) == 'done');
+                            });
+                            if (full_types.length == this_types.length) {
+                                message = "You have annotated everything, hartelijk bedankt!"
+                            } else {
+                            message = "You finished annotating <em>" + type + "</em>, thank you!"
+                            }
+                        } else if (status == 'halfdone') {
+                            congrats = encouragement;
+                            message = "You are almost done with <em>" + type + "</em>!"
+                        }
+
+                        Swal.fire({
+                            title: congrats[Math.floor(Math.random()* congrats.length)],
+                            html: message,
+                            type: "success"
+                        });
+                    }
+                }
+            });
+        }
+
+         // Warn the user if they leave without downloading
+         window.onbeforeunload = function(){
+            if (saved != JSON.stringify(text)) {
+                return("No please No!!");
+            } else {
+                return;
+            }
+        };
+
+        function saveInLS() { // check if storage is available and store
+            if (typeof(Storage) !== "undefined") {
+                localStorage.setItem("annotations-" + text['user'], JSON.stringify(text));
+            }
+        }
+
+        
+    </script>
+  </body>
+</html>

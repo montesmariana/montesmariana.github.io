@@ -38,28 +38,20 @@
   </head>
   <body>
     <div class="container">
-        <h1>Senses annotation</h1>
-        <div class="row">
+        <div class="row justify-content-sm-center">
+            <h1>Senses annotation</h1>
+        </div>
+        <div class="row justify-content-sm-center">
             <div class="col-sm-6" id="left-column">
-                    <button type="button" class="btn shadow-sm btn-primary m-1"><a id="uploadfile">Upload progress</a></button>
-                <!-- <p>If you've already started, you may upload the file with your progress.</p>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="uploadfile">Upload</span>
-                    </div>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="filename" aria-describedby="inputGroupFileAddon01">
-                        <label class="custom-file-label" for="filename" id="filelabel">Choose file</label>
-                    </div>
-                </div> -->
+                <button type="button" class="btn shadow-sm btn-primary m-1"><a id="uploadfile">Upload progress</a></button>
                 <div id="type_selection"></div>
             </div>
             <div class="col-sm-6" id="right-column" style="text-align:right;">
             </div>
         </div>
-        <div class="row" id="concordance-row">
+        <div class="row justify-content-sm-center" id="concordance-row">
         </div>
-        <div class="row">
+        <div class="row justify-content-sm-center">
             <div class="col">
                 <button type="button" class="btn shadow-sm btn-primary m-1"><a id="download">Download progress</a></button>
             </div>
@@ -193,11 +185,12 @@
                     .attr("value", function(d) {return(d)});
 
             $(document).on("change", "input[name='type']", function(event) {
-                start(d3.select(this).property('value'));
+                type = d3.select(this).property('value'); 
+                start();
             });
         }
 
-        function start(type) {
+        function start() {
             
             $("#concordance").remove();
             $("#sense_codes").remove();
@@ -219,12 +212,14 @@
             concordances = data.filter(function(d) {return(toClassify.indexOf(d.id)>-1); });
             if (d3.keys(text).indexOf(type) == -1) {text[type] = {}; }
             console.log(text);
-            sense_options = definitions[type];        
+            senses = definitions[type];
+            sense_options = d3.map(senses, function(x) {return(x.name); }).keys()
+            sense_options.push("None of the others")
 
             d3.select("#sense_codes").append("h3").text("Sense tags")
 
             d3.select("#sense_codes").selectAll("p")
-                .data(sense_options)
+                .data(senses)
                 .enter()
                 .append("p")
                 .html(function(d) {
@@ -296,15 +291,15 @@
                     .attr("class", "btn shadow-sm btn-success m-1")
                     .classed("active", function(d) {
                         var here = d3.select(this.parentNode.parentNode.parentNode).attr("token_id");
-                        var chosen = d3.keys(text[type]).indexOf(here) > -1 && text[type][here]['sense'] == d.name;
+                        var chosen = d3.keys(text[type]).indexOf(here) > -1 && text[type][here]['sense'] == d;
                         return (chosen ? true : null);
                     })
-                    .text(function(d) {return(d.name); })
+                    .text(function(d) {return(d); })
                     .append("input")
                     .attr("type", "radio")
                     .attr("autocomplete", "off")
                     .attr("name", "sense")
-                    .attr("value", function(d) {return(d.name)});
+                    .attr("value", function(d) {return(d)});
 
             conf = annotations.append("div").attr("id", "confidence")
                 .attr("class", "col-sm-6 mt-2")
@@ -334,6 +329,34 @@
             conf.append("span")
                 .style('font-weight', 'bold')
                 .text(' Completely');
+
+            // var doubt_reasons = ['Not enough context',
+            //     'Unknown words', 'Wrong part-of-speech', 'Other'];
+
+            // none_reasons = annotations.append("div").attr("class", "btn-group-toggle mt-2")
+            //     .attr("data-toggle", "buttons")
+            //     .style('display', function() {
+            //         var here = d3.select(this.parentNode).attr("token_id");
+            //         var chosen = d3.keys(text[type]).indexOf(here) > -1 && text[type][here]['sense'] == 'None of the others';
+            //         return (chosen ? 'block' : 'none');
+            //     });
+            
+            // none_reasons.selectAll("label")
+            //     .data(doubt_reasons)
+            //         .enter()
+            //         .append("label")
+            //         .attr("class", "btn shadow-sm btn-success m-1")
+            //         // .classed("active", function(d) {
+            //         //     var here = d3.select(this.parentNode.parentNode.parentNode).attr("token_id");
+            //         //     var chosen = d3.keys(text[type]).indexOf(here) > -1 && text[type][here]['sense'] == d;
+            //         //     return (chosen ? true : null);
+            //         // })
+            //         .text(function(d) {return(d); })
+            //         .append("input")
+            //         .attr("type", "radio")
+            //         .attr("autocomplete", "off")
+            //         .attr("name", "doubt")
+            //         .attr("value", function(d) {return(d)});
 
             inputtext = conc.append("div").attr("class", "row")
                 .append("div").attr("class", "col-sm-auto")
@@ -491,8 +514,13 @@
                     });
             }
 
+            // $(document).on('change', 'input[name="doubt"]', function(event) {
+            //     var analized = d3.select(this.parentNode.parentNode.parentNode).attr("token_id");
+            //     var answer = d3.select(this).attr('value');
+            //     text[type][analized]['none_reasons'] = answer;
+            // });
+
             $(document).on('change', 'input[name="sense"]', function(event) {
-                console.log(d3.select(this.parentNode.parentNode.parentNode.parentNode).attr("class"));
                 var analized = d3.select(this.parentNode.parentNode.parentNode.parentNode).attr("token_id");
                 var answer = d3.select(this).attr('value');
                 // register data
@@ -510,6 +538,11 @@
                 conc.selectAll('.form-control').attr('disabled', function(d) {
                     return(d3.keys(text[type]).indexOf(d.id) > -1 ? null : true);
                 });
+                // none_reasons.style('display', function() {
+                //     var here = d3.select(this.parentNode).attr("token_id");
+                //     var chosen = d3.keys(text[type]).indexOf(here) > -1 && text[type][here]['sense'] == 'None of the others';
+                //     return (chosen ? 'block' : 'none');
+                // });
 
                 // 
                 reminder.html(function(d) {
@@ -522,7 +555,6 @@
                 });
 
                 localStorage.setItem("annotations-" + text['user'], JSON.stringify(text));
-
                 if (d3.keys(text[type]).length == concordances.length) {
                     var congratulations = ["Well done!", "Awesome!", "Great!",
                         "Proficiat!", "Indrukwekkend!"]
