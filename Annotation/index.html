@@ -132,13 +132,13 @@
                 title: "Welcome!",
                 text: "Please enter your username",
                 input: "text",
-                inputPlaceholder: "mariana.montes",
+                inputPlaceholder: "firstname.lastname",
                 showCancelButton: true,
-                inputValidator: (value) => { // only accept names included in users.json
-                    if (names.indexOf(value) == -1) {
-                        return "Invalid username, please try again."
-                    }
-                }
+                // inputValidator: (value) => { // only accept names included in users.json
+                //     if (names.indexOf(value) == -1) {
+                //         return "Invalid username, please try again."
+                //     }
+                // }
             }).then((result) => {
                 if (result.value) {
                     Swal.fire({ // I don't know if this message is necessary
@@ -151,7 +151,9 @@
                         text = JSON.parse(localStorage.getItem("annotations-" + text['user']));
                     }
                     saved = JSON.stringify(text);
-                    this_user = users.filter(function(d) {return(d.name == text['user'])})[0];
+                    this_user = users.filter(function(d) {
+                        var username = names.indexOf(result.value) > -1 ? result.value : 'guest';
+                        return(d.name == username)})[0];
                     offerTypes(this_user);
                 }
             });
@@ -305,7 +307,7 @@
 
                 displayConc(); // displays the concordance that corresponds to the current token
 
-                /// ZERO SHOW concordance
+                /// FIRST show concordance
 
                 conc.append("p")
                     .html('<i class="fas fa-check-circle text-muted"></i> Select a sense for the following concordance.');
@@ -314,10 +316,14 @@
                     var line = d3.select(this);
                     line.append("p")
                         .attr("class", "text-center")
-                        .html(function(d) {return (d.left + '<span class="px-1 text-primary" style="font-weight:bold">' + d.target + '</span>' + d.right ); });
+                        .html(function(d) {
+                            return (d.left + '<span class="px-1 text-primary" style="font-weight:bold">' + d.target + '</span>' + d.right );
+                            });
                     });
 
                 conc.append("hr");
+
+                // SECOND show options for senses
 
                 conc.append("div").attr("class", "row no-gutters justify-content-sm-center")
                     .append("div").attr("class", "btn-group-vertical btn-group-toggle mt-2 btn-block")
@@ -329,7 +335,7 @@
                     .attr("class", "btn shadow-md btn btn-outline-secondary btn-sm")
                     .classed("active", function(d) {
                         var here = d3.select(this.parentNode.parentNode.parentNode).attr("token_id");
-                        var chosen = is_annotated(here, type) && text[type][here]['sense'] == d.name;
+                        var chosen = hasSense(here, type) && text[type][here]['sense'] == d.name;
                         return (chosen ? true : null);
                     })
                     .html(function(d) {return('<strong>' + d.name + "</strong> : " + d.label); })
@@ -350,44 +356,47 @@
                     
                     // enable further notes
                     cues.selectAll('.btn-group-toggle').attr('disabled', function(d) { // enable cues
-                        return(is_annotated(d.id, type) ? null : true);
+                        return(hasSense(d.id, type) ? null : true);
                     });
                     cues.selectAll('label').classed("active", function(d) {
                         var here = d3.select(this.parentNode.parentNode.parentNode.parentNode).attr('token_id');
-                        var chosen = is_annotated(here, type) && text[type][here]['cues'].indexOf(d.index) > -1;
+                        var chosen = hasSense(here, type) && text[type][here]['cues'].indexOf(d.index) > -1;
                         return (chosen ? true : null);
                     });
                     conf.attr("disabled", function(d) { // enable confidence buttons
-                        return(is_annotated(d.id, type) ? null : true);
+                        return(hasSense(d.id, type) ? null : true);
                     });
                     conc.selectAll('.form-control').attr('disabled', function(d) { // enable extra comments
-                        return(is_annotated(d.id, type) ? null : true);
+                        return(hasSense(d.id, type) ? null : true);
                     });
 
                     updateTargetColor();
                     displayReminder();
+                    displayNoSense();
+                    colorStars();
+                    inputtext.select("#" + type + toClassify.indexOf(analized) + "_comment").property('value', '');
                     saveInLS();
-                    AnnounceAchievement();
+                    announceAchievement('halfdone');
                     
                 });
 
-                // FOURTH we add the confidence radio buttons, although I WOULD like the star rating...
-
                 conc.append("hr");
+                
+                // THIRD we add the confidence radio star buttons
+
                 conc.append("p").html('<i class="fas fa-check-circle text-muted"></i>  How confident are you in your choice?');
 
                 conf = conc.append("div").attr("class", "row no-gutters justify-content-sm-center")
-                .append("div").attr("id", "confidence")
-                .attr("class", "btn-group-toggle")
-                .attr("data-toggle", "buttons")
-                .attr("disabled", function() {
-                    var here = d3.select(this.parentNode.parentNode).attr("token_id");
-                    return (is_annotated(here, type) ? null : true);
-                });
+                    .append("div").attr("id", "confidence")
+                    .attr("class", "btn-group-toggle")
+                    .attr("data-toggle", "buttons")
+                    .attr("disabled", function() {
+                        var here = d3.select(this.parentNode.parentNode).attr("token_id");
+                        return (hasSense(here, type) ? null : true);
+                    });
 
                 conf.append("span")
-                // .style('font-weight', 'bold')
-                .text("Not at all ");
+                    .text("Not at all ");
 
                 conf.selectAll("label")
                     .data([0, 1, 2, 3, 4, 5]).enter()
@@ -399,24 +408,10 @@
                         .attr("autocomplete", "off").attr("name", "confidence")
                         .attr("value", function(d) {return (d); });
 
-                radiocolor();
-
-                function radiocolor() {
-                    conf.selectAll("label")
-                        .style("color", function(d) {
-                            var here = d3.select(this.parentNode.parentNode.parentNode).attr("token_id");
-                            if (!is_annotated(here, type) ||
-                            d3.keys(text[type][here]).indexOf('confidence') == -1 ||
-                            text[type][here]['confidence'] < d) {
-                                return ("#bdbdbd");
-                            } else {
-                                return ("#ffa500");
-                            }
-                        })
-                }
+                colorStars();
 
                 conf.append("span")
-                .text(' Very confident');
+                    .text(' Very confident');
 
                 // Control when confidence changes
                 $(document).on('change', 'input[name="confidence"]', function(event) {
@@ -424,18 +419,20 @@
                     var answer = d3.select(this).property('value');
                     text[type][analized]['confidence'] = answer;
                     updateTargetColor();
-                    AnnounceAchievement();
-                    radiocolor();
+                    announceAchievement('done');
+                    colorStars();
                 });
                 
-                // SECOND we show the concordance, in a variable called 'cues' because it's also clickable to register cues
-
                 conc.append("hr");
-                conc.append("p").html('<i class="fas fa-check-circle text-muted"></i>  Click on the words that helped you choose the sense.');
 
-                cues = conc.append("div").attr("class", "row no-gutters justify-content-center")
+                // FOURTH we create a cues variable and re-display the concordance, but here the words are buttons to annotate the cues
+
+                conc.append("p")
+                    .html('<i class="fas fa-check-circle text-muted"></i>  Click on the words that helped you choose the sense.');
+
+                cues = conc.append("div").attr("class", "row justify-content-center")
                     .each(function(d) {
-                        var line = d3.select(this).append('p'),
+                        var line = d3.select(this).append('p').attr("class", "text-center"),
                             left_context = [], 
                             right_context = [],
                             left_source = d.left.split(' '), 
@@ -453,37 +450,32 @@
 
                         halfLine(left_context, 'right');
 
-                        line//.append("div").attr("class", "px-1")
-                        .append("span").attr("class", "btn p-0 text-primary")
-                        .style("font-weight", "bold")
-                        // .style("color", "#1f77b4")
-                        .text(function(d) {return (d.target); });
+                        line.append("span").attr("class", "btn p-0 text-primary")
+                            .style("font-weight", "bold")
+                            .text(function(d) {return (d.target); });
 
                         halfLine(right_context, 'left');
 
                         function halfLine(context, alignment) {
-                            line
-                            // .append("div")
-                            // .attr("class", "text-md-" + alignment)
-                            .append("span").attr("class", "btn-group-toggle")
-                            .attr("data-toggle", "buttons")
-                            .attr("disabled", function(d) {
-                                return(d3.keys(text[type]).indexOf(d.id) > -1 ? null : true);
-                            })
-                            .selectAll("label")
-                            .data(context).enter()
-                            .append("label").attr("class", "btn btn-cue px-1")
-                            .classed("active", function(d) {
-                                var here = d3.select(this.parentNode.parentNode.parentNode.parentNode).attr('token_id');
-                                var chosen = is_annotated(here, type) && text[type][here]['cues'].indexOf(d.index) > -1;
-                                return (chosen ? true : null);
-                            })
-                            .text(function(d) {return(d.cw); })
-                            .append("input").attr("type", "checkbox")
-                            .attr("name", "cues")
-                            .attr("autocomplete", "off")
-                            .attr("value", function(d) {return (d.index); });
-                        }
+                            line.append("span").attr("class", "btn-group-toggle")
+                                .attr("data-toggle", "buttons")
+                                .attr("disabled", function(d) {
+                                    return(d3.keys(text[type]).indexOf(d.id) > -1 ? null : true);
+                                })
+                                .selectAll("label")
+                                .data(context).enter()
+                                .append("label").attr("class", "btn btn-cue px-1")
+                                .classed("active", function(d) {
+                                    var here = d3.select(this.parentNode.parentNode.parentNode.parentNode).attr('token_id');
+                                    var chosen = hasSense(here, type) && text[type][here]['cues'].indexOf(d.index) > -1;
+                                    return (chosen ? true : null);
+                                })
+                                .text(function(d) {return(d.cw); })
+                                .append("input").attr("type", "checkbox")
+                                .attr("name", "cues")
+                                .attr("autocomplete", "off")
+                                .attr("value", function(d) {return (d.index); });
+                            }
 
                     });
 
@@ -500,31 +492,42 @@
                     } else { //if you are unclicking
                         cues_list.splice(cues_list.indexOf(answer), 1);
                     }
-                    console.log(text[type][analized]);
-                    
-                    if (cues_list.length == 1) {AnnounceAchievement();}
+                                        
+                    if (cues_list.length == 1) {announceAchievement('done');}
                     updateTargetColor();
                     displayReminder();
                     saveInLS();
                 });
 
-                // FIRST we add the reminder to add cues if the sense is annotated
+                // HERE we add the reminder to add cues if the sense is annotated but there are not cues
                 reminder = conc.append('div')
                     .attr('class', 'alert alert-warning text-center')
                     .attr('role', 'alert')
                     .html('Click on the words to select the cues or click <a href="#" id="no-cues-selected" class="alert-link">here</a> if there are none.');
                 
-                displayReminder(); // displays the reminder as must
+                displayReminder();
 
-                conc.select("#no-cues-selected").on("click", function(d){
+                // Use the <a> in the reminder message to select 'no cues' as option
+                reminder.select("#no-cues-selected").on("click", function(d){
                     text[type][d.id]['cues'] = ['none'];
                     displayReminder();
                     updateTargetColor();
                 });
+
                 // FIFTH we add an option of comments, although there is no control here since it is not compulsory
+                // (unless the sense is 'None')
 
                 conc.append("hr");
                 conc.append("p").html('<i class="fas fa-check-circle text-muted"></i>  Any observations about this concordance?')
+
+                // HERE we add a reminder to comment if the sense is 'none'
+                no_sense_message = conc.append('div')
+                    .attr('class', 'alert alert-warning text-center')
+                    .attr('role', 'alert')
+                    .html("Don't forget to explain why no sense tag is appropriate. (E.g. too ambiguous, not enough context, \
+                    wrong part-of-speech...)");
+                
+                displayNoSense();
 
                 inputtext = conc.append("div").attr("class", "row")
                     .append("div").attr("class", "col")
@@ -534,9 +537,9 @@
                     .attr("class", "form-control")
                     .attr("disabled", function() {
                         var here = d3.select(this.parentNode.parentNode).attr("token_id");
-                        return (is_annotated(here, type) ? null : true);
+                        return (hasSense(here, type) ? null : true);
                     })
-                    .attr("id", function(d) {return(d.id + "_comment"); })
+                    .attr("id", function(d) {return(type + toClassify.indexOf(d.id) + "_comment"); })
                     .attr("name", "comments")
                     .attr("placeholder", "No comments")
                     .attr("aria-label", "Comments");
@@ -545,11 +548,11 @@
                 $(document).on('change', 'input[name="comments"]', function(event) {
                     var analized = d3.select(this.parentNode.parentNode).attr("token_id");
                     var answer = d3.select(this).property('value');
-                    if (text[type][analized] == undefined) {
-                        window.alert("You have to assign a sense first!");
-                    } else {
-                        text[type][analized]['comments'] = answer;
-                    }
+                    text[type][analized]['comments'] = answer;
+                    
+                    displayNoSense();
+                    updateTargetColor();
+                    announceAchievement('done');
                 });
 
                 // FINALLY we add 'previous' and 'next' buttons
@@ -584,9 +587,9 @@
                 function updateTargetColor(t) {
                     d3.select("#overview").selectAll("p.text-sm-center")
                     .style("color", function(d) {
-                        if (!is_annotated(d.id, type)) {
+                        if (!hasSense(d.id, type)) {
                             return('#000000');
-                        } else if (!(has_cues(d.id, type) && has_conf(d.id, type))) {
+                        } else if (!isDone(d.id, type)) {
                             return('#ef8a62');
                         } else {return("#4daf4a")}
                     });
@@ -596,7 +599,17 @@
                 function displayReminder() {
                     reminder.style("display", function(d) {
                         var here = d3.select(this.parentNode).attr("token_id");
-                        return (is_annotated(here, type) && text[type][here]['cues'].length == 0 ? 'block' : 'none');
+                        return (hasSense(here, type) && text[type][here]['cues'].length == 0 ? 'block' : 'none');
+                    });
+                }
+
+                // Update display of reminder to comment when sense is 'None'
+                function displayNoSense() {
+                    no_sense_message.style("display", function(d) {
+                        var here = d3.select(this.parentNode).attr("token_id");
+                        return (hasSense(here, type) &&
+                            text[type][here]['sense'] == 'None' &&
+                            d3.keys(text[type][here]).indexOf('comments') == -1 ? 'block' : 'none');
                     });
                 }
 
@@ -607,53 +620,64 @@
                     });
                 }
 
+                // update color of confidence stars
+                function colorStars() {
+                    conf.selectAll("label")
+                        .style("color", function(d) {
+                            var here = d3.select(this.parentNode.parentNode.parentNode).attr("token_id");
+                            if (!hasSense(here, type) ||
+                            d3.keys(text[type][here]).indexOf('confidence') == -1 ||
+                            text[type][here]['confidence'] < d) {
+                                return ("#bdbdbd");
+                            } else {
+                                return ("#ffa500");
+                            }
+                        })
+                }
+
                 // Check if all the tokens of a type have been assigned with senses
-                function all_senses(t) {return (d3.keys(text[t]).length == this_user['tokens'][t].length);}
+                function allSenses(t) {return (d3.keys(text[t]).length == this_user['tokens'][t].length);}
                 
                 // Check if a particular token has been annotated
-                function is_annotated(token_id, t) {
+                function hasSense(token_id, t) {
                     return (d3.keys(text[t]).indexOf(token_id) > -1);
                 }
 
-                // Check if a particular token has been assigned with cues
-                function has_cues(token_id, t) {
-                    return (text[t][token_id]['cues'].length > 0);
-                }
-
-                // Check if a particular token has been assigned with confidence
-                function has_conf(token_id, t) {
-                    return (d3.keys(text[t][token_id]).indexOf('confidence') > -1);
+                // Check if the full work is done
+                function isDone(token_id, t) {
+                    var has_cues = text[t][token_id]['cues'].length > 0;
+                    var has_conf = d3.keys(text[t][token_id]).indexOf('confidence') > -1;
+                    var has_full_sense = text[t][token_id]['sense'] != 'None' || d3.keys(text[t][token_id]).indexOf('comments') > -1;
+                    return (has_cues && has_conf && has_full_sense);
                 }
 
                 // Check status of a type (all annotated, all senses but not all extras, or not all senses)
-                function CheckAchievements(t) {
+                function checkAchievements(t) {
                     var goal = this_user['tokens'][t];
-                    var annotated_tokens = goal.filter(function(d) {return (is_annotated(d, t)); });
-                    var tokens_with_cues = goal.filter(function(d) {return (has_cues(d, t)); });
-                    var tokens_with_conf = goal.filter(function(d) {return (has_conf(d, t)); });
-
+                    var started_tokens = goal.filter(function(d) {return (hasSense(d, t)); });
+                    var done_tokens = goal.filter(function(d) {return (isDone(d, t)); });
+                    
                     if (annotated_tokens.length == goal.length) {
-                        if (tokens_with_cues.length == tokens_with_conf.length == goal.length) {
+                        if (done_tokens.length == goal.length) {
                             return('done'); // Has everything
                         } else {
                             return('halfdone'); // Has all senses but not all cues and all confidence values
                         }
-                    } else {
-                        return('notdone'); // Does not have all senses
                     }
                 }
                 
                 // Fire an alert when a type is finished
-                function AnnounceAchievement() {        
+                function announceAchievement(achievement) {        
                     var congratulations = ["Well done!", "Awesome!", "Great!",
                     "Proficiat!", "Indrukwekkend!"];
                     var encouragement = ["Keep it up!", "Almost there!", "Great job!"]
 
-                    if (all_senses(type)) {
+                    if (allSenses(type)) {
                         var status = CheckAchievements(type);
                         var message, congrats;
 
-                        if (status == 'done') {
+                        if (status == achievement) {
+                            if (status == 'done') {
                             congrats = congratulations;
                             var full_types = this_types.filter(function(d) {
                                 return (CheckAchievements(d) == 'done');
@@ -673,6 +697,7 @@
                             html: message,
                             type: "success"
                         });
+                        }
                     }
                 }
             });
