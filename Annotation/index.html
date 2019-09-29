@@ -73,6 +73,7 @@
     text = {}, saved = JSON.stringify(text),
     users, this_user, names, achievements, this_types,
     definitions = {};
+    var counter = 0;
 
         // Upload a file
 
@@ -176,6 +177,7 @@
             // React to changes in the radio buttons
             $(document).on("change", "input[name='type']", function(event) { 
                 type = d3.select(this).property('value'); 
+                counter += 1;
                 start();
             });
 
@@ -196,15 +198,16 @@
 
             // Load the file of the corresponding type
             d3.tsv(type + ".tsv", function(data) {
-                var concordances, // will be the subset for the user
-                    toClassify = this_user['tokens'][type], viewing = 0, // to control what we see
-                    workspace, tabs, overview, // spaces
+                var concordances; // will be the subset for the user
+                var this_selection = this_user['tokens'][type].slice(0);
+                var viewing = 0; // to control what we see
+                var workspace, tabs, overview, // spaces
                     sense_options, conc, annotations, inputtext, //annotations
                     conf, cues, reminder, legend, // sets to manipulate
                     buttons;
 
                 // Filter the data
-                concordances = data.filter(function(d) {return(toClassify.indexOf(d.id)>-1); });
+                concordances = data.filter(function(d) {return(this_selection.indexOf(d.id)>-1); });
                 toClassify = d3.map(concordances, function(d) {return (d.id); }).keys();
                 if (d3.keys(text).indexOf(type) == -1) {text[type] = {}; } // Create a dictionary within 'text' for this type
                 
@@ -322,21 +325,20 @@
                     .append("div").attr("class", "btn-group-vertical btn-group-toggle mt-2 btn-block")
                     .attr("data-toggle", "buttons")
                     .selectAll("label")
-                    .data(senses)
-                    .enter()
+                    .data(senses).enter()
                     .append("label")
-                    .attr("class", "btn shadow-md btn btn-outline-secondary btn-sm")
-                    .classed("active", function(d) {
-                        var here = d3.select(this.parentNode.parentNode.parentNode).attr("token_id");
-                        var chosen = hasSense(here, type) && text[type][here]['sense'] == d.name;
-                        return (chosen ? true : null);
-                    })
-                    .html(function(d) {return('<strong>' + d.name + "</strong> : " + d.label); })
-                    .append("input")
-                    .attr("type", "radio")
-                    .attr("autocomplete", "off")
-                    .attr("name", type + "_sense")
-                    .attr("value", function(d) {return(d.name)});
+                        .attr("class", "btn shadow-md btn btn-outline-secondary btn-sm")
+                        .classed("active", function(d) {
+                            var here = d3.select(this.parentNode.parentNode.parentNode).attr("token_id");
+                            var chosen = hasSense(here, type) && text[type][here]['sense'] == d.name;
+                            return (chosen ? true : null);
+                        })
+                        .html(function(d) {return('<strong>' + d.name + "</strong> : " + d.label); })
+                        .append("input")
+                            .attr("type", "radio")
+                            .attr("autocomplete", "off")
+                            .attr("name", type + "_sense")
+                            .attr("value", function(d) {return(d.name)});
 
                 // Control de results when sense changes
                 $(document).on('change', 'input[name="' + type + '_sense"]', function(event) {
@@ -445,15 +447,15 @@
                             right_context.push({'index' : 'R'+right_source.indexOf(d).toString(), 'cw' : d});
                         });
 
-                        halfLine(left_context, 'right');
+                        halfLine(left_context);
 
                         line.append("span").attr("class", "btn p-0 text-primary")
                             .style("font-weight", "bold")
                             .text(function(d) {return (d.target); });
 
-                        halfLine(right_context, 'left');
+                        halfLine(right_context);
 
-                        function halfLine(context, alignment) {
+                        function halfLine(context) {
                             line.append("span").attr("class", "btn-group-toggle")
                                 .attr("data-toggle", "buttons")
                                 .attr("disabled", function(d) {
@@ -469,28 +471,32 @@
                                 })
                                 .text(function(d) {return(d.cw); })
                                 .append("input").attr("type", "checkbox")
-                                .attr("name", type + "_cues")
-                                .attr("autocomplete", "off")
-                                .attr("value", function(d) {return (d.index); });
+                                    .attr("name", type + counter + "_cues")
+                                    .attr("autocomplete", "off")
+                                    .attr("value", function(d) {return (d.index); });
                             }
 
                     });
 
                 // Control of results when the 'cues' change
-                $(document).on("change", "input[name='" + type + "_cues']", function(event){
+                $(document).on("change", "input[name='" + type + counter + "_cues']", function(event){
                     var analized = d3.select(this.parentNode.parentNode.parentNode.parentNode.parentNode).attr("token_id");
                     var answer = d3.select(this).attr('value');
                     
+                    console.log("Before, ", text[type][analized]['cues']);
                     var cues_list = text[type][analized]['cues'];
-                    if (cues_list.indexOf('none') == 0) {cues_list.splice(0, 1); }
-
-                    if (cues_list.indexOf(answer) === -1) {
+                    if (cues_list.indexOf('none') == 0) {
+                        cues_list.splice(0, 1);
+                    } else if (cues_list.indexOf(answer) === -1) {
+                        console.log('Adding cue');
                         cues_list.push(answer);
                     } else { //if you are unclicking
+                        console.log('Removing cue');
                         cues_list.splice(cues_list.indexOf(answer), 1);
                     }
                                         
                     if (cues_list.length == 1) {announceAchievement('done');}
+                    console.log("After, ", text[type][analized]['cues']);
                     updateTargetColor();
                     displayReminder();
                     saveInLS();
