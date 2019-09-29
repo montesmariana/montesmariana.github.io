@@ -71,7 +71,7 @@
 <script>
     var dropdown,
     text = {}, saved = JSON.stringify(text),
-    users, this_user, names, achievements,
+    users, this_user, names, achievements, this_types,
     definitions = {};
 
         // Upload a file
@@ -110,15 +110,6 @@
             });
         });
 
-        // Download
-
-        d3.select("#download").on("click", function(){
-            saved = JSON.stringify(text);
-            saveInLS();
-            d3.select(this).attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(saved))
-            .attr("download", text['user'] + ".json");
-        });
-
         // Upload definitions
         d3.json("definitions.json", function(data) {
             definitions = data;
@@ -141,8 +132,10 @@
                 // }
             }).then((result) => {
                 if (result.value) {
-                    Swal.fire({ // I don't know if this message is necessary
+                    var username = names.indexOf(result.value) > -1 ? result.value : 'guest';
+                    Swal.fire({
                         title: "Login succesful!",
+                        text: "Logged in as " + (username == 'guest' ? result.value + ' (' + username + ')' : username),
                         type: "success",
                         confirmButtonText: "Let's start!"
                     });
@@ -152,7 +145,6 @@
                     }
                     saved = JSON.stringify(text);
                     this_user = users.filter(function(d) {
-                        var username = names.indexOf(result.value) > -1 ? result.value : 'guest';
                         return(d.name == username)})[0];
                     offerTypes(this_user);
                 }
@@ -161,8 +153,8 @@
 
         // Create radio buttons with options of types, with first one as default choice
         function offerTypes(this_user) {
-            var this_types = d3.keys(this_user['tokens']), // tailored to this user
-            typesel;
+            this_types = d3.keys(this_user['tokens']); // tailored to this user
+            var typesel;
             
             typesel = d3.select("#type_selection")
             typesel.append("h3").text("Types");
@@ -217,10 +209,10 @@
                 if (d3.keys(text).indexOf(type) == -1) {text[type] = {}; } // Create a dictionary within 'text' for this type
                 
                 // Select the senses for this type
-                senses = definitions[type];
+                senses = definitions[type].slice(0);
                 senses.push({ // Add 'idk' option
-                    'name' : "None",
-                    'label' : "None of the above."
+                    'name' : "none",
+                    'label' : "None of the above"
                     })
 
                 workspace = d3.select("#concordance");
@@ -310,7 +302,8 @@
                 /// FIRST show concordance
 
                 conc.append("p")
-                    .html('<i class="fas fa-check-circle text-muted"></i> Select a sense for the following concordance.');
+                    .style('color', '#696969')
+                    .html('<b>1.</b> Select a sense for the following concordance line.');
 
                 conc.each(function(d) {
                     var line = d3.select(this);
@@ -342,11 +335,11 @@
                     .append("input")
                     .attr("type", "radio")
                     .attr("autocomplete", "off")
-                    .attr("name", "sense")
+                    .attr("name", type + "_sense")
                     .attr("value", function(d) {return(d.name)});
 
                 // Control de results when sense changes
-                $(document).on('change', 'input[name="sense"]', function(event) {
+                $(document).on('change', 'input[name="' + type + '_sense"]', function(event) {
                     var analized = d3.select(this.parentNode.parentNode.parentNode.parentNode).attr("token_id");
                     var answer = d3.select(this).attr('value');
                     // register data
@@ -384,7 +377,9 @@
                 
                 // THIRD we add the confidence radio star buttons
 
-                conc.append("p").html('<i class="fas fa-check-circle text-muted"></i>  How confident are you in your choice?');
+                conc.append("p")
+                    .style('color', '#696969')
+                    .html('<b>2.</b>  How confident are you in your choice?');
 
                 conf = conc.append("div").attr("class", "row no-gutters justify-content-sm-center")
                     .append("div").attr("id", "confidence")
@@ -405,7 +400,8 @@
                         .style("font-size", "1.5em")
                         .html("&#x2605;")
                         .append("input").attr("type", "radio")
-                        .attr("autocomplete", "off").attr("name", "confidence")
+                        .attr("autocomplete", "off")
+                        .attr("name", type + "_confidence")
                         .attr("value", function(d) {return (d); });
 
                 colorStars();
@@ -414,7 +410,7 @@
                     .text(' Very confident');
 
                 // Control when confidence changes
-                $(document).on('change', 'input[name="confidence"]', function(event) {
+                $(document).on('change', 'input[name="' + type + '_confidence"]', function(event) {
                     var analized = d3.select(this.parentNode.parentNode.parentNode.parentNode).attr("token_id");
                     var answer = d3.select(this).property('value');
                     text[type][analized]['confidence'] = answer;
@@ -428,7 +424,8 @@
                 // FOURTH we create a cues variable and re-display the concordance, but here the words are buttons to annotate the cues
 
                 conc.append("p")
-                    .html('<i class="fas fa-check-circle text-muted"></i>  Click on the words that helped you choose the sense.');
+                    .style('color', '#696969')
+                    .html('<b>3. </b>  Click on the words that helped you choose the sense.');
 
                 cues = conc.append("div").attr("class", "row justify-content-center")
                     .each(function(d) {
@@ -472,7 +469,7 @@
                                 })
                                 .text(function(d) {return(d.cw); })
                                 .append("input").attr("type", "checkbox")
-                                .attr("name", "cues")
+                                .attr("name", type + "_cues")
                                 .attr("autocomplete", "off")
                                 .attr("value", function(d) {return (d.index); });
                             }
@@ -480,7 +477,7 @@
                     });
 
                 // Control of results when the 'cues' change
-                $(document).on("change", "input[name='cues']", function(event){
+                $(document).on("change", "input[name='" + type + "_cues']", function(event){
                     var analized = d3.select(this.parentNode.parentNode.parentNode.parentNode.parentNode).attr("token_id");
                     var answer = d3.select(this).attr('value');
                     
@@ -518,7 +515,9 @@
                 // (unless the sense is 'None')
 
                 conc.append("hr");
-                conc.append("p").html('<i class="fas fa-check-circle text-muted"></i>  Any observations about this concordance?')
+                conc.append("p")
+                    .style('color', '#696969')
+                    .html('<b>4. </b>  Any observations about this concordance?')
 
                 // HERE we add a reminder to comment if the sense is 'none'
                 no_sense_message = conc.append('div')
@@ -541,6 +540,7 @@
                     })
                     .attr("id", function(d) {return(type + toClassify.indexOf(d.id) + "_comment"); })
                     .attr("name", "comments")
+                    .attr('autocomplete', 'on')
                     .attr("placeholder", "No comments")
                     .attr("aria-label", "Comments");
 
@@ -564,7 +564,7 @@
                 
                 buttons.append("button") // PREVIOUS
                     .attr("type", "button")
-                    .attr("class", "btn shadow-sm btn-secondary")
+                    .attr("class", "btn shadow-sm btn-secondary m-1")
                     .text("Previous")
                     .on("click", function() {
                         viewing > 0 ? viewing -= 1 : viewing = toClassify.length-1;
@@ -573,7 +573,7 @@
 
                 buttons.append("button") // NEXT
                     .attr("type", "button")
-                    .attr("class", "btn shadow-sm btn-secondary")
+                    .attr("class", "btn shadow-sm btn-secondary m-1")
                     .text("Next")
                     .on("click", function() {
                         viewing < toClassify.length-1 ? viewing += 1 : viewing = 0;
@@ -603,12 +603,12 @@
                     });
                 }
 
-                // Update display of reminder to comment when sense is 'None'
+                // Update display of reminder to comment when sense is 'none'
                 function displayNoSense() {
                     no_sense_message.style("display", function(d) {
                         var here = d3.select(this.parentNode).attr("token_id");
                         return (hasSense(here, type) &&
-                            text[type][here]['sense'] == 'None' &&
+                            text[type][here]['sense'] == 'none' &&
                             d3.keys(text[type][here]).indexOf('comments') == -1 ? 'block' : 'none');
                     });
                 }
@@ -647,7 +647,7 @@
                 function isDone(token_id, t) {
                     var has_cues = text[t][token_id]['cues'].length > 0;
                     var has_conf = d3.keys(text[t][token_id]).indexOf('confidence') > -1;
-                    var has_full_sense = text[t][token_id]['sense'] != 'None' || d3.keys(text[t][token_id]).indexOf('comments') > -1;
+                    var has_full_sense = text[t][token_id]['sense'] != 'none' || d3.keys(text[t][token_id]).indexOf('comments') > -1;
                     return (has_cues && has_conf && has_full_sense);
                 }
 
@@ -655,9 +655,9 @@
                 function checkAchievements(t) {
                     var goal = this_user['tokens'][t];
                     var started_tokens = goal.filter(function(d) {return (hasSense(d, t)); });
-                    var done_tokens = goal.filter(function(d) {return (isDone(d, t)); });
+                    var done_tokens = goal.filter(function(d) {return (hasSense(d, t) && isDone(d, t)); });
                     
-                    if (annotated_tokens.length == goal.length) {
+                    if (started_tokens.length == goal.length) {
                         if (done_tokens.length == goal.length) {
                             return('done'); // Has everything
                         } else {
@@ -673,17 +673,19 @@
                     var encouragement = ["Keep it up!", "Almost there!", "Great job!"]
 
                     if (allSenses(type)) {
-                        var status = CheckAchievements(type);
+                        var status = checkAchievements(type);
                         var message, congrats;
 
                         if (status == achievement) {
                             if (status == 'done') {
                             congrats = congratulations;
                             var full_types = this_types.filter(function(d) {
-                                return (CheckAchievements(d) == 'done');
+                                return (checkAchievements(d) == 'done');
                             });
                             if (full_types.length == this_types.length) {
-                                message = "You have annotated everything, hartelijk bedankt!"
+                                message = "<p>You have annotated everything, hartelijk bedankt!</p> \
+                                <p>Please don't forget to download it and \
+                                mail it to mariana.montes@kuleuven.be</p>"
                             } else {
                                 message = "You finished annotating <em>" + type + "</em>, thank you!"
                             }
@@ -700,6 +702,25 @@
                         }
                     }
                 }
+                
+                // Download
+
+                d3.select("#download").on("click", function(){
+                    saved = JSON.stringify(text);
+                    saveInLS();
+                    d3.select(this).attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(saved))
+                        .attr("download", text['user'] + ".json");
+                    var full_types = this_types.filter(function(t) {
+                        return(checkAchievements(t) == 'done');
+                    });
+                    var message = full_types.length == this_types.length ? 'Please send \
+                    to <a href="mailto:mariana.montes@kuleuven.be">mariana.montes@kuleuven.be</a>!' : null;
+                    Swal.fire({
+                        title: 'Download successful',
+                        html: message,
+                        type: 'success'
+                    });
+                });
             });
 }
 

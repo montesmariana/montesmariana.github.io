@@ -2,111 +2,66 @@
     {
         "name": "mariana.montes",
         "tokens": {
-            "hachelijk": [
-                "hachelijk/adj/volkskrant_20000205_218/2506",
-                "hachelijk/adj/algemeen_dagblad_19991214_140/594",
-                "hachelijk/adj/de_standaard_20030527_01_71/490"
-            ],
-            "hoopvol": [
-                "hoopvol/adj/het_laatste_nieuws_20030118_01_598/35",
-                "hoopvol/adj/de_standaard_20011004_01_128/770",
-                "hoopvol/adj/nrc_handelsblad_20020316_84/19"
+            "church": [
+                "church/N/br-k10/271",
+                "church/N/br-d17/569",
+                "church/N/br-d07/216",
+                "church/N/br-d02/923",
+                "church/N/br-e12/1082"
             ],
             "hoekig": [
-                "hoekig/adj/de_standaard_20041002_01_36/394",
-                "hoekig/adj/algemeen_dagblad_20020726_86/1065",
-                "hoekig/adj/nrc_handelsblad_20000302_75/221",
-                "hoekig/adj/de_standaard_19990804_01_12/1258",
-                "hoekig/adj/het_laatste_nieuws_20040422_01_157/431",
-                "hoekig/adj/het_laatste_nieuws_19990423_01_405/89",
-                "hoekig/adj/volkskrant_20030408_73/184",
-                "hoekig/adj/nrc_handelsblad_19990111_49/577",
-                "hoekig/adj/volkskrant_20020806_99/472",
-                "hoekig/adj/nrc_handelsblad_20030723_79/119"
-            ],
-            "grijs": [
-                "grijs/adj/volkskrant_20031013_13/263",
-                "grijs/adj/algemeen_dagblad_20000726_43/884",
-                "grijs/adj/nrc_handelsblad_20020118_132/32"
+                "hoekig/adj/de_standaard_20020125_01_116/335",
+                "hoekig/adj/nrc_handelsblad_20001211_93/591",
+                "hoekig/adj/parool_20040504_87/186",
+                "hoekig/adj/het_laatste_nieuws_20040224_01_1100/344",
+                "hoekig/adj/het_nieuwsblad_20010421_01_831/214"
             ],
             "dof": [
-                "dof/adj/algemeen_dagblad_19990821_189/549",
-                "dof/adj/de_standaard_20010523_01_77/2426",
-                "dof/adj/parool_20011013_85/494",
-                "dof/adj/de_standaard_20041005_01_39/407",
-                "dof/adj/algemeen_dagblad_20020911_103/45"
+                "dof/adj/parool_19990717_77/522",
+                "dof/adj/het_nieuwsblad_19990911_01_338/31",
+                "dof/adj/het_nieuwsblad_20030719_01_106/105",
+                "dof/adj/volkskrant_20030619_168/137",
+                "dof/adj/nrc_handelsblad_20030710_132/69"
             ],
-            "church": [
-                "church/N/br-a16/453",
-                "church/N/br-d07/1408",
-                "church/N/br-d01/1628",
-                "church/N/br-k04/877",
-                "church/N/br-a10/2022",
-                "church/N/br-d09/502",
-                "church/N/br-d14/1311",
-                "church/N/br-f44/1189",
-                "church/N/br-g13/1130",
-                "church/N/br-b22/1005"
+            "heilzaam": [
+                "heilzaam/adj/nrc_handelsblad_20020909_102/527",
+                "heilzaam/adj/algemeen_dagblad_20001223_44/358",
+                "heilzaam/adj/parool_20020720_9/30",
+                "heilzaam/adj/de_morgen_20021011_01_12/110",
+                "heilzaam/adj/algemeen_dagblad_20010208_98/237"
             ]
         }
     },
     {
         "name": "dirk.geeraerts",
         "tokens": {
-            "hachelijk": [
-                "hachelijk/adj/algemeen_dagblad_19990430_58/6",
-                "hachelijk/adj/nrc_handelsblad_20010530_114/431",
-                "hachelijk/adj/volkskrant_20040505_42/327"
+            "church": [
+                "church/N/br-k10/271",
+                "church/N/br-d17/569",
+                "church/N/br-d07/216",
+                "church/N/br-d02/923",
+                "church/N/br-e12/1082"
             ],
-            "gloeiend": [
-                "gloeiend/adj/parool_20010803_78/133",
-                "gloeiend/adj/parool_20001127_121/133",
-                "gloeiend/adj/het_laatste_nieuws_19990306_01_462/69",
-                "gloeiend/adj/nrc_handelsblad_20010518_35/174",
-                "gloeiend/adj/volkskrant_20000411_39/118"
+            "hoekig": [
+                "hoekig/adj/de_standaard_20020125_01_116/335",
+                "hoekig/adj/nrc_handelsblad_20001211_93/591",
+                "hoekig/adj/parool_20040504_87/186",
+                "hoekig/adj/het_laatste_nieuws_20040224_01_1100/344",
+                "hoekig/adj/het_nieuwsblad_20010421_01_831/214"
             ],
-            "geestig": [
-                "geestig/adj/nrc_handelsblad_20010511_108/709",
-                "geestig/adj/nrc_handelsblad_20000205_36/861",
-                "geestig/adj/nrc_handelsblad_20010727_1/75",
-                "geestig/adj/het_laatste_nieuws_20010313_01_275/524",
-                "geestig/adj/parool_20020814_39/171",
-                "geestig/adj/het_laatste_nieuws_19990108_01_255/79",
-                "geestig/adj/nrc_handelsblad_20010209_167/900",
-                "geestig/adj/algemeen_dagblad_20021012_151/577",
-                "geestig/adj/de_standaard_20020711_01_110/116",
-                "geestig/adj/het_nieuwsblad_20010427_01_298/103"
+            "dof": [
+                "dof/adj/parool_19990717_77/522",
+                "dof/adj/het_nieuwsblad_19990911_01_338/31",
+                "dof/adj/het_nieuwsblad_20030719_01_106/105",
+                "dof/adj/volkskrant_20030619_168/137",
+                "dof/adj/nrc_handelsblad_20030710_132/69"
             ],
-            "gemiddeld": [
-                "gemiddeld/adj/het_laatste_nieuws_20000310_01_292/80",
-                "gemiddeld/adj/de_morgen_20040130_01_126/352",
-                "gemiddeld/adj/parool_20000120_291/27",
-                "gemiddeld/adj/parool_19990904_62/94",
-                "gemiddeld/adj/algemeen_dagblad_20001207_144/464"
-            ],
-            "geldig": [
-                "geldig/adj/het_laatste_nieuws_20001010_01_282/103",
-                "geldig/adj/de_standaard_20041109_01_49/93",
-                "geldig/adj/nrc_handelsblad_20011011_37/550",
-                "geldig/adj/het_nieuwsblad_20000422_01_532/118",
-                "geldig/adj/het_laatste_nieuws_19990118_01_441/369",
-                "geldig/adj/het_nieuwsblad_20031023_01_218/455",
-                "geldig/adj/het_laatste_nieuws_20001108_01_474/308",
-                "geldig/adj/de_standaard_20010111_01_27/31",
-                "geldig/adj/de_morgen_20010827_01_109/366",
-                "geldig/adj/parool_20010202_34/62"
-            ],
-            "grijs": [
-                "grijs/adj/de_morgen_20010427_01_2/128",
-                "grijs/adj/het_nieuwsblad_20000516_01_326/11",
-                "grijs/adj/nrc_handelsblad_20011027_25/918",
-                "grijs/adj/de_morgen_20010418_01_117/618",
-                "grijs/adj/het_nieuwsblad_20020613_01_600/664",
-                "grijs/adj/nrc_handelsblad_20000704_113/399",
-                "grijs/adj/algemeen_dagblad_20000726_43/884",
-                "grijs/adj/algemeen_dagblad_20031001_96/146",
-                "grijs/adj/het_laatste_nieuws_20011215_01_169/98",
-                "grijs/adj/de_standaard_20000406_01_118/856"
+            "heilzaam": [
+                "heilzaam/adj/nrc_handelsblad_20020909_102/527",
+                "heilzaam/adj/algemeen_dagblad_20001223_44/358",
+                "heilzaam/adj/parool_20020720_9/30",
+                "heilzaam/adj/de_morgen_20021011_01_12/110",
+                "heilzaam/adj/algemeen_dagblad_20010208_98/237"
             ]
         }
     },
@@ -114,109 +69,65 @@
         "name": "alex.scigalszky",
         "tokens": {
             "church": [
-                "church/N/br-d10/305",
-                "church/N/br-d03/1080",
-                "church/N/br-d09/1436",
-                "church/N/br-f15/1887",
-                "church/N/br-k04/1485"
+                "church/N/br-k10/271",
+                "church/N/br-d17/569",
+                "church/N/br-d07/216",
+                "church/N/br-d02/923",
+                "church/N/br-e12/1082"
             ],
-            "grijs": [
-                "grijs/adj/nrc_handelsblad_20011025_169/78",
-                "grijs/adj/het_laatste_nieuws_20011215_01_169/98",
-                "grijs/adj/volkskrant_20010426_138/1443",
-                "grijs/adj/volkskrant_20041001_62/473",
-                "grijs/adj/de_standaard_20040129_01_48/237",
-                "grijs/adj/parool_20010830_103/49",
-                "grijs/adj/algemeen_dagblad_19990624_116/468",
-                "grijs/adj/het_laatste_nieuws_20030201_01_441/180",
-                "grijs/adj/parool_20010608_109/358",
-                "grijs/adj/parool_20000321_27/1252"
+            "hoekig": [
+                "hoekig/adj/de_standaard_20020125_01_116/335",
+                "hoekig/adj/nrc_handelsblad_20001211_93/591",
+                "hoekig/adj/parool_20040504_87/186",
+                "hoekig/adj/het_laatste_nieuws_20040224_01_1100/344",
+                "hoekig/adj/het_nieuwsblad_20010421_01_831/214"
             ],
-            "gemiddeld": [
-                "gemiddeld/adj/nrc_handelsblad_20031220_07/158",
-                "gemiddeld/adj/de_morgen_20030813_01_80/91",
-                "gemiddeld/adj/de_standaard_20030823_01_156/111",
-                "gemiddeld/adj/parool_19990605_121/70",
-                "gemiddeld/adj/algemeen_dagblad_20011031_102/463",
-                "gemiddeld/adj/nrc_handelsblad_20020518_159/670",
-                "gemiddeld/adj/algemeen_dagblad_20010512_71/62",
-                "gemiddeld/adj/algemeen_dagblad_19990925_125/355",
-                "gemiddeld/adj/algemeen_dagblad_19990806_52/1726",
-                "gemiddeld/adj/volkskrant_20001122_98/88"
+            "dof": [
+                "dof/adj/parool_19990717_77/522",
+                "dof/adj/het_nieuwsblad_19990911_01_338/31",
+                "dof/adj/het_nieuwsblad_20030719_01_106/105",
+                "dof/adj/volkskrant_20030619_168/137",
+                "dof/adj/nrc_handelsblad_20030710_132/69"
             ],
-            "gekleurd": [
-                "gekleurd/adj/parool_20010320_117/506",
-                "gekleurd/adj/nrc_handelsblad_20001111_28/153",
-                "gekleurd/adj/volkskrant_20000427_47/30",
-                "gekleurd/adj/het_nieuwsblad_20010317_01_0/114",
-                "gekleurd/adj/algemeen_dagblad_19990925_20/96"
-            ],
-            "goedkoop": [
-                "goedkoop/adj/nrc_handelsblad_20020420_66/153",
-                "goedkoop/adj/algemeen_dagblad_20020905_158/124",
-                "goedkoop/adj/de_morgen_20010421_01_58/172",
-                "goedkoop/adj/het_laatste_nieuws_20001004_01_288/57",
-                "goedkoop/adj/de_morgen_20010126_01_29/271",
-                "goedkoop/adj/het_laatste_nieuws_20040728_01_532/193",
-                "goedkoop/adj/volkskrant_20020223_210/579",
-                "goedkoop/adj/algemeen_dagblad_20040611_50/107",
-                "goedkoop/adj/de_standaard_20000923_01_63/1606",
-                "goedkoop/adj/het_nieuwsblad_20030827_01_267/294"
-            ],
-            "heet": [
-                "heet/adj/algemeen_dagblad_20030512_69/21",
-                "heet/adj/algemeen_dagblad_20010113_206/434",
-                "heet/adj/parool_20001013_2/508"
+            "heilzaam": [
+                "heilzaam/adj/nrc_handelsblad_20020909_102/527",
+                "heilzaam/adj/algemeen_dagblad_20001223_44/358",
+                "heilzaam/adj/parool_20020720_9/30",
+                "heilzaam/adj/de_morgen_20021011_01_12/110",
+                "heilzaam/adj/algemeen_dagblad_20010208_98/237"
             ]
         }
     },
     {
         "name": "guest",
         "tokens": {
-            "dof": [
-                "dof/adj/het_nieuwsblad_19990911_01_338/31",
-                "dof/adj/de_standaard_20040628_01_78/324",
-                "dof/adj/nrc_handelsblad_20000303_155/411",
-                "dof/adj/parool_19990827_130/148",
-                "dof/adj/nrc_handelsblad_20021009_189/198"
-            ],
-            "gloeiend": [
-                "gloeiend/adj/parool_20030628_32/126",
-                "gloeiend/adj/algemeen_dagblad_20011013_176/1061",
-                "gloeiend/adj/de_standaard_20030816_01_57/460"
+            "church": [
+                "church/N/br-k10/271",
+                "church/N/br-d17/569",
+                "church/N/br-d07/216",
+                "church/N/br-d02/923",
+                "church/N/br-e12/1082"
             ],
             "hoekig": [
-                "hoekig/adj/nrc_handelsblad_20001127_121/363",
-                "hoekig/adj/volkskrant_20010830_94/389",
-                "hoekig/adj/volkskrant_19991009_54/249",
-                "hoekig/adj/algemeen_dagblad_19990127_35/385",
-                "hoekig/adj/volkskrant_20000502_62/107"
+                "hoekig/adj/de_standaard_20020125_01_116/335",
+                "hoekig/adj/nrc_handelsblad_20001211_93/591",
+                "hoekig/adj/parool_20040504_87/186",
+                "hoekig/adj/het_laatste_nieuws_20040224_01_1100/344",
+                "hoekig/adj/het_nieuwsblad_20010421_01_831/214"
             ],
-            "hoopvol": [
-                "hoopvol/adj/nrc_handelsblad_20020708_109/576",
-                "hoopvol/adj/volkskrant_20001021_166/2204",
-                "hoopvol/adj/de_morgen_19990222_01_46/217",
-                "hoopvol/adj/de_standaard_20031129_01_131/1138",
-                "hoopvol/adj/nrc_handelsblad_20021016_73/324",
-                "hoopvol/adj/parool_19990420_82/706",
-                "hoopvol/adj/de_standaard_20020221_01_58/58",
-                "hoopvol/adj/de_morgen_20020309_01_48/695",
-                "hoopvol/adj/volkskrant_20020501_44/441",
-                "hoopvol/adj/parool_20000518_10/1791"
+            "dof": [
+                "dof/adj/parool_19990717_77/522",
+                "dof/adj/het_nieuwsblad_19990911_01_338/31",
+                "dof/adj/het_nieuwsblad_20030719_01_106/105",
+                "dof/adj/volkskrant_20030619_168/137",
+                "dof/adj/nrc_handelsblad_20030710_132/69"
             ],
-            "geldig": [
-                "geldig/adj/de_morgen_20000828_01_14/98",
-                "geldig/adj/de_standaard_20040221_01_32/561",
-                "geldig/adj/volkskrant_20000617_210/300",
-                "geldig/adj/het_laatste_nieuws_20040901_01_531/35",
-                "geldig/adj/parool_19990416_106/48"
-            ],
-            "geestig": [
-                "geestig/adj/parool_20010503_128/305",
-                "geestig/adj/het_nieuwsblad_20010427_01_298/103",
-                "geestig/adj/nrc_handelsblad_20001127_35/488",
-                "geestig/adj/de_standaard_20000610_01_44/449",
-                "geestig/adj/de_morgen_20030411_01_18/192"
+            "heilzaam": [
+                "heilzaam/adj/nrc_handelsblad_20020909_102/527",
+                "heilzaam/adj/algemeen_dagblad_20001223_44/358",
+                "heilzaam/adj/parool_20020720_9/30",
+                "heilzaam/adj/de_morgen_20021011_01_12/110",
+                "heilzaam/adj/algemeen_dagblad_20010208_98/237"
             ]
         }
     }
