@@ -53,6 +53,9 @@
             <div class="col-sm-2" id="type_selection"></div>
             <div class="col-sm-10" id="concordance"></div>
         </div>
+        <div class="fixed-bottom text-center">
+            <p>Last update: <span id="lastupdate"></span></p>
+        </div>
     </div>
 </div>
 
@@ -755,7 +758,11 @@
             }
         }
 
-        
+        d3.select("#lastupdate")
+            .html(function() {
+                var lm = new Date(document.lastModified);
+                return (lm.toDateString());
+            });
     </script>
 </body>
 </html>
