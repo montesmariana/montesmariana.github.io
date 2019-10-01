@@ -72,11 +72,11 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 <script>
-    var dropdown,
-    text = {}, saved = JSON.stringify(text),
-    users, this_user, names, achievements, this_types,
-    definitions = {};
-    var counter = 0;
+    var typesel,
+        text = {}, saved = JSON.stringify(text),
+        users, this_user, names, achievements, this_types,
+        definitions = {};
+        var counter = 0;
 
         // Upload a file
 
@@ -158,24 +158,22 @@
         // Create radio buttons with options of types, with first one as default choice
         function offerTypes(this_user) {
             this_types = d3.keys(this_user['tokens']); // tailored to this user
-            var typesel;
             
             typesel = d3.select("#type_selection")
             typesel.append("h3").text("Types");
             typesel.append("div").attr("class", "btn-group-vertical btn-group-toggle")
                 .attr("data-toggle", "buttons")
                 .selectAll("label")
-                .data(this_types)
-                .enter()
-                .append("label")
-                .attr("class", "btn shadow-sm btn-success")
-                .classed("active", function(d) {return (this_types.indexOf(d) == 0); })
-                .text(function(d) {return(d); })
-                .append("input")
-                .attr("type", "radio")
-                .attr("autocomplete", "off")
-                .attr("name", "type")
-                .attr("value", function(d) {return(d)});
+                .data(this_types).enter()
+                    .append("label")
+                    .attr("class", "btn shadow-sm btn-success mt-1")
+                    .classed("active", function(d) {return (this_types.indexOf(d) == 0); })
+                    .text(function(d) {return(d); })
+                    .append("input")
+                    .attr("type", "radio")
+                    .attr("autocomplete", "off")
+                    .attr("name", "type")
+                    .attr("value", function(d) {return(d)});
 
             // React to changes in the radio buttons
             $(document).on("change", "input[name='type']", function(event) { 
@@ -610,7 +608,6 @@
 
                 // Update display of reminder to annotate cues
                 function displayReminder() {
-                    console.log(text);
                     reminder.style("display", function(d) {
                         var here = d3.select(this.parentNode).attr("token_id");
                         return (hasSense(here, type) && text[type][here]['cues'].length == 0 ? 'block' : 'none');
@@ -676,13 +673,20 @@
                     var started_tokens = goal.filter(function(d) {return (hasSense(d, t)); });
                     var done_tokens = goal.filter(function(d) {return (hasSense(d, t) && isDone(d, t)); });
                     
-                    if (started_tokens.length == goal.length) {
-                        if (done_tokens.length == goal.length) {
-                            return('done'); // Has everything
-                        } else {
-                            return('halfdone'); // Has all senses but not all cues and all confidence values
-                        }
+                    if (started_tokens.length == Math.ceil(goal.length*3/5)) {
+                        return('halfdone');
+                    } else if (started_tokens.length == goal.length && done_tokens.length == goal.length) {
+                        return('done');
+                    } else {
+                        return('notdone');
                     }
+                    // if (started_tokens.length == goal.length) {
+                    //     if (done_tokens.length == goal.length) {
+                    //         return('done'); // Has everything
+                    //     } else {
+                    //         return('halfdone'); // Has all senses but not all cues and all confidence values
+                    //     }
+                    // }
                 }
                 
                 // Fire an alert when a type is finished
@@ -690,36 +694,42 @@
                     var congratulations = ["Well done!", "Awesome!", "Great!",
                     "Proficiat!", "Indrukwekkend!"];
                     var encouragement = ["Keep it up!", "Almost there!", "Great job!"]
-
-                    if (allSenses(type)) {
+                    
+                    // if (allSenses(type)) {
                         var status = checkAchievements(type);
+                        console.log(status);
                         var message, congrats;
 
                         if (status == achievement) {
                             if (status == 'done') {
-                            congrats = congratulations;
-                            var full_types = this_types.filter(function(d) {
-                                return (checkAchievements(d) == 'done');
-                            });
-                            if (full_types.length == this_types.length) {
-                                message = "<p>You have annotated everything, hartelijk bedankt!</p> \
-                                <p>Please don't forget to download it and \
-                                mail it to mariana.montes@kuleuven.be</p>"
-                            } else {
-                                message = "You finished annotating <em>" + type + "</em>, thank you!"
+                                congrats = congratulations;
+                                // typesel.selectAll('label')
+                                //     .attr("class", function(d) {
+                                //         return(checkAchievements(d) == 'done' ? "btn shadow-sm btn-success mt-1" : "btn shadow-sm btn-warning mt-1"); })
+                                //     .classed("active", function(d) {return (d == type); });
+                                var full_types = this_types.filter(function(d) {
+                                    return (checkAchievements(d) == 'done');
+                                });
+                                if (full_types.length == this_types.length) {
+                                    message = "<p>You have annotated everything, hartelijk bedankt!</p> \
+                                    <p>Please don't forget to download it and \
+                                    mail it to mariana.montes@kuleuven.be</p>"
+                                } else {
+                                    message = "You finished annotating <em>" + type + "</em>, thank you!"
+                                }
+                            } else if (status == 'halfdone') {
+                                congrats = encouragement;
+                                // message = "You are almost done with <em>" + type + "</em>!"
+                                message = "You are almost done with <em>" + type + "</em>!"
                             }
-                        } else if (status == 'halfdone') {
-                            congrats = encouragement;
-                            message = "You are almost done with <em>" + type + "</em>!"
-                        }
 
-                        Swal.fire({
-                            title: congrats[Math.floor(Math.random()* congrats.length)],
-                            html: message,
-                            type: "success"
-                        });
+                            Swal.fire({
+                                title: congrats[Math.floor(Math.random()* congrats.length)],
+                                html: message,
+                                type: "success"
+                            });
                         }
-                    }
+                    // }
                 }
                 
                 // Download
