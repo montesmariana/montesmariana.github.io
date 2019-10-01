@@ -203,7 +203,7 @@
                 var viewing = 0; // to control what we see
                 var workspace, tabs, overview, // spaces
                     sense_options, conc, annotations, inputtext, //annotations
-                    conf, cues, reminder, legend, // sets to manipulate
+                    conf, cues, reminder, no_cues_conf, // sets to manipulate
                     buttons;
 
                 // Filter the data
@@ -483,20 +483,18 @@
                     var analized = d3.select(this.parentNode.parentNode.parentNode.parentNode.parentNode).attr("token_id");
                     var answer = d3.select(this).attr('value');
                     
-                    console.log("Before, ", text[type][analized]['cues']);
                     var cues_list = text[type][analized]['cues'];
                     if (cues_list.indexOf('none') == 0) {
                         cues_list.splice(0, 1);
-                    } else if (cues_list.indexOf(answer) === -1) {
-                        console.log('Adding cue');
+                    }
+                    
+                    if (cues_list.indexOf(answer) === -1) {
                         cues_list.push(answer);
                     } else { //if you are unclicking
-                        console.log('Removing cue');
                         cues_list.splice(cues_list.indexOf(answer), 1);
                     }
                                         
                     if (cues_list.length == 1) {announceAchievement('done');}
-                    console.log("After, ", text[type][analized]['cues']);
                     updateTargetColor();
                     displayReminder();
                     saveInLS();
@@ -506,7 +504,13 @@
                 reminder = conc.append('div')
                     .attr('class', 'alert alert-warning text-center')
                     .attr('role', 'alert')
-                    .html('Click on the words to select the cues or click <a href="#" id="no-cues-selected" class="alert-link">here</a> if there are none.');
+                    .html('Click on the words to select the ones that helped you or click <a href="#" id="no-cues-selected" class="alert-link">here</a> if there are none.');
+                
+                // and a confirmation if they have selected 'here'
+                no_cues_conf = conc.append('div')
+                    .attr('class', 'alert alert-success text-center')
+                    .attr('role', 'alert')
+                    .html('<i class="fas fa-check"></i> You have registered that none of the contextwords were helpful');
                 
                 displayReminder();
 
@@ -603,9 +607,15 @@
 
                 // Update display of reminder to annotate cues
                 function displayReminder() {
+                    console.log(text);
                     reminder.style("display", function(d) {
                         var here = d3.select(this.parentNode).attr("token_id");
                         return (hasSense(here, type) && text[type][here]['cues'].length == 0 ? 'block' : 'none');
+                    });
+
+                    no_cues_conf.style("display", function(d) {
+                        var here = d3.select(this.parentNode).attr("token_id");
+                        return (hasSense(here, type) && text[type][here]['cues'].indexOf('none') == 0 ? 'block' : 'none');
                     });
                 }
 
