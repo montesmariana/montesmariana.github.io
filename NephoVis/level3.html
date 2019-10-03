@@ -611,7 +611,7 @@
           // drawTable(tokselection);
         };
 
-        d3.select("#refresh-table").on("click", drawTable(tokselection));
+        d3.select("#refresh-table").on("click", function() {drawTable(tokselection); });
 
         function drawTable(tokselection) {
 
