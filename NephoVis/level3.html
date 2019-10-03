@@ -66,6 +66,7 @@
             <input type="radio" name="selection" value="brush" autocomplete="off"> <i class='fas fa-crop-alt'></i> Select area
           </label>
         </div>
+        <button type="button" class="btn shadow-sm btn-light m-1" id="select-sample">Small sample</button>
       </div>
       <div class='row'>
         <button type="button" class="btn shadow-sm btn-marigreen m-1" id="model-select"><i class="fas fa-arrow-alt-circle-up"></i> UP </button>
@@ -803,6 +804,27 @@
                 legendContainer.select("#legendSize").remove();
               }
         }
+
+        d3.select("#select-sample").on("click", function() {
+          var small_sample = ["church/N/br-a07/1487", "church/N/br-a09/1417", "church/N/br-a17/2228",
+            "church/N/br-a31/1594", "church/N/br-a31/2120","church/N/br-b08/1866",
+            "church/N/br-b22/1318", "church/N/br-b22/1326", "church/N/br-d03/1051",
+            "church/N/br-d09/1127", "church/N/br-d09/2026", "church/N/br-d09/2084",
+            "church/N/br-d09/231", "church/N/br-d09/724", "church/N/br-d12/233",
+            "church/N/br-e12/1082", "church/N/br-e13/808", "church/N/br-f15/1245",
+            "church/N/br-f15/824", "church/N/br-f44/343", "church/N/br-f44/986",
+            "church/N/br-k04/1874", "church/N/br-k04/828", "church/N/br-k10/967",
+            "church/N/br-p01/222", "church/N/br-a10/1769", "church/N/br-b08/1871",
+            "church/N/br-b22/1102", "church/N/br-d02/877", "church/N/br-d17/569",
+            "church/N/br-f15/1944", "church/N/br-f15/882", "church/N/br-f44/1122",
+            "church/N/br-g12/1806", "church/N/br-g12/544", "church/N/br-g13/1130",
+            "church/N/br-b04/1480", "church/N/br-d02/706", "church/N/br-d10/1913",
+            "church/N/br-d10/2187", "church/N/br-d12/1462", "church/N/br-g12/1270", "church/N/br-k16/2294",
+            "church/N/br-p06/425", "church/N/br-p04/2429", "church/N/br-p12/1559", "church/N/br-p12/1063",
+            "church/N/br-b08/2363", "church/N/br-d01/1628", "church/N/br-p12/1270"]
+          updateTokSelection(small_sample);
+
+        });
 
         updateLegend();
         updateTokSelection(tokselection);
