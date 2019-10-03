@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 
-    <title>Sense annotation</title>
+    <title></title>
 
     <style>
 
@@ -43,11 +43,11 @@
 <body>
     <div class="container">
         <div class="row justify-content-sm-center">
-            <h1>Senses annotation</h1>
+            <h1></h1>
         </div>
         <div class="row justify-content-sm-end">
-            <button type="button" class="btn shadow-sm btn-muted m-1"><a id="uploadfile">Upload progress</a></button>
-            <button type="button" class="btn shadow-sm btn-primary m-1"><a id="download">Download</a></button>
+            <button type="button" class="btn shadow-sm btn-muted m-1"><a id="uploadfile"></a></button>
+            <button type="button" class="btn shadow-sm btn-primary m-1"><a id="download"></a></button>
         </div>
         <div class="row justify-content-sm-center" id="playground">
             <div class="col-sm-2" id="type_selection"></div>
@@ -71,17 +71,28 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 <script>
-    var typesel,
+    var typesel, msg,
         text = {}, saved = JSON.stringify(text),
         users, this_user, names, achievements, this_types,
         definitions = {};
-        var counter = 0;
+    var counter = 0;
+    var lang = 'en';
+
+        // Select language
+        d3.json("messages.json", function(data) {
+            msg = data[lang];
+            d3.select("#uploadfile").text(msg["upload_button"]);
+            d3.select("#download").text(msg["download_button"]);
+            d3.select("title").text(msg["title"]);
+            d3.select("h1").text(msg["title"]);
+        });
 
         // Upload a file
 
-        d3.select("#uploadfile").on("click", function(){
+        d3.select("#uploadfile")
+            .on("click", function(){
             Swal.fire({
-                title: 'Select your file',
+                title: msg['upload_1'],
                 input: 'file',
                 inputAttributes: {
                     accept: '*.json'
@@ -97,13 +108,13 @@
                             saveInLS();
                             start();
                             Swal.fire({
-                                title: "File uploaded",
+                                title: msg['upload_success'],
                                 type: "success"
                             });
                         } else {
                             Swal.fire({
-                                title: "Wrong file",
-                                text: "Username doesn't match",
+                                title: msg['upload_fail_title'],
+                                text: msg['upload_fail_text'],
                                 type: "error"
                             });
                         }
@@ -123,10 +134,11 @@
             users = data;
             names = d3.map(users, function(d) {return(d.name); }).keys();
             Swal.fire({
-                title: "Welcome!",
-                text: "Please enter your username",
+                // title: "Welcome!",
+                title: msg['welcome_title'],
+                text: msg['welcome_text'],
                 input: "text",
-                inputPlaceholder: "firstname.lastname",
+                inputPlaceholder: msg['welcome_placeholder'],
                 showCancelButton: true,
                 // inputValidator: (value) => { // only accept names included in users.json
                 //     if (names.indexOf(value) == -1) {
@@ -137,10 +149,10 @@
                 if (result.value) {
                     var username = names.indexOf(result.value) > -1 ? result.value : 'guest';
                     Swal.fire({
-                        title: "Login succesful!",
-                        text: "Logged in as " + (username == 'guest' ? result.value + ' (' + username + ')' : username),
+                        title: msg['login_title'],
+                        text: msg['login_text'] + (username == 'guest' ? result.value + ' (' + username + ')' : username),
                         type: "success",
-                        confirmButtonText: "Let's start!"
+                        confirmButtonText: msg['login_button']
                     });
                     text['user'] = result.value;
                     if (typeof(Storage) !== 'undefined' && JSON.parse(localStorage.getItem("annotations-" + text['user'])) != null) {
@@ -214,8 +226,8 @@
                 // Select the senses for this type
                 senses = definitions[type].slice(0);
                 senses.push({ // Add 'idk' option
-                    'name' : "none",
-                    'label' : "None of the above"
+                    'name' : msg['no_sense_name'],
+                    'label' : msg['no_sense_label']
                     })
 
                 workspace = d3.select("#concordance");
@@ -226,13 +238,13 @@
                     .attr("role", "tablist");
 
                 tabs.selectAll("li")
-                    .data(["overview", "annotation"]).enter()
+                    .data([msg['tab_1'], msg['tab_2']]).enter()
                     .append("li")
                     .attr("class", "nav-item")
                     .append("a")
                     .attr("class", "nav-link")
                     .attr("id", function(d) {return(d + "-tab"); })
-                    .classed("active", function (d) {return (d == 'overview'); })
+                    .classed("active", function (d) {return (d == msg['tab_1']); })
                     .attr("data-toggle", "tab")
                     .attr("href", function(d) {return("#" + d); })
                     .attr("role", "tab")
@@ -241,11 +253,11 @@
 
                 workspace.append("div").attr("class", "tab-content")
                     .selectAll("div")
-                    .data(["overview", "annotation"]).enter()
+                    .data([msg['tab_1'], msg['tab_2']]).enter()
                     .append("div")
                     .attr("class", "tab-pane")
                     .attr("id", function(d) {return(d); })
-                    .classed("active", function (d) {return (d == 'overview'); })
+                    .classed("active", function (d) {return (d == msg['tab_1']); })
                     .attr("width", "100vp")
                     .attr("role", "tabpanel")
                     .attr("aria-labelledby", function(d) {return(d + "-tab"); });
@@ -253,7 +265,7 @@
                 // OVERVIEW TAB
 
                 // Create scrollable space for concordances (also to separate from legend)
-                overview = d3.select("#overview").append("div").attr("class", "mt-4").style("height", "70vh").style("overflow", "auto");
+                overview = d3.select("#" + msg['tab_1']).append("div").attr("class", "mt-4").style("height", "70vh").style("overflow", "auto");
 
                 // For each concordance we get a row, with a left, target and right column
                 // 'target' column shows how far the progress is with colors and is clickable to take you to that occurrence
@@ -274,10 +286,10 @@
                         .style('cursor', 'pointer')
                         .on("click", function(d) {
                             tabs.selectAll(".nav-link").classed("active", function() {
-                                return(d3.select(this).attr("id") == "annotation-tab");
+                                return(d3.select(this).attr("id") == msg['tab_2'] + "-tab");
                             })
                             workspace.selectAll(".tab-pane").classed("active", function() {
-                                return(d3.select(this).attr("id") == "annotation");
+                                return(d3.select(this).attr("id") == msg['tab_2']);
                             });
                             viewing = toClassify.indexOf(d.id);
                             displayConc();
@@ -294,7 +306,7 @@
                 // SENSE ANNOTATION TAB
 
                 // Store in the 'conc' variable the set of divs tied to the concordance, to which we'll add everything else
-                conc = d3.select("#annotation").append("div").attr("class", "row justify-content-sm-center mt-5")
+                conc = d3.select("#" + msg['tab_2']).append("div").attr("class", "row justify-content-sm-center mt-5")
                     .append("div").attr("class", "col-sm-12").selectAll("div")
                     .data(concordances).enter()
                     .append("div")
@@ -306,7 +318,7 @@
 
                 conc.append("p")
                     .style('color', '#696969')
-                    .html('<b>1.</b> Select a sense for the following concordance line.');
+                    .html(msg['instruction_1']);
 
                 conc.each(function(d) {
                     var line = d3.select(this);
@@ -381,7 +393,7 @@
 
                 conc.append("p")
                     .style('color', '#696969')
-                    .html('<b>2.</b>  How confident are you in your choice?');
+                    .html(msg['instruction_2']);
 
                 conf = conc.append("div").attr("class", "row no-gutters justify-content-sm-center")
                     .append("div").attr("id", "confidence")
@@ -392,8 +404,8 @@
                         return (hasSense(here, type) ? null : true);
                     });
 
-                conf.append("span")
-                    .text("Not at all ");
+                conf.append("span").attr("class", "px-2")
+                    .text(msg["confidence_none"]);
 
                 conf.selectAll("label")
                     .data([0, 1, 2, 3, 4, 5]).enter()
@@ -408,8 +420,8 @@
 
                 colorStars();
 
-                conf.append("span")
-                    .text(' Very confident');
+                conf.append("span").attr("class", "px-2")
+                    .text(msg["confidence_all"]);
 
                 // Control when confidence changes
                 $(document).on('change', 'input[name="' + type + '_confidence"]', function(event) {
@@ -427,7 +439,7 @@
 
                 conc.append("p")
                     .style('color', '#696969')
-                    .html('<b>3. </b>  Click on the words that helped you choose the sense.');
+                    .html(msg["instruction_3"]);
 
                 cues = conc.append("div").attr("class", "row justify-content-center")
                     .each(function(d) {
@@ -504,22 +516,24 @@
                 reminder = conc.append('div')
                     .attr('class', 'alert alert-warning text-center')
                     .attr('role', 'alert')
-                    .html('Click on the words to select the ones that helped you or click <a href="#" id="no-cues-selected" class="alert-link">here</a> if there are none.');
+                    .html(msg["reminder"]);
                 
                 // and a confirmation if they have selected 'here'
                 no_cues_conf = conc.append('div')
                     .attr('class', 'alert alert-success text-center')
                     .attr('role', 'alert')
-                    .html('<i class="fas fa-check"></i> You have registered that none of the contextwords were helpful');
+                    .html(msg["no_cues_conf"]);
                 
                 displayReminder();
 
                 // Use the <a> in the reminder message to select 'no cues' as option
-                reminder.select("#no-cues-selected").on("click", function(d){
-                    text[type][d.id]['cues'] = ['none'];
-                    displayReminder();
-                    updateTargetColor();
-                });
+                reminder.select("#no-cues-selected")
+                    .attr("href", "#")
+                    .on("click", function(d){
+                        text[type][d.id]['cues'] = ['none'];
+                        displayReminder();
+                        updateTargetColor();
+                    });
 
                 // FIFTH we add an option of comments, although there is no control here since it is not compulsory
                 // (unless the sense is 'None')
@@ -527,14 +541,13 @@
                 conc.append("hr");
                 conc.append("p")
                     .style('color', '#696969')
-                    .html('<b>4. </b>  Any observations about this concordance?')
+                    .html(msg["instruction_4"]);
 
                 // HERE we add a reminder to comment if the sense is 'none'
                 no_sense_message = conc.append('div')
                     .attr('class', 'alert alert-warning text-center')
                     .attr('role', 'alert')
-                    .html("Don't forget to explain why no sense tag is appropriate. (E.g. too ambiguous, not enough context, \
-                    wrong part-of-speech...)");
+                    .html(msg["no_sense_message"]);
                 
                 displayNoSense();
 
@@ -551,7 +564,7 @@
                     .attr("id", function(d) {return(type + toClassify.indexOf(d.id) + "_comment"); })
                     .attr("name", "comments")
                     .attr('autocomplete', 'on')
-                    .attr("placeholder", "No comments")
+                    .attr("placeholder", msg["inputtext_placeholder"])
                     .attr("aria-label", "Comments");
 
                 // control when comments change
@@ -567,7 +580,7 @@
 
                 // FINALLY we add 'previous' and 'next' buttons
 
-                buttons = d3.select("#annotation").append("div")
+                buttons = d3.select("#" + msg['tab_2']).append("div")
                     .attr("class", "row justify-content-center")
                     .append("div").attr("class", "col-sm-auto")
                     .append("div").attr("class", "btn-group mt-2");
@@ -575,7 +588,7 @@
                 buttons.append("button") // PREVIOUS
                     .attr("type", "button")
                     .attr("class", "btn shadow-sm btn-secondary m-1")
-                    .text("Previous")
+                    .text(msg["previous"])
                     .on("click", function() {
                         viewing > 0 ? viewing -= 1 : viewing = toClassify.length-1;
                         displayConc();
@@ -584,7 +597,7 @@
                 buttons.append("button") // NEXT
                     .attr("type", "button")
                     .attr("class", "btn shadow-sm btn-secondary m-1")
-                    .text("Next")
+                    .text(msg["next"])
                     .on("click", function() {
                         viewing < toClassify.length-1 ? viewing += 1 : viewing = 0;
                         displayConc();
@@ -595,7 +608,7 @@
                 
                 // Update color of target item in the overview concordance
                 function updateTargetColor(t) {
-                    d3.select("#overview").selectAll("p.text-sm-center")
+                    d3.select("#" + msg['tab_1']).selectAll("p.text-sm-center")
                     .style("color", function(d) {
                         if (!hasSense(d.id, type)) {
                             return('#000000');
@@ -623,7 +636,7 @@
                     no_sense_message.style("display", function(d) {
                         var here = d3.select(this.parentNode).attr("token_id");
                         return (hasSense(here, type) &&
-                            text[type][here]['sense'] == 'none' &&
+                            text[type][here]['sense'] == msg['no_sense_name'] &&
                             d3.keys(text[type][here]).indexOf('comments') == -1 ? 'block' : 'none');
                     });
                 }
@@ -662,7 +675,7 @@
                 function isDone(token_id, t) {
                     var has_cues = text[t][token_id]['cues'].length > 0;
                     var has_conf = d3.keys(text[t][token_id]).indexOf('confidence') > -1;
-                    var has_full_sense = text[t][token_id]['sense'] != 'none' || d3.keys(text[t][token_id]).indexOf('comments') > -1;
+                    var has_full_sense = text[t][token_id]['sense'] != msg['no_sense_name'] || d3.keys(text[t][token_id]).indexOf('comments') > -1;
                     return (has_cues && has_conf && has_full_sense);
                 }
 
@@ -690,18 +703,13 @@
                 
                 // Fire an alert when a type is finished
                 function announceAchievement(achievement) {        
-                    var congratulations = ["Well done!", "Awesome!", "Great!",
-                    "Proficiat!", "Indrukwekkend!"];
-                    var encouragement = ["Keep it up!", "Almost there!", "Great job!"]
-                    
                     // if (allSenses(type)) {
                         var status = checkAchievements(type);
-                        console.log(status);
                         var message, congrats;
 
                         if (status == achievement) {
                             if (status == 'done') {
-                                congrats = congratulations;
+                                congrats = msg["congratulations"];
                                 // typesel.selectAll('label')
                                 //     .attr("class", function(d) {
                                 //         return(checkAchievements(d) == 'done' ? "btn shadow-sm btn-success mt-1" : "btn shadow-sm btn-warning mt-1"); })
@@ -710,16 +718,14 @@
                                     return (checkAchievements(d) == 'done');
                                 });
                                 if (full_types.length == this_types.length) {
-                                    message = "<p>You have annotated everything, hartelijk bedankt!</p> \
-                                    <p>Please don't forget to download it and \
-                                    mail it to mariana.montes@kuleuven.be</p>"
+                                    message = msg["all_done_message"];
                                 } else {
-                                    message = "You finished annotating <em>" + type + "</em>, thank you!"
+                                    message = msg["type_done_message"][0] + type + msg["type_done_message"][1];
                                 }
                             } else if (status == 'halfdone') {
-                                congrats = encouragement;
+                                congrats = msg["encouragement"];
                                 // message = "You are almost done with <em>" + type + "</em>!"
-                                message = "You are almost done with <em>" + type + "</em>!"
+                                message = msg["almost_done_message"][0] + type + msg["almost_done_message"][1];
                             }
 
                             Swal.fire({
@@ -733,21 +739,21 @@
                 
                 // Download
 
-                d3.select("#download").on("click", function(){
-                    saved = JSON.stringify(text);
-                    saveInLS();
-                    d3.select(this).attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(saved))
-                        .attr("download", text['user'] + ".json");
-                    var full_types = this_types.filter(function(t) {
-                        return(checkAchievements(t) == 'done');
-                    });
-                    var message = full_types.length == this_types.length ? 'Please send \
-                    to <a href="mailto:mariana.montes@kuleuven.be">mariana.montes@kuleuven.be</a>!' : null;
-                    Swal.fire({
-                        title: 'Download successful',
-                        html: message,
-                        type: 'success'
-                    });
+                d3.select("#download")
+                    .on("click", function(){
+                        saved = JSON.stringify(text);
+                        saveInLS();
+                        d3.select(this).attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(saved))
+                            .attr("download", text['user'] + ".json");
+                        var full_types = this_types.filter(function(t) {
+                            return(checkAchievements(t) == 'done');
+                        });
+                        var message = full_types.length == this_types.length ? msg["final_download_message"] : null;
+                        Swal.fire({
+                            title: msg["download_title"],
+                            html: message,
+                            type: 'success'
+                        });
                 });
             });
 }

@@ -20,7 +20,7 @@
       }
 
       path.lighter {
-        fill-opacity : .3;
+        fill-opacity : .1;
       }
 
       path.lost {
@@ -81,6 +81,7 @@
           <div id='legendContainer'></div>
         </div>
         <div class="col-sm-4">
+            <button type="button" class="btn shadow-sm btn-marigreen m-1" id="refresh-table"><i class="fas fa-sync"></i> Refresh table </button>
           <div id='cwsFreq'></div>
           <div class="input-group mb-3">
             <input type="text" class="form-control" id='findtokens_cw' placeholder="Type a context word" aria-label="Context word" aria-describedby="search tokens with this context word">
@@ -607,8 +608,10 @@
           localStorage.setItem("tokselection", tokselection.length > 0 ? JSON.stringify(tokselection) : JSON.stringify(null));
           // if something is selected everything else is translucent
           dot.classed("lighter", function(d) {return (tokselection.length > 0 ? (tokselection.indexOf(d['_id']) === -1) : false); });
-          drawTable(tokselection);
+          // drawTable(tokselection);
         };
+
+        d3.select("#refresh-table").on("click", drawTable(tokselection));
 
         function drawTable(tokselection) {
 
@@ -803,6 +806,7 @@
 
         updateLegend();
         updateTokSelection(tokselection);
+        drawTable(tokselection);
 
       });
       
