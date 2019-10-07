@@ -507,7 +507,7 @@
                 } else {
                   return(50);
                 }}))
-            .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4"); })
+            .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"); })
             .style('opacity', 1)
             .attr('model', modselection[m])
             //.attr('token_id', function(d) {return(d['_id'])})
@@ -586,7 +586,7 @@
         // Updating color, shape and size after every button clicking
         function updatePlot() {
           svg.selectAll('.dot').selectAll('path')
-            .style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4"); })
+            .style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"); })
             .attr("d", d3.symbol().type(function(d) {
               return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle);
               }).size(function(d) {
@@ -631,11 +631,11 @@
 
           // Update color legend
           if (typeof(colorvalues) != 'number'){
-            colorvalues.sort();
+            // colorvalues.sort();
 
             var colorscale = d3.scaleOrdinal()
               .domain(colorvalues)
-              .range(colorvalues.map(color));
+              .range(colorvalues.map(function(x) {return(color(colorvalues.indexOf(x)));}));
             
             legendColor = d3.legendColor()
               .shape("path", d3.symbol().type(d3.symbolCircle).size(50)())

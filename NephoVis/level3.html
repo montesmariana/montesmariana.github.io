@@ -448,7 +448,7 @@
               } else {
                 return(64);
               }}))
-          .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4"); })
+          .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"); })
           .classed("lighter", function(d) {return (tokselection.length > 0 ? (tokselection.indexOf(d['_id']) === -1 && exists(d)) : false); })
           .classed("lost", function(d) {return (!exists(d)); })
           .on("mouseover", showContext)
@@ -565,7 +565,7 @@
 
         // Updating color, shape and size after every button clicking
         function updatePlot() {
-          dot.style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4"); })
+          dot.style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"); })
             .attr("d", d3.symbol()
               .type(function(d) {return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle); })
               .size(function(d) {return (typeof(sizevar) == 'string' ? size(+d[sizevar]) : 64); }));
@@ -665,7 +665,7 @@
         // Update Legends after each dropdown is changed
 
         function showContext(d) {
-            var tooltipcolor = typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4"
+            var tooltipcolor = typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"
             // var tooltiptext = typeof(ctxtvar) == 'string' ? d[ctxtvar].replace(/<em>/g, "<em style='color:" +tooltipcolor + ";font-weight:bold;'>") : ""
             var tooltiptext = typeof(ctxtvar) == 'string' ? d[ctxtvar].replace(/class=["']target["']/g, "style='color:" +tooltipcolor + ";font-weight:bold;'") : ""
             tooltip.transition()
@@ -696,7 +696,7 @@
           if (typeof(colorvalues) != 'number'){
             var colorscale = d3.scaleOrdinal()
               .domain(colorvalues)
-              .range(colorvalues.map(color));
+              .range(colorvalues.map(function(x) {return(color(colorvalues.indexOf(x)));}));
             
             legendColor = d3.legendColor()
               .shape("path", d3.symbol().type(d3.symbolCircle).size(64)())
