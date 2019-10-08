@@ -20,7 +20,7 @@
       }
 
       path.lighter {
-        fill-opacity : .3;
+        fill-opacity : .1;
       }
 
       path.lost {
@@ -40,7 +40,7 @@
         <h1></h1>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col-sm-6">
           <div class="row">
             <div class='btn-group'>
               <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select colour</button>
@@ -69,19 +69,23 @@
             <!-- <button type="button" class="btn shadow-sm btn-marigreen m-1" id="model-select"><i class="fas fa-arrow-alt-circle-down"></i> Confirm model selection</button> -->
           </div>
           <div class="row">
-            <button type="button" class="btn shadow-sm btn-marigreen m-1" id="to-level1"><i class="fas fa-arrow-alt-circle-up"></i> UP</button>
+            <button type="button" class="btn shadow-sm btn-marigreen my-1" id="to-level1"><i class="fas fa-arrow-alt-circle-up"></i> UP</button>
             <div class='btn-group'>
               <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle m-1" data-toggle="dropdown"><i class="fas fa-arrow-alt-circle-down"></i> Go to model</button>
               <div class="dropdown-menu" id="models"></div>
             </div>
           </div>
         </div>
-        <div class="col" id="legendContainer">
+        <div class="col-sm-6" id="legendContainer">
         </div>
       </div>
+      <br>
       <div class="row">
-        <div class='col-sm-9' style='max-width: 700px;'id="svgContainer"></div>
-        <div class='col-sm-3' id='cwsFreq'></div>
+        <div class="col-sm-8" style="padding : 0px;" id="svgContainer"></div>
+        <div class="col-sm-4">
+          <button type="button" class="btn shadow-sm btn-secondary my-1" id="show-matrix"> Hide distance matrix </button>
+          <div id="distMatrix" style="display:block;"><h3>Distance matrix</h3></div>
+        </div>
       </div>
     </div>
 
@@ -100,10 +104,9 @@
     <script src="d3-legend.min.js"></script>
     <!-- d3 component for brush -->
     <script src="https://d3js.org/d3-brush.v1.min.js"></script>
-    <!-- for pretty tables -->
-    <!-- <script src="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
-
+    <!-- d3 component for sequential color palettes -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    
     <script>
       var type, modselection, tokselection;
       var ncol, nrow, width, height, padding;
@@ -123,6 +126,17 @@
           }
         };
 
+      d3.select("#show-matrix").on("click", function() {
+        if (d3.select("#distMatrix").style('display') == 'block') {
+          d3.select("#distMatrix").style('display', 'none');
+          d3.select(this).text('Show distance matrix');
+        } else {
+          d3.select("#distMatrix").style('display', 'block');
+          d3.select(this).text('Hide distance matrix');
+        }
+        //d3.select("#buttons-selection").style('display', 'none')
+      });
+
       type = getUrlParameter('type');
       d3.select("h1").html("Level 2 (<em>" + type + "</em>)");
 
@@ -130,6 +144,34 @@
       d3.select("#to-level1").on("click", function() {
         window.open("level1.html" + "?type=" + type, "_self")
       });
+
+      // Make svg responsive with script from: https://brendansudol.com/writing/responsive-d3
+      function responsivefy(svg) {
+      // get container + svg aspect ratio
+        var container = d3.select(svg.node().parentNode),
+          width = parseInt(svg.style("width")),
+          height = parseInt(svg.style("height")),
+          aspect = width / height;
+
+        // add viewBox and preserveAspectRatio properties,
+        // and call resize so that svg resizes on inital page load
+        svg.attr("viewBox", "0 0 " + width + " " + height)
+          .attr("perserveAspectRatio", "xMinYMid")
+          .call(resize);
+
+        // to register multiple listeners for same event type, 
+        // you need to add namespace, i.e., 'click.foo'
+        // necessary if you call invoke this function for multiple svgs
+        // api docs: https://github.com/mbostock/d3/wiki/Selections#on
+        d3.select(window).on("resize." + container.attr("id"), resize);
+
+        // get width of container and resize svg to fit it
+        function resize() {
+          var targetWidth = parseInt(container.style("width"));
+          svg.attr("width", targetWidth);
+          svg.attr("height", Math.round(targetWidth / aspect));
+        }
+      }
 
       // first info from LocalStorage
       modselection = JSON.parse(localStorage.getItem("modselection"));
@@ -140,7 +182,6 @@
         window.alert("You have selected too many models, only the first 9 will be used.");
         modselection = modselection.slice(0, 9);
         localStorage.setItem("modselection", JSON.stringify(modselection));
-        console.log(modselection.length);
       }
 
       ncol = 3; // number of columns in the grid
@@ -245,6 +286,7 @@
         svg = d3.select("#svgContainer").append("svg")
           .attr("width", width*ncol)
           .attr("height", height*nrow + padding*2)
+          .call(responsivefy)
           //.style("background-color", "lightgray")
           .attr("transform", "translate(0,0)")
           .append("g");
@@ -359,20 +401,38 @@
             }
           tokselection = [];
           updateTokSelection(tokselection);
-        })
+        });
 
         function plotCell(p) {
           var cell = d3.select(this);
           
           cell.append('text')
-            .attr('x', padding)
+            .attr('x', padding*1.5)
             .attr('y', padding)
             .attr('dy', '-0.5em')
             .attr('font-size', '0.7em')
             .style('cursor', 'pointer')
-            .text(function(d) { return (modselection.indexOf(d.m)+1 + ': ' + d.m); })
+            .text(function(d) { 
+              return (d.m.length > 45 ? d.m.substring(0, 43) + '...' : d.m); })
             .on("click", function(d) {
               window.open("level3.html" + "?type=" + type + "&model=" + d.m, "_self");
+            })
+            .on('mouseover', function(d) {
+              tooltip.transition()
+                .duration(200)
+                .style("opacity", 1)
+                .style("background-color", "white")
+                .style("border", "solid")
+                .style("border-color", "lightgray");
+              tooltip.html(d.m)
+                .style("left", (d3.event.pageX + 3) + "px")
+                .style("top", (d3.event.pageY -3 ) + "px");
+            })
+            .on('mouseout', function() {
+              tooltip.transition()
+                .duration(200)
+                .style("opacity", 0);
+              d3.selectAll(".selector").remove();
             });
 
           // Draw frame
@@ -414,6 +474,21 @@
             .attr("transform", "translate(" + padding + ", " + 0 +")")
             .call(yAxis);
 
+          var circle = cell.append('circle')
+            .attr('cx', padding)
+            .attr('cy', padding)
+            .attr('r', padding/2)
+            .style('fill', color(0));
+
+          cell.append('text')
+            .attr('x', padding)
+            .attr('y', padding)
+            .attr('dx', '-0.3em')
+            .attr('dy', '0.3em')
+            .text(function(d) {return (modselection.indexOf(d.m)+1); })
+            .style('fill', 'white')
+            .style('font-weight', 'bold');
+
           cell.append("g")
             .attr("transform", "translate(0,0)")
             .attr("class", "dot")
@@ -432,8 +507,8 @@
                 } else {
                   return(50);
                 }}))
-            .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4"); })
-            .style('opacity', 0.7)
+            .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"); })
+            .style('opacity', 1)
             .attr('model', modselection[m])
             //.attr('token_id', function(d) {return(d['_id'])})
             .classed("lighter", function(d) {
@@ -450,8 +525,7 @@
                 .style("background-color", "white")
                 .style("border", "solid")
                 .style("border-color", "lightgray");
-              // tooltip.html("<b>" + d['_id'] + "</b><br>" + xcoord + ", " +  ycoord)
-              tooltip.html("<b>exists:</b>" + exists(d, cell))
+              tooltip.html("<b>" + d['_id'] + "</b><br>" + xcoord + ", " +  ycoord)
                 .style("left", (d3.event.pageX + 3) + "px")
                 .style("top", (d3.event.pageY - 50) + "px");
             })
@@ -512,7 +586,7 @@
         // Updating color, shape and size after every button clicking
         function updatePlot() {
           svg.selectAll('.dot').selectAll('path')
-            .style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4"); })
+            .style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"); })
             .attr("d", d3.symbol().type(function(d) {
               return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle);
               }).size(function(d) {
@@ -541,7 +615,6 @@
         function updateTokSelection(tokselection) {
           // stores 'null' if it's empty and the list otherwise
           localStorage.setItem("tokselection", tokselection.length > 0 ? JSON.stringify(tokselection) : JSON.stringify(null));
-          console.log(tokselection);
           // if something is selected everything else is translucent
           svg.selectAll(".dot").selectAll("path")
             .classed("lighter", function(d) {return (tokselection.length > 0 ? tokselection.indexOf(d['_id']) === -1 : false); });
@@ -558,11 +631,11 @@
 
           // Update color legend
           if (typeof(colorvalues) != 'number'){
-            colorvalues.sort();
+            // colorvalues.sort();
 
             var colorscale = d3.scaleOrdinal()
               .domain(colorvalues)
-              .range(colorvalues.map(color));
+              .range(colorvalues.map(function(x) {return(color(colorvalues.indexOf(x)));}));
             
             legendColor = d3.legendColor()
               .shape("path", d3.symbol().type(d3.symbolCircle).size(50)())
@@ -644,8 +717,97 @@
         updateLegend();
         updateTokSelection(tokselection);
        });
-      
 
+      d3.tsv(type + "/" + type + ".models.dist.tsv", function(error, data) {
+        if (error && error.target.status === 404) {
+          d3.select("#distMatrix").text("Distance matrix not available.");
+          throw error;
+        }
+
+        var distances, distMatrix, distCols, distRows, rows;
+        var miniWidth, miniHeight, color;
+        var distWidth = 200,
+          distHeight = 200,
+          distPad = 10;
+
+        distances = data.filter(function(d) {return (modselection.indexOf(d['_model']) > -1); });
+
+        distMatrix = d3.select("#distMatrix").append("svg")
+          .attr("width", distWidth)
+          .attr("height", distHeight)
+          .attr("padding", distPad)
+          .call(responsivefy)
+          .attr("transform", "translate(0,0)");
+
+        miniWidth = (distWidth-3*distPad)/distances.length;
+        miniHeight = (distHeight-3*distPad)/distances.length;
+
+        distCols = distMatrix.append('g')
+
+        distCols.selectAll('text')
+          .data(modselection).enter()
+          .append('text')
+          .attr('x', function(d) {return (distPad + miniWidth*(modselection.indexOf(d)+0.5)); })
+          .attr('y', distPad*0.7)
+          .style('font-size', '0.6em')
+          .text(function(d) {return (modselection.indexOf(d)+1); });
+
+        distRows = distMatrix.append('g')
+
+        distRows.selectAll('text')
+          .data(modselection).enter()
+          .append('text')
+          .attr('x', 0)
+          .attr('y', function(d) {return (distPad + miniHeight *(modselection.indexOf(d)+0.5)); })
+          .style('font-size', '0.6em')
+          .text(function(d) {return (modselection.indexOf(d)+1); });
+
+        color = d3.scaleSequential(d3.interpolateGreens)
+
+        rows = distMatrix.append("g")
+          .selectAll(".distrowrow")
+          .data(distances)
+          .enter()
+          .append("g")
+            .attr('class', 'distrow')
+            .attr('transform', function(d) {
+              return('translate(' + 10 + ',' + (10 + miniHeight * modselection.indexOf(d['_model'])) + ')'); })
+            .each(fillRow);
+
+        function fillRow(p) {
+          var row = d3.select(this);
+          var rowData = [];
+          modselection.forEach(function(d) {
+            rowData.push({'model' : d, 'value' : p[d]})
+          });
+
+          row.selectAll("rect")
+            .data(rowData)
+            .enter()
+            .append('rect')
+            .attr('width', miniWidth)
+            .attr('height', miniHeight)
+            .attr('transform', function(d) {
+              return ('translate(' + miniWidth * (modselection.indexOf(d.model)) + ', 0)'); 
+            })
+            .style('fill', function(d) {return (color(d.value)); });
+
+          row.selectAll('text')
+            .data(rowData).enter()
+            .append('text')
+            .attr('x', function(d) {return (miniWidth * (modselection.indexOf(d.model)+0.3)); })
+            .attr('y', miniHeight/2)
+            .attr('dy', (1/modselection.length) + 'em')
+            .attr('dx', '-' + (1/modselection.length) + 'em')
+            .text(function(d) {return (d3.format('.2f')(d.value)); })
+            .style('font-size', (1/modselection.length)*3  + 'em')
+            .style('fill', function(d) {
+              var light = d3.hsl(color(d.value))['l'];
+              return(light <= 0.5 ? 'white' : 'black');
+            })
+            .style('font-weight', 'bold');
+        }
+      });
       
     </script>
   </body>

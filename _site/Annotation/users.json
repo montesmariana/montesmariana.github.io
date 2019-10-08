@@ -1,0 +1,134 @@
+[
+    {
+        "name": "mariana.montes",
+        "tokens": {
+            "church": [
+                "church/N/br-k10/271",
+                "church/N/br-d17/569",
+                "church/N/br-d07/216",
+                "church/N/br-d02/923",
+                "church/N/br-e12/1082"
+            ],
+            "hoekig": [
+                "hoekig/adj/de_standaard_20020125_01_116/335",
+                "hoekig/adj/nrc_handelsblad_20001211_93/591",
+                "hoekig/adj/parool_20040504_87/186",
+                "hoekig/adj/het_laatste_nieuws_20040224_01_1100/344",
+                "hoekig/adj/het_nieuwsblad_20010421_01_831/214"
+            ],
+            "dof": [
+                "dof/adj/parool_19990717_77/522",
+                "dof/adj/het_nieuwsblad_19990911_01_338/31",
+                "dof/adj/het_nieuwsblad_20030719_01_106/105",
+                "dof/adj/volkskrant_20030619_168/137",
+                "dof/adj/nrc_handelsblad_20030710_132/69"
+            ],
+            "heilzaam": [
+                "heilzaam/adj/nrc_handelsblad_20020909_102/527",
+                "heilzaam/adj/algemeen_dagblad_20001223_44/358",
+                "heilzaam/adj/parool_20020720_9/30",
+                "heilzaam/adj/de_morgen_20021011_01_12/110",
+                "heilzaam/adj/algemeen_dagblad_20010208_98/237"
+            ]
+        }
+    },
+    {
+        "name": "dirk.geeraerts",
+        "tokens": {
+            "church": [
+                "church/N/br-k10/271",
+                "church/N/br-d17/569",
+                "church/N/br-d07/216",
+                "church/N/br-d02/923",
+                "church/N/br-e12/1082"
+            ],
+            "hoekig": [
+                "hoekig/adj/de_standaard_20020125_01_116/335",
+                "hoekig/adj/nrc_handelsblad_20001211_93/591",
+                "hoekig/adj/parool_20040504_87/186",
+                "hoekig/adj/het_laatste_nieuws_20040224_01_1100/344",
+                "hoekig/adj/het_nieuwsblad_20010421_01_831/214"
+            ],
+            "dof": [
+                "dof/adj/parool_19990717_77/522",
+                "dof/adj/het_nieuwsblad_19990911_01_338/31",
+                "dof/adj/het_nieuwsblad_20030719_01_106/105",
+                "dof/adj/volkskrant_20030619_168/137",
+                "dof/adj/nrc_handelsblad_20030710_132/69"
+            ],
+            "heilzaam": [
+                "heilzaam/adj/nrc_handelsblad_20020909_102/527",
+                "heilzaam/adj/algemeen_dagblad_20001223_44/358",
+                "heilzaam/adj/parool_20020720_9/30",
+                "heilzaam/adj/de_morgen_20021011_01_12/110",
+                "heilzaam/adj/algemeen_dagblad_20010208_98/237"
+            ]
+        }
+    },
+    {
+        "name": "alex.scigalszky",
+        "tokens": {
+            "church": [
+                "church/N/br-k10/271",
+                "church/N/br-d17/569",
+                "church/N/br-d07/216",
+                "church/N/br-d02/923",
+                "church/N/br-e12/1082"
+            ],
+            "hoekig": [
+                "hoekig/adj/de_standaard_20020125_01_116/335",
+                "hoekig/adj/nrc_handelsblad_20001211_93/591",
+                "hoekig/adj/parool_20040504_87/186",
+                "hoekig/adj/het_laatste_nieuws_20040224_01_1100/344",
+                "hoekig/adj/het_nieuwsblad_20010421_01_831/214"
+            ],
+            "dof": [
+                "dof/adj/parool_19990717_77/522",
+                "dof/adj/het_nieuwsblad_19990911_01_338/31",
+                "dof/adj/het_nieuwsblad_20030719_01_106/105",
+                "dof/adj/volkskrant_20030619_168/137",
+                "dof/adj/nrc_handelsblad_20030710_132/69"
+            ],
+            "heilzaam": [
+                "heilzaam/adj/nrc_handelsblad_20020909_102/527",
+                "heilzaam/adj/algemeen_dagblad_20001223_44/358",
+                "heilzaam/adj/parool_20020720_9/30",
+                "heilzaam/adj/de_morgen_20021011_01_12/110",
+                "heilzaam/adj/algemeen_dagblad_20010208_98/237"
+            ]
+        }
+    },
+    {
+        "name": "guest",
+        "tokens": {
+            "church": [
+                "church/N/br-k10/271",
+                "church/N/br-d17/569",
+                "church/N/br-d07/216",
+                "church/N/br-d02/923",
+                "church/N/br-e12/1082"
+            ],
+            "hoekig": [
+                "hoekig/adj/de_standaard_20020125_01_116/335",
+                "hoekig/adj/nrc_handelsblad_20001211_93/591",
+                "hoekig/adj/parool_20040504_87/186",
+                "hoekig/adj/het_laatste_nieuws_20040224_01_1100/344",
+                "hoekig/adj/het_nieuwsblad_20010421_01_831/214"
+            ],
+            "dof": [
+                "dof/adj/parool_19990717_77/522",
+                "dof/adj/het_nieuwsblad_19990911_01_338/31",
+                "dof/adj/het_nieuwsblad_20030719_01_106/105",
+                "dof/adj/volkskrant_20030619_168/137",
+                "dof/adj/nrc_handelsblad_20030710_132/69"
+            ],
+            "heilzaam": [
+                "heilzaam/adj/nrc_handelsblad_20020909_102/527",
+                "heilzaam/adj/algemeen_dagblad_20001223_44/358",
+                "heilzaam/adj/parool_20020720_9/30",
+                "heilzaam/adj/de_morgen_20021011_01_12/110",
+                "heilzaam/adj/algemeen_dagblad_20010208_98/237"
+            ]
+        }
+    }
+]

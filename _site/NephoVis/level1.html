@@ -20,7 +20,7 @@
       }
 
       path.lighter {
-        fill-opacity : .3;
+        fill-opacity : .1;
       }
 
       .lead {
@@ -41,7 +41,7 @@
           <button type="button" class="btn shadow-sm btn-secondary m-1" id="hide-buttons"> Hide filtering buttons </button>
       </div>
       <div class="row">
-        <div class="col-sm-3" id="buttons-selection">
+        <div class="col-sm-4" id="buttons-selection">
           <div class="row shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded" id="foccrow">
             <h3 class="blueh2">First order context words</h3>
           </div>
@@ -52,7 +52,7 @@
             <h3 class="blueh2">Final tokens</h3>
           </div>
         </div>
-        <div class="col-sm-9">
+        <div class="col-sm-8" id="svgcol">
           <br>
           <div class="row">
             <div class='btn-group'>
@@ -102,7 +102,7 @@
       // Make svg responsive with script from: https://brendansudol.com/writing/responsive-d3
       function responsivefy(svg) {
       // get container + svg aspect ratio
-        var container = d3.select(svg.node().parentNode),
+        var container = d3.select("#svgcol"),
           width = parseInt(svg.style("width")),
           height = parseInt(svg.style("height")),
           aspect = width / height;
@@ -137,7 +137,7 @@
           d3.select(this).text('Hide filtering buttons');
         }
         //d3.select("#buttons-selection").style('display', 'none')
-      })
+      });
 
       function getUrlParameter(sParam) {
         var sPageURL = decodeURIComponent(window.location.search.substring(1)),

@@ -15,6 +15,7 @@ For each of the types you want to visualize,
     - a file with the name [type].models.tsv (described below, item 3)
     - a file with the name [type].tsv (described below, item 4)
     - files with a name format to be defined (now it's 'ppmi.[type].[window].[corpus].tsv') with the ppmi values of the context words.
+    - a file with the name [type].models.dist.tsv if you want a distance matrix in level 2 (see item 7).
     I still have to figure out a straightforward way of matching a given model to the right weighting system.
 Finally (or for starters) you need an index file with the links to access the clouds (see item 5).
 It doesn't need to be the one I designed, but if you use it, adapt the background picture
@@ -51,6 +52,7 @@ But what you need is a web server, doesn't need to be github. I use apache to te
     * 'model' has to be a variable that starts with '_ctxt.' where the rest of the name matches the beginning of the name of the model
     * 'raw' has to be a variable that starts with '_ctxt.' and ends with '.raw' where the rest of the name matches the beginning of the name of the model
     * 'cues' has to be a variable that starts with '_ctxt.' and ends with '.cues' where the rest of the name matrches the beginning of the name of the model
+    The text in the cells can have any kind of html tags (they will be read), but one suggestion is that the target word (and only that) be enclosed by some tag with class "target"
 - columns with semicolon-separated contextwords, prefixed by '_cws.', where the rest of the name matches the beginning of the name of the model
 
 5. WHAT SHOULD THE INDEX LOOK LIKE?
@@ -64,3 +66,8 @@ Yes. As long as you have all the previous scaffolding
 what you need is the name of the model, and then just a link to the following url:
     "level3.html?type=[type]&model=[model]"
 From that level 3, you can still go up to level 2 and level 1, and the selected model will be highlighted.
+
+7. WHAT SHOULD [TYPE].MODELS.DIST.TSV LOOK LIKE?
+This file is a tab separated distance matrix, with the names of the models as row and column names
+and the distance between them (whatever generated your [type].models.tsv coordinates) as values.
+You can still run everything in absence of this file, it will just say it's not available.

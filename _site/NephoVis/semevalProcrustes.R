@@ -5,12 +5,12 @@ library(vegan)
 library(tidyverse)
 
 ## Working directory should be the dir with isoMDS solutions
-setwd("Aug01/")
+setwd("church/Aug28/")
 models <- read_tsv("church.models.tsv")
 cloud <- read_tsv("church.tsv")
-subcloud <- cloud %>% dplyr::select(`_id`, ends_with('.x'), ends_with('.y'))
+subcloud <- cloud %>% dplyr::select(`_id`, ends_with('2.x'), ends_with('2.y'))
 
-files.names <- models$`_model`
+files.names <- models$`_model`[endsWith(models$`_model`, '.2')]
 # files.names <- list.files(pattern="weightsNONE.*.points.txt")
 # files.names2 <- list.files(pattern="weightsBNC\\-[0-9]\\-[0-9]pospmi.*.points.txt")
 # files.names <- unlist(list(files.names, files.names2))
@@ -92,7 +92,7 @@ colnames(models)
 models.w.coords <- models.w.coords %>% mutate(socclength_group = if_else(socclength == '10k', '10k', if_else(socclength == '5k', '5k', 'focc')))
 models.w.coords %>% count(soccleft)
 ggplot(models.w.coords) +
-  geom_point(aes(x = model.x, y = model.y, color = factor(socc_window)))
+  geom_point(aes(x = model.x, y = model.y, color = factor(weighting)))
 
 ## Write outputfiles
 # type = unlist(strsplit(files.names[1], "\\."))
