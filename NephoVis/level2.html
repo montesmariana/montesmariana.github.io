@@ -83,8 +83,8 @@
       <div class="row">
         <div class="col-sm-8" style="padding : 0px;" id="svgContainer"></div>
         <div class="col-sm-4">
-          <button type="button" class="btn shadow-sm btn-secondary my-1" id="show-matrix"> Hide distance matrix </button>
-          <div id="distMatrix" style="display:block;"><h3>Distance matrix</h3></div>
+          <button type="button" class="btn shadow-sm btn-secondary my-1" id="show-matrix"> Show distance matrix </button>
+          <div id="distMatrix" style="display:none;"><h3>Distance matrix</h3></div>
         </div>
       </div>
     </div>
@@ -163,13 +163,16 @@
         // you need to add namespace, i.e., 'click.foo'
         // necessary if you call invoke this function for multiple svgs
         // api docs: https://github.com/mbostock/d3/wiki/Selections#on
+
         d3.select(window).on("resize." + container.attr("id"), resize);
 
         // get width of container and resize svg to fit it
         function resize() {
-          var targetWidth = parseInt(container.style("width"));
-          svg.attr("width", targetWidth);
-          svg.attr("height", Math.round(targetWidth / aspect));
+          if (container.style('display') == 'block'){
+            var targetWidth = parseInt(container.style("width"));
+            svg.attr("width", targetWidth);
+            svg.attr("height", Math.round(targetWidth / aspect));
+            }
         }
       }
 
@@ -499,7 +502,7 @@
             .attr("transform", function(d) {
               return ("translate(" + x(d[cell.attr('model') + '.x']) + "," + y(d[cell.attr('model') + '.y']) + ")"); })
             .attr("d", d3.symbol()
-              .type(function (d) {return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle); })
+              .type(function (d) {return (typeof(shapevar) == 'string' ? shape(getValues(shapevar).indexOf(d[shapevar])) : d3.symbolCircle); })
               .size(function(d) {
                 if (typeof(sizevar) == 'string') {
                   size.domain(d3.extent(dataset, function(d) {return (+d[sizevar]); }));
@@ -588,7 +591,7 @@
           svg.selectAll('.dot').selectAll('path')
             .style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"); })
             .attr("d", d3.symbol().type(function(d) {
-              return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle);
+              return (typeof(shapevar) == 'string' ? shape(getValues(shapevar).indexOf(d[shapevar])) : d3.symbolCircle);
               }).size(function(d) {
                 return (typeof(sizevar) == 'string' ? size(+d[sizevar]) : 50); }));
         }
@@ -660,7 +663,7 @@
             var shapescale = d3.scaleOrdinal()
               .domain(shapevalues)
               .range(shapevalues.map(function(d) {
-                return(d3.symbol().type(shape(d))());
+                return(d3.symbol().type(shape(shapevalues.indexOf(d)))());
               }));
             
             legendShape = d3.legendSymbol()

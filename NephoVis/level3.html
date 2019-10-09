@@ -440,7 +440,7 @@
           .attr('ycoord', function(d) {return (y(d[model + '.y'])); })
           .attr("transform", function(d) { return ("translate(" + d3.select(this).attr('xcoord') + "," + d3.select(this).attr('ycoord') + ")"); })
           .attr("d", d3.symbol()
-            .type(function (d) {return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle);})
+            .type(function (d) {return (typeof(shapevar) == 'string' ? shape(getValues(shapevar).indexOf(d[shapevar])) : d3.symbolCircle);})
             .size(function(d) {
               if (typeof(sizevar) == 'string') {
                 size.domain(d3.extent(dataset, function(d) {return +d[sizevar]; }));
@@ -567,7 +567,7 @@
         function updatePlot() {
           dot.style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"); })
             .attr("d", d3.symbol()
-              .type(function(d) {return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolCircle); })
+              .type(function(d) {return (typeof(shapevar) == 'string' ? shape(getValues(shapevar).indexOf(d[shapevar])) : d3.symbolCircle); })
               .size(function(d) {return (typeof(sizevar) == 'string' ? size(+d[sizevar]) : 64); }));
         }
 
@@ -736,7 +736,7 @@
             var shapescale = d3.scaleOrdinal()
               .domain(shapevalues)
               .range(shapevalues.map(function(d) {
-                return(d3.symbol().type(shape(d))());
+                return(d3.symbol().type(shape(shapevalues.indexOf(d)))());
               }));
             
             legendShape = d3.legendSymbol()

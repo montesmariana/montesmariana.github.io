@@ -431,7 +431,7 @@
           .append('path')
           .attr("transform", function(d) { return ("translate(" + x(d['model.x']) + "," + y(d['model.y']) + ")"); })
           .attr("d", d3.symbol()
-            .type(function (d) {return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolWye); })
+            .type(function (d) {return (typeof(shapevar) == 'string' ? shape(getValues(shapevar).indexOf(d[shapevar])) : d3.symbolWye); })
             .size(function(d) {
               if (typeof(sizevar) == 'string') {
                 size.domain(d3.extent(dataset, function(d) {return (+d[sizevar]); }));
@@ -439,7 +439,7 @@
               } else {
                 return(64);
               }}))
-          .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4"); })
+          .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"); })
           .classed("lighter", function(d) {return (modselection.length > 0 ? modselection.indexOf(d['_model']) === -1 : false); })
           .on("mouseover", function(d) {
             tooltip.transition()
@@ -536,9 +536,9 @@
 
         // Updating color, shape and size after every button clicking
         function updatePlot() {
-          dot.style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(d[colorvar]) : "#1f77b4"); })
+          dot.style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"); })
             .attr("d", d3.symbol().type(function(d) {
-              return (typeof(shapevar) == 'string' ? shape(d[shapevar]) : d3.symbolWye);
+              return (typeof(shapevar) == 'string' ? shape(getValues(shapevar).indexOf(d[shapevar])) : d3.symbolWye);
               }).size(function(d) {
                 return (typeof(sizevar) == 'string' ? size(+d[sizevar]) : 64); }));
         }
@@ -585,7 +585,9 @@
           if (typeof(colorvalues) != 'number'){
             var colorscale = d3.scaleOrdinal()
               .domain(colorvalues)
-              .range(colorvalues.map(color));
+              .range(colorvalues.map(function(d) {
+                return(color(colorvalues.indexOf(d)));
+              }));
             
             legendColor = d3.legendColor()
               .shape("path", d3.symbol().type(d3.symbolWye).size(64)())
@@ -625,7 +627,7 @@
             var shapescale = d3.scaleOrdinal()
               .domain(shapevalues)
               .range(shapevalues.map(function(d) {
-                return(d3.symbol().type(shape(d))());
+                return(d3.symbol().type(shape(shapevalues.indexOf(d)))());
               }));
             
             legendShape = d3.legendSymbol()
