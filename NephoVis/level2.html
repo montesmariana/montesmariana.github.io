@@ -83,8 +83,8 @@
       <div class="row">
         <div class="col-sm-8" style="padding : 0px;" id="svgContainer"></div>
         <div class="col-sm-4">
-          <button type="button" class="btn shadow-sm btn-secondary my-1" id="show-matrix"> Show distance matrix </button>
-          <div id="distMatrix" style="display:none;"><h3>Distance matrix</h3></div>
+          <button type="button" class="btn shadow-sm btn-secondary my-1" id="show-matrix"> Hide distance matrix </button>
+          <div id="distMatrix" style="display:block;"><h3>Distance matrix</h3></div>
         </div>
       </div>
     </div>
@@ -126,17 +126,7 @@
           }
         };
 
-      d3.select("#show-matrix").on("click", function() {
-        if (d3.select("#distMatrix").style('display') == 'block') {
-          d3.select("#distMatrix").style('display', 'none');
-          d3.select(this).text('Show distance matrix');
-        } else {
-          d3.select("#distMatrix").style('display', 'block');
-          d3.select(this).text('Hide distance matrix');
-        }
-        //d3.select("#buttons-selection").style('display', 'none')
-      });
-
+      
       type = getUrlParameter('type');
       d3.select("h1").html("Level 2 (<em>" + type + "</em>)");
 
@@ -745,7 +735,7 @@
         miniWidth = (distWidth-3*distPad)/distances.length;
         miniHeight = (distHeight-3*distPad)/distances.length;
 
-        distCols = distMatrix.append('g')
+        distCols = distMatrix.append('g');
 
         distCols.selectAll('text')
           .data(modselection).enter()
@@ -755,7 +745,7 @@
           .style('font-size', '0.6em')
           .text(function(d) {return (modselection.indexOf(d)+1); });
 
-        distRows = distMatrix.append('g')
+        distRows = distMatrix.append('g');
 
         distRows.selectAll('text')
           .data(modselection).enter()
@@ -810,6 +800,19 @@
             })
             .style('font-weight', 'bold');
         }
+
+          d3.select("#show-matrix").on("click", function() {
+            if (d3.select("#distMatrix").style('display') == 'block') {
+              d3.select("#distMatrix").style('display', 'none');
+              d3.select(this).text('Show distance matrix');
+            } else {
+              d3.select("#distMatrix").style('display', 'block');
+              d3.select(this).text('Hide distance matrix');
+            }
+            distMatrix.responsivefy();
+            //d3.select("#buttons-selection").style('display', 'none')
+          });
+
       });
       
     </script>

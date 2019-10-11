@@ -1,7 +1,7 @@
 {
     "en" : {
         "title" : "Sense annotation",
-        "upload_button" : "Upload",
+        "upload_button" : "Open",
         "upload_1" : "Select your file",
         "upload_success" : "File uploaded",
         "upload_fail_title" : "Wrong file",
@@ -36,13 +36,13 @@
             "</em>, thank you!"],
         "almost_done_message" : ["You are almost done with <em>",
             "</em>!"],
-        "download_button" : "Download",
+        "download_button" : "Save",
         "final_download_message" : "Please send to <a href='mailto:mariana.montes@kuleuven.be'>mariana.montes@kuleuven.be</a>!",
         "download_title" : "Download successful"
     },
     "nl" : {
         "title" : "Semantische annotatie",
-        "upload_button" : "Openen/Uploaden",
+        "upload_button" : "Openen",
         "upload_1" : "Kies een bestand",
         "upload_success" : "Bestand klaar",
         "upload_fail_title" : "Fout bestand",
@@ -77,7 +77,7 @@
             "</em>, bedankt!"],
         "almost_done_message" : ["Je bent bijna klaar met <em>",
             "</em>!"],
-        "download_button" : "Opslaan/Downloaden",
+        "download_button" : "Opslaan",
         "final_download_message" : "Stuur het bestand naar <a href='mailto:mariana.montes@kuleuven.be'>mariana.montes@kuleuven.be</a> aub!",
         "download_title" : "Download geslaagd"
     }
