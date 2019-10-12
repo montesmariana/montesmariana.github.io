@@ -91,38 +91,30 @@
     ],
     "gemiddeld": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "name": "gemiddelde snelheid",
+            "label": "de grootte hebbend die in het midden ligt van een aantal geobserveerde waarden"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
-        },
-        {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
-        },
-        {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "name": "gemiddelde student",
+            "label": "overeenstemmend met de in het midden liggende of meest voorkomende waarde"
         }
     ],
     "gloeiend": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "name": "echt gloeiend",
+            "label": "zo warm dat het gloeit"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "name": "enkel temperatuur",
+            "label": "zeer heet"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "name": "intens",
+            "label": "vurig, intens (passie, hekel)"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "name": "idiom",
+            "label": "e.g. druppels op een gloeiende plaat"
         }
     ],
     "goedkoop": [
@@ -222,6 +214,168 @@
         }
     ],
     "hoopvol": [
+        {
+            "name": "sense1",
+            "label": "First sense ever"
+        },
+        {
+            "name": "sense2",
+            "label": "A less interesting sense"
+        },
+        {
+            "name": "sense3",
+            "label": "Not true, all senses are interesting"
+        },
+        {
+            "name": "sense4",
+            "label": "Sometimes there are too many"
+        }
+    ],
+    "hemels": [
+        {
+            "name": "sense1",
+            "label": "First sense ever"
+        },
+        {
+            "name": "sense2",
+            "label": "A less interesting sense"
+        },
+        {
+            "name": "sense3",
+            "label": "Not true, all senses are interesting"
+        },
+        {
+            "name": "sense4",
+            "label": "Sometimes there are too many"
+        }
+    ],
+    "gemeen": [
+        {
+            "name": "sense1",
+            "label": "First sense ever"
+        },
+        {
+            "name": "sense2",
+            "label": "A less interesting sense"
+        },
+        {
+            "name": "sense3",
+            "label": "Not true, all senses are interesting"
+        },
+        {
+            "name": "sense4",
+            "label": "Sometimes there are too many"
+        }
+    ],
+    "harden": [
+        {
+            "name": "sense1",
+            "label": "First sense ever"
+        },
+        {
+            "name": "sense2",
+            "label": "A less interesting sense"
+        },
+        {
+            "name": "sense3",
+            "label": "Not true, all senses are interesting"
+        },
+        {
+            "name": "sense4",
+            "label": "Sometimes there are too many"
+        }
+    ],
+    "stof": [
+        {
+            "name": "sense1",
+            "label": "First sense ever"
+        },
+        {
+            "name": "sense2",
+            "label": "A less interesting sense"
+        },
+        {
+            "name": "sense3",
+            "label": "Not true, all senses are interesting"
+        },
+        {
+            "name": "sense4",
+            "label": "Sometimes there are too many"
+        }
+    ],
+    "herinneren": [
+        {
+            "name": "sense1",
+            "label": "First sense ever"
+        },
+        {
+            "name": "sense2",
+            "label": "A less interesting sense"
+        },
+        {
+            "name": "sense3",
+            "label": "Not true, all senses are interesting"
+        },
+        {
+            "name": "sense4",
+            "label": "Sometimes there are too many"
+        }
+    ],
+    "heffen": [
+        {
+            "name": "sense1",
+            "label": "First sense ever"
+        },
+        {
+            "name": "sense2",
+            "label": "A less interesting sense"
+        },
+        {
+            "name": "sense3",
+            "label": "Not true, all senses are interesting"
+        },
+        {
+            "name": "sense4",
+            "label": "Sometimes there are too many"
+        }
+    ],
+    "haken": [
+        {
+            "name": "sense1",
+            "label": "First sense ever"
+        },
+        {
+            "name": "sense2",
+            "label": "A less interesting sense"
+        },
+        {
+            "name": "sense3",
+            "label": "Not true, all senses are interesting"
+        },
+        {
+            "name": "sense4",
+            "label": "Sometimes there are too many"
+        }
+    ],
+    "hoop": [
+        {
+            "name": "sense1",
+            "label": "First sense ever"
+        },
+        {
+            "name": "sense2",
+            "label": "A less interesting sense"
+        },
+        {
+            "name": "sense3",
+            "label": "Not true, all senses are interesting"
+        },
+        {
+            "name": "sense4",
+            "label": "Sometimes there are too many"
+        }
+    ],
+    "spoor": [
         {
             "name": "sense1",
             "label": "First sense ever"

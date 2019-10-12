@@ -76,7 +76,7 @@
         users, this_user, names, achievements, this_types,
         definitions = {};
     var counter = 0;
-    var lang = 'en';
+    var lang = 'nl';
 
     d3.select("html").attr("lang", lang);
 
@@ -348,7 +348,7 @@
                         var chosen = hasSense(here, type) && text[type][here]['sense'] == d.name;
                         return (chosen ? true : null);
                     })
-                    .html(function(d) {return('<strong>' + d.name + "</strong> : " + d.label); })
+                    .html(function(d) {return('<strong>' + d.name + "</strong>: " + d.label); })
                     .append("input")
                         .attr("type", "radio")
                         .attr("autocomplete", "off")
@@ -576,6 +576,7 @@
                 
                 displayNoSense();
                 updateTargetColor();
+                saveInLS();
             });
 
             // FINALLY we add 'previous' and 'next' buttons
@@ -696,10 +697,11 @@
             }
 
             // Check status of a type (all annotated, all senses but not all extras, or not all senses)
-            announced = this_types.map(function(t) {
-                return({t : checkAchievements(t)});
+            announced = {};
+            this_types.forEach(function(d) {
+                announced[d] = checkAchievements(d);
             });
-            
+            console.log(announced);
             function checkAchievements(t) {
                 var goal = this_user['tokens'][t];
                 var started_tokens = goal.filter(function(d) {return (hasSense(d, t)); });
@@ -719,14 +721,11 @@
                 var status = checkAchievements(type);
                 var message, congrats, timer;
 
-                if (status != 'notdone') {
-                    if (status == 'done' && announced[type] == 'halfdone') {
+                if (status != 'notdone' && announced[type] != 'done') {
+                    if (status == 'done') {
                         congrats = msg["congratulations"];
+                        console.log(congrats);
                         checkType();
-                        // typesel.selectAll('label')
-                        //     .attr("class", function(d) {
-                        //         return(checkAchievements(d) == 'done' ? "btn shadow-sm btn-success mt-1" : "btn shadow-sm btn-warning mt-1"); })
-                        //     .classed("active", function(d) {return (d == type); });
                         var full_types = this_types.filter(function(d) {
                             return (checkAchievements(d) == 'done');
                         });
@@ -753,6 +752,7 @@
                         timer: 1000
                     });
                     announced[type] = status;
+                    console.log(announced);
                 }
             }
             

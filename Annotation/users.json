@@ -2,99 +2,119 @@
     {
         "name": "mariana.montes",
         "tokens": {
-            "church": [
-                "church/N/br-k10/271",
-                "church/N/br-d17/569",
-                "church/N/br-d07/216",
-                "church/N/br-d02/923",
-                "church/N/br-e12/1082"
+            "gemiddeld": [
+                "gemiddeld/adj/nrc_handelsblad_20020413_195/207",
+                "gemiddeld/adj/nrc_handelsblad_20020131_8/825",
+                "gemiddeld/adj/nrc_handelsblad_20030423_107/314",
+                "gemiddeld/adj/nrc_handelsblad_20010717_103/52",
+                "gemiddeld/adj/nrc_handelsblad_20020227_88/143",
+                "gemiddeld/adj/nrc_handelsblad_20011012_122/413",
+                "gemiddeld/adj/nrc_handelsblad_20020304_116/591",
+                "gemiddeld/adj/nrc_handelsblad_20011129_157/1574",
+                "gemiddeld/adj/nrc_handelsblad_20020814_99/152",
+                "gemiddeld/adj/nrc_handelsblad_20020116_44/193",
+                "gemiddeld/adj/nrc_handelsblad_19991209_127/83",
+                "gemiddeld/adj/nrc_handelsblad_20010528_112/1087",
+                "gemiddeld/adj/nrc_handelsblad_19990401_128/806",
+                "gemiddeld/adj/nrc_handelsblad_20001123_36/7",
+                "gemiddeld/adj/nrc_handelsblad_20030705_15/174",
+                "gemiddeld/adj/nrc_handelsblad_20010602_126/287",
+                "gemiddeld/adj/nrc_handelsblad_20020909_89/92",
+                "gemiddeld/adj/nrc_handelsblad_19991030_68/581",
+                "gemiddeld/adj/nrc_handelsblad_20020910_12/431",
+                "gemiddeld/adj/nrc_handelsblad_20001202_65/1235",
+                "gemiddeld/adj/nrc_handelsblad_19990108_103/2097",
+                "gemiddeld/adj/nrc_handelsblad_20011122_15/842",
+                "gemiddeld/adj/nrc_handelsblad_20020925_70/217",
+                "gemiddeld/adj/nrc_handelsblad_20010324_157/128",
+                "gemiddeld/adj/nrc_handelsblad_20001202_147/211",
+                "gemiddeld/adj/nrc_handelsblad_20000108_66/1115",
+                "gemiddeld/adj/nrc_handelsblad_20040305_47/442",
+                "gemiddeld/adj/nrc_handelsblad_20011006_157/799",
+                "gemiddeld/adj/nrc_handelsblad_20020614_7/39",
+                "gemiddeld/adj/nrc_handelsblad_20020223_28/60",
+                "gemiddeld/adj/nrc_handelsblad_20000331_140/504",
+                "gemiddeld/adj/nrc_handelsblad_20011026_3/40",
+                "gemiddeld/adj/nrc_handelsblad_20020706_769/392",
+                "gemiddeld/adj/nrc_handelsblad_20040331_33/311",
+                "gemiddeld/adj/nrc_handelsblad_20031128_900/221",
+                "gemiddeld/adj/nrc_handelsblad_20020821_102/65",
+                "gemiddeld/adj/nrc_handelsblad_20020111_91/63",
+                "gemiddeld/adj/nrc_handelsblad_20030517_40/145",
+                "gemiddeld/adj/nrc_handelsblad_20020916_97/53",
+                "gemiddeld/adj/nrc_handelsblad_20000626_110/544"
             ],
-            "hoekig": [
-                "hoekig/adj/de_standaard_20020125_01_116/335",
-                "hoekig/adj/nrc_handelsblad_20001211_93/591",
-                "hoekig/adj/parool_20040504_87/186",
-                "hoekig/adj/het_laatste_nieuws_20040224_01_1100/344",
-                "hoekig/adj/het_nieuwsblad_20010421_01_831/214"
+            "hemels": [
+                "hemels/adj/volkskrant_20010426_109/71",
+                "hemels/adj/volkskrant_20010526_193/490",
+                "hemels/adj/volkskrant_20000224_55/1954",
+                "hemels/adj/het_nieuwsblad_20040829_01_139/137"
             ],
-            "dof": [
-                "dof/adj/parool_19990717_77/522",
-                "dof/adj/het_nieuwsblad_19990911_01_338/31",
-                "dof/adj/het_nieuwsblad_20030719_01_106/105",
-                "dof/adj/volkskrant_20030619_168/137",
-                "dof/adj/nrc_handelsblad_20030710_132/69"
+            "gloeiend": [
+                "gloeiend/adj/nrc_handelsblad_20020927_55/150",
+                "gloeiend/adj/nrc_handelsblad_20000608_114/76",
+                "gloeiend/adj/nrc_handelsblad_20040109_113/12",
+                "gloeiend/adj/nrc_handelsblad_20000522_28/251",
+                "gloeiend/adj/nrc_handelsblad_20011030_51/285",
+                "gloeiend/adj/nrc_handelsblad_19990417_111/236",
+                "gloeiend/adj/nrc_handelsblad_20000114_112/222",
+                "gloeiend/adj/nrc_handelsblad_20010518_35/174"
             ],
-            "heilzaam": [
-                "heilzaam/adj/nrc_handelsblad_20020909_102/527",
-                "heilzaam/adj/algemeen_dagblad_20001223_44/358",
-                "heilzaam/adj/parool_20020720_9/30",
-                "heilzaam/adj/de_morgen_20021011_01_12/110",
-                "heilzaam/adj/algemeen_dagblad_20010208_98/237"
-            ]
-        }
-    },
-    {
-        "name": "dirk.geeraerts",
-        "tokens": {
-            "church": [
-                "church/N/br-k10/271",
-                "church/N/br-d17/569",
-                "church/N/br-d07/216",
-                "church/N/br-d02/923",
-                "church/N/br-e12/1082"
+            "harden": [
+                "hard/verb/volkskrant_20000410_32/249",
+                "hard/verb/de_standaard_19990403_01_68/970",
+                "hard/verb/het_laatste_nieuws_20020604_01_412/487",
+                "hard/verb/het_laatste_nieuws_20001201_01_387/41"
             ],
-            "hoekig": [
-                "hoekig/adj/de_standaard_20020125_01_116/335",
-                "hoekig/adj/nrc_handelsblad_20001211_93/591",
-                "hoekig/adj/parool_20040504_87/186",
-                "hoekig/adj/het_laatste_nieuws_20040224_01_1100/344",
-                "hoekig/adj/het_nieuwsblad_20010421_01_831/214"
-            ],
-            "dof": [
-                "dof/adj/parool_19990717_77/522",
-                "dof/adj/het_nieuwsblad_19990911_01_338/31",
-                "dof/adj/het_nieuwsblad_20030719_01_106/105",
-                "dof/adj/volkskrant_20030619_168/137",
-                "dof/adj/nrc_handelsblad_20030710_132/69"
-            ],
-            "heilzaam": [
-                "heilzaam/adj/nrc_handelsblad_20020909_102/527",
-                "heilzaam/adj/algemeen_dagblad_20001223_44/358",
-                "heilzaam/adj/parool_20020720_9/30",
-                "heilzaam/adj/de_morgen_20021011_01_12/110",
-                "heilzaam/adj/algemeen_dagblad_20010208_98/237"
-            ]
-        }
-    },
-    {
-        "name": "alex.scigalszky",
-        "tokens": {
-            "church": [
-                "church/N/br-k10/271",
-                "church/N/br-d17/569",
-                "church/N/br-d07/216",
-                "church/N/br-d02/923",
-                "church/N/br-e12/1082"
-            ],
-            "hoekig": [
-                "hoekig/adj/de_standaard_20020125_01_116/335",
-                "hoekig/adj/nrc_handelsblad_20001211_93/591",
-                "hoekig/adj/parool_20040504_87/186",
-                "hoekig/adj/het_laatste_nieuws_20040224_01_1100/344",
-                "hoekig/adj/het_nieuwsblad_20010421_01_831/214"
-            ],
-            "dof": [
-                "dof/adj/parool_19990717_77/522",
-                "dof/adj/het_nieuwsblad_19990911_01_338/31",
-                "dof/adj/het_nieuwsblad_20030719_01_106/105",
-                "dof/adj/volkskrant_20030619_168/137",
-                "dof/adj/nrc_handelsblad_20030710_132/69"
+            "stof": [
+                "stof/noun/algemeen_dagblad_20020112_103/56",
+                "stof/noun/het_laatste_nieuws_20030908_01_220/319",
+                "stof/noun/volkskrant_19990609_6/36",
+                "stof/noun/de_morgen_20020208_01_102/444",
+                "stof/noun/algemeen_dagblad_20020810_62/479"
             ],
             "heilzaam": [
-                "heilzaam/adj/nrc_handelsblad_20020909_102/527",
-                "heilzaam/adj/algemeen_dagblad_20001223_44/358",
-                "heilzaam/adj/parool_20020720_9/30",
-                "heilzaam/adj/de_morgen_20021011_01_12/110",
-                "heilzaam/adj/algemeen_dagblad_20010208_98/237"
+                "heilzaam/adj/de_morgen_19990219_01_31/72",
+                "heilzaam/adj/volkskrant_20001116_121/280",
+                "heilzaam/adj/de_morgen_19990911_01_22/866",
+                "heilzaam/adj/het_nieuwsblad_20010920_01_262/158"
+            ],
+            "herinneren": [
+                "herinner/verb/parool_19991008_7/312",
+                "herinner/verb/nrc_handelsblad_20000323_10/313",
+                "herinner/verb/algemeen_dagblad_20030927_80/229",
+                "herinner/verb/het_nieuwsblad_20020831_01_636/50"
+            ],
+            "heffen": [
+                "hef/verb/het_laatste_nieuws_20000520_01_285/98",
+                "hef/verb/nrc_handelsblad_20020824_141/33",
+                "hef/verb/nrc_handelsblad_20001102_56/63",
+                "hef/verb/nrc_handelsblad_20001127_50/394"
+            ],
+            "haken": [
+                "haak/verb/parool_20040409_44/307",
+                "haak/verb/het_laatste_nieuws_20010129_01_271/131",
+                "haak/verb/de_morgen_20030804_01_103/154",
+                "haak/verb/volkskrant_19990403_195/308"
+            ],
+            "hoop": [
+                "hoop/noun/algemeen_dagblad_20031217_133/197",
+                "hoop/noun/algemeen_dagblad_20030830_48/120",
+                "hoop/noun/volkskrant_20020817_157/1037",
+                "hoop/noun/het_nieuwsblad_20040329_01_286/118"
+            ],
+            "spoor": [
+                "spoor/noun/het_laatste_nieuws_20040827_01_420/62",
+                "spoor/noun/algemeen_dagblad_20010224_144/670",
+                "spoor/noun/parool_20020215_75/85",
+                "spoor/noun/het_laatste_nieuws_20010425_01_435/84",
+                "spoor/noun/volkskrant_20000308_75/17"
+            ],
+            "grijs": [
+                "grijs/adj/de_standaard_20011109_01_16/1380",
+                "grijs/adj/parool_20011117_100/199",
+                "grijs/adj/de_standaard_20010119_01_63/391",
+                "grijs/adj/volkskrant_20020223_181/177"
             ]
         }
     },
