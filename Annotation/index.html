@@ -222,7 +222,9 @@
             // Filter the data
             concordances = data.filter(function(d) {return(this_selection.indexOf(d.id)>-1); });
             toClassify = d3.map(concordances, function(d) {return (d.id); }).keys();
-            if (d3.keys(text).indexOf(type) == -1) {text[type] = {}; } // Create a dictionary within 'text' for this type
+            if (d3.keys(text).indexOf(type) == -1) {
+                text[type] = {}; 
+                saved = JSON.stringify(text);} // Create a dictionary within 'text' for this type
             
             // Select the senses for this type
             senses = definitions[type].slice(0);

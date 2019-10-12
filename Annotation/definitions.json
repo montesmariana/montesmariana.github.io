@@ -189,6 +189,60 @@
             "label": "Sometimes there are too many"
         }
     ],
+    "diskwalificeren": [
+        {
+            "name": "sense1",
+            "label": "First sense ever"
+        },
+        {
+            "name": "sense2",
+            "label": "A less interesting sense"
+        },
+        {
+            "name": "sense3",
+            "label": "Not true, all senses are interesting"
+        },
+        {
+            "name": "sense4",
+            "label": "Sometimes there are too many"
+        }
+    ],
+    "herhalen": [
+        {
+            "name": "sense1",
+            "label": "First sense ever"
+        },
+        {
+            "name": "sense2",
+            "label": "A less interesting sense"
+        },
+        {
+            "name": "sense3",
+            "label": "Not true, all senses are interesting"
+        },
+        {
+            "name": "sense4",
+            "label": "Sometimes there are too many"
+        }
+    ],
+    "blik": [
+        {
+            "name": "sense1",
+            "label": "First sense ever"
+        },
+        {
+            "name": "sense2",
+            "label": "A less interesting sense"
+        },
+        {
+            "name": "sense3",
+            "label": "Not true, all senses are interesting"
+        },
+        {
+            "name": "sense4",
+            "label": "Sometimes there are too many"
+        }
+    ],
     "heilzaam": [
         {
             "name": "gezondheid",
