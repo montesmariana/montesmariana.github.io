@@ -703,7 +703,6 @@
             this_types.forEach(function(d) {
                 announced[d] = checkAchievements(d);
             });
-            console.log(announced);
             function checkAchievements(t) {
                 var goal = this_user['tokens'][t];
                 var started_tokens = goal.filter(function(d) {return (hasSense(d, t)); });
@@ -726,7 +725,6 @@
                 if (status != 'notdone' && announced[type] != 'done') {
                     if (status == 'done') {
                         congrats = msg["congratulations"];
-                        console.log(congrats);
                         checkType();
                         var full_types = this_types.filter(function(d) {
                             return (checkAchievements(d) == 'done');
@@ -754,7 +752,6 @@
                         timer: timer
                     });
                     announced[type] = status;
-                    console.log(announced);
                 }
             }
             
