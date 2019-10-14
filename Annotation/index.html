@@ -733,7 +733,7 @@
                         });
                         if (full_types.length == this_types.length) {
                             message = msg["all_done_message"];
-                            timer = 1500;
+                            timer = 2000;
                         } else {
                             message = msg["type_done_message"][0] + type + msg["type_done_message"][1];
                             timer = 1000;
@@ -751,7 +751,7 @@
                         type: "success",
                         // position: "top",
                         showConfirmButton: false,
-                        timer: 1000
+                        timer: timer
                     });
                     announced[type] = status;
                     console.log(announced);
