@@ -642,7 +642,7 @@
                 no_sense_message.style("display", function(d) {
                     var here = d3.select(this.parentNode).attr("token_id");
                     return (hasSense(here, type) &&
-                        text[type][here]['sense'] == msg['no_sense_name'] &&
+                        text[type][here]['sense'] == msg['no_sense_code'] &&
                         d3.keys(text[type][here]).indexOf('comments') == -1 ? 'block' : 'none');
                 });
             }
@@ -694,7 +694,7 @@
             function isDone(token_id, t) {
                 var has_cues = text[t][token_id]['cues'].length > 0;
                 var has_conf = d3.keys(text[t][token_id]).indexOf('confidence') > -1;
-                var has_full_sense = text[t][token_id]['sense'] != msg['no_sense_name'] || d3.keys(text[t][token_id]).indexOf('comments') > -1;
+                var has_full_sense = text[t][token_id]['sense'] != msg['no_sense_code'] || d3.keys(text[t][token_id]).indexOf('comments') > -1;
                 return (has_cues && has_conf && has_full_sense);
             }
 
