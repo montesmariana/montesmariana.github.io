@@ -83,8 +83,8 @@
     // Select language
     d3.json("messages.json", function(data) {
         msg = data[lang];
-        d3.select("#uploadfile").text(msg["upload_button"]);
-        d3.select("#download").text(msg["download_button"]);
+        d3.select("#uploadfile").html('<strong class="text-primary">' + msg["upload_button"] + '</strong>');
+        d3.select("#download").html('<strong>' + msg["download_button"] + '</strong>');
         d3.select("title").text(msg["title"]);
         d3.select("h1").text(msg["title"]);
     });
@@ -229,8 +229,9 @@
             // Select the senses for this type
             senses = definitions[type].slice(0);
             senses.push({ // Add 'idk' option
-                'name' : msg['no_sense_name'],
-                'label' : msg['no_sense_label']
+                'code' : msg['no_sense_code'],
+                'definition' : msg['no_sense_definition'],
+                'example' : msg['no_sense_example']
                 });
 
             checkType(); // mark the types that are done
@@ -350,12 +351,12 @@
                         var chosen = hasSense(here, type) && text[type][here]['sense'] == d.name;
                         return (chosen ? true : null);
                     })
-                    .html(function(d) {return('<strong>' + d.name + "</strong>: " + d.label); })
+                    .html(function(d) {return('<span style="font-weight:bold;">' + d.definition + "</span> (<em>" + d.example + "</em>)"); })
                     .append("input")
                         .attr("type", "radio")
                         .attr("autocomplete", "off")
                         .attr("name", type + "_sense")
-                        .attr("value", function(d) {return(d.name)});
+                        .attr("value", function(d) {return(d.code)});
 
             // Control de results when sense changes
             $(document).on('change', 'input[name="' + type + '_sense"]', function(event) {
@@ -388,7 +389,6 @@
                 colorStars();
                 inputtext.select("#" + type + toClassify.indexOf(analized) + "_comment").property('value', '');
                 saveInLS();
-                
             });
 
             conc.append("hr");

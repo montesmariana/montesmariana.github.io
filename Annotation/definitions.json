@@ -1,450 +1,454 @@
 {
     "church": [
         {
-            "name": "organization",
-            "label": "e.g. \"The church will forgive your sins\""
+            "code": "church_1",
+            "definition": "organization",
+            "example": "The church will forgive your sins"
         },
         {
-            "name": "congregation",
-            "label": "Community around a building"
+            "code": "church_2",
+            "definition": "congregation",
+            "example": "My friends from church"
         },
         {
-            "name": "building",
-            "label": "The material building"
+            "code": "church_3",
+            "definition": "building",
+            "example": "A white church on the hill"
         },
         {
-            "name": "service",
-            "label": "e.g. \"I go to church every Sunday\""
+            "code": "church_4",
+            "definition": "service",
+            "example": "I go to church every Sunday"
         }
     ],
     "dof": [
         {
-            "name": "zonder glans",
-            "label": "Van kleuren en zichtbare dingen"
+            "code": "dof_1",
+            "definition": "zonder glans",
+            "example": "Van kleuren en zichtbare dingen"
         },
         {
-            "name": "niet luid/scherp",
-            "label": "Van geluiden"
+            "code": "dof_2",
+            "definition": "niet luid/scherp",
+            "example": "Van geluiden"
         },
         {
-            "name": "lusteloos",
-            "label": "Van personen en gevoelens"
+            "code": "dof_3",
+            "definition": "lusteloos",
+            "example": "Van personen en gevoelens"
         },
         {
-            "name": "niet scherp",
-            "label": "Van herinneringen, denkbeelden"
+            "code": "dof_4",
+            "definition": "niet scherp",
+            "example": "Van herinneringen, denkbeelden"
         }
     ],
     "geestig": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "geestig_1", "definition": "sense1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "geestig_2", "definition": "sense2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "geestig_3", "definition": "sense3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "geestig_4", "definition": "sense4",
+            "example": "Sometimes there are too many"
         }
     ],
     "gekleurd": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "geldig": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "gemiddeld": [
         {
-            "name": "gemiddelde snelheid",
-            "label": "de grootte hebbend die in het midden ligt van een aantal geobserveerde waarden"
+            "code": "gemiddeld_1", "example": "gemiddelde snelheid",
+            "definition": "de grootte hebbend die in het midden ligt van een aantal geobserveerde waarden"
         },
         {
-            "name": "gemiddelde student",
-            "label": "overeenstemmend met de in het midden liggende of meest voorkomende waarde"
+            "code": "gemiddeld_2", "example": "gemiddelde student",
+            "definition": "overeenstemmend met de in het midden liggende of meest voorkomende waarde"
         }
     ],
     "gloeiend": [
         {
-            "name": "echt gloeiend",
-            "label": "zo warm dat het gloeit"
+            "code": "gloeiend_1", "example": "gloeiende plat",
+            "definition": "zo warm dat het gloeit"
         },
         {
-            "name": "enkel temperatuur",
-            "label": "zeer heet"
+            "code": "gloeiend_2", "example": "gloeiende zomer",
+            "definition": "zeer heet"
         },
         {
-            "name": "intens",
-            "label": "vurig, intens (passie, hekel)"
-        },
-        {
-            "name": "idiom",
-            "label": "e.g. druppels op een gloeiende plaat"
+            "code": "gloeiend_3", "example": "gloeiende hekel",
+            "definition": "vurig, intens"
         }
     ],
     "goedkoop": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "grijs": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "hachelijk": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "heet": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "diskwalificeren": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "herhalen": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "blik": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "heilzaam": [
         {
-            "name": "gezondheid",
-            "label": "Bijdragend tot gezondheid en lichamelijk welzijn"
+            "code": "church_", "definition": "gezondheid",
+            "example": "Bijdragend tot gezondheid en lichamelijk welzijn"
         },
         {
-            "name": "nuttig",
-            "label": "Een (algemeen) gunstig effect hebbend"
+            "code": "church_", "definition": "nuttig",
+            "example": "Een (algemeen) gunstig effect hebbend"
         }
     ],
     "hoekig": [
         {
-            "name": "met hoeken",
-            "label": "Van voorwerpen en figuren"
+            "code": "church_", "definition": "met hoeken",
+            "example": "Van voorwerpen en figuren"
         },
         {
-            "name": "niet vloeiend",
-            "label": "Van bewegingen en ritmes"
+            "code": "church_", "definition": "niet vloeiend",
+            "example": "Van bewegingen en ritmes"
         },
         {
-            "name": "onhandig",
-            "label": "Van personen"
+            "code": "church_", "definition": "onhandig",
+            "example": "Van personen"
         }
     ],
     "hoopvol": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "hemels": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "gemeen": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "harden": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "stof": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "herinneren": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "heffen": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "haken": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "hoop": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ],
     "spoor": [
         {
-            "name": "sense1",
-            "label": "First sense ever"
+            "code": "sense_1", "definition": "def1",
+            "example": "First sense ever"
         },
         {
-            "name": "sense2",
-            "label": "A less interesting sense"
+            "code": "sense_2", "definition": "def2",
+            "example": "A less interesting sense"
         },
         {
-            "name": "sense3",
-            "label": "Not true, all senses are interesting"
+            "code": "sense_3", "definition": "def3",
+            "example": "Not true, all senses are interesting"
         },
         {
-            "name": "sense4",
-            "label": "Sometimes there are too many"
+            "code": "sense_4", "definition": "def4",
+            "example": "Sometimes there are too many"
         }
     ]
 }
