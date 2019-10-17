@@ -1,102 +1,4 @@
 {
-    "church": [
-        {
-            "code": "church_1",
-            "definition": "organization",
-            "example": "The church will forgive your sins"
-        },
-        {
-            "code": "church_2",
-            "definition": "congregation",
-            "example": "My friends from church"
-        },
-        {
-            "code": "church_3",
-            "definition": "building",
-            "example": "A white church on the hill"
-        },
-        {
-            "code": "church_4",
-            "definition": "service",
-            "example": "I go to church every Sunday"
-        }
-    ],
-    "dof": [
-        {
-            "code": "dof_1",
-            "definition": "zonder glans",
-            "example": "Van kleuren en zichtbare dingen"
-        },
-        {
-            "code": "dof_2",
-            "definition": "niet luid/scherp",
-            "example": "Van geluiden"
-        },
-        {
-            "code": "dof_3",
-            "definition": "lusteloos",
-            "example": "Van personen en gevoelens"
-        },
-        {
-            "code": "dof_4",
-            "definition": "niet scherp",
-            "example": "Van herinneringen, denkbeelden"
-        }
-    ],
-    "geestig": [
-        {
-            "code": "geestig_1", "definition": "sense1",
-            "example": "First sense ever"
-        },
-        {
-            "code": "geestig_2", "definition": "sense2",
-            "example": "A less interesting sense"
-        },
-        {
-            "code": "geestig_3", "definition": "sense3",
-            "example": "Not true, all senses are interesting"
-        },
-        {
-            "code": "geestig_4", "definition": "sense4",
-            "example": "Sometimes there are too many"
-        }
-    ],
-    "gekleurd": [
-        {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
-        },
-        {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
-        },
-        {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
-        },
-        {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
-        }
-    ],
-    "geldig": [
-        {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
-        },
-        {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
-        },
-        {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
-        },
-        {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
-        }
-    ],
     "gemiddeld": [
         {
             "code": "gemiddeld_1", "example": "gemiddelde snelheid",
@@ -121,334 +23,687 @@
             "definition": "vurig, intens"
         }
     ],
-    "goedkoop": [
+    "hoopvol": [
         {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
+            "code": "hoopvol_1",
+            "definition": "(van personen, uitingen, gedragingen etc.) blijk gevend van hoop, vol hoop, optimistisch",
+            "example": "een hoopvolle stemming, dat stemt mij hoopvol"
         },
         {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
-        },
-        {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
-        },
-        {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
+            "code": "hoopvol_2",
+            "definition": "reden tot hoop gevend, beloftevol",
+            "example": "hoopvolle perspectieven"
         }
     ],
-    "grijs": [
+    "geestig": [
         {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
+            "code": "geestig_1",
+            "definition": "scherpzinnig en humoristisch van aard",
+            "example": "een geestige collega"
         },
         {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
-        },
-        {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
-        },
-        {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
+            "code": "geestig_2",
+            "definition": "blijk gevend van, uitdrukking gevend aan, gekenmerkt door scherpzinnigheid en humor",
+            "example": "een geestig boek, een geestige blik, een geestige opmerking"
         }
     ],
     "hachelijk": [
         {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
+            "code": "hachelijk_1",
+            "definition": "met kans op een ongunstige afloop, (potentieel) gevaarlijk",
+            "example": "een hachelijke onderneming"
         },
         {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
-        },
-        {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
-        },
-        {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
-        }
-    ],
-    "heet": [
-        {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
-        },
-        {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
-        },
-        {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
-        },
-        {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
-        }
-    ],
-    "diskwalificeren": [
-        {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
-        },
-        {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
-        },
-        {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
-        },
-        {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
-        }
-    ],
-    "herhalen": [
-        {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
-        },
-        {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
-        },
-        {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
-        },
-        {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
-        }
-    ],
-    "blik": [
-        {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
-        },
-        {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
-        },
-        {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
-        },
-        {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
-        }
-    ],
-    "heilzaam": [
-        {
-            "code": "church_", "definition": "gezondheid",
-            "example": "Bijdragend tot gezondheid en lichamelijk welzijn"
-        },
-        {
-            "code": "church_", "definition": "nuttig",
-            "example": "Een (algemeen) gunstig effect hebbend"
+            "code": "hachelijk_2",
+            "definition": "(re\u00ebel) gevaarlijk, netelig, kritiek, benard",
+            "example": "een hachelijke situatie "
         }
     ],
     "hoekig": [
         {
-            "code": "church_", "definition": "met hoeken",
-            "example": "Van voorwerpen en figuren"
+            "code": "hoekig_1",
+            "definition": "(van voorwerpen, figuren e.d.) met hoeken of scherpe kanten",
+            "example": "een hoekige tekening, een hoekig gezicht"
         },
         {
-            "code": "church_", "definition": "niet vloeiend",
-            "example": "Van bewegingen en ritmes"
+            "code": "hoekig_2",
+            "definition": "(van bewegingen, ritmes e.d.) niet vloeiend",
+            "example": "een hoekig melodietje"
         },
         {
-            "code": "church_", "definition": "onhandig",
-            "example": "Van personen"
+            "code": "hoekig_3",
+            "definition": "(van personen) houterig, stijf, onhandig in de omgang",
+            "example": "een hoekig karakter"
         }
     ],
-    "hoopvol": [
+    "dof": [
         {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
+            "code": "dof_1",
+            "definition": "(van kleuren en zichtbare dingen) mat, zonder glans, vaal",
+            "example": "een doffe blik"
         },
         {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
+            "code": "dof_2",
+            "definition": "(van geluiden) niet luid of scherp, onderdrukt, gesmoord",
+            "example": "een doffe kreet"
         },
         {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
+            "code": "dof_3",
+            "definition": "(van personen, gevoelens e.d.) niet opgewekt, lusteloos, zonder energie",
+            "example": "doffe onverschilligheid, doffe ellende"
         },
         {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
+            "code": "dof_4",
+            "definition": "(van denkbeelden e.d.) niet scherp voor de geest staand",
+            "example": "een doffe herinnering"
+        }
+    ],
+    "heilzaam": [
+        {
+            "code": "heilzaam_1",
+            "definition": "(letterlijk) bijdragend tot gezondheid en lichamelijk welzijn",
+            "example": "een heilzaam dieet"
+        },
+        {
+            "code": "heilzaam_2",
+            "definition": "(figuurlijk) nuttig, een gunstig effect hebbend",
+            "example": "een heilzaam besluit"
+        }
+    ],
+    "gekleurd": [
+        {
+            "code": "gekleurd_1",
+            "definition": "met kleur, in letterlijke zin (in het bijzonder, niet zwart, wit of grijs)",
+            "example": "gekleurde wangen"
+        },
+        {
+            "code": "gekleurd_2",
+            "definition": "(van personen e.a.) niet blank",
+            "example": "de gekleurde medemens, van gekleurde afkomst zijn"
+        },
+        {
+            "code": "gekleurd_3",
+            "definition": "(van uitspraken, opvattingen e.d.) niet neutraal, tendentieus",
+            "example": "een gekleurde voorstelling van zaken"
+        }
+    ],
+    "geldig": [
+        {
+            "code": "geldig_1",
+            "definition": "van kracht, van toepassing, van waarde zijnde volgens wettelijke of andere regels",
+            "example": "een geldig vervoerbewijs, betaalmiddel, juridisch bewijs"
+        },
+        {
+            "code": "geldig_2",
+            "definition": "van kracht, van toepassing, van waarde in ruimere zin",
+            "example": "een geldige redenering"
         }
     ],
     "hemels": [
         {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
+            "code": "hemels_1",
+            "definition": "betrekking hebbend op de hemel",
+            "example": "de hemelse Vader, de hemelse boodschap"
         },
         {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
+            "code": "hemels_2",
+            "definition": "verrukkelijk, heerlijk, zalig, goddelijk",
+            "example": "een hemelse verschijning, een hemelse stem"
+        }
+    ],
+    "goedkoop": [
+        {
+            "code": "goedkoop_1",
+            "definition": "laag in prijs, betaalbaar, voordelig",
+            "example": "goedkope wijn"
         },
         {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
+            "code": "goedkoop_2",
+            "definition": "geen hoge prijzen vragend",
+            "example": "een goedkoop winkeltje, een goedkope loodgieter "
         },
         {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
+            "code": "goedkoop_3",
+            "definition": "waar de prijzen laag zijn",
+            "example": "een goedkope buurt"
+        },
+        {
+            "code": "goedkoop_4",
+            "definition": "van weinig waarde, makkelijk verkregen, oppervlakkig, banaal",
+            "example": "goedkope lof, goedkoop succes, goedkope argumenten"
+        }
+    ],
+    "heet": [
+        {
+            "code": "heet_1",
+            "definition": "(van dingen) zeer warm",
+            "example": "een gloeiend hete kachel"
+        },
+        {
+            "code": "heet_2",
+            "definition": "(van het lichaam) warm aanvoelend, een hogere temperatuur dan normaal hebbend",
+            "example": "hete wangen, het heet hebben"
+        },
+        {
+            "code": "heet_3",
+            "definition": "(van het weer) zeer warm",
+            "example": "hete dagen, hete zomer"
+        },
+        {
+            "code": "heet_4",
+            "definition": "(van voedsel) pikant",
+            "example": "hete sauzen"
+        },
+        {
+            "code": "heet_5",
+            "definition": "(van personen) sexueel hartstochtelijk, geil",
+            "example": "een hete bok"
+        },
+        {
+            "code": "heet_6",
+            "definition": "(van gebeurtenissen, periodes e.d.) gekenmerkt door heftige strijd",
+            "example": "het ging er heet aan toe, een hete herfst"
+        }
+    ],
+    "grijs": [
+        {
+            "code": "grijs_1",
+            "definition": "met een kleur die ligt tussen wit en zwart; vaalwit, grauw",
+            "example": "grijs van het stof, de grijze dolfijn"
+        },
+        {
+            "code": "grijs_2",
+            "definition": "(van periodes e.d.) zonder veel zonneschijn, bewolkt, betrokken",
+            "example": "een grijze dag"
+        },
+        {
+            "code": "grijs_3",
+            "definition": "(van haar) zijn kleur verloren hebbend, m.n. door gevorderde leeftijd",
+            "example": "een grijs baardje"
+        },
+        {
+            "code": "grijs_4",
+            "definition": "(van personen e.a.) grijsharig, en vandaar, betrekking hebbend op ouderen",
+            "example": "de grijze golf"
+        },
+        {
+            "code": "grijs_5",
+            "definition": "saai, kleurloos, vervelend",
+            "example": "een grijze buurt"
+        },
+        {
+            "code": "grijs_6",
+            "definition": "niet helemaal volgens de wet of de regels, halflegaal",
+            "example": "de grijze economie"
         }
     ],
     "gemeen": [
         {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
+            "code": "gemeen_1",
+            "definition": "gemeenschappelijk in gebruik of bezit, gedeeld",
+            "example": "gemene kosten, een gemene muur"
         },
         {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
+            "code": "gemeen_2",
+            "definition": "openbaar, publiek",
+            "example": "de gemene zaak"
         },
         {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
+            "code": "gemeen_3",
+            "definition": "alledaags, gewoon, tot de middelmaat behorend",
+            "example": "het gemene volk, de gemene man"
         },
         {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
+            "code": "gemeen_4",
+            "definition": "boosaardig, kwaadaardig, laaghartig, malicieus",
+            "example": "een gemene streek"
+        },
+        {
+            "code": "gemeen_5",
+            "definition": "ordinair, plat, onkies, vulgair",
+            "example": "gemene praatjes"
         }
     ],
-    "harden": [
+    "blik": [
         {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
+            "code": "blik_1",
+            "definition": "1.1 oogopslag ",
+            "example": "een blik werpen op iets, een blik van verstandhouding"
         },
         {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
+            "code": "blik_2",
+            "definition": "1.2 gezichtsvermogen",
+            "example": "een scherpe blik"
         },
         {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
+            "code": "blik_3",
+            "definition": "1.3 inzicht, in intellectuele zin",
+            "example": "een brede blik"
         },
         {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
-        }
-    ],
-    "stof": [
-        {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
+            "code": "blik_4",
+            "definition": "2.1 dun geplet metaal, i.h. bijz. vertind dun plaatstaal",
+            "example": "dozen uit blik"
         },
         {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
+            "code": "blik_5",
+            "definition": "2.2 voorwerp (i.h.bijz. doos voor voedsel) vervaardigd uit zulk materiaal",
+            "example": "stoffer en blik, een blik erwtjes, een maaltijd uit blik"
         },
         {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
-        },
-        {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
-        }
-    ],
-    "herinneren": [
-        {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
-        },
-        {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
-        },
-        {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
-        },
-        {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
-        }
-    ],
-    "heffen": [
-        {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
-        },
-        {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
-        },
-        {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
-        },
-        {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
-        }
-    ],
-    "haken": [
-        {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
-        },
-        {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
-        },
-        {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
-        },
-        {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
+            "code": "blik_6",
+            "definition": "2.3 voedsel bewaard in een voorwerp als bedoeld in 2.2",
+            "example": "eet je niet teveel blik?"
         }
     ],
     "hoop": [
         {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
+            "code": "hoop_1",
+            "definition": "1.1 ongeordende stapel",
+            "example": "een hoop rommel, gooi maar op de hoop"
         },
         {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
+            "code": "hoop_2",
+            "definition": "1.2 grote hoeveelheid",
+            "example": "een hoop mensen, een hele hoop geld"
         },
         {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
+            "code": "hoop_3",
+            "definition": "2 positieve verwachting, vertrouwen op iets positiefs",
+            "example": "hoop koesteren, de hoop uitspreken dat..."
+        }
+    ],
+    "spot": [
+        {
+            "code": "spot_1",
+            "definition": "1 oneerbiedige, ridiculiserende uitspraak of behandeling",
+            "example": "de spot drijven met, bijtende spot"
         },
         {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
+            "code": "spot_2",
+            "definition": "2.1 reclameboodschap via radio, televisie, bioscoop",
+            "example": "een spotje voor tandpasta"
+        },
+        {
+            "code": "spot_3",
+            "definition": "2.2 schijnwerper",
+            "example": "de spots richten op"
+        }
+    ],
+    "staal": [
+        {
+            "code": "staal_1",
+            "definition": "1.1 zeer hard ijzer met laag koolstofgehalte",
+            "example": "twaalf ton staal, ijzer en staal, een man van staal"
+        },
+        {
+            "code": "staal_2",
+            "definition": "1.2 voorwerp of deel van een voorwerp uit zulk metaal",
+            "example": "het staal van de velgen is verroest"
+        },
+        {
+            "code": "staal_3",
+            "definition": "2.1 monster van een stof of materiaal, bij wijze van proef",
+            "example": "een staal vragen, goederen op staal verkopen "
+        },
+        {
+            "code": "staal_4",
+            "definition": "2.2 proef, voorbeeld, bewijs",
+            "example": "een staaltje van hun kunnen, een staaltje van bewaamheid"
+        }
+    ],
+    "stof": [
+        {
+            "code": "stof_1",
+            "definition": "1.1 materie, substantie van een bepaald type",
+            "example": "giftige stoffen, vaste stof, grijze stof"
+        },
+        {
+            "code": "stof_2",
+            "definition": "1.2 weefsel",
+            "example": "wollen en katoenen stoffen"
+        },
+        {
+            "code": "stof_3",
+            "definition": "1.3 onderwerp waarover men spreekt, schrijft, nadenkt etc.",
+            "example": "stof voor een roman, stof tot onenigheid"
+        },
+        {
+            "code": "stof_4",
+            "definition": "2.1 massa zeer kleine droge deeltjes van verschillende oorsprong, door de lucht meegevoerd",
+            "example": "een wolk stof, stof afnemen"
+        },
+        {
+            "code": "stof_5",
+            "definition": "2.2 massa zeer kleine deeltjes als toestand van een specifieke substantie",
+            "example": "iets tot stof vermalen, tot stof verpulveren"
+        }
+    ],
+    "horde": [
+        {
+            "code": "horde_1",
+            "definition": "1 bende, ordeloze groep personen",
+            "example": "een woeste horde"
+        },
+        {
+            "code": "horde_2",
+            "definition": "2.1 materi\u00eble hindernis, m.n. houten raamwerk gebruikt bij het hordelopen",
+            "example": "de 400m horden bij de vrouwen"
+        },
+        {
+            "code": "horde_3",
+            "definition": "2.2 hindernis in figuurlijke zin",
+            "example": "een horde nemen"
+        }
+    ],
+    "schaal": [
+        {
+            "code": "schaal_1",
+            "definition": "1.1 een geordende reeks cijfers, afstanden, hoeveelheden e.d. waarmee iets gemeten wordt",
+            "example": "de schaal van Celsius, Richter, op een schaal van 1 tot 5"
+        },
+        {
+            "code": "schaal_2",
+            "definition": "1.2 de verhouding tussen de grootte van iets en de weergave ervan in een kaart, model, grafiek etc.",
+            "example": "een schaal van 1:20, een schaal van 10 km"
+        },
+        {
+            "code": "schaal_3",
+            "definition": "1.3 grootteorde, omvang",
+            "example": "de schaal van een probleem, op grote/kleine schaal"
+        },
+        {
+            "code": "schaal_4",
+            "definition": "2.1 harde buitenbekleding van zekere organische zaken",
+            "example": "de schaal van een ei, de schalen van een mossel"
+        },
+        {
+            "code": "schaal_5",
+            "definition": "2.2 ondiepe en wijde schotel ",
+            "example": "een schaal met vruchten"
+        },
+        {
+            "code": "schaal_6",
+            "definition": "2.3 elk van de beide schotels die aan de armen van een balans hangen",
+            "example": "gewicht in de schaal leggen"
         }
     ],
     "spoor": [
         {
-            "code": "sense_1", "definition": "def1",
-            "example": "First sense ever"
+            "code": "spoor_1",
+            "definition": "1.1 afdruk door iets of iemand op z\u2019n weg achtergelaten",
+            "example": "het spoor van een fiets op een zandweg, een spoor van vernieling"
         },
         {
-            "code": "sense_2", "definition": "def2",
-            "example": "A less interesting sense"
+            "code": "spoor_2",
+            "definition": "1.2 blijk van aanwezigheid door iets of iemand (ongewild) achtergelaten",
+            "example": "naar sporen zoeken, iemand op het spoor komen"
         },
         {
-            "code": "sense_3", "definition": "def3",
-            "example": "Not true, all senses are interesting"
+            "code": "spoor_3",
+            "definition": "1.3 kleine hoeveelheid",
+            "example": "sporen van lood in het leidingwater"
         },
         {
-            "code": "sense_4", "definition": "def4",
-            "example": "Sometimes there are too many"
+            "code": "spoor_4",
+            "definition": "1.4. te volgen of gevolgde weg in figuurlijke zin",
+            "example": "het juiste spoor"
+        },
+        {
+            "code": "spoor_5",
+            "definition": "2.1 weg met twee rijen metalen staven waarover treinen e.d. rijden",
+            "example": "niet op het spoor lopen!"
+        },
+        {
+            "code": "spoor_6",
+            "definition": "2.2 de trein als vervoermiddel",
+            "example": "met het spoor reizen"
+        },
+        {
+            "code": "spoor_7",
+            "definition": "2.3 spoorwegbedrijf",
+            "example": "bij het spoor werken, het spoor staakt"
+        },
+        {
+            "code": "spoor_8",
+            "definition": "3 metalen punt of wieltje aan de hiel van een rijlaars, gebruikt om het rijdier te prikkelen",
+            "example": "zijn sporen verdienen"
+        }
+    ],
+    "herstellen": [
+        {
+            "code": "herstellen_1",
+            "definition": "(trans.) repareren, de eraan ontstane schade wegwerken",
+            "example": "het dak herstellen"
+        },
+        {
+            "code": "herstellen_2",
+            "definition": "(trans.) tot de vorige toestand terugbrengen, doen terugkeren",
+            "example": "de goede verstandhouding herstellen"
+        },
+        {
+            "code": "herstellen_3",
+            "definition": "(trans.) goedmaken, weer doen vergeten",
+            "example": "een fout herstellen"
+        },
+        {
+            "code": "herstellen_4",
+            "definition": "(reflex.) tot de oorspronkelijke toestand terugkeren",
+            "example": "de rust herstelt zich"
+        },
+        {
+            "code": "herstellen_5",
+            "definition": "(intrans.) genezen",
+            "example": "van een ziekte herstellen"
+        }
+    ],
+    "harden": [
+        {
+            "code": "harden_1",
+            "definition": "(trans.) hard maken, in letterlijke zin",
+            "example": "staal harden"
+        },
+        {
+            "code": "harden_2",
+            "definition": "(intrans.) hard worden, in letterlijke zin",
+            "example": "snel hardende verven"
+        },
+        {
+            "code": "harden_3",
+            "definition": "(trans.) hard maken in figuurlijke zin; weerstand en veerkracht bijbrengen",
+            "example": "een kind harden tegen het klimaat"
+        },
+        {
+            "code": "harden_4",
+            "definition": "(reflex.) bij zichzelf weerstand en veerkracht aankweken",
+            "example": "zich harden tegen het lot"
+        },
+        {
+            "code": "harden_5",
+            "definition": "(trans.) uithouden, verdragen",
+            "example": "niet te harden"
+        }
+    ],
+    "herinneren": [
+        {
+            "code": "herinneren_1",
+            "definition": "(met 'aan') weer te binnen brengen, in het geheugen terugroepen",
+            "example": "iemand aan iets herinneren"
+        },
+        {
+            "code": "herinneren_2",
+            "definition": "(reflex.) in het geheugen aanwezig hebben, niet vergeten ",
+            "example": "zich een gebeurtenis, een persoon herinneren"
+        },
+        {
+            "code": "herinneren_3",
+            "definition": "(trans.) met een plechtigheid, monument o.i.d. gedenken ",
+            "example": "we herinneren vandaag de Slag bij Ronceval"
+        }
+    ],
+    "herhalen": [
+        {
+            "code": "herhalen_1",
+            "definition": "(trans.) m.b.t. handelingen of activiteiten: opnieuw uitvoeren ",
+            "example": "een experiment, een les, een bezoek herhalen"
+        },
+        {
+            "code": "herhalen_2",
+            "definition": "(trans.) m.b.t. zinnen, boodschappen e.d.: opnieuw uitspreken ",
+            "example": "kunt u dat even herhalen?"
+        },
+        {
+            "code": "herhalen_3",
+            "definition": "(reflex.) zich opnieuw voordoen",
+            "example": "de geschiedenis herhaalt zich"
+        }
+    ],
+    "herstructureren": [
+        {
+            "code": "herstructureren_1",
+            "definition": "(trans.) reorganiseren, een nieuwe structuur geven",
+            "example": "je kunt deze tekst maar beter herstructureren"
+        },
+        {
+            "code": "herstructureren_2",
+            "definition": "(trans.) m.b.t. bedrijven in problemen: activiteiten of personeel afstoten, downsizen ",
+            "example": "Bayer herstructureert zijn plasticdivisie"
+        },
+        {
+            "code": "herstructureren_3",
+            "definition": "(intrans.) van bedrijven in problemen: activiteiten of personeel afstoten, downsizen",
+            "example": "de chemie moet zich herstructureren"
+        }
+    ],
+    "herkennen": [
+        {
+            "code": "herkennen_1",
+            "definition": "(trans.) iets of iem. identificeren als dezelfde als bij een vorige ontmoeting",
+            "example": "ik herken het, dit heb ik al eerder gezien"
+        },
+        {
+            "code": "herkennen_2",
+            "definition": "(trans.) iets identificeren als afkomstig van of behorend bij een specifieke persoon of zaak",
+            "example": "ik herken haar handschrift"
+        },
+        {
+            "code": "herkennen_3",
+            "definition": "(trans.) iets of iem. identificeren als exemplaar van een bepaalde categorie",
+            "example": "je kunt de specht herkennen aan zijn snavel"
+        },
+        {
+            "code": "herkennen_4",
+            "definition": "(reflex.) zich  inleven in een ander persoon of een gebeurtenis",
+            "example": "ik herken me in hun jeugdige enthousiasme "
+        }
+    ],
+    "diskwalificeren": [
+        {
+            "code": "diskwalificeren_1",
+            "definition": "(trans.) ongeschikt verklaren en uitsluiten van een bepaalde functie of positie",
+            "example": "een getuige diskwalificeren"
+        },
+        {
+            "code": "diskwalificeren_2",
+            "definition": "(trans.) wegens onregelmatigheden uitsluiten bij een wedstrijd",
+            "example": "FC De Trappers werd gediskwalificeerd wegens wangedrag"
+        },
+        {
+            "code": "diskwalificeren_3",
+            "definition": "(reflex.) zichzelf buiten spel zetten, zich onmogelijk maken",
+            "example": "met zulk gedrag diskwalificeer je jezelf"
+        }
+    ],
+    "helpen": [
+        {
+            "code": "helpen_1",
+            "definition": "(trans.) ondersteunen in materi\u00eble of morele zin, bijstaan",
+            "example": "met raad en daad helpen, een helpende hand, uit de nood helpen"
+        },
+        {
+            "code": "helpen_2",
+            "definition": "(trans.) iem. assisteren door met hem samen te werken  ",
+            "example": "helpen met het huiswerk; heb je dat alleen gedaan of heeft iemand je geholpen?"
+        },
+        {
+            "code": "helpen_3",
+            "definition": "(intrans.) voordeel opleveren, nuttig zijn",
+            "example": "dat drankje heeft goed geholpen"
+        }
+    ],
+    "haten": [
+        {
+            "code": "haten_1",
+            "definition": "(trans.) iem. haat toedragen, een sterk gevoel van afkeer en vijandschap t.o.v. iem. hebben",
+            "example": "waarom haat hij mij zo?"
+        },
+        {
+            "code": "haten_2",
+            "definition": "(trans.) iets onaangenaam, verfoeilijk, verwerpelijk vinden",
+            "example": "hoe zou iemand de taalkunde kunnen haten?"
+        }
+    ],
+    "huldigen": [
+        {
+            "code": "huldigen_1",
+            "definition": "(trans.) iets of iem. eer bewijzen, vieren",
+            "example": "we huldigen de uitvinder van de herbruikbare broodzak"
+        },
+        {
+            "code": "huldigen_2",
+            "definition": "(trans.) erkennen, aankleven, toegedaan zijn",
+            "example": "een opvatting, mening, theorie huldigen"
+        }
+    ],
+    "heffen": [
+        {
+            "code": "heffen_1",
+            "definition": "(trans.) m.b.t. materi\u00eble zaken: in de hoogte brengen, optillen",
+            "example": "met geheven hoofd; hij heft met gemak 80 kilo in de hoogte"
+        },
+        {
+            "code": "heffen_2",
+            "definition": "(trans.) m.b.t. geld e.d.: invorderen, eisen, opleggen",
+            "example": "belasting, rente, accijns heffen"
+        }
+    ],
+    "herroepen": [
+        {
+            "code": "herroepen_1",
+            "definition": "(trans.) m.b.t. wetten, besluiten e.d.: intrekken, niet langer geldig verklaren",
+            "example": "een besluit, volmacht, decreet herroepen"
+        },
+        {
+            "code": "herroepen_2",
+            "definition": "(trans.) m.b.t. uitspraken, meningen e.d.: terugnemen en rechtzetten",
+            "example": "Trump moest weer een van zijn dwaze tweets herroepen"
+        }
+    ],
+    "haken": [
+        {
+            "code": "haken_1",
+            "definition": "(trans.) met of als met een haak vastmaken (aan, in, achter iets)",
+            "example": "een wagen aan een locomotief haken, een sleutel in een ring haken"
+        },
+        {
+            "code": "haken_2",
+            "definition": "(intrans.) met of als met een haak vastraken",
+            "example": "de doornen haakten aan haar jas, haar paraplu bleef haken aan de deurknop "
+        },
+        {
+            "code": "haken_3",
+            "definition": "(trans.) over een uitgestoken been doen struikelen",
+            "example": "hij werd gehaakt in de elfmeter, iemand pootje haken"
+        },
+        {
+            "code": "haken_4",
+            "definition": "(intrans., met 'blijven') van gedachten, blikken e.d.: haperen, telkens terugkeren (aan of bij iets)",
+            "example": "ik bleef haken bij de herinnering aan mijn broer"
+        },
+        {
+            "code": "haken_5",
+            "definition": "(intrans./trans.) zeker handwerk maken door met een staafje met een weerhaak lussen samen te weven ",
+            "example": "haken tijdens het televisiekijken, hoe ontspannend!, een babymutsje haken"
         }
     ]
 }
