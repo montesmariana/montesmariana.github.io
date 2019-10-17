@@ -720,28 +720,31 @@
             // Fire an alert when a type is finished
             function announceAchievement() {        
                 var status = checkAchievements(type);
-                var message, congrats, timer;
+                var message, congrats, timer = 0;
 
-                if (status != 'notdone' && announced[type] != 'done') {
-                    if (status == 'done') {
-                        congrats = msg["congratulations"];
-                        checkType();
-                        var full_types = this_types.filter(function(d) {
-                            return (checkAchievements(d) == 'done');
-                        });
-                        if (full_types.length == this_types.length) {
-                            message = msg["all_done_message"];
-                            timer = 2000;
-                        } else {
-                            message = msg["type_done_message"][0] + type + msg["type_done_message"][1];
-                            timer = 1000;
-                        }
-                    } else if (status == 'halfdone' && announced[type] != 'halfdone') {
-                        congrats = msg["encouragement"];
-                        // message = "You are almost done with <em>" + type + "</em>!"
-                        message = msg["almost_done_message"][0] + type + msg["almost_done_message"][1];
+                if (status == 'done' && announced[type] != 'done') {
+                    congrats = msg["congratulations"];
+                    checkType();
+                    var full_types = this_types.filter(function(d) {
+                        return (checkAchievements(d) == 'done');
+                    });
+                    if (full_types.length == this_types.length) {
+                        message = msg["all_done_message"];
+                        timer = 2000;
+                    } else {
+                        message = msg["type_done_message"][0] + type + msg["type_done_message"][1];
                         timer = 1000;
                     }
+                } else if (status == 'halfdone' && announced[type] != 'halfdone') {
+                    congrats = msg["encouragement"];
+                    // message = "You are almost done with <em>" + type + "</em>!"
+                    message = msg["almost_done_message"][0] + type + msg["almost_done_message"][1];
+                    timer = 1000;
+                } else {
+                    return;
+                }
+
+                if (timer > 0){
 
                     Swal.fire({
                         title: congrats[Math.floor(Math.random()* congrats.length)],
