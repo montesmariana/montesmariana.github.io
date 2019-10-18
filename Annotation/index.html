@@ -348,7 +348,7 @@
                     .attr("class", "btn shadow-md btn btn-outline-secondary btn-sm")
                     .classed("active", function(d) {
                         var here = d3.select(this.parentNode.parentNode.parentNode).attr("token_id");
-                        var chosen = hasSense(here, type) && text[type][here]['sense'] == d.name;
+                        var chosen = hasSense(here, type) && text[type][here]['sense'] == d.code;
                         return (chosen ? true : null);
                     })
                     .html(function(d) {return('<span style="font-weight:bold;">' + d.definition + "</span> (<em>" + d.example + "</em>)"); })
