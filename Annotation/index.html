@@ -225,7 +225,6 @@
             if (d3.keys(text).indexOf(type) == -1) {
                 text[type] = {}; 
                 saved = JSON.stringify(text);} // Create a dictionary within 'text' for this type
-            
             // Select the senses for this type
             senses = definitions[type].slice(0);
             senses.push({ // Add 'idk' option
