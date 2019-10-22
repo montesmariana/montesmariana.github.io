@@ -153,8 +153,8 @@
                 var username = names.indexOf(result.value) > -1 ? result.value : 'guest';
                 Swal.fire({
                     title: msg['login_title'],
-                    text: msg['login_text'] + (username == 'guest' ? result.value + ' (' + username + ')' : username),
-                    type: "success",
+                    html: msg['login_text'] + (username == 'guest' ? result.value + ' <span style="color:#984ea3;font-size:2em;">(' + username + ')</span>' : username),
+                    type: username == 'guest' ? "warning" : "success",
                     confirmButtonText: msg['login_button']
                 });
                 text['user'] = result.value;
