@@ -76,7 +76,7 @@
     var typesel, msg, announced,
         text = {}, saved = JSON.stringify(text),
         users, this_user, names, achievements, this_types,
-        definitions = {};
+        def_file, definitions = {};
     var counter = 0;
     var lang = 'nl';
 
@@ -126,11 +126,6 @@
                 reader.readAsText(file.value);
             }
         });
-    });
-
-    // Upload definitions
-    d3.json("definitions.json", function(data) {
-        definitions = data;
     });
         
     // Upload user's data
@@ -183,13 +178,18 @@
                 }
                 saved = JSON.stringify(text);
                 this_user = users.filter(function(d) {return(d.name == username)})[0];
+                def_file = ['team.one', 'team.two'].indexOf(username) > -1 ? username + '.definitions' : 'definitions';
                 offerTypes(this_user);
+                
                 }
             });
     });
 
+    
+
     // Create radio buttons with options of types, with first one as default choice
     function offerTypes(this_user) {
+        
         this_types = d3.keys(this_user['tokens']); // tailored to this user
 
         typesel = d3.select("#type_selection")
@@ -229,7 +229,10 @@
         d3.select("#playground").append("div")
             .attr("class", "col-sm-10")
             .attr("id", "concordance");
-
+        // Load definitions
+        d3.json(def_file + ".json", function(data) {
+                definitions = data;
+            });
         // Load the file of the corresponding type
         d3.tsv(type + ".tsv", function(data) {
             var concordances; // will be the subset for the user
@@ -246,6 +249,7 @@
             if (d3.keys(text).indexOf(type) == -1) {
                 text[type] = {}; 
                 saved = JSON.stringify(text);} // Create a dictionary within 'text' for this type
+                
             // Select the senses for this type
             senses = definitions[type].slice(0);
             senses.push({ // Add 'idk' option
