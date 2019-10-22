@@ -142,31 +142,50 @@
             title: msg['welcome_title'],
             text: msg['welcome_text'],
             input: "text",
-            inputPlaceholder: msg['welcome_placeholder']
-            // inputValidator: (value) => { // only accept names included in users.json
-            //     if (names.indexOf(value) == -1) {
-            //         return "Invalid username, please try again."
-            //     }
-            // }
+            inputPlaceholder: msg['welcome_placeholder'],
+            inputValidator: (value) => { // only accept names included in users.json
+                if (names.indexOf(value) == -1) {
+                    // return msg['not_login_text'];
+                    return "Onbekende gebruikersnaam, probeer opnieuw";
+                }
+            }
         }).then((result) => {
             if (result.value) {
-                var username = names.indexOf(result.value) > -1 ? result.value : 'guest';
+                // ALLOW GUEST ACCESS
+                // var username = names.indexOf(result.value) > -1 ? result.value : 'guest';
+                // Swal.fire({
+                //     title: msg['login_title'],
+                //     html: msg['login_text'] + (username == 'guest' ? result.value + ' <span style="color:#984ea3;font-size:2em;">(' + username + ')</span>' : username),
+                //     type: username == 'guest' ? "warning" : "success",
+                //     confirmButtonText: msg['login_button']
+                // });
+                // text['user'] = result.value;
+                // if (typeof(Storage) !== 'undefined' && JSON.parse(localStorage.getItem("annotations-" + text['user'])) != null) {
+                //     text = JSON.parse(localStorage.getItem("annotations-" + text['user']));
+                // }
+                // saved = JSON.stringify(text);
+                // this_user = users.filter(function(d) {
+                //     return(d.name == username)})[0];
+                // offerTypes(this_user);
+
+                // NO GUEST ACCESS
+                username = result.value;
                 Swal.fire({
                     title: msg['login_title'],
-                    html: msg['login_text'] + (username == 'guest' ? result.value + ' <span style="color:#984ea3;font-size:2em;">(' + username + ')</span>' : username),
-                    type: username == 'guest' ? "warning" : "success",
+                    html: msg['login_text'] + result.value,
+                    type: "success",
                     confirmButtonText: msg['login_button']
                 });
+                text['user'] = result.value;
                 text['user'] = result.value;
                 if (typeof(Storage) !== 'undefined' && JSON.parse(localStorage.getItem("annotations-" + text['user'])) != null) {
                     text = JSON.parse(localStorage.getItem("annotations-" + text['user']));
                 }
                 saved = JSON.stringify(text);
-                this_user = users.filter(function(d) {
-                    return(d.name == username)})[0];
+                this_user = users.filter(function(d) {return(d.name == username)})[0];
                 offerTypes(this_user);
-            }
-        });
+                }
+            });
     });
 
     // Create radio buttons with options of types, with first one as default choice
