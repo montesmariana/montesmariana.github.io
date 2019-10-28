@@ -592,7 +592,11 @@
                 .attr("name", "comments")
                 .attr('autocomplete', 'on')
                 .attr("placeholder", msg["inputtext_placeholder"])
-                .attr("aria-label", "Comments");
+                .attr("aria-label", "Comments")
+                .property('value', function() {
+                    var here = d3.select(this.parentNode.parentNode).attr("token_id");
+                    return (d3.keys(text[type][here]).indexOf('comments') > -1 ? text[type][here]['comments'] : null);
+                });
 
             // control when comments change
             $(document).on('change', 'input[name="comments"]', function(event) {
