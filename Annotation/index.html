@@ -211,7 +211,6 @@
         // React to changes in the radio buttons
         $(document).on("change", "input[name='type']", function(event) { 
             type = d3.select(this).property('value'); 
-            counter += 1;
             start();
         });
 
@@ -222,6 +221,7 @@
 
     // The main thing goes here
     function start() {
+        counter += 1;
 
         // Remove and recreate concordance to avoid accumulation
         $("#concordance").remove();
@@ -521,7 +521,7 @@
             $(document).on("change", "input[name='" + type + counter + "_cues']", function(event){
                 var analized = d3.select(this.parentNode.parentNode.parentNode.parentNode.parentNode).attr("token_id");
                 var answer = d3.select(this).attr('value');
-                
+                console.log(counter);
                 var cues_list = text[type][analized]['cues'];
                 if (cues_list.indexOf('none') == 0) {
                     cues_list.splice(0, 1);
