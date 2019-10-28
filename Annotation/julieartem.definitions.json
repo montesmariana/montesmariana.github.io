@@ -1,0 +1,29 @@
+{
+    "zwart": [
+        {
+            "code": "Kleur",
+            "definition": "Neutraal gebruik van de kleur zwart",
+            "example": "Zwarte zonnebrillen"
+        },
+        {
+            "code": "Huidskleur",
+            "definition": "Er wordt verwezen naar de huidskleur ",
+            "example": "Aziatische en zwarte minderheden"
+        },
+        {
+            "code": "Onwettelijk/illegaal/verboden",
+            "definition": "Dingen die niet mogen",
+            "example": "Zwart werk"
+        },
+        {
+            "code": "Donker/duister (neutraal)",
+            "definition": "Dingen die donker/ duister zijn, maar niet onmiddelijk negatief",
+            "example": "Zwarte nacht"
+        },
+        {
+            "code": "Slecht/ onvriendelijk (emotie)",
+            "definition": "Dingen die (emotioneel) slecht of onvriendelijk aanvoelen",
+            "example": "Zwarte magie"
+        }
+    ]
+}
