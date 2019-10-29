@@ -277,8 +277,8 @@
         
         // Set up canvas
         svg = d3.select("#svgContainer").append("svg")
-          .attr("width", width*ncol)
-          .attr("height", height*nrow + padding*2)
+          .attr("width", width*ncol + padding*ncol)
+          .attr("height", height*nrow + padding*(nrow-1))
           .call(responsivefy)
           //.style("background-color", "lightgray")
           .attr("transform", "translate(0,0)")
@@ -307,7 +307,7 @@
             .classed('lighter', function(d) {
               var xc = x(d[p.m + '.x']);
               var yc = y(d[p.m + '.y']);
-              return (xc < e[0][0]+padding || xc > e[1][0]+padding || yc < e[0][1]+padding || yc > e[1][1]+padding);
+              return (xc < e[0][0]+padding || xc > e[1][0]+padding || yc < e[0][1]+padding || yc > e[1][1]+padding || !exists(d, p.m));
             }); }
         }
 
@@ -366,9 +366,8 @@
           return(c);
         }
 
-        function exists(t, c) {
-          var thisModel = c.attr('model');
-          return (d3.format('.3r')(t[thisModel + '.x']) != '0.00' || d3.format('.3r')(t[thisModel + '.y']) != '0.00');
+        function exists(t, m) {
+          return (d3.format('.3r')(t[m + '.x']) != '0.00' || d3.format('.3r')(t[m + '.y']) != '0.00');
         }
 
         cells = svg.selectAll(".cell")
@@ -377,7 +376,7 @@
           .append('g')
           .attr('class', 'cell')
           .attr('transform', function(d) {
-            return('translate(' + (+d.i)*width + ", " + +((height+padding/2)*(+d.j)) + ")");
+            return('translate(' + (+d.i)*(width+padding) + ", " + +((height+padding/2)*(+d.j)) + ")");
           })
           .attr('model', function(d) {return(d.m)})
           .each(plotCell);
@@ -392,12 +391,13 @@
             } else {
               svg.selectAll(".brush").remove();
             }
-          tokselection = [];
+          // tokselection = [];
           updateTokSelection(tokselection);
         });
 
         function plotCell(p) {
           var cell = d3.select(this);
+          var bin, present;
           
           cell.append('text')
             .attr('x', padding*1.5)
@@ -482,62 +482,92 @@
             .style('fill', 'white')
             .style('font-weight', 'bold');
 
+          present = dataset.filter(function(d) {return (exists(d, cell.attr("model"))); });
+
           cell.append("g")
             .attr("transform", "translate(0,0)")
             .attr("class", "dot")
             .selectAll("path")
-            .data(dataset)
+            .data(present)
             .enter()
             .append('path')
             .attr("transform", function(d) {
               return ("translate(" + x(d[cell.attr('model') + '.x']) + "," + y(d[cell.attr('model') + '.y']) + ")"); })
-            .attr("d", d3.symbol()
-              .type(function (d) {return (typeof(shapevar) == 'string' ? shape(getValues(shapevar).indexOf(d[shapevar])) : d3.symbolCircle); })
-              .size(function(d) {
-                if (typeof(sizevar) == 'string') {
-                  size.domain(d3.extent(dataset, function(d) {return (+d[sizevar]); }));
-                  return(size(+d[sizevar]));
-                } else {
-                  return(50);
-                }}))
-            .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"); })
-            .style('opacity', 1)
-            .attr('model', modselection[m])
-            //.attr('token_id', function(d) {return(d['_id'])})
-            .classed("lighter", function(d) {
-              return (tokselection.length > 0 ? (tokselection.indexOf(d['_id']) === -1 && exists(d, cell)) : false);
+            .each(styleDot);
+            
+          bin = dataset.filter(function(d) {return (!exists(d, cell.attr("model"))); });
+
+          cell.append("g")
+            .attr("transform", "translate(" + (width+padding/4) + "," + padding/2 + ")")
+            .attr("class", "dot")
+            .selectAll("path")
+            .data(bin).enter()
+              .append("path")
+              .attr("transform", function(d) {
+                var j = bin.indexOf(d);
+                var i = Math.floor((j*10)/width);
+                j = j-(i*(width/10));
+                return("translate(" + i*10 + "," + j*10 + ")");
               })
-            .classed("lost", function(d) {return(!exists(d, cell)); })
-            .on('mouseover', function(d) {
-              var thisModel = cell.attr('model');
-              var xcoord = "<b>x:</b> " + d3.format('.3r')(d[thisModel + '.x']);
-              var ycoord = "<b>y:</b> " + d3.format('.3r')(d[thisModel + '.y']);
-              tooltip.transition()
-                .duration(200)
-                .style("opacity", 1)
-                .style("background-color", "white")
-                .style("border", "solid")
-                .style("border-color", "lightgray");
-              tooltip.html("<b>" + d['_id'] + "</b><br>" + xcoord + ", " +  ycoord)
-                .style("left", (d3.event.pageX + 3) + "px")
-                .style("top", (d3.event.pageY - 50) + "px");
-            })
-            .on('mouseout', function() {
-              tooltip.transition()
-                .duration(200)
-                .style("opacity", 0);
-              d3.selectAll(".selector").remove();
-            })
-            .on('click', function(d) {
-              var tokId = d['_id'];
-              var tokIndex = tokselection.indexOf(tokId);
-              if (tokIndex > -1) {
-                tokselection.splice(tokIndex, 1);
-              } else {
-                tokselection.push(tokId);
-              }
-              updateTokSelection(tokselection);
-            }); 
+              .each(styleDot);
+
+          function styleDot(dp) {
+            dp = d3.select(this);
+
+            dp.attr("d", d3.symbol()
+                .type(function (d) {return (typeof(shapevar) == 'string' ? shape(getValues(shapevar).indexOf(d[shapevar])) : d3.symbolCircle); })
+                .size(function(d) {
+                  if (typeof(sizevar) == 'string') {
+                    size.domain(d3.extent(dataset, function(d) {return (+d[sizevar]); }));
+                    return(size(+d[sizevar]));
+                  } else {
+                    return(50);
+                  }}))
+              .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"); })
+              .style('opacity', 1)
+              .attr('model', modselection[m])
+              //.attr('token_id', function(d) {return(d['_id'])})
+              .classed("lighter", function(d) {
+                return (tokselection.length > 0 ? (tokselection.indexOf(d['_id']) === -1) : false);
+                })
+              // .classed("lost", function(d) {return(!exists(d, cell)); })
+              .on('mouseover', function(d) {
+                // var thisModel = cell.attr('model');
+                // var xcoord = "<b>x:</b> " + d3.format('.3r')(d[thisModel + '.x']);
+                // var ycoord = "<b>y:</b> " + d3.format('.3r')(d[thisModel + '.y']);
+                var tooltipcolor = typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"
+                // var tooltiptext = typeof(ctxtvar) == 'string' ? d[ctxtvar].replace(/<em>/g, "<em style='color:" +tooltipcolor + ";font-weight:bold;'>") : ""
+                var ctxt = colnames.filter(function(d) {return (d.startsWith("_ctxt") && d.endsWith(".raw")); })[0];
+                var tooltiptext = d[ctxt].replace(/class=["']target["']/g, "style='color:" +tooltipcolor + ";font-weight:bold;'")
+                          
+                tooltip.transition()
+                  .duration(200)
+                  .style("opacity", 1)
+                  .style("background-color", "white")
+                  .style("border", "solid")
+                  .style("border-color", "lightgray");
+                // tooltip.html("<b>" + d['_id'] + "</b><br>" + xcoord + ", " +  ycoord)
+                tooltip.html("<b style='color: " + tooltipcolor + "'>" + d['_id'] + "</b><br>" + tooltiptext)
+                  .style("left", (d3.event.pageX + 3) + "px")
+                  .style("top", (d3.event.pageY - 50) + "px");
+              })
+              .on('mouseout', function() {
+                tooltip.transition()
+                  .duration(200)
+                  .style("opacity", 0);
+                d3.selectAll(".selector").remove();
+              })
+              .on('click', function(d) {
+                var tokId = d['_id'];
+                var tokIndex = tokselection.indexOf(tokId);
+                if (tokIndex > -1) {
+                  tokselection.splice(tokIndex, 1);
+                } else {
+                  tokselection.push(tokId);
+                }
+                updateTokSelection(tokselection);
+              });
+            }
         }
         
         // what happens when we click on the dropdowns?
