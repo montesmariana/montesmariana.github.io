@@ -93,6 +93,8 @@
     <script src="d3-legend.min.js"></script>
     <!-- d3 component for zoom -->
     <script src="https://d3js.org/d3-zoom.v1.min.js"></script>
+    <!-- My own set of functions! -->
+    <script src="NephoVis.js"></script>
 
     <script>
 
@@ -100,33 +102,7 @@
       var width, height, padding;
 
       // Make svg responsive with script from: https://brendansudol.com/writing/responsive-d3
-      function responsivefy(svg) {
-      // get container + svg aspect ratio
-        var container = d3.select("#svgcol"),
-          width = parseInt(svg.style("width")),
-          height = parseInt(svg.style("height")),
-          aspect = width / height;
-
-        // add viewBox and preserveAspectRatio properties,
-        // and call resize so that svg resizes on inital page load
-        svg.attr("viewBox", "0 0 " + width + " " + height)
-          .attr("perserveAspectRatio", "xMinYMid")
-          .call(resize);
-
-        // to register multiple listeners for same event type, 
-        // you need to add namespace, i.e., 'click.foo'
-        // necessary if you call invoke this function for multiple svgs
-        // api docs: https://github.com/mbostock/d3/wiki/Selections#on
-        d3.select(window).on("resize." + container.attr("id"), resize);
-
-        // get width of container and resize svg to fit it
-        function resize() {
-          var targetWidth = parseInt(container.style("width"));
-          svg.attr("width", targetWidth);
-          svg.attr("height", Math.round(targetWidth / aspect));
-        }
-      }
-
+      
       d3.select("#hide-buttons").on("click", function() {
         console.log(d3.select("#buttons-selection").style('display'));
         if (d3.select("#buttons-selection").style('display') == 'block') {
@@ -138,21 +114,6 @@
         }
         //d3.select("#buttons-selection").style('display', 'none')
       });
-
-      function getUrlParameter(sParam) {
-        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-          sURLVariables = sPageURL.split('&'),
-          sParameterName,
-          sParameters = [],
-          i;
-
-        for (i = 0; i < sURLVariables.length; i++) {
-          sParameterName = sURLVariables[i].split('=');
-          if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : sParameterName[1];
-          }
-          }
-        };
 
       type = getUrlParameter('type')
       d3.select("h1").html("Level 1 (<em>" + type + "</em>)")
@@ -172,7 +133,7 @@
         var colorDropdown, shapeDropdown, sizeDropdown;
         var tooltip;
         var svg, legendContainer, dot;
-        var x, y, xrange, yrange, color, shape, size; //for scales
+        var x, y, newX, newY, xrange, yrange, color, shape, size; //for scales
         var xCenter, yCenter, xAxis, yAxis;
         var legendList, legendColor, legendShape, legendSize, halign; // for legends
         
@@ -180,43 +141,24 @@
         dataset = data;
         
         // classify columns
-        colnames = d3.keys(dataset[0]);
-        othercols = colnames.filter(function(d) {return (!d.endsWith(".x") && !d.endsWith(".y") && !d.startsWith("_")); });
-
-        nominals = othercols.filter(function(d) {return (!getValues(d).every(function(d) {return(!isNaN(d)); }) && getValues(d).length > 1); });
-        // This happens to work with my clouds, might not always be the case
-        focc = nominals.filter(function(d) {return (d.startsWith('focc')); });
-        socc = nominals.filter(function(d) {return (d.startsWith('socc')); });
-        nominals.push('Reset');
-
-        numerals = othercols.filter(function(d) {return (getValues(d).every(function(d) {return(!isNaN(d)); }) && getValues(d).length > 1); });
-        numerals.push('Reset');
-        // var firstRow = d3.entries(dataset[1]).filter(function(d) { if (othercols.indexOf(d.key) >= 0) {return d.value;}; });
-
-        // var nominals = firstRow.filter(function(d) { if (isNaN(d.value) && !d.key.startsWith("_")) { return d.key; } });
-        // var nomSet = new Set();
-        // nominals.forEach(function (d) { nomSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
-        // nomSet.add('Reset')
-
-        // var numerals = firstRow.filter(function(d) { if (!isNaN(d.value)) { return d.key; } });
-        // var numSet = new Set();
-        // numerals.forEach(function (d) { numSet.add(new RegExp("([^.]+)$").exec(d.key)[0]); });
-        // numSet.add('Reset')
-
+        colnames = classify_colnames(dataset);
+        othercols = colnames['variables'];
+        nominals = colnames['nominals'];
+        numerals = colnames['numerals'];
+        
+        focc = nominals.filter(function(d) {return (d.startsWith('focc_')); });
+        socc = nominals.filter(function(d) {return (d.startsWith('socc_')); });
+        
         // information from localStorage
-        
-        colorvar = JSON.parse(localStorage.getItem("colorvar-mod")) == null ? undefined : JSON.parse(localStorage.getItem("colorvar-mod"));
-        colorvalues = typeof(colorvar) == 'string' ? getValues(colorvar) : +0;
-        colorselection = JSON.parse(localStorage.getItem("colorsel")) == null ? [] : JSON.parse(localStorage.getItem("colorsel"));
+        colorvar = varFromLS(dataset, "color", "mod");
+        colorselection = [];
 
-        shapevar = JSON.parse(localStorage.getItem("shapevar-mod")) == null ? undefined : JSON.parse(localStorage.getItem("shapevar-mod"));
-        shapevalues = typeof(shapevar) == 'string' ? getValues(shapevar) : +0;
-        shapeselection = JSON.parse(localStorage.getItem("shapesel")) == null ? [] : JSON.parse(localStorage.getItem("shapesel"));
-        
-        sizevar = JSON.parse(localStorage.getItem("sizevar-mod")) == null ? undefined : JSON.parse(localStorage.getItem("sizevar-mod"));
-        sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0;
-        
-        modselection = JSON.parse(localStorage.getItem("modselection")) == null ? [] : JSON.parse(localStorage.getItem("modselection"));
+        shapevar = varFromLS(dataset, "shape", "mod");
+        shapeselection = [];
+
+        sizevar = varFromLS(dataset, "size", "mod");
+
+        modselection = listFromLS("modselection");
 
         // set up buttons selection
         foccButtons = d3.select("#foccrow").selectAll("div")
@@ -251,7 +193,7 @@
           butgroup.append("h4").text("Select " + buttext);
 
           butgroup.selectAll("label")
-            .data(getValues(p))
+            .data(getValues(dataset, p))
             .enter()
             .append("label")
             .attr("class", "btn shadow-sm btn-kulright m-1")
@@ -298,34 +240,12 @@
         }
 
         // set up dropdowns
-        colorDropdown = d3.select("#colour").selectAll("button")
-          .data(nominals)
-          .enter()
-          .append("button")
-          .attr("class", "dropdown-item col")
-          .attr("xlink:href", "#")
-          .attr("value", function (d) { return(d); })
-          .text(function (d) { return(d); });
-
-        shapeDropdown = d3.select("#shape").selectAll("button")
-          .data(nominals)
-          .enter()
-          .append("button")
-          .attr("class", "dropdown-item shape")
-          .attr("xlink:href", "#")
-          .attr("value", function (d) { return(d); })
-          .text(function (d) { return(d); });
-
-        sizeDropdown = d3.select("#size").selectAll("button")
-          .data(numerals)
-          .enter()
-          .append("button")
-          .attr("class", "dropdown-item size")
-          .attr("xlink:href", "#")
-          .attr("value", function (d) { return(d); })
-          .text(function (d) { return(d); });
+        colorDropdown = buildDropdown("colour", nominals);
+        shapeDropdown = buildDropdown("shape", nominals);
+        sizeDropdown = buildDropdown("size", numerals);
 
         // add tooltip (before the svg so it is not on top of it?)
+        // tooltip = setTooltip("body");
         tooltip = d3.select("body").append('div')
           .attr("class", "tooltip")
           .attr("width", 100)
@@ -369,6 +289,9 @@
           .domain(yrange)
           .range([height-padding, padding]);
 
+        newX = x;
+        newY = y;
+
         color = d3.scaleOrdinal(d3.schemeCategory10);
 
         shape = d3.scaleOrdinal(d3.symbols);
@@ -377,31 +300,20 @@
           .range([40, 200]); // remember to set the domain (current variable) before assigning a value
 
         // Vertical center
-        xCenter = svg.append("line")
-          .attr("x1", x(0))
-          .attr("y1", padding)
-          .attr("x2", x(0))
-          .attr("y2", height-padding)
-          .attr("stroke", "lightgray")
-          .attr("stroke-width", 1);
-
+        xCenter = traceCenter(svg, x1 = newX(0), x2 = newX(0), y1 = padding, y2 = height-padding);
+        
         // Horizontal center
-        yCenter = svg.append("line")
-          .attr("x1", padding)
-          .attr("y1", y(0))
-          .attr("x2", width-padding)
-          .attr("y2", y(0))
-          .attr("stroke", "lightgray")
-          .attr("stroke-width", 1);
+        yCenter = traceCenter(svg, x1 = padding, x2 = width-padding, y1 = newY(0), y2 = newY(0));
+        
 
         // Axes (tickSizeOuter(0) avoids overlap of axes)
-        xAxis = d3.axisBottom(x).tickSizeOuter(0);
+        xAxis = d3.axisBottom(newX).tickSizeOuter(0);
         svg.append("g")
           .attr("id", "xaxis")
           .attr("transform", "translate(0, " + (height-padding) + ")")
           .call(xAxis);
 
-        yAxis = d3.axisLeft(y).tickSizeOuter(0);
+        yAxis = d3.axisLeft(newY).tickSizeOuter(0);
         svg.append("g")
           .attr("id", "yaxis")
           .attr("transform", "translate(" + padding + ", 0)")
@@ -409,8 +321,8 @@
 
         // What happens with the zoom
         function zoomed() {
-          var newY = d3.event.transform.rescaleY(y);
-          var newX = d3.event.transform.rescaleY(x);
+          newY = d3.event.transform.rescaleY(y);
+          newX = d3.event.transform.rescaleY(x);
           svg.select('#xaxis').call(xAxis.scale(newX)); // x axis rescaled
           svg.select('#yaxis').call(yAxis.scale(newY)); // y axis rescaled
           dot.attr("transform", function(d) {
@@ -429,25 +341,19 @@
           .data(dataset)
 	        .enter()
           .append('path')
-          .attr("transform", function(d) { return ("translate(" + x(d['model.x']) + "," + y(d['model.y']) + ")"); })
+          .attr("transform", function(d) { return ("translate(" + newX(d['model.x']) + "," + newY(d['model.y']) + ")"); })
           .attr("d", d3.symbol()
-            .type(function (d) {return (typeof(shapevar) == 'string' ? shape(getValues(shapevar).indexOf(d[shapevar])) : d3.symbolWye); })
-            .size(function(d) {
-              if (typeof(sizevar) == 'string') {
-                size.domain(d3.extent(dataset, function(d) {return (+d[sizevar]); }));
-                return(size(+d[sizevar]));
-              } else {
-                return(64);
-              }}))
-          .style('fill', function(d) {return (typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"); })
+            .type(function (d) {return (code(d, shapevar, shape, d3.symbolWye)); })
+            .size(function(d) {return (code(d, sizevar, size, 64)); }))
+          .style('fill', function(d) {return (code(d, colorvar, color, "#1f77b4")); })
           .classed("lighter", function(d) {return (modselection.length > 0 ? modselection.indexOf(d['_model']) === -1 : false); })
           .on("mouseover", function(d) {
             tooltip.transition()
               .duration(200)
               .style("opacity", 1);
-            var colordata = (typeof(colorvar) == "string" ? "<br><b>"+colorvar+"</b>: " + d[colorvar] : "");
-            var shapedata = (typeof(shapevar) == "string" ? "<br><b>"+shapevar+"</b>: " + d[shapevar] : "");
-            var sizedata = (typeof(sizevar) == "string" ? "<br><b>"+sizevar+"</b>: " + d3.format(".3r")(+d[sizevar]) : "");
+            var colordata = (typeof(colorvar['variable']) == "string" ? "<br><b>"+colorvar['variable']+"</b>: " + d[colorvar['variable']] : "");
+            var shapedata = (typeof(shapevar['variable']) == "string" ? "<br><b>"+shapevar['variable']+"</b>: " + d[shapevar['variable']] : "");
+            var sizedata = (typeof(sizevar['variable']) == "string" ? "<br><b>"+sizevar['variable']+"</b>: " + d3.format(".3r")(+d[sizevar['variable']]) : "");
             tooltip.html("<b>" + d['_model'] + "</b>" + colordata + shapedata + sizedata)
               .style("left", (d3.event.pageX + 10) + "px")
               .style("top", (d3.event.pageY - 20) + "px");
@@ -479,29 +385,32 @@
 
         // what happens when we click on the dropdowns?
         colorDropdown.on("click", function() {
-          this.value == 'Reset' ? colorvar = null : colorvar = this.value;
-          localStorage.setItem("colorvar-mod", JSON.stringify(colorvar));
+          colorvar = updateVar(dataset, "color", this.value, "mod");
+          // this.value == 'Reset' ? colorvar = null : colorvar = this.value;
+          // localStorage.setItem("colorvar-mod", JSON.stringify(colorvar));
           colorselection = [];
-          cleanStor('colorsel');
+          // cleanStor('colorsel');
           updatePlot();
           updateLegend();
         });
 
         shapeDropdown.on("click", function() {
-          this.value == 'Reset' ? shapevar = null : shapevar = this.value;
-          localStorage.setItem("shapevar-mod", JSON.stringify(shapevar));
+          shapevar = updateVar(dataset, "shape", this.value, "mod");
+          // this.value == 'Reset' ? shapevar = null : shapevar = this.value;
+          // localStorage.setItem("shapevar-mod", JSON.stringify(shapevar));
           shapeselection = [];
-          cleanStor('shapesel');
+          // cleanStor('shapesel');
           updatePlot();
           updateLegend();
         });
 
         sizeDropdown.on("click", function() {
-          this.value == 'Reset' ? sizevar = null : sizevar = this.value;
-          if (typeof(sizevar) == 'string') {
-            size.domain(d3.extent(dataset, function(d) {return (+d[sizevar]); }));
-          }
-          localStorage.setItem("sizevar-mod", JSON.stringify(sizevar));
+          sizevar = updateVar(dataset, "size", this.value, "mod");
+          // this.value == 'Reset' ? sizevar = null : sizevar = this.value;
+          // if (typeof(sizevar) == 'string') {
+          //   size.domain(d3.extent(dataset, function(d) {return (+d[sizevar]); }));
+          // }
+          // localStorage.setItem("sizevar-mod", JSON.stringify(sizevar));
           //sizevarselection = []
           //localStorage.setItem("sizesel", JSON.stringify(null))
           updatePlot();
@@ -514,8 +423,8 @@
             modselection = [];
             colorselection = [];
             shapeselection = [];
-            cleanStor('colorsel');
-            cleanStor('shapesel');
+            // cleanStor('colorsel');
+            // cleanStor('shapesel');
             updateModSelection(modselection);
           });
 
@@ -536,31 +445,12 @@
 
         // Updating color, shape and size after every button clicking
         function updatePlot() {
-          dot.style("fill", function(d) {return (typeof(colorvar) == 'string' ? color(getValues(colorvar).indexOf(d[colorvar])) : "#1f77b4"); })
+          dot.style("fill", function(d) {return (code(d, colorvar, color, "#1f77b4")); })
             .attr("d", d3.symbol().type(function(d) {
-              return (typeof(shapevar) == 'string' ? shape(getValues(shapevar).indexOf(d[shapevar])) : d3.symbolWye);
+              return (code(d, shapevar, shape, d3.symbolWye));
               }).size(function(d) {
-                return (typeof(sizevar) == 'string' ? size(+d[sizevar]) : 64); }));
+                return (code(d, sizevar, size, 64)); }));
         }
-
-        // Generate complementary colors for the circle on hover
-        function compColor(col) {
-          res = d3.hsl(col);
-          hue = res['h'];
-          newHue = +hue < 180 ? +(hue + 180) : +(hue-180);
-          res['h'] = newHue;
-          return(res.toString());
-        }
-
-        // Short function to obtain the possible values of a variable
-        function getValues(colname) {
-          return(d3.map(dataset, function(d) {return (d[colname]); }).keys());
-        }
-
-        function cleanStor(item) {
-          localStorage.setItem(item, JSON.stringify(null));
-        }
-
         // update model selection
         function updateModSelection(modselection) {
           // stores 'null' if it's empty and the list otherwise
@@ -577,9 +467,9 @@
         function updateLegend() {
           legendList = [];
           legendContainer.selectAll(".legend").remove();
-          colorvalues = typeof(colorvar) == 'string' ? getValues(colorvar) : +0;
-          shapevalues = typeof(shapevar) == 'string' ? getValues(shapevar) : +0;
-          sizevalues = typeof(sizevar) == 'string' ? getValues(sizevar) : +0;
+          colorvalues = colorvar['values'];
+          shapevalues = shapevar['values'];
+          sizevalues = sizevar['values'];
 
           // Update color legend
           if (typeof(colorvalues) != 'number'){
@@ -592,7 +482,7 @@
             legendColor = d3.legendColor()
               .shape("path", d3.symbol().type(d3.symbolWye).size(64)())
               .scale(colorscale)
-              .title(colorvar)
+              .title(colorvar['variable'])
               .on("cellclick", function(d) {
                 if (colorselection.indexOf(d) > -1) {
                   colorselection.splice(colorselection.indexOf(d), 1);
@@ -601,7 +491,7 @@
                   }
                 localStorage.setItem("colorsel", JSON.stringify(colorselection));
                 if (colorselection.length > 0) {
-                  modselection = d3.map(dataset, function(d) {if (colorselection.indexOf(d[colorvar]) > -1) {return(d['_model']); }}).keys();
+                  modselection = d3.map(dataset, function(d) {if (colorselection.indexOf(d[colorvar['variable']]) > -1) {return(d['_model']); }}).keys();
                   } else {
                   modselection = [];
                   }
@@ -632,7 +522,7 @@
             
             legendShape = d3.legendSymbol()
               .scale(shapescale)
-              .title(shapevar)
+              .title(shapevar['variable'])
               .on("cellclick", function(d) {
                 if (shapeselection.indexOf(d) > -1) {
                   shapeselection.splice(shapeselection.indexOf(d), 1);
@@ -641,7 +531,7 @@
                   }
                 localStorage.setItem("shapesel", JSON.stringify(shapeselection));
                 if (shapeselection.length > 0) {
-                  modselection = d3.map(dataset, function(d) {if (shapeselection.indexOf(d[shapevar]) > -1) {return(d['_model']); }}).keys();
+                  modselection = d3.map(dataset, function(d) {if (shapeselection.indexOf(d[shapevar['variable']]) > -1) {return(d['_model']); }}).keys();
                   } else {
                   modselection = [];
                   }
@@ -667,15 +557,15 @@
           // Update size legend
           if (typeof(sizevalues) != 'number'){
             var sizescale = d3.scaleLinear()
-              .domain(d3.extent(dataset, function(d) {return +d[sizevar];}))
+              .domain(d3.extent(sizevalues))
               .range([5, 8]);
-            sizevalues = sizevalues.map(function(d) {return +d;}).sort();
+            // sizevalues = sizevalues.map(function(d) {return +d;}).sort();
             var smallNumbers = (sizescale.domain()[1]-sizescale.domain()[0])/(sizevalues.length-1) < 1;
             
             legendSize = d3.legendSize()
               .shape('circle')
               .scale(sizescale)
-              .title(sizevar)
+              .title(sizevar['variable'])
               .cells(sizevalues.length >= 5 ? 5 : sizevalues)
               .labelFormat(smallNumbers ? ".04r" : ".0d");
               // no selection through size
@@ -699,33 +589,6 @@
         updateLegend();
         updateModSelection(modselection);
       });
-      
-      // svg.append("rect")
-      //   .attr("x", padding)
-      //   .attr("y", padding)
-      //   .attr("width", width-(padding*2))
-      //   .attr("height", height-(padding*2))
-      //   .attr("fill", "white");
-
-      // svg.append("line")
-      //   .attr("x1", padding)
-      //   .attr("y1", padding)
-      //   .attr("x2", width-padding)
-      //   .attr("y2", height-padding)
-      //   .style("stroke", "rgb(255,0,0)")
-      //   .style("stroke-width", 2);
-
-      // svg.append("circle")
-      //   .attr("cx", width-(padding*2))
-      //   .attr("cy", padding*2)
-      //   .attr("r", 20)
-      //   .attr("fill", "green");
-
-      // svg.append("circle")
-      //   .attr("cx", padding*2)
-      //   .attr("cy", height-(padding*2))
-      //   .attr("r", 5)
-      //   .attr("fill", "green");
 
       
     </script>
