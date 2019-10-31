@@ -178,7 +178,7 @@
                 }
                 saved = JSON.stringify(text);
                 this_user = users.filter(function(d) {return(d.name == username)})[0];
-                def_file = ['julieartem', 'team_2'].indexOf(username) > -1 ? username + '.definitions' : 'definitions';
+                def_file = ['julieartem', 'woordenschatjes'].indexOf(username) > -1 ? username + '.definitions' : 'definitions';
                 offerTypes(this_user);
                 
                 }
@@ -231,8 +231,8 @@
             .attr("id", "concordance");
         // Load definitions
         d3.json(def_file + ".json", function(data) {
-                definitions = data;
-            });
+            definitions = data;
+        });
         // Load the file of the corresponding type
         d3.tsv(type + ".tsv", function(data) {
             var concordances; // will be the subset for the user
