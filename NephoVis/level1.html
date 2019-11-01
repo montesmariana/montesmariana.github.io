@@ -18,62 +18,60 @@
       body {
         background-color: #154360;
       }
-
+      h1 {
+        color:  #154360;
+      }
       path.lighter {
         fill-opacity : .1;
       }
-
-      .lead {
-        background-color: #154360;
-        color: white;
-      }
-
     </style>
   </head>
   <body>
     <div class="container" style="background-color:white;">
-      <div class="row">
+      <div class="row justify-content-center">
         <h1></h1>
       </div>
-      <div class="lead p-3 shadow rounded">
-          <p>On this site you can select a group of clouds based on some parameters.</p>
-          <p>The buttons act as filters: between buttons of the same group there's an OR relation; between groups, an AND relation.</p>
-          <button type="button" class="btn shadow-sm btn-secondary m-1" id="hide-buttons"> Hide filtering buttons </button>
-      </div>
       <div class="row">
-        <div class="col-4" id="buttons-selection" style="height:100vh;overflow: auto;">
-          <div class="row shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded" id="foccrow">
-            <h3 class="blueh2">First order context words</h3>
-          </div>
-          <div class="row shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded" id="soccrow">
-            <h3 class="blueh2">Second order context words</h3>
-          </div>
-          <div class="row shadow-lg border border-kuldefault bg-gradient-bgblue p-4 m-1 rounded" id="finalrow">
-            <h3 class="blueh2">Final tokens</h3>
-          </div>
-        </div>
-        <div class="col-7 offset-1" id="svgcol">
-          <br>
-          <div class="row">
+        <div class="col-auto" id="sidebar">
+          <div class="btn-group-vertical">
             <div class='btn-group'>
-              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle my-1" data-toggle="dropdown">Select colour</button>
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select colour</button>
               <div class="dropdown-menu" id="colour"></div>
             </div>
             <div class='btn-group'>
-              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle my-1" data-toggle="dropdown">Select shape</button>
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select shape</button>
               <div class="dropdown-menu" id="shape"></div>
             </div>
             <div class='btn-group'>
-              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle my-1" data-toggle="dropdown">Select size</button>
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select size</button>
               <div class="dropdown-menu" id="size"></div>
             </div>
-            <button type="button" class="btn shadow-sm btn-secondary m-1" id="clear-select"><i class="fas fa-eraser"></i> Clear model selection</button>
-            <button type="button" class="btn shadow-sm btn-marigreen m-1" id="go-to-index"><i class="fas fa-home"></i> HOME </button>
-            <!-- <button type="button" class="btn shadow-sm btn-marigreen m-1" id="go-to-buttons"><i class="fas fa-exchange-alt"></i> Buttons selection </button> -->
-            <button type="button" class="btn shadow-sm btn-marigreen m-1" id="model-select"><i class="fas fa-arrow-alt-circle-down"></i> DOWN </button>
           </div>
-          <div class="row" id="svgContainer"></div>
-          <div class="row" id="legendContainer"></div>
+          <hr>
+          <button type="button" class="btn shadow-sm btn-secondary" id="clear-select"><i class="fas fa-eraser"></i> Clear model selection</button>
+          <hr>
+          <div class="btn-group">
+            <button type="button" class="btn shadow-sm btn-marigreen" id="go-to-index"><i class="fas fa-home"></i> HOME </button>
+            <button type="button" class="btn shadow-sm btn-marigreen" id="model-select"><i class="fas fa-arrow-alt-circle-down"></i> DOWN </button>
+          </div>
+          <hr>
+          <div style="height:80vh;overflow: auto;border:solid;border-color:gray;padding-left:3px;">
+            <div id="foccrow">
+              <h5>First order</h5>
+            </div>
+            <hr>
+            <div id="soccrow">
+              <h5>Second order</h5>
+            </div>
+            <hr>
+            <div id="finalrow">
+              <h5>Final tokens</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div id="legendContainer" style="width:600px;"></div>
+          <div id="svgContainer" style="width:600px;"></div>
         </div>
       </div>
     </div>
@@ -98,25 +96,12 @@
 
     <script>
 
-      var type;
+      var type, level;
       var width, height, padding;
 
-      // Make svg responsive with script from: https://brendansudol.com/writing/responsive-d3
-      
-      d3.select("#hide-buttons").on("click", function() {
-        console.log(d3.select("#buttons-selection").style('display'));
-        if (d3.select("#buttons-selection").style('display') == 'block') {
-          d3.select("#buttons-selection").style('display', 'none');
-          d3.select(this).text('Show filtering buttons');
-        } else {
-          d3.select("#buttons-selection").style('display', 'block');
-          d3.select(this).text('Hide filtering buttons');
-        }
-        //d3.select("#buttons-selection").style('display', 'none')
-      });
-
-      type = getUrlParameter('type')
-      d3.select("h1").html("Level 1 (<em>" + type + "</em>)")
+      type = getUrlParameter('type');
+      d3.select("h1").html("Level 1 (<em>" + type + "</em>)");
+      level = "model";
       
       width = 600;
       height = 600;
@@ -133,9 +118,8 @@
         var colorDropdown, shapeDropdown, sizeDropdown;
         var tooltip;
         var svg, legendContainer, dot;
-        var x, y, newX, newY, xrange, yrange, color, shape, size; //for scales
+        var x, y, newX, newY, xrange, yrange; //for scales
         var xCenter, yCenter, xAxis, yAxis;
-        var legendList, legendColor, legendShape, legendSize, halign; // for legends
         
         // load the data
         dataset = data;
@@ -158,53 +142,14 @@
 
         sizevar = varFromLS(dataset, "size", "mod");
 
-        modselection = listFromLS("modselection");
+        modselection = listFromLS(level + "selection-" + type);
 
         // set up buttons selection
-        foccButtons = d3.select("#foccrow").selectAll("div")
-          .data(focc)
-          .enter()
-          .append("div")
-          .attr("class", "btn-group-toggle mt-2")
-          .attr("data-toggle", "buttons")
-          .each(appendCheckbox);
-
-        soccButtons = d3.select("#soccrow").selectAll("div")
-          .data(socc)
-          .enter()
-          .append("div")
-          .attr("class", "btn-group-toggle mt-2")
-          .attr("data-toggle", "buttons")
-          .each(appendCheckbox)
-
-        finButtons = d3.select("#finalrow").selectAll("div")
-          .data(['minimum_contextwords']) //Tailored to my data, sorry
-          .enter()
-          .append("div")
-          .attr("class", "btn-group-toggle mt-2")
-          .attr("data-toggle", "buttons")
-          .each(appendCheckbox);
-
-        function appendCheckbox(p) {
-          var butgroup = d3.select(this);
-
-          var buttext = (p.startsWith("socc") || p.startsWith("focc")) ? p.split("_").splice(1).join(" ") : p.split("_").join(" ");
-
-          butgroup.append("h4").text("Select " + buttext);
-
-          butgroup.selectAll("label")
-            .data(getValues(dataset, p))
-            .enter()
-            .append("label")
-            .attr("class", "btn shadow-sm btn-kulright m-1")
-            .attr("parent", p)
-            .text(function(d) {return(d); })
-            .append("input")
-            .attr("type", "checkbox")
-            .attr("autocomplete", "off")
-            .attr("id", function(d) {return(p + ":" + d); });
-        }
-
+        
+        foccButtons = checkBoxSections("foccrow", focc, dataset);
+        soccButtons = checkBoxSections("soccrow", socc, dataset);
+        finButtons = checkBoxSections("finalrow", ["minimum_contextwords"], dataset);
+        
         $(document).on('change', 'input', function(event){
           var checked = d3.select(this).attr('id');
           if (valselection.indexOf(checked) == -1) {
@@ -245,14 +190,8 @@
         sizeDropdown = buildDropdown("size", numerals);
 
         // add tooltip (before the svg so it is not on top of it?)
-        // tooltip = setTooltip("body");
-        tooltip = d3.select("body").append('div')
-          .attr("class", "tooltip")
-          .attr("width", 100)
-          .attr("height", 20)
-          .style('position', 'absolute')
-          .style("opacity", 0);
-
+        tooltip = setTooltip("body");
+        
         // Set up canvas
         svg = d3.select("#svgContainer").append("svg")
           .attr("width", width)
@@ -262,24 +201,18 @@
           .append("g")
           .call(d3.zoom().on('zoom', zoomed));
         
-        // Set up legend area next to it (it goes downwards if there is no space)
-        legendContainer = d3.select("#legendContainer").append("svg")
-          .attr("width", width)
-          .attr("height", "200")
-          .call(responsivefy)
-          .attr("transform", "translate(" + padding/2 + ", 0)");
-
         // Set up pointing area so you can have zoom with the mouse in any point of the plot
-        svg.append("rect")
-          .attr("width", width)
-          .attr("height", height)
-          .attr("transform", "translate(0,0)")
-          .style("pointer-events", "all")
-          .style("fill", "none");
+        setPointerEvents(svg, width, height);
           
         // Set up scales (axes, color...) - coordinates multiplied to get some padding in a way
-        xrange = [d3.min(dataset, function(d) {return (+d['model.x']); }) * 1.1, d3.max(dataset, function(d) {return (+d['model.x']) ;}) * 1.1];
-        yrange = [d3.min(dataset, function(d) {return (+d['model.y']); }) * 1.1, d3.max(dataset, function(d) {return (+d['model.y']) ;}) * 1.1];
+        xrange = [
+          d3.min(dataset, function(d) {return (+d['model.x']); }) * 1.1,
+          d3.max(dataset, function(d) {return (+d['model.x']) ;}) * 1.1
+        ];
+        yrange = [
+          d3.min(dataset, function(d) {return (+d['model.y']); }) * 1.1,
+          d3.max(dataset, function(d) {return (+d['model.y']) ;}) * 1.1
+        ];
 
         x = d3.scaleLinear()
           .domain(xrange)
@@ -291,13 +224,6 @@
 
         newX = x;
         newY = y;
-
-        color = d3.scaleOrdinal(d3.schemeCategory10);
-
-        shape = d3.scaleOrdinal(d3.symbols);
-
-        size = d3.scaleLinear()
-          .range([40, 200]); // remember to set the domain (current variable) before assigning a value
 
         // Vertical center
         xCenter = traceCenter(svg, x1 = newX(0), x2 = newX(0), y1 = padding, y2 = height-padding);
@@ -338,83 +264,70 @@
         dot = svg.append("g")
           .attr("class", "dot")
           .selectAll("path")
-          .data(dataset)
-	        .enter()
-          .append('path')
-          .attr("transform", function(d) { return ("translate(" + newX(d['model.x']) + "," + newY(d['model.y']) + ")"); })
-          .attr("d", d3.symbol()
-            .type(function (d) {return (code(d, shapevar, shape, d3.symbolWye)); })
-            .size(function(d) {return (code(d, sizevar, size, 64)); }))
-          .style('fill', function(d) {return (code(d, colorvar, color, "#1f77b4")); })
-          .classed("lighter", function(d) {return (modselection.length > 0 ? modselection.indexOf(d['_model']) === -1 : false); })
-          .on("mouseover", function(d) {
-            tooltip.transition()
-              .duration(200)
-              .style("opacity", 1);
-            var colordata = (typeof(colorvar['variable']) == "string" ? "<br><b>"+colorvar['variable']+"</b>: " + d[colorvar['variable']] : "");
-            var shapedata = (typeof(shapevar['variable']) == "string" ? "<br><b>"+shapevar['variable']+"</b>: " + d[shapevar['variable']] : "");
-            var sizedata = (typeof(sizevar['variable']) == "string" ? "<br><b>"+sizevar['variable']+"</b>: " + d3.format(".3r")(+d[sizevar['variable']]) : "");
-            tooltip.html("<b>" + d['_model'] + "</b>" + colordata + shapedata + sizedata)
-              .style("left", (d3.event.pageX + 10) + "px")
-              .style("top", (d3.event.pageY - 20) + "px");
-            svg.select(".dot")
-              .append("path")
-              .attr("class", "selector")
-              .attr("transform", d3.select(this).attr("transform"))
-              .attr("d", d3.symbol().type(d3.symbolCircle).size(250))
-              .style("fill", "none")
-              .style("stroke", compColor(d3.select(this).style("fill")))
-              .style("stroke-width", 2);
-          })
-          .on('mouseout', function() {
-            tooltip.transition()
-              .duration(200)
-              .style("opacity", 0);
-            d3.selectAll(".selector").remove();
-          })
-          .on('click', function(d) {
-            var modName = d['_model'];
-            var modIndex = modselection.indexOf(modName);
-            if (modIndex > -1) {
-              modselection.splice(modIndex, 1);
-            } else {
-              modselection.push(modName);
-            }
-            updateModSelection(modselection);
-          });
+          .data(dataset).enter()
+            .append('path')
+            .attr("class", "graph")
+            .attr("transform", function(d) { return ("translate(" + newX(d['model.x']) + "," + newY(d['model.y']) + ")"); })
+            .attr("d", d3.symbol()
+              .type(function (d) {return (code(d, shapevar, shape, d3.symbolWye)); })
+              .size(function(d) {return (code(d, sizevar, size, 64)); }))
+            .style('fill', function(d) {return (code(d, colorvar, color, "#1f77b4")); })
+            .classed("lighter", function(d) {return (modselection.length > 0 ? modselection.indexOf(d['_model']) === -1 : false); })
+            .on("mouseover", function(d) {
+              tooltip.transition()
+                .duration(200)
+                .style("opacity", 1);
+              var colordata = (typeof(colorvar['variable']) == "string" ? "<br><b>"+colorvar['variable']+"</b>: " + d[colorvar['variable']] : "");
+              var shapedata = (typeof(shapevar['variable']) == "string" ? "<br><b>"+shapevar['variable']+"</b>: " + d[shapevar['variable']] : "");
+              var sizedata = (typeof(sizevar['variable']) == "string" ? "<br><b>"+sizevar['variable']+"</b>: " + d3.format(".3r")(+d[sizevar['variable']]) : "");
+              tooltip.html("<b>" + d['_model'] + "</b>" + colordata + shapedata + sizedata)
+                .style("left", (d3.event.pageX + 10) + "px")
+                .style("top", (d3.event.pageY - 20) + "px");
+              svg.select(".dot")
+                .append("path")
+                .attr("class", "selector")
+                .attr("transform", d3.select(this).attr("transform"))
+                .attr("d", d3.symbol().type(d3.symbolCircle).size(250))
+                .style("fill", "none")
+                .style("stroke", compColor(d3.select(this).style("fill")))
+                .style("stroke-width", 2);
+            })
+            .on('mouseout', function() {
+              tooltip.transition()
+                .duration(200)
+                .style("opacity", 0);
+              d3.selectAll(".selector").remove();
+            })
+            .on('click', function(d) {
+              var modName = d['_model'];
+              var modIndex = modselection.indexOf(modName);
+              if (modIndex > -1) {
+                modselection.splice(modIndex, 1);
+              } else {
+                modselection.push(modName);
+              }
+              updateModSelection(modselection);
+            });
 
         // what happens when we click on the dropdowns?
         colorDropdown.on("click", function() {
           colorvar = updateVar(dataset, "color", this.value, "mod");
-          // this.value == 'Reset' ? colorvar = null : colorvar = this.value;
-          // localStorage.setItem("colorvar-mod", JSON.stringify(colorvar));
           colorselection = [];
-          // cleanStor('colorsel');
           updatePlot();
-          updateLegend();
+          updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
         });
 
         shapeDropdown.on("click", function() {
           shapevar = updateVar(dataset, "shape", this.value, "mod");
-          // this.value == 'Reset' ? shapevar = null : shapevar = this.value;
-          // localStorage.setItem("shapevar-mod", JSON.stringify(shapevar));
           shapeselection = [];
-          // cleanStor('shapesel');
           updatePlot();
-          updateLegend();
+          updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
         });
 
         sizeDropdown.on("click", function() {
           sizevar = updateVar(dataset, "size", this.value, "mod");
-          // this.value == 'Reset' ? sizevar = null : sizevar = this.value;
-          // if (typeof(sizevar) == 'string') {
-          //   size.domain(d3.extent(dataset, function(d) {return (+d[sizevar]); }));
-          // }
-          // localStorage.setItem("sizevar-mod", JSON.stringify(sizevar));
-          //sizevarselection = []
-          //localStorage.setItem("sizesel", JSON.stringify(null))
           updatePlot();
-          updateLegend();
+          updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
         });
 
         // clear selection of models
@@ -423,8 +336,6 @@
             modselection = [];
             colorselection = [];
             shapeselection = [];
-            // cleanStor('colorsel');
-            // cleanStor('shapesel');
             updateModSelection(modselection);
           });
 
@@ -451,142 +362,13 @@
               }).size(function(d) {
                 return (code(d, sizevar, size, 64)); }));
         }
-        // update model selection
+
         function updateModSelection(modselection) {
-          // stores 'null' if it's empty and the list otherwise
-          if (modselection.length > 0 && modselection.indexOf("undefined") > -1) {
-            modselection.splice(modselection.indexOf("undefined"), 1);
-          }
-          localStorage.setItem("modselection", modselection.length > 0 ? JSON.stringify(modselection) : JSON.stringify(null));
-          // if something is selected everything else is translucent
-          dot.classed("lighter", function(d) {return (modselection.length > 0 ? modselection.indexOf(d['_model']) === -1 : false)});
+          updateSelection(modselection, "model", type);
         }
+        
 
-        // Update Legends after each dropdown is changed
-
-        function updateLegend() {
-          legendList = [];
-          legendContainer.selectAll(".legend").remove();
-          colorvalues = colorvar['values'];
-          shapevalues = shapevar['values'];
-          sizevalues = sizevar['values'];
-
-          // Update color legend
-          if (typeof(colorvalues) != 'number'){
-            var colorscale = d3.scaleOrdinal()
-              .domain(colorvalues)
-              .range(colorvalues.map(function(d) {
-                return(color(colorvalues.indexOf(d)));
-              }));
-            
-            legendColor = d3.legendColor()
-              .shape("path", d3.symbol().type(d3.symbolWye).size(64)())
-              .scale(colorscale)
-              .title(colorvar['variable'])
-              .on("cellclick", function(d) {
-                if (colorselection.indexOf(d) > -1) {
-                  colorselection.splice(colorselection.indexOf(d), 1);
-                  } else {
-                  colorselection.push(d);
-                  }
-                localStorage.setItem("colorsel", JSON.stringify(colorselection));
-                if (colorselection.length > 0) {
-                  modselection = d3.map(dataset, function(d) {if (colorselection.indexOf(d[colorvar['variable']]) > -1) {return(d['_model']); }}).keys();
-                  } else {
-                  modselection = [];
-                  }
-                updateModSelection(modselection);
-              });
-         
-            legendContainer.append("g")
-              .attr("class", "legend")
-              .attr("id", "legendColor")
-              .style('cursor', 'pointer')
-              .attr("transform", "translate(0, "+ padding + ")")
-              .call(legendColor);
-
-            legendList.push('color');
-            
-              } else {
-                if(legendList.indexOf('color') > -1) {legendList.splice(indexOf('color'), 1);}
-                legendContainer.select("#legendColor").remove();
-              }
-          
-          // Update shape legend
-          if (typeof(shapevalues) != 'number'){
-            var shapescale = d3.scaleOrdinal()
-              .domain(shapevalues)
-              .range(shapevalues.map(function(d) {
-                return(d3.symbol().type(shape(shapevalues.indexOf(d)))());
-              }));
-            
-            legendShape = d3.legendSymbol()
-              .scale(shapescale)
-              .title(shapevar['variable'])
-              .on("cellclick", function(d) {
-                if (shapeselection.indexOf(d) > -1) {
-                  shapeselection.splice(shapeselection.indexOf(d), 1);
-                  } else {
-                  shapeselection.push(d);
-                  }
-                localStorage.setItem("shapesel", JSON.stringify(shapeselection));
-                if (shapeselection.length > 0) {
-                  modselection = d3.map(dataset, function(d) {if (shapeselection.indexOf(d[shapevar['variable']]) > -1) {return(d['_model']); }}).keys();
-                  } else {
-                  modselection = [];
-                  }
-                updateModSelection(modselection);
-              })
-
-            halign = legendList.indexOf('color') == -1 ? 0 : 150;
-            
-            legendContainer.append("g")
-              .attr("class", "legend")
-              .attr("id", "legendShape")
-              .style('cursor', 'pointer')
-              .attr("transform", "translate(" + halign + ", " + padding + ")")
-              .call(legendShape);
-
-            legendList.push('shape');
-            
-              } else {
-                if(legendList.indexOf('shape') > -1) {legendList.splice(legendList.indexOf('shape'), 1); }
-                legendContainer.select("#legendShape").remove();
-              }
-
-          // Update size legend
-          if (typeof(sizevalues) != 'number'){
-            var sizescale = d3.scaleLinear()
-              .domain(d3.extent(sizevalues))
-              .range([5, 8]);
-            // sizevalues = sizevalues.map(function(d) {return +d;}).sort();
-            var smallNumbers = (sizescale.domain()[1]-sizescale.domain()[0])/(sizevalues.length-1) < 1;
-            
-            legendSize = d3.legendSize()
-              .shape('circle')
-              .scale(sizescale)
-              .title(sizevar['variable'])
-              .cells(sizevalues.length >= 5 ? 5 : sizevalues)
-              .labelFormat(smallNumbers ? ".04r" : ".0d");
-              // no selection through size
-
-            halign = 150*legendList.length;
-            
-            legendContainer.append("g")
-              .attr("class", "legend")
-              .attr("id", "legendShape")
-              .attr("transform", "translate(" + halign + ", " + padding + ")")
-              .call(legendSize);
-
-            legendList.push('size');
-            
-              } else {
-                if(legendList.indexOf('size') > -1) {legendList.splice(legendList.indexOf('size'), 1); }
-                legendContainer.select("#legendSize").remove();
-              }
-        }
-
-        updateLegend();
+        updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
         updateModSelection(modselection);
       });
 

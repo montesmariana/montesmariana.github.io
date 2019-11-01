@@ -27,22 +27,10 @@
     <script src="https://d3js.org/d3-array.v2.min.js"></script>
     <!-- d3 component for sequential color palettes -->
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    
-    <script>
-        function getUrlParameter(sParam) {
-            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-                sURLVariables = sPageURL.split('&'),
-                sParameterName,
-                sParameters = [],
-                i;
+    <!-- My own set of functions! -->
+    <script src="NephoVis.js"></script>
 
-            for (i = 0; i < sURLVariables.length; i++) {
-                sParameterName = sURLVariables[i].split('=');
-                if (sParameterName[0] === sParam) {
-                    return sParameterName[1] === undefined ? true : sParameterName[1];
-                    }
-                }
-            };
+    <script>
             
         type = getUrlParameter('type');
 
@@ -53,12 +41,12 @@
             }
 
             var distances, distMatrix, distCols, distRows, rows;
-            var miniWidth, miniHeight, color;
+            var miniWidth, miniHeight;
             var distWidth = 350, distHeight = 350, distPad = 25;
             var modselection;
+            var color;
 
-            modselection = JSON.parse(localStorage.getItem("modselection"));
-
+            modselection = listFromLS("modelselection-" + type);
             distances = data.filter(function(d) {return (modselection.indexOf(d['_model']) > -1); });
 
             distMatrix = d3.select("#distMatrix").append("svg")

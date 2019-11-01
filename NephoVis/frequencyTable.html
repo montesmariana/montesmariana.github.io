@@ -28,23 +28,11 @@
         <!-- for pretty tables -->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+        <!-- My own set of functions! -->
+        <script src="NephoVis.js"></script>
 
         <script>
-            function getUrlParameter(sParam) {
-                var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-                    sURLVariables = sPageURL.split('&'),
-                    sParameterName,
-                sParameters = [],
-                    i;
-
-                for (i = 0; i < sURLVariables.length; i++) {
-                    sParameterName = sURLVariables[i].split('=');
-                    if (sParameterName[0] === sParam) {
-                        return sParameterName[1] === undefined ? true : sParameterName[1];
-                    }
-                }
-            }
-
+            
             var type, weights, tokselection, table, cws_column, cws;
 
             type = getUrlParameter('type');
@@ -59,7 +47,7 @@
                 cws_column.split('.')[cws_column.split('.').length-1]
                 ].join('.');
 
-            tokselection = JSON.parse(localStorage.getItem("tokselection")) == null ? [] : JSON.parse(localStorage.getItem("tokselection"));
+            tokselection = listFromLS("tokenselection-" + type);
             
             drawTable();
 
