@@ -478,14 +478,13 @@
 
                     // Each context word is represented by an 'index' (what gets registered), comprised of
                     // a letter ('L' for left, 'R' for right) and the distance to the target (starting with 1)
-                    left_source.forEach(function(d) {
-                        var cw_idx = left_source.length-left_source.indexOf(d)-1;
-                        left_context.push({'index' : 'L'+cw_idx.toString(), 'cw' : d});
+                    left_context = left_source.map(function(d, i) {
+                        var cw_idx = left_source.length-i-1;
+                        return({'index' : 'L' + cw_idx.toString(), 'cw' : d});
                     });
-                    right_source.forEach(function(d) {
-                        right_context.push({'index' : 'R'+right_source.indexOf(d).toString(), 'cw' : d});
+                    right_context = right_source.map(function(d, i) {
+                        return({"index" : "R" + i.toString(), 'cw' : d});
                     });
-
                     halfLine(left_context);
 
                     line.append("span").attr("class", "btn p-0 text-primary")
@@ -521,7 +520,7 @@
             $(document).on("change", "input[name='" + type + counter + "_cues']", function(event){
                 var analized = d3.select(this.parentNode.parentNode.parentNode.parentNode.parentNode).attr("token_id");
                 var answer = d3.select(this).attr('value');
-                console.log(counter);
+                console.log(answer);
                 var cues_list = text[type][analized]['cues'];
                 if (cues_list.indexOf('none') == 0) {
                     cues_list.splice(0, 1);
@@ -532,6 +531,7 @@
                 } else { //if you are unclicking
                     cues_list.splice(cues_list.indexOf(answer), 1);
                 }
+                console.log(text[type][analized]['cues']);
                                     
                 updateTargetColor();
                 displayReminder();
