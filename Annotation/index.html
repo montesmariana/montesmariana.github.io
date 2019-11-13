@@ -172,7 +172,6 @@
                     confirmButtonText: msg['login_button']
                 });
                 text['user'] = result.value;
-                text['user'] = result.value;
                 if (typeof(Storage) !== 'undefined' && JSON.parse(localStorage.getItem("annotations-" + text['user'])) != null) {
                     text = JSON.parse(localStorage.getItem("annotations-" + text['user']));
                 }
