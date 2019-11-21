@@ -5,12 +5,16 @@ library(vegan)
 library(tidyverse)
 
 ## Working directory should be the dir with isoMDS solutions
-setwd("church/Aug28/")
-models <- read_tsv("church.models.tsv")
-cloud <- read_tsv("church.tsv")
-subcloud <- cloud %>% dplyr::select(`_id`, ends_with('2.x'), ends_with('2.y'))
+setwd("C:/Users/u0118974/xampp/htdocs/GitHub/montesmariana.github.io/NephoVis/")
 
-files.names <- models$`_model`[endsWith(models$`_model`, '.2')]
+lemma <- 'zwart'
+models_file <- paste0(lemma, '/', lemma, '.models.tsv')
+models <- read_tsv(models_file)
+clouds_file <- paste0(lemma, '/', lemma, '.tsv')
+cloud <- read_tsv(clouds_file)
+subcloud <- cloud %>% dplyr::select(`_id`, ends_with('.x'), ends_with('.y'))
+
+files.names <- models$`_model`
 # files.names <- list.files(pattern="weightsNONE.*.points.txt")
 # files.names2 <- list.files(pattern="weightsBNC\\-[0-9]\\-[0-9]pospmi.*.points.txt")
 # files.names <- unlist(list(files.names, files.names2))
@@ -85,14 +89,15 @@ models.w.coords <- dst.MDS$points %>% as.data.frame %>% rownames_to_column %>% a
   setNames(., c('_model', 'model.x', 'model.y')) %>% 
   left_join(models, by = '_model')
 
-models.w.coords %>% write_tsv('church.models.tsv')
+models.w.coords %>% write_tsv(models_file)
 
 library(ggplot2)
 colnames(models)
 models.w.coords <- models.w.coords %>% mutate(socclength_group = if_else(socclength == '10k', '10k', if_else(socclength == '5k', '5k', 'focc')))
 models.w.coords %>% count(soccleft)
 ggplot(models.w.coords) +
-  geom_point(aes(x = model.x, y = model.y, color = factor(weighting)))
+  geom_point(aes(x = model.x, y = model.y,
+                 color = factor(foc_part_of_speech)))
 
 ## Write outputfiles
 # type = unlist(strsplit(files.names[1], "\\."))
