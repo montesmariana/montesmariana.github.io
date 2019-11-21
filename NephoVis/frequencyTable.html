@@ -39,13 +39,13 @@
             cws_column = getUrlParameter('column');
 
             // Identify name of correct weights-file (FIND A BETTE WAY!!)
-            weights = [
-                'ppmi',
-                cws_column.split('.')[1],
-                cws_column.split('.')[2],
-                // ['COHA', 'Semcor'].filter(function(x) {return(cws_column.split('.').indexOf(x) > -1); })[0]
-                cws_column.split('.')[cws_column.split('.').length-1]
-                ].join('.');
+            // weights = [
+            //     'ppmi',
+            //     cws_column.split('.')[1],
+            //     cws_column.split('.')[2],
+            //     // ['COHA', 'Semcor'].filter(function(x) {return(cws_column.split('.').indexOf(x) > -1); })[0]
+            //     cws_column.split('.')[cws_column.split('.').length-1]
+            //     ].join('.');
 
             tokselection = listFromLS("tokenselection-" + type);
             
@@ -63,9 +63,9 @@
                         var mySet = new Set(cws.join(';').split(';'));
                         
                         cwsFreq = Array.from(mySet).map(function(d) {
-                            var ppmi = data.filter(function(p) {
-                                return(p.cw == d); 
-                            })[0];
+                            // var ppmi = data.filter(function(p) {
+                            //     return(p.cw == d); 
+                            // })[0];
 
                             var tokens = cws.filter(function(p) {
                                 return(p.split(';').indexOf(d) > -1);
@@ -73,15 +73,17 @@
 
                             return({
                                 'cw': d,
-                                'tokens': tokens,
-                                'ppmi': ppmi == undefined ? 'NA' : d3.format('.3')(ppmi['ppmi'])
+                                // 'ppmi': ppmi == undefined ? 'NA' : d3.format('.3')(ppmi['ppmi']),
+                                'tokens': tokens
                             });
                         });
+
+                        cols = ['Feature', 'Tokens']
 
                         table = d3.select("#cwsFreq").append("table");
                         table.append('thead').append('tr')
                             .selectAll('th')
-                            .data(["Feature", "Tokens", "PPMI"]).enter()
+                            .data(cols).enter()
                             .append("th")
                             .text(function(d) {return(d); });
                 
