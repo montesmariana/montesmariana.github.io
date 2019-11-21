@@ -55,7 +55,7 @@
             <button type="button" class="btn shadow-sm btn-marigreen" id="model-select"><i class="fas fa-arrow-alt-circle-down"></i> DOWN </button>
           </div>
           <hr>
-          <div style="height:80vh;overflow: auto;border:solid;border-color:gray;padding-left:3px;">
+          <div style="height:50vh;overflow: auto;border:solid;border-color:gray;padding-left:3px;">
             <div id="focrow">
               <h5>First order</h5>
             </div>
@@ -148,7 +148,7 @@
         
         focButtons = checkBoxSections("focrow", foc, dataset);
         socButtons = checkBoxSections("socrow", soc, dataset);
-        finButtons = checkBoxSections("finalrow", ["minimum_contextwords"], dataset);
+        if (type == 'church') {finButtons = checkBoxSections("finalrow", ["minimum_contextwords"], dataset); }
         
         $(document).on('change', 'input', function(event){
           var checked = d3.select(this).attr('id');
@@ -163,7 +163,12 @@
 
         function updateModButtons(){
           var newsel = [];
-          filteredvars = foc.concat(soc).concat(['minimum_contextwords']).filter(function(d) {
+          if (type == 'church') {
+            var fvars = foc.concat(soc).concat(['minimum_contextwords']);
+          } else {
+            var fvars = foc.concat(soc)
+          }
+          filteredvars = fvars.filter(function(d) {
             return(valselection.filter(function(x) {return(x.startsWith(d))}).length > 0);
           });
           filtmodand = [];
