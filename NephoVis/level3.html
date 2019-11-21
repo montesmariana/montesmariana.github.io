@@ -156,7 +156,13 @@
         modselection = listFromLS("modelselection-" + type);
 
         model = getUrlParameter('model');
-        
+        d3.select("h1")
+         .on("mouseover", function() {
+          d3.select(this).html(model);
+        })
+        .on("mouseout", function(){
+          d3.select(this).html("Level 3 (<em>" + type + "</em>)");
+        });
         ctxtvar = varFromLS(dataset, "ctxt", type)['variable'];
 
         // UNCOMMENT THE NEXT FEW LINES IF YOU WANT TAILORED CONTEXTS
