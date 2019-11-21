@@ -482,7 +482,7 @@
         function showContext(d) {
             var tooltipcolor = code(d, colorvar, color, "#1f77b4");
             // var tooltiptext = typeof(ctxtvar) == 'string' ? d[ctxtvar].replace(/<em>/g, "<em style='color:" +tooltipcolor + ";font-weight:bold;'>") : ""
-            ctxtvar = typeof(ctxtvar) === 'string' ? ctxvar : '_ctxt.raw';
+            ctxtvar = typeof(ctxtvar) === 'string' ? ctxtvar : '_ctxt.raw';
             var tooltiptext = d[ctxtvar].replace(/class=["']target["']/g, "style='color:" +tooltipcolor + ";font-weight:bold;'");
             tooltip.transition()
               .duration(200)
