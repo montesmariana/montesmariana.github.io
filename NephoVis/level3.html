@@ -412,7 +412,7 @@
         });
 
         shapeDropdown.on("click", function() {
-          shapevar = updateVar(dataset, "shape", this.value, leve, type);
+          shapevar = updateVar(dataset, "shape", this.value, level, type);
           shapeselection = [];
           updatePlot();
           updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
