@@ -460,13 +460,15 @@
         d3.select("#findtokens_btn").on('click', function() {
           var cw_to_search = d3.select("#findtokens_cw").property('value');
           var result = dataset.filter(function(d) {
-            return(d[cws_column].split(';').indexOf(cw_to_search) > -1);
-          });
+              return(d[cws_column].split(';').filter(function(p) {
+                  return (p.search(cw_to_search) !== -1);
+              }).length > 0);
+              });
           if (result.length > 0) {
-            tokselection = d3.map(result, function(d) {return(d['_id']); }).keys();
-            updateTokSelection(tokselection);
+              tokselection = d3.map(result, function(d) {return(d['_id']); }).keys();
+              updateTokSelection(tokselection);
           } else {
-            window.alert('Sorry, "' + cw_to_search + '" is not present as a feature in this model.');
+              window.alert('Sorry, "' + cw_to_search + '" is not present as a feature in this model.');
           }
           })
 
