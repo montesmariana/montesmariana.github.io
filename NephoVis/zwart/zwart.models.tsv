@@ -1,145 +1,73 @@
-_model	foc_part_of_speech	foc_weighting	foc_window	focc_sent_bound	soc_length_param	soc_window	socc_length	tokens	type	stress
-zwart.foc5.nav.weight.soc4.5000	nav	weight	5	False	5000.0	4	5e3	211	zwart	NA
-zwart.foc5.nav.weight.soc4.10000	nav	weight	5	False	10000.0	4	1e4	211	zwart	NA
-zwart.foc5.nav.weight.soc4.focc	nav	weight	5	False	focc	4	407	211	zwart	NA
-zwart.foc5.nav.weight.soc10.5000	nav	weight	5	False	5000	10	5e3	211	zwart	NA
-zwart.foc5.nav.weight.soc10.10000	nav	weight	5	False	10000	10	1e4	211	zwart	NA
-zwart.foc5.nav.weight.soc10.focc	nav	weight	5	False	focc	10	407	211	zwart	NA
-zwart.foc5.nav.selection.soc4.5000	nav	selection	5	False	5000	4	5e3	211	zwart	NA
-zwart.foc5.nav.selection.soc4.10000	nav	selection	5	False	10000	4	1e4	211	zwart	NA
-zwart.foc5.nav.selection.soc4.focc	nav	selection	5	False	focc	4	407	211	zwart	NA
-zwart.foc5.nav.selection.soc10.5000	nav	selection	5	False	5000	10	5e3	211	zwart	NA
-zwart.foc5.nav.selection.soc10.10000	nav	selection	5	False	10000	10	1e4	211	zwart	NA
-zwart.foc5.nav.selection.soc10.focc	nav	selection	5	False	focc	10	407	211	zwart	NA
-zwart.foc5.nav.noweight.soc4.5000	nav	noweight	5	False	5000	4	5e3	211	zwart	NA
-zwart.foc5.nav.noweight.soc4.10000	nav	noweight	5	False	10000	4	1e4	211	zwart	NA
-zwart.foc5.nav.noweight.soc4.focc	nav	noweight	5	False	focc	4	407	211	zwart	NA
-zwart.foc5.nav.noweight.soc10.5000	nav	noweight	5	False	5000	10	5e3	211	zwart	NA
-zwart.foc5.nav.noweight.soc10.10000	nav	noweight	5	False	10000	10	1e4	211	zwart	NA
-zwart.foc5.nav.noweight.soc10.focc	nav	noweight	5	False	focc	10	407	211	zwart	NA
-zwart.foc5.all.weight.soc4.5000	all	weight	5	False	5000	4	5e3	211	zwart	NA
-zwart.foc5.all.weight.soc4.10000	all	weight	5	False	10000	4	1e4	211	zwart	NA
-zwart.foc5.all.weight.soc4.focc	all	weight	5	False	focc	4	407	211	zwart	NA
-zwart.foc5.all.weight.soc10.5000	all	weight	5	False	5000	10	5e3	211	zwart	NA
-zwart.foc5.all.weight.soc10.10000	all	weight	5	False	10000	10	1e4	211	zwart	NA
-zwart.foc5.all.weight.soc10.focc	all	weight	5	False	focc	10	407	211	zwart	NA
-zwart.foc5.all.selection.soc4.5000	all	selection	5	False	5000	4	5e3	211	zwart	NA
-zwart.foc5.all.selection.soc4.10000	all	selection	5	False	10000	4	1e4	211	zwart	NA
-zwart.foc5.all.selection.soc4.focc	all	selection	5	False	focc	4	407	211	zwart	NA
-zwart.foc5.all.selection.soc10.5000	all	selection	5	False	5000	10	5e3	211	zwart	NA
-zwart.foc5.all.selection.soc10.10000	all	selection	5	False	10000	10	1e4	211	zwart	NA
-zwart.foc5.all.selection.soc10.focc	all	selection	5	False	focc	10	407	211	zwart	NA
-zwart.foc5.all.noweight.soc4.5000	all	noweight	5	False	5000	4	5e3	211	zwart	NA
-zwart.foc5.all.noweight.soc4.10000	all	noweight	5	False	10000	4	1e4	211	zwart	NA
-zwart.foc5.all.noweight.soc4.focc	all	noweight	5	False	focc	4	407	211	zwart	NA
-zwart.foc5.all.noweight.soc10.5000	all	noweight	5	False	5000	10	5e3	211	zwart	NA
-zwart.foc5.all.noweight.soc10.10000	all	noweight	5	False	10000	10	1e4	211	zwart	NA
-zwart.foc5.all.noweight.soc10.focc	all	noweight	5	False	focc	10	407	211	zwart	NA
-zwart.foc10.nav.weight.soc4.5000	nav	weight	10	False	5000	4	5e3	211	zwart	NA
-zwart.foc10.nav.weight.soc4.10000	nav	weight	10	False	10000	4	1e4	211	zwart	NA
-zwart.foc10.nav.weight.soc4.focc	nav	weight	10	False	focc	4	407	211	zwart	NA
-zwart.foc10.nav.weight.soc10.5000	nav	weight	10	False	5000	10	5e3	211	zwart	NA
-zwart.foc10.nav.weight.soc10.10000	nav	weight	10	False	10000	10	1e4	211	zwart	NA
-zwart.foc10.nav.weight.soc10.focc	nav	weight	10	False	focc	10	407	211	zwart	NA
-zwart.foc10.nav.selection.soc4.5000	nav	selection	10	False	5000	4	5e3	211	zwart	NA
-zwart.foc10.nav.selection.soc4.10000	nav	selection	10	False	10000	4	1e4	211	zwart	NA
-zwart.foc10.nav.selection.soc4.focc	nav	selection	10	False	focc	4	407	211	zwart	NA
-zwart.foc10.nav.selection.soc10.5000	nav	selection	10	False	5000	10	5e3	211	zwart	NA
-zwart.foc10.nav.selection.soc10.10000	nav	selection	10	False	10000	10	1e4	211	zwart	NA
-zwart.foc10.nav.selection.soc10.focc	nav	selection	10	False	focc	10	407	211	zwart	NA
-zwart.foc10.nav.noweight.soc4.5000	nav	noweight	10	False	5000	4	5e3	211	zwart	NA
-zwart.foc10.nav.noweight.soc4.10000	nav	noweight	10	False	10000	4	1e4	211	zwart	NA
-zwart.foc10.nav.noweight.soc4.focc	nav	noweight	10	False	focc	4	407	211	zwart	NA
-zwart.foc10.nav.noweight.soc10.5000	nav	noweight	10	False	5000	10	5e3	211	zwart	NA
-zwart.foc10.nav.noweight.soc10.10000	nav	noweight	10	False	10000	10	1e4	211	zwart	NA
-zwart.foc10.nav.noweight.soc10.focc	nav	noweight	10	False	focc	10	407	211	zwart	NA
-zwart.foc10.all.weight.soc4.5000	all	weight	10	False	5000	4	5e3	211	zwart	NA
-zwart.foc10.all.weight.soc4.10000	all	weight	10	False	10000	4	1e4	211	zwart	NA
-zwart.foc10.all.weight.soc4.focc	all	weight	10	False	focc	4	407	211	zwart	NA
-zwart.foc10.all.weight.soc10.5000	all	weight	10	False	5000	10	5e3	211	zwart	NA
-zwart.foc10.all.weight.soc10.10000	all	weight	10	False	10000	10	1e4	211	zwart	NA
-zwart.foc10.all.weight.soc10.focc	all	weight	10	False	focc	10	407	211	zwart	NA
-zwart.foc10.all.selection.soc4.5000	all	selection	10	False	5000	4	5e3	211	zwart	NA
-zwart.foc10.all.selection.soc4.10000	all	selection	10	False	10000	4	1e4	211	zwart	NA
-zwart.foc10.all.selection.soc4.focc	all	selection	10	False	focc	4	407	211	zwart	NA
-zwart.foc10.all.selection.soc10.5000	all	selection	10	False	5000	10	5e3	211	zwart	NA
-zwart.foc10.all.selection.soc10.10000	all	selection	10	False	10000	10	1e4	211	zwart	NA
-zwart.foc10.all.selection.soc10.focc	all	selection	10	False	focc	10	407	211	zwart	NA
-zwart.foc10.all.noweight.soc4.5000	all	noweight	10	False	5000	4	5e3	211	zwart	NA
-zwart.foc10.all.noweight.soc4.10000	all	noweight	10	False	10000	4	1e4	211	zwart	NA
-zwart.foc10.all.noweight.soc4.focc	all	noweight	10	False	focc	4	407	211	zwart	NA
-zwart.foc10.all.noweight.soc10.5000	all	noweight	10	False	5000	10	5e3	211	zwart	NA
-zwart.foc10.all.noweight.soc10.10000	all	noweight	10	False	10000	10	1e4	211	zwart	NA
-zwart.foc10.all.noweight.soc10.focc	all	noweight	10	False	focc	10	407	211	zwart	NA
-zwart.foc5.nav.weight.nobound.soc4.5000	nav	weight	5	nobound	5000	4	5e3	277	zwart	0.24405084940063054
-zwart.foc5.nav.weight.nobound.soc4.10000	nav	weight	5	nobound	10000	4	1e4	277	zwart	0.23819231981900316
-zwart.foc5.nav.weight.nobound.soc4.focc	nav	weight	5	nobound	focc	4	640	277	zwart	0.239667085542153
-zwart.foc5.nav.weight.nobound.soc10.5000	nav	weight	5	nobound	5000	10	5e3	277	zwart	0.23207933756112645
-zwart.foc5.nav.weight.nobound.soc10.10000	nav	weight	5	nobound	10000	10	1e4	277	zwart	0.22886358547663133
-zwart.foc5.nav.weight.nobound.soc10.focc	nav	weight	5	nobound	focc	10	640	277	zwart	0.23095168131568325
-zwart.foc5.nav.selection.nobound.soc4.5000	nav	selection	5	nobound	5000	4	5e3	277	zwart	0.24405084940063054
-zwart.foc5.nav.selection.nobound.soc4.10000	nav	selection	5	nobound	10000	4	1e4	277	zwart	0.23819231981900316
-zwart.foc5.nav.selection.nobound.soc4.focc	nav	selection	5	nobound	focc	4	640	277	zwart	0.239667085542153
-zwart.foc5.nav.selection.nobound.soc10.5000	nav	selection	5	nobound	5000	10	5e3	277	zwart	0.23207933756112645
-zwart.foc5.nav.selection.nobound.soc10.10000	nav	selection	5	nobound	10000	10	1e4	277	zwart	0.22886358547663133
-zwart.foc5.nav.selection.nobound.soc10.focc	nav	selection	5	nobound	focc	10	640	277	zwart	0.23095168131568325
-zwart.foc5.nav.noweight.nobound.soc4.5000	nav	noweight	5	nobound	5000	4	5e3	277	zwart	0.24405084940063054
-zwart.foc5.nav.noweight.nobound.soc4.10000	nav	noweight	5	nobound	10000	4	1e4	277	zwart	0.23819231981900316
-zwart.foc5.nav.noweight.nobound.soc4.focc	nav	noweight	5	nobound	focc	4	640	277	zwart	0.239667085542153
-zwart.foc5.nav.noweight.nobound.soc10.5000	nav	noweight	5	nobound	5000	10	5e3	277	zwart	0.23207933756112645
-zwart.foc5.nav.noweight.nobound.soc10.10000	nav	noweight	5	nobound	10000	10	1e4	277	zwart	0.22886358547663133
-zwart.foc5.nav.noweight.nobound.soc10.focc	nav	noweight	5	nobound	focc	10	640	277	zwart	0.23095168131568325
-zwart.foc5.all.weight.nobound.soc4.5000	all	weight	5	nobound	5000	4	5e3	298	zwart	0.22708580449043592
-zwart.foc5.all.weight.nobound.soc4.10000	all	weight	5	nobound	10000	4	1e4	298	zwart	0.22477492770830046
-zwart.foc5.all.weight.nobound.soc4.focc	all	weight	5	nobound	focc	4	793	298	zwart	0.20085686943734468
-zwart.foc5.all.weight.nobound.soc10.5000	all	weight	5	nobound	5000	10	5e3	298	zwart	0.2218212707097501
-zwart.foc5.all.weight.nobound.soc10.10000	all	weight	5	nobound	10000	10	1e4	298	zwart	0.21932227844991467
-zwart.foc5.all.weight.nobound.soc10.focc	all	weight	5	nobound	focc	10	793	298	zwart	0.19306682526677935
-zwart.foc5.all.selection.nobound.soc4.5000	all	selection	5	nobound	5000	4	5e3	298	zwart	0.22708580449043592
-zwart.foc5.all.selection.nobound.soc4.10000	all	selection	5	nobound	10000	4	1e4	298	zwart	0.22477492770830046
-zwart.foc5.all.selection.nobound.soc4.focc	all	selection	5	nobound	focc	4	793	298	zwart	0.20085686943734468
-zwart.foc5.all.selection.nobound.soc10.5000	all	selection	5	nobound	5000	10	5e3	298	zwart	0.2218212707097501
-zwart.foc5.all.selection.nobound.soc10.10000	all	selection	5	nobound	10000	10	1e4	298	zwart	0.21932227844991467
-zwart.foc5.all.selection.nobound.soc10.focc	all	selection	5	nobound	focc	10	793	298	zwart	0.19306682526677935
-zwart.foc5.all.noweight.nobound.soc4.5000	all	noweight	5	nobound	5000	4	5e3	298	zwart	0.22708580449043592
-zwart.foc5.all.noweight.nobound.soc4.10000	all	noweight	5	nobound	10000	4	1e4	298	zwart	0.22477492770830046
-zwart.foc5.all.noweight.nobound.soc4.focc	all	noweight	5	nobound	focc	4	793	298	zwart	0.20085686943734468
-zwart.foc5.all.noweight.nobound.soc10.5000	all	noweight	5	nobound	5000	10	5e3	298	zwart	0.2218212707097501
-zwart.foc5.all.noweight.nobound.soc10.10000	all	noweight	5	nobound	10000	10	1e4	298	zwart	0.21932227844991467
-zwart.foc5.all.noweight.nobound.soc10.focc	all	noweight	5	nobound	focc	10	793	298	zwart	0.19306682526677935
-zwart.foc10.nav.weight.nobound.soc4.5000	nav	weight	10	nobound	5000	4	5e3	277	zwart	0.24405084940063054
-zwart.foc10.nav.weight.nobound.soc4.10000	nav	weight	10	nobound	10000	4	1e4	277	zwart	0.23819231981900316
-zwart.foc10.nav.weight.nobound.soc4.focc	nav	weight	10	nobound	focc	4	640	277	zwart	0.239667085542153
-zwart.foc10.nav.weight.nobound.soc10.5000	nav	weight	10	nobound	5000	10	5e3	277	zwart	0.23207933756112645
-zwart.foc10.nav.weight.nobound.soc10.10000	nav	weight	10	nobound	10000	10	1e4	277	zwart	0.22886358547663133
-zwart.foc10.nav.weight.nobound.soc10.focc	nav	weight	10	nobound	focc	10	640	277	zwart	0.23095168131568325
-zwart.foc10.nav.selection.nobound.soc4.5000	nav	selection	10	nobound	5000	4	5e3	277	zwart	0.24405084940063054
-zwart.foc10.nav.selection.nobound.soc4.10000	nav	selection	10	nobound	10000	4	1e4	277	zwart	0.23819231981900316
-zwart.foc10.nav.selection.nobound.soc4.focc	nav	selection	10	nobound	focc	4	640	277	zwart	0.239667085542153
-zwart.foc10.nav.selection.nobound.soc10.5000	nav	selection	10	nobound	5000	10	5e3	277	zwart	0.23207933756112645
-zwart.foc10.nav.selection.nobound.soc10.10000	nav	selection	10	nobound	10000	10	1e4	277	zwart	0.22886358547663133
-zwart.foc10.nav.selection.nobound.soc10.focc	nav	selection	10	nobound	focc	10	640	277	zwart	0.23095168131568325
-zwart.foc10.nav.noweight.nobound.soc4.5000	nav	noweight	10	nobound	5000	4	5e3	277	zwart	0.24405084940063054
-zwart.foc10.nav.noweight.nobound.soc4.10000	nav	noweight	10	nobound	10000	4	1e4	277	zwart	0.23819231981900316
-zwart.foc10.nav.noweight.nobound.soc4.focc	nav	noweight	10	nobound	focc	4	640	277	zwart	0.239667085542153
-zwart.foc10.nav.noweight.nobound.soc10.5000	nav	noweight	10	nobound	5000	10	5e3	277	zwart	0.23207933756112645
-zwart.foc10.nav.noweight.nobound.soc10.10000	nav	noweight	10	nobound	10000	10	1e4	277	zwart	0.22886358547663133
-zwart.foc10.nav.noweight.nobound.soc10.focc	nav	noweight	10	nobound	focc	10	640	277	zwart	0.23095168131568325
-zwart.foc10.all.weight.nobound.soc4.5000	all	weight	10	nobound	5000	4	5e3	298	zwart	0.22708580449043592
-zwart.foc10.all.weight.nobound.soc4.10000	all	weight	10	nobound	10000	4	1e4	298	zwart	0.22477492770830046
-zwart.foc10.all.weight.nobound.soc4.focc	all	weight	10	nobound	focc	4	793	298	zwart	0.20085686943734468
-zwart.foc10.all.weight.nobound.soc10.5000	all	weight	10	nobound	5000	10	5e3	298	zwart	0.2218212707097501
-zwart.foc10.all.weight.nobound.soc10.10000	all	weight	10	nobound	10000	10	1e4	298	zwart	0.21932227844991467
-zwart.foc10.all.weight.nobound.soc10.focc	all	weight	10	nobound	focc	10	793	298	zwart	0.19306682526677935
-zwart.foc10.all.selection.nobound.soc4.5000	all	selection	10	nobound	5000	4	5e3	298	zwart	0.22708580449043592
-zwart.foc10.all.selection.nobound.soc4.10000	all	selection	10	nobound	10000	4	1e4	298	zwart	0.22477492770830046
-zwart.foc10.all.selection.nobound.soc4.focc	all	selection	10	nobound	focc	4	793	298	zwart	0.20085686943734468
-zwart.foc10.all.selection.nobound.soc10.5000	all	selection	10	nobound	5000	10	5e3	298	zwart	0.2218212707097501
-zwart.foc10.all.selection.nobound.soc10.10000	all	selection	10	nobound	10000	10	1e4	298	zwart	0.21932227844991467
-zwart.foc10.all.selection.nobound.soc10.focc	all	selection	10	nobound	focc	10	793	298	zwart	0.19306682526677935
-zwart.foc10.all.noweight.nobound.soc4.5000	all	noweight	10	nobound	5000	4	5e3	298	zwart	0.22708580449043592
-zwart.foc10.all.noweight.nobound.soc4.10000	all	noweight	10	nobound	10000	4	1e4	298	zwart	0.22477492770830046
-zwart.foc10.all.noweight.nobound.soc4.focc	all	noweight	10	nobound	focc	4	793	298	zwart	0.20085686943734468
-zwart.foc10.all.noweight.nobound.soc10.5000	all	noweight	10	nobound	5000	10	5e3	298	zwart	0.2218212707097501
-zwart.foc10.all.noweight.nobound.soc10.10000	all	noweight	10	nobound	10000	10	1e4	298	zwart	0.21932227844991467
-zwart.foc10.all.noweight.nobound.soc10.focc	all	noweight	10	nobound	focc	10	793	298	zwart	0.19306682526677935
+_model	model.x	model.y	foc_part_of_speech	foc_weighting	foc_window	focc_sent_bound	soc_length_param	soc_window	socc_length	tokens	type	stress
+zwart.foc5.nav.weight.nobound.soc4.5000	-0.2651087548192482	-0.06627167533692238	nav	weight	5	nobound	5000	4	5000	277	zwart	0.24405084940063054
+zwart.foc5.nav.weight.nobound.soc4.10000	-0.25412472690683485	-0.04151607192822546	nav	weight	5	nobound	10000	4	10000	277	zwart	0.23819231981900316
+zwart.foc5.nav.weight.nobound.soc4.focc	-0.06901459423995161	0.31105804897366435	nav	weight	5	nobound	focc	4	640	277	zwart	0.239667085542153
+zwart.foc5.nav.weight.nobound.soc10.5000	-0.2764057148315567	0.011274786110296772	nav	weight	5	nobound	5000	10	5000	277	zwart	0.23207933756112645
+zwart.foc5.nav.weight.nobound.soc10.10000	-0.24857924830184921	-0.01601065318992608	nav	weight	5	nobound	10000	10	10000	277	zwart	0.22886358547663133
+zwart.foc5.nav.weight.nobound.soc10.focc	-0.11041221298832284	0.17527385147646843	nav	weight	5	nobound	focc	10	640	277	zwart	0.23095168131568325
+zwart.foc5.nav.selection.nobound.soc4.5000	-0.26510875481924817	-0.06627167533692235	nav	selection	5	nobound	5000	4	5000	277	zwart	0.24405084940063054
+zwart.foc5.nav.selection.nobound.soc4.10000	-0.2541247269068348	-0.04151607192822545	nav	selection	5	nobound	10000	4	10000	277	zwart	0.23819231981900316
+zwart.foc5.nav.selection.nobound.soc4.focc	-0.06901459423995161	0.31105804897366435	nav	selection	5	nobound	focc	4	640	277	zwart	0.239667085542153
+zwart.foc5.nav.selection.nobound.soc10.5000	-0.2764057148315567	0.011274786110296772	nav	selection	5	nobound	5000	10	5000	277	zwart	0.23207933756112645
+zwart.foc5.nav.selection.nobound.soc10.10000	-0.24857924830184924	-0.016010653189926057	nav	selection	5	nobound	10000	10	10000	277	zwart	0.22886358547663133
+zwart.foc5.nav.selection.nobound.soc10.focc	-0.11041221298832286	0.17527385147646843	nav	selection	5	nobound	focc	10	640	277	zwart	0.23095168131568325
+zwart.foc5.nav.noweight.nobound.soc4.5000	-0.2651087548192482	-0.06627167533692238	nav	noweight	5	nobound	5000	4	5000	277	zwart	0.24405084940063054
+zwart.foc5.nav.noweight.nobound.soc4.10000	-0.25412472690683485	-0.04151607192822546	nav	noweight	5	nobound	10000	4	10000	277	zwart	0.23819231981900316
+zwart.foc5.nav.noweight.nobound.soc4.focc	-0.06901459423995161	0.31105804897366435	nav	noweight	5	nobound	focc	4	640	277	zwart	0.239667085542153
+zwart.foc5.nav.noweight.nobound.soc10.5000	-0.2764057148315566	0.01127478611029675	nav	noweight	5	nobound	5000	10	5000	277	zwart	0.23207933756112645
+zwart.foc5.nav.noweight.nobound.soc10.10000	-0.24857924830184921	-0.01601065318992608	nav	noweight	5	nobound	10000	10	10000	277	zwart	0.22886358547663133
+zwart.foc5.nav.noweight.nobound.soc10.focc	-0.1104122129883228	0.17527385147646843	nav	noweight	5	nobound	focc	10	640	277	zwart	0.23095168131568325
+zwart.foc5.all.weight.nobound.soc4.5000	0.19709778786150853	-0.22829366797704992	all	weight	5	nobound	5000	4	5000	298	zwart	0.22708580449043592
+zwart.foc5.all.weight.nobound.soc4.10000	0.19765691511295214	-0.22850682552750107	all	weight	5	nobound	10000	4	10000	298	zwart	0.22477492770830046
+zwart.foc5.all.weight.nobound.soc4.focc	0.33142813247860475	0.25627647785649077	all	weight	5	nobound	focc	4	793	298	zwart	0.20085686943734468
+zwart.foc5.all.weight.nobound.soc10.5000	0.10103470613910971	-0.17038873885843495	all	weight	5	nobound	5000	10	5000	298	zwart	0.2218212707097501
+zwart.foc5.all.weight.nobound.soc10.10000	0.0936777302844679	-0.16814116304399296	all	weight	5	nobound	10000	10	10000	298	zwart	0.21932227844991467
+zwart.foc5.all.weight.nobound.soc10.focc	0.3027499802111198	0.16524563144513196	all	weight	5	nobound	focc	10	793	298	zwart	0.19306682526677935
+zwart.foc5.all.selection.nobound.soc4.5000	0.19709778786150853	-0.22829366797704992	all	selection	5	nobound	5000	4	5000	298	zwart	0.22708580449043592
+zwart.foc5.all.selection.nobound.soc4.10000	0.19765691511295214	-0.22850682552750107	all	selection	5	nobound	10000	4	10000	298	zwart	0.22477492770830046
+zwart.foc5.all.selection.nobound.soc4.focc	0.3314281324786064	0.2562764778564922	all	selection	5	nobound	focc	4	793	298	zwart	0.20085686943734468
+zwart.foc5.all.selection.nobound.soc10.5000	0.10103470613910971	-0.17038873885843495	all	selection	5	nobound	5000	10	5000	298	zwart	0.2218212707097501
+zwart.foc5.all.selection.nobound.soc10.10000	0.0936777302844679	-0.16814116304399296	all	selection	5	nobound	10000	10	10000	298	zwart	0.21932227844991467
+zwart.foc5.all.selection.nobound.soc10.focc	0.3027499802111199	0.16524563144513205	all	selection	5	nobound	focc	10	793	298	zwart	0.19306682526677935
+zwart.foc5.all.noweight.nobound.soc4.5000	0.19709778786150853	-0.22829366797704992	all	noweight	5	nobound	5000	4	5000	298	zwart	0.22708580449043592
+zwart.foc5.all.noweight.nobound.soc4.10000	0.19765691511295214	-0.22850682552750107	all	noweight	5	nobound	10000	4	10000	298	zwart	0.22477492770830046
+zwart.foc5.all.noweight.nobound.soc4.focc	0.3314281324786064	0.2562764778564922	all	noweight	5	nobound	focc	4	793	298	zwart	0.20085686943734468
+zwart.foc5.all.noweight.nobound.soc10.5000	0.10103470613910971	-0.17038873885843495	all	noweight	5	nobound	5000	10	5000	298	zwart	0.2218212707097501
+zwart.foc5.all.noweight.nobound.soc10.10000	0.0936777302844679	-0.16814116304399296	all	noweight	5	nobound	10000	10	10000	298	zwart	0.21932227844991467
+zwart.foc5.all.noweight.nobound.soc10.focc	0.3027499802111198	0.16524563144513196	all	noweight	5	nobound	focc	10	793	298	zwart	0.19306682526677935
+zwart.foc10.nav.weight.nobound.soc4.5000	-0.2651087548192482	-0.06627167533692238	nav	weight	10	nobound	5000	4	5000	277	zwart	0.24405084940063054
+zwart.foc10.nav.weight.nobound.soc4.10000	-0.25412472690683485	-0.04151607192822546	nav	weight	10	nobound	10000	4	10000	277	zwart	0.23819231981900316
+zwart.foc10.nav.weight.nobound.soc4.focc	-0.06901459423995161	0.31105804897366435	nav	weight	10	nobound	focc	4	640	277	zwart	0.239667085542153
+zwart.foc10.nav.weight.nobound.soc10.5000	-0.2764057148315566	0.01127478611029675	nav	weight	10	nobound	5000	10	5000	277	zwart	0.23207933756112645
+zwart.foc10.nav.weight.nobound.soc10.10000	-0.24857924830184924	-0.016010653189926057	nav	weight	10	nobound	10000	10	10000	277	zwart	0.22886358547663133
+zwart.foc10.nav.weight.nobound.soc10.focc	-0.11041221298832278	0.17527385147646846	nav	weight	10	nobound	focc	10	640	277	zwart	0.23095168131568325
+zwart.foc10.nav.selection.nobound.soc4.5000	-0.26510875481924817	-0.06627167533692235	nav	selection	10	nobound	5000	4	5000	277	zwart	0.24405084940063054
+zwart.foc10.nav.selection.nobound.soc4.10000	-0.25412472690683485	-0.04151607192822546	nav	selection	10	nobound	10000	4	10000	277	zwart	0.23819231981900316
+zwart.foc10.nav.selection.nobound.soc4.focc	-0.06901459423995161	0.31105804897366435	nav	selection	10	nobound	focc	4	640	277	zwart	0.239667085542153
+zwart.foc10.nav.selection.nobound.soc10.5000	-0.2764057148315566	0.01127478611029675	nav	selection	10	nobound	5000	10	5000	277	zwart	0.23207933756112645
+zwart.foc10.nav.selection.nobound.soc10.10000	-0.24857924830184921	-0.01601065318992608	nav	selection	10	nobound	10000	10	10000	277	zwart	0.22886358547663133
+zwart.foc10.nav.selection.nobound.soc10.focc	-0.11041221298832284	0.17527385147646843	nav	selection	10	nobound	focc	10	640	277	zwart	0.23095168131568325
+zwart.foc10.nav.noweight.nobound.soc4.5000	-0.26510875481924817	-0.06627167533692235	nav	noweight	10	nobound	5000	4	5000	277	zwart	0.24405084940063054
+zwart.foc10.nav.noweight.nobound.soc4.10000	-0.25412472690683485	-0.04151607192822546	nav	noweight	10	nobound	10000	4	10000	277	zwart	0.23819231981900316
+zwart.foc10.nav.noweight.nobound.soc4.focc	-0.06901459423995161	0.31105804897366435	nav	noweight	10	nobound	focc	4	640	277	zwart	0.239667085542153
+zwart.foc10.nav.noweight.nobound.soc10.5000	-0.2764057148315566	0.01127478611029675	nav	noweight	10	nobound	5000	10	5000	277	zwart	0.23207933756112645
+zwart.foc10.nav.noweight.nobound.soc10.10000	-0.24857924830184921	-0.01601065318992608	nav	noweight	10	nobound	10000	10	10000	277	zwart	0.22886358547663133
+zwart.foc10.nav.noweight.nobound.soc10.focc	-0.1104122129883228	0.1752738514764684	nav	noweight	10	nobound	focc	10	640	277	zwart	0.23095168131568325
+zwart.foc10.all.weight.nobound.soc4.5000	0.19709778786150853	-0.22829366797704992	all	weight	10	nobound	5000	4	5000	298	zwart	0.22708580449043592
+zwart.foc10.all.weight.nobound.soc4.10000	0.19765691511295214	-0.22850682552750107	all	weight	10	nobound	10000	4	10000	298	zwart	0.22477492770830046
+zwart.foc10.all.weight.nobound.soc4.focc	0.33142813247860475	0.25627647785649077	all	weight	10	nobound	focc	4	793	298	zwart	0.20085686943734468
+zwart.foc10.all.weight.nobound.soc10.5000	0.10103470613910971	-0.17038873885843495	all	weight	10	nobound	5000	10	5000	298	zwart	0.2218212707097501
+zwart.foc10.all.weight.nobound.soc10.10000	0.0936777302844679	-0.16814116304399296	all	weight	10	nobound	10000	10	10000	298	zwart	0.21932227844991467
+zwart.foc10.all.weight.nobound.soc10.focc	0.3027499802111199	0.16524563144513205	all	weight	10	nobound	focc	10	793	298	zwart	0.19306682526677935
+zwart.foc10.all.selection.nobound.soc4.5000	0.19709778786150853	-0.22829366797704992	all	selection	10	nobound	5000	4	5000	298	zwart	0.22708580449043592
+zwart.foc10.all.selection.nobound.soc4.10000	0.19765691511295214	-0.22850682552750107	all	selection	10	nobound	10000	4	10000	298	zwart	0.22477492770830046
+zwart.foc10.all.selection.nobound.soc4.focc	0.33142813247860475	0.25627647785649077	all	selection	10	nobound	focc	4	793	298	zwart	0.20085686943734468
+zwart.foc10.all.selection.nobound.soc10.5000	0.10103470613910971	-0.17038873885843495	all	selection	10	nobound	5000	10	5000	298	zwart	0.2218212707097501
+zwart.foc10.all.selection.nobound.soc10.10000	0.0936777302844679	-0.16814116304399296	all	selection	10	nobound	10000	10	10000	298	zwart	0.21932227844991467
+zwart.foc10.all.selection.nobound.soc10.focc	0.3027499802111199	0.16524563144513205	all	selection	10	nobound	focc	10	793	298	zwart	0.19306682526677935
+zwart.foc10.all.noweight.nobound.soc4.5000	0.19709778786150853	-0.22829366797704992	all	noweight	10	nobound	5000	4	5000	298	zwart	0.22708580449043592
+zwart.foc10.all.noweight.nobound.soc4.10000	0.19765691511295214	-0.22850682552750107	all	noweight	10	nobound	10000	4	10000	298	zwart	0.22477492770830046
+zwart.foc10.all.noweight.nobound.soc4.focc	0.33142813247860475	0.25627647785649077	all	noweight	10	nobound	focc	4	793	298	zwart	0.20085686943734468
+zwart.foc10.all.noweight.nobound.soc10.5000	0.10103470613910971	-0.17038873885843495	all	noweight	10	nobound	5000	10	5000	298	zwart	0.2218212707097501
+zwart.foc10.all.noweight.nobound.soc10.10000	0.0936777302844679	-0.16814116304399296	all	noweight	10	nobound	10000	10	10000	298	zwart	0.21932227844991467
+zwart.foc10.all.noweight.nobound.soc10.focc	0.3027499802111199	0.16524563144513205	all	noweight	10	nobound	focc	10	793	298	zwart	0.19306682526677935

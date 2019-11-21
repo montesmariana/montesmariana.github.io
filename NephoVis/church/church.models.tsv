@@ -1,4 +1,4 @@
-_model	model.x	model.y	minimum_contextwords	focc_part_of_speech	focc_sent_bound	socc_corpus	socc_length	socc_length_num	socc_window	focc_token_window	tokens	type	focc_weighting	stress
+_model	model.x	model.y	minimum_contextwords	foc_part_of_speech	foc_sent_bound	soc_corpus	soc_length	soc_length_num	soc_window	foc_token_window	tokens	type	foc_weighting	stress
 church_nocomp.5_5.nvjid.noweight.nobound.COHA.5_5.5000.2	-0.1670975202411752	-0.09608891269984256	2	nvjid	False	COHA	5000	5000	5_5	5_5	249	church_nocomp	noweight	0.20720806745951886
 church_nocomp.5_5.nvjid.noweight.nobound.COHA.5_5.10000.2	-0.17462028794257894	-0.10009719737366679	2	nvjid	False	COHA	10000	10000	5_5	5_5	249	church_nocomp	noweight	0.21797210871436695
 church_nocomp.5_5.nvjid.noweight.nobound.COHA.5_5.focc.2	-0.31952679448228466	-0.21789554548465587	2	nvjid	False	COHA	focc	24583	5_5	5_5	249	church_nocomp	noweight	0.22974802231380007

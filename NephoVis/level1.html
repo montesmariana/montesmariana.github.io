@@ -56,11 +56,11 @@
           </div>
           <hr>
           <div style="height:80vh;overflow: auto;border:solid;border-color:gray;padding-left:3px;">
-            <div id="foccrow">
+            <div id="focrow">
               <h5>First order</h5>
             </div>
             <hr>
-            <div id="soccrow">
+            <div id="socrow">
               <h5>Second order</h5>
             </div>
             <hr>
@@ -110,10 +110,10 @@
       // Use the data!!
       d3.tsv(type + '/' + type + ".models.tsv", function(data) {
         var dataset;
-        var colnames, othercols, nominals, focc, socc, numerals; // columns
+        var colnames, othercols, nominals, foc, soc, numerals; // columns
         var colorvar, colorvalues, colorselection, shapevar, shapevalues, shapeselection, sizevar, sizevalues;
         var modselection;
-        var foccButtons, soccButtons, finButtons;
+        var focButtons, socButtons, finButtons;
         var valselection = [], filtmodand = [], filteredvars, filtvalues, filtmodor, modstemp; // for filtering with buttons
         var colorDropdown, shapeDropdown, sizeDropdown;
         var tooltip;
@@ -130,8 +130,8 @@
         nominals = colnames['nominals'];
         numerals = colnames['numerals'];
         
-        focc = nominals.filter(function(d) {return (d.startsWith('focc_')); });
-        socc = nominals.filter(function(d) {return (d.startsWith('socc_')); });
+        foc = nominals.filter(function(d) {return (d.startsWith('foc_')); });
+        soc = nominals.filter(function(d) {return (d.startsWith('soc_')); });
         
         // information from localStorage
         colorvar = varFromLS(dataset, "color", "mod");
@@ -146,8 +146,8 @@
 
         // set up buttons selection
         
-        foccButtons = checkBoxSections("foccrow", focc, dataset);
-        soccButtons = checkBoxSections("soccrow", socc, dataset);
+        focButtons = checkBoxSections("focrow", foc, dataset);
+        socButtons = checkBoxSections("socrow", soc, dataset);
         finButtons = checkBoxSections("finalrow", ["minimum_contextwords"], dataset);
         
         $(document).on('change', 'input', function(event){
@@ -163,7 +163,7 @@
 
         function updateModButtons(){
           var newsel = [];
-          filteredvars = focc.concat(socc).concat(['minimum_contextwords']).filter(function(d) {
+          filteredvars = foc.concat(soc).concat(['minimum_contextwords']).filter(function(d) {
             return(valselection.filter(function(x) {return(x.startsWith(d))}).length > 0);
           });
           filtmodand = [];
