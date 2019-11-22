@@ -32,7 +32,7 @@
         <h1></h1>
       </div>
       <div class="row">
-        <div class="col-auto" id="sidebar">
+        <div class="col-3" id="sidebar">
           <div class="btn-group-vertical">
             <div class='btn-group'>
               <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select colour</button>
@@ -69,9 +69,11 @@
             </div>
           </div>
         </div>
-        <div class="col-auto">
-          <div id="legendContainer" style="width:600px;"></div>
+        <div class="col-6">
           <div id="svgContainer" style="width:600px;"></div>
+        </div>
+        <div class="col-3">
+          <div id="legendContainer"></div>
         </div>
       </div>
     </div>
@@ -339,8 +341,9 @@
         d3.select("#clear-select")
           .on("click", function() {
             modselection = [];
-            colorselection = [];
-            shapeselection = [];
+            cleanStor("colorsel-" + level + '-' + type);
+            cleanStor("shapesel-" + level + '-' + type);
+            cleanStor("sizesel-" + level + '-' + type);
             updateModSelection(modselection);
           });
 

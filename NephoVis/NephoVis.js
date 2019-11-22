@@ -57,7 +57,13 @@ function compColor(col) {
 
 // Short function to obtain the possible values of a variable
 function getValues(dataset, colname) {
-    return(d3.map(dataset, function(d) {return d[colname]}).keys());
+    const values = d3.map(dataset, function(d) {return d[colname]}).keys();
+    isNum = values.every(function(d) {return(!isNaN(d)); });
+    if (isNum) {
+        return(values.map(function(d) {return +d}).sort());
+    } else {
+        return(values.sort());
+    }
 }
 
 function cleanStor(item) {
@@ -179,27 +185,59 @@ function exists(t, model) {
   }
 
 // Update Legends after each dropdown is changed
-function spaceLegend(values, lCWidth) {
-    var based_on_length = Math.max.apply(Math, values.map(function(d) {return(d.length); }))*10;
-    var last_item_length = values[values.length-1].length * 5
-    var based_on_space = (lCWidth-last_item_length)/values.length;
-    return(Math.min(based_on_length, based_on_space));
-  }
+// function spaceLegend(values, lCWidth) {
+//     var based_on_length = Math.max.apply(Math, values.map(function(d) {return(d.length); }))*10;
+//     var last_item_length = values[values.length-1].length * 5
+//     var based_on_space = (lCWidth-last_item_length)/values.length;
+//     return(Math.min(based_on_length, based_on_space));
+//   }
+
+function boldenLegend(variable, level, type) {
+    const id = "legend" + variable;
+    const selection = listFromLS(variable.toLowerCase() + "sel-" + level + '-' + type);
+    d3.select("#" + id).selectAll("g.cell").each(function() {
+        const label = d3.select(this);
+        label.style("font-weight", function() {
+            if (selection.indexOf(label.text()) === -1) {
+                return("400");
+            } else {
+                return("700");
+            }
+        });
+    });
+}
+
+function selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset) {
+    const colorselection = listFromLS("colorsel-" + level + '-' + type);
+    const shapeselection = listFromLS("shapesel-" + level + '-' + type);
+    const sizeselection = listFromLS("sizesel-" + level + '-' + type);
+    ["Color", "Shape", "Size"].forEach(function(x) {boldenLegend(x, level, type)});
+    // console.log('color', colorselection.map(function(d) {return (color(colorvar['values'].indexOf(d))); }));
+    // console.log('shape', shapeselection.map(function(d) {return (shape(shapevar['values'].indexOf(d))); }));
+    // console.log('size', sizeselection.length);
+    var id = level == 'model' ? '_model' : '_id';
+    var selection = d3.map(dataset, function(d) {
+        const has_color = colorselection.length > 0 ? colorselection.indexOf(d[colorvar['variable']]) !== -1 : true;
+        const has_shape = shapeselection.length > 0 ? shapeselection.indexOf(d[shapevar['variable']]) !== -1 : true;
+        const has_size = sizeselection.length > 0 ? sizeselection.indexOf(d[sizevar['variable']]) !== -1 : true;
+        if (has_color && has_shape && has_size) {
+            return(d[id]);
+        }
+    }).keys();
+    updateSelection(selection, level, type);
+}
 
 function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset) {
     var legendList, legendContainer;
-    var lCWidth;
     var colorvalues, shapevalues, sizevalues;
 
     legendList = [];
     legendContainer = d3.select("#legendContainer");
-    lCWidth = parseInt(legendContainer.style('width'));
     legendContainer.selectAll("svg").remove();
 
     colorvalues = colorvar['values'];
     shapevalues = shapevar['values'];
     sizevalues = sizevar['values'];
-    
     // Update color legend
     if (typeof(colorvalues) != 'number'){
         // colorvalues.sort();
@@ -213,8 +251,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
             .shape("path", d3.symbol()
                 .type(d3.symbolCircle)
                 .size(50)())
-            .orient("horizontal")
-            .shapePadding(spaceLegend(colorvalues, lCWidth))
+            // .shapePadding(spaceLegend(colorvalues, lCWidth))
             .scale(colorscale)
             .title(colorvar['variable'])
             .on("cellclick", function(d) {
@@ -225,22 +262,26 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
                   colorselection.push(d);
                   }
                 localStorage.setItem("colorsel-" + level + '-' + type, JSON.stringify(colorselection));
-                if (colorselection.length > 0) {
-                  selection = d3.map(dataset, function(d) {
-                      if (colorselection.indexOf(d[colorvar['variable']]) > -1) {
-                          var id = level == 'model' ? '_model' : '_id';
-                          return(d[id]);
-                        }
-                    }).keys();
-                  } else {
-                  selection = [];
-                  }
-                updateSelection(selection, level, type);
+                selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset);
+                
+                // if (colorselection.length > 0) {
+                //   const this_selection = d3.map(dataset, function(d) {
+                //       if (colorselection.indexOf(d[colorvar['variable']]) > -1) {
+                //           var id = level == 'model' ? '_model' : '_id';
+                //           return(d[id]);
+                //         }
+                //     }).keys();
+                //     selection = selection.length === 0 ? this_selection.slice() : selection.filter(function(d) {return(this_selection.indexOf(d) !== -1); });
+                //     console.log(selection);
+                //   } else {
+                //   selection = selection;
+                //   }
+                // updateSelection(selection, level, type);
               });;
 
         legendContainer.append("svg")
-            .attr("width", lCWidth)
-            .attr("height", 80)
+            // .attr("width", lCWidth)
+            .attr("height", colorvalues.length*25 + padding)
             .attr("transform", "translate(0,0)")
             .attr("id", "legendColor")
             .append("g")
@@ -249,7 +290,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
                 .call(legendColor);
 
         legendList.push('color');
-        
+
         } else {
             if (legendList.indexOf('color') > -1) {
                 legendList.splice(indexOf('color'), 1);
@@ -268,8 +309,8 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
         
         legendShape = d3.legendSymbol()
             .scale(shapescale)
-            .orient("horizontal")
-            .shapePadding(spaceLegend(shapevalues, lCWidth))
+            // .orient("horizontal")
+            // .shapePadding(spaceLegend(shapevalues, lCWidth))
             .title(shapevar['variable'])
             .on("cellclick", function(d) {
                 shapeselection = listFromLS("shapesel-" + level + '-' + type);
@@ -279,24 +320,27 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
                     shapeselection.push(d);
                   }
                 localStorage.setItem("shapesel-" + level + '-' + type, JSON.stringify(shapeselection));
-                if (shapeselection.length > 0) {
-                  selection = d3.map(dataset, function(d) {
-                      if (shapeselection.indexOf(d[shapevar['variable']]) > -1) {
-                          var id = level == 'model' ? '_model' : '_id';
-                          return(d[id]);
-                        }
-                    }).keys();
-                  } else {
-                  selection = [];
-                  }
-                updateSelection(selection, level, type);
+                selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset);
+
+                // if (shapeselection.length > 0) {
+                //   selection = d3.map(dataset, function(d) {
+                //       if (shapeselection.indexOf(d[shapevar['variable']]) > -1) {
+                //           var id = level == 'model' ? '_model' : '_id';
+                //           return(d[id]);
+                //         }
+                //     }).keys();
+                //     selection = selection == [] ? this_selection : selection.filter(function(d) {return(this_selection.indexOf(d) !== -1); });
+                //   } else {
+                //   selection = selection;
+                //   }
+                // updateSelection(selection, level, type);
               });
 
         // halign = legendList.indexOf('color') == -1 ? 0 : 150;
         
         legendContainer.append("svg")
-            .attr("width", lCWidth)
-            .attr("height", 80)
+            // .attr("width", lCWidth)
+            .attr("height", shapevalues.length*30 + padding)
             .attr("transform", "translate(0,0)")
             .attr("id", "legendShape")
             .append("g")
@@ -319,21 +363,44 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
             .domain(d3.extent(sizevalues))
             .range([5, 8]);
         var smallNumbers = (sizescale.domain()[1]-sizescale.domain()[0])/(sizevalues.length-1) < 1;
-        
+        console.log(sizevalues)
         legendSize = d3.legendSize()
             .shape('circle')
-            .orient("horizontal")
-            .shapePadding(20)
+            // .orient("horizontal")
+            // .shapePadding(20)
             .labelOffset(15)
             .scale(sizescale)
             .title(sizevar['variable'])
-            .cells(sizevalues.length >= 5 ? 5 : sizevalues.length)
-            .labelFormat(smallNumbers ? ".04r" : ".0d");           
-        // no selection through size
-        
+            .cells((sizevalues.length > 6 || smallNumbers) ? 5 : sizevalues.length)
+            .labelFormat(smallNumbers ? ".04r" : ".0d")
+            .on("cellclick", function(d) { 
+                if (sizevalues.length <= 6) {
+                    sizeselection = listFromLS("sizesel-" + level + '-' + type);
+                    if (sizeselection.indexOf(d) > -1) {
+                        sizeselection.splice(sizeselection.indexOf(d), 1);
+                      } else {
+                        sizeselection.push(d);
+                      }
+                    localStorage.setItem("sizesel-" + level + '-' + type, JSON.stringify(sizeselection));
+                    selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset);
+                    // if (sizeselection.length > 0) {
+                    //   selection = d3.map(dataset, function(d) {
+                    //       if (sizeselection.indexOf(+d[sizevar['variable']]) > -1) {
+                    //           var id = level == 'model' ? '_model' : '_id';
+                    //           return(d[id]);
+                    //         }
+                    //     }).keys();
+                    //     selection = selection == [] ? this_selection : selection.filter(function(d) {return(this_selection.indexOf(d) !== -1); });
+                    //   } else {
+                    //   selection = selection;
+                    //   }
+                    // updateSelection(selection, level, type);
+                }
+            }); 
+            
         legendContainer.append("svg")
-            .attr("width", lCWidth)
-            .attr("height", 80)
+            // .attr("width", lCWidth)
+            .attr("height", sizevalues.length*30 + padding)
             .attr("transform", "translate(0,0)")
             .attr("id", "legendSize")
             .append("g")
@@ -342,12 +409,18 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
                 .call(legendSize);
 
         legendList.push('size');
+        console.log(sizevalues.length*30 + padding)
         
         } else {
             if (legendList.indexOf('size') > -1) {
                 legendList.splice(legendList.indexOf('size'), 1);
             }
             legendContainer.select("#legendSize").remove();
+        }
+
+        if (legendList.length > 0) {
+            legendContainer.selectAll("svg").call(responsivefy);
+            ["Color", "Shape", "Size"].forEach(function(x) {boldenLegend(x, level, type)});
         }
     }
 
