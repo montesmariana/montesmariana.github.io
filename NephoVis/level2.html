@@ -415,6 +415,10 @@
                 var ctxt = colnames['all'].filter(function(d) {return (d.startsWith("_ctxt") && d.endsWith(".raw")); })[0];
                 var tooltiptext = d[ctxt].replace(/class=["']target["']/g, "style='color:" +tooltipcolor + ";font-weight:bold;'");
                 d3.select("#concordance").append("p")
+                  .attr("class", "text-center p-2 ml-2")
+                  .style("border", "solid")
+                  .style("border-color", "gray")
+                  .style("background-color", "white")
                   .style("font-size", "0.8em")
                   .html(tooltiptext);
                         

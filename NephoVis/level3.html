@@ -494,9 +494,9 @@
         // Update Legends after each dropdown is changed
 
         function showContext(d) {
-          let position = d3.select(this).attr("transform").split(',');
-          let xcoord = +(position[0].split('(')[1]) > 250 ? padding : position[0].split('(')[1];
-          let ycoord = position[1].split(')')[0];
+          // let position = d3.select(this).attr("transform").split(',');
+          // let xcoord = +(position[0].split('(')[1]) > 250 ? padding : position[0].split('(')[1];
+          // let ycoord = position[1].split(')')[0];
           var tooltipcolor = code(d, colorvar, color, "#1f77b4");
           // var tooltiptext = typeof(ctxtvar) == 'string' ? d[ctxtvar].replace(/<em>/g, "<em style='color:" +tooltipcolor + ";font-weight:bold;'>") : ""
           ctxtvar = typeof(ctxtvar) === 'string' ? ctxtvar : '_ctxt.raw';
@@ -519,7 +519,8 @@
           //   .style("left", (xcoord + "px"))
           //   .style("width", width + 'px')
           //   .style("background-color", "white");
-          svg.select(".dot")
+          let to_select = d3.select(this).classed("present") ? svg : sidebar;
+          to_select.select(".dot")
             .append("path")
             .attr("class", "selector")
             .attr("transform", d3.select(this).attr("transform"))
