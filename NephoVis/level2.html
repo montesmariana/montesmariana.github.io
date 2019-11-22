@@ -76,6 +76,7 @@
           </div>
         </div>
         <div class="col-7">
+          <div class="row" id="concordance"></div>
           <div class="row">
             <div class="col" style="padding:0px;" id="svgContainer"></div>
           </div>
@@ -133,6 +134,7 @@
       ncol = 3; // number of columns in the grid
       nrow = Math.ceil(modselection.length/ncol); // number of rows in the grid
       width = 250, height = 250, padding = 30;
+      d3.select("#concordance").style("height", padding*2 + "px");
 
       // Use the data!
       d3.tsv(type + '/' + type + ".tsv", function(data) {
@@ -172,8 +174,6 @@
         sizeDropdown = buildDropdown("size", numerals);
         modDropdown = buildDropdown("models", modselection);
 
-        //add tooltip (before the svg so it is not on top of it?)
-        tooltip = setTooltip();
         
         // Set up canvas
         svg = d3.select("#svgContainer").append("svg")
@@ -183,6 +183,9 @@
           //.style("background-color", "lightgray")
           .attr("transform", "translate(0,0)")
           .append("g");
+        
+        //add tooltip (before the svg so it is not on top of it?)
+        tooltip = setTooltip("#svgContainer");
         
         // Set up brush
         brush = d3.brush()
@@ -404,30 +407,35 @@
                 })
               // .classed("lost", function(d) {return(!exists(d, cell)); })
               .on('mouseover', function(d) {
-                // var thisModel = cell.attr('model');
-                // var xcoord = "<b>x:</b> " + d3.format('.3r')(d[thisModel + '.x']);
-                // var ycoord = "<b>y:</b> " + d3.format('.3r')(d[thisModel + '.y']);
+                // let position = d3.select(this).attr("transform").split(',');
+                // let xcoord = +(position[0].split('(')[1]) > 250 ? padding : position[0].split('(')[1];
+                // let ycoord = position[1].split(')')[0];
                 var tooltipcolor = code(d, colorvar, color, "#1f77b4")
                 // var tooltiptext = typeof(ctxtvar) == 'string' ? d[ctxtvar].replace(/<em>/g, "<em style='color:" +tooltipcolor + ";font-weight:bold;'>") : ""
                 var ctxt = colnames['all'].filter(function(d) {return (d.startsWith("_ctxt") && d.endsWith(".raw")); })[0];
-                var tooltiptext = d[ctxt].replace(/class=["']target["']/g, "style='color:" +tooltipcolor + ";font-weight:bold;'")
-                          
-                tooltip.transition()
-                  .duration(200)
-                  .style("opacity", 1)
-                  .style("background-color", "white")
-                  .style("border", "solid")
-                  .style("border-color", "lightgray");
+                var tooltiptext = d[ctxt].replace(/class=["']target["']/g, "style='color:" +tooltipcolor + ";font-weight:bold;'");
+                d3.select("#concordance").append("p")
+                  .style("font-size", "0.8em")
+                  .html(tooltiptext);
+                        
+                // tooltip.transition()
+                //   .duration(200)
+                //   .style("opacity", 1)
+                //   .style("background-color", "white")
+                //   .style("border", "solid")
+                //   .style("border-color", "lightgray");
                 // tooltip.html("<b>" + d['_id'] + "</b><br>" + xcoord + ", " +  ycoord)
-                tooltip.html("<b style='color: " + tooltipcolor + "'>" + d['_id'] + "</b><br>" + tooltiptext)
-                  .style("left", (d3.event.pageX + 3) + "px")
-                  .style("top", (d3.event.pageY - 50) + "px");
+                // tooltip.html("<b style='color: " + tooltipcolor + "'>" + d['_id'] + "</b><br>" + tooltiptext)
+                //   .style("left", (xcoord) + "px")
+                //   .style("top", (ycoord) + "px")
+                //   .style("width", "500px");
               })
               .on('mouseout', function() {
-                tooltip.transition()
-                  .duration(200)
-                  .style("opacity", 0);
-                d3.selectAll(".selector").remove();
+                d3.select("#concordance").select("p").remove();
+                // tooltip.transition()
+                //   .duration(200)
+                //   .style("opacity", 0);
+                // d3.selectAll(".selector").remove();
               })
               .on('click', function(d) {
                 var tokId = d['_id'];

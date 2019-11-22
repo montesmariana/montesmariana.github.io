@@ -70,7 +70,7 @@
           </div>
         </div>
         <div class="col-6">
-          <div id="svgContainer" style="width:600px;"></div>
+          <div id="svgContainer"></div>
         </div>
         <div class="col-3">
           <div id="legendContainer"></div>
@@ -196,9 +196,7 @@
         shapeDropdown = buildDropdown("shape", nominals);
         sizeDropdown = buildDropdown("size", numerals);
 
-        // add tooltip (before the svg so it is not on top of it?)
-        tooltip = setTooltip("body");
-        
+       
         // Set up canvas
         svg = d3.select("#svgContainer").append("svg")
           .attr("width", width)
@@ -207,6 +205,9 @@
           .attr("transform", "translate(0,0)")
           .append("g")
           .call(d3.zoom().on('zoom', zoomed));
+        
+          //add tooltip (before the svg so it is not on top of it?)
+        tooltip = setTooltip("#svgContainer");
         
         // Set up pointing area so you can have zoom with the mouse in any point of the plot
         setPointerEvents(svg, width, height);
@@ -281,6 +282,10 @@
             .style('fill', function(d) {return (code(d, colorvar, color, "#1f77b4")); })
             .classed("lighter", function(d) {return (modselection.length > 0 ? modselection.indexOf(d['_model']) === -1 : false); })
             .on("mouseover", function(d) {
+              let position = d3.select(this).attr("transform").split(',');
+              let xcoord = position[0].split('(')[1];
+              xcoord = +xcoord > 250 ? +(xcoord)-100 : +xcoord;
+              let ycoord = position[1].split(')')[0];
               tooltip.transition()
                 .duration(200)
                 .style("opacity", 1);
@@ -288,8 +293,8 @@
               var shapedata = (typeof(shapevar['variable']) == "string" ? "<br><b>"+shapevar['variable']+"</b>: " + d[shapevar['variable']] : "");
               var sizedata = (typeof(sizevar['variable']) == "string" ? "<br><b>"+sizevar['variable']+"</b>: " + d3.format(".3r")(+d[sizevar['variable']]) : "");
               tooltip.html("<b>" + d['_model'] + "</b>" + colordata + shapedata + sizedata)
-                .style("left", (d3.event.pageX + 10) + "px")
-                .style("top", (d3.event.pageY - 20) + "px");
+                .style("left", (xcoord) + "px")
+                .style("top", (ycoord) + "px");
               svg.select(".dot")
                 .append("path")
                 .attr("class", "selector")

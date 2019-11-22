@@ -428,12 +428,12 @@ function checkBoxSections(where, data, dataset) {
       }
   }
 
-function setTooltip() {
+function setTooltip(where) {
     return(
-        d3.select("body").append('div')
+        d3.select(where).append('div')
           .attr("class", "tooltip")
-          .attr("width", 100)
-          .attr("height", 20)
+          .style("width", 500)
+        //   .attr("height", 20)
           .style('position', 'absolute')
           .style("opacity", 0)
     );
