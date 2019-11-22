@@ -211,15 +211,13 @@ function selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset) {
     const colorselection = listFromLS("colorsel-" + level + '-' + type);
     const shapeselection = listFromLS("shapesel-" + level + '-' + type);
     const sizeselection = listFromLS("sizesel-" + level + '-' + type);
+    console.log(sizeselection);
     ["Color", "Shape", "Size"].forEach(function(x) {boldenLegend(x, level, type)});
-    // console.log('color', colorselection.map(function(d) {return (color(colorvar['values'].indexOf(d))); }));
-    // console.log('shape', shapeselection.map(function(d) {return (shape(shapevar['values'].indexOf(d))); }));
-    // console.log('size', sizeselection.length);
     var id = level == 'model' ? '_model' : '_id';
     var selection = d3.map(dataset, function(d) {
         const has_color = colorselection.length > 0 ? colorselection.indexOf(d[colorvar['variable']]) !== -1 : true;
         const has_shape = shapeselection.length > 0 ? shapeselection.indexOf(d[shapevar['variable']]) !== -1 : true;
-        const has_size = sizeselection.length > 0 ? sizeselection.indexOf(d[sizevar['variable']]) !== -1 : true;
+        const has_size = sizeselection.length > 0 ? sizeselection.indexOf(+d[sizevar['variable']]) !== -1 : true;
         if (has_color && has_shape && has_size) {
             return(d[id]);
         }
@@ -263,20 +261,6 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
                   }
                 localStorage.setItem("colorsel-" + level + '-' + type, JSON.stringify(colorselection));
                 selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset);
-                
-                // if (colorselection.length > 0) {
-                //   const this_selection = d3.map(dataset, function(d) {
-                //       if (colorselection.indexOf(d[colorvar['variable']]) > -1) {
-                //           var id = level == 'model' ? '_model' : '_id';
-                //           return(d[id]);
-                //         }
-                //     }).keys();
-                //     selection = selection.length === 0 ? this_selection.slice() : selection.filter(function(d) {return(this_selection.indexOf(d) !== -1); });
-                //     console.log(selection);
-                //   } else {
-                //   selection = selection;
-                //   }
-                // updateSelection(selection, level, type);
               });;
 
         legendContainer.append("svg")
@@ -321,19 +305,6 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
                   }
                 localStorage.setItem("shapesel-" + level + '-' + type, JSON.stringify(shapeselection));
                 selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset);
-
-                // if (shapeselection.length > 0) {
-                //   selection = d3.map(dataset, function(d) {
-                //       if (shapeselection.indexOf(d[shapevar['variable']]) > -1) {
-                //           var id = level == 'model' ? '_model' : '_id';
-                //           return(d[id]);
-                //         }
-                //     }).keys();
-                //     selection = selection == [] ? this_selection : selection.filter(function(d) {return(this_selection.indexOf(d) !== -1); });
-                //   } else {
-                //   selection = selection;
-                //   }
-                // updateSelection(selection, level, type);
               });
 
         // halign = legendList.indexOf('color') == -1 ? 0 : 150;
@@ -363,7 +334,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
             .domain(d3.extent(sizevalues))
             .range([5, 8]);
         var smallNumbers = (sizescale.domain()[1]-sizescale.domain()[0])/(sizevalues.length-1) < 1;
-        console.log(sizevalues)
+
         legendSize = d3.legendSize()
             .shape('circle')
             // .orient("horizontal")
@@ -383,18 +354,6 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
                       }
                     localStorage.setItem("sizesel-" + level + '-' + type, JSON.stringify(sizeselection));
                     selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset);
-                    // if (sizeselection.length > 0) {
-                    //   selection = d3.map(dataset, function(d) {
-                    //       if (sizeselection.indexOf(+d[sizevar['variable']]) > -1) {
-                    //           var id = level == 'model' ? '_model' : '_id';
-                    //           return(d[id]);
-                    //         }
-                    //     }).keys();
-                    //     selection = selection == [] ? this_selection : selection.filter(function(d) {return(this_selection.indexOf(d) !== -1); });
-                    //   } else {
-                    //   selection = selection;
-                    //   }
-                    // updateSelection(selection, level, type);
                 }
             }); 
             
@@ -409,7 +368,6 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
                 .call(legendSize);
 
         legendList.push('size');
-        console.log(sizevalues.length*30 + padding)
         
         } else {
             if (legendList.indexOf('size') > -1) {
