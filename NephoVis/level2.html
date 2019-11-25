@@ -170,7 +170,7 @@
 
         // set up dropdowns
         colorDropdown = buildDropdown("colour", nominals);
-        shapeDropdown = buildDropdown("shape", nominals);
+        shapeDropdown = buildDropdown("shape", nominals.filter(function(d) {return (getValues(dataset, d).length <= 7); }));
         sizeDropdown = buildDropdown("size", numerals);
         modDropdown = buildDropdown("models", modselection);
 

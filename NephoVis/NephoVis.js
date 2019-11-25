@@ -62,7 +62,7 @@ function getValues(dataset, colname) {
     if (isNum) {
         return(values.map(function(d) {return +d}).sort());
     } else {
-        return(values.sort());
+        return(values.map(function(d) {return d.toString(); }).sort());
     }
 }
 
@@ -265,7 +265,8 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
 
         legendContainer.append("svg")
             // .attr("width", lCWidth)
-            .attr("height", colorvalues.length*25 + padding)
+            .style("height", (colorvalues.length*25 + padding) + "px")
+            .attr("height", "100%")
             .attr("transform", "translate(0,0)")
             .attr("id", "legendColor")
             .append("g")
@@ -311,7 +312,8 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
         
         legendContainer.append("svg")
             // .attr("width", lCWidth)
-            .attr("height", shapevalues.length*30 + padding)
+            .style("height", (shapevalues.length*30 + padding) + 'px')
+            .attr("height", "100%")
             .attr("transform", "translate(0,0)")
             .attr("id", "legendShape")
             .append("g")
@@ -359,7 +361,8 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
             
         legendContainer.append("svg")
             // .attr("width", lCWidth)
-            .attr("height", sizevalues.length*30 + padding)
+            .style("height", (300 + padding) + "px")
+            .attr("height", "100%")
             .attr("transform", "translate(0,0)")
             .attr("id", "legendSize")
             .append("g")
