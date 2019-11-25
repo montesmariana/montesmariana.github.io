@@ -38,47 +38,50 @@
             type = getUrlParameter('type');
             cws_column = getUrlParameter('column');
 
-            // Identify name of correct weights-file (FIND A BETTE WAY!!)
-            // weights = [
-            //     'ppmi',
-            //     cws_column.split('.')[1],
-            //     cws_column.split('.')[2],
-            //     // ['COHA', 'Semcor'].filter(function(x) {return(cws_column.split('.').indexOf(x) > -1); })[0]
-            //     cws_column.split('.')[cws_column.split('.').length-1]
-            //     ].join('.');
+            // Identify name of correct weights-file (FIND A BETTER WAY!!)
+            if (type === 'church'){
+                weights = [
+                    'ppmi',
+                    cws_column.split('.')[1],
+                    cws_column.split('.')[2],
+                    // ['COHA', 'Semcor'].filter(function(x) {return(cws_column.split('.').indexOf(x) > -1); })[0]
+                    cws_column.split('.')[cws_column.split('.').length-1]
+                ].join('.');
+            } else { weights = '.CW10.ppmi' }
 
             tokselection = listFromLS("tokenselection-" + type);
             
             drawTable();
 
             function drawTable() {
-                d3.tsv(type + '/' + type + '.tsv', function(data) {
-                    cws = data.filter(function(d) {
-                        return(tokselection.indexOf(d['_id']) > -1);
+                d3.tsv(type + '/' + type + '.tsv', function(bigdata) {
+                    cws = bigdata.filter(function(d) {
+                        return(tokselection.indexOf(d['_id']) !== -1);
                     }).map(function(d) {
                         return(d[cws_column]);
                     });
 
-                    d3.tsv(type + '/' + weights + '.tsv', function(data) {
+                    d3.tsv(type + '/' + type + weights + '.tsv', function(ppmidata) {
                         var mySet = new Set(cws.join(';').split(';'));
                         
                         cwsFreq = Array.from(mySet).map(function(d) {
-                            // var ppmi = data.filter(function(p) {
-                            //     return(p.cw == d); 
-                            // })[0];
+                            var ppmi = ppmidata.filter(function(p) {
+                                return(p.cw == d); 
+                            })[0];
 
                             var tokens = cws.filter(function(p) {
-                                return(p.split(';').indexOf(d) > -1);
+                                return(p.split(';').indexOf(d) !== -1);
                             }).length;
 
                             return({
                                 'cw': d,
-                                // 'ppmi': ppmi == undefined ? 'NA' : d3.format('.3')(ppmi['ppmi']),
-                                'tokens': tokens
+                                'tokens': tokens,
+                                'ppmi': ppmi == undefined ? 'NA' : d3.format('.3')(ppmi['ppmi'])
                             });
                         });
+                        console.log(cwsFreq);
 
-                        cols = ['Feature', 'Tokens']
+                        cols = ['Feature', 'Tokens', 'PPMI']
 
                         table = d3.select("#cwsFreq").append("table");
                         table.append('thead').append('tr')
