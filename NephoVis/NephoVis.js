@@ -242,8 +242,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
 
         var colorscale = d3.scaleOrdinal()
             .domain(colorvalues)
-            .range(colorvalues.map(function(d) {
-                return(color(colorvalues.indexOf(d)));}));
+            .range(d3.schemeCategory10);
         
         legendColor = d3.legendColor()
             .shape("path", d3.symbol()
