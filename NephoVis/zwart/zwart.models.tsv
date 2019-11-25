@@ -1,6 +1,6 @@
 _model	model.x	model.y	foc_part_of_speech	foc_sent_bound	foc_weighting	foc_window	soc_length	soc_length_num	soc_window	tokens	type	stress
-zwart.foc10.nav.weight.bound.soc4.5000	-0.27536759822091056	-0.12048197168563093	nav	bound	weight	10_10	5000.0	5e3	4_4	251	zwart	0.23795088024859926
-zwart.foc10.nav.weight.bound.soc4.10000	-0.35363477810557964	-0.051859864081554206	nav	bound	weight	10_10	10000.0	1e4	4_4	251	zwart	0.23723257446830623
+zwart.foc10.nav.weight.bound.soc4.5000	-0.27536759822091056	-0.12048197168563093	nav	bound	weight	10_10	5000	5e3	4_4	251	zwart	0.23795088024859926
+zwart.foc10.nav.weight.bound.soc4.10000	-0.35363477810557964	-0.051859864081554206	nav	bound	weight	10_10	10000	1e4	4_4	251	zwart	0.23723257446830623
 zwart.foc10.nav.weight.bound.soc4.focc	-0.272535629380059	0.11473724655717918	nav	bound	weight	10_10	focc	559	4_4	251	zwart	0.23917583836912507
 zwart.foc10.nav.weight.bound.soc10.5000	-0.2917806265735468	-0.10630110476262308	nav	bound	weight	10_10	5000	5e3	10_10	251	zwart	0.2231709573003332
 zwart.foc10.nav.weight.bound.soc10.10000	-0.31450482152401604	-0.09751326491263783	nav	bound	weight	10_10	10000	1e4	10_10	251	zwart	0.22105587372303107
