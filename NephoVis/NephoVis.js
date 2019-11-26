@@ -145,7 +145,9 @@ function code(d, variable, schema, default_value){
         return(default_value);
     } else {
         if (isNaN(default_value)) {
-            return(schema(variable['values'].indexOf(d[variable['variable']])));
+            const coding = variable['values'].map(function(d, i) {return (schema(i))});
+            const idx = variable['values'].indexOf(d[variable['variable']]);
+            return(coding[idx]);
         } else {
             schema.domain(d3.extent(variable['values']));
             return(schema(+d[variable['variable']]));
