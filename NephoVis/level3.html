@@ -226,7 +226,7 @@
         
         modDropdown = buildDropdown("models", modselection,
           value_function = undefined,
-          text_function = function(d) {return(d.slice(7)); });
+          text_function = function(d) {return(d.split('.').slice(1).join('.')); });
 
         
         
