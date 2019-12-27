@@ -1,0 +1,16 @@
+{
+    "church": [
+        {
+            "code": "compound",
+            "label": "<strong>modifier in a noun compound</strong>: (<em>a church member</em>)"
+        },
+        {
+            "code": "name",
+            "label": "<strong>in a compound name</strong>: (<em>Church of England</em>)"
+        },
+        {
+            "code": "indepndent",
+            "label": "<strong>independent</strong>: (<em>the white church on the hill</em>)"
+        }
+    ]
+}
