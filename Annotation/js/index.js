@@ -425,7 +425,7 @@ function add_none_tag(variable) {
     x.push(
         {
             'code': msg['no_sense_code'],
-            'label': '<b>None of the above:</b> (<em>the school in Church Street</em>)'
+            'label': '<b>None of the above:</b> <em>the school in Church Street</em>'
         }
     );
     return (x);
