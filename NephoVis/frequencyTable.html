@@ -39,16 +39,16 @@
             cws_column = getUrlParameter('column');
 
             // Identify name of correct weights-file (FIND A BETTER WAY!!)
-            if (type === 'church'){
-                weights = [
-                    'ppmi',
-                    cws_column.split('.')[1],
-                    cws_column.split('.')[2],
-                    // ['COHA', 'Semcor'].filter(function(x) {return(cws_column.split('.').indexOf(x) > -1); })[0]
-                    cws_column.split('.')[cws_column.split('.').length-1]
-                ].join('.');
-            } else { weights = '.CW10.ppmi' }
-
+            // if (type === 'church'){
+            //     weights = [
+            //         'ppmi',
+            //         cws_column.split('.')[1],
+            //         cws_column.split('.')[2],
+            //         // ['COHA', 'Semcor'].filter(function(x) {return(cws_column.split('.').indexOf(x) > -1); })[0]
+            //         cws_column.split('.')[cws_column.split('.').length-1]
+            //     ].join('.');
+            // } else { weights = '.ppmi' }
+            
             tokselection = listFromLS("tokenselection-" + type);
             
             drawTable();
@@ -61,7 +61,7 @@
                         return(d[cws_column]);
                     });
 
-                    d3.tsv(type + '/' + type + weights + '.tsv', function(ppmidata) {
+                    d3.tsv(type + '/' + type + '.ppmi.tsv', function(ppmidata) {
                         var mySet = new Set(cws.join(';').split(';'));
                         
                         cwsFreq = Array.from(mySet).map(function(d) {

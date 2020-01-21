@@ -169,19 +169,19 @@
         ctxtvar = varFromLS(dataset, "ctxt", type)['variable'];
 
         // UNCOMMENT THE NEXT FEW LINES IF YOU WANT TAILORED CONTEXTS
-        if (type == 'church') {
-          tailoredcontexts = [
-            {'key' : 'model', 'value' : contexts.filter(function(d) {return(model.search(d.slice(6)) == 0)})[0]},
-            {'key' : 'raw', 'value' : contexts.filter(function(d) {return(d.endsWith('.raw') && model.search(d.slice(6, d.length-4)) == 0)})[0]},
-            {'key' : 'cues', 'value' : contexts.filter(function(d) {return(d.endsWith('.cues') && model.search(d.slice(6, d.length-5)) == 0)})[0]}
-          ];
-        } else {
+        // if (type == 'church') {
+        //   tailoredcontexts = [
+        //     {'key' : 'model', 'value' : contexts.filter(function(d) {return(model.search(d.slice(6)) == 0)})[0]},
+        //     {'key' : 'raw', 'value' : contexts.filter(function(d) {return(d.endsWith('.raw') && model.search(d.slice(6, d.length-4)) == 0)})[0]},
+        //     {'key' : 'cues', 'value' : contexts.filter(function(d) {return(d.endsWith('.cues') && model.search(d.slice(6, d.length-5)) == 0)})[0]}
+        //   ];
+        // } else {
           tailoredcontexts = contexts.filter(function(d) {return (d.split('.').length == 2 || model.search(d.split('.').splice(1).join('.')) == 0)})
             .map(function(d) {
               return({'key' : d.split('.').length == 2 ? d.split('.')[1] : 'model',
               'value' : d});
             });
-        }
+        // }
         numerals = numerals.filter(function(d) {
           return(!d.endsWith('_count') || model.search(d.slice(0, d.length-6)) == 0);
         });
