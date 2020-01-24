@@ -77,13 +77,13 @@ function classify_colnames(dataset) {
     variables = colnames.filter(function(d) {
         return (!d.endsWith('.x') &&
         !d.endsWith('.y') &&
-        !d.startsWith("_") &&
         getValues(dataset, d).length > 1);
     });
     nominals = variables.filter(function(d) {
-        return (!getValues(dataset, d).every(function(d) {return(!isNaN(d)); }));
-    }).filter(function(d) {
-        return (getValues(dataset, d).length <= 10);
+        return (
+            !d.startsWith("_") &&
+            !getValues(dataset, d).every(function(d) {return(!isNaN(d)); }) &&
+            getValues(dataset, d).length <= 10);
     });
     nominals.push("Reset");
 

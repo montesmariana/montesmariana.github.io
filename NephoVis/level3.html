@@ -166,7 +166,7 @@
         .on("mouseout", function(){
           d3.select(this).html("Level 3 (<em>" + type + "</em>)");
         });
-        ctxtvar = varFromLS(dataset, "ctxt", type)['variable'];
+        ctxtvar = varFromLS(dataset, "ctxt", level, type)['variable'];
 
         // UNCOMMENT THE NEXT FEW LINES IF YOU WANT TAILORED CONTEXTS
         // if (type == 'church') {
@@ -176,17 +176,22 @@
         //     {'key' : 'cues', 'value' : contexts.filter(function(d) {return(d.endsWith('.cues') && model.search(d.slice(6, d.length-5)) == 0)})[0]}
         //   ];
         // } else {
-          tailoredcontexts = contexts.filter(function(d) {return (d.split('.').length == 2 || model.search(d.split('.').splice(1).join('.')) == 0)})
+          tailoredcontexts = contexts.filter(function(d) {
+            return (d.split('.').length === 2 || model.search(d.split('.').splice(1).join('.')) === 0)
+            })
             .map(function(d) {
-              return({'key' : d.split('.').length == 2 ? d.split('.')[1] : 'model',
+              return({'key' : d.split('.').length === 2 ? d.split('.')[1] : 'model',
               'value' : d});
             });
         // }
-        numerals = numerals.filter(function(d) {
-          return(!d.endsWith('_count') || model.search(d.slice(0, d.length-6)) == 0);
-        });
-        // These last lines are only if you use the 'ctxt2' dropdown instead of 'ctxt' (for tailored contexts, that is, matched to the cloud)
 
+        numerals = numerals.filter(function(d) {
+          return(!d.startsWith('_count') || model.search(d.split('.').splice(1).join('.')) === 0);
+        })
+          .map(function(d) {
+              return({'key' : d.startsWith('_count') ? 'number of foc' : d,
+              'value' : d});
+            });
         // Context words!
         cws_column = colnames['all'].filter(function(d) {
             return(d.startsWith('_cws') && model.search(d.slice(5)) == 0)
@@ -217,7 +222,9 @@
         // set up dropdowns
         colorDropdown = buildDropdown("colour", nominals);
         shapeDropdown = buildDropdown("shape", nominals.filter(function(d) {return (getValues(dataset, d).length <= 7); }));
-        sizeDropdown = buildDropdown("size", numerals);
+        sizeDropdown = buildDropdown("size", numerals,
+          value_function = function(d) {return(d.value); },
+          text_function = function(d) {return(d.key); });
       
         // Use this dropdown for ctxt2 (context tailored to the cloud)
         ctxtDropdown = buildDropdown("ctxt2", tailoredcontexts,
@@ -430,7 +437,7 @@
         });
 
         ctxtDropdown.on("click", function() {
-          ctxtvar = updateVar(dataset, 'ctxt', this.value, type)['variable'];
+          ctxtvar = updateVar(dataset, 'ctxt', this.value, level, type)['variable'];
           dot.on("mouseover", showContext);
         });
 
@@ -500,6 +507,10 @@
           var tooltipcolor = code(d, colorvar, color, "#1f77b4");
           // var tooltiptext = typeof(ctxtvar) == 'string' ? d[ctxtvar].replace(/<em>/g, "<em style='color:" +tooltipcolor + ";font-weight:bold;'>") : ""
           ctxtvar = typeof(ctxtvar) === 'string' ? ctxtvar : '_ctxt.raw';
+          if (tailoredcontexts.filter(function(d) {return (d.value === ctxtvar); }).length < 1) {
+            const new_value = tailoredcontexts.filter( d => d.key === 'model')[0].value;
+            ctxtvar = updateVar(dataset, 'ctxt', new_value, level, type)['variable'];
+          }
           var tooltiptext = d[ctxtvar].replace(/class=["']target["']/g, "style='color:" +tooltipcolor + ";font-weight:bold;'");
 
           d3.select("#concordance").append("p")
