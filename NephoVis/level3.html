@@ -69,9 +69,15 @@
             <button type="button" class="btn shadow-sm btn-secondary" id="show-table"><i class="fas fa-sticky-note"></i> Open frequency table</button>       
           </div>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" style="width:100px" id='findtokens_cw' placeholder="Context word" aria-label="Context word" aria-describedby="search tokens with this context word">
+            <input type="text" class="form-control" style="width:100px" id='findtokens_cw' placeholder="Features in model" aria-label="Features in model" aria-describedby="search tokens with this feature">
             <div class="input-group-append">
               <button class="btn btn-secondary" type="button" id='findtokens_btn'>Search</button>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" style="width:100px" id='findtokens_ctxt' placeholder="Context word" aria-label="Context word" aria-describedby="search tokens with this context word">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button" id='findtokens_btn_raw'>Search</button>
             </div>
           </div>
           <hr>
@@ -484,6 +490,20 @@
               window.alert('Sorry, "' + cw_to_search + '" is not present as a feature in this model.');
           }
           })
+
+        d3.select("#findtokens_btn_raw").on('click', function() {
+          var cw_to_search = d3.select("#findtokens_ctxt").property('value').toLowerCase();
+          var result = dataset.filter(function(d) {
+            raw_ctxt = tailoredcontexts.filter( d => d.key === 'raw')[0].value;
+              return(d[raw_ctxt].toLowerCase().search(cw_to_search) !== -1);
+              });
+          if (result.length > 0) {
+              tokselection = d3.map(result, function(d) {return(d['_id']); }).keys();
+              updateTokSelection(tokselection);
+          } else {
+              window.alert('Sorry, no context includes the requested string.');
+          }
+          });
 
         // update model selection
         function updateTokSelection(tokselection) {
