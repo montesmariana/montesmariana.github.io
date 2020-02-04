@@ -63,6 +63,8 @@
 
                     d3.tsv(type + '/' + type + '.ppmi.tsv', function(ppmidata) {
                         var mySet = new Set(cws.join(';').split(';'));
+                        pmicols = d3.keys(ppmidata[0]).filter(function(d) {return(d !== 'cw')});
+                        console.log(pmicols);
                         
                         cwsFreq = Array.from(mySet).map(function(d) {
                             var ppmi = ppmidata.filter(function(p) {
@@ -73,15 +75,15 @@
                                 return(p.split(';').indexOf(d) !== -1);
                             }).length;
 
-                            return({
-                                'cw': d,
-                                'tokens': tokens,
-                                'ppmi': ppmi == undefined ? 'NA' : d3.format('.3')(ppmi['ppmi'])
+                            var set_var = {'cw' : d, 'tokens' : tokens};
+                            pmicols.forEach(function(x) {
+                                set_var[x] = d3.format('.3')(ppmi[x])
                             });
+                            return(set_var);
                         });
                         console.log(cwsFreq);
 
-                        cols = ['Feature', 'Tokens', 'PPMI']
+                        cols = ['Feature', 'Tokens', ...pmicols];
 
                         table = d3.select("#cwsFreq").append("table");
                         table.append('thead').append('tr')
