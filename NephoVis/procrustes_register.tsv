@@ -1,4 +1,4 @@
 type	common_tokens	models	stress	date	corpus	part_of_speech	total_tokens
-horde	266	144	0.3903050283177512	2020-02-04	QLVLNews	noun	280
 church	284	144	NA	2019-01-20	GloWbE	noun	300
 zwart	211	144	NA	2019-10-28	QLVLNews	adjective	300
+horde	264	144	0.38789855867681644	2020-02-04	QLVLNews	noun	280
