@@ -1,5783 +1,1473 @@
-pmi	cw
-3.8529656	'/det
-4.0471005	'72/noun
-3.828889	'81/noun
-0.35702187	's/adv
-1.2988337	's/det
-0.9937554	(/noun
-1.255684	)/noun
-0.47400746	+/prep
-4.253452	-niet/noun
-3.3580616	-vrouw/noun
-3.4608996	-vrouwen/noun
-0.26859877	1-2/noun
-1.1326402	1./noun
-5.994795	1.500^meter/noun
-3.2033231	1.500_meter/noun
-5.8994846	10.000^m/noun
-3.3054178	10.45/noun
-2.422976	100/noun
-6.521218	100^m/noun
-6.30353	100^meter/noun
-3.815508	100_meter/noun
-4.0230775	100m/noun
-2.389229	11-jarige/adj
-2.9721773	11.45/noun
-3.6299393	110/noun
-9.032001	110^m/noun
-2.6577804	12-jarigen/adj
-4.3660445	12.40/noun
-3.948393	12.45/noun
-1.6439042	14.00/noun
-5.946005	14.04/noun
-3.934069	14.45/noun
-1.2381489	15.30/noun
-6.1728754	1500^m/noun
-3.2579951	1500_meter/noun
-5.8994846	1552/noun
-3.0474653	18-jarigen/adj
-2.602218	1870/noun
-0.6276396	19-jarige/adj
-3.5686655	19.40/noun
-1.0259717	19.45/noun
-2.9314623	1903/noun
-1.609212	1920/noun
-2.0620382	1922/noun
-1.395517	1933/noun
-2.0812979	1939/noun
-0.88359046	1940/noun
-1.3072386	1942/noun
-0.89154994	1948/noun
-1.8767338	1952/noun
-0.806683	1962/noun
-0.85326284	1963/noun
-1.5335816	1964/noun
-0.78517205	1965/noun
-0.7786506	1966/noun
-0.7534844	1980/noun
-0.41288814	1981/noun
-0.2828458	1983/noun
-0.29612958	1989/noun
-0.08570357	1991/noun
-0.77802145	1996/noun
-4.8577633	1m70/noun
-5.8187428	2.12/noun
-0.8283816	20.00/noun
-4.2102838	200^m/noun
-2.3945417	200_meter/noun
-0.47117624	21-jarige/adj
-0.53315824	22-jarige/adj
-0.57524484	24-jarige/adj
-0.40291893	24/noun
-5.2757363	25-koppige/adj
-0.67410463	26-jarige/adj
-1.966234	3-6/noun
-0.86029136	30-jarige/adj
-4.3684998	3000/noun
-8.331282	300^m/noun
-7.30935	300_meter/noun
-0.8226361	31-jarige/adj
-1.6606791	34-jarige/adj
-1.027522	4/noun
-2.0395687	400/noun
-7.7589965	400^m/noun
-8.208911	400^meter/noun
-4.7472496	400_meter/noun
-1.7465496	47-jarige/adj
-1.7879404	49-jarige/adj
-4.6717067	4x100/noun
-2.4259665	5-7/noun
-3.358957	5-jarige/adj
-2.144275	58-jarige/adj
-1.4043323	6-3/noun
-2.7522025	6-7/noun
-1.978029	6./noun
-3.4797227	60/noun
-5.072522	600_punt_grens/noun
-7.8237557	60^m/noun
-4.0679946	60_meter/noun
-4.781367	60m/noun
-1.7048492	65-plussers/noun
-1.2743782	7-5/noun
-1.7567829	7-6/noun
-2.2937398	71-jarige/adj
-2.2335947	72-jarige/adj
-2.7464087	75-jarige/adj
-2.4719453	8./noun
-5.8124733	8.46/noun
-4.646722	800^m/noun
-3.2010257	800_meter/noun
-5.0489454	800m/noun
-7.6406	80_meter/noun
-1.4139942	9./noun
-2.9663534	ABN/noun
-0.5643971	AEX-index/noun
-4.8706775	ATP_circuit/noun
-0.70195496	Afghaans/adj
-0.7194263	Afrikaan/noun
-0.38023525	Afrikaans/adj
-3.6503482	Aida/noun
-5.5662646	Ajax_hooligan/noun
-4.2222466	Ajax_supporter/noun
-6.535221	Akela/noun
-4.1365457	Akropolis/noun
-1.0656588	Algerijns/adj
-5.118285	Allerheiligen/noun
-6.9205046	Alozie/noun
-0.15274519	Amerikaan/noun
-0.19279797	Amerikaans/adj
-4.476924	Amro_toernooi/noun
-0.54484063	Amsterdammer/noun
-0.6113992	Amsterdams/adj
-5.6266856	Andorrese/adj
-1.4667757	Angelsaksisch/adj
-5.810392	Antwerpfans/noun
-2.6531706	Antwerps_steen_weg/noun
-1.2951784	Arabier/noun
-4.093807	Arca/noun
-1.7897291	Argentijn/noun
-4.2339244	Aspe/noun
-0.94198245	Australisch/adj
-0.23542786	Australiër/noun
-5.5926685	Autobahnen/noun
-1.8264643	Aziaat/noun
-1.5123291	Aziatisch/adj
-6.2179384	BTW_vrijstelling/noun
-6.592632	B_race/noun
-4.2791967	Bastille/noun
-6.2179384	Bayens/noun
-0.26082343	Belgisch/adj
-3.7599535	Belgisch/det
-2.9360878	België/det
-5.4252286	Berchem_station/noun
-4.102436	Berlijners/noun
-0.9406053	Berlijns/adj
-3.547893	Blok_kiezer/noun
-6.161735	Bonduelle/noun
-2.218305	Bosniër/noun
-2.054719	Bosuil/noun
-0.21329543	Brabants/adj
-4.9732437	Brakelaars/noun
-0.2587065	Braziliaan/noun
-3.0759437	Breese/adj
-5.181645	Breydelstad/noun
-1.3558925	Brit/noun
-1.765264	Brusselaar/noun
-1.0394961	Brusselaars/noun
-1.1073823	Bulgaars/adj
-2.6095574	Burundees/adj
-5.286759	Byzantijnen/noun
-4.3989487	CAC-40_index/noun
-0.9231272	Canadees/noun
-1.3945618	Catalaans/adj
-1.7542957	Celsius/noun
-1.8693554	China/det
-0.4091467	Chinees/adj
-2.6606278	Cubaan/noun
-0.40614265	Cubaans/adj
-3.1474175	D66_leider/noun
-1.3982744	Deen/noun
-1.4662627	Deens/adj
-3.2880788	Detiège/noun
-6.592632	Devers/noun
-2.7840016	Dilbeekse/adj
-4.66772	Dilbekenaar/noun
-4.1656194	Discus/noun
-5.067564	Doema_verkiezing/noun
-2.0205956	Dow/noun
-0.84124315	Dow_Jones-index/noun
-1.8940127	Drents/adj
-4.702468	Duff/noun
-5.946005	Duffelse/noun
-1.4069161	Duitser/noun
-5.5760846	Duivelsberg/noun
-6.1691484	Durgerdammerdijk/noun
-1.4806486	EK/noun
-4.4065804	EK_eindronde/noun
-3.4261982	EK_finale/noun
-4.2626967	EK_limiet/noun
-4.9759474	EK_minimum/noun
-3.3268723	EU_uitbreiding/noun
-5.6965437	EU_vergadering/noun
-0.927321	Engels/adj
-1.4244038	Engelsman/noun
-6.1721287	Euronext_index/noun
-0.031742617	Europeaan/noun
-0.08350496	Europees/adj
-5.231655	Evelyne/noun
-6.2210684	Ferrari_fan/noun
-1.61331	Fin/noun
-3.849156	Flanders/noun
-5.9155216	Ford_dealer/noun
-2.0122201	Fortuyn/det
-5.1414437	Fortuyn_aanhanger/noun
-4.782854	Frankisch/adj
-0.50489163	Fransman/noun
-1.096983	Fries/adj
-4.583808	Galapagos_eiland/noun
-4.4813175	Gaudí/det
-2.4057012	Gelders/adj
-3.798126	Germaan/noun
-2.1830342	Germaans/adj
-5.379609	Gideonsbende/noun
-5.9483886	Gitte/noun
-3.4473047	Gooise/adj
-1.8178723	Grand/noun
-5.7114973	Grieks-Cyprus/noun
-0.5762825	Grieks/adj
-5.676341	Grimbergenaar/noun
-0.6717849	Gronings/adj
-1.0243177	Haags/adj
-3.1304533	Hamburgse/adj
-2.8835042	Haïtiaans/adj
-4.863393	Heiligeweg/noun
-2.3525486	Herentalse/adj
-4.5734954	Hezbollah_strijder/noun
-6.592632	Hickey/noun
-5.229327	Himalaya_gebergte/noun
-1.7296181	Hollander/noun
-0.9928135	Hollands/adj
-3.6743698	Hollywood_film/noun
-1.3307427	Hongaar/noun
-0.4539039	Hongaars/adj
-0.66249883	Ier/noun
-0.24357231	Iraans/adj
-0.4466141	Irakees/noun
-3.1649697	Israeliër/noun
-0.804007	Israëli/noun
-1.0835717	Italiaan/noun
-1.7770902	Italiaans/noun
-3.514482	JSF_project/noun
-2.2995605	Jamaicaans/adj
-1.9071393	Japanner/noun
-1.4536016	Japans/adj
-5.2954173	Jappen/noun
-2.7403588	Jeltsin/det
-2.1873548	Jones-index/noun
-4.012932	Jordaanoever/noun
-6.592632	K&H/noun
-2.1956327	Kenyaan/noun
-1.5439712	Kenyaans/adj
-0.7908019	Kerstmis/noun
-4.9562864	Kramnik/det
-3.2362099	LPF_leider/noun
-6.4608064	Langeleegte/noun
-5.0268607	Languedoc/noun
-4.585639	Las/noun
-1.4337856	Latijn/noun
-2.1109142	Les/det
-2.2896116	Let/noun
-2.1191247	Lets/adj
-3.0409267	Leuvenaar/noun
-1.1210872	Libanees/adj
-1.4534168	Libisch/adj
-3.3605707	Limburg/det
-1.1936399	Limburger/noun
-1.0211971	Limburgs/adj
-0.6102711	Londens/adj
-2.286174	Madrileense/adj
-3.8576741	Madrilenen/noun
-4.0837717	Madurees/noun
-5.4641666	Madurodam/noun
-5.15	Marlux/noun
-0.85359627	Marokkaans/adj
-4.164616	Mary/det
-5.6044436	McCourts/det
-6.592632	McGuinn/noun
-3.2927628	Meetjesland/noun
-3.0848927	Meetjeslandse/adj
-4.543181	Messiaens/det
-0.6543523	Mexicaans/adj
-6.54818	Microsoft_voorzitter/noun
-6.4255776	Mijn/det
-3.2217374	Moldavisch/adj
-3.0430145	Mongool/noun
-5.108646	Mongools/adj
-3.3482654	Moors/adj
-3.7046618	Morgens/adv
-1.936639	Moskous/adj
-6.5056205	Mozesberg/noun
-3.1350255	Mugabe/det
-4.639604	Natasja/noun
-0.33886182	Nederlander/noun
-4.0749354	Nederlands_Limburgs/adj
-1.6460018	Nieuwstraat/noun
-1.0180783	Nigeriaans/adj
-2.0342197	Ninoofse/adj
-1.4758091	Noord-Iers/adj
-5.7247677	Noord_Vietnamees/noun
-5.877012	Nsenga/noun
-4.7271433	O'Sullivan/noun
-0.42288798	Oost_Vlaams/adj
-5.755778	Oranjeklanten/noun
-6.592632	Orks/noun
-2.6215684	PKK_leider/noun
-4.359689	PSV_stadion/noun
-3.6783068	Pajotse/adj
-0.61067826	Palestijn/noun
-0.12968747	Parijs/adj
-5.994795	Parijzenaren/noun
-1.0947746	Pasen/noun
-3.6648378	Peeters/det
-3.882765	Pfff/noun
-4.7824817	Pieten/noun
-2.9551654	Pinksteren/noun
-1.685944	Pool/noun
-4.9509907	Popcorn/noun
-6.81862	Privalova/noun
-2.9682302	PvdA_fractie_voorzitter/noun
-2.5197277	PvdA_minister/noun
-6.5056205	Quake/noun
-6.5056205	RNAi/noun
-6.282477	Rct/noun
-4.000775	Reguliersbreestraat/noun
-4.204286	Ridderstraat/noun
-5.0715284	Ringlijn/noun
-0.46061513	Roemeens/adj
-1.9401878	Romeins/adj
-0.269985	Rotterdams/adj
-3.0917263	Russin/noun
-0.613669	Russisch/adj
-2.3149562	Saddams/det
-6.2368665	Safin/det
-5.7058635	Savoy/noun
-1.1775622	Schot/noun
-0.07385334	Schots/adj
-3.8989265	Schröder/det
-5.227004	Sente/noun
-6.064681	Shogun/noun
-6.3622417	Siciliaanse/noun
-1.702146	Sint-Niklase/adj
-3.0786471	Slam_toernooi/noun
-1.7892816	Sloveens/adj
-2.4734468	Slowaak/noun
-6.592632	Smallendam/noun
-0.42650348	Spaans/adj
-0.9415152	Spanjaard/noun
-5.4437876	Spooren/noun
-2.5163279	Star/noun
-5.2063375	Summertime/noun
-0.5926356	Ten/adv
-4.4350724	Teutoonse/adj
-6.35147	Toetsingskader/noun
-3.4714692	Tom/det
-6.282477	Townsend/noun
-0.4176722	Tsjechisch/adj
-6.1001554	Tubbies/noun
-0.48410335	Turks/adj
-3.7546172	Unionist/noun
-5.4209943	Uruguayanen/noun
-4.064724	VLD_jongere/noun
-5.5893297	VN-Conventie/noun
-4.1976333	VTM_kijker/noun
-4.3684998	VTM_woordvoerder/noun
-1.0334023	VVD'er/noun
-1.6318873	VVD_leider/noun
-5.173364	Vandeputte/noun
-6.1001554	Verbauwhede/noun
-2.77742	Verdi/det
-4.5326977	Verwilghen/det
-2.987134	Vlaanderen/det
-1.2793586	Vlaming/noun
-5.0865364	Volkskrant_lezer/noun
-5.5247912	Volkswagenbusje/noun
-6.7235694	WK_ambitie/noun
-5.7716513	WK_finalist/noun
-4.930084	WTO_lid/noun
-5.389114	Waseberg/noun
-1.5135453	Weens/adj
-1.3601023	Westers/adj
-4.0716414	Wijngaardstraat/noun
-1.7916332	Zimbabwaans/adj
-3.5309415	Zimbabweaan/noun
-1.4566195	Zoo/noun
-4.330395	Zuid_Engels/adj
-1.754818	Zuidkoreaans/adj
-0.6727365	Zweed/noun
-0.18045536	Zweeds/adj
-0.43069598	Zwitser/noun
-0.05633227	Zwitsers/adj
-0.04962294	aan/adj
-0.24818437	aan/part
-6.1001554	aan_prijs/verb
-4.087848	aan_teller/noun
-3.3665097	aanbeden/adj
-2.46235	aanbid/verb
-4.511913	aanbidder/noun
-3.2476842	aanbidding/noun
-1.5909864	aanbieder/noun
-1.9647	aanblik/noun
-1.770574	aandeel_markt/noun
-0.36076668	aandeelhouder/noun
-1.1214122	aandeelhouder_vergadering/noun
-5.128745	aaneen_geschakeld/adj
-2.3176718	aangebracht/adj
-5.015529	aangelokt/adj
-2.523372	aangemoedigd/adj
-1.220114	aangeslagen/adj
-1.7009165	aangevoerd/adj
-1.8920689	aangezicht/noun
-1.0902611	aangrijpend/adj
-0.90397835	aanhang/noun
-0.41022766	aanhanger/noun
-0.84621084	aanhoudend/adj
-2.5984426	aanhouding_bevel/noun
-5.8124733	aanklikbare/adj
-0.7442419	aankomst/noun
-0.6425221	aanloop/noun
-1.1973321	aanmerkelijk/adj
-0.92320555	aanmerking/noun
-1.5438837	aannemelijk/adj
-0.9668273	aanpalend/adj
-0.22172342	aanpassing/noun
-2.5311313	aanraking/noun
-0.3401851	aanrijding/noun
-2.1225007	aanschouw/verb
-3.0785117	aanschouwelijk/adj
-3.5578973	aanstellerij/noun
-0.96420985	aantijging/noun
-1.8535666	aantoonbaar/adj
-1.3770046	aantrekking_kracht/noun
-2.5969365	aanvaard/adj
-3.5209913	aanval_linie/noun
-3.43718	aanvallender/adj
-4.842642	aanvang_tijd/noun
-0.24783048	aanvankelijk/adj
-1.900242	aanvaring/noun
-1.568841	aanvoering/prep
-0.50754756	aanwezigheid/noun
-1.5810071	aap/noun
-2.5729783	aap_DIM/noun
-3.5873995	aard_bewoner/noun
-0.93442535	aarzel/verb
-1.3256644	aarzeling/noun
-2.0726235	aas/noun
-1.2779044	aas/verb
-1.8830812	abrupt/adj
-0.44824138	abstract/adj
-0.23154134	absurd/adj
-0.19193655	accoord/adj
-0.011044963	accoord/noun
-2.6390307	accordeonist/noun
-6.592632	accrediteer/verb
-1.82571	achillespees/noun
-0.7761939	achter/part
-0.90710056	achter/prep
-0.8202707	achterban/noun
-2.178347	achterdocht/noun
-1.2365388	achteren/adv
-2.1997552	achtergelaten/adj
-0.5615271	achtergrond/noun
-2.1436105	achterin/prep
-2.3672922	achterna/part
-2.349704	achterover/adv
-2.2898574	achterste/noun
-1.1634855	achtertuin/noun
-0.0898486	achteruit/adv
-3.143519	achtervolg/verb
-4.4972944	achtervolgd/adj
-0.3036924	achtervolging/noun
-5.5662646	achtkamp/noun
-2.5272636	achttiende-eeuws/adj
-1.6700002	achttienjarige/adj
-2.2665143	acte/noun
-0.29369095	acteer/verb
-2.6338987	acteer_prestatie/noun
-0.10687439	acteur/noun
-0.39170784	actievoerder/noun
-1.5214574	activist/noun
-0.16719203	actrice/noun
-0.57168573	adem/noun
-1.5112275	adem/verb
-1.7484089	adembenemend/adj
-6.299284	ademstokkende/adj
-2.6468225	adjunct_hoofd_redacteur/noun
-0.7234419	administratief/adj
-6.6583834	adoniscomplex/noun
-3.2195535	adoreer/verb
-1.6368048	adverteerder/noun
-0.2102891	advocaat/noun
-0.53811777	af/adv
-0.107259214	af/part
-3.9349184	af_dweil/verb
-3.3566308	af_getraind/adj
-4.319335	af_klok/verb
-3.5105133	af_serveer/verb
-4.249079	af_spel/noun
-1.7709583	afdruk/noun
-1.5502924	afgang/noun
-1.7428057	afgedankt/adj
-2.2892427	afgeladen/adj
-1.5156273	afgelegen/adj
-0.5650765	afgesloten/adj
-2.0557406	afgewisseld/adj
-0.68826133	afgezien/prep
-3.047531	afgrijselijk/adj
-5.0230694	afhaspel/verb
-0.67357916	afkeer/noun
-2.8650782	afscheidnemende/adj
-2.7474287	afstammeling/noun
-1.1756762	afstand/noun
-3.5968995	afval_race/noun
-2.6768885	afvallig/adj
-3.1127913	afweer_systeem/noun
-0.58070755	afwezig/adj
-1.7071133	afzet/noun
-0.13629992	agent/noun
-4.588698	agentes/noun
-5.783724	agers/noun
-0.755909	agressie/noun
-0.14294443	agressief/adj
-1.8708105	akelig/adj
-0.93706924	akoestisch/adj
-0.2594814	alarm/noun
-1.1996243	alarmeer/verb
-6.299284	alfa_man_net_DIM/noun
-1.6077185	algauw/adv
-3.784188	aliens/noun
-1.8406495	all/noun
-0.7864432	allang/adv
-0.7537756	alle/pron
-0.5012191	alledaags/adj
-0.117458284	alleenstaand/adj
-1.2259498	allen/adv
-0.4521401	allerhande/adj
-0.70509577	alles/adv
-0.058836386	alles/pron
-0.6629641	alleszins/adv
-0.81732535	alliantie/noun
-0.7457202	allicht/adv
-0.07905446	allochtoon/noun
-0.865192	almaar/adv
-0.5451307	alom/adv
-1.9176388	alomtegenwoordig/adj
-1.0953332	aloud/adj
-0.4836368	als/adv
-0.0066100573	als/prep
-1.7816862	alsmaar/adv
-0.5894034	alsnog/adv
-1.8683865	alstublieft/adv
-0.06925643	althans/adv
-0.65116507	alvast/adv
-2.7952037	alwaar/adv
-0.20142496	alweer/adv
-2.321029	amateur_club/noun
-4.270467	amateur_fotograaf/noun
-5.6232314	amateur_toneel_speler/noun
-3.9144163	amateur_voetballer/noun
-1.0678492	ambachtelijk/adj
-0.8050933	ambiance/noun
-0.28103316	ambitieus/adj
-0.052512318	ambtenaar/noun
-0.77525014	ambulance/noun
-3.2022502	amfi_theater/noun
-0.6306853	amper/adv
-1.0165449	amusement/noun
-4.786581	amusement_hal/noun
-0.10298488	analyseer/verb
-1.870204	anarchistisch/adj
-1.1591778	andermaal/adv
-0.75365645	anderzijds/adv
-1.4750336	angst/noun
-1.1419641	angst/prep
-0.84901696	angstig/adj
-2.7213361	angstwekkend/adj
-3.2680864	antiek_markt/noun
-2.733147	apartheid_regime/noun
-0.9972786	apparaat/noun
-5.17722	apparatsjiks/noun
-2.301301	appartement_blok/noun
-3.5140636	appetijt/noun
-3.4933589	arbeid_deskundige/noun
-0.77232975	arbeider/noun
-5.3945856	arbeidsgeschikten/noun
-1.6090407	archeoloog/noun
-1.734983	archief/noun
-5.9603934	architectuur_toerist/noun
-1.0254157	arm/adj
-0.23058775	arm/noun
-2.2876458	armoede_bestrijding/noun
-2.8821318	armoedig/adj
-5.1695237	arrenbie/noun
-1.2231573	arrestant/noun
-0.33507165	arresteer/verb
-0.8328653	arriveer/verb
-0.7032378	arrondissement/noun
-1.3891747	art/noun
-4.105833	asgrauw/adj
-5.498575	ashram/noun
-4.502453	asiel_problematiek/noun
-0.43851954	asielzoeker/noun
-4.1807847	aspirant_koper/noun
-5.0392833	aspirant_omroep/noun
-1.8532884	aspiratie/noun
-0.7502607	assistent/noun
-3.9461348	atheïstische/adj
-2.111197	atleet/noun
-3.1496155	atlete/noun
-3.1556594	atletiek/noun
-3.535313	atletiek_club/noun
-4.147916	atletiek_meeting/noun
-5.855033	atletiek_nummer/noun
-3.9772286	atletiek_piste/noun
-6.0099087	atletiek_programma/noun
-2.042014	atletisch/adj
-0.79283696	atmosfeer/noun
-1.3568026	attractie/noun
-1.4746108	authenticiteit/noun
-1.9609083	auto_DIM/noun
-2.364273	auto_concern/noun
-3.9377906	auto_liefhebber/noun
-1.7589507	auto_sleutel/noun
-6.6156216	auto_stoet/noun
-4.6817436	auto_tentoonstelling/noun
-3.0170991	autoband/noun
-1.0255547	autobiografisch/adj
-0.8668359	autochtoon/adj
-1.8509858	autochtoon/noun
-0.40576872	autonoom/adj
-1.4610938	averechts/adj
-0.015181481	avond/noun
-4.454171	avond_land/noun
-4.8161397	avond_licht/noun
-1.671159	avonturier/noun
-1.2305291	avontuur/noun
-0.565208	b/noun
-0.72299963	baan/noun
-1.4347266	baan/verb
-0.8854461	baan_DIM/noun
-4.000435	baan_ronde/noun
-2.8302696	baar_op/verb
-4.34999	baba/noun
-1.6273109	babbel/noun
-1.5895095	babbel/verb
-0.62455225	baby/noun
-4.5567384	backpackers/noun
-0.18941893	bacterie/noun
-6.530938	bacterie_spoor/noun
-1.2897115	bad_plaats/noun
-3.5635967	badges/noun
-0.61313635	bak/noun
-5.4209943	bak_vis_DIM/noun
-1.0408005	bal_DIM/noun
-1.0623734	balans/noun
-4.854561	baleinen/noun
-0.9713585	balie/noun
-1.7826117	balk/noun
-0.80276895	ballet/noun
-4.1690364	ballet_danseres/noun
-0.8175299	ballon/noun
-0.26594582	ban/noun
-2.5009422	bandbreedte/noun
-3.1759489	bank_tegoed/noun
-0.48393995	bankier/noun
-0.8455142	bankrekening/noun
-0.62430215	bar/noun
-4.541009	barbaar/noun
-3.5784793	barbaars/adj
-3.752358	barbarij/noun
-3.049041	barkruk/noun
-3.2374785	barmhartig/adj
-1.5674363	barok/adj
-2.7098503	barones/noun
-1.7403175	barricade/noun
-3.0754037	barricadeer/verb
-2.0689676	barrière/noun
-3.0670738	barst_DIM/noun
-1.1673415	barst_uit/verb
-1.6978155	basiliek/noun
-0.26152232	basis_school/noun
-2.0564706	basis_vorming/noun
-3.0642679	bazaar/noun
-1.3213587	bbp/noun
-0.9576799	beaam/verb
-3.3067772	beachvolleybal/noun
-2.8538806	beambte/noun
-1.8449367	becommentarieer/verb
-1.8315463	bed_DIM/noun
-2.0507402	bedachtzaam/adj
-2.860062	bedelaar/noun
-1.362423	bedenkelijk/adj
-0.5620996	bedenking/noun
-2.5848856	bedevaart/noun
-2.3083558	bedevaart_oord/noun
-0.20172025	bediende/noun
-4.0979247	bedoeïenen/noun
-1.5804523	bedreig/adj
-1.3948532	bedreig/verb
-0.21235137	bedreiging/noun
-0.84147435	bedrijfsresultaat/noun
-1.1986945	bedrijventerrein/noun
-2.1941504	bedwing/verb
-0.84081733	beeld/noun
-0.33264196	beeldend/adj
-1.1217563	beeldscherm/noun
-1.3171223	been/noun
-1.4382635	been_bij/verb
-1.360175	beer/noun
-0.54267865	beest/noun
-1.5344192	beest_DIM/noun
-0.6944545	beetje/adv
-1.1245333	befaamd/adj
-0.62476164	bega/verb
-1.4645637	begaafd/adj
-1.7032607	begeef/verb
-0.9496937	begeleid/adj
-1.2334689	begeleider/noun
-0.55476093	begin/adj
-0.04315758	begin/verb
-1.6687105	beginner/noun
-5.868162	begoten/adj
-0.18017934	begrafenis/noun
-0.16209076	begrijp/verb
-2.9570813	begroeiing/noun
-0.8077722	begroet/verb
-2.3164709	begroting_overschot/noun
-0.34057206	behaal/verb
-2.1447537	beheer_raad/noun
-1.9474982	beheerder/noun
-4.5194597	behendigheid_proef/noun
-0.89591974	behoed/verb
-4.9448476	behoefte_bevrediging/noun
-1.0438918	behoeve/prep
-0.30009347	behoorlijk/adj
-0.048754867	behoud/verb
-1.5720462	behoudend/adj
-2.4261076	beige/adj
-3.462488	beijver/verb
-0.9928539	bejaard/adj
-1.9939829	bejubel/verb
-0.81856036	bek/noun
-1.1951995	bekeken/adj
-2.9825742	bekijks/noun
-3.6590168	beklagenswaardig/adj
-0.49835432	bekleed/verb
-2.322569	beklim/verb
-4.232636	beknel/verb
-2.233711	bekoel/verb
-1.5256162	bekogel/verb
-0.4846578	bekom/verb
-1.2232208	bel_aan/verb
-0.5330415	bel_op/verb
-3.5197492	belaag/verb
-2.3931313	beladen/adj
-0.73661655	belangrijk/adj
-2.9311702	belangstellend/adj
-2.5787418	belangstellende/noun
-0.088246696	belangstelling/noun
-1.7929046	belangwekkend/adj
-3.794381	belasting_herziening/noun
-1.1234215	beledig/verb
-2.83376	beleg/noun
-3.6810226	beleger/verb
-2.4455366	belegering/noun
-0.80028486	belegger/noun
-0.9035939	belemmer/verb
-1.3618393	belemmering/noun
-0.22438227	belet/verb
-0.58125323	belicht/verb
-0.8173465	belofte/noun
-4.1614137	belofte_kampioen/noun
-0.6667973	beloofd/adj
-1.7018272	bemachtig/verb
-1.7062207	beman/verb
-0.76407397	bemiddelaar/noun
-2.54974	beminnelijk/adj
-0.33821753	ben_kwijt/verb
-2.9420917	ben_rond/verb
-0.3130109	ben_uit/verb
-2.0097537	bende_lid/noun
-0.7780265	bene/adv
-1.7391821	beneden/prep
-5.8994846	beneden_buur_vrouw/noun
-3.4261982	beneveld/adj
-4.2464647	benjamins/noun
-0.09894676	benoem/verb
-0.36187303	benzine/noun
-1.1024553	beoogd/adj
-0.25941277	beoordeel/verb
-5.581031	bepakt/adj
-5.0795045	bepoteld/noun
-0.9077542	beraad/verb
-1.0215672	bereid/verb
-0.6732982	berg/noun
-3.2834167	bergbeklimmer/noun
-3.1861455	bergbeklimmers/noun
-1.0829215	bericht/verb
-2.54974	berijd/verb
-1.1128834	berm/noun
-0.033725057	beroemd/adj
-1.4427881	beroer/verb
-0.73497146	beroerd/adj
-0.60919946	berucht/adj
-0.5969037	beschadigd/adj
-0.49422053	beschaving/noun
-0.27745467	bescheiden/adj
-0.55615264	bescherm/verb
-0.7953176	beschermd/adj
-3.3743017	beschermer/noun
-0.074026614	beschik/verb
-0.30288252	beslissend/adj
-0.8251848	beslist/adj
-2.6163545	beslist/adv
-3.862998	besluip/verb
-0.5026392	besmet/verb
-2.1173115	besneeuwd/adj
-2.7836487	besnijdenis/noun
-1.4589211	bespeur/verb
-4.520604	bespoten/adj
-3.6846137	bespring/verb
-5.407008	best_prestatie/noun
-4.014552	best_tijd/noun
-1.6389518	bestaan_recht/noun
-1.8092774	beste/det
-0.32664818	bestelling/noun
-0.20024657	bestemming/noun
-1.3217674	bestook/verb
-3.776951	bestorm/verb
-5.2516675	bestormd/adj
-0.33942384	bestrijding/noun
-6.4255776	bestudeer/adj
-2.1732984	bestudering/noun
-4.142019	bestuif/verb
-0.003317782	bestuur_voorzitter/noun
-0.34066665	betaal_uit/verb
-3.3663292	betaling_balans/noun
-3.371395	betekenis_loos/adj
-1.6868858	betoger/noun
-0.40469444	betoging/noun
-1.2038819	betonnen/adj
-1.614645	betoon/verb
-1.37458	betreed/verb
-0.4219661	betreft/prep
-3.0775647	beuk_in/verb
-0.17584106	beurs/noun
-0.51487494	beurs_koers/noun
-1.8645202	beurs_vloer/noun
-0.11093637	beursgang/noun
-2.9823284	beurstoezichthouder/noun
-0.23396274	beurt/adj
-2.6514914	bevallig/adj
-0.88863724	bevalling/noun
-1.9995342	bevang/verb
-1.493112	beveel/verb
-0.87535	beveel_aan/verb
-2.7858684	beveiliging_bedrijf/noun
-3.504486	beveiliging_dienst/noun
-0.07894997	bevestig/verb
-0.43329623	bevestiging/noun
-0.40070632	bevinding/noun
-2.6088295	bevolk/verb
-2.8152318	bevolkt/adj
-1.1632264	bevredigend/adj
-0.3031018	bevriend/adj
-0.9659922	bevrijd/adj
-3.8439052	bevrijding_dag/noun
-1.4727618	bevroren/adj
-3.2741575	bevuil/verb
-2.4279065	bewaakt/adj
-0.4450769	bewaker/noun
-2.1360319	bewaking/noun
-2.5058537	bewapend/adj
-1.3383375	beweeg/adj
-0.6008208	beweeg/verb
-1.9698896	beweeglijk/adj
-0.43059057	beweging/noun
-4.8961825	bewijs_DIM/noun
-2.101547	bewijslast/noun
-2.6409512	bewijsvoering/noun
-0.060423255	bewind/noun
-1.2026473	bewogen/adj
-1.4380536	bewonderaar/noun
-6.3586383	bewonderaarsters/noun
-0.27024615	bewondering/noun
-1.6485897	bewoond/adj
-1.7585529	bezaai/verb
-5.5793796	bezakt/adj
-2.9297698	bezeer/verb
-2.0632143	bezem/noun
-0.8533214	bezet/adj
-1.0837957	bezetter/noun
-0.5574767	bezetting/noun
-1.6710099	bezie/verb
-1.6183777	bezienswaardigheid/noun
-1.5440295	bezing/verb
-1.0893688	bezit/noun
-1.3784869	bezocht/adj
-0.73179525	bezoek/verb
-0.7774856	bezoeker/noun
-0.542009	bezwijk/verb
-3.1783388	bh/noun
-2.0554972	bibber/verb
-4.0093207	bieding_bericht/noun
-1.66579	bier_DIM/noun
-4.298262	bier_gigant/noun
-3.075134	bier_glas/noun
-2.1663165	bies/noun
-0.11153744	bij/part
-2.977668	bij_steek/verb
-1.7783802	bij_zaak/noun
-2.1348548	bijbels/adj
-0.5457541	bijeen/adj
-0.15301283	bijeen/part
-4.328504	bijeen_drijf/verb
-5.594342	bijeen_gedreven/adj
-0.4783967	bijgevolg/adv
-3.0000005	bijkans/adv
-2.4566655	bijkomstigheid/noun
-1.5157833	bijl/noun
-0.016136147	bijna/adv
-2.77742	bijstand_moeder/noun
-1.3631288	bijster/adv
-0.20384127	bijt/verb
-3.294105	bikini/noun
-0.5333281	bil/noun
-2.416498	bingo/noun
-0.1816399	binnen/adv
-0.3800541	binnen/part
-5.435179	binnen_schrijd/verb
-5.4774904	binnengevallen/adj
-0.2759185	binnenkort/adv
-1.5994973	binnenland/noun
-0.3958221	binnenlands/adj
-1.43784	binnenstad/noun
-2.7925568	binnenstebuiten/adj
-0.53084123	bioscoop/noun
-5.155385	bioscoop_succes/noun
-2.8379009	bioscoop_zaal/noun
-5.55654	bivakkeer/adj
-1.9815699	bivakkeer/verb
-3.5292408	bizons/noun
-1.6147201	blaas/verb
-0.6971152	blaas_af/verb
-0.62011844	blaas_in/verb
-1.5521436	blader/verb
-5.946005	blagen/noun
-1.341549	blank/adj
-0.26519302	blauw/adj
-4.1138043	blauw_DIM/noun
-0.8873051	blesseer/verb
-0.4713384	blessure/noun
-2.8532321	blessure_last/noun
-0.0092553	blij/adj
-2.4687285	blijde/adj
-1.6626042	blijf_thuis/verb
-0.14485802	blijk/verb
-0.380577	blik/noun
-0.8343612	blik_DIM/noun
-0.20342892	blik_terug/verb
-1.7651912	blik_vooruit/verb
-1.0426232	blind/adj
-3.6048858	blinddoek/noun
-2.8506424	blindelings/adv
-1.8596683	blink/verb
-1.5038577	blink_uit/verb
-4.5047035	bloed_hond/noun
-4.1050014	bloeddorstig/adj
-0.53254265	bloedig/adj
-1.0311812	bloei/noun
-4.068723	bloem_DIM_jurk/noun
-0.45130828	blok/noun
-0.8775398	blokkeer/verb
-1.5349568	bloot/adj
-0.795497	blues/noun
-2.767554	bluf/noun
-1.7554485	blunder/noun
-2.333929	blunder/verb
-4.143588	blèr/verb
-4.325203	bob_slede/noun
-0.2898089	bocht/noun
-3.4887247	bodyguards/noun
-3.1667418	boeddha_beeld/noun
-0.7029232	boeg_beeld/noun
-4.2697988	boek_werk_DIM/noun
-1.689042	boekdeel/noun
-1.7844466	boekenkast/noun
-0.7659615	boekje/noun
-2.9875047	boekstaaf/verb
-4.706251	boemel/noun
-0.86472356	boer/noun
-5.3918457	boer_lobby/noun
-4.4774723	boer_lul/noun
-1.1504946	boerderij/noun
-1.9779614	boerin/noun
-3.9745727	boertige/adj
-0.9123041	boks/verb
-1.7933538	bokser/noun
-1.9555227	bolide/noun
-4.4004707	bolsjewiek/noun
-2.6322517	bonbon/noun
-3.7448196	bond_bureau/noun
-0.5546199	bondskanselier/noun
-2.624658	bonk/verb
-3.3410249	bons/noun
-2.068228	boomgaard/noun
-3.4762921	boomstronk/noun
-0.7706354	boor/verb
-0.6207788	boos/adj
-2.293431	boot_tocht/noun
-2.2726316	boots_na/verb
-0.93700564	bord_DIM/noun
-0.2128175	bos/noun
-3.5896533	bos_pad/noun
-0.2994058	boter/noun
-0.008141839	botsing/noun
-4.416332	bottleneck/noun
-2.1910532	boulevard/noun
-2.5553386	boulevard_blad/noun
-3.468866	boulevard_pers/noun
-0.2520661	bouw/noun
-2.6410384	bouw_onderneming/noun
-0.66324824	bouw_werk/noun
-2.0461025	bouwsel/noun
-2.88028	bouwval/noun
-0.37888703	boven/prep
-2.2724805	boven_been/noun
-3.136602	boven_grens/noun
-1.9275217	bovenkant/noun
-2.8683634	bovenmatig/adj
-1.749125	boventoon/noun
-4.77618	bral/adj
-2.9109945	brandhout/noun
-2.8134131	brandpunt/noun
-0.0688693	breek_door/verb
-4.481868	breek_heen/verb
-2.462496	breek_los/verb
-1.4883958	breek_op/verb
-0.5223491	breek_uit/verb
-1.118133	breng_mee/verb
-0.9659595	breng_voort/verb
-1.314378	brigade/noun
-1.0544479	bril/noun
-6.35147	brildraag/adj
-0.36685452	broek/noun
-3.7539523	broekspijp/noun
-4.3751593	brommertje/noun
-2.530083	brons/noun
-4.690298	bronstig/adj
-1.6208949	bronzen/adj
-3.2872448	brood_roof/noun
-0.3255434	brouwerij/noun
-2.4902139	brui/noun
-1.0830227	bruid/noun
-1.0983988	bruin/adj
-3.0553684	brul/adj
-1.5936399	brul/verb
-3.4722712	bruut/noun
-3.0920005	buffel/noun
-0.18874536	buig/verb
-4.236937	buig_door/verb
-3.6628938	buik_loop/noun
-0.4057874	buis/noun
-1.0150312	buit_uit/verb
-0.5163145	buiten/adv
-0.52366227	buiten/prep
-4.072007	buiten_lieden/noun
-2.1031277	buitenaards/adj
-0.8789215	buitenlander/noun
-0.77831525	buitenlands/adj
-1.2039442	buitenstaander/noun
-1.8053863	bunker/noun
-0.037949763	bureau/noun
-3.11562	bureaucratisch/adj
-4.9651756	burger_bescherming/noun
-1.6966255	burger_in/verb
-5.408398	burger_lucht_haven/noun
-0.14887641	burger_oorlog/noun
-3.6660547	burgerman/noun
-3.1749797	burgerschap/noun
-0.9680552	bus/noun
-0.86987895	bus_DIM/noun
-4.6053805	bus_lading/noun
-0.44584522	business/noun
-3.9298327	buurt_vergadering/noun
-1.5299073	cabaretier/noun
-2.9820826	cadans/noun
-3.622334	cadet/noun
-0.99296486	cafetaria/noun
-1.4912477	camera/noun
-4.442986	camera_lieden/noun
-5.4640536	camera_mens/noun
-4.236937	camera_team/noun
-2.5692098	cameraman/noun
-3.8921425	cameraploeg/noun
-3.489473	camionette/noun
-2.1270373	camper/noun
-0.87367713	cannabis/noun
-2.3094842	cantate/noun
-2.5064263	capriool/noun
-0.5436491	caravan/noun
-2.9314039	carjackers/noun
-1.1644632	carnaval/noun
-5.4641666	carnaval_traditie/noun
-0.14615184	carrière/noun
-3.273993	casual/adj
-2.023183	catacombe/noun
-2.5461178	catastrofaal/adj
-4.300097	cateraars/noun
-2.0776849	catering/noun
-1.8021144	catwalk/noun
-3.4716697	cd_verkoop/noun
-3.829749	cel_wagen/noun
-4.580156	celebrities/noun
-0.86812615	centi_meter/noun
-3.3911796	ceo/noun
-3.9755678	certitudes/noun
-5.4641666	cette/noun
-0.9039399	champagne/noun
-3.0816972	charge/noun
-1.4070634	charmant/adj
-0.5891489	charme/noun
-4.175096	chase/noun
-2.0972764	chemo_therapie/noun
-0.2179013	chic/adj
-4.9335384	chiroleden/noun
-1.6169018	chocolade/noun
-1.2531943	christen/noun
-2.858359	chrono/noun
-5.363523	chronoandapos;s/noun
-3.260752	cijfermatig/adj
-1.2810842	cineast/noun
-1.1190728	circus/noun
-0.54564655	cirkel/noun
-2.1080897	cirkel/verb
-3.9509804	cirkel_DIM/noun
-4.6229796	civilisatie/noun
-1.5391113	claim/verb
-2.3551712	clash/noun
-6.046088	claxonnerend/adj
-0.26419193	cliché/noun
-2.3519592	clinch/noun
-1.2733538	clip/noun
-3.488555	club_genoot/noun
-5.0402455	club_maat/noun
-4.979111	club_makker/noun
-4.2870965	club_record/noun
-0.12270991	coach/noun
-1.2122947	coach/verb
-0.66705215	coalitiepartner/noun
-2.972664	cocon/noun
-1.8779552	cola/noun
-2.7341535	collaboratie/noun
-0.18013956	collectie/noun
-5.7058635	coloradokever/noun
-1.1924008	combineer/verb
-2.032162	comeback/noun
-2.8555036	comedian/noun
-0.22306558	comfortabel/adj
-0.79175013	commando/noun
-6.233687	commentariërende/adj
-6.3694882	communicatie_stop/noun
-0.8119304	communisme/noun
-1.1488278	communist/noun
-1.0060815	communistisch/adj
-3.3895159	compaan/noun
-2.2261226	competentie/noun
-4.494056	competitie_film/noun
-0.82098186	compleet/adj
-0.7453132	componeer/verb
-0.54114175	compromis/noun
-3.7859712	computer_bouwer/noun
-5.606137	computer_kennis/noun
-2.2095263	computergestuurd/adj
-0.94386166	concentreer/verb
-3.9490395	concertgangers/noun
-2.5345428	concurrente/noun
-1.006538	confrontatie/noun
-0.66584826	confronteer/verb
-6.181124	congressisten/noun
-0.29435542	constant/adj
-2.0791783	constructeur/noun
-1.3041123	consumeer/verb
-0.101942785	consument/noun
-0.7854385	context/noun
-1.2712344	continent/noun
-0.92012113	controleur/noun
-0.5684691	conventie/noun
-3.1364586	corps/noun
-1.0144985	correctie/noun
-2.6587584	corridor/noun
-0.59603274	corrupt/adj
-4.095677	coïtus/noun
-0.7518052	coördineer/verb
-1.7201794	crash/verb
-4.259165	crash_test/noun
-5.917834	crea/noun
-1.1205235	creatie/noun
-0.6181593	creatief/adj
-2.4172661	crime/noun
-0.32628986	crimineel/adj
-0.13578725	cruciaal/adj
-3.595764	cult/noun
-2.2365642	cultuurverschil/noun
-2.162952	cum_suis/adv
-1.088724	cursist/noun
-1.2912283	cynisme/noun
-0.50494844	daadwerkelijk/adj
-0.5963098	daag_op/verb
-2.8921719	daagje_mens/noun
-0.7163486	daags/adv
-2.6455708	daal_af/verb
-0.2803245	daar/adv
-2.7895362	dag/adv
-0.10540088	dag/noun
-1.1107626	dag_DIM/noun
-5.0108457	dag_blad_journalist/noun
-1.0884612	dagelijks/adj
-1.1735661	dagenlang/adj
-1.43559	dakloze/noun
-0.8462253	dam/noun
-1.8461988	dam_in/verb
-1.4226774	dame/noun
-1.0134681	dancing/noun
-0.11207383	dank/verb
-0.08939892	dankbaar/adj
-2.7477446	dans/adj
-0.94538766	dans/verb
-0.7474682	danser/noun
-1.1891972	danseres/noun
-0.9384057	dapper/adj
-6.1001554	dart_fan/noun
-5.2386727	dart_toernooi/noun
-1.1818384	das/noun
-1.7419875	dashboard/noun
-3.0153189	dauw/noun
-3.4402845	days/noun
-1.2222898	de/adv
-0.11145183	de/det
-0.9810643	de/noun
-0.13779783	deal/noun
-0.6734814	dealer/noun
-3.8223183	debiel/noun
-1.840885	debuteer/adj
-0.15453115	debuteer/verb
-1.3422244	debuut/noun
-0.0039210813	decennium/noun
-3.7845993	decor_bouwer/noun
-1.3552957	deel_op/verb
-0.4826034	deel_uit/verb
-1.5767678	deelnemer_veld/noun
-1.3685728	deelraad/noun
-4.629341	deelstaat_premier/noun
-3.8517919	defensie_macht/noun
-2.4062192	defensief/noun
-3.8034208	defileren/verb
-2.0866292	defilé/noun
-1.0611665	deftig/adj
-0.016710017	degeen/pron
-0.89158416	degelijk/adj
-2.4641054	dein/verb
-2.3010833	dek/noun
-0.36780342	dek/verb
-1.265197	dele/adv
-3.7070696	delirium/noun
-0.14011219	democratie/noun
-2.0394537	demonstrant/noun
-2.0396645	dender/verb
-4.153055	dender_door/verb
-1.9360775	denk/adj
-1.6521102	denk_terug/verb
-1.2221206	denkbaar/adj
-1.2371181	denker/noun
-3.5292408	deodorant/noun
-1.8817103	deportatie/noun
-0.20977806	depressie/noun
-4.9270716	dertiger/adj
-1.1006933	deskundig/adj
-0.17137179	deskundige/noun
-1.1135708	desondanks/adv
-0.116553225	destijds/adv
-0.94621253	detail/noun
-1.9663675	deugdelijk/adj
-0.4212191	deur/noun
-3.773691	deus/noun
-3.476796	devoot/adj
-0.31564665	dialoog/noun
-3.1893156	diamant_air/noun
-0.034735814	dicht/adj
-3.9317367	dicht_naai/verb
-0.7220175	dichtbij/adj
-1.0205642	dichtbij/prep
-1.6835932	dichtst/adj
-0.09013258	die/det
-0.49925494	die/pron
-0.12942207	dien/verb
-0.504742	dien_aan/verb
-0.5042056	diens/det
-3.158498	dienst_betoon/noun
-5.213179	diepte_zicht/noun
-3.1343098	dier_ziekte/noun
-2.4869878	dij_uit/adj
-0.13692597	dijk/noun
-0.6297772	dimensie/noun
-1.7401401	dinsdag_middag/noun
-1.6192579	dinsdag_ochtend/noun
-4.5484643	directors/noun
-1.6307148	discipline/noun
-0.9778627	disco/noun
-0.3639505	discotheek/noun
-4.8662195	discus/noun
-0.2807898	discussieer/verb
-3.8955507	discuswerpen/verb
-2.0188117	diskwalificeer/verb
-1.384662	distantieer/verb
-2.2358065	distribueer/verb
-0.8372637	distributie/noun
-0.5055266	district/noun
-1.0561569	dito/adj
-3.3426096	ditzelfde/det
-0.603454	dj/noun
-1.796954	dodental/noun
-0.11537979	doe_mee/verb
-1.0557809	doe_onder/verb
-0.563877	doe_op/verb
-0.44841695	doe_over/verb
-0.072931595	doek/noun
-0.66490614	doel/verb
-1.5044184	doelbewust/adj
-2.28167	doem_op/verb
-1.7214328	doende/adj
-1.8550786	dof/adj
-6.282477	dokkert/noun
-5.146783	dokter_assistent/noun
-0.8067737	dol/adj
-2.851397	dol_enthoesiast/adj
-1.611675	dolfijn/noun
-2.4390898	dollar_cent/noun
-0.35396546	dom/adj
-0.20727265	domein/noun
-0.60088325	dominee/noun
-4.520032	dompteur/noun
-1.7313758	donder/verb
-2.0844233	donderdag_morgen/noun
-0.11552399	dood/adj
-0.091565706	dood/noun
-0.99747276	dood/part
-3.6653244	dood_eng/adj
-6.1001554	dood_geschrokken/adj
-0.4609114	dood_straf/noun
-4.430354	dood_verachting/noun
-3.6561189	doodgemoedereerd/adj
-4.141235	doodsnood/noun
-2.6597373	doodzonde/adj
-1.8268514	doof/verb
-3.7085931	dooi/verb
-1.9887807	doolhof/noun
-4.8986855	doop_kapel/noun
-1.0388093	door/adj
-0.4971298	door/adv
-0.09237082	door/part
-0.8200415	door/prep
-1.6826544	doorgang/noun
-0.77682024	doorheen/prep
-0.95557207	doorkruis/verb
-3.0986066	doorreis/noun
-0.8088346	doorsnee/adj
-0.6224141	doorsta/verb
-1.7622476	doorstart/noun
-3.5520132	doorstroom/noun
-1.7654824	doorzetting_vermogen/noun
-1.6664327	doping_gebruik/noun
-5.6232314	doping_vraagstuk/noun
-1.2383853	dorp_DIM/noun
-3.196904	dorp_huis/noun
-1.692725	dorst/noun
-3.366961	dorstig/adj
-0.7078671	douane/noun
-2.475148	draaf/verb
-0.98905486	draaf_op/verb
-3.5405622	draag_tas/noun
-1.7594572	draai_boek/noun
-0.0436511	draai_om/verb
-0.4349597	draai_op/verb
-2.125888	draai_rond/verb
-2.3787549	draai_tafel/noun
-0.88276184	draai_terug/verb
-1.3689768	drang/noun
-2.1847491	drang_hek/noun
-0.31014422	drank/noun
-1.6453236	dreef/adj
-0.060429875	dreigend/adj
-5.337275	dreinende/adj
-6.592632	dribbel_pas_DIM/noun
-2.7237062	driedelig/adj
-1.4323407	driemaal/noun
-0.20403987	drietal/noun
-2.0626752	drievoudig/adj
-2.353269	drift/noun
-1.3754998	driftig/adj
-1.0905576	drijfveer/noun
-1.1712022	dring/verb
-0.56175536	dring_door/verb
-0.14488664	dring_op/verb
-0.26613277	dring_terug/verb
-2.8439837	drink/adj
-0.05512041	drink/verb
-2.0871313	droef/adj
-2.6439264	drom/noun
-1.6964216	dromerig/adj
-1.9626614	dronken/adj
-3.6427054	droog_dok/noun
-1.2384713	drop/verb
-1.9375033	drugsverslaafd/adj
-2.983189	druilerige/adj
-1.3168505	druk_af/verb
-4.3863573	druk_bevolkt/adj
-3.513227	druk_bezet/adj
-3.96107	druk_plat/verb
-2.392797	drukte/noun
-4.6723723	drukte_maker/noun
-2.5942225	drum/verb
-0.6180707	dubbel/noun
-1.9929768	dubbel/verb
-1.2676061	dubbelspel/noun
-0.64068806	dubieus/adj
-2.7839007	ducht/verb
-3.679417	duelleer/verb
-1.5496956	duif/noun
-1.300081	duik/noun
-1.1401248	duik/verb
-1.1948394	duik_in/verb
-1.8457056	duik_onder/verb
-3.1897693	duik_op/adj
-0.15828232	duik_op/verb
-1.3228191	duim/noun
-1.1135092	duister/adj
-0.56678784	duivel/noun
-3.117987	duizend_poot/noun
-4.579549	duizendkoppige/adj
-5.0795045	duizendsten/noun
-5.0392833	dummies/noun
-0.60411483	dump/verb
-2.2216892	dun_uit/verb
-2.555419	dunnetjes/adv
-0.037996035	dus/adv
-0.023829589	duur_voort/adj
-0.6583551	duw/verb
-0.45460048	dvd/noun
-4.470915	dvv/noun
-1.7080408	dwaal/verb
-3.3313935	dwaalspoor/noun
-1.149565	dwang/noun
-0.7755748	dwars/adv
-5.127694	dweperige/adj
-4.4215026	dwing_elan_dij/noun
-1.1047606	echt/adv
-0.1748844	echt_genoot/noun
-6.1113286	eclips_toerist/noun
-6.1001554	eco_toerist/noun
-0.08970063	economie/noun
-0.28496403	een/adj
-1.5917919	een/adv
-0.14802772	een/det
-2.545363	eendrachtig/adj
-0.09226055	eenheid/noun
-6.4294314	eenheid_beurs/noun
-1.9868709	eenheid_munt/noun
-2.272118	eenling/noun
-1.103957	eenmaal/noun
-0.08199477	eenmalig/adj
-0.6289785	eentje/noun
-0.282821	eenvoudig/adj
-1.5977256	eenvoudigweg/adv
-1.7456212	eerherstel/noun
-1.808517	eerste/det
-2.9011989	eerstejaars/adj
-6.592632	eerstejaars_kadet/noun
-5.5294895	eerstejaars_scholier/noun
-6.4255776	eerstejaarsseniore/noun
-3.3795912	eerzucht/noun
-3.8439052	eerzuchtig/adj
-2.396319	eethuis/noun
-0.8754546	eeuwenoud/adj
-0.28889793	effect_beurs/noun
-2.5605254	effen/verb
-1.057555	ego/noun
-2.5097926	egocentrisch/adj
-1.742023	eicel/noun
-0.90296364	eigenaardig/adj
-4.035757	eigennaam/noun
-0.3732171	eigentijds/adj
-6.282477	eik_schors/noun
-2.7658696	eikel/noun
-0.5150417	eiland/noun
-1.298254	eiland_DIM/noun
-2.7385268	eilandbewoner/noun
-4.017594	eind_halte/noun
-6.240056	eind_oplossing/noun
-2.3661299	eind_spurt/noun
-3.1723747	eind_tijd/noun
-0.29850465	eindelijk/adj
-1.5945293	eindexamen/noun
-1.3703369	eindje/noun
-1.4956521	eindpunt/noun
-1.592935	eindresultaat/noun
-2.2597775	eindstreep/noun
-2.0430224	eindstrijd/noun
-0.85633814	eindzege/noun
-2.4808643	eksemplarisch/adj
-0.604149	elegant/adj
-2.0879853	elegantie/noun
-2.5685797	elektricien/noun
-4.1272326	elektronica_winkel/noun
-0.31782702	element/noun
-5.7898154	elf_koningin/noun
-0.58667433	elk/adv
-0.5650653	elk/det
-0.108815804	elkaar/det
-0.41796544	ellende/noun
-0.6219499	emotie/noun
-3.0211804	emplooi/noun
-2.1691198	en/adj
-0.24777527	en/adv
-0.13264811	ene/adj
-4.28687	energie_rijk/adj
-2.1240106	enerverend/adj
-1.116739	enerzijds/adv
-0.664446	eng/adj
-5.1706195	engerds/noun
-0.30650783	enig/adj
-0.03825903	enig/det
-0.05619718	enige/noun
-0.86413014	enigszins/adv
-0.17368868	enkel/noun
-1.0415945	enkeling/noun
-0.39331204	enorm/adj
-0.16815703	enquête/noun
-1.3470682	entertainment/noun
-1.1458161	enthoesiast/adj
-0.6576895	entree/noun
-4.391878	epigonen/noun
-1.2111856	episode/noun
-1.9332317	equipe/noun
-3.5123913	ere_haag/noun
-2.5944312	ere_podium/noun
-1.9046675	erf/noun
-3.5996306	erf_vijand/noun
-0.9112189	erfelijk/adj
-0.27089116	erfenis/noun
-1.1308502	erger/verb
-0.9240998	ergernis/noun
-0.3177123	erken/verb
-0.44848034	erkenning/noun
-1.5753219	erotiek/noun
-0.51773	ervaren/adj
-2.1957166	es/noun
-1.4954019	escalatie/noun
-0.6732982	essentieel/adj
-1.4554173	establishment/noun
-4.277528	estafette/noun
-3.086665	estafetteploeg/noun
-1.4514735	et/noun
-1.1288192	etage/noun
-0.493853	etalage/noun
-2.2797806	etaleer/verb
-0.45627525	etappe/noun
-2.4997277	eter/noun
-0.7354782	euforie/noun
-1.3498272	euroland/noun
-5.663694	euthanasie_commissie/noun
-2.1631145	euthanasie_wet/noun
-0.52769005	even/adj
-2.4185803	evenaar/verb
-1.1857276	evenement/noun
-0.4853736	evenmin/adv
-0.2318869	evenveel/det
-1.0953369	evenwicht/noun
-2.733722	evidentie/noun
-5.28062	ex_Europees/adj
-4.731728	ex_dwang_arbeider/noun
-6.1661763	ex_lerares/noun
-6.441082	ex_postbode/noun
-1.2856476	ex_president/noun
-1.295497	excentriek/adj
-1.7172611	excursie/noun
-5.045069	executives/noun
-1.013049	exemplaar/noun
-1.355932	exotisch/adj
-0.28794208	experimenteer/verb
-0.40601176	explosief/adj
-2.6135452	export_product/noun
-0.97218156	exporteer/verb
-2.2205408	expres/adj
-0.30101663	extra/adj
-1.1699471	extra_DIM/noun
-0.5408422	extreem-rechts/adj
-1.2772563	ezel/noun
-1.6438397	f/noun
-1.2780833	faal/adj
-3.2741575	fabuleuze/adj
-1.607703	faciliteit/noun
-0.78591335	familie_lid/noun
-2.8352213	fan/noun
-2.1413019	fan_club/noun
-2.5587935	fanaticus/noun
-1.8245025	fanatiek/adj
-0.07888257	fantasie/noun
-0.24362528	fantastisch/adj
-0.56726	fascinerend/adj
-1.7432328	fascisme/noun
-1.6888734	fascistisch/adj
-1.0720258	fataal/adj
-0.571057	fatsoenlijk/adj
-1.2542762	favoriet/adj
-1.170461	favoriet/noun
-1.7880149	fc/noun
-0.5178398	feest_DIM/noun
-0.29457703	feest_dag/noun
-2.89459	feest_stemming/noun
-1.0352073	feest_zaal/noun
-3.1590846	feeërieke/adj
-1.6011949	feliciteer/verb
-3.4795206	felst/adj
-2.3951566	feministe/noun
-0.21864131	fenomeen/noun
-1.9983158	fenomenaal/adj
-2.3701205	festijn/noun
-2.9343288	festival_directeur/noun
-5.3688564	festival_krant/noun
-2.604911	festivalgangers/noun
-5.407008	fetisjen/noun
-1.6529393	fiets/adj
-5.877012	fiets_binnen/verb
-0.9835097	fiets_tocht/noun
-0.29623988	fietser/noun
-2.45357	figurant/noun
-5.468588	figurante/noun
-1.1983846	figuurlijk/adj
-1.0912901	fiks/adj
-0.70282257	film/verb
-3.8343494	film_vertoning/noun
-1.1282417	filmfestival/noun
-0.4851535	filmmaker/noun
-1.9924742	filmregisseur/noun
-1.5131962	finaal/adj
-5.837791	finaal_weekeinde/noun
-1.3428537	finale/noun
-2.2957175	finale_plaats/noun
-1.7577096	finalist/noun
-5.658323	financieel_technisch/adj
-1.2892591	finish/noun
-1.5230799	finish/verb
-3.4526024	firmament/noun
-3.670693	fish/noun
-0.40132958	fit/adj
-3.9719236	fitnesscentra/noun
-2.3901806	flaneer/verb
-2.5077639	flard/noun
-1.2564933	flat_gebouw/noun
-0.3007597	flauw/adj
-1.6760409	fleur_op/verb
-0.326985	flexibel/adj
-3.2592916	flikker/noun
-0.7150064	flink/adj
-4.135377	flipperkast/noun
-1.3825248	flirt/verb
-1.9909906	flits/adj
-1.566899	flits/noun
-1.1302842	flits/verb
-3.792859	flits_licht/noun
-3.8541405	flonker/adj
-1.718094	floreer/verb
-2.1463509	fluit/adj
-0.25965905	folder/noun
-1.6427121	folklore/noun
-1.8488466	foltering/noun
-2.8270018	fond/noun
-2.5452042	forens/noun
-2.3568304	forfait/noun
-1.0141807	formaat/noun
-1.5002769	formaliteit/noun
-0.0400202	formatie/noun
-1.4841826	formidabel/adj
-4.840275	formuliertje/noun
-5.38775	fortuin_zoeker/noun
-3.5353742	fotograaf/noun
-4.1590185	fotografeer/adj
-0.881964	fotografeer/verb
-2.1490986	fototoestel/noun
-1.0257457	fout/part
-2.5836608	fout_DIM/noun
-2.0625527	foutloos/adj
-0.7327473	fraai/adj
-5.965236	franciscaanse/adj
-1.4986585	frekwent/adj
-4.4334974	frekwent_eer/verb
-1.3212186	frisdrank/noun
-6.543842	front_troep/noun
-0.20737611	fuif/noun
-2.8821688	fuik/noun
-0.5139684	functionaris/noun
-1.01088	functioneel/adj
-1.7358897	functioneer/adj
-2.1803846	funest/adj
-1.4057032	furieus/adj
-0.4412734	ga/adj
-0.011968783	ga/verb
-1.0287037	ga_fout/verb
-1.8188319	ga_langs/verb
-0.62150913	ga_mis/verb
-0.32629633	ga_op/verb
-1.5111146	ga_rond/verb
-1.2232208	ga_tegemoet/verb
-0.030675786	ga_tegen/verb
-1.9998333	ga_tekeer/verb
-0.90023977	ga_toe/verb
-1.896728	ga_voor/verb
-0.3501433	ga_voorbij/verb
-1.9609083	ga_voort/verb
-0.6526161	ga_weg/verb
-1.9165162	gaaf/adj
-0.25791612	galerie/noun
-1.4188218	galerij/noun
-2.0590553	galm/verb
-4.2932334	galoppeer/adj
-4.6336045	galoppeer/verb
-2.0168905	gangmaker/noun
-2.8649688	gangpad/noun
-1.2469538	gangster/noun
-1.4305247	gans/noun
-2.1428404	gareel/noun
-3.1446664	gas_bedrijf/noun
-1.9053372	gaspedaal/noun
-3.9225667	gast_muzikant/noun
-0.48005646	gastheer/noun
-1.3177459	gave/noun
-4.9960027	gazelle/noun
-5.8124733	gazellen/noun
-3.5161579	geasfalteerde/adj
-2.166697	gebak/noun
-1.8266191	gebit/noun
-2.8732011	geblinddoekt/adj
-1.5492947	geboorte_plaats/noun
-1.8421813	geboortedorp/noun
-0.08105874	geboren/adj
-1.2985165	gebrek/prep
-0.1693037	gebroken/adj
-1.0471171	gebruikelijk/adj
-4.2105637	gecatalogeerd/verb
-1.4334459	gecharmeerd/adj
-1.4454942	geconcentreerd/adj
-3.2085497	gecontesteerde/adj
-0.5802957	gedaan/adj
-1.2493845	gedaante/noun
-0.6179073	gedachte/noun
-0.6860446	gedeeld/adj
-0.28474867	gedeeltelijk/adj
-3.044714	gederfd/adj
-0.3267345	gedetineerde/noun
-1.7870471	gedisciplineerd/adj
-0.6739213	gedoe/noun
-3.3080535	gedonder/verb
-0.33076286	gedraag/verb
-0.9795535	geduldig/adj
-0.10237054	geef_mee/verb
-0.5444326	geef_over/verb
-1.0634913	geef_weer/verb
-3.9686222	geeneens/adv
-0.35609326	geest/noun
-1.7776428	geest/prep
-4.585028	geestesoog/noun
-1.9872799	geestverwant/noun
-1.3577385	geforceerd/adj
-2.1620855	gefotografeerd/adj
-1.2286544	gegadigde/noun
-1.436808	gegarandeerd/adj
-0.98411506	gegeven/adj
-5.17722	geglaceerd/adj
-2.4253325	gegoten/adj
-1.8514221	gehakt/adj
-2.4171963	geheid/adj
-0.1363261	geheim/adj
-4.5171757	geheim_agent/noun
-0.6520181	geheugen/noun
-1.8677008	geholpen/adj
-2.0931253	gehoorzaam/verb
-2.9112806	geinig/adj
-3.0632012	gejaagd/adj
-1.8372407	gejuich/noun
-0.34545973	gek/adj
-1.2099837	gek/noun
-2.1825922	gekleed/adj
-0.5843884	gekleurd/adj
-4.5680785	geklik/verb
-1.5950204	gekomen/adj
-0.55031216	gekwetst/adj
-2.63607	gelag/noun
-3.088167	gelakt/adj
-0.6808502	gelast_af/verb
-0.7890863	geldschieter/noun
-1.5419312	geleerd/adj
-1.509225	geleerde/noun
-1.3299063	geleid/verb
-1.7385795	gelijkga_op/adj
-2.2258341	gelikt/adj
-0.43170118	geloof/verb
-0.43857506	geloofwaardig/adj
-1.0248253	gelopen/adj
-1.7971494	gelovig/adj
-4.090451	geluid_dicht/adj
-0.9703059	geluid_overlast/noun
-5.490994	geluimde/noun
-2.9670794	geluk_zoeker/noun
-0.27707806	gelukkig/adj
-1.2530308	gemak/noun
-6.2643094	gemaltraiteerd/adj
-1.1462864	gemanipuleerd/adj
-0.20401695	gematigd/adj
-4.0607405	gemechaniseerd/adj
-0.9957093	gemeen/adj
-4.3023953	gemeente_financiën/noun
-5.0127163	gemeente_raadszaal/noun
-0.46473598	gemengd/adj
-3.862405	gemerkt/adj
-1.303837	gemoed/noun
-2.1467237	gemoedelijk/adj
-0.33739665	gemotiveerd/adj
-0.67971253	gen/noun
-1.9367254	genereus/adj
-0.4278731	genetisch/adj
-2.353269	geneugte/noun
-0.9007839	geniaal/adj
-2.9391441	geniep/noun
-0.5046962	geniet/verb
-1.1304771	genodigd/adj
-0.38967773	genoeg/adv
-0.0054638064	genoeg/det
-0.52620214	genoegen/noun
-2.7124748	genoegzaam/adj
-0.2811858	genomen/adj
-2.1787322	gentleman/noun
-1.6964725	geopend/adj
-0.10780924	gepensioneerd/adj
-1.2097645	geplaagd/adj
-0.3018711	geplaatst/adj
-0.67624193	gepland/adj
-3.2273757	geplunderd/adj
-0.56656355	geraak/verb
-1.811524	geraakt/adj
-1.703206	gerecht_gebouw/noun
-0.12321944	geregeld/adj
-1.2754816	gerenommeerd/adj
-3.4333131	gerimpeld/adj
-4.5656805	geroffel/verb
-0.48535588	gerucht/noun
-0.2397649	geruim/adj
-1.6587467	geruisloos/adj
-0.19761309	gescheiden/adj
-0.295171	geschenk/noun
-3.376487	geschiedenis_boek_DIM/noun
-2.9398508	geschift/adj
-3.959599	geschminkt/adj
-2.4073946	geschonden/adj
-0.9487173	geschreven/adj
-3.8856428	gesel/noun
-0.6965858	geslaagd/adj
-2.626422	geslagen/adj
-5.9109135	gespijsde/noun
-3.3719394	gesprongen/adj
-0.6422971	gesteld/adj
-2.8353505	gesternte/noun
-0.6522333	gesteund/adj
-2.2452025	gestoken/adj
-1.9502972	gestrand/adj
-0.91491336	gesubsidieerd/adj
-2.1091158	getale/adv
-3.4730742	getoeter/verb
-1.9633456	getouw/noun
-1.8988266	getraumatiseerd/adj
-4.890366	getrommel/verb
-1.4222254	getrouw/adj
-0.9144314	geval/prep
-2.5083375	geval_wel/verb
-1.0769877	gevallen/adj
-1.2651309	gevat/adj
-5.0192924	gevecht_uitrusting/noun
-0.61987525	gevel/noun
-1.9084824	geverfd/adj
-0.44351786	gevestigd/adj
-1.3685483	gevierd/adj
-3.197361	gevlochten/adj
-0.007856133	gevolg/prep
-1.2548206	gevolgd/adj
-1.7123468	gevolge/prep
-1.5507622	gevorderd/adj
-0.37093076	gevraagd/adj
-0.8438036	gevreesd/adj
-0.15807801	gevuld/adj
-1.9004502	gewaad/noun
-1.1255772	gewapend/adj
-3.438343	gewapenderhand/adv
-1.0813498	gewas/noun
-0.5808523	geweer/noun
-0.23908426	gewend/adj
-2.715012	gewenning/noun
-0.43197125	geweten/noun
-2.5297623	gewetenloos/adj
-3.7458742	gewettigd/adj
-2.9164462	gewichtheffen/noun
-2.8390007	gewillig/adj
-2.1324348	gewin/noun
-3.3750296	gewoel/verb
-0.5027524	gewonnen/adj
-0.50039685	gewoonlijk/adj
-0.5078477	gewoonte/noun
-0.16327898	geworden/adj
-2.7546468	geworteld/adj
-1.8092774	gewricht/noun
-5.0895653	gezag_crisis/noun
-0.12472373	gezamenlijk/adj
-1.9649888	gezegde/noun
-0.021662928	gezellig/adj
-1.8567524	gezeten/adj
-0.63053757	gezicht/noun
-3.064535	gezicht_bepalend/adj
-3.5616202	gezoem/verb
-2.9246511	gezwind/noun
-0.5372859	geïnspireerd/adj
-0.60506123	geïnteresseerd/adj
-3.0586798	giechel/adj
-2.2971416	gier/adj
-2.6098962	gier/noun
-2.2457614	gier/verb
-0.78438014	gigantisch/adj
-1.090187	gij/pron
-4.217409	gil/adj
-1.6729827	ginder/adv
-1.4910485	gips/noun
-0.33079466	gisteravond/adv
-1.834487	gisterenmiddag/adv
-1.5317068	gisterenochtend/adv
-0.78090584	gistermorgen/adv
-0.45904645	gitarist/noun
-0.4613263	glad/adj
-1.3070084	glans/adj
-1.9844359	glans/noun
-1.9722596	glim/verb
-2.6354907	glimlach/adj
-2.3231888	glimp/noun
-0.91511554	globalisering/noun
-0.76653785	glorie/noun
-2.272662	gluur/verb
-5.9749923	gnomen/noun
-0.40151197	god/noun
-1.2929971	godsnaam/adv
-4.7377553	goed_gekleed/adj
-2.1315682	goeddeels/adv
-2.974736	goeddunken/noun
-2.8498886	goedendag/noun
-1.2841617	goedgekeurd/adj
-3.6325266	goedgemutst/adj
-1.0619589	goedkeuring/noun
-4.041767	goedmenende/adj
-2.0217707	goesting/noun
-0.5771179	gok/verb
-3.799795	gok_automaat/noun
-1.6812143	golf/verb
-3.846819	golf_speler/noun
-2.5758393	golf_terrein/noun
-1.393206	gooi/noun
-0.058393832	gooi/verb
-0.71984845	gordijn/noun
-2.380342	goud/noun
-3.2885797	goud_zoeker/noun
-1.7053248	gouden/adj
-3.417423	gouverneur_schap/noun
-1.0834092	graadmeter/noun
-2.2973273	graaf_werk/noun
-0.97401947	gracht/noun
-3.785422	grammetje/noun
-2.1254184	grandeur/noun
-3.1053958	grappenmaker/noun
-0.38751408	gras/noun
-5.6690946	gras_pieper/noun
-1.4512075	grasmat/noun
-1.4612012	gravel/noun
-0.55185384	grens/noun
-3.565577	grens_bewaking/noun
-1.4494277	grens_gebied/noun
-1.7598191	grenzeloos/adj
-0.12807184	gretig/adj
-1.7632278	grif/adj
-2.273569	grif/verb
-2.1482708	grijns/adj
-1.6555126	grijns/noun
-0.058578756	grijp/verb
-0.30704013	grijp_aan/verb
-1.0986767	grijs/adj
-1.657014	grijs/noun
-0.9034401	grillig/adj
-0.9984613	grimmig/adj
-1.1561664	groei/adj
-0.015497756	groei_uit/verb
-0.27532357	groen/noun
-5.1403794	groep_dynamiek/noun
-1.5087179	groepeer/verb
-0.36325157	groepering/noun
-3.0853014	groepsverband/noun
-1.6177807	groet/noun
-0.569564	grond_gebied/noun
-1.5909456	groot_macht/noun
-1.3905001	grootmoeder/noun
-0.8253341	grootouder/noun
-0.84307	groots/adj
-2.2435277	groten/adv
-3.8909657	groupies/noun
-3.1400502	grut/noun
-2.1102457	gruw/verb
-0.1818964	gruwelijk/adj
-2.73085	guitig/adj
-3.636775	gulp/noun
-0.2996874	gun/verb
-4.604135	gunste/noun
-3.7141998	gve/noun
-3.2010257	gymzaal/noun
-1.9274361	gêne/noun
-1.4896936	haag/noun
-2.8516128	haak/verb
-0.36229357	haak_af/verb
-0.42335796	haal/verb
-0.3057369	haal_aan/verb
-0.7841004	haal_in/verb
-1.9080205	haal_leeg/verb
-1.5327159	haal_neer/verb
-1.3156542	haal_over/verb
-0.44462833	haar/det
-0.6228293	haar/pron
-1.5270493	haas/noun
-1.5072827	haastig/adj
-0.2738521	haat/noun
-1.8283622	hachelijk/adj
-4.0775046	hagel_steen/noun
-1.774093	hal/noun
-0.51201683	half/adj
-0.08626362	half/noun
-5.400088	halfbloed/adj
-1.9960897	halfrond/noun
-0.90027803	halte/noun
-4.676378	halve-finalewedstrijd/noun
-1.9862351	halverwege/adv
-4.1718597	hamer_slinger/verb
-6.007374	hamerslingeren/noun
-1.4727074	handbereik/noun
-4.459542	handel_overeenkomst/noun
-3.187201	handel_rechter/noun
-2.8634396	handel_systeem/noun
-1.2090129	handel_zaak/noun
-2.9376147	handigheid/noun
-2.5260947	handomdraai/noun
-1.2190088	handtekening/noun
-4.9971547	handtekening_jager/noun
-0.5009692	hang/verb
-0.8599233	hang_samen/verb
-0.93982375	hang_uit/verb
-1.6687765	haper/verb
-0.22545287	hard/adj
-3.79415	hardloper/noun
-0.2552994	hardnekkig/adj
-0.45302162	harmonie/noun
-0.5541319	hartje/noun
-1.2947236	hartstochtelijk/adj
-1.8562739	hartverscheurend/adj
-3.1129315	haveloos/adj
-1.8009443	haven_gebied/noun
-1.3964479	haverklap/noun
-3.595764	heb/adj
-1.4055508	heb_aan/verb
-0.78055227	heb_door/verb
-1.4001195	heel/adj
-0.9892056	heel/verb
-1.1870512	heelal/noun
-5.8124733	heelder/adj
-1.1329607	heen/part
-0.43127108	heen/prep
-0.4103192	heer/noun
-4.4137564	heer_fiets/noun
-1.6145197	heerser/noun
-0.42366794	heet/adj
-0.35057956	heet/verb
-4.0893345	heet_lucht_ballon/noun
-0.5301583	hef/verb
-0.789068	hef_op/verb
-0.023922095	heftig/adj
-1.9341363	hegemonie/noun
-2.9319882	heilloos/adj
-0.86744374	heimwee/noun
-1.4683297	hek/noun
-0.4724343	hekel/verb
-5.4309025	hekkens/noun
-1.4224148	hel/noun
-1.0152805	helaas/adv
-1.9273505	helder_op/verb
-1.9723492	heldhaftig/adj
-1.4130468	hele/adv
-0.6170888	heleboel/noun
-0.90370154	helm/noun
-1.9070554	hemelsnaam/adv
-2.0452833	hengst/noun
-2.1368585	henzelf/pron
-0.6410546	her/adv
-4.052821	herbouwd/adj
-2.5959334	heren/adj
-1.864882	herenhuis/noun
-1.0271975	herfst/noun
-4.0350523	herfst_dag/noun
-4.153055	herfst_kleur/noun
-0.03845888	herkenbaar/adj
-0.9417708	herleid/verb
-1.6037775	heroïsch/adj
-1.710829	herschik/verb
-1.647198	herschrijf/verb
-1.6677195	hersens/noun
-0.12777983	herstel/verb
-2.4246285	hert/noun
-1.8072256	hervorm/verb
-0.06911625	hervorming/noun
-3.927932	hervorming_programma/noun
-0.043130662	het/adv
-2.9777904	heuglijke/adj
-3.227847	heul/verb
-3.4323485	heup_blessure/noun
-0.8827468	heus/adj
-1.7589326	hevel_over/verb
-1.8880278	hiel/noun
-0.022285506	hier/adv
-2.1750517	high_tech/adj
-2.765375	hijg/adj
-2.7690427	hijg/verb
-0.935417	hijs/verb
-0.61979425	hilarisch/adj
-0.1302195	hinder/noun
-2.883017	hindernis/noun
-6.5503564	hindernis_loop/noun
-6.282477	hindernis_race/noun
-3.4510298	hink_stap/noun
-4.867838	hink_stap_spring/verb
-6.046088	hink_stap_spring_ster/noun
-4.8974333	hinkstapspringen/noun
-0.92830706	hip/adj
-0.9204026	hip_hop/noun
-2.6281457	hippie/noun
-6.3694882	hippie_jurk/noun
-0.059008174	historicus/noun
-1.6415213	hit_parade/noun
-3.2930143	hitsig/adj
-1.5593262	hitte/noun
-1.2561214	hiërarchie/noun
-3.2100923	hobbel/noun
-1.4256146	hockey/noun
-0.48527998	hoe/adv
-1.5974178	hoed_DIM/noun
-0.5163771	hoede/noun
-0.0054644328	hoef/verb
-4.3327646	hoest/adj
-0.62434286	hoeverre/adv
-1.9942575	hoezo/adv
-1.114705	hol/adj
-1.4350144	hol/verb
-1.7122433	hol_uit/verb
-0.83003026	homo/noun
-3.247524	homofiel/adj
-1.4570205	homohuwelijk/noun
-0.4697055	hond/noun
-5.855033	hond_eng_leider/noun
-3.4400902	hond_trouw/adj
-1.0435557	honderdduizenden/noun
-0.20537455	honderden/noun
-3.849668	honderdsten/noun
-3.7102463	honger/adj
-0.05655966	honger/noun
-3.1024528	hongerig/adj
-1.9872799	hoofd_coach/noun
-1.9401444	hoofd_doel/noun
-1.4461156	hoofd_fonds/noun
-5.7324305	hoofd_huis/noun
-1.7567468	hoofd_lijn/noun
-5.239847	hoofd_organisator/noun
-1.2744672	hoofd_personage/noun
-0.76446193	hoofd_prijs/noun
-3.371486	hoofd_toernooi/noun
-0.6676228	hoofddoek/noun
-2.0991044	hoofdfiguur/noun
-0.25919074	hoofdkwartier/noun
-0.45795563	hoofdstad/noun
-1.3420386	hoog/adj
-4.021756	hoog_gehakt/adj
-3.0168447	hoog_geschoold/adj
-3.6422892	hoog_seizoen/noun
-1.9745903	hooggeplaatst/adj
-5.9222527	hoogspringen/verb
-0.8605417	hoogstens/adv
-1.8108572	hoogstwaarschijnlijk/adj
-1.8254201	hoogtij_dag/noun
-3.090194	hooligan/noun
-2.866829	hooliganisme/noun
-3.0706928	hoop/adj
-1.4951657	hoopvol/adj
-0.27228057	hoor_thuis/verb
-0.6491288	hoorzitting/noun
-5.1993074	horde/noun
-4.997846	horde_loop/noun
-6.526674	horde_loop/verb
-6.570159	horde_loop_ster/noun
-4.350714	horde_loper/noun
-5.6727114	horde_nummer/noun
-6.282477	horde_race/noun
-4.0664186	horden/noun
-0.20197178	horeca/noun
-4.7903223	horrorverhaal/noun
-3.5290284	hort/adj
-4.0093207	horzel/noun
-3.7992382	hos/adj
-3.2825866	hos/verb
-2.1641176	hospitaal/noun
-3.9912899	host_es/noun
-3.626656	hot/adv
-1.1642436	hotel/noun
-2.751812	hotelgast/noun
-4.516035	hotemetoten/noun
-0.028591145	houd/verb
-1.6929958	houd_na/verb
-1.1171006	houd_onder/verb
-0.6474754	houd_op/verb
-0.24215077	houd_over/verb
-0.3598624	houd_stand/verb
-0.9552441	houd_tegen/verb
-1.4609327	houd_uit/verb
-1.5027374	houder/noun
-4.284607	hout_worm/noun
-4.2386627	houw_degen/noun
-4.452031	hoveniers/noun
-0.52821255	huil/verb
-0.8747821	huis/verb
-2.6149914	huis_bezitter/noun
-2.0875332	huis_genoot/noun
-2.0988505	huis_vader/noun
-0.6395302	huiskamer/noun
-2.1676219	huisvrouw/noun
-3.341993	huiswaarts/adv
-0.2808805	huiszoeking/noun
-2.6469982	huiver/verb
-2.1101944	huiveringwekkend/adj
-1.4748013	huldiging/noun
-0.91163737	hulp_organisatie/noun
-2.074506	hulpgoederen/noun
-1.1780207	hulpverlener/noun
-0.05897844	humor/noun
-0.12233706	hun/det
-1.8804842	hunker/verb
-0.8767112	huur/verb
-4.632537	huur_som/noun
-1.9253408	huurling/noun
-0.5156588	huwelijk/noun
-3.7012506	huwelijk_voltrekking/noun
-3.447109	hyena/noun
-1.3851347	hype/noun
-1.9334686	hypocriet/adj
-2.866391	hypotetisch/adj
-0.48106372	hypotheek/noun
-3.0619757	hysterisch/adj
-0.50550383	ideaal/adj
-0.025007289	ideaal/noun
-0.3118445	identificeer/verb
-1.0761286	identiteit_kaart/noun
-1.4632174	idioot/adj
-2.3580973	idioot/noun
-0.71961814	idool/noun
-0.20948358	ieder/det
-0.20337166	iets/adv
-1.5562992	ietwat/adv
-3.6319382	ijs_hockeyer/noun
-4.103567	ijs_vlakte/noun
-2.447479	ijsbeer/noun
-3.2247093	ijsbeer/verb
-5.9224744	ijsventers/noun
-1.4374241	ijverig/adj
-0.9615667	ijzersterk/adj
-0.1198347	ik/pron
-2.1053753	illegaliteit/noun
-0.47677985	illustratie/noun
-2.1024644	illustrator/noun
-0.86785907	illustreer/verb
-2.6595592	image/noun
-0.49314895	imam/noun
-3.7594185	imbeciel/noun
-1.2483205	imiteer/verb
-0.19701365	immens/adj
-0.8842086	immer/adv
-0.13683051	immers/adv
-0.80553925	immigrant/noun
-5.855033	impala's/noun
-1.4074323	imponeer/verb
-0.91038257	import/noun
-1.8189471	impressie/noun
-0.5859574	in/adv
-2.1945417	in_kom_hal/noun
-2.7862725	in_koper/noun
-4.182008	in_snoer/verb
-0.2364847	inbreng/noun
-0.55442464	inbreuk/noun
-1.5639185	incidenteel/adj
-2.7637928	inclusief/adj
-2.3980308	indachtig/prep
-1.0520949	index/noun
-2.0292943	indiaan/noun
-2.1879656	individualisme/noun
-0.0024161167	individueel/adj
-3.5652468	indoor/adv
-5.5326343	indoor_titel/noun
-0.6609203	indrukwekkend/adj
-1.721398	industrieel/noun
-1.1905049	ineens/adv
-4.8246374	infanterie_divisie/noun
-0.93208903	infectie/noun
-1.058488	ingang/noun
-4.430877	ingekapseld/adj
-0.14794429	ingenieur/noun
-2.2879527	ingevuld/adj
-0.3527282	ingewikkeld/adj
-2.0570798	inheems/adj
-0.5429734	inhoudelijk/adj
-3.9682927	inkomen_ongelijkheid/noun
-1.5032973	inkt/noun
-4.4065804	inline/noun
-0.02299568	inmiddels/adv
-2.837688	inperking/noun
-2.0487409	insect/noun
-1.2399554	insider/noun
-0.7616295	inspraak/noun
-1.9560658	instemming/noun
-2.6116765	institutie/noun
-1.4099549	instroom/noun
-0.8370766	intact/adj
-0.19773453	integendeel/adv
-0.21024683	integreer/verb
-0.22035974	intellectueel/adj
-0.36912706	intellectueel/noun
-1.6592048	intelligentie/noun
-0.0038679263	intens/adj
-1.5324851	interactie/noun
-1.9191235	interclub/noun
-0.14777818	interland/noun
-2.221919	intern_etter/noun
-2.8833928	internet_adres/noun
-0.75540507	internet_bedrijf/noun
-4.8339906	internet_gemeenschap/noun
-2.3539245	internet_verbinding/noun
-1.8403356	internetaanbieder/noun
-0.4283988	interview/verb
-1.4025832	intimideer/verb
-4.348061	intimistisch/adj
-2.5365872	intocht/noun
-1.1602604	intrek/noun
-0.11124863	intussen/adv
-0.8818963	inval/noun
-4.2800965	inval_ster/noun
-2.1664932	invasie/noun
-2.5299187	inventiviteit/noun
-0.9226987	investeerder/noun
-5.1489267	investering_niveau/noun
-0.8078141	invloed/prep
-0.61643094	invloedrijk/adj
-3.9197378	invoerders/noun
-0.5388329	invulling/noun
-0.26882288	inzake/prep
-0.07552806	inzicht/noun
-2.1347497	irrationeel/adj
-1.9853276	islamiet/noun
-0.7599765	islamitisch/adj
-0.010033951	ja/noun
-1.2480036	jaag/verb
-2.312531	jaag_in/verb
-2.1619773	jaag_na/verb
-2.399265	jaag_op/verb
-1.7167407	jaag_weg/verb
-2.380033	jaar/adv
-4.858566	jaar_prestatie/noun
-5.90176	jaar_tabel/noun
-4.445107	jaar_tijd/noun
-1.8707094	jaarwisseling/noun
-0.889107	jacht/noun
-1.7609057	jachthaven/noun
-1.8954904	jager/noun
-1.264546	jammer/verb
-0.07155057	jarenlang/adj
-1.0689552	jarig/adj
-4.649974	jarretels/noun
-0.15952367	jas/noun
-0.69641495	jas_DIM/noun
-5.1172447	jas_pand/noun
-3.2984798	jazz_festival/noun
-2.5988612	jazz_muzikant/noun
-0.033299036	je/pron
-1.4286253	jeep/noun
-1.6122683	jenever/noun
-3.5901046	jerrycan/noun
-0.33713484	jeugd_huis/noun
-4.3643293	jeugd_meeting/noun
-2.0616465	jeugd_trainer/noun
-3.9438813	jeugd_trauma/noun
-3.2584813	jeugd_werkloosheid/noun
-0.21668595	jeugdig/adj
-5.0108457	jeugdspelertjes/noun
-0.34558734	jezelf/pron
-3.672162	joel/adj
-3.5856	joel/verb
-4.4377036	joel_uit/verb
-3.6421108	joggers/noun
-2.6964612	jolig/adj
-3.0409267	jolijt/noun
-0.49117717	jong/adj
-0.93605214	jong/noun
-2.1159668	jongeling/noun
-0.75979006	jongen_DIM/noun
-5.030667	jongentje/noun
-0.5326567	jongere/noun
-1.4519789	jongmens/noun
-3.7953506	journaille/noun
-2.9626136	journalist/noun
-1.0996078	journalistiek/adj
-0.7934152	jouw/det
-3.0402753	jubel_jaar/noun
-1.1671814	judoka/noun
-1.7016677	juich/adj
-1.1842785	juich/verb
-1.1923016	juich_toe/verb
-0.42360452	juist/adv
-0.7311817	jullie/pron
-5.389114	jumbojets/noun
-6.850461	jun/sen_vet/noun
-1.640498	junior/noun
-3.672162	juniore/noun
-1.7923248	junk/noun
-1.3439265	jurist/noun
-2.186689	jurk_DIM/noun
-2.845162	jury_rapport/noun
-3.195838	k3/noun
-5.074512	kaai_man/noun
-1.3346868	kaap_weg/verb
-2.3887198	kaars_DIM/noun
-0.13622616	kabel/noun
-2.6942468	kabinet_lid/noun
-6.975624	kad/1ste/adj
-5.515902	kad/noun
-4.195061	kadet/noun
-2.590519	kaf/noun
-2.2885053	kakkerlak/noun
-1.937633	kalkoen/noun
-2.800724	kam/verb
-1.8098481	kameel/noun
-0.7507858	kamp/noun
-5.1646066	kamp_nummer/noun
-1.4930426	kampeer/verb
-1.3346654	kampioen/noun
-1.2174002	kampioenschap/noun
-0.35311827	kan_op/verb
-2.129916	kanjer/noun
-0.804738	kansloos/adj
-1.8765709	kant-en-klaar/adj
-0.110382624	kant/noun
-1.638631	kantel/verb
-0.84265995	kap/verb
-3.418183	kapelaan/noun
-1.7781221	kapitalistisch/adj
-0.6337785	kapitein/noun
-1.1536438	kapot/adj
-1.4191307	kapot/part
-0.7950141	kapper/noun
-0.7978598	kar/noun
-1.4761634	kar_DIM/noun
-2.9733949	karavaan/noun
-3.1778903	kartel_autoriteit/noun
-1.1395277	kassei/noun
-6.279149	kaste_systeem/noun
-5.0499167	kat-en-muis_spel/noun
-0.2451869	kat/noun
-0.7963669	kathedraal/noun
-0.6128029	katholiek/noun
-1.0240358	keel/noun
-0.29951227	keer/verb
-1.001204	keizer/noun
-2.5744486	keizerin/noun
-1.4366271	kelder/noun
-3.2234569	kelder_verdieping/noun
-0.37445736	kenmerk/noun
-1.0529649	kenmerk/verb
-0.19666982	kennelijk/adj
-0.548059	kennis/noun
-0.0806884	kerk/noun
-2.3953273	kerk_toren/noun
-2.401807	kerkganger/noun
-0.23806418	kermis/noun
-6.592632	kermis_rit/noun
-1.4946657	kerst/noun
-4.0618253	kerst_lied_DIM/noun
-1.8219857	kerst_man/noun
-5.356896	kerst_man_DIM/noun
-1.3060881	kerst_markt/noun
-2.3972087	kerst_periode/noun
-1.1325629	kerstboom/noun
-0.4179749	kersvers/adj
-2.7025757	keten_vast/verb
-3.6527486	keuken_deur/noun
-1.2027924	keur/verb
-2.6190863	keur_af/adj
-0.39824498	keur_af/verb
-0.75740033	keurig/adj
-3.8854911	keuvel/adj
-2.1233335	kever/noun
-3.558116	kibbel/verb
-1.0208408	kick/noun
-5.22353	kiek/noun
-3.4071352	kielzog/noun
-0.113318674	kies/verb
-1.5620751	kies_kring/noun
-4.6050687	kies_raad/noun
-1.692708	kijk/adj
-0.2831966	kijk/verb
-3.4644768	kijk_dag/noun
-2.4907024	kijk_heen/verb
-0.0721446	kijk_op/verb
-1.6586485	kijk_terug/verb
-0.7555311	kijk_toe/verb
-0.6293029	kijker/noun
-3.3826132	kijklustigen/noun
-1.4262886	kikker/noun
-2.2909036	kilo_watt/noun
-4.3863573	kin_ethisch/adj
-0.18023221	kind/noun
-2.43859	kind_spel/noun
-1.8297589	kind_wagen/noun
-0.16906025	kip/noun
-1.1683829	kist/noun
-1.7065982	kitsch/noun
-1.252562	klaar/verb
-3.6025975	klak/verb
-1.2601546	klamp_aan/verb
-2.5561411	klant_vriendelijk/adj
-0.40165532	klap/noun
-4.248643	klap_in/verb
-4.367517	klap_loper/noun
-2.2507172	klapper/noun
-4.752804	klaroengeschal/noun
-0.6871021	klassiek/adj
-0.54191256	klassieker/noun
-1.8605888	klauter/verb
-4.5543675	klauter_op/verb
-3.5476766	klaver/noun
-0.659266	kledij/noun
-0.5602871	kleed/noun
-4.231349	kleermaker_zit/noun
-3.7672026	kleertjes/noun
-2.9077375	kleineer/verb
-1.0198386	kleinkind/noun
-1.5538803	klemtoon/noun
-3.4244752	klerk/noun
-3.9617245	kleur_blind/adj
-0.20298621	kleurrijk/adj
-0.891474	kleuter/noun
-3.3105252	kliek_DIM/noun
-1.1788776	klik/verb
-1.4749238	klink/adj
-3.8798957	klok/verb
-1.7734139	klomp/noun
-2.61346	klont_DIM/noun
-2.0392973	klooster/noun
-0.0743605	klop/verb
-1.7646455	klucht/noun
-2.227971	kluif/noun
-0.4606497	klus/noun
-1.5892043	km/uur/noun
-0.904794	knal/noun
-0.8286812	knal/verb
-3.1427886	knal_neer/verb
-0.6288165	knap/adj
-0.29032925	knap_op/verb
-3.5377734	knars/verb
-1.8086691	kneed/verb
-0.9952735	knie/noun
-0.8647186	knie_blessure/noun
-0.35089508	knik/verb
-6.0149975	knipper_licht/verb
-4.152263	knock_out/adj
-2.854962	knol/noun
-2.1268282	knoop/verb
-4.553776	knutselaar/noun
-6.184141	koe_vlees/noun
-3.4764936	koel_box/noun
-4.966963	koers/adj
-0.05017297	koffer/noun
-2.0744565	koffer_DIM/noun
-2.5474072	kogel/noun
-3.7925828	kogel_DIM/noun
-4.052104	kogel_stoot/noun
-3.9162912	kogel_stoot/verb
-5.1255956	kogelslingeren/noun
-0.3172451	kok/noun
-1.0693544	kolonist/noun
-0.04081966	kom/verb
-0.4408393	kom_aan/verb
-2.1202557	kom_af/verb
-1.361691	kom_binnen/verb
-0.8149232	kom_door/verb
-2.6614304	kom_heen/verb
-1.9380872	kom_op/adj
-0.8310558	kom_op/verb
-0.92862236	kom_tegemoet/verb
-1.0151894	kom_tegen/verb
-0.28352854	kom_terecht/verb
-0.23669286	kom_uit/verb
-1.2514944	kom_voorbij/verb
-2.0406706	kommer/noun
-1.520474	kompanen/noun
-0.47315615	kondig_aan/verb
-0.74707365	konijn/noun
-5.0795045	konijn_hol/noun
-0.59617746	koningin/noun
-1.3648833	kont/noun
-4.878015	kont_zak/noun
-0.80094945	kooi/noun
-0.99754876	kool/noun
-2.2422366	koop/adv
-3.0479903	koop_lust/noun
-5.362194	koop_ziek/adj
-5.0708666	kooplustigen/noun
-4.1291656	koor_werk/noun
-1.9118062	koord/noun
-3.726025	kop_schuw/adj
-0.2285228	kopie/noun
-1.1230385	kopman/noun
-0.24402541	koppel/noun
-3.5739822	kordon/noun
-1.1153508	kort/noun
-5.0392833	kortademige/adj
-0.63538826	korting/noun
-2.9828203	kortwiek/verb
-0.54573256	koste/prep
-1.2800754	kosten/prep
-1.1740496	kostuum/noun
-3.2746513	kostuum_drama/noun
-4.1718597	kostuum_ontwerper/noun
-1.6231343	kot/noun
-3.5785463	kots/verb
-3.5258482	kots_uit/verb
-0.20624748	koud/adj
-3.870141	kozak/noun
-1.6268355	kraai/verb
-3.8048186	kraal_DIM/noun
-2.4794507	kraam_DIM/noun
-3.4680667	krachteloos/adj
-0.7453789	kraker/noun
-1.7571077	kramp/noun
-5.2552414	krankjorum/noun
-1.7821673	krankzinnig/adj
-4.757871	krant_journalist/noun
-3.6658113	krediet_faciliteit/noun
-1.6610397	kreeft/noun
-2.7612274	krent/noun
-5.0066485	krijg_aan/verb
-1.6529719	krijg_heen/verb
-1.5012268	krijg_heer/noun
-3.239437	krijger/noun
-2.9056861	krijs/adj
-2.4869127	krijs/verb
-4.052104	krioel/adj
-2.3392782	krioel/verb
-3.2583191	kriskras/adv
-0.57911676	kroeg/noun
-2.2891197	kroeg_tocht/noun
-2.2776923	kroket/noun
-2.9285653	krokodil/noun
-3.5051079	krom/verb
-5.372875	kroning_feest/noun
-2.441091	kroonjuweel/noun
-2.7804291	kruik/noun
-0.2750201	kruip/verb
-4.869054	kuier/adj
-1.0577523	kuit/noun
-3.9565008	kuit_pier/noun
-4.939612	kunst_leven/noun
-4.4392853	kunst_minnaar/noun
-2.5533357	kunst_project/noun
-5.069049	kunst_schaatser/noun
-2.42491	kunst_schat/noun
-0.06608595	kunstenaar/noun
-0.34416118	kust/noun
-2.6935098	kut/noun
-2.43695	kuur_oord/noun
-2.842237	kwaadaardig/adj
-0.9169631	kwalificatie/noun
-4.09755	kwalificatie_groep/noun
-5.3104362	kwalificatie_tijd/noun
-2.2038949	kwalificatie_toernooi/noun
-1.6981014	kwartfinale/noun
-2.0584207	kwel/noun
-0.8899004	kwetsbaar/adj
-3.732511	kwijl/adj
-0.3090448	kwijt/adj
-2.067637	kwijt/verb
-0.72923315	laad/verb
-1.1021364	laad_op/verb
-1.1209182	laag/adj
-0.80140895	laat/adj
-0.1409892	laat/verb
-0.73158664	laat_achter/verb
-1.6181577	laat_binnen/verb
-1.6525816	laat_door/verb
-0.9330229	laat_los/verb
-2.241533	laat_op/verb
-0.82365054	laat_over/verb
-0.3075335	laat_toe/verb
-3.9345999	laatkomers/noun
-1.2927701	laatste/adj
-0.29629293	laboratorium/noun
-0.2521042	lach/adj
-4.083402	ladder_zat/adj
-1.4399973	laf/adj
-4.8564277	lal/adj
-0.22396137	lamp/noun
-0.70399314	lancering/noun
-0.039542858	land/noun
-0.8540015	land/verb
-1.3348553	land_genoot/noun
-3.5165772	landbouw_politiek/noun
-2.2713933	landbouw_product/noun
-0.35772213	landbouwer/noun
-4.358715	landerige/adj
-2.6278439	landerijen/noun
-1.8808519	lands/det
-0.18929848	landskampioen/noun
-4.2631392	lang_benig/adj
-0.41610327	langer/adv
-6.265948	langharigen/adj
-2.5289547	langs/adv
-0.792302	langs/prep
-4.2139277	langstlopende/adj
-1.9474108	lans/noun
-1.0971043	lap/verb
-4.7858343	laser_bundel/noun
-0.100028425	last/noun
-1.7235906	lastig/adj
-1.3322288	lastig/part
-5.363523	lastigste/adj
-2.4549232	latent/adj
-1.8576303	later/adv
-4.557332	laveer/adj
-2.177467	laveer/verb
-0.22192949	lawaai/noun
-2.2639341	lawaaierig/adj
-3.92068	leader/noun
-1.4727074	leef_mee/verb
-0.89316165	leef_samen/verb
-1.6109885	leeftijd_genoot/noun
-2.7277958	leeftijd_genoot_DIM/noun
-0.46648344	leeg/adj
-1.4553639	leegstand/noun
-1.5467757	leer_bij/verb
-0.6830061	leerjaar/noun
-1.2276334	leeuw/noun
-1.0887898	leg_af/verb
-1.8433219	leg_toe/verb
-0.47356644	leg_vast/verb
-0.90011716	leg_weg/verb
-1.7358779	legende/noun
-2.6540554	leger_DIM/noun
-2.7378528	legioen/noun
-5.3028984	legionairs/noun
-1.9298791	legitimeer/verb
-4.4298315	leguanen/noun
-0.28367102	leiding/noun
-1.8280133	leidster/noun
-3.3101838	lek_bek/noun
-4.3023953	lemmingen/noun
-1.2504716	lens/noun
-1.3261101	lente/noun
-3.3045692	lepel_op/verb
-0.5129067	leraar/noun
-1.0045323	lerares/noun
-2.2136211	les/verb
-0.43112248	letter/noun
-1.6421005	letteren/noun
-3.6917098	letterkundige/noun
-2.8791707	leukste/adj
-1.2328987	leun/verb
-1.6844488	leuze/noun
-6.3694882	leven_bloed/noun
-3.0210526	leven_gezel/noun
-1.8658476	leven_middel/noun
-0.77676266	levend/adj
-3.026177	levensvorm/noun
-2.0626261	levenswijze/noun
-0.7300278	lever_in/verb
-2.2651334	lever_over/verb
-0.029850736	lezer/noun
-2.1348548	liberaliseer/verb
-3.823173	lichaam_lengte/noun
-1.6239872	lichaamsdeel/noun
-0.69597757	lichamelijk/adj
-0.5118357	licht/verb
-3.1318798	licht_show/noun
-6.5181994	licht_zwaard/noun
-1.8403944	lichting/noun
-0.107228905	lied_DIM/noun
-2.2862353	liefdadigheid/noun
-0.16578059	liefde/noun
-6.35147	liefjes/adj
-0.17279978	liefst/adj
-5.648549	lieveling_nummer/noun
-6.526674	lievig/adj
-0.7476392	lift/noun
-0.029160868	lig/verb
-2.4626422	lig_achter/verb
-1.0733733	lig_vast/verb
-0.9936208	ligging/noun
-0.097563125	lijd/verb
-2.002206	lijdzaam/adj
-0.90204203	lijf/noun
-1.1045209	lijfwacht/noun
-0.42388076	lijk/verb
-5.1717167	lijk_pik_kers/noun
-4.1180053	lijkenhuis/noun
-0.1028537	lijst_DIM/noun
-2.9803634	lijstaanvoerder/noun
-2.459431	lik/noun
-2.1182823	limiet/noun
-3.297637	linea/adv
-4.533277	lineaal/noun
-4.486283	link_helft/noun
-1.8862187	linker_hand/noun
-2.8617492	linker_knie/noun
-3.3412008	linker_oog/noun
-0.3269591	links/noun
-1.8568721	list/noun
-0.76664513	live/adj
-2.7693408	loei/adj
-1.4576359	loer/verb
-5.7716513	logeerpartij/noun
-1.7588784	logistiek/noun
-4.260047	lok/adj
-2.0348034	lok/verb
-3.9377906	lok_in/verb
-5.166243	lokettisten/noun
-1.337305	lol/noun
-3.289415	lol_broek/noun
-1.0624635	lonk/verb
-2.787081	loods_binnen/verb
-0.9529193	loon/verb
-1.2974786	loop/adj
-0.4157492	loop/noun
-0.6805272	loop/prep
-1.3104507	loop/verb
-1.8595883	loop_aan/verb
-2.8868506	loop_achterna/verb
-1.908829	loop_binnen/verb
-3.534672	loop_brug/noun
-0.8279253	loop_in/verb
-2.3738596	loop_los/adj
-4.122608	loop_nummer/noun
-1.6387593	loop_over/verb
-0.7321888	loop_rond/verb
-4.254987	loop_schoen/noun
-2.3840458	loop_stuk/verb
-2.7594552	loop_toe/verb
-0.8723573	loop_uit/verb
-1.4878441	loop_vol/verb
-2.7003942	loop_voorbij/verb
-1.3395971	loop_vooruit/verb
-3.7377303	loopster/noun
-1.5487376	loos/verb
-1.9004502	loot/verb
-2.119786	loper/noun
-0.02730284	los/verb
-0.5639153	los_af/verb
-1.2112484	los_in/verb
-2.5184126	losgeslagen/adj
-0.06862242	louter/adj
-0.51593876	louter/adv
-2.4757404	low/noun
-3.6778138	lucht_doop/noun
-0.44884375	luchthaven/noun
-1.2659037	luchtruim/noun
-3.1284597	luchtvochtigheid/noun
-3.5069757	lucifer_doos_DIM/noun
-0.47083703	lucratief/adj
-0.95815074	luid_in/verb
-2.2956557	luidkeels/adv
-2.046424	luidruchtig/adj
-0.10926909	luister/verb
-3.5592098	luister_cijfer/noun
-2.5435383	luister_mee/verb
-5.065588	luizige/adj
-0.5906557	luk/verb
-0.7029106	lunch/noun
-1.8563138	lunch/verb
-3.4809363	lust_object/noun
-2.280979	luwte/noun
-0.57625294	lux/adj
-4.2946024	lynxen/noun
-1.1745939	lyrisch/adj
-4.8961825	m./noun
-2.3832014	m/noun
-4.6258373	m/s/noun
-2.3327727	maagdelijk/adj
-1.5223278	maak_door/verb
-0.31886327	maak_goed/verb
-1.1042013	maak_plaats/verb
-4.4334974	maal/adj
-1.1961983	maal/verb
-5.8335266	maan_schaduw/noun
-0.5739944	maandag_avond/noun
-0.09109649	maandelijks/adj
-0.3842339	maandenlang/adj
-3.2510557	maarschalk/noun
-0.2325092	maatschappij/noun
-1.9153525	machinegeweer/noun
-6.224208	macht_drang/noun
-0.60090595	machteloos/adj
-1.9999944	machteloosheid/noun
-2.7203896	maestro/noun
-2.125001	maf/adj
-0.48328325	magisch/adj
-2.804936	major/noun
-1.9824289	mak/adj
-0.39011472	makelaar/noun
-0.2576622	maker/noun
-0.108277686	makkelijk/adj
-2.0965664	makker/noun
-3.5592098	mal_loot/noun
-0.5469589	malaise/noun
-0.29555506	man/noun
-0.75829965	man_DIM/noun
-0.48209214	manifestatie/noun
-0.7544774	manipuleer/verb
-1.5307562	mankement/noun
-0.9904962	mannen/adj
-2.6924975	mantel_pak_DIM/noun
-1.8300917	marathon/noun
-2.629052	marathon_loper/noun
-3.3422573	marathon_schaatser/noun
-1.93852	marechaussee/noun
-0.6456893	marge/noun
-2.1172252	marinier/noun
-1.2425202	markeer/verb
-0.390713	marketing/noun
-0.33381984	massa/noun
-3.3817883	massa_hysterie/noun
-3.8067791	massa_product/noun
-2.8282654	massa_productie/noun
-0.6619533	massaal/adj
-2.4784846	massamedium/noun
-3.1897693	masse/adv
-1.592935	massief/adj
-0.46774954	materieel/adj
-1.9280784	matroos/noun
-0.45660463	maximum/noun
-0.20459875	me/pron
-2.2168598	medaille/noun
-5.7898154	medaille_winst/noun
-0.09495113	medewerker/noun
-0.62734795	medewerkster/noun
-0.062685594	medicijn/noun
-2.5391881	mediteer/verb
-0.2150514	mee/adv
-0.07362944	mee/part
-6.4255776	mee_schreeuw/verb
-1.5999753	meedogenloos/adj
-0.29507476	meer/noun
-4.3662896	meer_kamp/noun
-5.5589623	meer_kamp_ster/noun
-4.81845	meer_kamper/noun
-1.1415478	meerder/adj
-4.072738	meesmuil/verb
-1.1336461	meeste/adj
-0.20183076	meester/noun
-2.8391783	meeting/noun
-3.8961637	mega_ster/noun
-1.7584355	meid/noun
-0.91623735	meisje/noun
-1.8880278	melancholisch/adj
-0.1737035	meld_aan/verb
-1.6275647	meld_af/verb
-3.8946319	melk_productie/noun
-3.842742	melkerij/noun
-0.60107636	melodie/noun
-2.9059138	melodische/adj
-1.2093886	memoires/noun
-1.3308783	meng/verb
-1.1248978	menig/det
-0.3489675	mens/noun
-6.3060865	mens_lijk/noun
-1.2126716	menselijkheid/noun
-0.48887405	mensheid/noun
-1.0713891	mentaal/adj
-0.85218143	merkbaar/adj
-1.6204697	merknaam/noun
-0.62949663	metaal/noun
-3.912233	metaal_arbeider/noun
-0.5376481	meteen/adv
-2.823289	meter/noun
-1.9625473	meter_hoog/adj
-0.24346106	methode/noun
-0.39160648	metro/noun
-1.3793031	metro_station/noun
-2.0127327	meute/noun
-2.8155959	micro/noun
-1.2964873	microfoon/noun
-1.1488377	middag/noun
-0.81908303	middags/adv
-1.9266802	middaguur/noun
-1.0886501	middel/prep
-2.3703206	middeleeuwen/noun
-0.65020233	middelgroot/adj
-1.059422	middelpunt/noun
-0.03807702	midden/adv
-1.4931812	midden/prep
-0.22272307	middernacht/noun
-1.8689113	mier/noun
-4.5058312	mier_nest/noun
-3.4027169	migratie_stroom/noun
-1.9870299	mijl/noun
-1.4394716	mijlpaal/noun
-0.11189411	mijn/det
-0.436385	mijn/noun
-1.5215573	mijnwerker/noun
-0.26308918	mik/verb
-0.12755512	mild/adj
-3.6036649	milieu_bewust/adj
-4.7970915	milieu_dossier/noun
-0.92314285	milieuvriendelijk/adj
-1.3013505	militie/noun
-0.70847416	millennium/noun
-0.4658718	milli_meter/noun
-2.0410063	miltvuur/noun
-2.762312	mimiek/noun
-1.0375603	min/noun
-2.8589747	minder/adv
-0.7244569	minderheid/noun
-2.8368375	minderheid_belang/noun
-2.825004	minderheid_groep/noun
-1.6145406	miniem/adj
-0.06669616	minimaal/adj
-0.6668823	minimum/noun
-1.133259	ministerieel/adj
-0.22804537	ministerraad/noun
-4.907918	minkukels/noun
-0.52925366	minst/adj
-1.9983388	minste/adj
-0.067054234	minuut/noun
-2.0255413	minuut_DIM/noun
-1.8954628	minzaam/adj
-1.8561543	mirakel/noun
-1.0448079	mis/adj
-0.67934996	mis/noun
-1.2016524	mis/part
-1.8219472	misdadig/adj
-0.9918221	misdadiger/noun
-0.57283753	misluk/verb
-3.686849	misnoegde/noun
-3.8203273	misprijs/adj
-1.648622	misselijk/adj
-0.41334477	missie/noun
-1.7242585	missta/verb
-1.8387674	misvatting/noun
-2.9799955	mobilhome/noun
-6.5512905	modafinil/noun
-2.3283527	modderig/adj
-3.5885255	mode_bewust/adj
-5.0547876	mode_student/noun
-1.0588292	modieus/adj
-5.4437876	module/adj
-0.85123247	moe/adj
-2.7305634	moeder_ziel/noun
-2.187466	moederschap/noun
-0.6182672	moedig/adj
-0.17409858	moeilijk/adj
-3.2689865	moeilijkheidsgraad/noun
-0.9968311	moeiteloos/adj
-0.7233264	moeizaam/adj
-1.2842292	moeras/noun
-0.23729679	moet/verb
-1.1921887	moet_in/verb
-2.8186178	moet_over/verb
-0.7571568	moet_terug/verb
-1.3527865	mompel/verb
-2.042542	mondain/adj
-1.1298599	mondiaal/adj
-1.0493382	monoloog/noun
-2.1497667	monotoon/adj
-1.5196289	monster/noun
-3.2478445	monster/verb
-1.6518989	moord/verb
-3.5793276	moord_lustig/adj
-2.337793	moord_uit/verb
-4.234784	moordzuchtige/adj
-3.555496	moot/noun
-3.4267733	mopper/adj
-1.3632993	mor/verb
-0.27284622	morgen/adv
-1.1389242	morgenavond/adv
-3.472472	mortuarium/noun
-0.1302053	moslim/noun
-4.6198144	moslim_militant/noun
-3.4730742	moslim_terrorist/noun
-3.2536323	motards/noun
-0.16756392	motie/noun
-5.55654	motor_duivel/noun
-3.650828	motor_home/noun
-0.51466644	motor_rijder/noun
-2.3619568	motorcross/noun
-3.508431	motorcrosser/noun
-1.3012704	motorfiets/noun
-1.6560346	motorkap/noun
-2.0401673	muis/noun
-3.0343013	muis_DIM/noun
-3.4933589	mullah/noun
-0.075390354	multicultureel/adj
-2.3036678	mummie/noun
-0.64341867	munt/noun
-1.2819817	munt/verb
-2.5139394	munt_uit/adj
-2.1846938	mus/noun
-0.35509655	museum/noun
-1.3065404	musicus/noun
-4.280997	muskiet/noun
-0.7071562	muur/noun
-5.9998074	muziek_act/noun
-2.2251422	muziek_school/noun
-0.44204843	muzikant/noun
-1.0275108	mysterieus/adj
-1.7326081	mystiek/adj
-0.38134742	mythe/noun
-2.4137094	na_maak/noun
-6.5056205	na_prater/noun
-0.17088392	naakt/adj
-2.546237	naamloos/adj
-0.62181073	naar/adv
-0.27219924	naar/prep
-2.5745304	naargeestig/adj
-0.75836617	naartoe/prep
-0.30685854	naast/prep
-0.042129584	nabestaande/noun
-0.97465485	nabij/adj
-0.61194676	nabij/prep
-0.8574094	naburig/adj
-4.2442913	nacht_portier/noun
-1.8984107	nacht_rust/noun
-1.275593	nachtelijk/adj
-0.025036031	nachts/adv
-0.09422989	nader/adj
-0.6575332	nader/verb
-5.0835166	nagel_schaar_DIM/noun
-1.6224713	nageslacht/noun
-5.8994846	najaar_aanbieding/noun
-5.5247912	namiddag_sessie/noun
-6.1001554	nanobots/noun
-5.8124733	nasty/noun
-0.72191066	nat/adj
-1.9200225	natie/noun
-2.8137248	nationaal-socialisme/noun
-0.21054962	nationaal/adj
-2.1619053	nationalist/noun
-0.8065016	nationalistisch/adj
-0.72384226	nationaliteit/noun
-2.0281415	natuurramp/noun
-0.41115755	nauw/adj
-0.4994469	nauwelijks/adv
-1.5480636	nauwlettend/adj
-2.860497	navolger/noun
-1.5305403	navolging/prep
-1.5860249	nazi/noun
-3.6510677	nazistische/adj
-6.211708	nazomer_zon/noun
-2.2155607	nazorg/noun
-0.2413892	naïef/adj
-1.8810153	naïviteit/noun
-3.8785393	nectar/noun
-0.58348364	nederzetting/noun
-2.2969265	neem/verb
-1.1100252	neem_door/verb
-0.08034182	neem_in/verb
-0.93427473	neem_terug/verb
-1.0198903	neem_voor/verb
-0.9303423	neem_weg/verb
-0.35879615	neer/part
-0.41898304	negeer/verb
-0.018748535	negen/noun
-1.3849905	nek/noun
-3.2239263	nek_slag/noun
-3.9551992	neo_fascist/noun
-2.628232	neo_nazi/noun
-0.80456394	nestel/verb
-2.4619114	nestor/noun
-0.71345973	net/adj
-0.0376635	net/adv
-5.276955	neuroten/noun
-1.6194153	new/noun
-1.1907328	nicht/noun
-2.1763685	niemandsland/noun
-1.8324022	nietsvermoedend/adj
-2.1469903	nietszeggend/adj
-0.18513322	niettemin/adv
-4.950111	nieuw_station/noun
-1.9745454	nieuwbouw_wijk/noun
-2.4717855	nieuwsgierig/adj
-1.0923946	nieuwsgierigheid/noun
-2.720106	nijlpaard/noun
-0.64161843	niks/adv
-0.0047015343	niks/noun
-0.77460796	nipt/adj
-0.17166018	niveau/noun
-1.4499587	no/noun
-0.10279674	nochtans/adv
-0.084025286	nodig_uit/verb
-1.4089603	noemenswaardig/adj
-0.013597271	nog/adv
-0.5244775	nogal/adv
-0.75593555	nogmaals/adv
-0.875978	nominatie/noun
-2.357143	non-stop/adj
-2.1667514	nonchalance/noun
-6.35147	nondedju/noun
-2.1713297	nood_hulp/noun
-0.8049679	noodlijdend/adj
-1.3740712	noodlot/noun
-1.7577578	noodzaak/verb
-0.82930195	noorden/noun
-2.866829	noot_DIM/noun
-6.745571	norandrosteron/noun
-0.30302402	normaal/adj
-5.2954173	normalerwijze/adv
-1.3179321	normaliter/adv
-2.1653929	nors/adj
-1.0370858	nostalgisch/adj
-0.77787733	nota/adv
-0.65085185	noteer/verb
-0.3601905	nou/adv
-2.8648596	noviteit/noun
-4.4319243	nozems/noun
-0.008425428	nu/adv
-0.88387686	nuchter/adj
-4.584418	nuffige/adj
-0.41877353	nummer/noun
-3.1988864	nummer/verb
-1.5853963	nummertje/noun
-1.5994818	oase/noun
-0.60954314	obstakel/noun
-0.07380975	ochtend/noun
-3.6937108	ochtend_handel/noun
-1.1855348	oefening/noun
-0.5485641	oever/noun
-0.31439614	of/adj
-0.57705504	of/adv
-3.2741575	off/adj
-0.7987732	offer_op/verb
-1.3920275	ogenschijnlijk/adj
-2.580599	olie_bedrijf/noun
-0.12904233	olie_prijs/noun
-2.4320457	oliebol/noun
-2.6807907	olietanker/noun
-2.035483	olifant/noun
-2.2374976	olijk/adj
-1.5784236	olympisch/adj
-5.0987067	om_stoot/verb
-1.0918005	om_weg/noun
-1.8855822	omarm/verb
-1.4520986	omgang/noun
-4.3028555	omgeploegd/adj
-2.6143956	omgeven/adj
-0.96795815	omheen/prep
-1.376511	omhels/verb
-0.72851866	omhoog/adv
-5.6619005	omhooggestoken/adj
-0.5933344	omlaag/adv
-0.5736405	omloop/noun
-4.983194	ommeland/noun
-2.850068	omring/verb
-3.1791723	omringd/adj
-6.0836263	omroep_personeel/noun
-3.2758048	omroeper/noun
-1.519534	omschakeling/noun
-1.8737677	omschreven/adj
-0.11037277	omschrijf/verb
-2.4175456	omsingel/verb
-4.4482965	omsingeld/adj
-0.4999038	omslag/noun
-1.3244222	omstander/noun
-4.7481217	omstuwd/noun
-1.9045001	omver/part
-1.4789342	omzeil/verb
-3.1109722	omzet_verlies/noun
-5.69469	omzwermd/noun
-5.3016477	on_bewapend/adj
-3.7032707	on_gein/noun
-3.4072187	on_hygiënisch/adj
-4.50696	on_kritisch/adj
-3.0097444	on_ontgonnen/adj
-2.9587607	on_populair/adj
-2.0366042	on_stabiel/adj
-5.0402455	on_wet_end/noun
-4.9651756	on_zelfzuchtig/adj
-2.152926	onaangeroerd/adj
-2.9463515	onaanzienlijk/adj
-1.2725974	onafgebroken/adj
-3.5115561	onafhankelijkheid_oorlog/noun
-2.9812226	onafzienbaar/adj
-2.0371773	onbegonnen/adj
-0.09896739	onbekend/adj
-1.8674991	onbelangrijk/adj
-3.1538177	onbemind/adj
-0.90815574	onbereikbaar/adj
-3.061204	onbeschrijfelijk/adj
-2.4909656	onbesuisd/adj
-3.577097	onbetamelijk/adj
-1.8206383	onbewoond/adj
-2.5934308	onbezonnen/adj
-3.1980472	oncontroleerbaar/adj
-6.282477	oncontroleerbaar_heid/noun
-0.35162082	ondanks/prep
-0.6824513	onder/part
-1.1144391	onderaan/adv
-0.40154362	onderbreek/verb
-1.2469755	onderbroken/adj
-0.08408626	onderdak/noun
-0.62085265	onderdeel/noun
-0.05686622	onderga/verb
-0.4532274	ondergang/noun
-2.6241426	ondergewaardeerd/adj
-0.18221027	ondergronds/adj
-0.5171395	onderhandelaar/noun
-0.39298788	onderhandeling/noun
-5.7857504	onderhandeling_spel/noun
-3.948393	onderhanden/adj
-1.9104375	onderkant/noun
-1.3796	onderken/verb
-1.9788624	onderkoeld/adj
-4.937873	onderneming_recht/noun
-0.7955108	onderst/adj
-0.37539536	ondersteun/verb
-0.26884323	ondersteuning/noun
-0.536279	onderstreep/verb
-0.2690878	onderteken/verb
-0.48458698	onderuit/adv
-2.5241492	ondervoed/adj
-1.1560003	onderweg/adj
-0.21687165	onderwerp/verb
-5.0715284	onderwijs_land/noun
-2.9988127	onderzoek_journalist/noun
-0.09349606	onderzoeker/noun
-3.8485713	onderzoeking/noun
-2.653436	ondoordringbaar/adj
-1.1920246	ondraaglijk/adj
-0.9704703	oneerlijk/adj
-1.580649	onenigheid/noun
-1.6186291	ongebreideld/adj
-0.77894914	ongebruikelijk/adj
-2.0711892	ongecontroleerd/adj
-2.3989906	ongedierte/noun
-2.1405334	ongeduldig/adj
-2.6179328	ongegeneerd/adj
-0.23921877	ongekend/adj
-1.6566222	ongeldig/adj
-0.39712316	ongelukkig/adj
-2.1773298	ongemerkt/adj
-1.611051	ongenaakbaar/adj
-0.25457597	ongenoegen/noun
-0.67823243	ongerust/adj
-1.5510559	ongeschonden/adj
-2.880502	ongetrouwd/adj
-0.10832744	ongetwijfeld/adv
-0.25620842	ongewoon/adj
-2.6806998	ongeïnteresseerd/adj
-1.6198558	onhandig/adj
-2.1686747	onheil/noun
-3.7543511	onheil_profeet/noun
-3.0714989	onherbergzaam/adj
-1.0874481	onherroepelijk/adj
-2.5246158	onherstelbaar/adj
-1.7476398	onjuist/adj
-2.9736385	onklopbaar/adj
-0.67152876	onmiskenbaar/adj
-0.021941463	onmogelijk/adj
-5.8792367	onneembaar/adj
-0.14946939	onnodig/adj
-2.8149197	onomstreden/adj
-1.4542965	onontbeerlijk/adj
-2.450941	onooglijk/adj
-1.8038152	onopgemerkt/adj
-1.3024611	onophoudelijk/adj
-3.627476	onoverkomelijk/adj
-2.104302	onoverzichtelijk/adj
-2.307041	onpartijdig/adj
-3.398235	onplezierig/adj
-3.4906986	onreglementair/adj
-0.49766245	onrust/noun
-2.0141323	onschendbaarheid/noun
-0.29272214	onschuldig/adj
-1.0243567	ontbeer/verb
-2.2798822	ontbering/noun
-0.33188644	ontbijt/noun
-1.574329	ontbreek/adj
-2.7064862	ontegenzeggelijk/adj
-1.1628478	ontelbaar/adj
-0.97839284	ontgoochel/verb
-2.4027016	ontgroei/verb
-0.74267846	onthaal/verb
-1.8188319	onthoofd/verb
-0.66199756	onthul/verb
-2.504595	onthutst/adj
-3.5504932	ontij/noun
-1.2652413	ontketen/verb
-0.17118697	ontkom/verb
-3.3172038	ontkoppel/verb
-2.0686347	ontloop/verb
-1.1181101	ontmantel/verb
-4.4633183	ontmijnen/noun
-2.756999	ontmijningsdienst/noun
-0.029034916	ontmoet/verb
-0.4640868	ontpop/verb
-0.51476026	ontroerend/adj
-0.00088327826	ontsla/verb
-1.6686113	ontslagen/adj
-0.8034226	ontsnap/verb
-1.1415544	ontspannen/adj
-1.573833	ontspanning/noun
-0.5137289	onttrek/verb
-1.2703983	ontwaak/verb
-2.1921682	ontwapening/noun
-0.9260321	ontwijk/verb
-2.469906	ontworstel/verb
-2.608711	ontwricht/verb
-0.99328434	ontzeg/verb
-5.0489454	ontzet/noun
-3.8509123	onvast/adj
-1.3691931	onveilig/adj
-2.162681	onverantwoordelijk/adj
-1.3184441	onverbiddelijk/adj
-1.8658073	onverdeeld/adj
-1.612487	onvergetelijk/adj
-1.4201611	onverhoopt/adj
-1.5257307	onverschillig/adj
-2.2442913	onverstaanbaar/adj
-0.8191961	onvoorstelbaar/adj
-0.33120954	onvrede/noun
-1.9843755	onwaardig/adj
-3.1503215	onweerlegbaar/adj
-1.1848692	onweerstaanbaar/adj
-1.7746624	onwennig/adj
-2.636157	onwetend/adj
-2.4098186	onwezenlijk/adj
-1.813241	onwil/noun
-0.10297108	onzeker/adj
-0.29866657	onzichtbaar/adj
-0.8515463	oog/adj
-0.45084372	oog/noun
-1.0920912	oog/prep
-4.6085005	ooien/noun
-0.9199023	oord/noun
-0.05348278	oordeel/noun
-0.14654712	oorlog/noun
-3.7604885	oorlog_machine/noun
-2.3803697	oorlog_tijd/noun
-3.569992	oorlog_tribunaal/noun
-3.7070696	oorlog_verslaggever/noun
-2.2492988	oorlog_veteraan/noun
-3.3187513	oorlogszuchtige/adj
-1.7008142	oorverdovend/adj
-0.826757	oostelijk/adj
-1.1437873	oosten/noun
-2.7132258	ooster_buur/noun
-1.0132768	op/adj
-0.280667	op/part
-0.32428747	op/prep
-5.2063375	op_genaaid/adj
-3.2132232	opdringerig/adj
-1.6543102	opeens/adv
-0.31477037	open/adj
-3.9072611	open_zwaai/verb
-0.53486896	openbaar/noun
-5.5405397	openbaar_maak/verb
-2.169965	opener/noun
-1.912312	opening_dag/noun
-5.837791	openingssequentie/noun
-0.25347576	opera/noun
-1.6974074	opera_tor/noun
-1.8724298	opera_toren/noun
-5.3016477	opgedirkte/noun
-3.8372355	opgedroogd/adj
-3.567396	opgefokt/adj
-3.9565008	opgehitst/adj
-3.8396082	opgejaagd/adj
-4.481868	opgejut/adj
-2.7356412	opgeklopt/adj
-2.3714545	opgekomen/adj
-1.1522429	opgeleid/adj
-1.5240707	opgelopen/adj
-2.0775356	opgelost/adj
-3.0728436	opgeschoten/adj
-1.6729827	opgetrokken/adj
-3.1213715	opgetrommeld/adj
-5.168429	opgewacht/adj
-2.175271	opgewonden/adj
-1.0550828	opheffing/noun
-0.7227958	opiniepeiling/noun
-2.6536129	oplettend/adj
-1.0007802	oplopend/adj
-0.28901434	opper/verb
-1.7689104	oppermachtig/adj
-2.591433	oproer/noun
-3.5281088	oproer_politie/noun
-1.436166	opsporing/noun
-3.041502	opstand/noun
-1.2289099	opstandig/adj
-0.88265646	opsteker/noun
-2.2909036	opstel/noun
-0.5115967	opteer/verb
-0.5083913	optie/noun
-4.7754407	optie_recht/noun
-0.4220041	optimisme/noun
-1.8006238	optocht/noun
-0.9762244	opwachting/noun
-2.7373717	opwekkend/adj
-1.7451693	opwinding/noun
-0.32835948	opzet/noun
-0.10002705	opzij/adv
-3.230837	opzij_schuif/verb
-0.34671888	oranje/adj
-0.5148228	orde/noun
-5.4437876	orde_bewaarder/noun
-2.890096	ordehandhavers/noun
-3.3452568	oreer/verb
-0.8761949	orgaan/noun
-0.09315926	organisatie/noun
-5.379609	orks/noun
-4.4037757	oud_kampioen/noun
-5.535789	oud_lerares/noun
-3.2494488	ouderling/noun
-2.7832458	ouderpaar/noun
-0.37671095	ouderwets/adj
-1.0358388	oudsher/adv
-4.486836	outback/noun
-6.240056	outdoorseizoen/noun
-1.2554872	outsider/noun
-0.14253488	over/noun
-0.34978798	over/prep
-1.4558045	over_vol/adj
-0.4867333	overal/adv
-0.8794142	overbodig/adj
-1.6351256	overbrug/verb
-1.7396787	overdaad/noun
-0.9118854	overdekt/adj
-2.1702924	overdonder/adj
-0.31746757	overeen/part
-0.08822799	overeenstemming/noun
-1.0539027	overeind/adj
-2.8447332	overgang_jaar/noun
-2.1819847	overgang_regering/noun
-2.188114	overgave/noun
-0.785418	overgebleven/adj
-1.7429837	overhand/noun
-1.8301083	overheers/adj
-1.163665	overheers/verb
-0.83225423	overkant/noun
-0.09326183	overkom/verb
-2.5278878	overlap/verb
-1.0792702	overleef/verb
-3.0532548	overloop/noun
-1.2355525	overnacht/verb
-0.03359138	overname/noun
-3.8338213	overrompel/verb
-2.4291751	overschrijd/verb
-3.391272	overspoel/verb
-2.7640398	overstaan/prep
-0.08795587	overstap/noun
-2.0970736	overstem/verb
-3.311977	overstroom/verb
-0.4361971	overtuiging/noun
-1.48564	overval/verb
-0.9966202	overvloed/noun
-1.8329344	overweldigend/adj
-2.8835447	overwin/verb
-1.1051791	overzie/verb
-5.4423475	où/noun
-0.8208651	pa/noun
-1.6636833	paal_DIM/noun
-0.5726715	paar/noun
-6.1398206	paar_kampioenschap/noun
-0.9672088	paard/noun
-6.5056205	paard_mens/noun
-2.2298229	paard_sport/noun
-3.9865808	paas_zaterdag/noun
-4.7342052	pack/noun
-0.9827772	pad/noun
-1.0236456	paddestoel/noun
-0.6080729	pak/noun
-0.5448741	pak/verb
-1.1360489	pak_af/verb
-0.9949509	pak_in/verb
-2.4418783	pak_mee/verb
-1.7783064	pakhuis/noun
-1.1340139	palm_in/verb
-2.4303455	paniekerig/adj
-3.9998677	pantalon/noun
-2.3034809	pantser_wagen/noun
-4.878951	paparazzi/noun
-1.9442135	paraat/adj
-1.8253042	paraat_heid/noun
-1.3518955	parallel/noun
-2.207485	paranoïde/adj
-2.0307963	paraplu/noun
-1.2910018	pardon/noun
-4.770284	parel_wit/adj
-1.0840352	parfum/noun
-0.6308858	park/noun
-4.4377036	parkeer_overlast/noun
-2.1993618	parkeer_probleem/noun
-1.4135442	parkoers/noun
-0.86505616	parlement/noun
-0.74923676	parlementair/adj
-3.8206115	parochie_huis/noun
-1.0981871	partij_DIM/noun
-1.7098644	partij_congres/noun
-3.225336	partizaan/noun
-2.073584	pas/noun
-0.24384256	pas_op/verb
-2.8639855	pasfoto/noun
-2.0174992	passeer/adj
-0.76330394	passeer/verb
-4.048885	patchwork/noun
-1.3150043	pedofiel/noun
-2.1232815	pedofilie/noun
-1.2876097	peer/noun
-2.8351383	peins/adj
-0.29620916	peleton/noun
-2.9231436	pelgrim/noun
-0.06723567	pen/noun
-1.5597311	pendel/verb
-1.78958	pendelaar/noun
-1.8704062	penis/noun
-2.6919456	pensioen_stelsel/noun
-5.435179	pensioen_trekker/noun
-5.920151	pentatlon/noun
-0.15905616	per/adv
-0.40677088	perfect/adj
-0.4993802	permanent/adj
-1.0630044	perron/noun
-1.0021894	pers/noun
-1.3738743	pers/verb
-1.7469784	pers_agentschap/noun
-3.0717676	pers_centrum/noun
-4.716643	pers_fotograaf/noun
-3.6783068	pers_kaart/noun
-4.9065137	pers_lieden/noun
-4.4573903	pers_mens/noun
-5.3959584	pers_tent/noun
-3.7647805	pers_tribune/noun
-3.2110188	pers_verklaring/noun
-5.7324305	pers_volk/noun
-0.09006475	persoonlijk/adj
-1.4264183	pest/noun
-5.920151	peuleschil/noun
-0.90447843	pianist/noun
-2.6912103	piek_fijn/adj
-1.5340148	pieker/verb
-2.3679237	piep/verb
-6.5056205	piercer/noun
-4.171456	pieten/noun
-0.87302077	pijl/noun
-1.9305658	pijn_punt/noun
-4.730668	pijntje/noun
-0.25398153	pik/verb
-2.159221	pik_in/verb
-0.81264615	pik_mee/verb
-1.5236704	pint_DIM/noun
-3.1783388	pissig/adj
-1.8064667	pittoresk/adj
-5.3437724	pizza_tent/noun
-0.37115645	pk/noun
-1.3304834	plaag/noun
-1.7622657	plaag/verb
-0.12968983	plaats/verb
-4.733497	plaats_op/verb
-0.08828922	plaatselijk/adj
-0.6112291	plaatsing/noun
-1.5018699	plak/noun
-5.8124733	plan_trekker/noun
-1.3898246	planeet/noun
-0.63439506	planning/noun
-0.34395614	plant/verb
-1.725447	plant_DIM/noun
-0.7801037	plat/adj
-4.8752913	plat_loop/verb
-1.822795	plateau/noun
-0.6973591	platteland/noun
-0.050526716	play-off/noun
-2.9107084	playboy/noun
-0.77577776	plechtigheid/noun
-1.2123785	plein/noun
-1.2026058	plein_DIM/noun
-1.9401878	pleit/noun
-0.36905497	plek_DIM/noun
-0.306693	plekke/noun
-1.9326291	plenair/adj
-1.0710073	plezierig/adj
-0.056118112	plicht/noun
-1.2957587	ploeg_genoot/noun
-0.17685811	ploeg_leider/noun
-1.2811935	plotseling/adj
-2.3435524	pluche/adj
-2.727224	pluimage/noun
-4.297346	plunder/adj
-1.8263676	plunder/verb
-2.621397	plunderaar/noun
-0.780797	plus/noun
-1.4950686	pluspunt/noun
-0.916191	podium/noun
-1.5286856	podium_plaats/noun
-2.8597355	poespas/noun
-2.3059154	poets_vrouw/noun
-6.046088	pol_hoog/adj
-4.300556	pol_stok/noun
-0.30084854	politicus/noun
-1.5737759	politie_agent/noun
-2.8572376	politie_begeleiding/noun
-1.3893996	politie_bureau/noun
-0.5410669	politie_dienst/noun
-4.0017967	politie_escorte/noun
-3.4960263	politie_film/noun
-2.5820806	politie_macht/noun
-2.7528863	politie_wagen/noun
-4.4951715	politiek_strategisch/adj
-0.007689771	politieman/noun
-0.46258193	politiemens/noun
-5.6095324	pols_stok_hoog_spring/verb
-4.107157	pols_stok_spring/verb
-3.370851	polshorloge/noun
-3.126328	polyvalent/noun
-5.2941756	pont_DIM/noun
-3.0454993	pontificaal/adj
-2.8200798	ponton/noun
-1.5487376	pony/noun
-0.9833349	poog/verb
-2.0823843	poort/noun
-1.8362243	pop_DIM/noun
-5.067564	pop_act/noun
-2.2397962	pop_ster/noun
-2.82595	pop_theater/noun
-5.254049	popel/adj
-0.0049741324	populair/adj
-2.2069755	populist/noun
-1.3580048	porno/noun
-0.5350817	portier/noun
-0.9802671	portretteer/verb
-2.6734676	poseer/verb
-0.41675195	post/noun
-2.6928654	post_kaart/noun
-0.80311656	post_kantoor/noun
-1.8618307	posteer/verb
-5.55654	postmodernistisch/adj
-2.5641196	pot_kijker/noun
-1.2643894	potentieel/adj
-1.4599935	pover/adj
-5.640623	powerlifting/noun
-0.63559407	poëtisch/adj
-6.4748487	pr's/noun
-4.0498376	pr/noun
-4.5075245	pr_adviseur/noun
-0.06271876	practisch/adj
-2.1407719	pre_pensioen/noun
-6.35147	pre_pensioen_leeftijd/noun
-1.6620897	predikant/noun
-2.6513147	prefect/noun
-1.7262169	premierschap/noun
-0.21653897	première/noun
-3.3137734	prepareer/verb
-0.7658141	presidentschap/noun
-2.7086344	pressie/noun
-0.50120884	prestatie/noun
-0.6674771	presteer/verb
-1.3420733	prestige/noun
-0.06796214	prestigieus/adj
-4.8521657	prevel/adj
-3.3750296	prietpraat/noun
-0.9157379	prik/verb
-0.40912044	primeur/noun
-0.3750554	principieel/adj
-2.8841727	prins_paar/noun
-0.950342	prinses/noun
-0.4063671	privaat/adj
-0.30376837	privacy/noun
-3.5779886	privé_domein/noun
-5.601065	privé_fonds/noun
-0.024995524	probeer/verb
-0.6640103	probeer_uit/verb
-1.2072406	probleemloos/adj
-2.7076063	procedureel/adj
-1.6894692	producer/noun
-4.887058	product_innovatie/noun
-0.86443764	proef/verb
-5.4940195	proef_fase/noun
-4.252576	proef_vlucht/noun
-1.4373192	proefpersoon/noun
-5.5893297	prof_atlete/noun
-2.8123755	prof_carrière/noun
-2.9083083	prof_renner/noun
-3.8609242	profile/noun
-0.827284	profiteer/verb
-3.336285	programma_onderdeel/noun
-1.119922	progressie/noun
-1.3453447	project_leider/noun
-0.6360411	projectontwikkelaar/noun
-0.53599155	prominent/adj
-0.68463534	promotie/noun
-2.42491	promotie_campagne/noun
-1.9665456	promovendus/noun
-0.7892851	prompt/adj
-2.1002572	prooi/noun
-1.9092808	prop/verb
-1.0329822	propaganda/noun
-1.5136018	propageer/verb
-1.1134144	prostituee/noun
-3.1373193	protectionisme/noun
-3.0004385	protest_brief/noun
-1.3320163	protestante/noun
-2.6473498	protesteer/adj
-0.37091723	protesteer/verb
-0.88766825	protocol/noun
-3.706816	protocollaire/adj
-3.1898448	provinciaal/noun
-2.8263705	provincie_hoofdstad/noun
-1.701258	proza/noun
-1.7118982	prullenbak/noun
-0.23223257	psychiater/noun
-6.1141415	psychologie_studente/noun
-1.3933165	psychologisch/adj
-2.431644	pub/noun
-1.5752617	puber/noun
-4.988663	puber_meisje/noun
-3.8386817	puberale/adj
-0.19923112	publicatie/noun
-3.9842346	publiek_favoriet/noun
-6.441082	publiek_manifestatie/noun
-1.6076874	publiek_trekker/noun
-1.9604214	puik/adj
-1.3340362	puin/noun
-1.7061177	puinhoop/noun
-5.214324	pulseer/verb
-1.6083094	punk/noun
-0.47573912	punt/noun
-3.9445248	puntengrens/noun
-1.7049178	pupil/noun
-0.33091465	put/verb
-2.0137823	puzzel/noun
-5.4481196	puzzelaars/noun
-3.8710375	pygmeeën/noun
-0.9443747	raak/verb
-1.3395971	raak_aan/verb
-4.3432555	raak_heen/verb
-0.2632229	raak_kwijt/verb
-0.109638005	raam/noun
-1.0590627	raap/verb
-0.5043053	raar/adj
-2.0154715	raas/verb
-1.7264142	race/noun
-3.538845	race_baan/noun
-4.370961	race_team/noun
-4.7806244	radio_man/noun
-3.7734199	radio_verslaggever/noun
-1.8557558	ramadan/noun
-2.5669556	rammel/verb
-3.245283	ramp_plek/noun
-3.7732842	ramp_toerist/noun
-0.8489441	rampzalig/adj
-4.3384733	rand_groep_jongere/noun
-2.3758016	rand_voorwaarde/noun
-0.92780286	rang/noun
-1.2246931	ranglijst/noun
-0.9143692	rapper/noun
-0.5918022	ras/noun
-2.05433	ras_echt/adj
-5.032575	ras_talent/noun
-2.0489502	rat/noun
-4.5041404	rat_plaag/noun
-2.9687757	rationaliteit/noun
-0.81454337	rationeel/adj
-1.3448904	ravage/noun
-1.1604295	razend/adj
-0.63385487	razendsnel/adj
-3.1463308	razernij/noun
-3.9939907	reageer_bui_bevruchting/noun
-0.1507107	rebel/noun
-0.5156988	recept/noun
-0.28001472	receptie/noun
-0.06373735	recht/adj
-1.6649336	recht/part
-2.473299	rechter_been/noun
-0.7706085	rechter_hand/noun
-2.171166	rechter_knie/noun
-1.914169	rechterkant/noun
-1.8674185	rechtlijnig/adj
-0.97950375	rechtsstaat/noun
-2.0168123	rechtszaal/noun
-0.91496	rechtvaardig/adj
-1.4387798	rechtvaardig/verb
-5.060173	reclame_mens/noun
-2.0028985	reclame_spot/noun
-3.8062186	reclame_zuil/noun
-3.3220265	record/adj
-1.6981323	record/noun
-4.457659	record_houd_ster/noun
-1.2350597	recreatief/adj
-3.297637	recta/adv
-1.3021061	redacteur/noun
-1.838454	redding_plan/noun
-1.0795056	redenering/noun
-0.7706489	reduceer/verb
-0.17655583	reeds/adv
-2.2345636	reeks/noun
-2.4150329	reep_DIM/noun
-2.5495007	reet/noun
-3.4375675	refereer/adj
-1.2960622	referendum/noun
-0.7237074	regeer/adj
-0.60371596	regelmaat/noun
-1.3656396	regelrecht/adj
-0.0517527	regen/verb
-5.4641666	regen_bui_DIM/noun
-4.227926	regen_vlaag/noun
-1.7924184	regenwoud/noun
-1.129725	regering_Bush/noun
-0.91734236	regering_leider/noun
-6.620283	reggaenummer/noun
-4.396418	regie_assistent/noun
-2.7027614	regiment/noun
-0.4070173	registreer/verb
-2.640427	reglementair/adj
-0.0050567714	regulier/adj
-0.3708405	reik/verb
-1.9025358	reis/adj
-0.0575643	reis/verb
-6.5056205	reis_aan/verb
-2.963213	reis_boek/noun
-3.1277485	reis_document/noun
-1.7260419	reis_rond/verb
-2.506923	reisgids/noun
-0.772903	reiziger/noun
-0.8585328	reken/verb
-0.9887032	reken_in/verb
-5.097687	reken_les/noun
-0.45291382	rel/noun
-0.028876748	relatief/adj
-0.48030818	relevant/adj
-0.031408306	religie/noun
-0.3795916	religieus/adj
-1.5606502	relschopper/noun
-0.86913586	rem/verb
-1.4310328	rem_af/verb
-1.0959481	remise/noun
-2.1266367	ren/verb
-3.5695498	ren_af/verb
-2.6094728	ren_op/verb
-3.3950725	ren_uit/verb
-4.5591154	rente_angst/noun
-1.3136015	rentree/noun
-0.5856855	rep/verb
-3.0578842	repercussie/noun
-4.267574	repertorium/noun
-2.591544	repliek/noun
-1.1467177	reporter/noun
-0.99009377	representatief/adj
-1.9924285	republikein/noun
-0.101749666	reserve/noun
-0.29574436	reserveer/verb
-0.5402646	resoluut/adj
-3.823458	resort/noun
-4.682416	respectabiliteit/noun
-3.3961875	ressentiment/noun
-0.17640473	rest/verb
-2.2038665	restaurateur/noun
-0.14741719	resulteer/verb
-0.6619311	reus/noun
-1.7032402	reuze/adj
-1.034576	revalidatie/noun
-0.5558355	revolutionair/adj
-0.7399919	richt_aan/verb
-0.73765975	richting/prep
-0.16057637	richtlijn/noun
-0.9907982	ridder/noun
-1.8349161	riem/noun
-2.2472928	rieten/adj
-0.60092866	rij/noun
-0.84479624	rij_DIM/noun
-3.6837456	rij_aan/adj
-1.3019344	rij_binnen/verb
-1.1041638	rij_door/verb
-1.1336654	rij_op/verb
-1.2976724	rij_rond/verb
-3.26825	rijk_gevuld/adj
-0.5862115	rijkswachter/noun
-2.387261	rijs/adj
-2.179448	rijs_op/verb
-1.413482	rit_DIM/noun
-2.2639341	ritme/noun
-1.1769962	ritmisch/adj
-0.8187251	rivier/noun
-2.12913	rock-'n-roll/noun
-0.31792974	rock/noun
-5.8000507	rock_musical/noun
-1.1257231	roei_uit/verb
-0.75478214	roep/noun
-3.002318	roep_aan/verb
-1.0359266	roet/noun
-2.074506	rok_DIM/noun
-1.6053892	rol_DIM/noun
-3.100957	rol_bezetting/noun
-1.8734838	rol_luik/noun
-1.0578599	rol_op/verb
-4.6817436	rol_schaatser/noun
-1.9204829	rol_stoel_gebruiker/noun
-1.8035883	romance/noun
-1.3258286	rommel/noun
-2.9282546	rommel_DIM/noun
-1.1309595	rommelig/adj
-0.3478583	rond/adj
-1.1196548	rond/part
-0.5438048	rond/prep
-0.38347188	rond_af/verb
-2.093681	rond_rit/noun
-0.9132119	ronde/noun
-0.82624453	ronde_DIM/noun
-0.15602265	ronduit/adv
-6.2179384	rood-geel_zwart/adj
-1.8122104	rood-groen/adj
-0.52152103	rood/adj
-5.4337516	rood_huid/noun
-5.40979	rood_rood/adj
-2.1476038	rood_wit/adj
-2.3104882	roof_vogel/noun
-0.47816223	rook/verb
-1.9899192	rooms/adj
-2.2379062	ros/adj
-3.3530624	ros/noun
-0.4165	rose/adj
-2.2444675	rosé/noun
-0.83289874	rot/adj
-4.3734283	rot_tekening/noun
-3.1522138	routineus/adj
-1.7876798	routinier/noun
-2.3114934	rover/noun
-3.5996306	rozenkrans/noun
-2.3172925	ruchtbaarheid/noun
-1.7582998	rue/noun
-1.7546378	rugzak/noun
-4.5360346	rugzak_toerist/noun
-4.376397	ruil_verhouding/noun
-0.55809146	ruim/verb
-0.07271385	ruim_op/verb
-0.5784389	ruimschoots/adj
-6.975624	ruimte_monster/noun
-0.1133335	ruit/noun
-0.95254785	ruiter/noun
-3.0441906	ruiter_sport/noun
-2.7286856	ruk/noun
-2.2225513	ruk_aan/verb
-2.817818	ruk_op/adj
-1.8457516	ruk_op/verb
-0.7003474	ruk_uit/verb
-1.3300358	run/noun
-0.5726682	run/verb
-1.4473597	running/noun
-0.57485735	rustig/adj
-0.8341675	ruw/adj
-0.917623	s/noun
-2.6963687	sabel_neer/verb
-4.7427464	salon_tafel_DIM/noun
-5.5760846	salon_tafel_boek/noun
-4.675041	samen_troep/noun
-5.3041506	samengetroept/noun
-0.83917934	samenhang/noun
-0.89480644	samenvatting/noun
-0.5820779	samenwerkingsverband/noun
-3.3146298	sapiens/noun
-4.024889	sardines/noun
-1.1763294	satire/noun
-2.9029572	scenaristen/noun
-1.0332681	schaap/noun
-0.12491193	schaars/adj
-3.0204139	schaats_baan/noun
-1.0867877	schaduw/noun
-0.16198902	schaf_aan/verb
-1.1575809	schakel/verb
-1.9043851	schakel_over/verb
-0.16509214	schakel_uit/verb
-1.6391443	schaker/noun
-2.1245317	schamper/adj
-5.422404	schandaal_boek/noun
-0.9305082	schandalig/adj
-1.1176909	schap/noun
-2.3570442	schare/noun
-0.045070667	schat_in/verb
-2.6138	schater/verb
-2.9708395	scheep_in/verb
-3.109589	scheer/verb
-2.6137152	scheermes_DIM/noun
-0.32418573	scheid/verb
-0.4605855	scheidsrechter/noun
-2.0559351	scheld_woord/noun
-1.6719875	schelp/noun
-1.5557088	schema/noun
-0.52829534	scherp/adj
-0.72107756	scherp/noun
-2.9084225	scherp/verb
-1.5499254	scherp_aan/verb
-3.2695599	schertsend/adj
-0.43184173	schets/verb
-1.5491285	scheur/verb
-1.8604286	schier/adv
-2.890096	schiet/adj
-0.64071035	schiet/verb
-0.6444663	schiet_neer/verb
-3.5424974	schiftingen/noun
-6.1751184	schijn_kandidatuur/noun
-0.57410496	schijnbaar/adj
-0.5965077	schilder/noun
-0.81395274	schilder_af/verb
-1.7054662	schimmig/adj
-0.49321014	schitter/verb
-4.8176794	schlagerzanger/noun
-0.0074292966	schoen/noun
-5.40979	schoenpoetsers/noun
-4.1491	schokschouder/verb
-3.1193252	schol/noun
-2.5820396	scholier/noun
-5.9040403	scholiertjes/noun
-4.1746907	school_raad/noun
-3.6919599	school_uniform/noun
-0.2349629	schooljaar/noun
-2.2834203	schoolverlater/noun
-0.22562264	schoon/adj
-2.8287926	schoon_maker/noun
-0.18749353	schoot/noun
-2.5729783	schor/adj
-0.35412967	schotel_voor/verb
-2.3375351	schouder_blessure/noun
-2.7329552	schouw_aan/verb
-2.4523873	schouwspel/noun
-2.1515326	schraap/verb
-3.0533867	schram/noun
-0.85090667	schreeuw/verb
-1.5612437	schrift/noun
-3.1654124	schrijf_tafel/noun
-0.09479474	schrijf_toe/verb
-0.48856938	schrijnend/adj
-0.7817018	schrijven/noun
-1.0273672	schrik/noun
-2.3842149	schrik_beeld/noun
-1.632174	schuchter/adj
-1.2291653	schud_af/verb
-0.11979154	schuif/verb
-3.3333123	schuif_DIM/noun
-1.640632	schuif_aan/verb
-3.0387135	schuif_weg/verb
-2.8469317	schuifel/verb
-5.155385	schuil/adj
-3.4742796	schuim/verb
-2.6738138	schuim_af/verb
-2.7317107	schuit_DIM/noun
-3.1899204	schuldbewust/adj
-0.70570743	schuldeiser/noun
-1.6638148	schuldenlast/noun
-2.182095	schuur/verb
-0.864482	scout/noun
-0.0028272835	scène/noun
-0.1591511	se/adv
-1.8184772	seconde/noun
-1.1087973	secretariaat/noun
-5.231655	secrets/noun
-0.31571496	sedert/prep
-3.9574783	seizoen_prestatie/noun
-4.454707	seizoen_tijd/noun
-0.6599888	seks/noun
-3.1462584	seks_industrie/noun
-3.9493625	seks_shop/noun
-3.0248933	seks_symbool/noun
-5.0665755	seks_toerist/noun
-3.2769594	seksistische/adj
-1.5745395	select/adj
-1.9921849	selectief/adj
-3.558772	semi_klassieker/noun
-1.5332352	senaat/noun
-0.5567264	senator/noun
-1.7845367	senior/noun
-0.8187581	sensatie/noun
-4.4579277	sensatie_krant/noun
-1.5836949	sensueel/adj
-0.73615426	sentiment/noun
-1.7602537	sergeant/noun
-1.2678002	serie/noun
-6.1169624	sertão/noun
-2.6511383	servers/noun
-0.7321435	sessie/noun
-0.70064867	sexy/adj
-1.7039245	sfeervol/adj
-1.4556309	shock/noun
-3.8600368	shop_pers/noun
-3.9454904	shoppingcenter/noun
-0.7419326	sier/verb
-2.0123134	sierlijk/adj
-0.9830435	sigaar/noun
-2.309547	sigaret_DIM/noun
-0.64025074	signaleer/verb
-0.5037869	simpel/adj
-0.013538458	single/noun
-1.5073951	sirene/noun
-4.9028716	sjacheraars/noun
-1.4717027	sjeik/noun
-2.7137897	sjok/verb
-1.6384386	skater/noun
-3.2346268	skeelers/noun
-3.322602	skinhead/noun
-5.0587015	skins/noun
-1.7374107	skiër/noun
-0.094789416	sla/verb
-2.0441282	sla_af/verb
-1.8203306	sla_dood/verb
-2.6291382	sla_na/verb
-1.770007	sla_neer/verb
-1.9788173	sla_open/verb
-1.6220455	sla_over/verb
-1.5659592	sla_terug/verb
-0.7249927	sla_toe/verb
-2.6484497	sla_weg/verb
-2.7449603	slaaf/noun
-0.08302531	slaap/verb
-5.5893297	slaap_mat_DIM/noun
-1.1344205	slachthuis/noun
-1.6686443	slag_kracht/noun
-3.3470256	slag_orde/noun
-4.5007677	slager_vrouw/noun
-1.2245976	slagveld/noun
-2.0367951	slalom/noun
-6.2179384	slands/det
-0.26359987	slap/adj
-6.35147	slasherfilm/noun
-1.1207432	slavernij/noun
-2.6892369	slecht/verb
-3.3343606	slechteriken/noun
-0.28840402	slechts/adv
-0.7284542	sleep/verb
-4.6717067	sleep_op/verb
-3.3038342	slenter/verb
-1.2054714	sleur_mee/verb
-3.5822349	slipstream/noun
-3.5668995	sloebers/noun
-2.8383265	sloep/noun
-1.5246142	slok_op/verb
-2.453618	sloof_uit/verb
-1.3450338	sloot/noun
-1.347212	slop/noun
-2.7749195	slot_accoord/noun
-4.3863573	slot_meter/noun
-0.14507748	slotte/adv
-1.0096996	sluip/verb
-1.1815745	sluis/noun
-0.36527804	sluit_aan/verb
-0.058924478	sluit_af/verb
-4.80163	slurp/adj
-2.83705	smacht/adj
-2.7901194	smacht/verb
-0.57018626	smal/adj
-3.493154	smeedijzeren/adj
-1.5690504	smeek/verb
-1.5530852	smeer/verb
-1.109515	smelt/verb
-1.1311718	smijt/verb
-6.601764	smijt_toe/verb
-1.5754122	sms/noun
-3.8857944	snak/adj
-3.775048	snaken/noun
-0.6992438	snap/verb
-3.2885797	snap_shot/noun
-3.1817842	sneeuw_onder/verb
-6.4255776	sneeuw_piste/noun
-0.39387533	snel/adj
-2.1281354	snel/verb
-4.5437665	snel_aan/verb
-2.7473803	snel_recht/noun
-4.233065	snel_toe/verb
-1.3652593	snelheid/noun
-1.7787367	sneuvel/verb
-1.1217755	snijd_aan/verb
-3.525425	snijd_uit/verb
-3.0213082	snik/adj
-2.8860688	snikheet/adj
-6.193246	snoep_kraam/noun
-4.0848823	snuif/adj
-4.3514385	sociaal-psycholoog/noun
-0.37929726	soep/noun
-1.4427618	soepel/adj
-2.780831	soepelheid/noun
-1.8241067	soeverein/adj
-4.496847	soeverein/noun
-2.0296102	sollicitatie/noun
-1.5075077	som_op/verb
-0.15655066	sommig/adj
-0.12807892	soms/adv
-1.0802667	sopraan/noun
-3.7942424	sound_check/noun
-1.2031658	soundtrack/noun
-2.9555242	souplesse/noun
-3.321336	souvenir_winkel/noun
-5.18442	souvenir_winkel_DIM/noun
-0.37665647	sowieso/adv
-2.3017366	spaarpot/noun
-0.1888695	span_aan/verb
-0.66776854	spandoek/noun
-0.3946221	spannend/adj
-0.47309995	spanning/noun
-0.3679024	specialiseer/verb
-0.054419648	specialist/noun
-4.177733	specialiste/noun
-0.909516	specialiteit/noun
-0.029805811	specifiek/adj
-4.622346	specifieker/noun
-0.37112936	spectaculair/adj
-0.8568223	speech/noun
-1.1487198	speel/adj
-3.3557374	speel_kaart/noun
-1.0679579	speel_plaats/noun
-2.152819	speel_toe/verb
-0.18497206	speel_uit/verb
-2.1920846	speelbal/noun
-0.4968175	speelgoed/noun
-0.58072984	speels/adj
-0.061780706	speelster/noun
-3.4616935	speen/verb
-3.9745312	speer/noun
-1.581845	speerpunt/noun
-4.693922	speerwerpen/verb
-2.8196619	speler_bus/noun
-2.9935777	speler_makelaar/noun
-2.8082356	spiegel_DIM/noun
-0.5254381	spier/noun
-5.3104362	spijsvertering_kanaal/noun
-1.7522099	spijt/prep
-4.8601723	spikes/noun
-3.1273222	spiksplinternieuw/adj
-4.5567384	spil_ziek/adj
-1.2286757	spin/noun
-1.8633953	spin/verb
-3.5403473	spin_doctor/noun
-3.2562153	spin_web/noun
-4.8577633	spoel_over/verb
-0.86744374	sponsor/verb
-1.4404969	spook/noun
-1.6478126	spook/verb
-3.0504875	spook_beeld/noun
-0.27788365	spoor/noun
-0.73438704	sport/verb
-4.4111876	sport_commissie/noun
-1.8117528	sport_complex/noun
-5.2246866	sport_duiker/noun
-2.8498886	sport_liefhebber/noun
-1.9776464	sport_park/noun
-4.1134233	sport_schuur/noun
-6.2368665	sportleven/noun
-3.6593795	spraak_technologie_bedrijf/noun
-3.0239959	spraakzaam/adj
-2.350782	spreek_mee/verb
-0.35623556	spreek_tegen/verb
-3.1955338	spreekkamer/noun
-1.233861	spreiding/noun
-2.096106	spring/verb
-4.367026	spring_heen/verb
-5.5976977	spring_nummer/noun
-2.2246811	spring_op/verb
-1.9079785	springlevend/adj
-4.2384467	sprinkhaan/noun
-3.0769818	sprint/noun
-2.6799726	sprint/verb
-4.470915	sprint_kampioen/noun
-4.0845118	sprint_nummer/noun
-0.60442257	sprinter/noun
-3.3999133	sprintster/noun
-1.1775825	sprokkel/verb
-1.5705996	sprong/noun
-3.1789372	sprong_DIM/noun
-0.32099918	sprookje/noun
-0.71575373	spul/noun
-2.3073695	spurt/noun
-6.480928	spurt_kampioen/noun
-2.4760365	spuw_uit/verb
-0.262129	sta/verb
-1.302759	sta_aan/verb
-0.09100779	sta_bij/verb
-1.2642703	sta_klaar/verb
-0.6280403	sta_op/verb
-1.1016926	sta_open/verb
-0.80577165	sta_stil/verb
-0.06139315	sta_vast/verb
-0.2638918	staak/verb
-0.6625955	staar/verb
-0.71225125	staart/noun
-0.6699503	staat/adj
-1.0445467	staatsgreep/noun
-2.1745033	staatsrechtelijk/adj
-0.40884236	stad/noun
-0.835323	stad_DIM/noun
-2.6822464	stad_bus/noun
-1.7239325	stad_centrum/noun
-3.9381104	stad_gedeelte/noun
-1.5044184	stad_genoot/noun
-2.3987849	stad_kern/noun
-5.093618	stad_marathon/noun
-0.89165634	stadion/noun
-2.8697903	stads/adj
-3.130596	stadsmens/noun
-0.754749	staf/noun
-0.09819056	stage/noun
-2.4231517	stagneer/adj
-1.1780612	stal/noun
-2.7912357	stal_DIM/noun
-0.8730058	stam/noun
-5.8124733	stam_land/noun
-4.041413	stam_leider/noun
-1.4975439	stamp/verb
-1.8045721	stand-up/noun
-0.13052642	stand/noun
-1.2872486	stand/part
-1.8495195	stand_beeld/noun
-1.0981871	stand_plaats/noun
-1.2531071	stank/noun
-0.4183955	stap/noun
-0.74608797	stap_in/verb
-0.90043133	stap_over/verb
-1.3349234	stap_uit/verb
-0.26751557	stapel/noun
-1.3784226	start/noun
-2.5528288	start_blok/noun
-3.553753	start_lijn/noun
-2.5922859	start_schot/noun
-1.9072021	statig/adj
-0.63498265	station/noun
-3.2924273	station_hal/noun
-3.9091227	stationcar/noun
-0.32414696	statistiek/noun
-0.049920835	status/noun
-4.524619	stede/noun
-1.1730425	stedebouwkundig/adj
-2.2484133	stedeling/noun
-4.0366387	steegjes/noun
-1.6651806	steek/noun
-0.5814037	steek_op/verb
-1.1823734	steek_over/verb
-0.35281685	steek_uit/verb
-1.4111803	steekproef/noun
-4.130715	steen_fabriek/noun
-2.960443	steen_goed/adj
-1.941446	steen_rijk/adj
-3.9385579	steeple/noun
-0.5830651	steevast/adj
-0.71455234	steil/adj
-0.80878335	stel/noun
-0.7303963	stel_gerust/verb
-1.1865716	stel_veilig/verb
-3.9815598	stellage/noun
-0.30363333	stem_af/verb
-1.8897989	stem_biljet/noun
-4.5467	stem_brief_DIM/noun
-1.5823603	stem_bureau/noun
-0.82341635	stem_recht/noun
-2.3998141	stemlokaal/noun
-0.40785208	stemming/noun
-0.17100216	stempel/noun
-0.35271934	ster/noun
-2.1379673	stereotype/noun
-1.5180548	sterf/adj
-0.58019555	sterkte/noun
-2.1373336	steward/noun
-1.7259369	stewardess/noun
-3.3917348	stichtelijk/adj
-1.878648	stier/noun
-2.621654	stigma/noun
-0.58406436	stijg/adj
-0.7187742	stijger/noun
-6.157314	stijl_goeroe/noun
-4.452031	stijl_loos/adj
-0.9507328	stil/part
-0.54922915	stilaan/adv
-4.7622347	stilisten/noun
-2.6272979	stink/adj
-2.3147984	stoel_DIM/noun
-1.1950966	stoep/noun
-2.981591	stoeprand/noun
-0.96931195	stoer/adj
-0.8515098	stoet/noun
-1.3195623	stok/noun
-1.1687336	stom/adj
-3.2427278	stomheid/noun
-3.0495667	stoom_door/verb
-3.2208009	stoom_op/verb
-0.5258912	stoor/verb
-4.179563	stoot/adj
-1.0585599	stoot/verb
-2.4807153	stoot_DIM/noun
-1.1052543	stoot_door/verb
-0.5691072	stop/noun
-1.6184405	stop_af/verb
-3.1461859	storm/verb
-3.0782073	storm_aan/adj
-4.0100074	storm_aan/verb
-4.3374243	storm_af/verb
-3.2707074	storm_binnen/verb
-3.3553805	storm_wind/noun
-1.3135378	stort/verb
-0.17779528	stort_in/verb
-2.4957905	stouw_vol/verb
-3.4567425	straal/adv
-0.5779123	straat/noun
-2.0594623	straat_DIM/noun
-3.3650665	straat_artiest/noun
-0.96769583	straat_beeld/noun
-2.3492796	straat_hoek/noun
-5.994795	straat_kei/noun
-2.9202514	straat_muzikant/noun
-2.2311559	straatkind/noun
-0.595705	straf_af/verb
-3.337161	straf_expeditie/noun
-2.631732	straf_wet/noun
-0.5116694	strafrechtelijk/adj
-0.09220931	strak/adj
-0.9780505	straks/adv
-0.8296803	stralend/adj
-1.159019	strand/noun
-0.29979244	strand/verb
-5.144644	strand_loop/noun
-3.0333953	strand_tent/noun
-5.272696	strandgangers/noun
-0.17408153	strategie/noun
-1.5960954	streel/verb
-1.340406	streep_DIM/noun
-3.4066548	stressfractuur/noun
-0.022347467	strijd/adj
-0.29629713	strijd/verb
-1.0766404	strijder/noun
-3.9643466	strijdgewoel/noun
-2.4092503	strijk_neer/verb
-1.0697174	strijk_op/verb
-2.637201	strip_held/noun
-2.7975514	strip_kaart/noun
-0.49246576	stroming/noun
-1.38274	stroom/verb
-4.430354	stroom_op/verb
-3.0343013	stroom_toe/verb
-4.033117	stroop_af/verb
-2.7312963	stropdas/noun
-2.4891624	stroper/noun
-1.3444601	structuur_plan/noun
-3.467667	struikel/adj
-4.227617	struikel/verb
-3.8251698	struikrover/noun
-3.012148	struin_af/verb
-0.70574844	student/noun
-5.9483886	studie_probleem/noun
-0.28508413	studio/noun
-1.2623094	stug/adj
-3.67106	stuif/verb
-4.823862	stuif_af/verb
-0.18006746	stuit/verb
-1.0550828	stuk/adv
-1.5688709	stuk/part
-0.22800626	stunt/noun
-2.0814228	stuur_af/verb
-0.5448514	stuur_op/verb
-2.1584656	stuurloos/adj
-3.7892714	sub_continent/noun
-2.357143	subcultuur/noun
-3.2946088	subiet/adv
-2.5415585	subsidiëring/noun
-0.41059574	succes/noun
-0.7650164	succesvol/adj
-2.6777039	suf/adj
-6.2577844	sullen/noun
-1.2508415	super/adj
-2.194318	super_macht/noun
-0.12839405	super_markt/noun
-5.69284	super_start/noun
-0.76065606	superieur/adj
-1.7363122	supporter/noun
-6.543842	supporter_schaar/noun
-1.3123395	surrealistisch/adj
-1.2613413	swing/adj
-0.744408	symfonie/noun
-0.24165092	sympathie/noun
-0.27711767	sympathiek/adj
-1.1667211	sympathisant/noun
-5.168429	sympatizant/noun
-0.51653373	t/noun
-1.3002182	tabel/noun
-0.5329247	taboe/noun
-3.6045423	tact/noun
-0.45489496	tactiek/noun
-0.24174951	tafel/noun
-1.4165763	tafereel/noun
-0.26052088	tal/det
-0.024861997	talent/noun
-2.0581279	talent_rijk/adj
-0.7081621	talloos/adj
-1.1150184	talrijk/adj
-1.5389661	tand_DIM/noun
-1.6231974	tank/verb
-6.3731313	tank_DIM/noun
-3.2311523	tapas/noun
-2.4425945	tart/verb
-2.1078331	tas_DIM/noun
-0.94133955	tast/verb
-1.2144955	tastbaar/adj
-4.652583	taxateurs/noun
-0.18035838	taxi/noun
-0.6714922	taxichauffeur/noun
-0.28991744	te/adv
-0.043365292	te/prep
-0.965256	team_genoot/noun
-0.8863827	technicus/noun
-1.4201893	techniek/noun
-0.82562286	technisch/adj
-0.46333408	technologisch/adj
-0.41485748	teen/noun
-1.0443214	tegelijk/adj
-1.1878437	tegemoet/part
-1.3313793	tegemoetkoming/noun
-0.33694285	tegen/adj
-0.6203139	tegen/part
-2.2241626	tegen_wind/noun
-1.4720557	tegenaan/prep
-1.8957115	tegendraads/adj
-3.384909	tegengestelde/noun
-1.8770593	tegenop/prep
-1.0182853	tegenovergesteld/adj
-0.31404963	tegenstander/noun
-0.1492177	tegenwoordig/adj
-1.3089898	teister/verb
-2.2488854	tekeer/part
-1.827755	tekenaar/noun
-0.83601254	tel/noun
-0.015462509	tel/verb
-2.9681697	tel_bij/verb
-2.8809462	telecom_apparatuur/noun
-0.25466436	telecom_bedrijf/noun
-0.09421791	telefoon/noun
-3.0889874	telefoon_net/noun
-6.269232	telefoon_storing/noun
-0.3166037	teleurgesteld/adj
-1.1086745	teleurstellend/adj
-0.90795493	teleurstelling/noun
-0.47632086	televisie/noun
-3.6062615	televisie_journalist/noun
-2.1414077	televisie_kijker/noun
-3.5405622	televisie_ploeg/noun
-0.79815036	televisie_programma/noun
-1.5862175	telg/noun
-0.4878713	telkens/adv
-2.282199	tem/verb
-1.89017	temidden/prep
-0.7955246	tempel/noun
-0.25396547	temperatuur/noun
-0.07583545	ten/prep
-0.87375176	tennis/noun
-3.0277836	tennisbaan/noun
-0.96550137	tenor/noun
-0.3178327	tenslotte/adv
-3.1647727	tent_DIM/noun
-0.1316787	ter/adj
-0.08400787	terecht/part
-2.666467	ternauwernood/adv
-1.2498845	terras/noun
-1.3672273	terras_DIM/noun
-4.204286	terras_stoel/noun
-0.063064806	terrein/noun
-1.6500483	territorium/noun
-1.6302323	terroriseer/verb
-0.83996177	terrorist/noun
-1.2830374	terug_ronde/noun
-1.8149608	teruggave/noun
-1.3711464	terughoudendheid/noun
-0.59848905	test/verb
-0.10742077	tevergeefs/adj
-1.3178158	tevoorschijn/adv
-1.640557	tevoren/adv
-0.42207062	thans/adv
-2.3518283	the/adj
-0.019177057	the/noun
-6.007374	theater-en/noun
-2.8781734	theater_show/noun
-2.0625527	theatermaker/noun
-0.189754	theorie/noun
-0.06258446	thuis/adv
-0.59889144	thuis/noun
-0.9947521	thuis/part
-2.2403324	thuis_club/noun
-0.8161764	thuis_wedstrijd/noun
-1.2534997	thuishaven/noun
-1.8378668	tiener/noun
-3.3663292	tiener_idool/noun
-3.7067144	tiener_meisje/noun
-3.9623795	tienkamp/noun
-0.34620798	tientallen/noun
-0.06571945	tijdelijk/adj
-0.07503406	tijdens/prep
-0.83400255	tijdlang/noun
-0.33528647	tijdrit/noun
-0.07844453	tijdstip/noun
-1.8107238	tijg/verb
-0.17824186	tik/verb
-1.2092216	tikkeltje/noun
-1.9639671	time/noun
-1.8581294	timmer/verb
-2.134697	timmerman/noun
-1.3498392	tip/verb
-2.5325024	tiran/noun
-1.1262344	titel/noun
-2.9989376	titel_ambitie/noun
-1.0228658	titelverdediger/noun
-0.21887465	toe/adv
-0.17365904	toegang/noun
-2.018624	toegangspoort/noun
-2.124636	toegedaan/adj
-3.5686655	toegejuicht/adj
-1.9252981	toegewijd/adj
-1.5567423	toehoorder/noun
-1.1775825	toekenning/noun
-2.8456979	toekomst_beeld/noun
-1.4576492	toelating/noun
-1.8639978	toeloop/noun
-0.032327928	toepassing/noun
-0.08024508	toerisme/noun
-3.787278	toerist/noun
-3.090082	toerist_industrie/noun
-0.94441813	toeristisch/adj
-1.5068549	toeschouwer/noun
-0.8715573	toestemming/noun
-2.9988127	toeter/noun
-0.42054224	toetreding/noun
-0.27518	toevallig/adj
-2.9107084	tombe/noun
-2.793065	tomeloos/adj
-0.6508152	toneel/noun
-2.6950767	toneel_voorstelling/noun
-0.30766693	tong/noun
-1.1403651	toog/noun
-4.1984625	toog_hanger/noun
-4.429309	toom/noun
-1.5633235	toon_bank/noun
-0.51014316	toonaangevend/adj
-2.8483284	top_-10/noun
-1.6036845	top_DIM/noun
-3.3706698	top_advocaat/noun
-3.5207806	top_affiche/noun
-4.232207	top_baan/noun
-1.2401814	top_club/noun
-3.9200518	top_drukte/noun
-1.7206666	top_favoriet/noun
-4.1020594	top_militair/noun
-3.2274542	top_positie/noun
-2.1322773	top_prestatie/noun
-1.3324058	top_sport/noun
-3.6914601	top_tennisser/noun
-3.0045776	top_tijd/noun
-2.0310495	topsporter/noun
-0.3859322	toren/noun
-0.45623755	totaal/adv
-5.4940195	touché/noun
-3.5180464	touringcars/noun
-2.8037698	tovenaar/noun
-0.8749465	tover/verb
-0.1798773	traag/adj
-2.1411693	traditiegetrouw/adj
-1.5471268	tragiek/noun
-1.2220316	train/verb
-0.78451663	train_mee/verb
-0.822258	training/noun
-5.8994846	training_genoot/noun
-1.87767	training_kamp/noun
-2.2288964	trainingspak/noun
-0.8514368	tralie/noun
-0.8108647	tram/noun
-1.532889	transformeer/verb
-3.1897693	transport_vliegtuig/noun
-1.517799	transporteer/verb
-1.2669618	trap/noun
-6.282477	trap_partij/noun
-1.5464246	trappel/verb
-1.9423145	treed_in/verb
-1.7923062	trein_reiziger/noun
-0.5566286	trek/noun
-1.2385805	trek/verb
-1.1940784	trek_DIM/noun
-0.86635494	trek_aan/verb
-3.6731427	trek_bij/verb
-1.6043661	trek_binnen/verb
-2.0271952	trek_rond/verb
-1.1276066	trek_toe/verb
-3.7131782	trek_vogel/noun
-3.105581	trek_voorbij/verb
-3.3154871	trek_voort/verb
-1.0261976	trek_weg/verb
-0.750419	trendy/adj
-5.3016477	tressen/noun
-0.6029074	treurig/adj
-2.865625	treuzel/verb
-3.7773592	trials/noun
-1.2304523	tribune/noun
-2.0899978	tril/adj
-0.73099124	triomf/noun
-1.3723743	triomfantelijk/adj
-4.47255	trivia/noun
-0.5808467	troef/noun
-2.32214	troef_af/verb
-4.203452	trollen/noun
-2.2558463	trommel_op/verb
-3.5207806	trommelaar/noun
-0.9318992	troon/noun
-1.2199135	tropisch/adj
-0.8039235	trots/noun
-1.9487655	trotseer/verb
-1.0494983	trottoir/noun
-1.2365459	trouw/adj
-1.7398797	truc/noun
-3.8107119	trucages/noun
-5.043137	tuimel_in/verb
-0.4964712	tuin/noun
-4.5461125	tuin_deur/noun
-4.2622547	tuin_hek/noun
-2.812972	turn/verb
-0.08671238	tussen/prep
-1.3280122	tussen_tijd/noun
-0.6119066	tussenkomst/noun
-1.2143067	tussenstand/noun
-2.9219859	tussenstap/noun
-1.9748596	tussenstop/noun
-0.99284714	tv-serie/noun
-0.82832456	tv-zender/noun
-3.4658048	tv_camera/noun
-4.037168	tv_ploeg/noun
-2.27666	tv_scherm/noun
-3.1668897	tv_studio/noun
-3.9869165	tv_verslaggever/noun
-3.0725746	twaalven/noun
-0.6476587	twee/noun
-4.7747025	twee_gevecht/noun
-1.0701532	tweemaal/noun
-0.13847011	tweetal/noun
-1.7300045	tweevoudig/adj
-3.0245085	tweewieler/noun
-0.27040124	twijfel/verb
-0.96514153	twintiger/noun
-1.5899371	twintigjarige/adj
-0.7929608	twintigtal/noun
-0.24373391	type/noun
-3.9197378	type_machine/noun
-3.5526652	té/adj
-0.05765118	uit/adj
-1.9991202	uit/adv
-4.659794	uit_bazuin/verb
-1.3099821	uit_wedstrijd/noun
-0.4684359	uitblinker/noun
-0.107434645	uitbreiding/noun
-0.548963	uitdrukkelijk/adj
-0.56440806	uitdrukking/noun
-0.26551467	uiteindelijk/adj
-0.4160925	uiteraard/adv
-5.574441	uitgaanders/noun
-4.4334974	uitgaansgebieden/noun
-6.2464666	uitgaansnacht/noun
-2.072574	uitgedost/adj
-3.8989265	uitgejouwd/noun
-2.5469923	uitgelaten/adj
-1.1617125	uitgerust/adj
-1.1533214	uitgesproken/adj
-3.2809281	uitgestald/adj
-1.426159	uitgesteld/adj
-1.2136775	uitgestrekt/adj
-0.3687487	uitgeverij/noun
-1.561303	uithangbord/noun
-1.297205	uithoek/noun
-0.10217734	uitkering/noun
-2.0010536	uitkeringsgerechtigde/noun
-0.004111837	uitleg/noun
-0.841142	uitnodiging/noun
-0.7319881	uitschieter/noun
-0.6214009	uitslag/noun
-1.0412415	uitsluitend/adv
-0.9988841	uitstap_DIM/noun
-0.15975751	uitstek/noun
-1.3380764	uitval/noun
-1.6558388	uitverkocht/adj
-1.4601008	uitverkoop/noun
-1.4904675	uitverkoren/adj
-0.74343807	uitvinding/noun
-2.0235128	uitwerpsel/noun
-1.2521915	uitzichtloos/adj
-3.4101236	uitzinnig/adj
-0.48904163	ultiem/adj
-0.43009245	uniform/noun
-2.9229121	unionist/noun
-0.40148777	universitair/adj
-1.3653468	up/noun
-1.2665998	urenlang/adj
-1.8191391	vaag_weg/verb
-0.90096796	vaak/adv
-1.9894865	vaandel/noun
-4.4215026	vaar_aan/verb
-3.9345999	vaar_rond/verb
-0.8329847	vaart/noun
-1.744159	vaartuig/noun
-2.1504085	vacant/adj
-1.1823869	vaderlands/adj
-2.1057334	vak_DIM/noun
-1.1074389	vak_blad/noun
-1.1420032	vak_centrale/noun
-2.2936163	vakantie_geld/noun
-6.1602592	vakantie_reiziger/noun
-5.2166176	vakantie_villa/noun
-1.801265	vakantieganger/noun
-0.46721765	val/noun
-0.15631238	val/verb
-0.6954093	val_aan/adj
-1.7335565	val_aan/verb
-4.0031605	val_avond/noun
-2.579633	val_binnen/verb
-3.294105	val_in/adj
-0.74612737	val_lastig/verb
-0.4275769	val_mee/verb
-4.903711	val_neer/adj
-1.765883	val_om/verb
-0.13401099	val_op/verb
-0.9001708	val_stil/verb
-0.27273867	val_tegen/adj
-1.6577983	val_terug/verb
-2.6963687	vampier/noun
-0.92515975	van/det
-0.059160165	van/pron
-2.6604497	vandaan/adv
-1.1149708	vandaan/part
-0.86149955	vandalisme/noun
-0.67636853	vanmiddag/adv
-0.005918002	vanmorgen/adv
-0.18268126	vanuit/prep
-0.33890355	variant/noun
-1.155017	variatie/noun
-1.2173744	vasteland/noun
-1.6421005	vastgelegd/adj
-0.7281853	vecht/verb
-1.2985849	vecht_uit/verb
-4.321913	vechtlustig/adj
-1.7828524	vee_markt/noun
-2.459358	veeg/adj
-0.6421639	veel/adv
-0.41008684	veelbelovend/adj
-0.13998799	veeleer/adv
-2.5613723	veelgeprezen/adj
-1.6361648	veelvoud/noun
-3.6599846	veelvraat/noun
-3.8196645	veer/verb
-4.5525928	veer_kleed/noun
-1.7380835	veerboot/noun
-1.3461821	veertiger/noun
-1.309232	veil/verb
-1.4563122	veilig/part
-1.9726626	veiligheid_agent/noun
-0.5014248	veiligheid_dienst/noun
-2.2971416	veiligheidstroepen/noun
-3.1069262	veiling_site/noun
-3.295365	veld_loop/verb
-1.181879	veld_slag/noun
-2.9915905	veldheer/noun
-0.071675375	vele/adj
-0.31895265	ver/adj
-1.8773036	veraf/adj
-0.6213468	verbaas/verb
-1.2085539	verbeeld/verb
-0.6726877	verbeelding/noun
-1.4492685	verbeten/adj
-1.3347746	verbeter/verb
-0.13231133	verbetering/noun
-1.2534125	verbijsterd/adj
-1.3186072	verbijstering/noun
-3.1716318	verblijf_kosten/noun
-1.4496932	verblijf_plaats/noun
-1.901562	verblijfsvergunning/noun
-2.3428388	verblind/adj
-1.6070968	verbondenheid/noun
-0.32983983	verbouw/verb
-5.814559	verbouwing_dossier/noun
-2.2403617	verbrijzel/verb
-0.48432913	verdedig/verb
-0.06569783	verdeeld/adj
-3.2974687	verdelers/noun
-0.16651855	verdeling/noun
-0.16483134	verder/adv
-2.2817106	verderf/noun
-3.359853	verdoemd/adj
-0.6845365	verdraag/verb
-2.1355927	verdreven/adj
-1.034915	verdriet/noun
-1.4524047	verdrietig/adj
-0.4258017	verdrijf/verb
-3.0882826	verdring/verb
-1.6285801	verdwaal/verb
-2.607077	verdwaald/adj
-2.6078653	verdwaasd/adj
-1.7775692	vereer/verb
-1.8849871	vereeuwig/verb
-0.03046384	vereis/verb
-0.2917793	verenig/verb
-0.05628944	verf/noun
-1.2193756	verfijnd/adj
-0.67085844	verfilming/noun
-0.4597417	verg/verb
-6.3622417	vergaap/adj
-2.7043893	vergaap/verb
-1.5715513	vergaar/verb
-6.35147	vergader_schema/noun
-0.5828252	vergeef/verb
-0.4934652	vergeefs/adj
-0.6911417	vergeleken/adj
-0.22613405	vergelijking/noun
-1.2170546	vergelijking/prep
-0.45936197	vergeten/adj
-1.9840584	vergevorderd/adj
-2.0372887	vergezel/verb
-1.8407476	vergezeld/adj
-4.5765176	vergezochte/noun
-0.2788162	vergoeding/noun
-2.4959416	vergooi/verb
-1.4549901	verhaal_lijn/noun
-0.6917138	verhandel/verb
-0.66721	verhef/verb
-1.4602349	verhit/adj
-0.18608944	verhoogd/adj
-1.041118	verjaag/verb
-3.5728724	verjaagd/adj
-2.0245266	verkeer_bord/noun
-1.8428105	verkeer_hinder/noun
-0.87804973	verkeerd/adj
-0.88417846	verkeerslicht/noun
-2.495035	verketter/verb
-1.9069715	verkies_uit/verb
-3.1596715	verkiezing_zege/noun
-3.2744868	verkiezingsbijeenkomst/noun
-3.227847	verkleed/adj
-0.34651625	verkocht/adj
-0.35452917	verkondig/verb
-1.1410278	verkracht/verb
-1.9522262	verkrachter/noun
-2.1070132	verkrampt/adj
-4.0811863	verkreukeld/adj
-1.7982697	verkwansel/verb
-0.08295537	verlaag/verb
-0.1281386	verlaat/verb
-0.47323492	verleden/noun
-0.77400666	verlegen/adj
-0.16406403	verleid/verb
-4.300097	verleid_ster/noun
-1.4540565	verlengde/noun
-0.94185066	verlicht/adj
-0.2585855	verlichting/noun
-0.85598135	verliefd/adj
-1.5905482	verlies/adj
-1.8950068	verliesgevend/adj
-1.8357946	verlijd/verb
-2.564929	verloederd/adj
-0.7538153	verlof/noun
-1.6670264	verloochen/verb
-1.3014077	verloop/noun
-0.6805303	verlos/verb
-2.8517208	vermaan/adj
-1.5109735	vermakelijk/adj
-1.2815329	vermeng/verb
-0.8334147	vermoeid/adj
-0.9793876	vermoeidheid/noun
-3.5057302	vermolmd/adj
-2.4893875	vermom/verb
-1.3369136	verneder/verb
-0.9466149	verneem/verb
-2.0612428	vernieling/noun
-6.208607	vernielzuchtige/adj
-0.29917896	vernietig/verb
-0.063571386	vernieuw/verb
-0.85136384	verontrustend/adj
-1.8864447	veroorzaakt/adj
-1.6138313	verouder/verb
-0.87552935	verouderd/adj
-3.150467	veroveraar/noun
-2.7080734	veroverd/adj
-2.3971403	verpauperd/adj
-2.0600324	verpest/verb
-0.29268458	verplaats/verb
-0.26934057	verpleegkundig/adj
-0.35736585	verplicht/adj
-2.866829	verpoos/verb
-0.4444258	verrassing/noun
-2.8391783	verricht/adj
-1.1613742	verrichting/noun
-0.89007735	verrijs/verb
-2.7020183	verrot/adj
-0.03576954	verschaf/verb
-2.4587388	verschans/verb
-1.2254246	verschijning/noun
-1.4764087	verscholen/adj
-1.0589998	verschuif/verb
-0.40232575	versier/verb
-3.4195144	versiersel/noun
-1.3566846	versla/verb
-2.2643952	verslaggever/noun
-3.3375118	verslik/verb
-2.751812	verslind/verb
-0.70972735	versnelling/noun
-1.7569995	versper/verb
-0.20399404	verspreid/adj
-5.474975	verspring/verb
-5.994795	verspring_bak/noun
-5.002006	verspringen/noun
-4.49573	verspringer/noun
-0.065824226	verstand/noun
-0.59984994	versterking/noun
-2.4099574	verstik/verb
-1.1153191	verstoor/verb
-1.7098644	verstoord/adj
-0.3044438	verstop/verb
-1.5160385	verstopt/adj
-3.2597783	verstrooiing/noun
-0.55687857	vertaald/adj
-1.7929608	vertaler/noun
-0.6567761	verte/noun
-1.6274695	vertegenwoordigd/adj
-0.72352755	verteller/noun
-5.274519	vertoef/adj
-0.8462689	vertoning/noun
-0.4093815	vertrek/verb
-0.19314861	vertrouw/verb
-0.35751724	vertrouwd/adj
-2.5360756	vervaarlijk/adj
-0.86420107	verval/verb
-0.14826936	vervanger/noun
-2.4661574	vervloek/verb
-1.7897664	vervoeg/verb
-0.47797465	vervoer/verb
-1.3347341	vervuil/verb
-0.40426815	verwacht/adj
-0.3097976	verwacht/verb
-1.272842	verward/adj
-0.0068176053	verwarring/noun
-5.6690946	verweer_middel/noun
-1.1641638	verwelkom/verb
-1.8404729	verwend/adj
-3.3124044	verwerking_proces/noun
-1.4288853	verwezenlijk/verb
-0.8462979	verwijderd/adj
-4.540258	verwijfde/noun
-0.19749166	verwittig/verb
-1.6143006	verwoest/adj
-1.716267	verwoest/verb
-1.11461	verwonder/verb
-5.358218	verzamel/adj
-1.4393544	verzamel/verb
-0.06722012	verzeker/verb
-1.5752316	verzelfstandiging/noun
-2.720106	verzeng/adj
-0.07509149	verzet/verb
-3.9403505	verzet_daad/noun
-0.95995486	verzoening/noun
-2.4254029	verzuur/verb
-1.5627288	verzwakt/adj
-0.5456509	vestig/verb
-2.9716501	vesting/noun
-0.44897306	vet/noun
-5.69469	vet_bol_DIM/noun
-4.9518714	vet_gedrukt/adj
-1.8504703	vete/noun
-0.8601147	veteraan/noun
-1.5524671	viaduct/noun
-2.2007673	vice_kampioen/noun
-5.6459002	video_band_DIM/noun
-1.1412618	video_beeld/noun
-1.115959	video_clip/noun
-0.5322941	vier/verb
-0.56481344	viertal/noun
-4.2249403	viertallen/noun
-2.0522425	viervoeter/noun
-0.8095447	vijand/noun
-0.5884979	vijandig/adj
-5.143576	vijfkamp/noun
-1.9006586	vinding/noun
-2.927091	vips/noun
-0.11259424	virtueel/adj
-0.50207293	visser/noun
-4.600098	visser_dorp_DIM/noun
-3.9933147	visser_haven/noun
-0.26593772	visueel/adj
-3.294105	visum_plicht/noun
-1.1421007	vizier/noun
-0.12948184	vlag/noun
-1.4730878	vlak/adj
-0.10999199	vlak/adv
-0.7706816	vlak/noun
-3.1783388	vlak_uit/verb
-1.204183	vlakte/noun
-3.8381028	vlecht_werk/noun
-0.92818886	vlek/noun
-1.1269335	vlekkeloos/adj
-1.6140503	vlieg/noun
-0.24563435	vlieg/verb
-3.3263521	vlieg_binnen/verb
-2.9902267	vlieg_dek_schip/noun
-1.5549711	vlieg_in/verb
-2.7263672	vlieg_maatschappij/noun
-2.5751028	vlieg_reis/noun
-0.916558	vliegveld/noun
-1.9750841	vloedgolf/noun
-0.74120027	vloei/verb
-1.1938934	vloeibaar/adj
-1.127318	vloeiend/adj
-0.86572486	vloer/noun
-1.1765718	vloot/noun
-0.80657834	vlot/adj
-2.1831448	vlot/verb
-3.086665	vlucht/adj
-0.085462674	vlucht/verb
-0.7338678	vluchteling/noun
-1.3114028	vlug/adj
-1.0613647	vochtig/adj
-3.700494	vod_DIM/noun
-0.8170574	voeg/verb
-0.4494913	voel/verb
-0.68414134	voer_aan/verb
-0.06093953	voer_af/verb
-0.3392227	voer_in/verb
-2.0047464	voer_weg/verb
-0.3750393	voet/noun
-2.3728569	voet_DIM/noun
-3.2709944	voetbal_fan/noun
-3.8517919	voetbal_held/noun
-3.4308076	voetbal_makelaar/noun
-1.6245562	voetbal_ploeg/noun
-0.8639055	voetbal_wedstrijd/noun
-6.125473	voetbal_weer/noun
-2.0596902	voetbalelftal/noun
-3.1683693	voetballertjes/noun
-2.9788923	voetbalsupporter/noun
-1.4317235	voetganger/noun
-1.9186991	voetstuk/noun
-0.09978956	vogel/noun
-3.3922904	vogelaar/noun
-0.15713646	vol/adj
-0.3991789	vol/prep
-2.3731909	voldaan/adj
-0.16335416	voldoe/verb
-2.0463917	voldoende/noun
-0.9871306	voldoening/noun
-0.52498	volg/adj
-0.24769713	volg/verb
-0.1593191	volg_door/adj
-2.9194431	volg_na/verb
-0.72398996	volg_opeen/adj
-2.1916199	volgeling/noun
-3.8716354	volgelopen/adj
-0.3522522	volk/noun
-2.4495692	volk_held/noun
-1.9349555	volk_moord/noun
-2.1824818	volk_partij/noun
-2.9861462	volk_verhuizing/noun
-1.199397	volks/adj
-2.776019	volleybal/verb
-5.8314013	volleybal_net/noun
-1.9359479	volleyballer/noun
-2.2366226	volmacht/noun
-1.8220242	volmondig/adj
-0.3211738	volop/adv
-1.4116402	volslagen/adj
-0.5214481	volsta/verb
-1.082664	volstrekt/adj
-0.8617649	voltallig/adj
-0.028840415	voluit/adv
-2.24635	volwassenheid/noun
-0.33992252	voor/det
-1.25422	voor_deur/noun
-2.756901	voor_post/noun
-4.542596	voor_programmeer/verb
-2.4724128	voor_seizoen/noun
-0.39564165	vooraanstaand/adj
-0.059107296	vooraf/adv
-0.4329216	voorafgaand/adj
-2.9261606	voorafgegaan/adj
-0.21216674	vooral/adv
-1.5080422	voorarrest/noun
-1.0642314	voorbarig/adj
-1.0195622	voorbeeldig/adj
-1.5857612	voorbereid/adj
-0.014570087	voorbij/adj
-1.2624635	voorbij/adv
-1.2894491	voorbij/part
-1.2927532	voorbij/prep
-3.8494484	voorbij_raas/verb
-2.862676	voorbij_steek/verb
-4.583808	voordurend/adj
-1.6544043	voorgenomen/adj
-1.762175	voorgeschreven/adj
-1.687054	voorgevel/noun
-0.8179109	voorhand/noun
-0.69824153	voorhanden/adj
-0.327953	voorheen/adv
-0.46933192	voorjaar/noun
-6.134057	voorjaar_aanbieding/noun
-0.091519624	voorkom/verb
-1.9144964	voorlaatst/adj
-1.3524975	voorliefde/noun
-1.0491781	voorloper/noun
-0.04121461	voorlopig/adj
-0.85318977	voorman/noun
-0.21863744	voornaam/adj
-0.48483986	vooroordeel/noun
-1.1200747	voorouder/noun
-0.04673373	voorraad/noun
-0.27059716	voorrang/noun
-0.47919104	voorronde/noun
-1.1635554	voorspelbaar/adj
-1.7716174	voorspoedig/adj
-1.4655882	voorstad/noun
-0.8462725	voorstander/noun
-0.53796846	voort/part
-4.2946024	voortgestuwd/adj
-0.5780391	voortijdig/adj
-1.2135518	voortreffelijk/adj
-1.7520661	voortuin/noun
-1.6103337	voortvarend/adj
-0.9099801	vooruit/part
-0.48387426	vooruitgang/noun
-0.21831967	vooruitzicht/noun
-2.4263542	voorwaarts/adj
-0.7196975	voorzichtig/adj
-0.2557015	voorzitterschap/noun
-0.7475383	voren/adv
-0.41362265	vorige/adj
-0.47411546	vorm/verb
-1.682202	vos/noun
-0.24447472	vracht_wagen/noun
-5.4760013	vrede_demonstrant/noun
-1.3277538	vrede_proces/noun
-0.60340846	vreedzaam/adj
-0.32014942	vreemd/adj
-0.9940668	vreemdeling/noun
-0.5521823	vrees/verb
-0.12554735	vreugde/noun
-3.369402	vreugdevol/adj
-0.13263965	vriend/noun
-0.15576784	vriendelijk/adj
-2.3731241	vriendelijkheid/noun
-2.0063202	vrijdag_middag/noun
-4.4918294	vrijgezel_avond/noun
-0.27586105	vrijlating/noun
-0.76513445	vrijwilliger/noun
-4.2530136	vrind/noun
-0.6722606	vroegtijdig/adj
-0.4876854	vrouw/noun
-5.3476915	vrouw_hockey_team/noun
-4.5555525	vrouwvolk/noun
-1.6360688	vruchteloos/adj
-0.79232776	vuil/adj
-0.91854346	vuist/noun
-0.5142809	vul/verb
-0.7474287	vul_op/verb
-0.9693202	vurig/adj
-3.5640364	vuur/adv
-1.6342472	vuur_DIM/noun
-0.70980334	vuurwapen/noun
-0.8973398	vuurwerk/noun
-4.6611104	vuurwerk_spektakel/noun
-5.103309	w./noun
-6.54818	waad_vogel/noun
-0.82076955	waag/verb
-1.8912841	waai_op/verb
-0.49000207	waak/verb
-1.0327897	waanzin/noun
-0.3229962	waar/adj
-0.33669665	waar/adv
-2.1878545	waarachtig/adj
-0.69774073	waarborg/verb
-0.22299552	waard/adj
-1.115693	waardeloos/adj
-0.62537265	waardevol/adj
-0.45241427	waardig/adj
-0.056989312	waarom/adv
-0.24265438	waarschijnlijk/adj
-1.0530988	waarschijnlijk/adv
-0.1409744	waarschuw/verb
-1.6877275	wacht/adj
-1.0340033	wacht/verb
-0.53922534	wacht_af/verb
-3.6121898	wacht_op/verb
-3.028234	wad/noun
-3.4527993	waddeneiland/noun
-3.8559058	wak/noun
-1.1247635	wal/noun
-3.3040605	walm/noun
-1.9492029	wals/verb
-2.8122718	wandaad/noun
-1.6219666	wandel/adj
-1.3123627	wandel_gang/noun
-4.066903	wandel_weg/verb
-1.3199664	wandelaar/noun
-0.7888212	wandeling/noun
-1.1979821	wanhoop/noun
-0.3446681	wanhopig/adj
-1.0488225	wankel/adj
-0.44687945	wanneer/adv
-1.0482271	wantrouwen/noun
-3.1717062	wapentuig/noun
-1.0363128	ware/adv
-0.14652248	warm/adj
-3.6660547	warming up/noun
-4.0863643	warming/noun
-2.6287067	wassen/adj
-5.68731	wassen_beeld/noun
-0.42206898	wat/adv
-0.09197026	wat/det
-0.55198216	wat/noun
-0.42189014	wat/prep
-5.2751274	water_bak/noun
-4.8821154	water_skiër/noun
-4.0607405	water_stroom/noun
-2.7926583	waterkant/noun
-2.5220523	way/noun
-2.9587607	wazig/adj
-0.91177684	wc/noun
-4.9155354	wear/noun
-6.282477	web-hosting/noun
-2.1687655	wed/verb
-1.361426	weder_optreden/noun
-2.9605632	wedloop/noun
-3.9636905	wedstrijd_helft/noun
-2.9193275	wedstrijd_leider/noun
-4.1439805	wedstrijd_reglement/noun
-5.236328	wedstrijd_situatie/noun
-2.1848044	weduwnaar/noun
-1.7260419	weeg_door/verb
-0.9687948	week_DIM/noun
-0.36197245	weekend/noun
-0.40733418	weer/adv
-0.058672883	weer/noun
-1.1655815	weer/verb
-5.4423475	weer_vind/verb
-1.9580793	weerklink/verb
-2.028331	weerloos/adj
-2.6551182	weeromstuit/noun
-0.8198605	weerspiegel/verb
-2.2476466	weersta/verb
-0.08754784	weerstand/noun
-4.8169093	weerstand_grens/noun
-2.0111492	weerzinwekkend/adj
-1.9171302	weet/adj
-2.0138056	weetje/noun
-2.4514098	weg/adj
-0.18101062	weg/adv
-0.8714565	weg/noun
-0.3170122	weg/part
-1.9275217	weids/adj
-0.9176074	weiland/noun
-0.015513221	weinig/det
-0.67888314	weinige/adj
-0.5983049	wek/verb
-0.43111768	wek_op/verb
-0.85578096	wekenlang/adj
-0.8552827	wel/verb
-2.3660636	weldoener/noun
-4.4111876	weldoorvoed/adj
-1.8217161	welhaast/adv
-0.35266438	weliswaar/adv
-4.3734283	welp/noun
-0.7546408	wen/verb
-0.75815344	wend_aan/verb
-1.8044206	wenk/noun
-0.8929182	wenkbrauw/noun
-3.0277193	wereld_erfgoed/noun
-2.7076063	wereld_handel/noun
-5.566536	wereld_jaar_prestatie/noun
-3.2419307	wereld_record/noun
-3.4853988	wereld_record_houd_ster/noun
-5.0344872	wereld_revolutie/noun
-2.3492143	wereld_ster/noun
-0.6845242	wereldberoemd/adj
-1.8987018	werelddeel/noun
-2.5415585	wereldgeschiedenis/noun
-1.5159336	wereldkampioen/noun
-2.3445156	wereldrecord/noun
-2.9075093	wereldrecordhouder/noun
-1.05656	werelds/det
-0.7907469	wereldtitel/noun
-2.319634	werf/adj
-1.0644572	werk_dag/noun
-4.926642	werkelijkheid_zin/noun
-3.563157	werkkring/noun
-0.65524554	werkloos/adj
-0.49173212	werkwijze/noun
-0.55687314	werkzaamheid/noun
-1.8642746	werp/verb
-6.4320087	werp_nummer/noun
-2.113489	werp_omver/verb
-2.4764566	werp_op/verb
-0.7275425	westelijk/adj
-0.56791383	westers/adj
-0.20672227	wet/noun
-0.40835485	wetenschap/noun
-0.67543787	wetenschapper/noun
-4.793325	wetenschapsbeoefening/noun
-0.03384748	wetsvoorstel/noun
-0.94338554	wezen/adv
-1.0681301	wezen/noun
-1.315747	whisky/noun
-0.47570172	wie/det
-3.6268902	wielerfans/noun
-6.444996	wielerkaart/noun
-4.977754	wielerlegende/adj
-3.1137722	wielerliefhebbers/noun
-2.1297586	wielertoeristen/noun
-0.5680128	wielren/verb
-1.0158309	wielrenner/noun
-0.42981476	wijd/adj
-3.638669	wijd_vertakt/adj
-0.3353097	wijk/noun
-0.21440631	wijk_uit/verb
-2.7568028	wijk_werking/noun
-5.7228613	wijn_stad/noun
-0.71228933	wijsheid/noun
-0.023312988	wijze/noun
-2.0780642	wild/adj
-2.0134168	wild/noun
-4.7747025	wild_enthoesiast/adj
-3.9091227	wild_man/noun
-5.55654	wildebrassen/noun
-5.0755086	wilg_tak/noun
-4.9562864	wilg_teen/noun
-0.90962374	win/verb
-0.71107304	wind/noun
-4.5018907	wind_jack/noun
-1.881138	windei/noun
-3.3562138	windmolen_park/noun
-2.908879	windrichting/noun
-2.2261803	windstreek/noun
-3.3429036	winkel/adj
-0.23867294	winkel/noun
-0.5353689	winkel/verb
-1.196693	winkel_DIM/noun
-1.5452945	winkel_centrum/noun
-4.3475795	winkel_meisje/noun
-0.105577596	winkelier/noun
-1.1245333	winnares/noun
-0.66834867	winter/noun
-2.8738627	winter_sporter/noun
-1.8153435	winters/adv
-2.0969722	wip/noun
-0.21890877	wis/verb
-1.6593031	wis_uit/verb
-1.1598531	wissel/noun
-0.46972045	wisselend/adj
-1.6640615	wit/verb
-1.7135617	woedend/adj
-1.344699	woelig/adj
-0.10812221	woensdag/noun
-3.025432	woest/adj
-4.453368	woesteling/noun
-0.452238	woestijn/noun
-1.4393665	wolf/noun
-0.044985957	wolk/noun
-3.1410582	wolk_DIM/noun
-0.26682395	wond/noun
-0.16914877	wonder/noun
-0.6385506	wonderlijk/adj
-2.8436627	wondermooi/adj
-1.1997898	woningbouw/noun
-0.08173787	woon_plaats/noun
-0.7203092	woon_samen/verb
-4.2738156	woon_vertrek/noun
-1.0211174	word/adj
-0.09703701	word/verb
-0.4076679	workshop/noun
-2.0764916	worp/noun
-1.6739457	worstel/verb
-1.788648	worsteling/noun
-1.456673	woud/noun
-1.2876549	wreedheid/noun
-1.4285734	wreek/verb
-0.7300213	wring/verb
-1.5734874	wuif_weg/verb
-2.239835	wurm/verb
-2.0178428	x/noun
-3.2496095	y/noun
-4.2412567	yards/noun
-2.5343857	yup/noun
-2.6010418	zaad_DIM/noun
-2.7668602	zaadcel/noun
-0.40063193	zaag/verb
-1.1536044	zaal_DIM/noun
-6.592632	zaal_training/noun
-1.6060098	zadel_op/verb
-0.50343233	zak_DIM/noun
-1.6120341	zak_af/verb
-1.3896496	zak_in/verb
-3.1632004	zalig_verklaring/noun
-3.1462584	zanderig/adj
-0.69737786	zaterdag_middag/noun
-0.27969685	ze/pron
-0.26375797	zee/noun
-4.095677	zee_zoogdier/noun
-2.2457614	zeebodem/noun
-5.55654	zeef_druk/verb
-4.629341	zeef_kamp/noun
-3.6724072	zeelucht/noun
-2.8422725	zeg_na/verb
-0.28996292	zeg_op/verb
-0.62145114	zege/noun
-1.9839225	zegening/noun
-1.4181784	zegevier/verb
-0.9316303	zeil/verb
-4.5223227	zeil_boot_DIM/noun
-0.37147704	zeldzaam/adj
-3.3215086	zelfbeklag/noun
-3.4546702	zelfgenoegzaam/adj
-2.943746	zelfmoord_terrorist/noun
-0.1176895	zelfvertrouwen/noun
-0.9805826	zelfverzekerd/adj
-4.916385	zelfzekerder/adj
-4.946599	zelfzucht/noun
-6.017552	zeloot/noun
-0.3417181	zenuw/noun
-0.46788877	zenuwachtig/adj
-3.1311665	zenuwslopend/adj
-1.9641225	zestal/noun
-1.637093	zestienjarige/adj
-3.4964373	zestienjarigen/adj
-0.09453453	zet/noun
-0.23079959	zet_aan/verb
-0.5208134	zet_bij/verb
-3.699738	zet_dwars/verb
-0.08755804	zet_in/verb
-1.1989393	zet_neer/verb
-0.4158691	zet_op/verb
-1.137777	zet_recht/verb
-1.2698214	zet_voor/verb
-2.9290118	zet_weg/verb
-2.4103734	zeul/verb
-3.364526	zeur/adj
-0.6485567	zeur/verb
-3.4342782	zeurderig/adj
-4.6415405	zevende/noun
-4.771387	zevenkamp/noun
-1.7640636	zeventienjarige/adj
-0.3287735	zich/pron
-0.24996611	zie/verb
-1.3783221	zie_aan/verb
-0.7271085	zie_af/verb
-1.4986864	zie_op/verb
-1.8210231	zie_tegemoet/verb
-0.3658257	zie_terug/verb
-0.8138965	zie_toe/verb
-2.826055	zie_weer/verb
-2.610659	ziedaar/verb
-4.321913	ziekenzaal/noun
-2.3371482	ziele/adj
-1.5441754	zielig/adj
-2.0288045	zienderogen/adv
-0.46203795	zijde/noun
-2.0854826	zilver/noun
-3.213804	zilver_grijs/adj
-0.23447451	zilveren/adj
-1.2510374	zin_DIM/noun
-2.8121681	zink/adj
-0.29291415	zinloos/adj
-0.47529584	zit/adj
-1.5176284	zit_aan/verb
-4.090823	zit_achterna/verb
-0.28173882	zit_in/verb
-1.4659928	zit_mee/verb
-1.1073446	zit_plaats/noun
-0.88438964	zo'n/adv
-0.18435393	zoals/prep
-0.341109	zoals/pron
-0.925985	zodoende/adv
-0.33764014	zoek/adj
-0.2609116	zoek_op/verb
-0.102812275	zoet/adj
-2.5793247	zog/noun
-0.31734565	zogenaamd/adj
-0.4622901	zogenoemd/adj
-2.329728	zoiets/noun
-1.6150103	zojuist/adv
-0.20466456	zomaar/adv
-4.73456	zombies/noun
-0.45835072	zomer/noun
-0.8550923	zomer_vakantie/noun
-1.8224095	zomermaand/noun
-1.6116438	zomers/adv
-0.48162618	zon/noun
-2.0223355	zon_verduistering/noun
-5.8904347	zon_zoeker/noun
-0.11609276	zondag/noun
-1.1958996	zondag_middag/noun
-0.6176316	zonder/adv
-0.47820553	zonder/prep
-2.7167072	zonderling/noun
-2.5615337	zondvloed/noun
-4.8553605	zonnebad/noun
-0.23655574	zonnig/adj
-2.232607	zooi_DIM/noun
-1.7459782	zorgeloos/adj
-0.49593234	zorgvuldig/adj
-0.085713744	zout/noun
-1.3867371	zover/adv
-0.57481307	zowaar/adv
-0.7569071	zowel/adv
-0.9638505	zozeer/adv
-0.47239435	zucht/verb
-1.1789789	zuid/noun
-0.7204948	zuidelijk/adj
-0.8279538	zuiden/prep
-1.5610063	zuidoosten/noun
-3.7385154	zuidwaarts/adj
-1.488727	zuidwesten/noun
-1.3470203	zuig/verb
-5.407008	zuig_fles/noun
-4.2135067	zuip/adj
-5.5976977	zuurstof_apparaat/noun
-3.2693415	zwaai/adj
-0.012964038	zwaai/verb
-2.254569	zwaai_licht/noun
-3.73651	zwaar_bewapend/adj
-1.0087426	zwaar_gewicht/noun
-3.566679	zwaard/adv
-1.3144244	zwaard/noun
-4.007263	zwaard_vis/noun
-3.595083	zwabber/verb
-3.7416625	zwammen/noun
-1.6211785	zwart-wit/noun
-0.19325367	zwart/adj
-0.67487496	zwart/noun
-1.5875574	zweef/adj
-2.2466211	zweef/verb
-3.3392668	zweep/noun
-3.1902988	zweep_op/verb
-0.89364874	zweet/noun
-0.4619984	zwembad/noun
-0.665318	zwemmer/noun
-1.4647254	zwerf/verb
-2.5742035	zwerm/noun
-3.9303083	zwerm/verb
-3.110553	zwerm_uit/verb
-1.0875775	zwerver/noun
-0.52514315	zwijg/verb
-1.9776464	zwijg_stil/adj
-4.496847	zwijmel/adj
-2.0047927	zwijn/noun
-3.2880788	zwoeg/adj
-4.200123	±/adv
-2.496395	éénmaal/adj
-1.2141598	überhaupt/adv
+pmi	raw_freq	raw_co	cw
+0.35702187	62265	11	's/adv
+4.0230775	725	5	100m/noun
+9.032001	31	32	110^m/noun
+3.0474653	386	1	18-jarigen/adj
+1.609212	1617	1	1920/noun
+2.0812979	2018	2	1939/noun
+0.88359046	3349	1	1940/noun
+0.89154994	3325	1	1948/noun
+0.7786506	3726	1	1966/noun
+-0.7132862	16536	1	1992/noun
+0.77802145	29771	8	1996/noun
+-0.2502891	62906	6	2000/noun
+-1.2170653	55236	2	2001/noun
+0.40291893	16437	3	24/noun
+7.30935	87	16	300_meter/noun
+1.6606791	3156	2	34-jarige/adj
+4.7472496	493	7	400_meter/noun
+1.978029	2223	2	6./noun
+7.8237557	181	56	60^m/noun
+5.0489454	52	1	800m/noun
+0.38023525	16737	3	Afrikaans/adj
+5.5662646	34	1	Ajax_hooligan/noun
+0.15274519	56013	8	Amerikaan/noun
+2.6531706	573	1	Antwerps_steen_weg/noun
+1.5123291	7188	4	Aziatisch/adj
+0.26082343	139420	22	Belgisch/adj
+0.9406053	3187	1	Berlijns/adj
+3.0759437	380	1	Breese/adj
+1.3558925	21127	10	Brit/noun
+-0.18710928	9925	1	Brugse/adj
+1.0394961	2881	1	Brusselaars/noun
+-1.4950014	36613	1	Brussels/adj
+1.3945618	2019	1	Catalaans/adj
+1.8693554	1262	1	China/det
+0.4091467	27261	5	Chinees/adj
+2.6606278	1713	3	Cubaan/noun
+1.4662627	9515	5	Deens/adj
+-0.23396565	104339	10	Duits/adj
+1.4069161	27916	14	Duitser/noun
+1.4806486	22423	12	EK/noun
+4.4065804	100	1	EK_eindronde/noun
+1.4244038	7822	4	Engelsman/noun
+0.08350496	165681	22	Europees/adj
+3.849156	172	1	Flanders/noun
+5.7114973	27	1	Grieks-Cyprus/noun
+1.3307427	2154	1	Hongaar/noun
+0.804007	3652	1	Israëli/noun
+1.0835717	16571	6	Italiaan/noun
+1.7770902	1374	1	Italiaans/noun
+1.9071393	7273	6	Japanner/noun
+1.4536016	28973	15	Japans/adj
+1.4337856	1935	1	Latijn/noun
+1.4534168	1931	1	Libisch/adj
+1.1936399	7406	3	Limburger/noun
+0.6102711	8902	2	Londens/adj
+4.164616	127	1	Mary/det
+3.0848927	380	1	Meetjeslandse/adj
+5.108646	642	13	Mongools/adj
+3.7046618	402	2	Morgens/adv
+-0.042783897	241254	28	Nederlands/adj
+1.4758091	1931	1	Noord-Iers/adj
+5.877012	48	2	Nsenga/noun
+4.359689	106	1	PSV_stadion/noun
+3.882765	167	1	Pfff/noun
+1.685944	3026	2	Pool/noun
+4.9509907	62	1	Popcorn/noun
+6.81862	18	2	Privalova/noun
+5.0715284	51	1	Ringlijn/noun
+1.9401878	5850	5	Romeins/adj
+0.269985	19011	3	Rotterdams/adj
+0.613669	44643	10	Russisch/adj
+6.2368665	16	1	Safin/det
+5.7058635	27	1	Savoy/noun
+0.07385334	7631	1	Schots/adj
+-0.0026952778	16421	2	Servisch/adj
+2.4734468	690	1	Slowaak/noun
+0.9415152	9551	3	Spanjaard/noun
+4.1976333	123	1	VTM_kijker/noun
+1.0334023	2910	1	VVD'er/noun
+-0.32525092	124773	11	Vlaams/adj
+-0.2546192	42380	4	WK/noun
+5.7716513	25	1	WK_finalist/noun
+0.18045536	13842	2	Zweeds/adj
+0.24818437	392664	62	aan/part
+-0.21016358	2153601	215	aan/prep
+1.5909864	4995	3	aanbieder/noun
+-1.1169844	24775	1	aanbod/noun
+0.36076668	22751	4	aandeelhouder/noun
+1.1214122	2661	1	aandeelhouder_vergadering/noun
+2.5984426	604	1	aanhouding_bevel/noun
+0.92320555	16143	5	aanmerking/noun
+1.5438837	1730	1	aannemelijk/adj
+-0.8796641	235279	12	aantal/noun
+1.568841	1690	1	aanvoering/prep
+1.5810071	5041	3	aap/noun
+-0.91196495	20232	1	aarde/noun
+0.19193655	13488	2	accoord/adj
+0.90710056	150814	46	achter/prep
+0.5615271	23095	5	achtergrond/noun
+3.143519	5996	17	achtervolg/verb
+4.4972944	454	5	achtervolgd/adj
+-1.8419946	51290	1	actief/adj
+1.6368048	3160	2	adverteerder/noun
+0.2102891	52878	8	advocaat/noun
+0.107259214	321541	44	af/part
+3.5105133	245	1	af_serveer/verb
+3.047531	768	2	afgrijselijk/adj
+-0.21769978	40414	4	afspraak/noun
+2.7474287	1036	2	afstammeling/noun
+2.6768885	558	1	afvallig/adj
+0.58070755	9119	2	afwezig/adj
+0.13629992	42933	6	agent/noun
+1.8708105	2506	2	akelig/adj
+-0.20754391	1066466	107	al/adv
+-0.25582418	73011	7	al/det
+-0.763967	176667	10	aldus/prep
+-1.0517035	46530	2	algemeen/adj
+-0.48609078	422543	32	alle/det
+-0.049419153	178364	21	alleen/adj
+-0.12623915	266562	29	alleen/adv
+-0.11653313	127360	14	allemaal/adv
+1.2259498	9520	4	allen/adv
+0.70509577	8012	2	alles/adv
+-0.25659373	209596	20	alles/noun
+0.0066100573	1263756	157	als/prep
+-0.49594766	292821	22	altijd/adv
+2.321029	804	1	amateur_club/noun
+3.2022502	329	1	amfi_theater/noun
+-0.31955	11127	1	andapos;s/adv
+-0.15819961	663512	70	ander/adj
+0.75365645	15140	4	anderzijds/adv
+1.4750336	27899	15	angst/noun
+1.0254157	23364	8	arm/adj
+0.43851954	21300	4	asielzoeker/noun
+1.8532884	1273	1	aspiratie/noun
+2.111197	13853	14	atleet/noun
+3.1556594	6936	18	atletiek/noun
+-0.52339697	124344	9	auto/noun
+1.4610938	1892	1	averechts/adj
+0.015181481	47971	6	avond/noun
+1.2305291	14282	6	avontuur/noun
+0.72299963	67383	17	baan/noun
+-1.1370336	25417	1	baas/noun
+0.62455225	17609	4	baby/noun
+0.18941893	6732	1	bacterie/noun
+4.854561	63	1	baleinen/noun
+2.5009422	664	1	bandbreedte/noun
+4.541009	609	7	barbaar/noun
+3.5784793	1133	5	barbaars/adj
+-0.88691676	19607	1	baseer/verb
+0.26152232	12733	2	basis_school/noun
+1.8449367	1281	1	becommentarieer/verb
+-0.66947174	47299	3	bedoeling/noun
+1.3948532	20358	10	bedreig/verb
+-1.2185923	248130	9	bedrijf/noun
+1.1986945	2483	1	bedrijventerrein/noun
+2.1941504	2741	3	bedwing/verb
+0.84081733	101423	29	beeld/noun
+1.3171223	34824	16	been/noun
+0.62476164	8682	2	bega/verb
+1.2334689	7088	3	begeleider/noun
+-0.61615163	105186	7	begin/noun
+0.04315758	280945	36	begin/verb
+0.16209076	61997	9	begrijp/verb
+2.9570813	422	1	begroeiing/noun
+0.34057206	28925	5	behaal/verb
+-0.35797393	46432	4	behoor/verb
+0.30009347	29977	5	behoorlijk/adj
+-0.67741925	128314	8	bekend/adj
+4.232636	119	1	beknel/verb
+1.2232208	2389	1	bel_aan/verb
+3.5197492	2414	10	belaag/verb
+-0.6885442	80766	5	belang/noun
+0.73661655	209497	54	belangrijk/adj
+0.80028486	40499	11	belegger/noun
+-0.25394556	9938754	949	ben/verb
+2.9420917	429	1	ben_rond/verb
+0.3130109	11883	2	ben_uit/verb
+0.09894676	14871	2	benoem/verb
+-0.6828353	48222	3	bepaal/verb
+5.581031	61	2	bepakt/adj
+-0.31639862	78177	7	bereik/verb
+0.6732982	16558	4	berg/noun
+0.60919946	8840	2	berucht/adj
+0.55615264	23428	5	bescherm/verb
+0.7953176	7421	2	beschermd/adj
+3.3743017	558	2	beschermer/noun
+0.074026614	45143	6	beschik/verb
+-0.87651944	19572	1	beschuldig/verb
+-0.84647334	56883	3	beslis/verb
+0.30288252	12013	2	beslissend/adj
+3.776951	2434	13	bestorm/verb
+5.2516675	43	1	bestormd/adj
+-1.436972	137583	4	betaal/verb
+1.6868858	4557	3	betoger/noun
+0.17584106	55437	8	beurs/noun
+1.493112	3683	2	beveel/verb
+2.7858684	511	1	beveiliging_bedrijf/noun
+0.07894997	45058	6	bevestig/verb
+3.2741575	308	1	bevuil/verb
+2.1360319	2898	3	bewaking/noun
+1.4380536	1937	1	bewonderaar/noun
+0.27024615	6190	1	bewondering/noun
+-0.15551205	57450	6	bewoner/noun
+-1.4666587	34997	1	bewust/adj
+5.5793796	61	2	bezakt/adj
+0.5574767	9285	2	bezetting/noun
+1.0893688	16393	6	bezit/noun
+0.7774856	71043	19	bezoeker/noun
+0.542009	4768	1	bezwijk/verb
+-0.11239303	1803877	198	bij/prep
+2.1348548	1914	2	bijbels/adj
+0.016136147	192484	24	bijna/adv
+-0.61651474	75089	5	bijzonder/adj
+0.1816399	40639	6	binnen/adv
+-0.033190474	125900	15	binnen/prep
+5.155385	48	1	bioscoop_succes/noun
+2.8379009	474	1	bioscoop_zaal/noun
+1.341549	14871	7	blank/adj
+0.26519302	18742	3	blauw/adj
+0.4713384	20283	4	blessure/noun
+2.4687285	1391	2	blijde/adj
+-0.17730846	516893	53	blijf/verb
+1.6626042	4648	3	blijf_thuis/verb
+0.14485802	279801	40	blijk/verb
+1.8596683	1273	1	blink/verb
+0.45130828	10331	2	blok/noun
+1.5349568	8763	5	bloot/adj
+1.7554485	4254	3	blunder/noun
+-0.58157027	14522	1	bodem/noun
+-0.76964486	157857	9	boek/noun
+0.86472356	30916	9	boer/noun
+-0.07277101	34900	4	boodschap/noun
+2.068228	1033	1	boomgaard/noun
+0.6207788	22151	5	boos/adj
+-0.90499884	20061	1	boot/noun
+0.2128175	19712	3	bos/noun
+3.468866	253	1	boulevard_pers/noun
+-1.2608035	57585	2	bouw/verb
+-0.3732101	23519	2	bouw_op/verb
+2.0461025	1043	1	bouwsel/noun
+0.37888703	72337	13	boven/prep
+-0.11791308	145076	16	bovendien/adv
+4.481868	184	2	breek_heen/verb
+-0.063287064	243129	28	breng/verb
+0.36685452	11232	2	broek/noun
+4.3751593	204	2	brommertje/noun
+2.4902139	1340	2	brui/noun
+0.52366227	67390	14	buiten/prep
+2.1031277	1991	2	buitenaards/adj
+0.77831525	52661	14	buitenlands/adj
+-0.024614152	49948	6	burger/noun
+5.408398	37	1	burger_lucht_haven/noun
+3.1749797	678	2	burgerschap/noun
+4.6053805	244	3	bus_lading/noun
+-0.10677094	63283	7	buurt/noun
+1.4912477	27462	15	camera/noun
+5.4640536	445	13	camera_mens/noun
+3.8921425	2312	14	cameraploeg/noun
+-0.46724218	39128	3	cd/noun
+-0.7976422	37006	2	cel/noun
+0.86812615	16999	5	centi_meter/noun
+5.4641666	34	1	cette/noun
+0.9039399	6657	2	champagne/noun
+2.0972764	994	1	chemo_therapie/noun
+1.2531943	6986	3	christen/noun
+1.5391113	5260	3	claim/verb
+5.0402455	104	2	club_maat/noun
+-0.089622006	17824	2	coalitie/noun
+2.972664	414	1	cocon/noun
+1.8779552	2495	2	cola/noun
+5.7058635	27	1	coloradokever/noun
+1.1924008	14750	6	combineer/verb
+-0.95630604	42369	2	commissie/noun
+4.494056	91	1	competitie_film/noun
+0.82098186	28595	8	compleet/adj
+0.7453132	3849	1	componeer/verb
+0.94386166	12592	4	concentreer/verb
+-0.63060087	15216	1	concludeer/verb
+1.006538	14822	5	confrontatie/noun
+0.66584826	16618	4	confronteer/verb
+0.13578725	14171	2	cruciaal/adj
+3.595764	223	1	cult/noun
+2.162952	931	1	cum_suis/adv
+0.50494844	9781	2	daadwerkelijk/adj
+2.6455708	2296	4	daal_af/verb
+0.2803245	274838	45	daar/adv
+-0.4265519	272748	22	daar/noun
+0.10540088	388220	53	dag/noun
+1.0884612	51890	19	dagelijks/adj
+1.43559	3907	2	dakloze/noun
+-0.7512794	17253	1	daling/noun
+1.8461988	1286	1	dam_in/verb
+1.4226774	23468	12	dame/noun
+-0.024844892	853168	103	dan/adv
+0.11207383	21758	3	dank/verb
+0.94538766	15891	5	dans/verb
+-0.40169415	1849436	153	dat/det
+-0.69866323	552171	34	dat/pron
+0.11145183	28074105	3861	de/det
+-0.013126067	41076	5	de/prep
+-0.25795808	63448	6	december/noun
+-0.43557295	150293	12	deel/noun
+1.3552957	2081	1	deel_op/verb
+1.5767678	1688	1	deelnemer_veld/noun
+1.265197	2282	1	dele/adv
+0.14011219	21257	3	democratie/noun
+2.0394537	5308	5	demonstrant/noun
+1.2221206	4797	2	denkbaar/adj
+0.94621253	22010	7	detail/noun
+0.4212191	64045	12	deur/noun
+-0.14137243	719674	77	deze/det
+-0.0073401895	97788	12	dezelfde/det
+0.09013258	1365392	185	die/det
+0.49925494	2519801	514	die/pron
+0.12942207	49814	7	dien/verb
+0.5042056	24415	5	diens/det
+-0.20600335	49858	5	diep/adj
+0.13692597	7079	1	dijk/noun
+1.7401401	1443	1	dinsdag_middag/noun
+-0.16513295	86626	9	directeur/noun
+1.6307148	9516	6	discipline/noun
+-0.30852312	795783	72	dit/det
+-0.2024153	39724	4	divers/adj
+-0.15717126	731956	77	doe/verb
+0.072931595	15093	2	doek/noun
+-0.5900872	58563	4	doel/noun
+1.5044184	1792	1	doelbewust/adj
+2.4390898	2157	3	dollar_cent/noun
+2.0844233	1017	1	donderdag_morgen/noun
+4.430354	192	2	dood_verachting/noun
+0.09237082	103759	14	door/part
+0.8200415	1310789	367	door/prep
+1.7622476	1432	1	doorstart/noun
+1.2383853	7051	3	dorp_DIM/noun
+2.125888	963	1	draai_rond/verb
+1.3754998	2044	1	driftig/adj
+-0.087592445	17802	2	dringend/adj
+0.05512041	30796	4	drink/verb
+1.9626614	8243	7	dronken/adj
+1.2384713	2350	1	drop/verb
+-0.5383579	41809	3	druk/adj
+1.9929768	1126	1	dubbel/verb
+0.64068806	4281	1	dubieus/adj
+2.7839007	1006	2	ducht/verb
+-0.45427883	152880	12	duidelijk/adj
+1.300081	2233	1	duik/noun
+0.15828232	20779	3	duik_op/verb
+0.56678784	4646	1	duivel/noun
+5.0795045	50	1	duizendsten/noun
+5.0392833	53	1	dummies/noun
+-0.12111937	9141	1	dun/adj
+0.037996035	257023	33	dus/adv
+-0.4155511	61769	5	duur/verb
+0.6583551	12652	3	duw/verb
+-0.39296374	24042	2	dwing/verb
+-0.1837422	253480	26	echt/adj
+-0.017576136	172600	21	echter/adv
+0.14802772	11075723	1583	een/det
+-0.06761152	8684	1	een/pron
+-0.18453611	292605	30	eens/adv
+-0.3903505	167651	14	eerder/adj
+-0.064101994	69450	8	eerst/adj
+-0.40463933	73066	6	eeuw/noun
+-0.29681072	316997	29	eigen/adj
+0.3732171	5598	1	eigentijds/adj
+6.282477	15	1	eik_schors/noun
+0.5150417	24302	5	eiland/noun
+0.29850465	42813	7	eindelijk/adj
+2.0430224	4225	4	eindstrijd/noun
+-1.8096707	50343	1	eis/verb
+0.604149	4425	1	elegant/adj
+0.58667433	13493	3	elk/adv
+0.5650653	249085	54	elk/det
+-0.9903563	218177	10	elkaar/pron
+2.1691198	1849	2	en/adj
+0.24777527	50456	8	en/adv
+1.116739	7902	3	enerzijds/adv
+0.30650783	95251	16	enig/adj
+0.03825903	62482	8	enig/det
+0.86413014	17043	5	enigszins/adv
+-0.012302811	319878	39	enkel/det
+0.39331204	71016	13	enorm/adj
+1.1458161	20648	8	enthoesiast/adj
+-0.021705382	1744977	211	er/adv
+-0.29918298	665899	61	er/noun
+2.5944312	608	1	ere_podium/noun
+-0.278641	149936	14	erg/adj
+0.9240998	6465	2	ergernis/noun
+0.3177123	29534	5	erken/verb
+0.6732982	8243	2	essentieel/adj
+1.4514735	1898	1	et/noun
+-1.1351988	357235	14	euro/noun
+0.52769005	172619	36	even/adj
+1.1857276	19864	8	evenement/noun
+-1.0818442	23819	1	evenwel/adv
+1.355932	6289	3	exotisch/adj
+0.30101663	102779	17	extra/adj
+1.6438397	1579	1	f/noun
+0.78591335	14795	4	familie_lid/noun
+2.8352213	26338	55	fan/noun
+-0.35385892	23060	2	fase/noun
+1.170461	12680	5	favoriet/noun
+-0.8274035	56187	3	februari/noun
+2.89459	459	1	feest_stemming/noun
+-0.10825581	27213	3	fel/adj
+-0.81037265	128189	7	film/noun
+-0.67469376	15945	1	fles/noun
+3.2592916	311	1	flikker/noun
+3.792859	182	1	flits_licht/noun
+1.718094	1469	1	floreer/verb
+0.25965905	6273	1	folder/noun
+2.8270018	483	1	fond/noun
+1.0141807	5880	2	formaat/noun
+-0.42586762	12413	1	formeel/adj
+3.5353742	14530	61	fotograaf/noun
+4.1590185	127	1	fotografeer/adj
+2.0625527	2065	2	foutloos/adj
+0.7327473	19493	5	fraai/adj
+5.965236	21	1	franciscaanse/adj
+-0.0027263397	8171	1	front/noun
+0.011968783	1085158	135	ga/verb
+-0.9703764	42891	2	ga_in/verb
+-0.32944202	44981	4	ga_uit/verb
+1.896728	4905	4	ga_voor/verb
+1.9609083	2291	2	ga_voort/verb
+-0.16944236	28795	3	gast/noun
+-1.1311673	176014	7	gebeur/verb
+-0.2734038	21301	2	gebeurtenis/noun
+-0.051004007	59707	7	gebied/noun
+1.8421813	1287	1	geboortedorp/noun
+-0.7180672	66439	4	gebouw/noun
+-1.2067827	135616	5	gebruik/verb
+4.2105637	120	1	gecatalogeerd/verb
+1.4334459	1934	1	gecharmeerd/adj
+1.2493845	2322	1	gedaante/noun
+-0.41737792	370341	30	geef/verb
+-1.456698	34712	1	geef_aan/verb
+-0.15673076	1048752	110	geen/det
+0.35609326	17058	3	geest/noun
+-0.7497972	34353	2	geheel/adj
+2.0931253	1002	1	gehoorzaam/verb
+2.9112806	443	1	geinig/adj
+0.34545973	28844	5	gek/adj
+2.1825922	6380	7	gekleed/adj
+-0.513942	203976	15	geld/noun
+-0.07753708	210505	24	geleden/adj
+0.43857506	5231	1	geloofwaardig/adj
+1.7971494	6724	5	gelovig/adj
+5.490994	35	1	geluimde/noun
+2.9670794	418	1	geluk_zoeker/noun
+0.27707806	67731	11	gelukkig/adj
+6.2643094	31	2	gemaltraiteerd/adj
+2.1467237	1897	2	gemoedelijk/adj
+0.38967773	65921	12	genoeg/adv
+0.0054638064	24195	3	genoeg/det
+-0.3257756	11225	1	genre/noun
+1.6964725	3022	2	geopend/adj
+3.2273757	332	1	geplunderd/adj
+-1.2355366	55948	2	geschiedenis/noun
+0.6522333	4214	1	gesteund/adj
+-0.5680623	43094	3	gevaar/noun
+-0.43992522	150886	12	geval/noun
+2.5083375	662	1	geval_wel/verb
+-0.4807515	26464	2	gevangenis/noun
+-0.6514236	15719	1	gevecht/noun
+-0.383447	83213	7	gevolg/noun
+1.2548206	9229	4	gevolgd/adj
+0.5808523	4530	1	geweer/noun
+2.8390007	1419	3	gewillig/adj
+-0.46605986	168179	13	gewoon/adj
+0.63053757	47578	11	gezicht/noun
+3.064535	386	1	gezicht_bepalend/adj
+-0.25814897	10551	1	gids/noun
+4.217409	958	8	gil/adj
+-0.106501065	320152	35	gisteren/adv
+1.5317068	1762	1	gisterenochtend/adv
+-0.23708819	10581	1	gistermiddag/adv
+1.9722596	1128	1	glim/verb
+2.6354907	1744	3	glimlach/adj
+5.9749923	21	1	gnomen/noun
+0.40151197	27215	5	god/noun
+-0.30030885	987502	90	goed/adj
+3.6325266	216	1	goedgemutst/adj
+1.0619589	8434	3	goedkeuring/noun
+4.041767	141	1	goedmenende/adj
+2.380342	16688	22	goud/noun
+1.7053248	23861	16	gouden/adj
+-0.19085751	88542	9	graag/adj
+-0.5628762	58478	4	gratis/adj
+-0.34675863	11487	1	greep/noun
+0.55185384	51488	11	grens/noun
+1.4494277	1912	1	grens_gebied/noun
+0.12807184	7125	1	gretig/adj
+0.30704013	5944	1	grijp_aan/verb
+0.015497756	15930	2	groei_uit/verb
+-0.24565887	41750	4	groen/adj
+-0.61277354	164593	11	groep/noun
+3.0853014	369	1	groepsverband/noun
+0.569564	9165	2	grond_gebied/noun
+-0.13840732	774779	83	groot/adj
+0.8253341	3556	1	grootouder/noun
+3.1400502	350	1	grut/noun
+-1.7277023	138860	3	gulden/noun
+0.42335796	165164	31	haal/verb
+0.7841004	7445	2	haal_in/verb
+-0.21309072	10092	1	haalbaar/adj
+0.44462833	570905	110	haar/det
+0.6228293	125811	29	haar/pron
+0.51201683	102394	21	half/adj
+0.08626362	15008	2	half/noun
+-0.15412933	132538	14	hand/noun
+0.5009692	63915	13	hang/verb
+-0.29768014	43809	4	hart/noun
+-0.87113273	19569	1	haven/noun
+-0.3075485	4034811	364	heb/verb
+1.4001195	251548	126	heel/adj
+-0.19803716	276441	28	heel/adv
+1.1870512	2488	1	heelal/noun
+5.8124733	48	2	heelder/adj
+1.1329607	36490	14	heen/part
+0.4103192	21607	4	heer/noun
+-0.10117894	18034	2	heers/verb
+0.35057956	51708	9	heet/verb
+1.4130468	3952	2	hele/adv
+-0.13817814	455207	49	hem/pron
+-0.40223098	157140	13	hen/pron
+4.052821	141	1	herbouwd/adj
+-0.60543954	14996	1	herstel/noun
+0.12777983	28814	4	herstel/verb
+-0.039587315	169158	20	het/adj
+-0.19741419	11650779	1177	het/det
+-0.21768844	764720	76	het/noun
+2.9777904	412	1	heuglijke/adj
+0.8827468	13401	4	heus/adj
+1.7589326	2794	2	hevel_over/verb
+0.022285506	261019	33	hier/adv
+-0.0014589888	2403923	297	hij/pron
+3.4510298	255	1	hink_stap/noun
+1.5593262	5159	3	hitte/noun
+-0.40114298	327075	27	hoe/adj
+0.5163771	4852	1	hoede/noun
+0.0054644328	80808	10	hoef/verb
+0.20537455	33298	5	honderden/noun
+-0.45964366	89877	7	hoofd/noun
+0.45795563	36070	7	hoofdstad/noun
+1.3420386	284594	134	hoog/adj
+5.9222527	455	21	hoogspringen/verb
+1.8108572	2666	2	hoogstwaarschijnlijk/adj
+3.090194	4147	11	hooligan/noun
+-0.20360489	109441	11	hoop/verb
+1.4951657	3680	2	hoopvol/adj
+-0.74227476	170287	10	hoor/verb
+5.1993074	3224	72	horde/noun
+4.997846	57	1	horde_loop/noun
+4.0664186	1669	12	horden/noun
+3.2825866	306	1	hos/verb
+1.1642436	32978	13	hotel/noun
+0.028591145	340614	43	houd/verb
+0.52821255	9613	2	huil/verb
+-0.2691563	159560	15	huis/noun
+3.341993	582	2	huiswaarts/adv
+1.1780207	7554	3	hulpverlener/noun
+0.12233706	902917	126	hun/det
+1.9253408	1188	1	huurling/noun
+0.5156588	29196	6	huwelijk/noun
+2.866391	459	1	hypotetisch/adj
+-0.46557087	168069	13	iedereen/pron
+0.20337166	39702	6	iets/adv
+1.5562992	5108	3	ietwat/adv
+0.1198347	2577275	359	ik/pron
+-0.5202937	27614	2	illegaal/adj
+2.1053753	990	1	illegaliteit/noun
+-0.8063019	18202	1	imago/noun
+0.19701365	6645	1	immens/adj
+0.13683051	77400	11	immers/adv
+0.80553925	7271	2	immigrant/noun
+-0.281377	279990	26	in/part
+-0.028269138	9492181	1133	in/prep
+4.182008	123	1	in_snoer/verb
+3.5652468	932	4	indoor/adv
+-0.18322708	48582	5	indruk/noun
+0.6609203	16777	4	indrukwekkend/adj
+-0.6395954	15442	1	industrie/noun
+1.1905049	19693	8	ineens/adv
+1.058488	11299	4	ingang/noun
+2.2879527	825	1	ingevuld/adj
+2.0570798	2073	2	inheems/adj
+-0.2035975	19874	2	inkomen/noun
+4.4065804	99	1	inline/noun
+0.02299568	87135	11	inmiddels/adv
+2.0487409	3143	3	insect/noun
+-0.29791486	21773	2	instantie/noun
+2.6116765	1189	2	institutie/noun
+1.4099549	1980	1	instroom/noun
+-0.36903036	35172	3	interessant/adj
+-0.4835564	105805	8	internationaal/adj
+-0.7127631	50256	3	internet/noun
+1.8403356	1341	1	internetaanbieder/noun
+0.11124863	50529	7	intussen/adv
+2.1664932	3734	4	invasie/noun
+-0.049528975	43126	5	inwoner/noun
+2.399265	2219	3	jaag_op/verb
+-0.45309055	1574348	123	jaar/noun
+-0.28659958	54221	5	jaarlijks/adj
+-2.2360647	76519	1	januari/noun
+-0.003291169	154475	19	je/det
+0.033299036	1142105	146	je/pron
+0.49117717	199012	40	jong/adj
+-0.020426748	91223	11	jongen/noun
+0.5326567	95975	20	jongere/noun
+2.9626136	43825	104	journalist/noun
+1.1923016	4940	2	juich_toe/verb
+0.42360452	47651	9	juist/adv
+-0.98426974	65643	3	juli/noun
+0.7311817	27281	7	jullie/pron
+5.389114	38	1	jumbojets/noun
+-0.28199098	75845	7	juni/noun
+-0.86262286	58468	3	kabinet/noun
+5.515902	226	7	kad/noun
+2.2885053	832	1	kakkerlak/noun
+2.800724	492	1	kam/verb
+1.3346654	43296	20	kampioen/noun
+1.2174002	21794	9	kampioenschap/noun
+-0.32123864	1969534	176	kan/verb
+0.804738	7324	2	kansloos/adj
+0.110382624	86945	12	kant/noun
+-0.18647018	29370	3	kantoor/noun
+1.1536438	10273	4	kapot/adj
+0.2451869	12782	2	kat/noun
+-0.097373866	277310	31	keer/noun
+0.29951227	18090	3	keer/verb
+-0.17149554	144534	15	ken/verb
+0.548059	32750	7	kennis/noun
+6.592632	11	1	kermis_rit/noun
+2.6190863	591	1	keur_af/adj
+3.4071352	2412	9	kielzog/noun
+0.113318674	116271	16	kies/verb
+0.2831966	140629	23	kijk/verb
+1.6586485	4637	3	kijk_terug/verb
+0.7555311	7669	2	kijk_toe/verb
+0.18023221	305978	45	kind/noun
+-0.6041725	74277	5	klant/noun
+0.54191256	9456	2	klassieker/noun
+1.8605888	1263	1	klauter/verb
+3.7672026	187	1	kleertjes/noun
+-0.11933703	228937	25	klein/adj
+-0.7289655	16833	1	klim/verb
+3.8798957	1339	8	klok/verb
+1.7734139	1384	1	klomp/noun
+2.0392973	6361	6	klooster/noun
+0.9952735	20998	7	knie/noun
+4.152263	129	1	knock_out/adj
+-0.07851465	17577	2	koffie/noun
+4.052104	143	1	kogel_stoot/noun
+0.04081966	973909	125	kom/verb
+2.1202557	9744	10	kom_af/verb
+1.361691	20773	10	kom_binnen/verb
+0.92862236	6415	2	kom_tegemoet/verb
+1.0151894	14674	5	kom_tegen/verb
+0.28352854	42714	7	kom_terecht/verb
+-0.2700056	31961	3	kom_terug/verb
+0.23669286	51341	8	kom_uit/verb
+0.47315615	45564	9	kondig_aan/verb
+0.99754876	2995	1	kool/noun
+-0.5570719	100118	7	kost/verb
+0.20624748	19932	3	koud/adj
+-0.40255246	48516	4	kracht/noun
+-0.54729235	746610	53	krijg/verb
+1.6529719	1545	1	krijg_heen/verb
+1.5012268	1812	1	krijg_heer/noun
+-0.38964042	12006	1	kwaad/noun
+2.842237	1420	3	kwaadaardig/adj
+1.6981014	14976	10	kwartfinale/noun
+0.8899004	10018	3	kwetsbaar/adj
+-0.05204135	25790	3	kwijt/part
+-0.029064301	8825	1	l/noun
+1.1209182	100679	38	laag/adj
+0.80140895	520541	143	laat/adj
+0.1409892	521724	74	laat/verb
+1.6525816	1552	1	laat_door/verb
+0.9330229	9612	3	laat_los/verb
+0.3075335	23869	4	laat_toe/verb
+4.8564277	188	3	lal/adj
+0.039542858	304215	39	land/noun
+1.3348553	17074	8	land_genoot/noun
+-0.14231251	318300	34	lang/adj
+2.5289547	1941	3	langs/adv
+0.792302	88271	24	langs/prep
+1.7235906	23211	16	lastig/adj
+-0.09665685	125630	14	leef/verb
+0.46648344	25572	5	leeg/adj
+-0.054665595	85868	10	leg/verb
+1.0887898	24617	9	leg_af/verb
+-1.6518945	42653	1	leger/noun
+5.3028984	40	1	legionairs/noun
+-0.78884315	72061	4	leider/noun
+1.3261101	6571	3	lente/noun
+-0.46933386	25999	2	les/noun
+-0.14360425	150208	16	leven/noun
+0.7300278	15776	4	lever_in/verb
+-0.3996832	72903	6	lever_op/verb
+1.6239872	1598	1	lichaamsdeel/noun
+-0.047095448	34085	4	licht/noun
+-1.4859145	107912	3	lid/noun
+0.029160868	291510	37	lig/verb
+1.0733733	2774	1	lig_vast/verb
+0.097563125	44366	6	lijd/verb
+0.90204203	9868	3	lijf/noun
+0.42388076	233946	44	lijk/verb
+-1.0822221	47841	2	lijn/noun
+0.76664513	11366	3	live/adj
+1.4576359	1893	1	loer/verb
+2.0348034	12958	12	lok/verb
+1.337305	4276	2	lol/noun
+3.289415	303	1	lol_broek/noun
+1.2974786	11086	5	loop/adj
+0.4157492	10696	2	loop/noun
+0.6805272	16358	4	loop/prep
+1.3104507	177403	81	loop/verb
+0.7321888	15567	4	loop_rond/verb
+0.8723573	13545	4	loop_uit/verb
+-0.62864274	15227	1	los/part
+0.44884375	20924	4	luchthaven/noun
+2.046424	3157	3	luidruchtig/adj
+0.5906557	44910	10	luk/verb
+-0.38684213	801559	67	maak/verb
+0.31886327	5932	1	maak_goed/verb
+4.4334974	96	1	maal/adj
+-0.46164688	284554	22	maand/noun
+-0.277044	480969	45	maar/adv
+0.2325092	32114	5	maatschappij/noun
+-0.37023583	401159	34	mag/verb
+0.29555506	381643	63	man/noun
+1.93852	2400	2	marechaussee/noun
+2.1172252	2956	3	marinier/noun
+3.3817883	279	1	massa_hysterie/noun
+3.8067791	180	1	massa_product/noun
+0.20459875	283602	43	me/pron
+2.2168598	16955	19	medaille/noun
+0.062685594	15323	2	medicijn/noun
+0.2150514	72129	11	mee/adv
+-0.53503656	444374	32	meer/adj
+-0.50197756	429100	32	meer/adv
+-0.8412788	264661	14	meer/det
+4.3662896	414	4	meer_kamp/noun
+1.1415478	9077	3	meerder/adj
+-0.3928013	192090	16	meest/adj
+-0.25296947	52041	5	meestal/adv
+0.20183076	13300	2	meester/noun
+-1.6546549	85615	2	mei/noun
+1.7584355	5599	4	meid/noun
+0.91623735	81418	25	meisje/noun
+-1.2916538	29589	1	mening/noun
+0.3489675	538442	94	mens/noun
+6.3060865	15	1	mens_lijk/noun
+0.48887405	4985	1	mensheid/noun
+1.0713891	13907	5	mentaal/adj
+-0.0513414	4230163	495	met/prep
+0.62949663	4325	1	metaal/noun
+0.5376481	127413	27	meteen/adv
+2.823289	131418	273	meter/noun
+1.3793031	2061	1	metro_station/noun
+1.1488377	15451	6	middag/noun
+0.81908303	7139	2	middags/adv
+0.03807702	15596	2	midden/adv
+-0.032817807	16738	2	midden/noun
+1.4931812	1820	1	midden/prep
+-0.6170815	15062	1	middenvelder/noun
+4.5058312	90	1	mier_nest/noun
+-0.23745403	225916	22	mij/pron
+0.11189411	564919	78	mijn/det
+-0.16132043	28872	3	militair/noun
+1.3013505	4436	2	militie/noun
+0.70847416	4049	1	millennium/noun
+-0.16055243	104962	11	minder/adj
+0.06669616	7587	1	minimaal/adj
+0.6668823	8325	2	minimum/noun
+-1.0248166	229276	10	minister/noun
+1.133259	2609	1	ministerieel/adj
+0.067054234	128910	17	minuut/noun
+-0.56624293	14326	1	misdaad/noun
+0.57283753	13851	3	misluk/verb
+0.41334477	10748	2	missie/noun
+-0.0006015616	24621	3	mobiel/adj
+5.4437876	35	1	module/adj
+-0.3473552	91972	8	moeder/noun
+0.6182672	4397	1	moedig/adj
+0.17409858	136220	20	moeilijk/adj
+0.9968311	5981	2	moeiteloos/adj
+0.23729679	1557442	243	moet/verb
+1.1921887	2481	1	moet_in/verb
+-0.37993822	213777	18	mogelijk/adj
+-0.712913	66061	4	mogelijkheid/noun
+1.1298599	5256	2	mondiaal/adj
+0.27284622	44148	7	morgen/adv
+0.7071562	31978	8	muur/noun
+-0.1280219	796990	86	na/prep
+-0.65403354	140818	9	naam/noun
+0.27219924	1512452	244	naar/prep
+0.30685854	107233	18	naast/prep
+0.025036031	15808	2	nachts/adv
+5.8994846	22	1	najaar_aanbieding/noun
+-0.32397208	33504	3	namelijk/adv
+5.8124733	24	1	nasty/noun
+0.72191066	7936	2	nat/adj
+1.9200225	7128	6	natie/noun
+2.8137248	485	1	nationaal-socialisme/noun
+0.21054962	85915	13	nationaal/adj
+2.1619053	2813	3	nationalist/noun
+-0.38658538	23961	2	natuur/noun
+0.41115755	16128	3	nauw/adj
+1.5480636	1725	1	nauwlettend/adj
+2.2969265	312837	382	neem/verb
+-0.47669846	39288	3	neem_deel/verb
+0.9303423	12802	4	neem_weg/verb
+3.2239263	325	1	nek_slag/noun
+0.71345973	35739	9	net/adj
+0.0376635	187091	24	net/adv
+-0.2605382	3455007	328	niet/adv
+-0.4208474	210486	17	niets/noun
+1.8324022	1297	1	nietsvermoedend/adj
+-0.22735827	669062	65	nieuw/adj
+0.0047015343	32326	4	niks/noun
+-0.61307895	149858	10	noem/verb
+0.013597271	1683041	210	nog/adv
+-0.03205496	25118	3	noodzakelijk/adj
+-0.32398516	235945	21	nooit/adv
+0.82930195	14188	4	noorden/noun
+0.008425428	803160	100	nu/adv
+0.41877353	85984	16	nummer/noun
+3.1988864	334	1	nummer/verb
+-0.24357374	10365	1	nuttig/adj
+1.5784236	28835	17	olympisch/adj
+-0.1326248	500648	54	om/prep
+1.0918005	2720	1	om_weg/noun
+1.8855822	2475	2	omarm/verb
+2.850068	4205	9	omring/verb
+3.1791723	2359	7	omringd/adj
+-0.4574631	12792	1	omvang/noun
+0.35162082	68830	12	ondanks/prep
+-0.4611232	128088	10	onder/adv
+-0.08163694	414521	47	onder/prep
+-0.15918177	19159	2	onderhandel/verb
+0.39298788	27529	5	onderhandeling/noun
+3.948393	155	1	onderhanden/adj
+1.9104375	2391	2	onderkant/noun
+-0.8900781	19941	1	ondernemer/noun
+-1.419775	33516	1	onderwerp/noun
+0.09349606	29731	4	onderzoeker/noun
+2.1773298	1840	2	ongemerkt/adj
+-0.9546253	84612	4	ongeveer/adv
+0.25620842	6280	1	ongewoon/adj
+2.1686747	2781	3	onheil/noun
+1.7476398	5672	4	onjuist/adj
+-0.061051976	43072	5	onmiddellijk/adj
+3.4906986	248	1	onreglementair/adj
+0.49766245	9985	2	onrust/noun
+-0.5925787	470011	32	ons/det
+-0.36114833	232248	20	ons/pron
+1.0243567	2919	1	ontbeer/verb
+0.97839284	3059	1	ontgoochel/verb
+2.756999	516	1	ontmijningsdienst/noun
+0.029034916	23668	3	ontmoet/verb
+0.5137289	4846	1	onttrek/verb
+1.8658073	1258	1	onverdeeld/adj
+1.4201611	1966	1	onverhoopt/adj
+2.2442913	857	1	onverstaanbaar/adj
+0.29866657	6035	1	onzichtbaar/adj
+0.45084372	92972	18	oog/noun
+4.6085005	80	1	ooien/noun
+-0.08824376	106607	12	ooit/adv
+-0.110948525	2214625	245	ook/adv
+0.14654712	84444	12	oorlog/noun
+2.2492988	865	1	oorlog_veteraan/noun
+1.0132768	133314	45	op/adj
+0.280667	540823	88	op/part
+0.32428747	4502370	765	op/prep
+1.6543102	13950	9	opeens/adv
+0.31477037	65589	11	open/adj
+3.567396	923	4	opgefokt/adj
+3.8396082	879	5	opgejaagd/adj
+5.168429	48	1	opgewacht/adj
+2.175271	2762	3	opgewonden/adj
+-1.2216715	55296	2	oplossing/noun
+-0.16998994	19213	2	opname/noun
+-0.038712863	161924	19	opnieuw/adv
+3.041502	6613	17	opstand/noun
+-0.8599064	38314	2	opvallend/adj
+2.7373717	524	1	opwekkend/adj
+1.7451693	4264	3	opwinding/noun
+0.37671095	11158	2	ouderwets/adj
+-0.22062248	111584	11	over/part
+0.34978798	1300877	227	over/prep
+0.8794142	10170	3	overbodig/adj
+0.08822799	7458	1	overeenstemming/noun
+2.1819847	925	1	overgang_regering/noun
+1.8301083	1295	1	overheers/adj
+1.163665	5091	2	overheers/verb
+-0.6652168	62813	4	overigens/adv
+1.0792702	25035	9	overleef/verb
+3.8338213	1064	6	overrompel/verb
+3.391272	3322	12	overspoel/verb
+-0.025389273	33174	4	overtuig/verb
+1.8329344	3899	3	overweldigend/adj
+2.8835447	5017	11	overwin/verb
+-0.09009517	44574	5	overwinning/noun
+5.4423475	35	1	où/noun
+0.5726715	136924	30	paar/noun
+-0.6515968	49701	3	pagina/noun
+4.878951	432	7	paparazzi/noun
+-0.22257446	30453	3	papier/noun
+1.8253042	1313	1	paraat_heid/noun
+0.6308858	17308	4	park/noun
+1.4135442	13817	7	parkoers/noun
+0.86505616	37839	11	parlement/noun
+-0.13800651	9341	1	parlement_lid/noun
+-0.49508616	13362	1	particulier/adj
+-0.13175498	37073	4	partner/noun
+-0.16975637	163211	17	pas/adv
+2.8351383	476	1	peins/adj
+2.9231436	1754	4	pelgrim/noun
+-0.8804263	78068	4	periode/noun
+0.4993802	14787	3	permanent/adj
+1.0021894	29776	10	pers/noun
+0.09006475	51830	7	persoonlijk/adj
+1.7622657	2793	2	plaag/verb
+-0.002093179	219685	27	plaats/noun
+-0.1091838	108930	12	plan/noun
+1.2123785	14480	6	plein/noun
+1.2026058	2442	1	plein_DIM/noun
+-0.41421035	159236	13	ploeg/noun
+1.2957587	4442	2	ploeg_genoot/noun
+1.2811935	18007	8	plotseling/adj
+2.727224	530	1	pluimage/noun
+0.916191	32501	10	podium/noun
+2.3059154	832	1	poets_vrouw/noun
+-0.31902492	44673	4	poging/noun
+6.046088	19	1	pol_hoog/adj
+4.300556	663	6	pol_stok/noun
+0.30084854	54316	9	politicus/noun
+2.0823843	8108	8	poort/noun
+2.2397962	2660	3	pop_ster/noun
+0.0049741324	40543	5	populair/adj
+-0.29058856	10902	1	portefeuille/noun
+2.6734676	3373	6	poseer/verb
+-1.0286891	45391	2	positie/noun
+0.41675195	16130	3	post/noun
+1.2643894	11430	5	potentieel/adj
+4.0498376	1302	9	pr/noun
+-1.0856686	73125	3	premier/noun
+-0.83044803	37511	2	presenteer/verb
+2.7086344	539	1	pressie/noun
+0.50120884	39282	8	prestatie/noun
+2.8841727	459	1	prins_paar/noun
+0.4063671	5401	1	privaat/adj
+-0.30371073	208882	19	probleem/noun
+2.7076063	541	1	procedureel/adj
+-0.26072726	21055	2	produceer/verb
+-0.26996204	21246	2	professioneel/adj
+-1.5743905	78290	2	project/noun
+0.7892851	7338	2	prompt/adj
+1.5136018	1786	1	propageer/verb
+-0.7649534	17707	1	protest/noun
+0.37091723	11339	2	protesteer/verb
+-0.0014129964	89319	11	publiek/noun
+0.47573912	151613	30	punt/noun
+2.0137823	2193	2	puzzel/noun
+0.9443747	120335	38	raak/verb
+1.3395971	4243	2	raak_aan/verb
+0.2632229	12534	2	raak_kwijt/verb
+1.0590627	2815	1	raap/verb
+0.5043053	14738	3	raar/adj
+1.7264142	15943	11	race/noun
+2.0489502	4216	4	rat/noun
+4.5041404	93	1	rat_plaag/noun
+1.1604295	5100	2	razend/adj
+-0.58036643	28999	2	realiseer/verb
+-0.2625518	10549	1	realistisch/adj
+1.4387798	5796	3	rechtvaardig/verb
+1.6981323	19554	13	record/noun
+1.2350597	2363	1	recreatief/adj
+2.2345636	60771	70	reeks/noun
+-0.27842802	32081	3	regelmatig/adj
+1.7924184	1359	1	regenwoud/noun
+-1.065161	142235	6	regering/noun
+0.91734236	6504	2	regering_leider/noun
+-0.22943516	30698	3	reis/noun
+5.097687	50	1	reken_les/noun
+0.3795916	16646	3	religieus/adj
+2.1266367	5797	6	ren/verb
+0.5856855	4510	1	rep/verb
+1.9924285	1111	1	republikein/noun
+0.101749666	7337	1	reserve/noun
+-0.6696381	63293	4	rest/noun
+0.14741719	6958	1	resulteer/verb
+1.7032402	1483	1	reuze/adj
+0.73765975	23303	6	richting/prep
+-0.27088007	117377	11	rij/verb
+0.5862115	4576	1	rijkswachter/noun
+2.2639341	10084	12	ritme/noun
+5.8000507	50	2	rock_musical/noun
+-0.25503078	10497	1	romantisch/adj
+1.1196548	21150	8	rond/part
+0.5438048	146554	31	rond/prep
+2.093681	1000	1	rond_rit/noun
+0.52152103	53277	11	rood/adj
+5.40979	37	1	rood_rood/adj
+2.1476038	1888	2	rood_wit/adj
+4.3734283	103	1	rot_tekening/noun
+-0.9219165	40811	2	ruim/adj
+-0.23913157	93699	9	ruim/adv
+0.07271385	7668	1	ruim_op/verb
+6.975624	15	2	ruimte_monster/noun
+0.1133335	7243	1	ruit/noun
+-0.057976462	77212	9	rust/noun
+0.57485735	41223	9	rustig/adj
+0.917623	3270	1	s/noun
+-0.4170257	135100	11	samen/adj
+0.5820779	4546	1	samenwerkingsverband/noun
+1.0332681	8727	3	schaap/noun
+-0.5098987	40841	3	schade/noun
+1.9043851	4819	4	schakel_over/verb
+0.32418573	11783	2	scheid/verb
+0.4605855	20800	4	scheidsrechter/noun
+1.5557088	5175	3	schema/noun
+0.43184173	10511	2	schets/verb
+1.7054662	1472	1	schimmig/adj
+2.5820396	12535	20	scholier/noun
+-1.1491438	128591	5	school/noun
+-0.33203197	45521	4	schrijver/noun
+2.8469317	945	2	schuifel/verb
+-1.0505838	69888	3	scoor/verb
+1.8184772	32908	25	seconde/noun
+-0.16574918	172823	18	seizoen/noun
+0.6599888	16859	4	seks/noun
+5.0665755	53	1	seks_toerist/noun
+3.558772	234	1	semi_klassieker/noun
+-0.71100694	99854	6	september/noun
+0.7321435	3883	1	sessie/noun
+-0.32865274	33633	3	set/noun
+-0.21640497	40266	4	sfeer/noun
+0.64025074	8559	2	signaleer/verb
+-0.72300494	184528	11	sinds/prep
+-0.53072774	27637	2	site/noun
+2.7137897	539	1	sjok/verb
+1.6384386	1602	1	skater/noun
+2.6484497	1145	2	sla_weg/verb
+2.7449603	3657	7	slaaf/noun
+0.08302531	22520	3	slaap/verb
+1.1344205	2638	1	slachthuis/noun
+2.6892369	1110	2	slecht/verb
+3.3038342	894	3	slenter/verb
+3.5822349	225	1	slipstream/noun
+0.36527804	28092	5	sluit_aan/verb
+0.058924478	46243	6	sluit_af/verb
+4.80163	66	1	slurp/adj
+0.6992438	8090	2	snap/verb
+3.2885797	305	1	snap_shot/noun
+0.39387533	230240	42	snel/adj
+4.233065	235	2	snel_toe/verb
+4.496847	91	1	soeverein/noun
+-0.64182734	76903	5	sommige/det
+0.12807892	121121	17	soms/adv
+-0.0346933	100421	12	soort/noun
+1.0802667	2762	1	sopraan/noun
+0.029805811	15663	2	specifiek/adj
+-0.81438965	330463	18	speel/verb
+2.152819	943	1	speel_toe/verb
+0.4968175	4977	1	speelgoed/noun
+0.27788365	37307	6	spoor/noun
+0.73438704	3954	1	sport/verb
+1.9776464	1138	1	sport_park/noun
+4.1134233	139	1	sport_schuur/noun
+3.6593795	433	2	spraak_technologie_bedrijf/noun
+-0.45162672	127396	10	spreek/verb
+1.233861	2364	1	spreiding/noun
+2.096106	23959	24	spring/verb
+4.367026	103	1	spring_heen/verb
+5.5976977	30	1	spring_nummer/noun
+4.2384467	470	4	sprinkhaan/noun
+3.0769818	6007	16	sprint/noun
+2.6799726	1679	3	sprint/verb
+1.5705996	6757	4	sprong/noun
+2.3073695	6470	8	spurt/noun
+0.262129	655795	105	sta/verb
+1.2642703	2296	1	sta_klaar/verb
+0.71225125	3980	1	staart/noun
+-0.06267981	60553	7	staat/noun
+0.40884236	189573	35	stad/noun
+0.835323	7028	2	stad_DIM/noun
+0.89165634	23356	7	stadion/noun
+0.8730058	3379	1	stam/noun
+0.13052642	28581	4	stand/noun
+4.524619	87	1	stede/noun
+1.1730425	2506	1	stedebouwkundig/adj
+-0.17561398	252048	26	steeds/adv
+1.1823734	7470	3	steek_over/verb
+-1.3415413	31655	1	steel/verb
+-0.8653613	212176	11	stel/verb
+-0.6313234	15415	1	stel_in/verb
+-0.05243328	68366	8	stel_voor/verb
+4.5467	86	1	stem_brief_DIM/noun
+0.82341635	3582	1	stem_recht/noun
+0.40785208	16236	3	stemming/noun
+-0.07058214	174284	20	sterk/adj
+2.1373336	1931	2	steward/noun
+2.6272979	1766	3	stink/adj
+1.0585599	5638	2	stoot/verb
+3.0782073	1496	4	storm_aan/adj
+3.3553805	289	1	storm_wind/noun
+2.4957905	664	1	stouw_vol/verb
+0.5779123	86633	19	straat/noun
+2.0594623	3101	3	straat_DIM/noun
+0.96769583	3105	1	straat_beeld/noun
+0.9780505	45903	15	straks/adv
+1.159019	15375	6	strand/noun
+0.29979244	6033	1	strand/verb
+2.4092503	3666	5	strijk_neer/verb
+3.0343013	1171	3	stroom_toe/verb
+2.7312963	1586	3	stropdas/noun
+1.3444601	2152	1	structuur_plan/noun
+3.467667	256	1	struikel/adj
+4.227617	3459	29	struikel/verb
+0.28508413	12282	2	studio/noun
+1.2623094	2290	1	stug/adj
+3.67106	824	4	stuif/verb
+-0.5660763	114181	8	stuk/noun
+2.0814228	1012	1	stuur_af/verb
+0.41059574	81026	15	succes/noun
+1.7363122	28807	20	supporter/noun
+6.543842	12	1	supporter_schaar/noun
+0.51653373	4913	1	t/noun
+0.24174951	44587	7	tafel/noun
+0.26052088	18702	3	tal/det
+0.024861997	31690	4	talent/noun
+1.1150184	10606	4	talrijk/adj
+0.94133955	3189	1	tast/verb
+0.28991744	407519	67	te/adv
+0.043365292	109204	14	te/prep
+-0.66274273	62942	4	team/noun
+1.4201893	21528	11	techniek/noun
+1.0443214	31265	11	tegelijk/adj
+1.1878437	12449	5	tegemoet/part
+0.6203139	34998	8	tegen/part
+-0.048459582	727647	85	tegen/prep
+1.3089898	4514	2	teister/verb
+0.25466436	6429	1	telecom_bedrijf/noun
+0.09421791	30042	4	telefoon/noun
+1.1086745	5391	2	teleurstellend/adj
+3.6062615	225	1	televisie_journalist/noun
+1.5862175	1660	1	telg/noun
+-0.53622127	13865	1	tent/noun
+3.1647727	1027	3	tent_DIM/noun
+-0.44055995	25286	2	terecht/adj
+0.08400787	52303	7	terecht/part
+1.6500483	1551	1	territorium/noun
+-0.36977154	153390	13	terug/part
+-0.16972189	19324	2	test/noun
+1.640557	1573	1	tevoren/adv
+-0.14705008	47292	5	tevreden/adj
+6.007374	20	1	theater-en/noun
+-1.4150031	33280	1	thema/noun
+0.9947521	15073	5	thuis/part
+0.8161764	7197	2	thuis_wedstrijd/noun
+-0.42296225	12446	1	tien/noun
+1.8378668	9169	7	tiener/noun
+3.7067144	1004	5	tiener_meisje/noun
+3.9623795	315	2	tienkamp/noun
+0.34620798	34647	6	tientallen/noun
+-0.02416473	349223	42	tijd/noun
+0.07503406	286801	38	tijdens/prep
+-0.03961845	16913	2	tijdschrift/noun
+0.07844453	7492	1	tijdstip/noun
+1.8581294	2551	2	timmer/verb
+-0.14107943	466609	50	toch/adv
+0.21887465	32467	5	toe/adv
+-0.068042256	234552	27	toe/part
+2.8456979	471	1	toekomst_beeld/noun
+-0.05398671	161932	19	toen/adv
+-0.8955472	19763	1	toenmalig/adj
+3.787278	22085	119	toerist/noun
+3.090082	370	1	toerist_industrie/noun
+-0.24785312	31298	3	toernooi/noun
+1.5068549	25320	14	toeschouwer/noun
+0.8715573	16989	5	toestemming/noun
+0.27518	18404	3	toevallig/adj
+-0.008981121	8208	1	toilet/noun
+0.6508152	12737	3	toneel/noun
+1.6036845	1627	1	top_DIM/noun
+-0.068859555	17649	2	topper/noun
+2.0310495	3230	3	topsporter/noun
+-0.33880788	1139189	100	tot/prep
+1.2220316	33531	14	train/verb
+-1.0854946	96686	4	trainer/noun
+0.822258	32116	9	training/noun
+6.282477	15	1	trap_partij/noun
+1.2385805	117953	50	trek/verb
+0.86635494	37596	11	trek_aan/verb
+5.3016477	40	1	tressen/noun
+1.2304523	11852	5	tribune/noun
+4.47255	92	1	trivia/noun
+1.2199135	4844	2	tropisch/adj
+1.9487655	2355	2	trotseer/verb
+1.2365459	14179	6	trouw/adj
+0.4964712	29695	6	tuin/noun
+0.08671238	409604	55	tussen/prep
+3.4658048	761	3	tv_camera/noun
+0.6476587	21234	5	twee/noun
+1.0701532	16739	6	tweemaal/noun
+3.0245085	786	2	tweewieler/noun
+3.9197378	323	2	type_machine/noun
+3.5526652	232	1	té/adj
+-0.95821494	233365	11	u/pron
+0.05765118	30756	4	uit/adj
+-0.45790306	475164	37	uit/part
+-0.16675423	1135560	118	uit/prep
+1.3099821	4395	2	uit_wedstrijd/noun
+0.4684359	5108	1	uitblinker/noun
+0.107434645	22000	3	uitbreiding/noun
+0.56440806	4596	1	uitdrukking/noun
+0.26551467	99204	16	uiteindelijk/adj
+3.8989265	165	1	uitgejouwd/noun
+3.2809281	303	1	uitgestald/adj
+2.0235128	1073	1	uitwerpsel/noun
+3.4101236	1877	7	uitzinnig/adj
+0.48904163	9988	2	ultiem/adj
+-0.42780665	24998	2	uniek/adj
+2.9229121	437	1	unionist/noun
+-0.68282086	454414	28	uur/noun
+-0.08191617	105748	12	vader/noun
+1.1823869	2493	1	vaderlands/adj
+-0.0038128947	32915	4	vakantie/noun
+0.15631238	194806	28	val/verb
+1.7335565	15815	11	val_aan/verb
+4.0031605	297	2	val_avond/noun
+2.579633	4930	8	val_binnen/verb
+4.903711	60	1	val_neer/adj
+1.6577983	7704	5	val_terug/verb
+0.92515975	19256	6	van/det
+-0.35927182	12638933	1086	van/prep
+-0.43139765	163636	13	vanaf/prep
+-0.046235584	164467	19	vandaag/adv
+2.6604497	566	1	vandaan/adv
+0.67636853	8417	2	vanmiddag/adv
+0.18268126	87643	13	vanuit/prep
+-0.2963506	65503	6	vast/adj
+-0.2232291	425020	42	veel/adj
+-0.010145299	287287	35	veel/det
+0.41008684	5407	1	veelbelovend/adj
+2.5613723	627	1	veelgeprezen/adj
+-0.12531438	37315	4	veilig/adj
+0.31895265	289310	49	ver/adj
+-1.2076864	81533	3	verander/verb
+-0.25490046	10477	1	verbaasd/adj
+-0.9313037	20614	1	verdediger/noun
+-0.2438032	20795	2	verdeel/verb
+0.16651855	6877	1	verdeling/noun
+0.16483134	13978	2	verder/adv
+-0.1628513	67228	7	verdien/verb
+3.0882826	4833	13	verdring/verb
+-0.46476397	77971	6	verdwijn/verb
+0.6911417	8115	2	vergeleken/adj
+2.0372887	3176	3	vergezel/verb
+-0.27886918	117716	11	verhaal/noun
+-1.2552959	28794	1	verhuis/verb
+1.041118	2905	1	verjaag/verb
+-0.4984073	80009	6	verklaar/verb
+-0.9111789	40264	2	verklaring/noun
+0.35452917	5670	1	verkondig/verb
+-0.5382909	98073	7	verkoop/verb
+0.47323492	50511	10	verleden/noun
+1.8357946	1302	1	verlijd/verb
+-0.6023816	14821	1	vermeld/verb
+0.8334147	3535	1	vermoeid/adj
+2.4893875	674	1	vermom/verb
+0.9466149	12566	4	verneem/verb
+6.208607	33	2	vernielzuchtige/adj
+0.85136384	3471	1	verontrustend/adj
+2.4587388	1390	2	verschans/verb
+1.4764087	1854	1	verscholen/adj
+3.4195144	267	1	versiersel/noun
+1.3566846	23104	11	versla/verb
+-0.013056592	16485	2	verslag/noun
+2.2643952	11078	13	verslaggever/noun
+1.7569995	1417	1	versper/verb
+5.474975	988	29	verspring/verb
+5.002006	223	4	verspringen/noun
+1.1153191	8046	3	verstoor/verb
+0.14826936	7014	1	vervanger/noun
+-0.055046435	59690	7	vervolgens/adv
+0.40426815	16357	3	verwacht/adj
+0.3097976	125713	21	verwacht/verb
+1.4288853	3895	2	verwezenlijk/verb
+0.19749166	6684	1	verwittig/verb
+1.716267	4439	3	verwoest/verb
+1.4393544	25035	13	verzamel/verb
+2.720106	537	1	verzeng/adj
+0.95995486	3133	1	verzoening/noun
+0.5456509	23536	5	vestig/verb
+0.8601147	6866	2	veteraan/noun
+0.5322941	34369	7	vier/verb
+-0.31160364	11131	1	vijf/noun
+-0.868217	541702	28	vind/verb
+0.50207293	4942	1	visser/noun
+1.204183	4878	2	vlakte/noun
+1.6140503	3252	2	vlieg/noun
+2.9902267	409	1	vlieg_dek_schip/noun
+1.1938934	2474	1	vloeibaar/adj
+1.1765718	2508	1	vloot/noun
+0.80657834	21741	6	vlot/adj
+0.7338678	23542	6	vluchteling/noun
+1.3114028	13086	6	vlug/adj
+3.700494	201	1	vod_DIM/noun
+0.4494913	119091	23	voel/verb
+0.3750393	50196	9	voet/noun
+1.6245562	1616	1	voetbal_ploeg/noun
+2.0596902	1090	1	voetbalelftal/noun
+2.9788923	1282	3	voetbalsupporter/noun
+0.15713646	62461	9	vol/adj
+-0.26065287	10528	1	vol/part
+0.52498	198218	41	volg/adj
+0.24769713	152227	24	volg/verb
+0.1593191	7038	1	volg_door/adj
+-1.2462798	478509	17	volgens/prep
+-1.0308796	91004	4	volledig/adj
+1.082664	10988	4	volstrekt/adj
+-0.038549155	135587	16	voor/adj
+-0.6107065	104730	7	voor/part
+-0.080075786	3806927	431	voor/prep
+0.4329216	5264	1	voorafgaand/adj
+0.21216674	333204	51	vooral/adv
+1.2624635	2305	1	voorbij/adv
+3.8494484	172	1	voorbij_raas/verb
+2.862676	461	1	voorbij_steek/verb
+6.134057	18	1	voorjaar_aanbieding/noun
+0.091519624	44707	6	voorkom/verb
+1.9144964	4794	4	voorlaatst/adj
+0.04121461	70740	9	voorlopig/adj
+1.1635554	5082	2	voorspelbaar/adj
+-0.48194033	39249	3	voorsprong/noun
+-0.5381567	41672	3	voorstelling/noun
+0.53796846	19087	4	voort/part
+1.2135518	4822	2	voortreffelijk/adj
+0.21831967	13080	2	vooruitzicht/noun
+-0.044214066	50916	6	voorzie/verb
+-0.51870793	368206	27	vorig/adj
+-0.91276515	181894	9	vraag/noun
+-0.5757539	202345	14	vraag/verb
+0.24447472	25773	4	vracht_wagen/noun
+1.3277538	4355	2	vrede_proces/noun
+0.5521823	51709	11	vrees/verb
+-0.5548698	113103	8	vrij/adj
+-1.0485992	93652	4	vrijdag/noun
+-0.1201559	36682	4	vrijwel/adv
+4.2530136	118	1	vrind/noun
+0.4876854	300299	60	vrouw/noun
+0.5142809	14567	3	vul/verb
+0.9693202	3085	1	vurig/adj
+5.103309	104	2	w./noun
+0.82076955	14305	4	waag/verb
+0.3229962	35248	6	waar/adj
+0.33669665	363546	63	waar/adv
+0.24265438	57435	9	waarschijnlijk/adj
+1.0340033	92888	32	wacht/verb
+3.6121898	3715	17	wacht_op/verb
+-0.16001461	57234	6	wagen/noun
+0.7888212	11067	3	wandeling/noun
+0.3446681	5758	1	wanhopig/adj
+1.0488225	2854	1	wankel/adj
+-0.38114807	35759	3	wapen/noun
+5.68731	28	1	wassen_beeld/noun
+0.09197026	184781	25	wat/det
+-0.47315747	598351	46	wat/pron
+-0.62507474	1359191	90	we/pron
+-0.15110901	188737	20	wedstrijd/noun
+-0.3097656	444591	40	week/noun
+0.36197245	51263	9	weekend/noun
+0.40733418	396780	73	weer/adv
+2.0111492	1091	1	weerzinwekkend/adj
+-0.41411537	453326	37	weet/verb
+2.0138056	1088	1	weetje/noun
+2.4514098	21797	31	weg/adj
+0.18101062	34399	5	weg/adv
+0.8714565	115910	34	weg/noun
+0.3170122	77015	13	weg/part
+-0.05897528	51935	6	weiger/verb
+0.015513221	72083	9	weinig/det
+0.5983049	17828	4	wek/verb
+0.85578096	3455	1	wekenlang/adj
+-0.32716095	887396	79	wel/adv
+-0.16193607	57316	6	wellicht/adv
+-0.28620914	173351	16	wereld/noun
+3.0277193	397	1	wereld_erfgoed/noun
+5.566536	188	6	wereld_jaar_prestatie/noun
+1.8987018	1213	1	werelddeel/noun
+1.5159336	18065	10	wereldkampioen/noun
+-1.069625	260426	11	werk/noun
+-0.96910644	256961	12	werk/verb
+3.563157	231	1	werkkring/noun
+1.8642746	11320	9	werp/verb
+6.4320087	39	3	werp_nummer/noun
+2.4764566	6130	9	werp_op/verb
+0.56791383	18371	4	westers/adj
+0.20672227	59507	9	wet/noun
+0.40835485	16220	3	wetenschap/noun
+0.67543787	16631	4	wetenschapper/noun
+0.03384748	7863	1	wetsvoorstel/noun
+-0.568737	288288	20	wie/pron
+-1.2675414	316273	11	wij/pron
+-0.45100832	12740	1	wijs/adj
+-0.21028778	946915	94	wil/verb
+2.0780642	16334	16	wild/adj
+4.7747025	68	1	wild_enthoesiast/adj
+0.90962374	198109	60	win/verb
+1.881138	1238	1	windei/noun
+1.196693	2445	1	winkel_DIM/noun
+1.7135617	8909	6	woedend/adj
+0.10812221	73839	10	woensdag/noun
+3.025432	3966	10	woest/adj
+1.1997898	2462	1	woningbouw/noun
+4.2738156	113	1	woon_vertrek/noun
+0.09703701	3486710	473	word/verb
+2.239835	861	1	wurm/verb
+3.2496095	1582	5	y/noun
+0.40063193	5436	1	zaag/verb
+-0.8060354	181886	10	zaak/noun
+-0.6410653	46193	3	zaal/noun
+-0.26933175	10697	1	zakenman/noun
+-0.2287154	1661300	163	zal/verb
+0.27969685	1808509	296	ze/pron
+-0.5820256	130472	9	zeer/adv
+-0.81041557	982307	54	zeg/verb
+-0.42901793	137098	11	zeker/adj
+-0.32440525	22471	2	zekerheid/noun
+-0.71071345	329698	20	zelf/adv
+-0.13246955	267410	29	zelfs/adv
+3.1311665	708	2	zenuwslopend/adj
+1.9641225	2269	2	zestal/noun
+-0.033675298	177146	21	zet/verb
+1.1989393	17094	7	zet_neer/verb
+2.9290118	868	2	zet_weg/verb
+0.3287735	1097010	188	zich/pron
+0.24996611	555838	88	zie/verb
+0.7271085	11915	3	zie_af/verb
+-0.3263322	392068	35	zij/pron
+-0.18963937	2164588	221	zijn/det
+4.090823	675	5	zit_achterna/verb
+-0.025780091	216106	26	zo'n/det
+-0.44917798	748301	59	zo/adv
+0.925985	3202	1	zodoende/adv
+0.33764014	52439	9	zoek/adj
+-1.015855	113590	5	zoek/verb
+-0.082455516	26365	3	zoiets/pron
+0.20466456	26410	4	zomaar/adv
+0.45835072	51730	10	zomer/noun
+0.11609276	138349	19	zondag/noun
+0.47820553	226930	44	zonder/prep
+-1.3263383	61213	2	zoon/noun
+-0.1758834	135526	14	zorg/verb
+-0.41448635	49013	4	zoveel/det
+0.47239435	10107	2	zucht/verb
+3.2693415	926	3	zwaai/adj
+-0.2746805	150398	14	zwaar/adj
+0.19325367	67059	10	zwart/adj
+2.2466211	4300	5	zweef/verb
+3.3392668	1150	4	zweep/noun
+1.4647254	1885	1	zwerf/verb
+3.9303083	320	2	zwerm/verb
+0.52514315	14482	3	zwijg/verb
+2.0047927	1104	1	zwijn/noun
+-0.3478736	218147	19	één/pron
