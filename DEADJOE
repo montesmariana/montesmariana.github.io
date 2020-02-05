@@ -1,0 +1,35 @@
+
+*** These modified files were found in JOE when it aborted on Tue Feb  4 19:24:19 2020
+*** JOE was aborted by UNIX signal 15
+
+*** File '.git/COMMIT_EDITMSG'
+horde clouds 3
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   NephoVis/procrustes_register.tsv
+#	new file:   NephoVis/temp/horde/horde.common_tokens.txt
+#	new file:   NephoVis/temp/horde/horde.coords.tsv
+#	new file:   NephoVis/temp/horde/horde.cws.tsv
+#	new file:   NephoVis/temp/horde/horde.models.dist.tsv
+#	new file:   NephoVis/temp/horde/horde.models.tsv
+#	new file:   NephoVis/temp/horde/horde.ppmi.tsv
+#	new file:   NephoVis/temp/horde/horde.tsv
+#	new file:   NephoVis/temp/horde/horde.variables.tsv
+#
+
+*** File '(Unnamed)'
+.git/COMMIT_EDITMSG
+.git/COMMIT_EDITMSG
+.git/COMMIT_EDITMSG
+.git/COMMIT_EDITMSG
+.git/COMMIT_EDITMSG
+.git/COMMIT_EDITMSG
+.git/COMMIT_EDITMSG
+.git/COMMIT_EDITMSG
+.git/COMMIT_EDITMSG
+.git/COMMIT_EDITMSG
+.git/COMMIT_EDITMSG
