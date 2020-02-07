@@ -153,7 +153,6 @@ horde/noun/algemeen_dagblad_20000913_54/60
 horde/noun/algemeen_dagblad_19990507_114/73
 horde/noun/algemeen_dagblad_20010315_15/472
 horde/noun/algemeen_dagblad_20040917_35/240
-horde/noun/algemeen_dagblad_20041106_97/234
 horde/noun/algemeen_dagblad_20020624_34/188
 horde/noun/algemeen_dagblad_20000211_55/440
 horde/noun/algemeen_dagblad_20030507_67/186
@@ -235,7 +234,6 @@ horde/noun/het_laatste_nieuws_20010814_01_436/290
 horde/noun/het_laatste_nieuws_20030515_01_394/136
 horde/noun/het_nieuwsblad_20030610_01_197/106
 horde/noun/het_nieuwsblad_20041018_01_285/47
-horde/noun/het_nieuwsblad_20001023_01_447/699
 horde/noun/het_nieuwsblad_20020506_01_186/331
 horde/noun/het_nieuwsblad_20000525_01_126/535
 horde/noun/het_nieuwsblad_19990517_01_11/670

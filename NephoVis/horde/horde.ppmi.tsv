@@ -13,7 +13,6 @@ pmi	raw_freq	raw_co	cw
 0.40291893	16437	3	24/noun
 1.6606791	3156	2	34-jarige/adj
 4.7472496	493	7	400_meter/noun
-7.8237557	181	56	60^m/noun
 0.38023525	16737	3	Afrikaans/adj
 0.15274519	56013	8	Amerikaan/noun
 1.5123291	7188	4	Aziatisch/adj
@@ -31,7 +30,6 @@ pmi	raw_freq	raw_co	cw
 -0.23396565	104339	10	Duits/adj
 1.4069161	27916	14	Duitser/noun
 1.4806486	22423	12	EK/noun
-4.4065804	100	1	EK_eindronde/noun
 1.4244038	7822	4	Engelsman/noun
 0.08350496	165681	22	Europees/adj
 1.3307427	2154	1	Hongaar/noun
@@ -42,16 +40,13 @@ pmi	raw_freq	raw_co	cw
 1.4536016	28973	15	Japans/adj
 1.4534168	1931	1	Libisch/adj
 0.6102711	8902	2	Londens/adj
-4.164616	127	1	Mary/det
 5.108646	642	13	Mongools/adj
 3.7046618	402	2	Morgens/adv
 -0.042783897	241254	28	Nederlands/adj
-4.359689	106	1	PSV_stadion/noun
 1.685944	3026	2	Pool/noun
 1.9401878	5850	5	Romeins/adj
 -0.0026952778	16421	2	Servisch/adj
 2.4734468	690	1	Slowaak/noun
-4.1976333	123	1	VTM_kijker/noun
 -0.32525092	124773	11	Vlaams/adj
 -0.2546192	42380	4	WK/noun
 0.18045536	13842	2	Zweeds/adj
@@ -122,7 +117,6 @@ pmi	raw_freq	raw_co	cw
 -0.35797393	46432	4	behoor/verb
 0.30009347	29977	5	behoorlijk/adj
 -0.67741925	128314	8	bekend/adj
-4.232636	119	1	beknel/verb
 3.5197492	2414	10	belaag/verb
 0.73661655	209497	54	belangrijk/adj
 0.80028486	40499	11	belegger/noun
@@ -192,7 +186,6 @@ pmi	raw_freq	raw_co	cw
 0.9039399	6657	2	champagne/noun
 1.2531943	6986	3	christen/noun
 1.5391113	5260	3	claim/verb
-5.0402455	104	2	club_maat/noun
 2.972664	414	1	cocon/noun
 1.8779552	2495	2	cola/noun
 1.1924008	14750	6	combineer/verb
@@ -236,7 +229,6 @@ pmi	raw_freq	raw_co	cw
 -0.15717126	731956	77	doe/verb
 0.072931595	15093	2	doek/noun
 -0.5900872	58563	4	doel/noun
-4.430354	192	2	dood_verachting/noun
 0.09237082	103759	14	door/part
 0.8200415	1310789	367	door/prep
 1.7622476	1432	1	doorstart/noun
@@ -304,7 +296,6 @@ pmi	raw_freq	raw_co	cw
 2.8270018	483	1	fond/noun
 -0.42586762	12413	1	formeel/adj
 3.5353742	14530	61	fotograaf/noun
-4.1590185	127	1	fotografeer/adj
 2.0625527	2065	2	foutloos/adj
 -0.0027263397	8171	1	front/noun
 0.011968783	1085158	135	ga/verb
@@ -347,7 +338,6 @@ pmi	raw_freq	raw_co	cw
 -0.30030885	987502	90	goed/adj
 3.6325266	216	1	goedgemutst/adj
 1.0619589	8434	3	goedkeuring/noun
-4.041767	141	1	goedmenende/adj
 2.380342	16688	22	goud/noun
 -0.19085751	88542	9	graag/adj
 -0.5628762	58478	4	gratis/adj
@@ -380,7 +370,6 @@ pmi	raw_freq	raw_co	cw
 0.35057956	51708	9	heet/verb
 -0.13817814	455207	49	hem/pron
 -0.40223098	157140	13	hen/pron
-4.052821	141	1	herbouwd/adj
 -0.60543954	14996	1	herstel/noun
 0.12777983	28814	4	herstel/verb
 -0.039587315	169158	20	het/adj
@@ -423,7 +412,6 @@ pmi	raw_freq	raw_co	cw
 0.80553925	7271	2	immigrant/noun
 -0.281377	279990	26	in/part
 -0.028269138	9492181	1133	in/prep
-4.182008	123	1	in_snoer/verb
 3.5652468	932	4	indoor/adv
 -0.18322708	48582	5	indruk/noun
 0.6609203	16777	4	indrukwekkend/adj
@@ -476,14 +464,11 @@ pmi	raw_freq	raw_co	cw
 0.7555311	7669	2	kijk_toe/verb
 0.18023221	305978	45	kind/noun
 -0.6041725	74277	5	klant/noun
-3.7672026	187	1	kleertjes/noun
 -0.11933703	228937	25	klein/adj
 1.7734139	1384	1	klomp/noun
 2.0392973	6361	6	klooster/noun
 0.9952735	20998	7	knie/noun
-4.152263	129	1	knock_out/adj
 -0.07851465	17577	2	koffie/noun
-4.052104	143	1	kogel_stoot/noun
 0.04081966	973909	125	kom/verb
 2.1202557	9744	10	kom_af/verb
 1.361691	20773	10	kom_binnen/verb
@@ -504,7 +489,6 @@ pmi	raw_freq	raw_co	cw
 1.6525816	1552	1	laat_door/verb
 0.9330229	9612	3	laat_los/verb
 0.3075335	23869	4	laat_toe/verb
-4.8564277	188	3	lal/adj
 0.039542858	304215	39	land/noun
 -0.14231251	318300	34	lang/adj
 2.5289547	1941	3	langs/adv
@@ -542,7 +526,6 @@ pmi	raw_freq	raw_co	cw
 -0.37023583	401159	34	mag/verb
 0.29555506	381643	63	man/noun
 2.1172252	2956	3	marinier/noun
-3.8067791	180	1	massa_product/noun
 0.20459875	283602	43	me/pron
 2.2168598	16955	19	medaille/noun
 0.2150514	72129	11	mee/adv
@@ -625,7 +608,6 @@ pmi	raw_freq	raw_co	cw
 -0.4611232	128088	10	onder/adv
 -0.08163694	414521	47	onder/prep
 0.39298788	27529	5	onderhandeling/noun
-3.948393	155	1	onderhanden/adj
 1.9104375	2391	2	onderkant/noun
 -0.8900781	19941	1	ondernemer/noun
 2.1773298	1840	2	ongemerkt/adj
@@ -728,7 +710,6 @@ pmi	raw_freq	raw_co	cw
 0.5438048	146554	31	rond/prep
 2.093681	1000	1	rond_rit/noun
 2.1476038	1888	2	rood_wit/adj
-4.3734283	103	1	rot_tekening/noun
 -0.9219165	40811	2	ruim/adj
 -0.23913157	93699	9	ruim/adv
 0.07271385	7668	1	ruim_op/verb
@@ -768,12 +749,10 @@ pmi	raw_freq	raw_co	cw
 0.4968175	4977	1	speelgoed/noun
 0.27788365	37307	6	spoor/noun
 1.9776464	1138	1	sport_park/noun
-4.1134233	139	1	sport_schuur/noun
 3.6593795	433	2	spraak_technologie_bedrijf/noun
 -0.45162672	127396	10	spreek/verb
 1.233861	2364	1	spreiding/noun
 2.096106	23959	24	spring/verb
-4.367026	103	1	spring_heen/verb
 4.2384467	470	4	sprinkhaan/noun
 3.0769818	6007	16	sprint/noun
 2.6799726	1679	3	sprint/verb
@@ -883,7 +862,6 @@ pmi	raw_freq	raw_co	cw
 0.107434645	22000	3	uitbreiding/noun
 0.56440806	4596	1	uitdrukking/noun
 0.26551467	99204	16	uiteindelijk/adj
-3.8989265	165	1	uitgejouwd/noun
 3.2809281	303	1	uitgestald/adj
 2.0235128	1073	1	uitwerpsel/noun
 3.4101236	1877	7	uitzinnig/adj
@@ -965,7 +943,6 @@ pmi	raw_freq	raw_co	cw
 -0.080075786	3806927	431	voor/prep
 0.4329216	5264	1	voorafgaand/adj
 0.21216674	333204	51	vooral/adv
-3.8494484	172	1	voorbij_raas/verb
 1.9144964	4794	4	voorlaatst/adj
 0.04121461	70740	9	voorlopig/adj
 1.1635554	5082	2	voorspelbaar/adj
@@ -980,10 +957,8 @@ pmi	raw_freq	raw_co	cw
 0.5521823	51709	11	vrees/verb
 -0.5548698	113103	8	vrij/adj
 -1.0485992	93652	4	vrijdag/noun
-4.2530136	118	1	vrind/noun
 0.4876854	300299	60	vrouw/noun
 0.5142809	14567	3	vul/verb
-5.103309	104	2	w./noun
 0.3229962	35248	6	waar/adj
 0.33669665	363546	63	waar/adv
 1.0340033	92888	32	wacht/verb
@@ -1010,7 +985,6 @@ pmi	raw_freq	raw_co	cw
 0.85578096	3455	1	wekenlang/adj
 -0.32716095	887396	79	wel/adv
 -0.28620914	173351	16	wereld/noun
-5.566536	188	6	wereld_jaar_prestatie/noun
 1.5159336	18065	10	wereldkampioen/noun
 -1.069625	260426	11	werk/noun
 -0.96910644	256961	12	werk/verb

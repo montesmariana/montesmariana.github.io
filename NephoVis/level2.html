@@ -40,9 +40,14 @@
       </div>
       <div class="row">
         <div class="col-2">
+          <!-- <div class='btn-group'>
+            <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle" data-toggle="dropdown">Color models</button>
+            <div class="dropdown-menu" id="model-colour"></div>
+          </div>
+          <hr> -->
           <div class="btn-group-vertical">
             <div class='btn-group'>
-              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select colour</button>
+              <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Select color</button>
               <div class="dropdown-menu" id="colour"></div>
             </div>
             <div class='btn-group'>
@@ -65,8 +70,8 @@
           </div>
           <hr>
           <div class="btn-group-vertical">
-            <button type="button" class="btn shadow-sm btn-secondary" id="clear-select"><i class="fas fa-eraser"></i> Clear token selection</button>
-            <button type="button" class="btn shadow-sm btn-secondary" id="show-matrix"><i class="fas fa-sticky-note"></i> Open distance matrix </button>     
+            <button type="button" class="btn shadow-sm btn-secondary" id="clear-select"><i class="fas fa-eraser"></i> Clear selection</button>
+            <button type="button" class="btn shadow-sm btn-secondary" id="show-matrix"><i class="fas fa-sticky-note"></i> Distance matrix </button>     
           </div>
           <hr>
           <div class='btn-group-vertical'>
@@ -149,10 +154,38 @@
         var xAxis, yAxis;
         var x, y, xrange, yrange; // for scales
         var i, j, m; // to iterate over the models
+        var models, model_colors, color_model;
 
         // load the data
         dataset = data;
         
+        d3.tsv(type + '/' + type + '.models.tsv', function(data) {
+          models = data;
+          model_colors = classify_colnames(data)['nominals'];
+          color_model = varFromLS(models, "color", "model", type);
+          modelColDropdown = buildDropdown("model-colour", model_colors);
+          modelColDropdown.on("click", function() {
+            color_model = updateVar(models, "color", this.value, 'model', type);
+            color_circles();
+          });
+          color_circles();
+          function color_circles() {
+            console.log(color_model['values']);
+            d3.selectAll('circle')
+              .style('fill', function(d) {
+                if (typeof color_model['variable'] === 'string') {
+                  const value = models.filter(function(m) {return m['_model'] === d.m;})
+                    .map(function(n) {return (n[color_model['variable']])})[0];
+                    console.log(value);
+                  return(color(color_model['values'].indexOf(value)));
+                } else {
+                  return(color(0));
+                }
+              });
+          }
+
+        });
+
         // classify columns
         colnames = classify_colnames(dataset);
         othercols = colnames['variables'];
@@ -311,8 +344,8 @@
                 .style("border", "solid")
                 .style("border-color", "lightgray");
               tooltip.html(d.m)
-                .style("left", (d3.event.pageX + 3) + "px")
-                .style("top", (d3.event.pageY -3 ) + "px");
+                .style("left", (+d.i)*(width-padding)+padding + "px")
+                .style("top", (+d.j)*(height-padding)+padding + "px");
             })
             .on('mouseout', function() {
               tooltip.transition()
@@ -350,7 +383,15 @@
             .attr('cx', padding)
             .attr('cy', padding)
             .attr('r', padding*0.4)
-            .style('fill', color(0));
+            .style('fill', function(d) {
+              if (typeof color_model === 'string') {
+                const value = models.filter(function(m) {return m['_model'] === d.m;})
+                  .map(function(n) {return (n[color_model])}).keys();
+                return(color(value));
+              } else {
+                return(color(0));
+              }
+            });
 
           cell.append('text')
             .attr('x', padding)

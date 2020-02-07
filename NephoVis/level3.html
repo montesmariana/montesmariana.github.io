@@ -195,6 +195,7 @@
               'value' : d});
             });
         // }
+        console.log(numerals)
 
         numerals = numerals.filter(function(d) {
           return(!d.startsWith('_count') || model.search(d.split('.').splice(1).join('.')) === 0);
@@ -536,7 +537,8 @@
             const new_value = tailoredcontexts.filter( d => d.key === 'model')[0].value;
             ctxtvar = updateVar(dataset, 'ctxt', new_value, level, type)['variable'];
           }
-          var tooltiptext = d[ctxtvar].replace(/class=["']target["']/g, "style='color:" +tooltipcolor + ";font-weight:bold;'");
+          var tooltiptext = '<p><b>' + d['_id'] + '</b></p><p>' + d[ctxtvar].replace(/class=["']target["']/g, "style='color:" +tooltipcolor + ";font-weight:bold;'") + '</p>';
+          // var tooltiptext = d[model + '.x'] + ', ' + d[model + '.y'];
 
           d3.select("#concordance").append("p")
             .attr("class", "text-center p-2 ml-2")
