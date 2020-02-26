@@ -118,11 +118,11 @@ function varFromLS(dataset, variable, level, type) {
 
 function listFromLS(variable) {
     var LS = JSON.parse(localStorage.getItem(variable));
-    return(LS == null ? [] : LS);
+    return(LS === null ? [] : LS);
 }
 
 function updateVar(dataset, variable, name, level, type) {
-    if (name == 'Reset') {
+    if (name === 'Reset') {
         varset = {
             "variable" : null,
             "values" : +0
@@ -213,9 +213,9 @@ function selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset) {
     const colorselection = listFromLS("colorsel-" + level + '-' + type);
     const shapeselection = listFromLS("shapesel-" + level + '-' + type);
     const sizeselection = listFromLS("sizesel-" + level + '-' + type);
-    console.log(sizeselection);
+    console.log(colorselection);
     ["Color", "Shape", "Size"].forEach(function(x) {boldenLegend(x, level, type)});
-    var id = level == 'model' ? '_model' : '_id';
+    var id = level === 'model' ? '_model' : '_id';
     var selection = d3.map(dataset, function(d) {
         const has_color = colorselection.length > 0 ? colorselection.indexOf(d[colorvar['variable']]) !== -1 : true;
         const has_shape = shapeselection.length > 0 ? shapeselection.indexOf(d[shapevar['variable']]) !== -1 : true;
