@@ -1,4 +1,15 @@
-var color = d3.scaleOrdinal(d3.schemeCategory10);
+var myColors = [
+    "#e69f00", //orange
+    "#56b4e9", //sky blue
+    "#d55e00", //vermilion
+    "#0072b2", //blue
+    "#cc79a7", //reddish Purple
+    "#009e73", //bluish Green
+    "#f0e442", //yellow
+    "#000000" //black
+]
+var color = d3.scaleOrdinal(myColors);
+// var color = d3.scaleOrdinal(d3.schemeCategory10);
 var shape = d3.scaleOrdinal(d3.symbols);
 var size = d3.scaleLinear()
 .range([40, 200]); // remember to set the domain (current variable) before assigning a value
@@ -149,8 +160,8 @@ function updateVar(dataset, variable, name, level, type) {
         }
     } else {
         var values = getValues(dataset, name);
-        values = isNaN(values[0]) ? values : values.map(function(d) {
-            return +d;}).sort(function(a, b){return a-b});
+        // values = isNaN(values[0]) ? values : values.map(function(d) {
+        //     return +d;}).sort(function(a, b){return a-b});
         varset = {
             "variable" : name,
             "values" : values
@@ -165,7 +176,9 @@ function code(d, variable, schema, default_value){
         return(default_value);
     } else {
         if (isNaN(default_value)) {
-            return(schema(variable['values'].indexOf(d[variable['variable']])));
+            const coding = variable['values'].map(function(d, i) {return (schema(i))});
+            const idx = variable['values'].indexOf(d[variable['variable']]);
+            return(coding[idx]);
         } else {
             schema.domain(d3.extent(variable['values']));
             return(schema(+d[variable['variable']]));
@@ -256,13 +269,15 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
     colorvalues = colorvar['values'];
     shapevalues = shapevar['values'];
     sizevalues = sizevar['values'];
+    console.log(colorvar);
     // Update color legend
-    if (typeof(colorvalues) != 'number'){
+    if (typeof(colorvalues) !== 'number'){
         // colorvalues.sort();
 
         var colorscale = d3.scaleOrdinal()
             .domain(colorvalues)
-            .range(d3.schemeCategory10);
+            .range(myColors);
+            // .range(d3.schemeCategory10);
         
         legendColor = d3.legendColor()
             .shape("path", d3.symbol()
