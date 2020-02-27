@@ -391,7 +391,6 @@ function execute(datasets, type) {
 
     d3.select("#show-table").on("click", function() {
       var params = "width=400,height=700,menubar=no,toolbar=no,location=no,status=no";
-
       window.open("frequencyTable.html?type=" + type + "&column=" + cws_column, "freqtable", params);
   });
 }

@@ -13,7 +13,7 @@ function getUrlParameter(sParam) {
 }
 
 // var type = getUrlParameter('type');
-function loadData(type, files) {
+function loadData(type, files, other_args = null) {
     var toLoad = [];
     var allFiles = {
         "model" : "data/" + type + "/" + type + ".models.tsv",
@@ -25,6 +25,6 @@ function loadData(type, files) {
         toLoad.push(d3.tsv(allFiles[f]));
     });
     Promise.all(toLoad).then(function(files) {
-        execute(datasets = files, type = type);
+        execute(datasets = files, type = type, other_args = other_args);
     });
 }
