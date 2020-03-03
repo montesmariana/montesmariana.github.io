@@ -1,0 +1,34 @@
+{
+    "type" : "categorical",
+    "values" : {
+        "GB": [
+            {
+                "code": "building",
+                "label": "Label 1 for first lemma"
+            },
+            {
+                "code": "congregation",
+                "label": "Label 2 for first lemma"
+            },
+            {
+                "code": "organization",
+                "label": "Label 3 for first lemma"
+            }
+        ],
+        "Ireland": [
+            {
+                "code": "building",
+                "label": "Label 1 for second lemma"
+            },
+            {
+                "code": "congregation",
+                "label": "Label 2 for second lemma"
+            },
+            {
+                "code": "organization",
+                "label": "Label 3 for second lemma"
+            }
+        ]
+    },
+    "hasAttributes" : ["confidence"]
+}

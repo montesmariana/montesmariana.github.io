@@ -1,0 +1,26 @@
+{
+    "type": "categorical",
+    "values": {
+        "GB": [
+            {
+                "code": "IN",
+                "label": "In-concept"
+            },
+            {
+                "code": "OUT",
+                "label": "Out of concept"
+            }
+        ],
+        "Ireland": [
+            {
+                "code": "IN",
+                "label": "In-concept"
+            },
+            {
+                "code": "OUT",
+                "label": "Out of concept"
+            }
+        ]
+    },
+    "hasAttributes" : ["confidence"]
+}
