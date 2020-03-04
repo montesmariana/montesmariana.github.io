@@ -14,6 +14,7 @@ function getUrlParameter(sParam) {
 
 // var type = getUrlParameter('type');
 function loadData(type, files, other_args = null) {
+    
     var toLoad = [];
     var allFiles = {
         "model" : "data/" + type + "/" + type + ".models.tsv",
@@ -21,10 +22,27 @@ function loadData(type, files, other_args = null) {
         "tokens" : "data/" + type + "/" + type + ".tsv",
         "weights" : "data/" + type + '/' + type + '.ppmi.tsv'
     };
-    files.forEach(function(f) {
-        toLoad.push(d3.tsv(allFiles[f]));
-    });
-    Promise.all(toLoad).then(function(files) {
-        execute(datasets = files, type = type, other_args = other_args);
-    });
+
+    fetch("data/" + type + "/" + type + ".solutions.json").then(response => {
+        if (!response.ok) {
+            return "";
+        }
+        return response.json();
+        }).then(data => {
+            if (files.indexOf('tokens') > -1) {
+                d3.keys(data).forEach(function(d) {
+                    allFiles[d] = "data/" + type + "/" + type + data[d] + ".tsv";
+                    files.push(d);
+                });
+                other_args = data;
+            }
+            
+            files.forEach(function(f) {
+                toLoad.push(d3.tsv(allFiles[f]));
+            });
+            Promise.all(toLoad).then(function(files) {
+                execute(datasets = files, type = type, other_args = other_args);
+            });
+        });
+    
 }
