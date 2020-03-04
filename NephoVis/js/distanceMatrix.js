@@ -1,5 +1,5 @@
 function execute(datasets, type) {
-    var data = datasets[0], distances;
+    var data = datasets["distances"], distances;
     var distMatrix, distCols, distRows;
     var miniWidth, miniHeight;
     var distWidth = 350, distHeight = 350, distPad = 25;

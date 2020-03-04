@@ -20,7 +20,8 @@ function loadData(type, files, other_args = null) {
         "model" : "data/" + type + "/" + type + ".models.tsv",
         "distances" : "data/" + type + "/" + type + ".models.dist.tsv",
         "tokens" : "data/" + type + "/" + type + ".tsv",
-        "weights" : "data/" + type + '/' + type + '.ppmi.tsv'
+        "weights" : "data/" + type + '/' + type + '.ppmi.tsv',
+        "variables" : "data/" + type + "/" + type + ".variables.tsv"
     };
 
     fetch("data/" + type + "/" + type + ".solutions.json").then(response => {
@@ -34,14 +35,20 @@ function loadData(type, files, other_args = null) {
                     allFiles[d] = "data/" + type + "/" + type + data[d] + ".tsv";
                     files.push(d);
                 });
-                other_args = data;
+                if (d3.keys(data).length > 0) files.splice(files.indexOf('tokens'), 1);
+                if (other_args === null) other_args = d3.keys(data);
             }
             
-            files.forEach(function(f) {
-                toLoad.push(d3.tsv(allFiles[f]));
-            });
-            Promise.all(toLoad).then(function(files) {
-                execute(datasets = files, type = type, other_args = other_args);
+            toLoad = files.map(function(f) {return(d3.tsv(allFiles[f])); });
+            // files.forEach(function(f) {
+            //     toLoad.push(d3.tsv(allFiles[f]));
+            // });
+            Promise.all(toLoad).then(function(results) {
+                const loadedDatasets = {};
+                results.forEach(function(f, i) {
+                    loadedDatasets[files[i]] = f;
+                });
+                execute(datasets = loadedDatasets, type = type, other_args = other_args);
             });
         });
     

@@ -8,7 +8,8 @@ function execute(datasets, type, alternatives) {
   var colorDropdown, shapeDropdown, sizeDropdown, ctxtDropdown, modDropdown;
   var x, y, xrange, yrange; //set scales
   var xCenter, yCenter, xAxis, yAxis;
-  var dataset = datasets[0];
+  var dataset, dot, dot_present;
+  var dataset;
   var level = 'token';
 
   // set the base of the svg area
@@ -19,12 +20,10 @@ function execute(datasets, type, alternatives) {
 
   d3.select("h1").html("Level 3 (<em>" + type + "</em>)");
 
-  if (datasets.length > 1 && alternatives !== null) {
+  if (d3.keys(datasets).indexOf("tokens") === -1 && alternatives !== null) {
     const chosenSolution = JSON.parse(localStorage.getItem("solution-" + type));
-    console.log(chosenSolution);
-    if (chosenSolution !== null) {
-      dataset = datasets[d3.keys(alternatives).indexOf(chosenSolution) + 1];
-    }
+    dataset = chosenSolution !== null ? datasets[chosenSolution] : datasets[alternatives[0]];
+
     const alts = d3.select("#moveAround").append("div")
       .attr("class", "btn-group");
     alts.append("button")
@@ -35,13 +34,17 @@ function execute(datasets, type, alternatives) {
     alts.append("div")
       .attr("class", "dropdown-menu")
       .attr("id", "solutions");
-    altDropdown = buildDropdown("solutions", d3.keys(alternatives));
+    altDropdown = buildDropdown("solutions", alternatives);
     altDropdown.on("click", function (d) {
       localStorage.setItem("solution-" + type, JSON.stringify(d));
-      dataset = datasets[d3.keys(alternatives).indexOf(d) + 1];
+      dataset = datasets[d];
       deploy(dataset);
     })
+  } else {
+    dataset = datasets["tokens"];
+    deploy(dataset);
   }
+
   modselection = listFromLS("modelselection-" + type);
 
   model = getUrlParameter('model');
@@ -87,8 +90,12 @@ function execute(datasets, type, alternatives) {
 
   tokselection = listFromLS(level + "selection-" + type);
 
+
   function deploy(dataset) {
-    const solutionName = JSON.parse(localStorage.getItem("solution-"+type));
+
+    dataset = datasets["variables"] === null ? datasets[d] : _.merge(dataset, datasets["variables"]);
+
+    const solutionName = JSON.parse(localStorage.getItem("solution-" + type));
     if (solutionName !== null) {
       const technique = solutionName.toLowerCase().search("tsne") > -1 ? "t-SNE, perplexity: " + solutionName.match("[0-9]+") : solutionName.toUpperCase();
       d3.select("h4#solutionName").text("Technique: " + technique);
@@ -122,6 +129,153 @@ function execute(datasets, type, alternatives) {
     cws_column = colnames['all'].filter(function (d) {
       return (d.startsWith('_cws') && model.search(d.slice(5)) == 0)
     });
+    // set up dropdowns
+    colorDropdown = buildDropdown("colour", nominals);
+    shapeDropdown = buildDropdown("shape", nominals.filter(function (d) { return (getValues(dataset, d).length <= 7); }));
+    sizeDropdown = buildDropdown("size", numerals);
+
+    // Use this dropdown for ctxt2 (context tailored to the cloud)
+    ctxtDropdown = buildDropdown("ctxt2", tailoredcontexts,
+      value_function = function (d) { return (d.value); },
+      text_function = function (d) { return (d.key); });
+
+    modDropdown = buildDropdown("models", modselection,
+      value_function = undefined,
+      text_function = function (d) { return (d.slice(7)); });
+
+    // what happens when we click on the dropdowns?
+    colorDropdown.on("click", function () {
+      colorvar = updateVar(dataset, "color", this.value, level, type);
+      colorselection = [];
+      updatePlot();
+      updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
+    });
+
+    shapeDropdown.on("click", function () {
+      shapevar = updateVar(dataset, "shape", this.value, level, type);
+      shapeselection = [];
+      updatePlot();
+      updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
+    });
+
+    sizeDropdown.on("click", function () {
+      sizevar = updateVar(dataset, 'size', this.value, level, type);
+      updatePlot();
+      updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
+    });
+
+    ctxtDropdown.on("click", function () {
+      ctxtvar = updateVar(dataset, 'ctxt', this.value, type)['variable'];
+      dot.on("mouseover", showContext);
+    });
+
+    modDropdown.on("click", function () {
+      model = this.value;
+      window.open("level3.html" + "?type=" + type + "&model=" + model, "_self");
+    });
+
+    // clear selection of models
+    d3.select("#clear-select")
+      .on("click", function () {
+        tokselection = [];
+        cleanStor("colorsel-" + level + '-' + type);
+        cleanStor("shapesel-" + level + '-' + type);
+        cleanStor("sizesel-" + level + '-' + type);
+        updateTokSelection(tokselection);
+      });
+
+    d3.select("#model-select")
+      .on("click", function () {
+        window.open("level2.html" + "?type=" + type, "_self");
+      });
+
+    // Updating color, shape and size after every button clicking
+    function updatePlot() {
+      dot.style("fill", function (d) { return (code(d, colorvar, color, "#1f77b4")); })
+        .attr("d", d3.symbol()
+          .type(function (d) { return (code(d, shapevar, shape, d3.symbolCircle)); })
+          .size(function (d) { return (code(d, sizevar, size, 64)); }));
+    }
+
+
+    d3.select("#findtokens_btn").on('click', function () {
+      var cw_to_search = d3.select("#findtokens_cw").property('value');
+      var result = dataset.filter(function (d) {
+        return (d[cws_column].split(';').filter(function (p) {
+          return (p.search(cw_to_search) !== -1);
+        }).length > 0);
+      });
+      if (result.length > 0) {
+        tokselection = d3.map(result, function (d) { return (d['_id']); }).keys();
+        updateTokSelection(tokselection);
+      } else {
+        window.alert('Sorry, "' + cw_to_search + '" is not present as a feature in this model.');
+      }
+    })
+
+    d3.select("#findtokens_btn_raw").on('click', function () {
+      var cw_to_search = d3.select("#findtokens_ctxt").property('value').toLowerCase();
+      var result = dataset.filter(function (d) {
+        raw_ctxt = tailoredcontexts.filter(d => d.key === 'raw')[0].value;
+        return (d[raw_ctxt].toLowerCase().search(cw_to_search) !== -1);
+      });
+      if (result.length > 0) {
+        tokselection = d3.map(result, function (d) { return (d['_id']); }).keys();
+        updateTokSelection(tokselection);
+      } else {
+        window.alert('Sorry, no context includes the requested string.');
+      }
+    });
+    // update model selection
+    function updateTokSelection(tokselection) {
+      updateSelection(tokselection, level, type);
+    }
+    function showContext(d) {
+      // let position = d3.select(this).attr("transform").split(',');
+      // let xcoord = +(position[0].split('(')[1]) > 250 ? padding : position[0].split('(')[1];
+      // let ycoord = position[1].split(')')[0];
+      var tooltipcolor = code(d, colorvar, color, "#1f77b4");
+      // var tooltiptext = typeof(ctxtvar) == 'string' ? d[ctxtvar].replace(/<em>/g, "<em style='color:" +tooltipcolor + ";font-weight:bold;'>") : ""
+      ctxtvar = typeof (ctxtvar) === 'string' ? ctxtvar : '_ctxt.raw';
+      if (tailoredcontexts.filter(function (d) { return (d.value === ctxtvar); }).length < 1) {
+        const new_value = tailoredcontexts.filter(d => d.key === 'model')[0].value;
+        ctxtvar = updateVar(dataset, 'ctxt', new_value, level, type)['variable'];
+      }
+      var tooltiptext = '<p><b>' + d['_id'] + '</b></p><p>' + d[ctxtvar].replace(/class=["']target["']/g, "style='color:" + tooltipcolor + ";font-weight:bold;'") + '</p>';
+      // var tooltiptext = d[model + '.x'] + ', ' + d[model + '.y'];
+
+      d3.select("#concordance").append("p")
+        .attr("class", "text-center p-2 ml-2")
+        .style("border", "solid")
+        .style("border-color", "gray")
+        .style("font-size", "0.8em")
+        .html(tooltiptext);
+
+      // tooltip.transition()
+      //   .duration(200)
+      //   .style("opacity", 1);
+      // tooltip.html("<b style='color:" +tooltipcolor + "'>" + d['_id'] + "</b><br>" + tooltiptext)
+      //   // .style("left", (d3.event.pageX + 10) + "px")
+      //   // .style("top", (d3.event.pageY - 20) + "px")
+      //   .style("top", (ycoord + "px"))
+      //   .style("left", (xcoord + "px"))
+      //   .style("width", width + 'px')
+      //   .style("background-color", "white");
+      let to_select = d3.select(this).classed("present") ? svg : sidebar;
+      to_select.select(".dot")
+        .append("path")
+        .attr("class", "selector")
+        .attr("transform", d3.select(this).attr("transform"))
+        .attr("d", d3.symbol().type(d3.symbolCircle).size(250))
+        .style("fill", "none")
+        .style("stroke", compColor(d3.select(this).style("fill")))
+        .style("stroke-width", 2);
+    }
+
+    updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
+    updateTokSelection(tokselection);
+
+
 
 
     // Set up scales (axes, color...) - coordinates multiplied to get some padding in a way
@@ -137,22 +291,6 @@ function execute(datasets, type, alternatives) {
       .range([height - padding, padding]);
     newX = x;
     newY = y;
-
-    // set up dropdowns
-    colorDropdown = buildDropdown("colour", nominals);
-    shapeDropdown = buildDropdown("shape", nominals.filter(function (d) { return (getValues(dataset, d).length <= 7); }));
-    sizeDropdown = buildDropdown("size", numerals);
-
-    // Use this dropdown for ctxt2 (context tailored to the cloud)
-    ctxtDropdown = buildDropdown("ctxt2", tailoredcontexts,
-      value_function = function (d) { return (d.value); },
-      text_function = function (d) { return (d.key); });
-
-    modDropdown = buildDropdown("models", modselection,
-      value_function = undefined,
-      text_function = function (d) { return (d.slice(7)); });
-
-
 
     // Set up canvas
     d3.select("#svgContainer").selectAll("svg").remove();
@@ -294,140 +432,6 @@ function execute(datasets, type, alternatives) {
 
     dot = d3.selectAll('.dot').selectAll('path');
     dot_present = d3.selectAll('.dot').selectAll("path.present");
-
-
-
-    // what happens when we click on the dropdowns?
-    colorDropdown.on("click", function () {
-      colorvar = updateVar(dataset, "color", this.value, level, type);
-      colorselection = [];
-      updatePlot();
-      updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
-    });
-
-    shapeDropdown.on("click", function () {
-      shapevar = updateVar(dataset, "shape", this.value, level, type);
-      shapeselection = [];
-      updatePlot();
-      updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
-    });
-
-    sizeDropdown.on("click", function () {
-      sizevar = updateVar(dataset, 'size', this.value, level, type);
-      updatePlot();
-      updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
-    });
-
-    ctxtDropdown.on("click", function () {
-      ctxtvar = updateVar(dataset, 'ctxt', this.value, type)['variable'];
-      dot.on("mouseover", showContext);
-    });
-
-    modDropdown.on("click", function () {
-      model = this.value;
-      window.open("level3.html" + "?type=" + type + "&model=" + model, "_self");
-    });
-
-    // clear selection of models
-    d3.select("#clear-select")
-      .on("click", function () {
-        tokselection = [];
-        cleanStor("colorsel-" + level + '-' + type);
-        cleanStor("shapesel-" + level + '-' + type);
-        cleanStor("sizesel-" + level + '-' + type);
-        updateTokSelection(tokselection);
-      });
-
-    d3.select("#model-select")
-      .on("click", function () {
-        window.open("level2.html" + "?type=" + type, "_self");
-      });
-
-    // Updating color, shape and size after every button clicking
-    function updatePlot() {
-      dot.style("fill", function (d) { return (code(d, colorvar, color, "#1f77b4")); })
-        .attr("d", d3.symbol()
-          .type(function (d) { return (code(d, shapevar, shape, d3.symbolCircle)); })
-          .size(function (d) { return (code(d, sizevar, size, 64)); }));
-    }
-
-
-    d3.select("#findtokens_btn").on('click', function () {
-      var cw_to_search = d3.select("#findtokens_cw").property('value');
-      var result = dataset.filter(function (d) {
-        return (d[cws_column].split(';').filter(function (p) {
-          return (p.search(cw_to_search) !== -1);
-        }).length > 0);
-      });
-      if (result.length > 0) {
-        tokselection = d3.map(result, function (d) { return (d['_id']); }).keys();
-        updateTokSelection(tokselection);
-      } else {
-        window.alert('Sorry, "' + cw_to_search + '" is not present as a feature in this model.');
-      }
-    })
-
-    d3.select("#findtokens_btn_raw").on('click', function () {
-      var cw_to_search = d3.select("#findtokens_ctxt").property('value').toLowerCase();
-      var result = dataset.filter(function (d) {
-        raw_ctxt = tailoredcontexts.filter(d => d.key === 'raw')[0].value;
-        return (d[raw_ctxt].toLowerCase().search(cw_to_search) !== -1);
-      });
-      if (result.length > 0) {
-        tokselection = d3.map(result, function (d) { return (d['_id']); }).keys();
-        updateTokSelection(tokselection);
-      } else {
-        window.alert('Sorry, no context includes the requested string.');
-      }
-    });
-    // update model selection
-    function updateTokSelection(tokselection) {
-      updateSelection(tokselection, level, type);
-    }
-    function showContext(d) {
-      // let position = d3.select(this).attr("transform").split(',');
-      // let xcoord = +(position[0].split('(')[1]) > 250 ? padding : position[0].split('(')[1];
-      // let ycoord = position[1].split(')')[0];
-      var tooltipcolor = code(d, colorvar, color, "#1f77b4");
-      // var tooltiptext = typeof(ctxtvar) == 'string' ? d[ctxtvar].replace(/<em>/g, "<em style='color:" +tooltipcolor + ";font-weight:bold;'>") : ""
-      ctxtvar = typeof (ctxtvar) === 'string' ? ctxtvar : '_ctxt.raw';
-      if (tailoredcontexts.filter(function (d) { return (d.value === ctxtvar); }).length < 1) {
-        const new_value = tailoredcontexts.filter(d => d.key === 'model')[0].value;
-        ctxtvar = updateVar(dataset, 'ctxt', new_value, level, type)['variable'];
-      }
-      var tooltiptext = '<p><b>' + d['_id'] + '</b></p><p>' + d[ctxtvar].replace(/class=["']target["']/g, "style='color:" + tooltipcolor + ";font-weight:bold;'") + '</p>';
-      // var tooltiptext = d[model + '.x'] + ', ' + d[model + '.y'];
-
-      d3.select("#concordance").append("p")
-        .attr("class", "text-center p-2 ml-2")
-        .style("border", "solid")
-        .style("border-color", "gray")
-        .style("font-size", "0.8em")
-        .html(tooltiptext);
-
-      // tooltip.transition()
-      //   .duration(200)
-      //   .style("opacity", 1);
-      // tooltip.html("<b style='color:" +tooltipcolor + "'>" + d['_id'] + "</b><br>" + tooltiptext)
-      //   // .style("left", (d3.event.pageX + 10) + "px")
-      //   // .style("top", (d3.event.pageY - 20) + "px")
-      //   .style("top", (ycoord + "px"))
-      //   .style("left", (xcoord + "px"))
-      //   .style("width", width + 'px')
-      //   .style("background-color", "white");
-      let to_select = d3.select(this).classed("present") ? svg : sidebar;
-      to_select.select(".dot")
-        .append("path")
-        .attr("class", "selector")
-        .attr("transform", d3.select(this).attr("transform"))
-        .attr("d", d3.symbol().type(d3.symbolCircle).size(250))
-        .style("fill", "none")
-        .style("stroke", compColor(d3.select(this).style("fill")))
-        .style("stroke-width", 2);
-    }
-
-    updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
-    updateTokSelection(tokselection);
   }
 
   deploy(dataset);

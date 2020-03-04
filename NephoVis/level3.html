@@ -23,7 +23,7 @@
       }
 
       path.lighter {
-        fill-opacity : .1;
+        fill-opacity : .25;
       }
 
 
@@ -123,6 +123,8 @@
     <script src="js/d3-zoom.min.js"></script>
     <!-- d3 component for sequential color palettes -->
     <script src="js/d3-scale-chromatic.v1.min.js"></script>
+    <!-- lodash -->
+    <script src="js/lodash.min.js"></script>
     <!-- My own set of functions! -->
     <script src="js/NephoVis.js"></script>
     <script src="js/level3.js"></script>
@@ -130,7 +132,7 @@
     <script>
     var type = getUrlParameter('type');
     
-    loadData(type = type, files = ["tokens"]);
+    loadData(type = type, files = ["tokens", "variables"]);
     </script>
 
   </body>

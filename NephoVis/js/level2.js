@@ -1,8 +1,8 @@
 function execute(datasets, type, alternatives) {
   var modselection, tokselection;
   var ncol, nrow, width, height, padding;
-  var dataset = datasets[2];
-  var models = datasets[0];
+  var coordinates, dataset;
+  var models = datasets["model"];
   var colorDropdown, shapeDropdown, sizeDropdown, modDropdown;
   var tooltip;
   var svg, cells;
@@ -39,11 +39,9 @@ function execute(datasets, type, alternatives) {
   width = 250, height = 250, padding = 30;
   d3.select("#concordance").style("height", padding * 2 + "px");
 
-  if (datasets.length > 3 && alternatives !== null) {
+  if (d3.keys(datasets).indexOf("tokens") === -1 && alternatives !== null) {
     const chosenSolution = JSON.parse(localStorage.getItem("solution-" + type));
-    if (chosenSolution !== null) {
-      dataset = datasets[d3.keys(alternatives).indexOf(chosenSolution) + 3];
-    }
+    coordinates = chosenSolution !== null ? datasets[chosenSolution] : datasets[alternatives[0]];
     const alts = d3.select("#moveAround").append("div")
       .attr("class", "btn-group");
     alts.append("button")
@@ -54,12 +52,14 @@ function execute(datasets, type, alternatives) {
     alts.append("div")
       .attr("class", "dropdown-menu")
       .attr("id", "solutions");
-    altDropdown = buildDropdown("solutions", d3.keys(alternatives));
+    altDropdown = buildDropdown("solutions", alternatives);
     altDropdown.on("click", function (d) {
       localStorage.setItem("solution-" + type, JSON.stringify(d));
-      dataset = datasets[d3.keys(alternatives).indexOf(d) + 3];
-      deploy(dataset);
+      coordinates = datasets[d];
+      deploy(coordinates);
     })
+  } else {
+    coordinates = datasets["tokens"];
   }
 
 
@@ -130,25 +130,16 @@ function execute(datasets, type, alternatives) {
     updateTokSelection(tokselection);
   }
 
-  function deploy(dataset) {
 
-    const solutionName = JSON.parse(localStorage.getItem("solution-"+type));
+  function deploy(coordinates) {
+    console.log(coordinates);
+    dataset = datasets["variables"] === null ? coordinates : _.merge(coordinates, datasets["variables"]);
+
+    const solutionName = JSON.parse(localStorage.getItem("solution-" + type));
     if (solutionName !== null) {
       const technique = solutionName.toLowerCase().search("tsne") > -1 ? "t-SNE, perplexity: " + solutionName.match("[0-9]+") : solutionName.toUpperCase();
       d3.select("h4#solutionName").text("Technique: " + technique);
     }
-    // classify columns
-    initVars(dataset, level, type);
-    // colnames = classify_colnames(dataset);
-    // nominals = colnames['nominals'];
-    // numerals = colnames['numerals'];
-    // contexts = colnames['contexts'];
-
-    // colorvar = varFromLS(dataset, "color", level, type);
-
-    // shapevar = varFromLS(dataset, "shape", level, type);
-
-    // sizevar = varFromLS(dataset, "size", level, type);
     // Set up canvas
     d3.select("#svgContainer").selectAll("svg").remove();
     svg = d3.select("#svgContainer").append("svg")
@@ -158,12 +149,72 @@ function execute(datasets, type, alternatives) {
       //.style("background-color", "lightgray")
       .attr("transform", "translate(0,0)")
       .append("g");
-
+    // classify columns
+    initVars(dataset, level, type);
     // set up dropdowns
     colorDropdown = buildDropdown("colour", nominals);
-    shapeDropdown = buildDropdown("shape", nominals.filter(function (d) { return (getValues(dataset, d).length <= 7); }));
+    shapeDropdown = buildDropdown("shape", nominals.filter(function (d) { return ( d === "Reset" || getValues(dataset, d).length <= 7); }));
     sizeDropdown = buildDropdown("size", numerals);
     modDropdown = buildDropdown("models", modselection);
+    // what happens when we click on the dropdowns?
+    colorDropdown.on("click", function () {
+      colorvar = updateVar(dataset, "color", this.value, level, type);
+      updatePlot();
+      updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
+    });
+
+    shapeDropdown.on("click", function () {
+      shapevar = updateVar(dataset, "shape", this.value, level, type);
+      updatePlot();
+      updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
+    });
+
+    sizeDropdown.on("click", function () {
+      sizevar = updateVar(dataset, "size", this.value, level, type);
+      updatePlot();
+      updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
+    });
+
+    modDropdown.on("click", function () {
+      window.open("level3.html" + '?type=' + type + '&model=' + this.value, "_self");
+    });
+
+    // clear selection of models
+    d3.select("#clear-select")
+      .on("click", function () {
+        cleanStor("colorsel-" + level + '-' + type);
+        cleanStor("shapesel-" + level + '-' + type);
+        cleanStor("sizesel-" + level + '-' + type);
+        tokselection = [];
+        updateTokSelection(tokselection);
+      });
+
+    // Updating color, shape and size after every button clicking
+    function updatePlot() {
+      svg.selectAll('.dot').selectAll('path')
+        .style("fill", function (d) { return (code(d, colorvar, color, "#1f77b4")); })
+        .attr("d", d3.symbol().type(function (d) {
+          return (code(d, shapevar, shape, d3.symbolCircle));
+        }).size(function (d) {
+          return (code(d, sizevar, size, 50));
+        }));
+    }
+
+    // update token selection
+    function updateTokSelection(tokselection) {
+      updateSelection(tokselection, level, type);
+    }
+    // function updateTokSelection(tokselection) {
+    //   // stores 'null' if it's empty and the list otherwise
+    //   localStorage.setItem("tokselection", tokselection.length > 0 ? JSON.stringify(tokselection) : JSON.stringify(null));
+    //   // if something is selected everything else is translucent
+    //   svg.selectAll(".dot").selectAll("path")
+    //     .classed("lighter", function(d) {return (tokselection.length > 0 ? tokselection.indexOf(d['_id']) === -1 : false); });
+    // }
+
+    updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
+    updateTokSelection(tokselection);
+
 
     // Set up scales (axes, color...) - coordinates multiplied to get some padding in a way
     xvalues = d3.merge(modselection.map(function (m) {
@@ -245,8 +296,8 @@ function execute(datasets, type, alternatives) {
             .style("border", "solid")
             .style("border-color", "lightgray");
           tooltip.html(d.m)
-            .style("left", (+d.i)*(width-padding)+padding + "px")
-            .style("top", (height-padding)*(+d.j)+padding + "px");
+            .style("left", (+d.i) * (width - padding) + padding + "px")
+            .style("top", (height - padding) * (+d.j) + padding + "px");
         })
         .on('mouseout', function () {
           tooltip.transition()
@@ -304,6 +355,7 @@ function execute(datasets, type, alternatives) {
         .style('fill', 'white')
         .style('font-weight', 'bold')
         .style('font-size', '0.8em');
+
 
       present = dataset.filter(function (d) { return (exists(d, cell.attr("model"))); });
 
@@ -398,67 +450,10 @@ function execute(datasets, type, alternatives) {
       }
     }
 
-    // what happens when we click on the dropdowns?
-    colorDropdown.on("click", function () {
-      colorvar = updateVar(dataset, "color", this.value, level, type);
-      updatePlot();
-      updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
-    });
 
-    shapeDropdown.on("click", function () {
-      shapevar = updateVar(dataset, "shape", this.value, level, type);
-      updatePlot();
-      updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
-    });
-
-    sizeDropdown.on("click", function () {
-      sizevar = updateVar(dataset, "size", this.value, level, type);
-      updatePlot();
-      updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
-    });
-
-    modDropdown.on("click", function () {
-      window.open("level3.html" + '?type=' + type + '&model=' + this.value, "_self");
-    });
-
-    // clear selection of models
-    d3.select("#clear-select")
-      .on("click", function () {
-        cleanStor("colorsel-" + level + '-' + type);
-        cleanStor("shapesel-" + level + '-' + type);
-        cleanStor("sizesel-" + level + '-' + type);
-        tokselection = [];
-        updateTokSelection(tokselection);
-      });
-
-    // Updating color, shape and size after every button clicking
-    function updatePlot() {
-      svg.selectAll('.dot').selectAll('path')
-        .style("fill", function (d) { return (code(d, colorvar, color, "#1f77b4")); })
-        .attr("d", d3.symbol().type(function (d) {
-          return (code(d, shapevar, shape, d3.symbolCircle));
-        }).size(function (d) {
-          return (code(d, sizevar, size, 50));
-        }));
-    }
-
-    // update token selection
-    function updateTokSelection(tokselection) {
-      updateSelection(tokselection, level, type);
-    }
-    // function updateTokSelection(tokselection) {
-    //   // stores 'null' if it's empty and the list otherwise
-    //   localStorage.setItem("tokselection", tokselection.length > 0 ? JSON.stringify(tokselection) : JSON.stringify(null));
-    //   // if something is selected everything else is translucent
-    //   svg.selectAll(".dot").selectAll("path")
-    //     .classed("lighter", function(d) {return (tokselection.length > 0 ? tokselection.indexOf(d['_id']) === -1 : false); });
-    // }
-
-    updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
-    updateTokSelection(tokselection);
   }
 
-  deploy(dataset);
+  deploy(coordinates);
 
   d3.select("#show-matrix").on("click", function () {
     var params = "width=400,height=400,menubar=no,toolbar=no,location=no,status=no";

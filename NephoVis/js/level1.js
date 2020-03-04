@@ -2,7 +2,7 @@ function execute(datasets, type) {
   var width = 600,
     height = 600,
     padding = 40;
-  var dataset = datasets[0];
+  var dataset = datasets["model"];
   var foc, soc;
   var modselection;
   var valselection = [], filtmodand = [], filteredvars, filtvalues, filtmodor, modstemp; // for filtering with buttons

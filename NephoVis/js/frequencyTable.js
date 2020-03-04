@@ -1,7 +1,7 @@
 function execute(datasets, type, other_args) {
     var tokselection, table, cws, freqcols, freqs;
-    var bigdata = datasets[0];
-    var freqdata = datasets[1];
+    var bigdata = datasets["variables"];
+    var freqdata = datasets["weights"];
     var cws_column = other_args;
 
     tokselection = listFromLS("tokenselection-" + type);
