@@ -57,7 +57,7 @@
             </div>
             <div class='btn-group'>
               <button type="button" class="btn shadow-sm btn-kulright dropdown-toggle" data-toggle="dropdown">Tailored contexts</button>
-              <div class="dropdown-menu" id="ctxt2"></div>
+              <div class="dropdown-menu" id="ctxt"></div>
             </div>
           </div>
           <hr>
@@ -71,24 +71,24 @@
           </div>
           <hr>
           <div class="btn-group-vertical">
-            <button type="button" class="btn shadow-sm btn-secondary" id="clear-select"><i class="fas fa-eraser"></i> Clear token selection</button>
-            <button type="button" class="btn shadow-sm btn-secondary" id="show-table"><i class="fas fa-sticky-note"></i> Open frequency table</button>       
+            <button type="button" class="btn shadow-sm btn-secondary" id="clearSelect"><i class="fas fa-eraser"></i> Clear token selection</button>
+            <button type="button" class="btn shadow-sm btn-secondary" id="showTable"><i class="fas fa-sticky-note"></i> Open frequency table</button>       
           </div>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" style="width:100px" id='findtokens_cw' placeholder="Features in model" aria-label="Features in model" aria-describedby="search tokens with this feature">
+            <input type="text" class="form-control" style="width:100px" id='findTokensByFeature' placeholder="Features in model" aria-label="Features in model" aria-describedby="search tokens with this feature">
             <div class="input-group-append">
-              <button class="btn btn-secondary" type="button" id='findtokens_btn'>Search</button>
+              <button class="btn btn-secondary" type="button" id='findTokensFeatureBtn'>Search</button>
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" style="width:100px" id='findtokens_ctxt' placeholder="Context word" aria-label="Context word" aria-describedby="search tokens with this context word">
+            <input type="text" class="form-control" style="width:100px" id='findTokensByContext' placeholder="Context word" aria-label="Context word" aria-describedby="search tokens with this context word">
             <div class="input-group-append">
-              <button class="btn btn-secondary" type="button" id='findtokens_btn_raw'>Search</button>
+              <button class="btn btn-secondary" type="button" id='findTokensContextBtn'>Search</button>
             </div>
           </div>
           <hr>
           <div class="btn-group-vertical" id="moveAround">
-            <button type="button" class="btn shadow-sm btn-marigreen" id="model-select"><i class="fas fa-arrow-alt-circle-up"></i> UP </button>
+            <button type="button" class="btn shadow-sm btn-marigreen" id="modelSelect"><i class="fas fa-arrow-alt-circle-up"></i> UP </button>
             <div class='btn-group'>
               <button type="button" class="btn shadow-sm btn-marigreen dropdown-toggle" data-toggle="dropdown"><i class="fas fa-random"></i> Switch to model</button>
               <div class="dropdown-menu" id="models"></div>

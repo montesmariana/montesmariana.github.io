@@ -1,3 +1,4 @@
+// ################################################################################################
 // set up general variables for all scripts
 const myColors = [
     "#e69f00", //orange
@@ -34,9 +35,60 @@ function initVars(data, level, type) {
 
     sizevar = varFromLS(data, "size", level, type);
 }
+
+function buildDropdown(where, data, valueFunction = d => d, textFunction = d => d) {
+    return (
+        d3.select("#" + where)
+            .selectAll("button")
+            .data(data).enter()
+            .append("button")
+            .attr("class", "dropdown-item " + where.slice(0, 3))
+            .attr("xlink:href", "#")
+            .attr("value", valueFunction)
+            .text(textFunction)
+    );
+}
+
+
+// ################################################################################################
+// Functions to help draw the plot
 function setRange(values, scale) {
     return ([d3.min(values) * scale, d3.max(values) * scale]);
 }
+
+function traceCenter(p, x1, x2, y1, y2) {
+    return (
+        p.append("line")
+            .attr("x1", x1)
+            .attr("x2", x2)
+            .attr("y1", y1)
+            .attr("y2", y2)
+            .attr("stroke", "lightgray")
+            .attr("stroke-width", 1)
+    );
+}
+
+function setTooltip(where) {
+    return (
+        d3.select(where).append("div")
+            .attr("class", "tooltip")
+            .style("width", 500)
+            //   .attr("height", 20)
+            .style("position", "absolute")
+            .style("opacity", 0)
+    );
+}
+
+function setPointerEvents(svg, width, height) {
+    svg.append("rect")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("transform", "translate(0,0)")
+        .style("pointer-events", "all")
+        .style("fill", "none");
+}
+
+
 // Make svg responsive with script from: https://brendansudol.com/writing/responsive-d3
 function responsivefy(svg) {
     // get container + svg aspect ratio
@@ -65,6 +117,22 @@ function responsivefy(svg) {
     }
 }
 
+
+function code(d, variable, schema, default_value) {
+    if (_.isNull(variable["variable"])) {
+        return (default_value);
+    } else {
+        if (isNaN(default_value)) {
+            // Returns the coded result of the index of d's value in the list of values
+            return (schema(variable["values"].indexOf(d[variable["variable"]])));
+        } else {
+            schema.domain(d3.extent(variable["values"]));
+            return (schema(+d[variable["variable"]]));
+        }
+    }
+}
+
+
 // Generate complementary colors for the circle on hover
 function compColor(col) {
     const res = d3.hsl(col);
@@ -72,6 +140,15 @@ function compColor(col) {
     const newHue = +hue < 180 ? +(hue + 180) : +(hue - 180);
     res["h"] = newHue;
     return (res.toString());
+}
+
+
+
+// ################################################################################################
+// Functions to obtain and manipulate data
+
+function exists(t, model) {
+    return (d3.format(".3r")(t[model + ".x"]) !== "0.00" || d3.format(".3r")(t[model + ".y"]) !== "0.00");
 }
 
 // Short function to obtain the possible values of a variable
@@ -86,34 +163,26 @@ function getValues(dataset, colname) {
     }
 }
 
-function cleanStor(item) {
-    localStorage.setItem(item, JSON.stringify(null));
-}
-
 function classifyColnames(dataset) {
     const colnames = dataset.columns;
-    const variables = colnames.filter(function (d) {
+    const variables = colnames.filter(d => {
         return (!d.endsWith(".x") &&
             !d.endsWith(".y") &&
             getValues(dataset, d).length > 1);
     });
 
-    const nominals = variables.filter(function (d) {
+    const nominals = variables.filter(d => {
         return (!d.startsWith("_") &&
-            !getValues(dataset, d).every(function (d) { return (!isNaN(d)); }));
-    }).filter(function (d) {
-        return (getValues(dataset, d).length <= 10);
-    });
+            !getValues(dataset, d).every(v => { return (!isNaN(v)); }));
+    }).filter(d => { return (getValues(dataset, d).length <= 10); });
     nominals.push("Reset");
 
-    const numerals = variables.filter(function (d) {
-        return (getValues(dataset, d).every(function (d) { return (!isNaN(d)); }));
+    const numerals = variables.filter(d => {
+        return (getValues(dataset, d).every(v => !isNaN(v)));
     });
     numerals.push("Reset");
 
-    const contexts = colnames.filter(function (d) {
-        return (d.startsWith("_ctxt"));
-    });
+    const contexts = colnames.filter(d => d.startsWith("_ctxt"));
 
     return ({
         "all": colnames,
@@ -122,6 +191,28 @@ function classifyColnames(dataset) {
         "numerals": numerals,
         "contexts": contexts
     });
+}
+
+// Deal with Local Storage
+
+function updateVar(dataset, variable, name, level, type) {
+    const variableName = name === "Reset" ? null : name;
+    const values = name === "Reset" ? +0 : getValues(dataset, name);
+
+    localStorage.setItem(level + variable + "var-" + type, JSON.stringify(variableName));
+    return ({ "variable": variableName, "values": values });
+}
+
+function resetVariable(item) {
+    localStorage.setItem(item, JSON.stringify(null));
+}
+
+function clearStorage(selection, level, type) {
+    _.pullAll(selection, selection);
+    ["color", "shape", "size"].forEach(function (v) {
+        resetVariable(_.join([v + "sel", level, type], "-"));
+    });
+    updateSelection(selection, level, type);
 }
 
 function varFromLS(dataset, variable, level, type) {
@@ -138,58 +229,55 @@ function listFromLS(variable) {
     return (_.isNull(LS) ? [] : LS);
 }
 
-function updateVar(dataset, variable, name, level, type) {
-    const variableName = name === "Reset" ? null : name;
-    const values = name === "Reset" ? +0 : getValues(dataset, name);
+function updateSelection(selection, level, type) {
+    if (selection.length > 0 && selection.indexOf("undefined") > -1) _.pull(selection, "undefined");
 
-    localStorage.setItem(level + variable + "var-" + type, JSON.stringify(variableName));
-    return ({ "variable": variableName, "values": values });
+    localStorage.setItem(level + "selection-" + type, selection.length > 0 ? JSON.stringify(selection) : JSON.stringify(null));
+    // if something is selected everything else is translucent
+    d3.selectAll(".dot")
+        .selectAll("path.graph")
+        .classed("lighter", function (d) {
+            const id = level === "model" ? "_model" : "_id";
+            return (selection.length > 0 ? selection.indexOf(d[id]) === -1 : false);
+        });
 }
 
-function code(d, variable, schema, default_value) {
-    if (_.isNull(variable["variable"])) {
-        return (default_value);
-    } else {
-        if (isNaN(default_value)) {
-            // Returns the coded result of the index of d's value in the list of values
-            return (schema(variable["values"].indexOf(d[variable["variable"]])));
+// #####################################################################################################################
+
+// For level 2 & 3: offer different solutions if they exist
+
+function offerAlternatives(datasets, alternatives, type) {
+    if (d3.keys(datasets).indexOf("tokens") === -1 && !_.isNull(alternatives)) {
+        const chosenSolution = JSON.parse(localStorage.getItem("solution-" + type));
+        const alts = d3.select("#moveAround").append("div") // setup the dropdown for the alternatives
+            .attr("class", "btn-group");
+        alts.append("button")
+            .attr("type", "button")
+            .attr("class", "btn shadow-sm btn-marigreen dropdown-toggle")
+            .attr("data-toggle", "dropdown")
+            .html("<i class='fas fa-list-ul'></i> Switch solution");
+        alts.append("div")
+            .attr("class", "dropdown-menu")
+            .attr("id", "solutions");
+        buildDropdown("solutions", alternatives);
+
+        if (_.isNull(chosenSolution)) {
+            localStorage.setItem("solution-" + type, JSON.stringify(alternatives[0]));
+            return (datasets[alternatives[0]]);
         } else {
-            schema.domain(d3.extent(variable["values"]));
-            return (schema(+d[variable["variable"]]));
+            return (datasets[chosenSolution]);
         }
+
+    } else { // if "tokens remains"
+        return (datasets["tokens"]);
     }
 }
 
-function buildDropdown(where, data,
-    valueFunction = function (d) { return (d); },
-    textFunction = function (d) { return (d); }) {
-    return (
-        d3.select("#" + where)
-            .selectAll("button")
-            .data(data).enter()
-            .append("button")
-            .attr("class", "dropdown-item " + where.slice(0, 3))
-            .attr("xlink:href", "#")
-            .attr("value", valueFunction)
-            .text(textFunction)
-    );
-}
 
-function traceCenter(p, x1, x2, y1, y2) {
-    return (
-        p.append("line")
-            .attr("x1", x1)
-            .attr("x2", x2)
-            .attr("y1", y1)
-            .attr("y2", y2)
-            .attr("stroke", "lightgray")
-            .attr("stroke-width", 1)
-    );
-}
 
-function exists(t, model) {
-    return (d3.format(".3r")(t[model + ".x"]) !== "0.00" || d3.format(".3r")(t[model + ".y"]) !== "0.00");
-}
+
+// ########################################################################################################################
+// For legend creation
 
 function boldenLegend(variable, level, type) {
     const selection = listFromLS(variable.toLowerCase() + "sel-" + level + "-" + type);
@@ -374,69 +462,4 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
         legendContainer.selectAll("svg").call(responsivefy);
         ["color", "shape", "size"].forEach(function (x) { boldenLegend(x, level, type) });
     }
-}
-
-function updateSelection(selection, level, type) {
-    if (selection.length > 0 && selection.indexOf("undefined") > -1) _.pull(selection, "undefined");
-
-    localStorage.setItem(level + "selection-" + type, selection.length > 0 ? JSON.stringify(selection) : JSON.stringify(null));
-    // if something is selected everything else is translucent
-    d3.selectAll(".dot")
-        .selectAll("path.graph")
-        .classed("lighter", function (d) {
-            const id = level === "model" ? "_model" : "_id";
-            return (selection.length > 0 ? selection.indexOf(d[id]) === -1 : false);
-        });
-}
-function checkBoxSections(where, data, dataset) {
-    d3.select("#" + where).selectAll("div")
-        .data(data)
-        .enter()
-        .append("div")
-        .attr("class", "btn-group-toggle")
-        .attr("data-toggle", "buttons")
-        .each(appendCheckbox);
-
-    function appendCheckbox(p) {
-        const butGroup = d3.select(this);
-
-        const butText = (p.startsWith("soc") || p.startsWith("foc")) ? p.split("_").splice(1).join(" ") : p.split("_").join(" ");
-
-        butGroup.append("p")
-            .attr("class", "mb-0 mt-2")
-            .style("font-weight", "bold")
-            .text("Select " + butText);
-
-        butGroup.selectAll("label")
-            .data(getValues(dataset, p))
-            .enter()
-            .append("label")
-            .attr("class", "btn btn-secondary py-0 m-0")
-            .attr("parent", p)
-            .text(function (d) { return (d); })
-            .append("input")
-            .attr("type", "checkbox")
-            .attr("autocomplete", "off")
-            .attr("id", function (d) { return (p + ":" + d); });
-    }
-}
-
-function setTooltip(where) {
-    return (
-        d3.select(where).append("div")
-            .attr("class", "tooltip")
-            .style("width", 500)
-            //   .attr("height", 20)
-            .style("position", "absolute")
-            .style("opacity", 0)
-    );
-}
-
-function setPointerEvents(svg, width, height) {
-    svg.append("rect")
-        .attr("width", width)
-        .attr("height", height)
-        .attr("transform", "translate(0,0)")
-        .style("pointer-events", "all")
-        .style("fill", "none");
 }
