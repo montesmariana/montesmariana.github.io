@@ -45,7 +45,7 @@ function buildDropdown(where, data, valueFunction = d => d, textFunction = d => 
             .attr("class", "dropdown-item " + where.slice(0, 3))
             .attr("xlink:href", "#")
             .attr("value", valueFunction)
-            .text(textFunction)
+            .html(textFunction)
     );
 }
 

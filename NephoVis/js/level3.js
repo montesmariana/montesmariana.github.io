@@ -24,6 +24,7 @@ function execute(datasets, type, alternatives) {
   const tokenSelection = listFromLS(level + "selection-" + type);
 
 
+
   deploy(offerAlternatives(datasets, alternatives, type));
   d3.select("#solutions").selectAll("button").on("click", function (d) {
     localStorage.setItem("solution-" + type, JSON.stringify(d));
@@ -122,8 +123,12 @@ function execute(datasets, type, alternatives) {
       .on("click", function () { ctxtvar = updateVar(dataset, "ctxt", this.value, type)["variable"]; });
 
     buildDropdown("models", modelSelection,
-      valueFunction = undefined,
-      textFunction = function (d) { return (d.slice(7)); })
+      valueFunction = d => d,
+      textFunction = d => {
+        const txt = _.replace(d, type+".", "");
+        return (d === model ? "<b>" + txt + "</b>" : txt)
+      }
+        )
       .on("click", function () {
         window.open("level3.html" + "?type=" + type + "&model=" + this.value, "_self");
       });
