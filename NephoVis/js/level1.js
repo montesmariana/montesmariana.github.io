@@ -15,6 +15,7 @@ function execute(datasets, type) {
     .on("click", () =>  {
       clearStorage(modelSelection, level, type);
       resetVariable("modselectionFromButtons");
+      d3.selectAll("label[name='selectionByButtons']").classed("active", false);
     });
 
   d3.select("#modelSelect").on("click", function () {
@@ -231,6 +232,7 @@ function execute(datasets, type) {
         .append("label")
         .attr("class", "btn btn-secondary py-0 m-0")
         .attr("parent", p)
+        .attr("name", "selectionByButtons")
         .classed("active", function(d) {
           return(variableSelection[p].indexOf(d) > -1);
         })
