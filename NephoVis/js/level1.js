@@ -15,6 +15,7 @@ function execute(datasets, type) {
     .on("click", () =>  {
       clearStorage(modelSelection, level, type);
       resetVariable("modselectionFromButtons");
+      _.keys(variableSelection).forEach(v => _.pullAll(variableSelection[v], variableSelection[v]))
       d3.selectAll("label[name='selectionByButtons']").classed("active", false);
     });
 
@@ -245,7 +246,9 @@ function execute(datasets, type) {
   }
 
   function updateCheckbox(dataset, variableSelection) {
+    console.log(variableSelection);
     const selectedValues = _.omitBy(variableSelection, _.isEmpty);
+    console.log(selectedValues)
 
     const selectedTokens = d3.keys(selectedValues).map(function (v) {
       const filteredDataset = dataset.filter(function (row) { // filter by variable
