@@ -6,7 +6,6 @@
         "upload_file" : "Select your file",
         "upload_files" : "Select your file(s)",
         "export_tsv" : "Export to tsv",
-        "welcome_title" : "Welcome",
         "no_sense_code" : "none",
         "no_sense_label" : "None of the above",
         "tab_1" : "overview",

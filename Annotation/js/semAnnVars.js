@@ -20,8 +20,9 @@ text['user'] = user;
 let msg;
 let conc;
 
-function execute(concordances, category1, category2, msgSource) {
+function execute(inputfiles, category1, category2, msgSource) {
     msg = msgSource["en"];
+    
     variables = [
         { "label": msg['confidence_label'], "code": "confidence", "type" :"default"},
         { "label": msg['keywords_label'], "code": "cues", "type" :"default"},
@@ -32,11 +33,11 @@ function execute(concordances, category1, category2, msgSource) {
     d3.select("title").text(msg["title"]);
     d3.select("h1").text(msg["title"]);
 
-    d3.select("#welcomeUser")
-        .html(msg['welcome_title'] + " <a href='#' id='selectUser'>" + user + "</a>")
-        .style("font-weight", "bold");
-        //   .on("mouseover", function() { //show tooltip})
-    d3.select("#selectUser").on("click", userOnClick);
+    // d3.select("#welcomeUser")
+    //     .html(msg['welcome_title'] + " <a href='#' id='selectUser'>" + user + "</a>")
+    //     .style("font-weight", "bold");
+    //     //   .on("mouseover", function() { //show tooltip})
+    // d3.select("#selectUser").on("click", userOnClick);
 
     // Set button to select/update variables
     // d3.select("#uploadVarsMenu")
@@ -46,21 +47,17 @@ function execute(concordances, category1, category2, msgSource) {
     // d3.select("#uploadConcordances")
     //     .html('<strong class="text-success">' + msg['upload_conc'] + ' </strong>')
     //     .on("click", uploadType);
-    types['church'] = concordances;
-    offerTypes(['church']);
+    d3.keys(inputfiles).forEach(c => {
+        types[c] = inputfiles[c];
+    });
+   
     personalizedVariables = {
         "sense" : category1,
-        "concept" : category2
+        "in-out" : category2
     };
-    ["sense", "concept", "cues", "comments"].forEach(function(v) {
-        selectedVariables.push(v);
-        showAnnotations(v);
-        if (d3.keys(personalizedVariables).indexOf(v) > -1) {
-            personalizedVariables[v]["hasAttributes"].forEach(function(a) {
-                showAnnotations(a, v);
-            });
-        }
-    });
+    offerTypes(d3.keys(types));
+    
+    console.log(selectedVariables)
 
     // Set button to upload progress (json file)
     d3.select("#uploadProgress")

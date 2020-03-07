@@ -1,0 +1,38 @@
+{
+    "introductie": [
+        {
+            "code": "introductie-sense1",
+            "label": "het introduceren"
+        },
+        {
+            "code": "introductie-sense2",
+            "label": "bemiddeling van de toegang voor iemand tot een persoon, een kring, een gezelschap enz."
+        },
+        {
+            "code": "introductie-sense3",
+            "label": "(bankwezen) openbare aanbieding van bestaande effecten"
+        },
+        {
+            "code": "introductie-sense4",
+            "label": "middel waardoor je iemand bij anderen introduceert"
+        },
+        {
+            "code": "introductie-sense5",
+            "label": "inleiding tot een muziekstuk, meestal van langzaam, ernstig karakter"
+        },
+        {
+            "code": "introductie-sense6",
+            "label": "inleiding"
+        }
+    ],
+    "kennismaking": [
+        {
+            "code": "kennismaking-sense1",
+            "label": "het in-kennis-komen met iemand, de inleiding tot, het begin van een meer of minder vertrouwelijke omgang"
+        },
+        {
+            "code": "kennismaking-sense2",
+            "label": "het zich bekendmaken, het bekend worden met iets"
+        }
+    ],
+}

@@ -390,6 +390,7 @@ function addPersonalizedVariable(name, content, path) {
 
 function showConc() {
     counter += 1;
+    console.log(counter)
     // this_selection = this_user['tokens'][type].slice(0);
     // Remove and recreate concordance to avoid accumulation
     $("#concordance").remove();
@@ -519,6 +520,16 @@ function showConc() {
 
     conc.append("hr");
 
+    ["sense", "in-out", "cues", "comments"].forEach(function(v) {
+        if (selectedVariables.indexOf(v) === -1) selectedVariables.push(v);
+        showAnnotations(v);
+        if (d3.keys(personalizedVariables).indexOf(v) > -1) {
+            personalizedVariables[v]["hasAttributes"].forEach(function(a) {
+                showAnnotations(a, v);
+            });
+        }
+    });
+
     // if (selectedVariables.length > 0) {
     //     showAnnotations();
     // }
@@ -550,17 +561,18 @@ function showConc() {
 }
 
 function showAnnotations(variable, supravariable = null) {
-    console.log(selectedVariables);
-
+    
     if (conc === undefined) {
         uploadType();
         showAnnotations(variable);
     } else {
-        if (selectedVariables.length === 1 && supravariable !== selectedVariables[0]) {
+        if (selectedVariables.indexOf(variable) === 0) {
+            console.log("init");
             d3.selectAll(".annotationsSection").remove()
-            anns = conc.append("div").attr("class", "annotationsSection");
+            anns = conc.append("div").attr("class", "annotationsSection_" + type);
         } else {
-            anns = conc.select("div.annotationsSection");
+            console.log("adding");
+            anns = conc.select("div.annotationsSection_" + type);
         }
         switch (variable) {
             case "confidence":
@@ -629,7 +641,7 @@ function addNumerical(variable) {
 }
 
 function addCategorical(variable) {
-    console.log(personalizedVariables[variable])
+    // console.log(personalizedVariables[variable])
 
     const block = anns.append("div").attr("class", type + "_" + variable);
 
@@ -640,8 +652,15 @@ function addCategorical(variable) {
         .attr("data-toggle", "buttons")
         .selectAll("label")
         .data(function (d) {
+            const thisVariable = personalizedVariables[variable]["values"];
             const lemma = d.lemma === undefined ? type : d.lemma;
-            return (personalizedVariables[variable]['values'][lemma]);
+            if (_.isArray(thisVariable)) {
+                return (thisVariable);
+            } else if (d3.keys(thisVariable).indexOf(lemma) > -1) {
+                return (personalizedVariables[variable]['values'][lemma]);
+            } else if (d3.keys(thisVariable).indexOf(type) > -1) {
+                return (personalizedVariables[variable]['values'][type]);
+            }            
         }).enter()
         // .data(addNoneTag(personalizedVariables[variable][type])).enter() //uncomment to add None-Tags
         .append("label")
@@ -1013,7 +1032,7 @@ function offerTypes(selectedTypes) {
         .data(selectedTypes).enter()
         .append("label")
         .attr("class", "btn shadow-sm btn-success mt-1")
-        .classed("active", function (d) { return (selectedTypes.indexOf(d) == 0); })
+        .classed("active", function (d) { return (selectedTypes.indexOf(d) === 0); })
         .html(function (d) { return (d); })
         .append("input")
         .attr("type", "radio")

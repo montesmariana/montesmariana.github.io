@@ -1,0 +1,16 @@
+{
+    "type": "categorical",
+    "hasAttributes": [
+        "confidence"
+    ],
+    "values": [
+            {
+                "code": "IN",
+                "label": "in-concept"
+            },
+            {
+                "code": "OUT",
+                "label": "out-of-concept"
+            }
+        ]
+}

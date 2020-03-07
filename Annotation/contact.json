@@ -1,0 +1,42 @@
+{
+    "aanraking": [
+        {
+            "code": "aanraking-sense1",
+            "label": "het aanraken of aangeraakt worden"
+        },
+        {
+            "code": "aanraking-sense2",
+            "label": "contact, omgang"
+        },
+        {
+            "code": "aanraking-sense3",
+            "label": "streling, met name van erotische aard"
+        }
+    ],
+    "contact": [
+        {
+            "code": "contact-sense1",
+            "label": "onderlinge verbinding, betrekking, voeling"
+        },
+        {
+            "code": "contact-sense2",
+            "label": "grens tussen stollings- en nevengesteente"
+        },
+        {
+            "code": "contact-sense3",
+            "label": "onderlinge aanraking van twee elektrische geleidingen"
+        },
+        {
+            "code": "contact-sense4",
+            "label": "toestel dat de aansluiting tussen twee elektrische geleidingen bewerkt resp. verbreekt"
+        },
+        {
+            "code": "contact-sense5",
+            "label": "in auto's: startinrichting, startslot"
+        },
+        {
+            "code": "contact-sense6",
+            "label": "verkorting van <em>contactpersoon</em>"
+        }
+    ],
+}

@@ -1,34 +1,164 @@
 {
-    "type" : "categorical",
-    "values" : {
-        "GB": [
+    "type": "categorical",
+    "hasAttributes": [
+        "confidence"
+    ],
+    "values": {
+        "aanraking": [
             {
-                "code": "building",
-                "label": "Label 1 for first lemma"
+                "code": "aanraking-sense1",
+                "label": "het aanraken of aangeraakt worden"
             },
             {
-                "code": "congregation",
-                "label": "Label 2 for first lemma"
+                "code": "aanraking-sense2",
+                "label": "contact, omgang"
             },
             {
-                "code": "organization",
-                "label": "Label 3 for first lemma"
+                "code": "aanraking-sense3",
+                "label": "streling, met name van erotische aard"
             }
         ],
-        "Ireland": [
+        "contact": [
             {
-                "code": "building",
-                "label": "Label 1 for second lemma"
+                "code": "contact-sense1",
+                "label": "onderlinge verbinding, betrekking, voeling"
             },
             {
-                "code": "congregation",
-                "label": "Label 2 for second lemma"
+                "code": "contact-sense2",
+                "label": "grens tussen stollings- en nevengesteente"
             },
             {
-                "code": "organization",
-                "label": "Label 3 for second lemma"
+                "code": "contact-sense3",
+                "label": "onderlinge aanraking van twee elektrische geleidingen"
+            },
+            {
+                "code": "contact-sense4",
+                "label": "toestel dat de aansluiting tussen twee elektrische geleidingen bewerkt resp. verbreekt"
+            },
+            {
+                "code": "contact-sense5",
+                "label": "in auto's: startinrichting, startslot"
+            },
+            {
+                "code": "contact-sense6",
+                "label": "verkorting van <em>contactpersoon</em>"
+            }
+        ],
+        "buitenlander": [
+            {
+                "code": "buitenlander-sense1",
+                "label": "iemand uit het buitenland"
+            },
+            {
+                "code": "buitenlander-sense2",
+                "label": "iemand afkomstig uit het buitenland die samen met de autochtone bevolking in een land woont"
+            },
+            {
+                "code": "buitenlander-sense3",
+                "label": "in het buitenland wonende landgenoot"
+            },
+            {
+                "code": "buitenlander-sense4",
+                "label": "speler die in het buitenland speelt"
+            }
+        ],
+        "vreemdeling": [
+            {
+                "code": "vreemdeling-sense1",
+                "label": "buitenlandse man of vrouw"
+            },
+            {
+                "code": "vreemdeling-sense2",
+                "label": "iemand die niet de Nederlandse resp. Belgische nationaliteit heeft"
+            },
+            {
+                "code": "vreemdeling-sense3",
+                "label": "persoon die ergens niet bekend is"
+            },
+            {
+                "code": "vreemdeling-sense4",
+                "label": "persoon die je niet kent of die niemand kent"
+            },
+            {
+                "code": "vreemdeling-sense5",
+                "label": "persoon die op een bepaald terrein niet thuis is"
+            },
+            {
+                "code": "vreemdeling-sense6",
+                "label": "ortolaan (vogel met groengrijze kop)"
+            }
+        ],
+        "parool": [
+            {
+                "code": "parool-sense1",
+                "label": "woord van eer (vooral van een krijgsgevangene dat hij niet zal trachten te ontsnappen of, vrijgelaten, zich aan de gestelde voorwaarden zal houden)"
+            },
+            {
+                "code": "parool-sense2",
+                "label": "wachtwoord"
+            },
+            {
+                "code": "parool-sense3",
+                "label": "leus"
+            }
+        ],
+        "wachtwoord": [
+            {
+                "code": "wachtwoord-sense1",
+                "label": "uit een aanroepwoord en een weerwoord bestaande formule, gebruikt om te controleren of iemand die zich aanmeldt toegang of doorgang mag worden verleend"
+            },
+            {
+                "code": "wachtwoord-sense2",
+                "label": "codewoord, sleutelwoord"
+            },
+            {
+                "code": "wachtwoord-sense3",
+                "label": "geheime persoonlijke code die een gebruiker toegang verschaft tot een computer, bestand, netwerk enz"
+            },
+            {
+                "code": "wachtwoord-sense4",
+                "label": "leus"
+            },
+            {
+                "code": "wachtwoord-sense5",
+                "label": "zinsnede van een acteur waarna een ander moet opkomen of moet spreken"
+            }
+        ],
+        "introductie": [
+            {
+                "code": "introductie-sense1",
+                "label": "het introduceren"
+            },
+            {
+                "code": "introductie-sense2",
+                "label": "bemiddeling van de toegang voor iemand tot een persoon, een kring, een gezelschap enz."
+            },
+            {
+                "code": "introductie-sense3",
+                "label": "(bankwezen) openbare aanbieding van bestaande effecten"
+            },
+            {
+                "code": "introductie-sense4",
+                "label": "middel waardoor je iemand bij anderen introduceert"
+            },
+            {
+                "code": "introductie-sense5",
+                "label": "inleiding tot een muziekstuk, meestal van langzaam, ernstig karakter"
+            },
+            {
+                "code": "introductie-sense6",
+                "label": "inleiding"
+            }
+        ],
+        "kennismaking": [
+            {
+                "code": "kennismaking-sense1",
+                "label": "het in-kennis-komen met iemand, de inleiding tot, het begin van een meer of minder vertrouwelijke omgang"
+            },
+            {
+                "code": "kennismaking-sense2",
+                "label": "het zich bekendmaken, het bekend worden met iets"
             }
         ]
-    },
-    "hasAttributes" : ["confidence"]
+    }
 }

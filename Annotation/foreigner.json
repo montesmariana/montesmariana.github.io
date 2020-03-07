@@ -1,0 +1,46 @@
+{
+    "buitenlander": [
+        {
+            "code": "buitenlander-sense1",
+            "label": "iemand uit het buitenland"
+        },
+        {
+            "code": "buitenlander-sense2",
+            "label": "iemand afkomstig uit het buitenland die samen met de autochtone bevolking in een land woont"
+        },
+        {
+            "code": "buitenlander-sense3",
+            "label": "in het buitenland wonende landgenoot"
+        },
+        {
+            "code": "buitenlander-sense4",
+            "label": "speler die in het buitenland speelt"
+        }
+    ],
+    "vreemdeling": [
+        {
+            "code": "vreemdeling-sense1",
+            "label": "buitenlandse man of vrouw"
+        },
+        {
+            "code": "vreemdeling-sense2",
+            "label": "iemand die niet de Nederlandse resp. Belgische nationaliteit heeft"
+        },
+        {
+            "code": "vreemdeling-sense3",
+            "label": "persoon die ergens niet bekend is"
+        },
+        {
+            "code": "vreemdeling-sense4",
+            "label": "persoon die je niet kent of die niemand kent"
+        },
+        {
+            "code": "vreemdeling-sense5",
+            "label": "persoon die op een bepaald terrein niet thuis is"
+        },
+        {
+            "code": "vreemdeling-sense6",
+            "label": "ortolaan (vogel met groengrijze kop)"
+        }
+    ],
+}
