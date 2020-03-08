@@ -384,13 +384,11 @@ function addPersonalizedVariable(name, content, path) {
         type: path === 'numerical' ? 'numerical' : 'categorical'
     });
     selectedVariables.push(name);
-    console.log(selectedVariables);
     offerVariables(variables);
 }
 
 function showConc() {
     counter += 1;
-    console.log(counter)
     // this_selection = this_user['tokens'][type].slice(0);
     // Remove and recreate concordance to avoid accumulation
     $("#concordance").remove();
@@ -567,11 +565,9 @@ function showAnnotations(variable, supravariable = null) {
         showAnnotations(variable);
     } else {
         if (selectedVariables.indexOf(variable) === 0) {
-            console.log("init");
             d3.selectAll(".annotationsSection").remove()
             anns = conc.append("div").attr("class", "annotationsSection_" + type);
         } else {
-            console.log("adding");
             anns = conc.select("div.annotationsSection_" + type);
         }
         switch (variable) {
@@ -808,13 +804,10 @@ function addCues(supravariable = null) {
     // Control of results when the 'cues' change
     $("." + type + "_" + varName).on("change", "input[name='" + type + counter + "_" + varName + "']", function () {
         var analized = d3.select(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode).attr("token_id");
-        console.log('Token_id: ' + analized);
         var answer = d3.select(this).attr('value');
         if (d3.keys(text[type]).indexOf(analized) === -1) {
             text[type][analized] = {};
         }
-        console.log("Token register before change: ")
-        console.log(text[type][analized]);
         if (d3.keys(text[type][analized]).indexOf('cues') === -1) {
             text[type][analized][varName] = [];
         }
@@ -828,10 +821,7 @@ function addCues(supravariable = null) {
         } else { //if you are unclicking
             cues_list.splice(cues_list.indexOf(answer), 1);
         }
-        console.log("Cues_list after change: " + cues_list);
-        console.log("Token register after change: ")
-        console.log(text[type][analized]);
-
+        
         updateTargetColor();
         displayReminder();
         saveInLS();
@@ -1111,7 +1101,6 @@ function userOnClick() {
             offerTypes(d3.keys(types));
             offerVariables(variables);
 
-            console.log(config);
             //   loadConfigFile();
         } else if (value.value === 'save') {
             downloadJSON(config, "config");
@@ -1215,7 +1204,6 @@ function createTsv(text, concordance) {
                 // c is a variable
                 res.push(d3.keys(text[a][t]).indexOf(c) === -1 ? "" : text[a][t][c]);
             });
-            console.log(text[a][t]);
             return (res.join('\t'));
         })
             .join('\n');

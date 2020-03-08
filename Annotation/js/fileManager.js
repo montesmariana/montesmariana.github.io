@@ -50,7 +50,7 @@ function downloadJSON() {
 }
 
 function downloadTSV() {
-    var blob = new Blob([create_tsv(text, concordance)], { type: "text/plain;charset=utf-8"});
+    var blob = new Blob([createTsv(text, concordance)], { type: "text/plain;charset=utf-8"});
     saveAs(blob, text['user'] + '.tsv');
     var full_types = this_types.filter(function (d) {
         return (checkAchievements(d) == 'done');
