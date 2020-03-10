@@ -16,6 +16,10 @@
             {
                 "code": "aanraking-sense3",
                 "label": "streling, met name van erotische aard"
+            },
+            {
+                "code": "aanraking-none",
+                "label": "n.v.t."
             }
         ],
         "contact": [
@@ -42,6 +46,10 @@
             {
                 "code": "contact-sense6",
                 "label": "verkorting van <em>contactpersoon</em>"
+            },
+            {
+                "code": "contact-none",
+                "label": "n.v.t."
             }
         ],
         "buitenlander": [
@@ -60,6 +68,10 @@
             {
                 "code": "buitenlander-sense4",
                 "label": "speler die in het buitenland speelt"
+            },
+            {
+                "code": "buitenlander-none",
+                "label": "n.v.t."
             }
         ],
         "vreemdeling": [
@@ -86,6 +98,10 @@
             {
                 "code": "vreemdeling-sense6",
                 "label": "ortolaan (vogel met groengrijze kop)"
+            },
+            {
+                "code": "vreemdeling-none",
+                "label": "n.v.t."
             }
         ],
         "parool": [
@@ -100,6 +116,10 @@
             {
                 "code": "parool-sense3",
                 "label": "leus"
+            },
+            {
+                "code": "parool-none",
+                "label": "n.v.t."
             }
         ],
         "wachtwoord": [
@@ -122,6 +142,10 @@
             {
                 "code": "wachtwoord-sense5",
                 "label": "zinsnede van een acteur waarna een ander moet opkomen of moet spreken"
+            },
+            {
+                "code": "wachtwoord-none",
+                "label": "n.v.t."
             }
         ],
         "introductie": [
@@ -148,6 +172,10 @@
             {
                 "code": "introductie-sense6",
                 "label": "inleiding"
+            },
+            {
+                "code": "introductie-none",
+                "label": "n.v.t."
             }
         ],
         "kennismaking": [
@@ -158,6 +186,10 @@
             {
                 "code": "kennismaking-sense2",
                 "label": "het zich bekendmaken, het bekend worden met iets"
+            },
+            {
+                "code": "kennismaking-none",
+                "label": "n.v.t."
             }
         ]
     }
