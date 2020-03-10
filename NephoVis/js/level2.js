@@ -42,8 +42,7 @@ function execute(datasets, type, alternatives) {
   const height = 250;
   const padding = 30;
 
-  const tokenSelection = listFromLS(level + "selection-" + type);
-
+  
   //add tooltip (before the svg so it is not on top of it?)
   const tooltip = setTooltip("#svgContainer");
 
@@ -68,8 +67,7 @@ function execute(datasets, type, alternatives) {
   // Draw the plot based on the right dataset
   function deploy(dataset) {
     _.merge(dataset, datasets["variables"]);
-    console.log(dataset.columns.length)
-
+    
     const solutionName = JSON.parse(localStorage.getItem("solution-" + type));
     if (!(_.isNull(solutionName))) {
       const technique = solutionName.toLowerCase().search("tsne") > -1 ? "t-SNE, perplexity: " + solutionName.match("[0-9]+") : solutionName.toUpperCase();
@@ -81,6 +79,11 @@ function execute(datasets, type, alternatives) {
     initVars(dataset, level, type);
     const modelColors = classifyColnames(models)["nominals"];
     let colorModel = varFromLS(models, "color", "model", type);
+    const tokenSelection = listFromLS(level + "selection-" + type);
+
+    updateTokSelection(tokenSelection);
+
+    console.log(tokenSelection)
 
     // set up dropdowns #############################################################################
     buildDropdown("modelColour", modelColors).on("click", function () {
@@ -179,7 +182,6 @@ function execute(datasets, type, alternatives) {
 
     colorCircles();
     updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
-    updateTokSelection(tokenSelection);
 
 
     // FUNCTIONS #################################################################################################################

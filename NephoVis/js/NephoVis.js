@@ -155,7 +155,7 @@ function exists(t, model) {
 function getValues(dataset, colname) {
     // const values = d3.map(dataset, function (d) { return d[colname] }).keys();
     const values = _.uniq(_.map(dataset, colname));
-    const isNum = values.every(function (d) { return (!isNaN(d)); });
+    const isNum = values.every(d => { return (!isNaN(d)); });
     if (isNum) {
         return (values.map(function (d) { return +d }).sort());
     } else {
@@ -327,7 +327,9 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
     if (_.isArray(colorValues)) {
         const colorScale = d3.scaleOrdinal()
             .domain(colorValues)
-            .range(myColors);
+            .range(colorValues.map(d => {
+                return (color(colorValues.indexOf(d)));
+            }));
         // .range(d3.schemeCategory10);
 
         const legendColor = d3.legendColor()
@@ -339,11 +341,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
             .title(colorvar["variable"])
             .on("cellclick", function (d) {
                 const colorSelection = listFromLS(_.join(["colorsel", level, type], "-"));
-                if (colorSelection.indexOf(d) > -1) {
-                    colorSelection.splice(colorSelection.indexOf(d), 1);
-                } else {
-                    colorSelection.push(d);
-                }
+                colorSelection.indexOf(d) === -1 ? colorSelection.push(d) : _.pull(colorSelection, d);
                 localStorage.setItem(_.join(["colorsel", level, type], "-"), JSON.stringify(colorSelection));
                 selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset);
             });;
@@ -370,7 +368,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
     if (_.isArray(shapeValues)) {
         const shapeScale = d3.scaleOrdinal()
             .domain(shapeValues)
-            .range(shapeValues.map(function (d) {
+            .range(shapeValues.map(d => {
                 return (d3.symbol()
                     .type(shape(shapeValues.indexOf(d)))());
             }));
@@ -382,11 +380,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
             .title(shapevar["variable"])
             .on("cellclick", function (d) {
                 shapeSelection = listFromLS(_.join(["shapesel", level, type], "-"));
-                if (shapeSelection.indexOf(d) > -1) {
-                    shapeSelection.splice(shapeSelection.indexOf(d), 1);
-                } else {
-                    shapeSelection.push(d);
-                }
+                shapeSelection.indexOf(d) === -1 ? shapeSelection.push(d) : _.pull(shapeSelection, d);
                 localStorage.setItem(_.join(["shapesel", level, type], "-"), JSON.stringify(shapeSelection));
                 selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset);
             });
@@ -430,11 +424,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
             .on("cellclick", function (d) {
                 if (sizeValues.length <= 6) {
                     sizeSelection = listFromLS(_.join(["sizesel", level, type], "-"));
-                    if (sizeSelection.indexOf(d) > -1) {
-                        sizeSelection.splice(sizeSelection.indexOf(d), 1);
-                    } else {
-                        sizeSelection.push(d);
-                    }
+                    sizeSelection.indexOf(d) === -1 ? sizeSelection.push(d) : _.pull(sizeSelection, d);
                     localStorage.setItem(_.join(["sizesel", level, type], "-"), JSON.stringify(sizeSelection));
                     selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset);
                 }

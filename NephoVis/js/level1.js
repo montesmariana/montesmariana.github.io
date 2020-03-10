@@ -14,7 +14,7 @@ function execute(datasets, type) {
   d3.select("#clearSelect")
     .on("click", () =>  {
       clearStorage(modelSelection, level, type);
-      resetVariable("modselectionFromButtons");
+      resetVariable(type + "-modselectionFromButtons");
       _.keys(variableSelection).forEach(v => _.pullAll(variableSelection[v], variableSelection[v]))
       d3.selectAll("label[name='selectionByButtons']").classed("active", false);
     });
@@ -36,7 +36,7 @@ function execute(datasets, type) {
 
   // Set up selection by buttons ###################################################
   
-  const VSFromLS = JSON.parse(localStorage.getItem("modselectionFromButtons"));
+  const VSFromLS = JSON.parse(localStorage.getItem(type + "-modselectionFromButtons"));
   const variableSelection = _.isNull(VSFromLS) ? _.fromPairs(_.map(nominals, function (x) { return ([x, []]); })) : VSFromLS;
   checkboxSections("focrow", foc, dataset); // create buttons for "foc"
   checkboxSections("socrow", soc, dataset); // create buttons for "soc"
@@ -46,7 +46,7 @@ function execute(datasets, type) {
     const key = checked.split(":")[0];
     const value = checked.split(":")[1];
     variableSelection[key].indexOf(value) === -1 ? variableSelection[key].push(value) : _.pull(variableSelection[key], value);
-    localStorage.setItem("modselectionFromButtons", JSON.stringify(variableSelection));
+    localStorage.setItem(type + "-modselectionFromButtons", JSON.stringify(variableSelection));
     updateCheckbox(dataset, variableSelection);
   });
 
@@ -55,7 +55,7 @@ function execute(datasets, type) {
 
   buildDropdown("colour", nominals)
     .on("click", function () {
-      colorvar = updateVar(dataset, "color", this.value, "mod");
+      colorvar = updateVar(dataset, "color", this.value, "mod", type);
       colorSelection = [];
       updatePlot();
       updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
@@ -63,7 +63,7 @@ function execute(datasets, type) {
 
   buildDropdown("shape", nominals)
     .on("click", function () {
-      shapevar = updateVar(dataset, "shape", this.value, "mod");
+      shapevar = updateVar(dataset, "shape", this.value, "mod", type);
       shapeSSelection = [];
       updatePlot();
       updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
@@ -71,7 +71,7 @@ function execute(datasets, type) {
 
   buildDropdown("size", numerals)
     .on("click", function () {
-      sizevar = updateVar(dataset, "size", this.value, "mod");
+      sizevar = updateVar(dataset, "size", this.value, "mod", type);
       updatePlot();
       updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
     });
@@ -148,12 +148,13 @@ function execute(datasets, type) {
       d3.selectAll(".selector").remove();
     })
     .on('click', function (d) {
-      resetVariable("modselectionFromButtons");
+      resetVariable(type + "-modselectionFromButtons");
       modelSelection.indexOf(d["_model"]) === -1 ? modelSelection.push(d["_model"]) : _.pull(modelSelection, d["_model"]);
       updateModelSelection(modelSelection);
     });
 
   // Run basic functions
+  updateCheckbox(dataset, variableSelection);
   updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
   updateModelSelection(modelSelection);
 
