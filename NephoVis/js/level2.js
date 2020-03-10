@@ -1,6 +1,8 @@
 function execute(datasets, type, alternatives) {
   const models = datasets["model"];
   const level = "token";
+  const tokenSelection = listFromLS(level + "selection-" + type);
+
 
   // SET UP WORKSPACE ###############################################################################################################################
 
@@ -79,12 +81,10 @@ function execute(datasets, type, alternatives) {
     initVars(dataset, level, type);
     const modelColors = classifyColnames(models)["nominals"];
     let colorModel = varFromLS(models, "color", "model", type);
-    const tokenSelection = listFromLS(level + "selection-" + type);
-
+    
     updateTokSelection(tokenSelection);
 
-    console.log(tokenSelection)
-
+    
     // set up dropdowns #############################################################################
     buildDropdown("modelColour", modelColors).on("click", function () {
       colorModel = updateVar(models, "color", this.value, "model", type);
