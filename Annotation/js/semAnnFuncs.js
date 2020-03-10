@@ -1187,20 +1187,30 @@ function announceAchievement() {
     }
 }
 
-function createTsv(text, concordance) {
-    const annotations = d3.keys(text).filter(function (d) { return typeof text[d] == 'object' });
-    var outputCols = ['id', 'left', 'target', 'right']
-    selectedVariables.forEach(function (x) { outputCols.push(x); });
-    var output = annotations.map(function (a) {
+function createTsv(text, types) {
+    const annotations = d3.keys(text).filter(function (d) { return typeof text[d] === 'object' });
+    const varNames = [...selectedVariables];
+    d3.keys(personalizedVariables).forEach(v => {
+        if (selectedVariables.indexOf(v) > -1 && personalizedVariables[v]["hasAttributes"].length > 0) {
+            personalizedVariables[v]["hasAttributes"].forEach(function(y) {
+                varNames.push(y + "_" + v);
+            });
+        }
+    });
+    const colNames = [...types[annotations[0]].columns, ...varNames];
+    const output = annotations.map(function (a) {
+        concordance = types[a];
         // a is the name of a type
         return d3.keys(text[a]).map(function (t) {
             // t is a token_id
-            var res = [t];
+            const res = [t];
             // return concordance.filter(function(d) {return (d.id === t); })[0];
-            ['left', 'target', 'right'].forEach(function (c) {
-                res.push(concordance.filter(function (d) { return (d.id == t); })[0][c]);
+            const concColumns = concordance.columns;
+            _.pull(concColumns, "id");
+            concColumns.forEach(function (c) {
+                res.push(concordance.filter(function (d) { return (d.id === t); })[0][c]);
             });
-            selectedVariables.forEach(function (c) {
+            varNames.forEach(function (c) {
                 // c is a variable
                 res.push(d3.keys(text[a][t]).indexOf(c) === -1 ? "" : text[a][t][c]);
             });
@@ -1209,7 +1219,7 @@ function createTsv(text, concordance) {
             .join('\n');
     })
         .join('\n');
-    return [outputCols.join('\t'), output].join('\n');
+    return [colNames.join('\t'), output].join('\n');
     // return(output);
 }
 

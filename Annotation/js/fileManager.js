@@ -35,31 +35,31 @@ function uploadProgress() {
 function downloadJSON() {
     saved = JSON.stringify(text);
     saveInLS();
-    var blob = new Blob([saved], { type: "text/plain;charset=utf-8" });
+    const blob = new Blob([saved], { type: "text/plain;charset=utf-8" });
     saveAs(blob, text['user'] + '.json');
     // d3.select(this).attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(saved))
     //     .attr("download", text['user'] + ".json");
-    var full_types = this_types.filter(function (t) {
-        return (checkAchievements(t) == 'done');
-    });
-    // var message = full_types.length == this_types.length ? msg["final_download_message"] : null;
-    Swal.fire({
-        title: msg["download_title"],
-        icon: 'success'
-    });
+    // var full_types = this_types.filter(function (t) {
+    //     return (checkAchievements(t) == 'done');
+    // });
+    // // var message = full_types.length == this_types.length ? msg["final_download_message"] : null;
+    // Swal.fire({
+    //     title: msg["download_title"],
+    //     icon: 'success'
+    // });
 }
 
-function downloadTSV() {
-    var blob = new Blob([createTsv(text, concordance)], { type: "text/plain;charset=utf-8"});
+function downloadTSV() { // TOD fix the argument for create TSV (use this_types or something...)
+    const blob = new Blob([createTsv(text, types)], { type: "text/plain;charset=utf-8"});
     saveAs(blob, text['user'] + '.tsv');
-    var full_types = this_types.filter(function (d) {
-        return (checkAchievements(d) == 'done');
-    });
-    var message = full_types.length !== this_types.length ? msg["final_download_message"] : null;
-    // console.log(final_output);
-    Swal.fire({
-        title: msg["download_title"],
-        html: message,
-        icon: 'success'
-    });
+    // var full_types = this_types.filter(function (d) {
+    //     return (checkAchievements(d) == 'done');
+    // });
+    // var message = full_types.length !== this_types.length ? msg["final_download_message"] : null;
+    // // console.log(final_output);
+    // Swal.fire({
+    //     title: msg["download_title"],
+    //     html: message,
+    //     icon: 'success'
+    // });
 }
