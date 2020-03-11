@@ -52,7 +52,7 @@ function execute(datasets, type, alternatives) {
   deploy(offerAlternatives(datasets, alternatives, type));
   d3.select("#solutions").selectAll("button").on("click", function (d) {
     localStorage.setItem("solution-" + type, JSON.stringify(d));
-    deploy(datasets[d]);
+    deploy(datasets[d], tokenSelection);
   });
 
   // Offer options of solutions if they exist; otherwise, just work with "tokens" ###################################
@@ -67,7 +67,8 @@ function execute(datasets, type, alternatives) {
 
 
   // Draw the plot based on the right dataset
-  function deploy(dataset) {
+  function deploy(coordinates) {
+    const dataset = _.clone(coordinates);
     _.merge(dataset, datasets["variables"]);
     
     const solutionName = JSON.parse(localStorage.getItem("solution-" + type));
@@ -83,6 +84,7 @@ function execute(datasets, type, alternatives) {
     let colorModel = varFromLS(models, "color", "model", type);
     
     updateTokSelection(tokenSelection);
+    console.log(tokenSelection)
 
     
     // set up dropdowns #############################################################################
@@ -182,6 +184,8 @@ function execute(datasets, type, alternatives) {
 
     colorCircles();
     updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
+    updatePlot();
+
 
 
     // FUNCTIONS #################################################################################################################
