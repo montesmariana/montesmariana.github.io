@@ -1,10 +1,10 @@
 type	common_tokens	models	stress	date	corpus	part_of_speech	total_tokens
 church	284	144	NA	2019-01-20	GloWbE	noun	300
 zwart	211	144	NA	2019-10-28	QLVLNews	adjective	300
-horde	262	144	0.161	2020-03-10	QLVLNews	noun	280
-hoop	298	144	0.1695	2020-03-10	QLVLNews	noun	320
-spot	220	144	0.1062	2020-03-10	QLVLNews	noun	240
-staal	313	144	0.1519	2020-03-10	QLVLNews	noun	320
+horde	262	144	0.161	2020-03-10	QLVLNews	noun	279
+hoop	298	144	0.1695	2020-03-10	QLVLNews	noun	317
+spot	220	144	0.1062	2020-03-10	QLVLNews	noun	235
+staal	313	144	0.1519	2020-03-10	QLVLNews	noun	319
 stof	314	144	0.1576	2020-03-10	QLVLNews	noun	320
 schaal	308	144	0.1213	2020-03-10	QLVLNews	noun	320
 blik	261	144	0.1476	2020-03-11	QLVLNews	noun	280
