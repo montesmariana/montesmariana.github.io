@@ -7,8 +7,11 @@ const myColors = [
     "#0072b2", //blue
     "#cc79a7", //reddish Purple
     "#009e73", //bluish Green
-    "#f0e442", //yellow
-    "#000000" //black
+    "#caca0f", //yellow original:f0e442
+    "#000000", //black
+    "#696c74", // gray
+    "#08034b", // darker blue
+    "#336d2c" // darker green
 ] // colorblind friendly palette
 
 // Color, shape, size palettes
