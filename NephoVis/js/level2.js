@@ -25,7 +25,7 @@ function execute(datasets, type, alternatives) {
   // first info from LocalStorage
   const modelSelection = listFromLS("modelselection-" + type);
 
-  if (_.isNull(modelSelection)) {
+  if (_.isEmpty(modelSelection)) {
     window.alert("No models found in selection, let's go back to Level 1!");
     window.open("level1.html" + "?type=" + type, "_self");
   } else if (modelSelection.length > 9) {
