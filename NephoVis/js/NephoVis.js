@@ -124,10 +124,10 @@ function code(d, variable, schema, default_value) {
     } else {
         if (isNaN(default_value)) {
             // Returns the coded result of the index of d's value in the list of values
-            return (schema(variable["values"].indexOf(d[variable["variable"]])));
+            return(schema.domain(variable["values"])(d[variable["variable"]]));
+            // return (schema(variable["values"].indexOf(d[variable["variable"]])));
         } else {
-            schema.domain(d3.extent(variable["values"]));
-            return (schema(+d[variable["variable"]]));
+            return (schema.domain(d3.extent(variable["values"]))(+d[variable["variable"]]));
         }
     }
 }
@@ -327,9 +327,10 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
     if (_.isArray(colorValues)) {
         const colorScale = d3.scaleOrdinal()
             .domain(colorValues)
-            .range(colorValues.map(d => {
-                return (color(colorValues.indexOf(d)));
-            }));
+            .range(myColors);
+            // .range(colorValues.map(d => {
+            //     return (color(colorValues.indexOf(d)));
+            // }));
         // .range(d3.schemeCategory10);
 
         const legendColor = d3.legendColor()
@@ -368,10 +369,11 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
     if (_.isArray(shapeValues)) {
         const shapeScale = d3.scaleOrdinal()
             .domain(shapeValues)
-            .range(shapeValues.map(d => {
-                return (d3.symbol()
-                    .type(shape(shapeValues.indexOf(d)))());
-            }));
+            .range(d3.symbols());
+            // .range(shapeValues.map(d => {
+            //     return (d3.symbol()
+            //         .type(shape(shapeValues.indexOf(d)))());
+            // }));
 
         const legendShape = d3.legendSymbol()
             .scale(shapeScale)
