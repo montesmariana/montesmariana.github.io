@@ -1,17 +1,17 @@
 // ################################################################################################
 // set up general variables for all scripts
 const myColors = [
-    "#e69f00", //orange
-    "#56b4e9", //sky blue
-    "#d55e00", //vermilion
-    "#0072b2", //blue
-    "#cc79a7", //reddish Purple
-    "#009e73", //bluish Green
-    "#caca0f", //yellow original:f0e442
-    "#000000", //black
-    "#696c74", // gray
-    "#08034b", // darker blue
-    "#336d2c" // darker green
+    "#d1780c",
+    "#291367",
+    "#3fefa7",
+    "#b748b6",
+    "#823800",
+    "#02aded",
+    "#e76136",
+    "#bb92ff",
+    "#a20032",
+    "#ff84b9",
+    "#810049"
 ] // colorblind friendly palette
 
 // Color, shape, size palettes
@@ -127,7 +127,7 @@ function code(d, variable, schema, default_value) {
     } else {
         if (isNaN(default_value)) {
             // Returns the coded result of the index of d's value in the list of values
-            return(schema.domain(variable["values"])(d[variable["variable"]]));
+            return (schema.domain(variable["values"])(d[variable["variable"]]));
             // return (schema(variable["values"].indexOf(d[variable["variable"]])));
         } else {
             return (schema.domain(d3.extent(variable["values"]))(+d[variable["variable"]]));
@@ -331,9 +331,9 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
         const colorScale = d3.scaleOrdinal()
             .domain(colorValues)
             .range(myColors);
-            // .range(colorValues.map(d => {
-            //     return (color(colorValues.indexOf(d)));
-            // }));
+        // .range(colorValues.map(d => {
+        //     return (color(colorValues.indexOf(d)));
+        // }));
         // .range(d3.schemeCategory10);
 
         const legendColor = d3.legendColor()
@@ -372,11 +372,11 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
     if (_.isArray(shapeValues)) {
         const shapeScale = d3.scaleOrdinal()
             .domain(shapeValues)
-            .range(d3.symbols());
-            // .range(shapeValues.map(d => {
-            //     return (d3.symbol()
-            //         .type(shape(shapeValues.indexOf(d)))());
-            // }));
+            .range(d3.symbols);
+        // .range(shapeValues.map(d => {
+        //     return (d3.symbol()
+        //         .type(shape(shapeValues.indexOf(d)))());
+        // }));
 
         const legendShape = d3.legendSymbol()
             .scale(shapeScale)
