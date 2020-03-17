@@ -1,17 +1,15 @@
 // ################################################################################################
 // set up general variables for all scripts
 const myColors = [
-    "#d1780c",
-    "#291367",
-    "#3fefa7",
-    "#b748b6",
-    "#823800",
-    "#02aded",
-    "#e76136",
-    "#bb92ff",
-    "#a20032",
-    "#ff84b9",
-    "#810049"
+    "#56B4E9",
+    "#E69F00",
+    "#009E73",
+    "#F0E442",
+    "#D55E00",
+    "#0072B2",
+    "#999999",
+    "#CC79A7",
+    "#000000"
 ] // colorblind friendly palette
 
 // Color, shape, size palettes
@@ -372,9 +370,9 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
     if (_.isArray(shapeValues)) {
         const shapeScale = d3.scaleOrdinal()
             .domain(shapeValues)
-        .range(shapeValues.map(d => {
-            return (d3.symbol().type(shape(d))());
-        }));
+            .range(shapeValues.map(d => {
+                return (d3.symbol().type(shape(d))());
+            }));
 
         const legendShape = d3.legendSymbol()
             .scale(shapeScale)
