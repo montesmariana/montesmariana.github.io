@@ -372,11 +372,9 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
     if (_.isArray(shapeValues)) {
         const shapeScale = d3.scaleOrdinal()
             .domain(shapeValues)
-            .range(d3.symbols);
-        // .range(shapeValues.map(d => {
-        //     return (d3.symbol()
-        //         .type(shape(shapeValues.indexOf(d)))());
-        // }));
+        .range(shapeValues.map(d => {
+            return (d3.symbol().type(shape(d))());
+        }));
 
         const legendShape = d3.legendSymbol()
             .scale(shapeScale)
