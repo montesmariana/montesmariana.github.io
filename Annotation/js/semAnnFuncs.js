@@ -724,7 +724,7 @@ function addConfidence(supravariable = null) {
         .attr("name", type + "_" + varName)
         .attr("value", function (d) { return (d); });
 
-    colorStars();
+    colorStars(varName);
 
     conf.append("span").attr("class", "px-2")
         .text(msg["confidence_all"]);
@@ -879,13 +879,14 @@ function addComments() {
         .attr("placeholder", msg["comments_placeholder"])
         .attr("aria-label", "Comments")
         .property('value', function () {
-            var here = d3.select(this.parentNode.parentNode.parentNode).attr("token_id");
+            var here = d3.select(this.parentNode.parentNode).attr("token_id");
             return (d3.keys(text[type][here]).indexOf('comments') !== -1 ? text[type][here]['comments'] : null);
         })
 
     // control when comments change
     $(document).on('change', 'input[name="comments"]', function () {
-        var analized = d3.select(this.parentNode.parentNode.parentNode).attr("token_id");
+        var analized = d3.select(this.parentNode.parentNode).attr("token_id");
+        console.log(analized)
         var answer = d3.select(this).property('value');
         if (d3.keys(text[type]).indexOf(analized) === -1) {
             text[type][analized] = {};
