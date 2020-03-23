@@ -53,7 +53,9 @@ function execute(datasets, type) {
 
   // Set up dropdowns ################################################################
 
-  buildDropdown("colour", nominals)
+  buildDropdown("colour", nominals,
+  valueFunction = d => d,
+  textFunction = d => {return(_.replace(d, /(f|s)oc_/, ""))})
     .on("click", function () {
       colorvar = updateVar(dataset, "color", this.value, "mod", type);
       colorSelection = [];
@@ -61,7 +63,9 @@ function execute(datasets, type) {
       updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
     });
 
-  buildDropdown("shape", nominals)
+  buildDropdown("shape", nominals,
+  valueFunction = d => d,
+  textFunction = d => {return(_.replace(d, /(f|s)oc_/, ""))})
     .on("click", function () {
       shapevar = updateVar(dataset, "shape", this.value, "mod", type);
       shapeSSelection = [];
@@ -69,7 +73,9 @@ function execute(datasets, type) {
       updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
     });
 
-  buildDropdown("size", numerals)
+  buildDropdown("size", numerals,
+  valueFunction = d => d,
+  textFunction = d => {return(_.replace(d, /(f|s)oc_/, ""))})
     .on("click", function () {
       sizevar = updateVar(dataset, "size", this.value, "mod", type);
       updatePlot();

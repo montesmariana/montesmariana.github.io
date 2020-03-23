@@ -1,4 +1,4 @@
-_model	model.x	model.y	foc_length	foc_minimum_features	foc_part_of_speech	foc_sent_bound	foc_weighting	foc_window	soc_length	soc_length_num	soc_part_of_speech	soc_window	tokens	type	stress
+_model	model.x	model.y	foc_context_words	foc_minimum_features	foc_FOC-POS	foc_BOUNDARIES	foc_PPMI	foc_FOC-WIN	soc_LENGTH	soc_LENGTH_num	soc_SOC-POS	soc_SOC-WIN	tokens	type	stress
 staal.foc10.nav.ppmi_weight.bound.min1.soc4.nav.5000	-0.15790570263994938	-0.05858449700459468	754	1	nav	bound	ppmi_weight	10_10	5000	5000	nav	4_4	319	staal	0.21439552767720882
 staal.foc10.nav.ppmi_weight.bound.min1.soc4.nav.10000	-0.17506849996285032	-0.07170980188604945	754	1	nav	bound	ppmi_weight	10_10	10000	10000	nav	4_4	319	staal	0.21357066111607065
 staal.foc10.nav.ppmi_weight.bound.min1.soc4.nav.foc	-0.23205863284855877	-0.05550203964518646	754	1	nav	bound	ppmi_weight	10_10	foc	754	nav	4_4	319	staal	0.21396885253826933

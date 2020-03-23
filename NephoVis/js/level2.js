@@ -88,7 +88,10 @@ function execute(datasets, type, alternatives) {
 
     
     // set up dropdowns #############################################################################
-    buildDropdown("modelColour", modelColors).on("click", function () {
+    buildDropdown("modelColour", modelColors,
+    valueFunction = d => d,
+    textFunction = d => {return(_.replace(d, /(f|s)oc_/, ""))})
+    .on("click", function () {
       colorModel = updateVar(models, "color", this.value, "model", type);
       colorCircles();
     });
