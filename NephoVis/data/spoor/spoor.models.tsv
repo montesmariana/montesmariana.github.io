@@ -1,4 +1,4 @@
-_model	model.x	model.y	foc_context_words	foc_minimum_features	foc_FOC-POS	foc_BOUNDARIES	foc_PPMI	foc_FOC-WIN	soc_LENGTH	soc_LENGTH_num	soc_SOC-POS	soc_SOC-WIN	tokens	type	stress
+_model	model.x	model.y	foc_context_words	foc_minimum_features	foc_foc_pos	foc_boundaries	foc_ppmi	foc_foc_win	soc_length	soc_length_num	soc_soc_pos	soc_soc_win	tokens	type	stress
 spoor.foc10.nav.ppmi_weight.bound.min1.soc4.nav.5000	-0.20596825942335448	-0.06281273890284829	513	1	nav	bound	ppmi_weight	10_10	5000	5000	nav	4_4	353	spoor	0.2502028093004967
 spoor.foc10.nav.ppmi_weight.bound.min1.soc4.nav.10000	-0.1811994435487489	-0.08513060435840594	513	1	nav	bound	ppmi_weight	10_10	10000	10000	nav	4_4	353	spoor	0.2524767197673573
 spoor.foc10.nav.ppmi_weight.bound.min1.soc4.nav.foc	-0.18826309802176772	-0.13087794812115502	513	1	nav	bound	ppmi_weight	10_10	foc	513	nav	4_4	353	spoor	0.27019342933847124

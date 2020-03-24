@@ -1,4 +1,4 @@
-_model	model.x	model.y	foc_BOUNDARIES	foc_FOC-POS	foc_FOC-WIN	foc_PPMI	foc_context_words	foc_minimum_features	soc_LENGTH	soc_LENGTH_num	soc_SOC-POS	soc_SOC-WIN	tokens	type	stress
+_model	model.x	model.y	foc_boundaries	foc_foc_pos	foc_foc_win	foc_ppmi	foc_context_words	foc_minimum_features	soc_length	soc_length_num	soc_soc_pos	soc_soc_win	tokens	type	stress
 gekleurd.foc10.nav.weight.bound.min1.soc4.nav.5000	-0.14923998206967198	-0.14529790994928476	bound	nav	10_10	weight	861	1	5000	5000	nav	4_4	277	gekleurd	0.23099680147776894
 gekleurd.foc10.nav.weight.bound.min1.soc4.nav.10000	-0.16805071139369124	-0.12590220210826203	bound	nav	10_10	weight	861	1	10000	10000	nav	4_4	277	gekleurd	0.23214192022450358
 gekleurd.foc10.nav.weight.bound.min1.soc4.nav.FOC	-0.1894275409425553	-0.1376730595985895	bound	nav	10_10	weight	861	1	FOC	861	nav	4_4	277	gekleurd	0.2298206427422643

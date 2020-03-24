@@ -55,7 +55,7 @@ function execute(datasets, type) {
 
   buildDropdown("colour", nominals,
   valueFunction = d => d,
-  textFunction = d => {return(_.replace(d, /(f|s)oc_/, ""))})
+  textFunction = d => formatVariableName(d))
     .on("click", function () {
       colorvar = updateVar(dataset, "color", this.value, "mod", type);
       colorSelection = [];
@@ -65,7 +65,7 @@ function execute(datasets, type) {
 
   buildDropdown("shape", nominals,
   valueFunction = d => d,
-  textFunction = d => {return(_.replace(d, /(f|s)oc_/, ""))})
+  textFunction = d => formatVariableName(d))
     .on("click", function () {
       shapevar = updateVar(dataset, "shape", this.value, "mod", type);
       shapeSSelection = [];
@@ -75,7 +75,7 @@ function execute(datasets, type) {
 
   buildDropdown("size", numerals,
   valueFunction = d => d,
-  textFunction = d => {return(_.replace(d, /(f|s)oc_/, ""))})
+  textFunction = d => formatVariableName(d))
     .on("click", function () {
       sizevar = updateVar(dataset, "size", this.value, "mod", type);
       updatePlot();
@@ -215,6 +215,10 @@ function execute(datasets, type) {
       }));
   }
 
+  function formatVariableName(varName) {
+    return(_.toUpper(_.kebabCase(_.replace(varName, /^[f|s]oc_/, ""))))
+  }
+
   function checkboxSections(where, data, dataset) {
     d3.select("#" + where).selectAll("div")
       .data(data)
@@ -227,7 +231,7 @@ function execute(datasets, type) {
     function appendCheckbox(p) {
       const butGroup = d3.select(this);
 
-      const butText = (p.startsWith("soc") || p.startsWith("foc")) ? p.split("_").splice(1).join(" ") : p.split("_").join(" ");
+      const butText = formatVariableName(p);
 
       butGroup.append("p")
         .attr("class", "mb-0 mt-2")

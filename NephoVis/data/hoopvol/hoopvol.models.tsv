@@ -1,4 +1,4 @@
-_model	model.x	model.y	foc_BOUNDARIES	foc_FOC-POS	foc_FOC-WIN	foc_PPMI	foc_context_words	foc_minimum_features	soc_LENGTH	soc_LENGTH_num	soc_SOC-POS	soc_SOC-WIN	tokens	type	stress
+_model	model.x	model.y	foc_boundaries	foc_foc_pos	foc_foc_win	foc_ppmi	foc_context_words	foc_minimum_features	soc_length	soc_length_num	soc_soc_pos	soc_soc_win	tokens	type	stress
 hoopvol.foc10.nav.weight.bound.min1.soc4.nav.5000	-0.28414109359035455	-0.095530216991370015	bound	nav	10_10	weight	492	1	5000	5000	nav	4_4	233	hoopvol	0.2664819832375512
 hoopvol.foc10.nav.weight.bound.min1.soc4.nav.10000	-0.2929631776063335	-0.09785061338424533	bound	nav	10_10	weight	492	1	10000	10000	nav	4_4	233	hoopvol	0.2596729874533981
 hoopvol.foc10.nav.weight.bound.min1.soc4.nav.FOC	-0.27032498777454467	-0.11607475920818046	bound	nav	10_10	weight	492	1	FOC	492	nav	4_4	233	hoopvol	0.28713973742195464

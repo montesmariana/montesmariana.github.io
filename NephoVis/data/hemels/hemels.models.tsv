@@ -1,4 +1,4 @@
-_model	model.x	model.y	foc_BOUNDARIES	foc_FOC-POS	foc_FOC-WIN	foc_PPMI	foc_context_words	foc_minimum_features	soc_LENGTH	soc_LENGTH_num	soc_SOC-POS	soc_SOC-WIN	tokens	type	stress
+_model	model.x	model.y	foc_boundaries	foc_foc_pos	foc_foc_win	foc_ppmi	foc_context_words	foc_minimum_features	soc_length	soc_length_num	soc_soc_pos	soc_soc_win	tokens	type	stress
 hemels.foc10.nav.weight.bound.min1.soc4.nav.5000	-0.14691061846261771	-0.1751756518226416	bound	nav	10_10	weight	669	1	5000	5000	nav	4_4	232	hemels	0.25258964448092974
 hemels.foc10.nav.weight.bound.min1.soc4.nav.10000	-0.1523543433261227	-0.15348452511468752	bound	nav	10_10	weight	669	1	10000	10000	nav	4_4	232	hemels	0.2548384503622063
 hemels.foc10.nav.weight.bound.min1.soc4.nav.FOC	-0.1473982696382862	-0.15723462633529697	bound	nav	10_10	weight	669	1	FOC	669	nav	4_4	232	hemels	0.2571533211980139
