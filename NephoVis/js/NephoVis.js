@@ -133,6 +133,9 @@ function code(d, variable, schema, default_value) {
     }
 }
 
+function formatVariableName(varName) {
+    return(_.toUpper(_.kebabCase(_.replace(varName, /^[f|s]oc_/, ""))))
+  }
 
 // Generate complementary colors for the circle on hover
 function compColor(col) {
@@ -274,9 +277,6 @@ function offerAlternatives(datasets, alternatives, type) {
     }
 }
 
-
-
-
 // ########################################################################################################################
 // For legend creation
 
@@ -340,7 +340,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
                 .size(50)())
             // .shapePadding(spaceLegend(colorValues, lCWidth))
             .scale(colorScale)
-            .title(colorvar["variable"])
+            .title(formatVariableName(colorvar["variable"]))
             .on("cellclick", function (d) {
                 const colorSelection = listFromLS(_.join(["colorsel", level, type], "-"));
                 colorSelection.indexOf(d) === -1 ? colorSelection.push(d) : _.pull(colorSelection, d);
@@ -378,7 +378,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
             .scale(shapeScale)
             // .orient("horizontal")
             // .shapePadding(spaceLegend(shapeValues, lCWidth))
-            .title(shapevar["variable"])
+            .title(formatVariableName(shapevar["variable"]))
             .on("cellclick", function (d) {
                 shapeSelection = listFromLS(_.join(["shapesel", level, type], "-"));
                 shapeSelection.indexOf(d) === -1 ? shapeSelection.push(d) : _.pull(shapeSelection, d);
@@ -419,7 +419,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
             // .shapePadding(20)
             .labelOffset(15)
             .scale(sizeScale)
-            .title(sizevar["variable"])
+            .title(formatVariableName(sizevar["variable"]))
             .cells((sizeValues.length > 6 || smallNumbers) ? 5 : sizeValues.length)
             .labelFormat(smallNumbers ? ".04r" : ".0d")
             .on("cellclick", function (d) {

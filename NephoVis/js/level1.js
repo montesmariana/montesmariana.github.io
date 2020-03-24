@@ -215,10 +215,6 @@ function execute(datasets, type) {
       }));
   }
 
-  function formatVariableName(varName) {
-    return(_.toUpper(_.kebabCase(_.replace(varName, /^[f|s]oc_/, ""))))
-  }
-
   function checkboxSections(where, data, dataset) {
     d3.select("#" + where).selectAll("div")
       .data(data)
