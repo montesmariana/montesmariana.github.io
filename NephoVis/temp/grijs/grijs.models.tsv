@@ -1,145 +1,145 @@
-_model	model.x	model.y	foc_BOUNDARIES	foc_FOC-POS	foc_FOC-WIN	foc_PPMI	foc_context_words	foc_minimum_features	soc_LENGTH	soc_LENGTH_num	soc_SOC-POS	soc_SOC-WIN	tokens	type	stress
-grijs.foc10.nav.weight.bound.min1.soc4.nav.5000	-0.2102331634843206	-0.060941651220884734	bound	nav	10_10	weight	724	1	5000	5000	nav	4_4	311	grijs	0.25589703822264614
-grijs.foc10.nav.weight.bound.min1.soc4.nav.10000	-0.22120423781816084	-0.04863344473817952	bound	nav	10_10	weight	724	1	10000	10000	nav	4_4	311	grijs	0.2528825580405782
-grijs.foc10.nav.weight.bound.min1.soc4.nav.FOC	-0.24100363123232357	-0.07171190848952369	bound	nav	10_10	weight	724	1	FOC	724	nav	4_4	311	grijs	0.2534815734690278
-grijs.foc10.nav.weight.bound.min1.soc10.nav.5000	-0.2147222424989021	-0.08377137983044794	bound	nav	10_10	weight	724	1	5000	5000	nav	10_10	311	grijs	0.24851513228032004
-grijs.foc10.nav.weight.bound.min1.soc10.nav.10000	-0.2063797650013931	-0.06852052950505465	bound	nav	10_10	weight	724	1	10000	10000	nav	10_10	311	grijs	0.24592227720017237
-grijs.foc10.nav.weight.bound.min1.soc10.nav.FOC	-0.2506550294048229	-0.07673070614696499	bound	nav	10_10	weight	724	1	FOC	724	nav	10_10	311	grijs	0.2408190557536054
-grijs.foc10.nav.weight.bound.min1.soc4.all.5000	-0.2118442254067467	-0.07080877124331854	bound	nav	10_10	weight	724	1	5000	5000	all	4_4	311	grijs	0.25653388259394216
-grijs.foc10.nav.weight.bound.min1.soc4.all.10000	-0.20413784150158715	-0.05161706896650054	bound	nav	10_10	weight	724	1	10000	10000	all	4_4	311	grijs	0.25448544695167347
-grijs.foc10.nav.weight.bound.min1.soc4.all.FOC	-0.24100351847089277	-0.07171207824203796	bound	nav	10_10	weight	724	1	FOC	724	all	4_4	311	grijs	0.2534815734690278
-grijs.foc10.nav.weight.bound.min1.soc10.all.5000	-0.2235111694104797	-0.09735033431370661	bound	nav	10_10	weight	724	1	5000	5000	all	10_10	311	grijs	0.24861583966372516
-grijs.foc10.nav.weight.bound.min1.soc10.all.10000	-0.20196496022734797	-0.0744478219370685	bound	nav	10_10	weight	724	1	10000	10000	all	10_10	311	grijs	0.2483514092274459
-grijs.foc10.nav.weight.bound.min1.soc10.all.FOC	-0.2506550294048229	-0.07673070614696499	bound	nav	10_10	weight	724	1	FOC	724	all	10_10	311	grijs	0.2408190557536054
-grijs.foc10.nav.selection.bound.min1.soc4.nav.5000	-0.16581076246379634	-0.21759424051042955	bound	nav	10_10	selection	724	1	5000	5000	nav	4_4	311	grijs	0.25269923548210865
-grijs.foc10.nav.selection.bound.min1.soc4.nav.10000	-0.151045413515293	-0.22469527047018154	bound	nav	10_10	selection	724	1	10000	10000	nav	4_4	311	grijs	0.24829631836268157
-grijs.foc10.nav.selection.bound.min1.soc4.nav.FOC	-0.16288514023012524	-0.1324678236312959	bound	nav	10_10	selection	724	1	FOC	724	nav	4_4	311	grijs	0.2484184823582475
-grijs.foc10.nav.selection.bound.min1.soc10.nav.5000	-0.17935244894397323	-0.19918286788627235	bound	nav	10_10	selection	724	1	5000	5000	nav	10_10	311	grijs	0.24645905243188557
-grijs.foc10.nav.selection.bound.min1.soc10.nav.10000	-0.1618809086365273	-0.19071516001833647	bound	nav	10_10	selection	724	1	10000	10000	nav	10_10	311	grijs	0.2443690538830936
-grijs.foc10.nav.selection.bound.min1.soc10.nav.FOC	-0.1749476575477052	-0.14261079609444552	bound	nav	10_10	selection	724	1	FOC	724	nav	10_10	311	grijs	0.23394393574352876
-grijs.foc10.nav.selection.bound.min1.soc4.all.5000	-0.17179366631723214	-0.23998155444989822	bound	nav	10_10	selection	724	1	5000	5000	all	4_4	311	grijs	0.255554835301926
-grijs.foc10.nav.selection.bound.min1.soc4.all.10000	-0.14829583608591157	-0.22411997343963486	bound	nav	10_10	selection	724	1	10000	10000	all	4_4	311	grijs	0.25368578764268007
-grijs.foc10.nav.selection.bound.min1.soc4.all.FOC	-0.162884991263911	-0.13246793032929963	bound	nav	10_10	selection	724	1	FOC	724	all	4_4	311	grijs	0.2484184823582475
-grijs.foc10.nav.selection.bound.min1.soc10.all.5000	-0.1922718583468605	-0.21869795955385754	bound	nav	10_10	selection	724	1	5000	5000	all	10_10	311	grijs	0.25011200888424406
-grijs.foc10.nav.selection.bound.min1.soc10.all.10000	-0.16812543301515132	-0.19334049748391566	bound	nav	10_10	selection	724	1	10000	10000	all	10_10	311	grijs	0.24950835120543022
-grijs.foc10.nav.selection.bound.min1.soc10.all.FOC	-0.17494803877204207	-0.14261072013501855	bound	nav	10_10	selection	724	1	FOC	724	all	10_10	311	grijs	0.23394393574352876
-grijs.foc10.nav.no.bound.min1.soc4.nav.5000	-0.16581050894190696	-0.21759431745233962	bound	nav	10_10	no	724	1	5000	5000	nav	4_4	311	grijs	0.25269923548210865
-grijs.foc10.nav.no.bound.min1.soc4.nav.10000	-0.1510456406204488	-0.2246952078647344	bound	nav	10_10	no	724	1	10000	10000	nav	4_4	311	grijs	0.24829631836268157
-grijs.foc10.nav.no.bound.min1.soc4.nav.FOC	-0.16288532836323583	-0.132467757836492	bound	nav	10_10	no	724	1	FOC	724	nav	4_4	311	grijs	0.2484184823582475
-grijs.foc10.nav.no.bound.min1.soc10.nav.5000	-0.17935244894350402	-0.19918286788644957	bound	nav	10_10	no	724	1	5000	5000	nav	10_10	311	grijs	0.24645905243188557
-grijs.foc10.nav.no.bound.min1.soc10.nav.10000	-0.16188117352281278	-0.19071506432774424	bound	nav	10_10	no	724	1	10000	10000	nav	10_10	311	grijs	0.2443690538830936
-grijs.foc10.nav.no.bound.min1.soc10.nav.FOC	-0.17494841492142318	-0.14261064516588448	bound	nav	10_10	no	724	1	FOC	724	nav	10_10	311	grijs	0.23394393574352876
-grijs.foc10.nav.no.bound.min1.soc4.all.5000	-0.17179406651706416	-0.23998140169422372	bound	nav	10_10	no	724	1	5000	5000	all	4_4	311	grijs	0.255554835301926
-grijs.foc10.nav.no.bound.min1.soc4.all.10000	-0.1482959980314846	-0.224119882186769	bound	nav	10_10	no	724	1	10000	10000	all	4_4	311	grijs	0.25368578764268007
-grijs.foc10.nav.no.bound.min1.soc4.all.FOC	-0.16288547713670296	-0.132467650975203	bound	nav	10_10	no	724	1	FOC	724	all	4_4	311	grijs	0.2484184823582475
-grijs.foc10.nav.no.bound.min1.soc10.all.5000	-0.1922718583474315	-0.21869795955349347	bound	nav	10_10	no	724	1	5000	5000	all	10_10	311	grijs	0.25011200888424406
-grijs.foc10.nav.no.bound.min1.soc10.all.10000	-0.16812508511759494	-0.19334061297422328	bound	nav	10_10	no	724	1	10000	10000	all	10_10	311	grijs	0.24950835120543022
-grijs.foc10.nav.no.bound.min1.soc10.all.FOC	-0.17494879585784293	-0.14261056925904905	bound	nav	10_10	no	724	1	FOC	724	all	10_10	311	grijs	0.23394393574352876
-grijs.foc10.all.weight.bound.min1.soc4.nav.5000	-0.013808539854809714	-0.05702430949205093	bound	all	10_10	weight	828	1	5000	5000	nav	4_4	319	grijs	0.2534856128483725
-grijs.foc10.all.weight.bound.min1.soc4.nav.10000	0.011663108212747202	-0.05168915266315587	bound	all	10_10	weight	828	1	10000	10000	nav	4_4	319	grijs	0.2499691500574861
-grijs.foc10.all.weight.bound.min1.soc4.nav.FOC	0.005508143726959911	-0.00803417682607945	bound	all	10_10	weight	828	1	FOC	828	nav	4_4	319	grijs	0.2483865920350966
-grijs.foc10.all.weight.bound.min1.soc10.nav.5000	-0.06641010642328474	-0.06723607513114963	bound	all	10_10	weight	828	1	5000	5000	nav	10_10	319	grijs	0.2507545990146771
-grijs.foc10.all.weight.bound.min1.soc10.nav.10000	-0.0536628681637866	-0.06606701077967927	bound	all	10_10	weight	828	1	10000	10000	nav	10_10	319	grijs	0.24674475599619775
-grijs.foc10.all.weight.bound.min1.soc10.nav.FOC	-0.041859000994628526	-0.03420800370328282	bound	all	10_10	weight	828	1	FOC	828	nav	10_10	319	grijs	0.2422838803523586
-grijs.foc10.all.weight.bound.min1.soc4.all.5000	-0.02113617297198814	-0.06856431554076545	bound	all	10_10	weight	828	1	5000	5000	all	4_4	319	grijs	0.2550240907695081
-grijs.foc10.all.weight.bound.min1.soc4.all.10000	-0.0016918576530906783	-0.05519461702700616	bound	all	10_10	weight	828	1	10000	10000	all	4_4	319	grijs	0.25175574190846384
-grijs.foc10.all.weight.bound.min1.soc4.all.FOC	0.0055080079957389675	-0.008030824152127533	bound	all	10_10	weight	828	1	FOC	828	all	4_4	319	grijs	0.2483865920350966
-grijs.foc10.all.weight.bound.min1.soc10.all.5000	-0.07082209742983936	-0.07710486906394214	bound	all	10_10	weight	828	1	5000	5000	all	10_10	319	grijs	0.25231198601125165
-grijs.foc10.all.weight.bound.min1.soc10.all.10000	-0.05987467462073594	-0.06877268752937006	bound	all	10_10	weight	828	1	10000	10000	all	10_10	319	grijs	0.24954357642989192
-grijs.foc10.all.weight.bound.min1.soc10.all.FOC	-0.04185916853991063	-0.034213814418310645	bound	all	10_10	weight	828	1	FOC	828	all	10_10	319	grijs	0.2422838803523586
-grijs.foc10.all.selection.bound.min1.soc4.nav.5000	0.3992914141548741	-0.18894891485458562	bound	all	10_10	selection	828	1	5000	5000	nav	4_4	319	grijs	0.24880421263265426
-grijs.foc10.all.selection.bound.min1.soc4.nav.10000	0.43750529271625344	-0.17817785699321245	bound	all	10_10	selection	828	1	10000	10000	nav	4_4	319	grijs	0.24046282365238328
-grijs.foc10.all.selection.bound.min1.soc4.nav.FOC	0.31668147591643214	-0.14647987894275763	bound	all	10_10	selection	828	1	FOC	828	nav	4_4	319	grijs	0.23141147067218093
-grijs.foc10.all.selection.bound.min1.soc10.nav.5000	0.19515052442446432	-0.19370057763129755	bound	all	10_10	selection	828	1	5000	5000	nav	10_10	319	grijs	0.24707100449100453
-grijs.foc10.all.selection.bound.min1.soc10.nav.10000	0.22379492316031413	-0.1825588606098484	bound	all	10_10	selection	828	1	10000	10000	nav	10_10	319	grijs	0.24076542952375404
-grijs.foc10.all.selection.bound.min1.soc10.nav.FOC	0.17070096814835437	-0.15270228113751944	bound	all	10_10	selection	828	1	FOC	828	nav	10_10	319	grijs	0.22880975723979485
-grijs.foc10.all.selection.bound.min1.soc4.all.5000	0.38813378029124257	-0.19833952182350295	bound	all	10_10	selection	828	1	5000	5000	all	4_4	319	grijs	0.2561678023692157
-grijs.foc10.all.selection.bound.min1.soc4.all.10000	0.41585226931640795	-0.18323909711561007	bound	all	10_10	selection	828	1	10000	10000	all	4_4	319	grijs	0.24778699721988293
-grijs.foc10.all.selection.bound.min1.soc4.all.FOC	0.3166811113446431	-0.1464809618824473	bound	all	10_10	selection	828	1	FOC	828	all	4_4	319	grijs	0.23141147067218093
-grijs.foc10.all.selection.bound.min1.soc10.all.5000	0.19373980958298279	-0.21797808756616363	bound	all	10_10	selection	828	1	5000	5000	all	10_10	319	grijs	0.2509912839443986
-grijs.foc10.all.selection.bound.min1.soc10.all.10000	0.20546369712224707	-0.1907271677966538	bound	all	10_10	selection	828	1	10000	10000	all	10_10	319	grijs	0.24750740723929446
-grijs.foc10.all.selection.bound.min1.soc10.all.FOC	0.17070049144874533	-0.15270323528628624	bound	all	10_10	selection	828	1	FOC	828	all	10_10	319	grijs	0.22880975723979485
-grijs.foc10.all.no.bound.min1.soc4.nav.5000	0.3992923104991734	-0.1889493328796432	bound	all	10_10	no	828	1	5000	5000	nav	4_4	319	grijs	0.24880421263265426
-grijs.foc10.all.no.bound.min1.soc4.nav.10000	0.4375768926400628	-0.1782028084882526	bound	all	10_10	no	828	1	10000	10000	nav	4_4	319	grijs	0.24046282365238328
-grijs.foc10.all.no.bound.min1.soc4.nav.FOC	0.31668129520873795	-0.14648041513986212	bound	all	10_10	no	828	1	FOC	828	nav	4_4	319	grijs	0.23141147067218093
-grijs.foc10.all.no.bound.min1.soc10.nav.5000	0.19515064944169144	-0.19370037919005723	bound	all	10_10	no	828	1	5000	5000	nav	10_10	319	grijs	0.24707100449100453
-grijs.foc10.all.no.bound.min1.soc10.nav.10000	0.22379480721308698	-0.18255911207663852	bound	all	10_10	no	828	1	10000	10000	nav	10_10	319	grijs	0.24076542952375404
-grijs.foc10.all.no.bound.min1.soc10.nav.FOC	0.17070120836146285	-0.15270180033295835	bound	all	10_10	no	828	1	FOC	828	nav	10_10	319	grijs	0.22880975723979485
-grijs.foc10.all.no.bound.min1.soc4.all.5000	0.388132858839852	-0.19833902575467102	bound	all	10_10	no	828	1	5000	5000	all	4_4	319	grijs	0.2561678023692157
-grijs.foc10.all.no.bound.min1.soc4.all.10000	0.41585262021496655	-0.18323929076531678	bound	all	10_10	no	828	1	10000	10000	all	4_4	319	grijs	0.24778699721988293
-grijs.foc10.all.no.bound.min1.soc4.all.FOC	0.3166816579949539	-0.14647933287918927	bound	all	10_10	no	828	1	FOC	828	all	4_4	319	grijs	0.23141147067218093
-grijs.foc10.all.no.bound.min1.soc10.all.5000	0.19373993620440838	-0.21797792857390041	bound	all	10_10	no	828	1	5000	5000	all	10_10	319	grijs	0.2509912839443986
-grijs.foc10.all.no.bound.min1.soc10.all.10000	0.2054635692293299	-0.1907273945898857	bound	all	10_10	no	828	1	10000	10000	all	10_10	319	grijs	0.24750740723929446
-grijs.foc10.all.no.bound.min1.soc10.all.FOC	0.1707007317223375	-0.15270275436097622	bound	all	10_10	no	828	1	FOC	828	all	10_10	319	grijs	0.22880975723979485
-grijs.foc5.nav.weight.bound.min1.soc4.nav.5000	-0.18161679485231622	0.15256740296433696	bound	nav	5_5	weight	477	1	5000	5000	nav	4_4	304	grijs	0.2627167019237382
-grijs.foc5.nav.weight.bound.min1.soc4.nav.10000	-0.18710453556961135	0.1859209682342919	bound	nav	5_5	weight	477	1	10000	10000	nav	4_4	304	grijs	0.2601212587051142
-grijs.foc5.nav.weight.bound.min1.soc4.nav.FOC	-0.1655415870661745	0.19910053382781667	bound	nav	5_5	weight	477	1	FOC	477	nav	4_4	304	grijs	0.2599840008572969
-grijs.foc5.nav.weight.bound.min1.soc10.nav.5000	-0.17777695021579207	0.12563196538443708	bound	nav	5_5	weight	477	1	5000	5000	nav	10_10	304	grijs	0.25304904291365415
-grijs.foc5.nav.weight.bound.min1.soc10.nav.10000	-0.16396532695884564	0.14369415435796085	bound	nav	5_5	weight	477	1	10000	10000	nav	10_10	304	grijs	0.25136632844366874
-grijs.foc5.nav.weight.bound.min1.soc10.nav.FOC	-0.1533323642336476	0.19178079008719062	bound	nav	5_5	weight	477	1	FOC	477	nav	10_10	304	grijs	0.2453090135451102
-grijs.foc5.nav.weight.bound.min1.soc4.all.5000	-0.18988821526687194	0.15124046369085634	bound	nav	5_5	weight	477	1	5000	5000	all	4_4	304	grijs	0.2614743390403037
-grijs.foc5.nav.weight.bound.min1.soc4.all.10000	-0.17519473048001485	0.17092024491743946	bound	nav	5_5	weight	477	1	10000	10000	all	4_4	304	grijs	0.26122666511145753
-grijs.foc5.nav.weight.bound.min1.soc4.all.FOC	-0.16554178431605815	0.19910053428213584	bound	nav	5_5	weight	477	1	FOC	477	all	4_4	304	grijs	0.2599840008572969
-grijs.foc5.nav.weight.bound.min1.soc10.all.5000	-0.18736244961703524	0.12878787904059988	bound	nav	5_5	weight	477	1	5000	5000	all	10_10	304	grijs	0.25098443293785094
-grijs.foc5.nav.weight.bound.min1.soc10.all.10000	-0.1671949803554427	0.13674018548096542	bound	nav	5_5	weight	477	1	10000	10000	all	10_10	304	grijs	0.2527362587554403
-grijs.foc5.nav.weight.bound.min1.soc10.all.FOC	-0.1533325315848768	0.1917808884164058	bound	nav	5_5	weight	477	1	FOC	477	all	10_10	304	grijs	0.2453090135451102
-grijs.foc5.nav.selection.bound.min1.soc4.nav.5000	-0.24735564483244074	0.09269288575886547	bound	nav	5_5	selection	477	1	5000	5000	nav	4_4	304	grijs	0.25255348451115966
-grijs.foc5.nav.selection.bound.min1.soc4.nav.10000	-0.2551244040626666	0.12189195239899023	bound	nav	5_5	selection	477	1	10000	10000	nav	4_4	304	grijs	0.2481144732539925
-grijs.foc5.nav.selection.bound.min1.soc4.nav.FOC	-0.1583487583150432	0.10039843357049716	bound	nav	5_5	selection	477	1	FOC	477	nav	4_4	304	grijs	0.24965909727527844
-grijs.foc5.nav.selection.bound.min1.soc10.nav.5000	-0.2272689083909274	0.060948592492134544	bound	nav	5_5	selection	477	1	5000	5000	nav	10_10	304	grijs	0.24674738813651861
-grijs.foc5.nav.selection.bound.min1.soc10.nav.10000	-0.2164330293102565	0.07467087825201676	bound	nav	5_5	selection	477	1	10000	10000	nav	10_10	304	grijs	0.24536353428071517
-grijs.foc5.nav.selection.bound.min1.soc10.nav.FOC	-0.1501688421370655	0.08717813326687449	bound	nav	5_5	selection	477	1	FOC	477	nav	10_10	304	grijs	0.23587515790693292
-grijs.foc5.nav.selection.bound.min1.soc4.all.5000	-0.2746704462251834	0.09075724663046088	bound	nav	5_5	selection	477	1	5000	5000	all	4_4	304	grijs	0.25505537248859356
-grijs.foc5.nav.selection.bound.min1.soc4.all.10000	-0.25524153685164863	0.1085583819667709	bound	nav	5_5	selection	477	1	10000	10000	all	4_4	304	grijs	0.25209457801778506
-grijs.foc5.nav.selection.bound.min1.soc4.all.FOC	-0.1583493283561488	0.10039798149088679	bound	nav	5_5	selection	477	1	FOC	477	all	4_4	304	grijs	0.24965909727527844
-grijs.foc5.nav.selection.bound.min1.soc10.all.5000	-0.24976012414095464	0.05770770381201852	bound	nav	5_5	selection	477	1	5000	5000	all	10_10	304	grijs	0.2478596290665315
-grijs.foc5.nav.selection.bound.min1.soc10.all.10000	-0.22397953692856004	0.06849334005137456	bound	nav	5_5	selection	477	1	10000	10000	all	10_10	304	grijs	0.24781730069788702
-grijs.foc5.nav.selection.bound.min1.soc10.all.FOC	-0.15016937584710252	0.08717752782446359	bound	nav	5_5	selection	477	1	FOC	477	all	10_10	304	grijs	0.23587515790693292
-grijs.foc5.nav.no.bound.min1.soc4.nav.5000	-0.24735554341442392	0.09269304445837367	bound	nav	5_5	no	477	1	5000	5000	nav	4_4	304	grijs	0.25255348451115966
-grijs.foc5.nav.no.bound.min1.soc4.nav.10000	-0.2551241991685752	0.12189234821321798	bound	nav	5_5	no	477	1	10000	10000	nav	4_4	304	grijs	0.2481144732539925
-grijs.foc5.nav.no.bound.min1.soc4.nav.FOC	-0.1583484709563822	0.1003986607888886	bound	nav	5_5	no	477	1	FOC	477	nav	4_4	304	grijs	0.24965909727527844
-grijs.foc5.nav.no.bound.min1.soc10.nav.5000	-0.22726906752966	0.060948550666572725	bound	nav	5_5	no	477	1	5000	5000	nav	10_10	304	grijs	0.24674738813651861
-grijs.foc5.nav.no.bound.min1.soc10.nav.10000	-0.21643296297293824	0.07467071531211071	bound	nav	5_5	no	477	1	10000	10000	nav	10_10	304	grijs	0.24536353428071517
-grijs.foc5.nav.no.bound.min1.soc10.nav.FOC	-0.1501685733336561	0.08717843810276195	bound	nav	5_5	no	477	1	FOC	477	nav	10_10	304	grijs	0.23587515790693292
-grijs.foc5.nav.no.bound.min1.soc4.all.5000	-0.2746705379873606	0.09075694018661569	bound	nav	5_5	no	477	1	5000	5000	all	4_4	304	grijs	0.25505537248859356
-grijs.foc5.nav.no.bound.min1.soc4.all.10000	-0.25524168041957707	0.10855807242580705	bound	nav	5_5	no	477	1	10000	10000	all	4_4	304	grijs	0.25209457801778506
-grijs.foc5.nav.no.bound.min1.soc4.all.FOC	-0.1583490409527523	0.10039820864831075	bound	nav	5_5	no	477	1	FOC	477	all	4_4	304	grijs	0.24965909727527844
-grijs.foc5.nav.no.bound.min1.soc10.all.5000	-0.24976003931773472	0.057707854814055354	bound	nav	5_5	no	477	1	5000	5000	all	10_10	304	grijs	0.2478596290665315
-grijs.foc5.nav.no.bound.min1.soc10.all.10000	-0.22397959220101551	0.06849348384013046	bound	nav	5_5	no	477	1	10000	10000	all	10_10	304	grijs	0.24781730069788702
-grijs.foc5.nav.no.bound.min1.soc10.all.FOC	-0.15016910712599416	0.08717783252829966	bound	nav	5_5	no	477	1	FOC	477	all	10_10	304	grijs	0.23587515790693292
-grijs.foc5.all.weight.bound.min1.soc4.nav.5000	-0.0020481792651230414	0.2186779620152468	bound	all	5_5	weight	566	1	5000	5000	nav	4_4	319	grijs	0.25659832757760836
-grijs.foc5.all.weight.bound.min1.soc4.nav.10000	0.020098816507389775	0.28265157145833153	bound	all	5_5	weight	566	1	10000	10000	nav	4_4	319	grijs	0.25480614302315235
-grijs.foc5.all.weight.bound.min1.soc4.nav.FOC	-0.0058132573329064555	0.2878474142663241	bound	all	5_5	weight	566	1	FOC	566	nav	4_4	319	grijs	0.25965364952228437
-grijs.foc5.all.weight.bound.min1.soc10.nav.5000	-0.04669330971053117	0.17294990749520867	bound	all	5_5	weight	566	1	5000	5000	nav	10_10	319	grijs	0.2551254418108374
-grijs.foc5.all.weight.bound.min1.soc10.nav.10000	-0.03334066686295849	0.2072457704328742	bound	all	5_5	weight	566	1	10000	10000	nav	10_10	319	grijs	0.25092918710589973
-grijs.foc5.all.weight.bound.min1.soc10.nav.FOC	-0.035346150636987914	0.2530678329172661	bound	all	5_5	weight	566	1	FOC	566	nav	10_10	319	grijs	0.24677478877398984
-grijs.foc5.all.weight.bound.min1.soc4.all.5000	-0.009723265805809537	0.2079332961415863	bound	all	5_5	weight	566	1	5000	5000	all	4_4	319	grijs	0.25668641955401844
-grijs.foc5.all.weight.bound.min1.soc4.all.10000	0.008045478486344378	0.2477145473534482	bound	all	5_5	weight	566	1	10000	10000	all	4_4	319	grijs	0.25422732563408706
-grijs.foc5.all.weight.bound.min1.soc4.all.FOC	-0.005813445573265326	0.28784748350295697	bound	all	5_5	weight	566	1	FOC	566	all	4_4	319	grijs	0.25965364952228437
-grijs.foc5.all.weight.bound.min1.soc10.all.5000	-0.05137091579105351	0.16838302439968952	bound	all	5_5	weight	566	1	5000	5000	all	10_10	319	grijs	0.2539977347857052
-grijs.foc5.all.weight.bound.min1.soc10.all.10000	-0.038131500677899895	0.18479718062688896	bound	all	5_5	weight	566	1	10000	10000	all	10_10	319	grijs	0.25266078320213076
-grijs.foc5.all.weight.bound.min1.soc10.all.FOC	-0.0353461506369879	0.25306783291726603	bound	all	5_5	weight	566	1	FOC	566	all	10_10	319	grijs	0.24677478877398984
-grijs.foc5.all.selection.bound.min1.soc4.nav.5000	0.44249096489685896	0.13648405334542663	bound	all	5_5	selection	566	1	5000	5000	nav	4_4	319	grijs	0.24552022324286188
-grijs.foc5.all.selection.bound.min1.soc4.nav.10000	0.4829469448046195	0.15234784389702194	bound	all	5_5	selection	566	1	10000	10000	nav	4_4	319	grijs	0.238072201467351
-grijs.foc5.all.selection.bound.min1.soc4.nav.FOC	0.32808277650849366	0.18661958982192506	bound	all	5_5	selection	566	1	FOC	566	nav	4_4	319	grijs	0.23316635606968136
-grijs.foc5.all.selection.bound.min1.soc10.nav.5000	0.2237211607937406	0.10055202049991975	bound	all	5_5	selection	566	1	5000	5000	nav	10_10	319	grijs	0.2463115202270957
-grijs.foc5.all.selection.bound.min1.soc10.nav.10000	0.263298415088197	0.12074171902218025	bound	all	5_5	selection	566	1	10000	10000	nav	10_10	319	grijs	0.2395548150489311
-grijs.foc5.all.selection.bound.min1.soc10.nav.FOC	0.18364553446651818	0.16124533525474125	bound	all	5_5	selection	566	1	FOC	566	nav	10_10	319	grijs	0.22574441582357335
-grijs.foc5.all.selection.bound.min1.soc4.all.5000	0.4374237136538837	0.1367850158468869	bound	all	5_5	selection	566	1	5000	5000	all	4_4	319	grijs	0.2508367108024245
-grijs.foc5.all.selection.bound.min1.soc4.all.10000	0.4635113415952598	0.1381211248795401	bound	all	5_5	selection	566	1	10000	10000	all	4_4	319	grijs	0.24311845910020335
-grijs.foc5.all.selection.bound.min1.soc4.all.FOC	0.3280829379124861	0.18661923298274122	bound	all	5_5	selection	566	1	FOC	566	all	4_4	319	grijs	0.23316635606968136
-grijs.foc5.all.selection.bound.min1.soc10.all.5000	0.22979672458219194	0.09781307069318824	bound	all	5_5	selection	566	1	5000	5000	all	10_10	319	grijs	0.2483520236947804
-grijs.foc5.all.selection.bound.min1.soc10.all.10000	0.24530117648665514	0.11092236067727804	bound	all	5_5	selection	566	1	10000	10000	all	10_10	319	grijs	0.2449214953874309
-grijs.foc5.all.selection.bound.min1.soc10.all.FOC	0.1836453799230319	0.16124589125093788	bound	all	5_5	selection	566	1	FOC	566	all	10_10	319	grijs	0.22574441582357335
-grijs.foc5.all.no.bound.min1.soc4.nav.5000	0.4424845999958951	0.13648414210566076	bound	all	5_5	no	566	1	5000	5000	nav	4_4	319	grijs	0.24552022324286188
-grijs.foc5.all.no.bound.min1.soc4.nav.10000	0.48289561879124476	0.15232932329502008	bound	all	5_5	no	566	1	10000	10000	nav	4_4	319	grijs	0.238072201467351
-grijs.foc5.all.no.bound.min1.soc4.nav.FOC	0.3280821963484401	0.18662086489593366	bound	all	5_5	no	566	1	FOC	566	nav	4_4	319	grijs	0.23316635606968136
-grijs.foc5.all.no.bound.min1.soc10.nav.5000	0.22372111793334626	0.10055222172593342	bound	all	5_5	no	566	1	5000	5000	nav	10_10	319	grijs	0.2463115202270957
-grijs.foc5.all.no.bound.min1.soc10.nav.10000	0.2632985262372056	0.12074137731584021	bound	all	5_5	no	566	1	10000	10000	nav	10_10	319	grijs	0.2395548150489311
-grijs.foc5.all.no.bound.min1.soc10.nav.FOC	0.18364548507707043	0.16124552015713295	bound	all	5_5	no	566	1	FOC	566	nav	10_10	319	grijs	0.22574441582357335
-grijs.foc5.all.no.bound.min1.soc4.all.5000	0.4374192287827508	0.1367848443311205	bound	all	5_5	no	566	1	5000	5000	all	4_4	319	grijs	0.2508367108024245
-grijs.foc5.all.no.bound.min1.soc4.all.10000	0.46353666998274773	0.13812675395179438	bound	all	5_5	no	566	1	10000	10000	all	4_4	319	grijs	0.24311845910020335
-grijs.foc5.all.no.bound.min1.soc4.all.FOC	0.3280824864330612	0.18662023683332585	bound	all	5_5	no	566	1	FOC	566	all	4_4	319	grijs	0.23316635606968136
-grijs.foc5.all.no.bound.min1.soc10.all.5000	0.22979672458224953	0.09781307069296083	bound	all	5_5	no	566	1	5000	5000	all	10_10	319	grijs	0.2483520236947804
-grijs.foc5.all.no.bound.min1.soc10.all.10000	0.24530109135393036	0.11092264340764138	bound	all	5_5	no	566	1	10000	10000	all	10_10	319	grijs	0.2449214953874309
-grijs.foc5.all.no.bound.min1.soc10.all.FOC	0.18364542920605048	0.16124570636182736	bound	all	5_5	no	566	1	FOC	566	all	10_10	319	grijs	0.22574441582357335
+_model	foc_boundaries	foc_context_words	foc_foc_pos	foc_foc_win	foc_minimum_features	foc_ppmi	soc_length	soc_length_num	soc_soc_pos	soc_soc_win	tokens	type	stress
+grijs.foc10.nav.weight.bound.min1.soc4.nav.5000	bound	724	nav	10_10	1	weight	5000	5000	nav	4_4	311	grijs	0.25589703822264614
+grijs.foc10.nav.weight.bound.min1.soc4.nav.10000	bound	724	nav	10_10	1	weight	10000	10000	nav	4_4	311	grijs	0.2528825580405782
+grijs.foc10.nav.weight.bound.min1.soc4.nav.FOC	bound	724	nav	10_10	1	weight	FOC	724	nav	4_4	311	grijs	0.2534815734690278
+grijs.foc10.nav.weight.bound.min1.soc10.nav.5000	bound	724	nav	10_10	1	weight	5000	5000	nav	10_10	311	grijs	0.24851513228032004
+grijs.foc10.nav.weight.bound.min1.soc10.nav.10000	bound	724	nav	10_10	1	weight	10000	10000	nav	10_10	311	grijs	0.24592227720017237
+grijs.foc10.nav.weight.bound.min1.soc10.nav.FOC	bound	724	nav	10_10	1	weight	FOC	724	nav	10_10	311	grijs	0.2408190557536054
+grijs.foc10.nav.weight.bound.min1.soc4.all.5000	bound	724	nav	10_10	1	weight	5000	5000	all	4_4	311	grijs	0.25653388259394216
+grijs.foc10.nav.weight.bound.min1.soc4.all.10000	bound	724	nav	10_10	1	weight	10000	10000	all	4_4	311	grijs	0.25448544695167347
+grijs.foc10.nav.weight.bound.min1.soc4.all.FOC	bound	724	nav	10_10	1	weight	FOC	724	all	4_4	311	grijs	0.2534815734690278
+grijs.foc10.nav.weight.bound.min1.soc10.all.5000	bound	724	nav	10_10	1	weight	5000	5000	all	10_10	311	grijs	0.24861583966372516
+grijs.foc10.nav.weight.bound.min1.soc10.all.10000	bound	724	nav	10_10	1	weight	10000	10000	all	10_10	311	grijs	0.2483514092274459
+grijs.foc10.nav.weight.bound.min1.soc10.all.FOC	bound	724	nav	10_10	1	weight	FOC	724	all	10_10	311	grijs	0.2408190557536054
+grijs.foc10.nav.selection.bound.min1.soc4.nav.5000	bound	724	nav	10_10	1	selection	5000	5000	nav	4_4	311	grijs	0.25269923548210865
+grijs.foc10.nav.selection.bound.min1.soc4.nav.10000	bound	724	nav	10_10	1	selection	10000	10000	nav	4_4	311	grijs	0.24829631836268157
+grijs.foc10.nav.selection.bound.min1.soc4.nav.FOC	bound	724	nav	10_10	1	selection	FOC	724	nav	4_4	311	grijs	0.2484184823582475
+grijs.foc10.nav.selection.bound.min1.soc10.nav.5000	bound	724	nav	10_10	1	selection	5000	5000	nav	10_10	311	grijs	0.24645905243188557
+grijs.foc10.nav.selection.bound.min1.soc10.nav.10000	bound	724	nav	10_10	1	selection	10000	10000	nav	10_10	311	grijs	0.2443690538830936
+grijs.foc10.nav.selection.bound.min1.soc10.nav.FOC	bound	724	nav	10_10	1	selection	FOC	724	nav	10_10	311	grijs	0.23394393574352876
+grijs.foc10.nav.selection.bound.min1.soc4.all.5000	bound	724	nav	10_10	1	selection	5000	5000	all	4_4	311	grijs	0.255554835301926
+grijs.foc10.nav.selection.bound.min1.soc4.all.10000	bound	724	nav	10_10	1	selection	10000	10000	all	4_4	311	grijs	0.25368578764268007
+grijs.foc10.nav.selection.bound.min1.soc4.all.FOC	bound	724	nav	10_10	1	selection	FOC	724	all	4_4	311	grijs	0.2484184823582475
+grijs.foc10.nav.selection.bound.min1.soc10.all.5000	bound	724	nav	10_10	1	selection	5000	5000	all	10_10	311	grijs	0.25011200888424406
+grijs.foc10.nav.selection.bound.min1.soc10.all.10000	bound	724	nav	10_10	1	selection	10000	10000	all	10_10	311	grijs	0.24950835120543022
+grijs.foc10.nav.selection.bound.min1.soc10.all.FOC	bound	724	nav	10_10	1	selection	FOC	724	all	10_10	311	grijs	0.23394393574352876
+grijs.foc10.nav.no.bound.min1.soc4.nav.5000	bound	1049	nav	10_10	1	no	5000	5000	nav	4_4	319	grijs	0.2465948926186832
+grijs.foc10.nav.no.bound.min1.soc4.nav.10000	bound	1049	nav	10_10	1	no	10000	10000	nav	4_4	319	grijs	0.24179965984958113
+grijs.foc10.nav.no.bound.min1.soc4.nav.FOC	bound	1049	nav	10_10	1	no	FOC	1049	nav	4_4	319	grijs	0.24329973566940893
+grijs.foc10.nav.no.bound.min1.soc10.nav.5000	bound	1049	nav	10_10	1	no	5000	5000	nav	10_10	319	grijs	0.23683105603017676
+grijs.foc10.nav.no.bound.min1.soc10.nav.10000	bound	1049	nav	10_10	1	no	10000	10000	nav	10_10	319	grijs	0.23206232710475092
+grijs.foc10.nav.no.bound.min1.soc10.nav.FOC	bound	1049	nav	10_10	1	no	FOC	1049	nav	10_10	319	grijs	0.23402674590516342
+grijs.foc10.nav.no.bound.min1.soc4.all.5000	bound	1049	nav	10_10	1	no	5000	5000	all	4_4	319	grijs	0.25125582305929267
+grijs.foc10.nav.no.bound.min1.soc4.all.10000	bound	1049	nav	10_10	1	no	10000	10000	all	4_4	319	grijs	0.2474858758487346
+grijs.foc10.nav.no.bound.min1.soc4.all.FOC	bound	1049	nav	10_10	1	no	FOC	1049	all	4_4	319	grijs	0.24329973566940893
+grijs.foc10.nav.no.bound.min1.soc10.all.5000	bound	1049	nav	10_10	1	no	5000	5000	all	10_10	319	grijs	0.23979777041761743
+grijs.foc10.nav.no.bound.min1.soc10.all.10000	bound	1049	nav	10_10	1	no	10000	10000	all	10_10	319	grijs	0.23842460146189154
+grijs.foc10.nav.no.bound.min1.soc10.all.FOC	bound	1049	nav	10_10	1	no	FOC	1049	all	10_10	319	grijs	0.23402674590516342
+grijs.foc10.all.weight.bound.min1.soc4.nav.5000	bound	828	all	10_10	1	weight	5000	5000	nav	4_4	319	grijs	0.2534856128483725
+grijs.foc10.all.weight.bound.min1.soc4.nav.10000	bound	828	all	10_10	1	weight	10000	10000	nav	4_4	319	grijs	0.2499691500574861
+grijs.foc10.all.weight.bound.min1.soc4.nav.FOC	bound	828	all	10_10	1	weight	FOC	828	nav	4_4	319	grijs	0.2483865920350966
+grijs.foc10.all.weight.bound.min1.soc10.nav.5000	bound	828	all	10_10	1	weight	5000	5000	nav	10_10	319	grijs	0.2507545990146771
+grijs.foc10.all.weight.bound.min1.soc10.nav.10000	bound	828	all	10_10	1	weight	10000	10000	nav	10_10	319	grijs	0.24674475599619775
+grijs.foc10.all.weight.bound.min1.soc10.nav.FOC	bound	828	all	10_10	1	weight	FOC	828	nav	10_10	319	grijs	0.2422838803523586
+grijs.foc10.all.weight.bound.min1.soc4.all.5000	bound	828	all	10_10	1	weight	5000	5000	all	4_4	319	grijs	0.2550240907695081
+grijs.foc10.all.weight.bound.min1.soc4.all.10000	bound	828	all	10_10	1	weight	10000	10000	all	4_4	319	grijs	0.25175574190846384
+grijs.foc10.all.weight.bound.min1.soc4.all.FOC	bound	828	all	10_10	1	weight	FOC	828	all	4_4	319	grijs	0.2483865920350966
+grijs.foc10.all.weight.bound.min1.soc10.all.5000	bound	828	all	10_10	1	weight	5000	5000	all	10_10	319	grijs	0.25231198601125165
+grijs.foc10.all.weight.bound.min1.soc10.all.10000	bound	828	all	10_10	1	weight	10000	10000	all	10_10	319	grijs	0.24954357642989192
+grijs.foc10.all.weight.bound.min1.soc10.all.FOC	bound	828	all	10_10	1	weight	FOC	828	all	10_10	319	grijs	0.2422838803523586
+grijs.foc10.all.selection.bound.min1.soc4.nav.5000	bound	828	all	10_10	1	selection	5000	5000	nav	4_4	319	grijs	0.24880421263265426
+grijs.foc10.all.selection.bound.min1.soc4.nav.10000	bound	828	all	10_10	1	selection	10000	10000	nav	4_4	319	grijs	0.24046282365238328
+grijs.foc10.all.selection.bound.min1.soc4.nav.FOC	bound	828	all	10_10	1	selection	FOC	828	nav	4_4	319	grijs	0.23141147067218093
+grijs.foc10.all.selection.bound.min1.soc10.nav.5000	bound	828	all	10_10	1	selection	5000	5000	nav	10_10	319	grijs	0.24707100449100453
+grijs.foc10.all.selection.bound.min1.soc10.nav.10000	bound	828	all	10_10	1	selection	10000	10000	nav	10_10	319	grijs	0.24076542952375404
+grijs.foc10.all.selection.bound.min1.soc10.nav.FOC	bound	828	all	10_10	1	selection	FOC	828	nav	10_10	319	grijs	0.22880975723979485
+grijs.foc10.all.selection.bound.min1.soc4.all.5000	bound	828	all	10_10	1	selection	5000	5000	all	4_4	319	grijs	0.2561678023692157
+grijs.foc10.all.selection.bound.min1.soc4.all.10000	bound	828	all	10_10	1	selection	10000	10000	all	4_4	319	grijs	0.24778699721988293
+grijs.foc10.all.selection.bound.min1.soc4.all.FOC	bound	828	all	10_10	1	selection	FOC	828	all	4_4	319	grijs	0.23141147067218093
+grijs.foc10.all.selection.bound.min1.soc10.all.5000	bound	828	all	10_10	1	selection	5000	5000	all	10_10	319	grijs	0.2509912839443986
+grijs.foc10.all.selection.bound.min1.soc10.all.10000	bound	828	all	10_10	1	selection	10000	10000	all	10_10	319	grijs	0.24750740723929446
+grijs.foc10.all.selection.bound.min1.soc10.all.FOC	bound	828	all	10_10	1	selection	FOC	828	all	10_10	319	grijs	0.22880975723979485
+grijs.foc10.all.no.bound.min1.soc4.nav.5000	bound	1239	all	10_10	1	no	5000	5000	nav	4_4	319	grijs	0.24372267084655
+grijs.foc10.all.no.bound.min1.soc4.nav.10000	bound	1239	all	10_10	1	no	10000	10000	nav	4_4	319	grijs	0.23676668906334788
+grijs.foc10.all.no.bound.min1.soc4.nav.FOC	bound	1239	all	10_10	1	no	FOC	1239	nav	4_4	319	grijs	0.23068108641678375
+grijs.foc10.all.no.bound.min1.soc10.nav.5000	bound	1239	all	10_10	1	no	5000	5000	nav	10_10	319	grijs	0.23541996262334292
+grijs.foc10.all.no.bound.min1.soc10.nav.10000	bound	1239	all	10_10	1	no	10000	10000	nav	10_10	319	grijs	0.2298775774107636
+grijs.foc10.all.no.bound.min1.soc10.nav.FOC	bound	1239	all	10_10	1	no	FOC	1239	nav	10_10	319	grijs	0.2289690218419653
+grijs.foc10.all.no.bound.min1.soc4.all.5000	bound	1239	all	10_10	1	no	5000	5000	all	4_4	319	grijs	0.24858458831725513
+grijs.foc10.all.no.bound.min1.soc4.all.10000	bound	1239	all	10_10	1	no	10000	10000	all	4_4	319	grijs	0.2422996407906259
+grijs.foc10.all.no.bound.min1.soc4.all.FOC	bound	1239	all	10_10	1	no	FOC	1239	all	4_4	319	grijs	0.23068108641678375
+grijs.foc10.all.no.bound.min1.soc10.all.5000	bound	1239	all	10_10	1	no	5000	5000	all	10_10	319	grijs	0.23956057150300164
+grijs.foc10.all.no.bound.min1.soc10.all.10000	bound	1239	all	10_10	1	no	10000	10000	all	10_10	319	grijs	0.23741676921202418
+grijs.foc10.all.no.bound.min1.soc10.all.FOC	bound	1239	all	10_10	1	no	FOC	1239	all	10_10	319	grijs	0.2289690218419653
+grijs.foc5.nav.weight.bound.min1.soc4.nav.5000	bound	477	nav	5_5	1	weight	5000	5000	nav	4_4	304	grijs	0.2627167019237382
+grijs.foc5.nav.weight.bound.min1.soc4.nav.10000	bound	477	nav	5_5	1	weight	10000	10000	nav	4_4	304	grijs	0.2601212587051142
+grijs.foc5.nav.weight.bound.min1.soc4.nav.FOC	bound	477	nav	5_5	1	weight	FOC	477	nav	4_4	304	grijs	0.2599840008572969
+grijs.foc5.nav.weight.bound.min1.soc10.nav.5000	bound	477	nav	5_5	1	weight	5000	5000	nav	10_10	304	grijs	0.25304904291365415
+grijs.foc5.nav.weight.bound.min1.soc10.nav.10000	bound	477	nav	5_5	1	weight	10000	10000	nav	10_10	304	grijs	0.25136632844366874
+grijs.foc5.nav.weight.bound.min1.soc10.nav.FOC	bound	477	nav	5_5	1	weight	FOC	477	nav	10_10	304	grijs	0.2453090135451102
+grijs.foc5.nav.weight.bound.min1.soc4.all.5000	bound	477	nav	5_5	1	weight	5000	5000	all	4_4	304	grijs	0.2614743390403037
+grijs.foc5.nav.weight.bound.min1.soc4.all.10000	bound	477	nav	5_5	1	weight	10000	10000	all	4_4	304	grijs	0.26122666511145753
+grijs.foc5.nav.weight.bound.min1.soc4.all.FOC	bound	477	nav	5_5	1	weight	FOC	477	all	4_4	304	grijs	0.2599840008572969
+grijs.foc5.nav.weight.bound.min1.soc10.all.5000	bound	477	nav	5_5	1	weight	5000	5000	all	10_10	304	grijs	0.25098443293785094
+grijs.foc5.nav.weight.bound.min1.soc10.all.10000	bound	477	nav	5_5	1	weight	10000	10000	all	10_10	304	grijs	0.2527362587554403
+grijs.foc5.nav.weight.bound.min1.soc10.all.FOC	bound	477	nav	5_5	1	weight	FOC	477	all	10_10	304	grijs	0.2453090135451102
+grijs.foc5.nav.selection.bound.min1.soc4.nav.5000	bound	477	nav	5_5	1	selection	5000	5000	nav	4_4	304	grijs	0.25255348451115966
+grijs.foc5.nav.selection.bound.min1.soc4.nav.10000	bound	477	nav	5_5	1	selection	10000	10000	nav	4_4	304	grijs	0.2481144732539925
+grijs.foc5.nav.selection.bound.min1.soc4.nav.FOC	bound	477	nav	5_5	1	selection	FOC	477	nav	4_4	304	grijs	0.24965909727527844
+grijs.foc5.nav.selection.bound.min1.soc10.nav.5000	bound	477	nav	5_5	1	selection	5000	5000	nav	10_10	304	grijs	0.24674738813651861
+grijs.foc5.nav.selection.bound.min1.soc10.nav.10000	bound	477	nav	5_5	1	selection	10000	10000	nav	10_10	304	grijs	0.24536353428071517
+grijs.foc5.nav.selection.bound.min1.soc10.nav.FOC	bound	477	nav	5_5	1	selection	FOC	477	nav	10_10	304	grijs	0.23587515790693292
+grijs.foc5.nav.selection.bound.min1.soc4.all.5000	bound	477	nav	5_5	1	selection	5000	5000	all	4_4	304	grijs	0.25505537248859356
+grijs.foc5.nav.selection.bound.min1.soc4.all.10000	bound	477	nav	5_5	1	selection	10000	10000	all	4_4	304	grijs	0.25209457801778506
+grijs.foc5.nav.selection.bound.min1.soc4.all.FOC	bound	477	nav	5_5	1	selection	FOC	477	all	4_4	304	grijs	0.24965909727527844
+grijs.foc5.nav.selection.bound.min1.soc10.all.5000	bound	477	nav	5_5	1	selection	5000	5000	all	10_10	304	grijs	0.2478596290665315
+grijs.foc5.nav.selection.bound.min1.soc10.all.10000	bound	477	nav	5_5	1	selection	10000	10000	all	10_10	304	grijs	0.24781730069788702
+grijs.foc5.nav.selection.bound.min1.soc10.all.FOC	bound	477	nav	5_5	1	selection	FOC	477	all	10_10	304	grijs	0.23587515790693292
+grijs.foc5.nav.no.bound.min1.soc4.nav.5000	bound	663	nav	5_5	1	no	5000	5000	nav	4_4	317	grijs	0.2471851066188442
+grijs.foc5.nav.no.bound.min1.soc4.nav.10000	bound	663	nav	5_5	1	no	10000	10000	nav	4_4	317	grijs	0.24321426142036282
+grijs.foc5.nav.no.bound.min1.soc4.nav.FOC	bound	663	nav	5_5	1	no	FOC	663	nav	4_4	317	grijs	0.255001349806268
+grijs.foc5.nav.no.bound.min1.soc10.nav.5000	bound	663	nav	5_5	1	no	5000	5000	nav	10_10	317	grijs	0.24622560506835386
+grijs.foc5.nav.no.bound.min1.soc10.nav.10000	bound	663	nav	5_5	1	no	10000	10000	nav	10_10	317	grijs	0.241606701804545
+grijs.foc5.nav.no.bound.min1.soc10.nav.FOC	bound	663	nav	5_5	1	no	FOC	663	nav	10_10	317	grijs	0.24590698273562156
+grijs.foc5.nav.no.bound.min1.soc4.all.5000	bound	663	nav	5_5	1	no	5000	5000	all	4_4	317	grijs	0.25092570585740503
+grijs.foc5.nav.no.bound.min1.soc4.all.10000	bound	663	nav	5_5	1	no	10000	10000	all	4_4	317	grijs	0.24734086471539418
+grijs.foc5.nav.no.bound.min1.soc4.all.FOC	bound	663	nav	5_5	1	no	FOC	663	all	4_4	317	grijs	0.255001349806268
+grijs.foc5.nav.no.bound.min1.soc10.all.5000	bound	663	nav	5_5	1	no	5000	5000	all	10_10	317	grijs	0.24962785716266025
+grijs.foc5.nav.no.bound.min1.soc10.all.10000	bound	663	nav	5_5	1	no	10000	10000	all	10_10	317	grijs	0.2476724896634937
+grijs.foc5.nav.no.bound.min1.soc10.all.FOC	bound	663	nav	5_5	1	no	FOC	663	all	10_10	317	grijs	0.24590698273562156
+grijs.foc5.all.weight.bound.min1.soc4.nav.5000	bound	566	all	5_5	1	weight	5000	5000	nav	4_4	319	grijs	0.25659832757760836
+grijs.foc5.all.weight.bound.min1.soc4.nav.10000	bound	566	all	5_5	1	weight	10000	10000	nav	4_4	319	grijs	0.25480614302315235
+grijs.foc5.all.weight.bound.min1.soc4.nav.FOC	bound	566	all	5_5	1	weight	FOC	566	nav	4_4	319	grijs	0.25965364952228437
+grijs.foc5.all.weight.bound.min1.soc10.nav.5000	bound	566	all	5_5	1	weight	5000	5000	nav	10_10	319	grijs	0.2551254418108374
+grijs.foc5.all.weight.bound.min1.soc10.nav.10000	bound	566	all	5_5	1	weight	10000	10000	nav	10_10	319	grijs	0.25092918710589973
+grijs.foc5.all.weight.bound.min1.soc10.nav.FOC	bound	566	all	5_5	1	weight	FOC	566	nav	10_10	319	grijs	0.24677478877398984
+grijs.foc5.all.weight.bound.min1.soc4.all.5000	bound	566	all	5_5	1	weight	5000	5000	all	4_4	319	grijs	0.25668641955401844
+grijs.foc5.all.weight.bound.min1.soc4.all.10000	bound	566	all	5_5	1	weight	10000	10000	all	4_4	319	grijs	0.25422732563408706
+grijs.foc5.all.weight.bound.min1.soc4.all.FOC	bound	566	all	5_5	1	weight	FOC	566	all	4_4	319	grijs	0.25965364952228437
+grijs.foc5.all.weight.bound.min1.soc10.all.5000	bound	566	all	5_5	1	weight	5000	5000	all	10_10	319	grijs	0.2539977347857052
+grijs.foc5.all.weight.bound.min1.soc10.all.10000	bound	566	all	5_5	1	weight	10000	10000	all	10_10	319	grijs	0.25266078320213076
+grijs.foc5.all.weight.bound.min1.soc10.all.FOC	bound	566	all	5_5	1	weight	FOC	566	all	10_10	319	grijs	0.24677478877398984
+grijs.foc5.all.selection.bound.min1.soc4.nav.5000	bound	566	all	5_5	1	selection	5000	5000	nav	4_4	319	grijs	0.24552022324286188
+grijs.foc5.all.selection.bound.min1.soc4.nav.10000	bound	566	all	5_5	1	selection	10000	10000	nav	4_4	319	grijs	0.238072201467351
+grijs.foc5.all.selection.bound.min1.soc4.nav.FOC	bound	566	all	5_5	1	selection	FOC	566	nav	4_4	319	grijs	0.23316635606968136
+grijs.foc5.all.selection.bound.min1.soc10.nav.5000	bound	566	all	5_5	1	selection	5000	5000	nav	10_10	319	grijs	0.2463115202270957
+grijs.foc5.all.selection.bound.min1.soc10.nav.10000	bound	566	all	5_5	1	selection	10000	10000	nav	10_10	319	grijs	0.2395548150489311
+grijs.foc5.all.selection.bound.min1.soc10.nav.FOC	bound	566	all	5_5	1	selection	FOC	566	nav	10_10	319	grijs	0.22574441582357335
+grijs.foc5.all.selection.bound.min1.soc4.all.5000	bound	566	all	5_5	1	selection	5000	5000	all	4_4	319	grijs	0.2508367108024245
+grijs.foc5.all.selection.bound.min1.soc4.all.10000	bound	566	all	5_5	1	selection	10000	10000	all	4_4	319	grijs	0.24311845910020335
+grijs.foc5.all.selection.bound.min1.soc4.all.FOC	bound	566	all	5_5	1	selection	FOC	566	all	4_4	319	grijs	0.23316635606968136
+grijs.foc5.all.selection.bound.min1.soc10.all.5000	bound	566	all	5_5	1	selection	5000	5000	all	10_10	319	grijs	0.2483520236947804
+grijs.foc5.all.selection.bound.min1.soc10.all.10000	bound	566	all	5_5	1	selection	10000	10000	all	10_10	319	grijs	0.2449214953874309
+grijs.foc5.all.selection.bound.min1.soc10.all.FOC	bound	566	all	5_5	1	selection	FOC	566	all	10_10	319	grijs	0.22574441582357335
+grijs.foc5.all.no.bound.min1.soc4.nav.5000	bound	814	all	5_5	1	no	5000	5000	nav	4_4	319	grijs	0.2471298856703538
+grijs.foc5.all.no.bound.min1.soc4.nav.10000	bound	814	all	5_5	1	no	10000	10000	nav	4_4	319	grijs	0.24359749433941372
+grijs.foc5.all.no.bound.min1.soc4.nav.FOC	bound	814	all	5_5	1	no	FOC	814	nav	4_4	319	grijs	0.2366349464787648
+grijs.foc5.all.no.bound.min1.soc10.nav.5000	bound	814	all	5_5	1	no	5000	5000	nav	10_10	319	grijs	0.2424964437008959
+grijs.foc5.all.no.bound.min1.soc10.nav.10000	bound	814	all	5_5	1	no	10000	10000	nav	10_10	319	grijs	0.23845252595046318
+grijs.foc5.all.no.bound.min1.soc10.nav.FOC	bound	814	all	5_5	1	no	FOC	814	nav	10_10	319	grijs	0.23400215951345624
+grijs.foc5.all.no.bound.min1.soc4.all.5000	bound	814	all	5_5	1	no	5000	5000	all	4_4	319	grijs	0.2489393359169776
+grijs.foc5.all.no.bound.min1.soc4.all.10000	bound	814	all	5_5	1	no	10000	10000	all	4_4	319	grijs	0.244813196577505
+grijs.foc5.all.no.bound.min1.soc4.all.FOC	bound	814	all	5_5	1	no	FOC	814	all	4_4	319	grijs	0.2366349464787648
+grijs.foc5.all.no.bound.min1.soc10.all.5000	bound	814	all	5_5	1	no	5000	5000	all	10_10	319	grijs	0.24286851720507133
+grijs.foc5.all.no.bound.min1.soc10.all.10000	bound	814	all	5_5	1	no	10000	10000	all	10_10	319	grijs	0.24090503878219116
+grijs.foc5.all.no.bound.min1.soc10.all.FOC	bound	814	all	5_5	1	no	FOC	814	all	10_10	319	grijs	0.23400215951345624
