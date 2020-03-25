@@ -1,145 +1,145 @@
-_model	foc_boundaries	foc_context_words	foc_foc_pos	foc_foc_win	foc_minimum_features	foc_ppmi	soc_length	soc_length_num	soc_soc_pos	soc_soc_win	tokens	type	stress
-goedkoop.foc10.nav.weight.bound.min1.soc4.nav.5000	bound	622	nav	10_10	1	weight	5000	5000	nav	4_4	319	goedkoop	0.2645468291683116
-goedkoop.foc10.nav.weight.bound.min1.soc4.nav.10000	bound	622	nav	10_10	1	weight	10000	10000	nav	4_4	319	goedkoop	0.26520531146463844
-goedkoop.foc10.nav.weight.bound.min1.soc4.nav.FOC	bound	622	nav	10_10	1	weight	FOC	622	nav	4_4	319	goedkoop	0.2793392572482562
-goedkoop.foc10.nav.weight.bound.min1.soc10.nav.5000	bound	622	nav	10_10	1	weight	5000	5000	nav	10_10	319	goedkoop	0.2566549606126725
-goedkoop.foc10.nav.weight.bound.min1.soc10.nav.10000	bound	622	nav	10_10	1	weight	10000	10000	nav	10_10	319	goedkoop	0.2582604015028457
-goedkoop.foc10.nav.weight.bound.min1.soc10.nav.FOC	bound	622	nav	10_10	1	weight	FOC	622	nav	10_10	319	goedkoop	0.2681901631858477
-goedkoop.foc10.nav.weight.bound.min1.soc4.all.5000	bound	622	nav	10_10	1	weight	5000	5000	all	4_4	319	goedkoop	0.26407976365261604
-goedkoop.foc10.nav.weight.bound.min1.soc4.all.10000	bound	622	nav	10_10	1	weight	10000	10000	all	4_4	319	goedkoop	0.26346403149648723
-goedkoop.foc10.nav.weight.bound.min1.soc4.all.FOC	bound	622	nav	10_10	1	weight	FOC	622	all	4_4	319	goedkoop	0.2793392572482562
-goedkoop.foc10.nav.weight.bound.min1.soc10.all.5000	bound	622	nav	10_10	1	weight	5000	5000	all	10_10	319	goedkoop	0.25301313389673596
-goedkoop.foc10.nav.weight.bound.min1.soc10.all.10000	bound	622	nav	10_10	1	weight	10000	10000	all	10_10	319	goedkoop	0.25540612970592086
-goedkoop.foc10.nav.weight.bound.min1.soc10.all.FOC	bound	622	nav	10_10	1	weight	FOC	622	all	10_10	319	goedkoop	0.2681901631858477
-goedkoop.foc10.nav.selection.bound.min1.soc4.nav.5000	bound	622	nav	10_10	1	selection	5000	5000	nav	4_4	319	goedkoop	0.25347737728726577
-goedkoop.foc10.nav.selection.bound.min1.soc4.nav.10000	bound	622	nav	10_10	1	selection	10000	10000	nav	4_4	319	goedkoop	0.25135144156283956
-goedkoop.foc10.nav.selection.bound.min1.soc4.nav.FOC	bound	622	nav	10_10	1	selection	FOC	622	nav	4_4	319	goedkoop	0.2641004006592295
-goedkoop.foc10.nav.selection.bound.min1.soc10.nav.5000	bound	622	nav	10_10	1	selection	5000	5000	nav	10_10	319	goedkoop	0.25203515148102495
-goedkoop.foc10.nav.selection.bound.min1.soc10.nav.10000	bound	622	nav	10_10	1	selection	10000	10000	nav	10_10	319	goedkoop	0.25322861232794674
-goedkoop.foc10.nav.selection.bound.min1.soc10.nav.FOC	bound	622	nav	10_10	1	selection	FOC	622	nav	10_10	319	goedkoop	0.2604893021034081
-goedkoop.foc10.nav.selection.bound.min1.soc4.all.5000	bound	622	nav	10_10	1	selection	5000	5000	all	4_4	319	goedkoop	0.25303082169853025
-goedkoop.foc10.nav.selection.bound.min1.soc4.all.10000	bound	622	nav	10_10	1	selection	10000	10000	all	4_4	319	goedkoop	0.25316622920725607
-goedkoop.foc10.nav.selection.bound.min1.soc4.all.FOC	bound	622	nav	10_10	1	selection	FOC	622	all	4_4	319	goedkoop	0.2641004006592295
-goedkoop.foc10.nav.selection.bound.min1.soc10.all.5000	bound	622	nav	10_10	1	selection	5000	5000	all	10_10	319	goedkoop	0.2497164982123196
-goedkoop.foc10.nav.selection.bound.min1.soc10.all.10000	bound	622	nav	10_10	1	selection	10000	10000	all	10_10	319	goedkoop	0.25243322523089085
-goedkoop.foc10.nav.selection.bound.min1.soc10.all.FOC	bound	622	nav	10_10	1	selection	FOC	622	all	10_10	319	goedkoop	0.2604893021034081
-goedkoop.foc10.nav.no.bound.min1.soc4.nav.5000	bound	954	nav	10_10	1	no	5000	5000	nav	4_4	320	goedkoop	0.25977102195476653
-goedkoop.foc10.nav.no.bound.min1.soc4.nav.10000	bound	954	nav	10_10	1	no	10000	10000	nav	4_4	320	goedkoop	0.2563183411959111
-goedkoop.foc10.nav.no.bound.min1.soc4.nav.FOC	bound	954	nav	10_10	1	no	FOC	954	nav	4_4	320	goedkoop	0.2619796461470776
-goedkoop.foc10.nav.no.bound.min1.soc10.nav.5000	bound	954	nav	10_10	1	no	5000	5000	nav	10_10	320	goedkoop	0.2509373716776224
-goedkoop.foc10.nav.no.bound.min1.soc10.nav.10000	bound	954	nav	10_10	1	no	10000	10000	nav	10_10	320	goedkoop	0.25007590424994813
-goedkoop.foc10.nav.no.bound.min1.soc10.nav.FOC	bound	954	nav	10_10	1	no	FOC	954	nav	10_10	320	goedkoop	0.256531434928887
-goedkoop.foc10.nav.no.bound.min1.soc4.all.5000	bound	954	nav	10_10	1	no	5000	5000	all	4_4	320	goedkoop	0.2615750919183241
-goedkoop.foc10.nav.no.bound.min1.soc4.all.10000	bound	954	nav	10_10	1	no	10000	10000	all	4_4	320	goedkoop	0.25968505689847554
-goedkoop.foc10.nav.no.bound.min1.soc4.all.FOC	bound	954	nav	10_10	1	no	FOC	954	all	4_4	320	goedkoop	0.2619796461470776
-goedkoop.foc10.nav.no.bound.min1.soc10.all.5000	bound	954	nav	10_10	1	no	5000	5000	all	10_10	320	goedkoop	0.2517127338873746
-goedkoop.foc10.nav.no.bound.min1.soc10.all.10000	bound	954	nav	10_10	1	no	10000	10000	all	10_10	320	goedkoop	0.2526547675757776
-goedkoop.foc10.nav.no.bound.min1.soc10.all.FOC	bound	954	nav	10_10	1	no	FOC	954	all	10_10	320	goedkoop	0.256531434928887
-goedkoop.foc10.all.weight.bound.min1.soc4.nav.5000	bound	725	all	10_10	1	weight	5000	5000	nav	4_4	319	goedkoop	0.261007947268699
-goedkoop.foc10.all.weight.bound.min1.soc4.nav.10000	bound	725	all	10_10	1	weight	10000	10000	nav	4_4	319	goedkoop	0.26139208485163284
-goedkoop.foc10.all.weight.bound.min1.soc4.nav.FOC	bound	725	all	10_10	1	weight	FOC	725	nav	4_4	319	goedkoop	0.2791284364693489
-goedkoop.foc10.all.weight.bound.min1.soc10.nav.5000	bound	725	all	10_10	1	weight	5000	5000	nav	10_10	319	goedkoop	0.25362858006618666
-goedkoop.foc10.all.weight.bound.min1.soc10.nav.10000	bound	725	all	10_10	1	weight	10000	10000	nav	10_10	319	goedkoop	0.2560549315646652
-goedkoop.foc10.all.weight.bound.min1.soc10.nav.FOC	bound	725	all	10_10	1	weight	FOC	725	nav	10_10	319	goedkoop	0.26590257313534804
-goedkoop.foc10.all.weight.bound.min1.soc4.all.5000	bound	725	all	10_10	1	weight	5000	5000	all	4_4	319	goedkoop	0.26029597501203855
-goedkoop.foc10.all.weight.bound.min1.soc4.all.10000	bound	725	all	10_10	1	weight	10000	10000	all	4_4	319	goedkoop	0.25958329615139436
-goedkoop.foc10.all.weight.bound.min1.soc4.all.FOC	bound	725	all	10_10	1	weight	FOC	725	all	4_4	319	goedkoop	0.2791284364693489
-goedkoop.foc10.all.weight.bound.min1.soc10.all.5000	bound	725	all	10_10	1	weight	5000	5000	all	10_10	319	goedkoop	0.24995405423229025
-goedkoop.foc10.all.weight.bound.min1.soc10.all.10000	bound	725	all	10_10	1	weight	10000	10000	all	10_10	319	goedkoop	0.25261550347174927
-goedkoop.foc10.all.weight.bound.min1.soc10.all.FOC	bound	725	all	10_10	1	weight	FOC	725	all	10_10	319	goedkoop	0.26590257313534804
-goedkoop.foc10.all.selection.bound.min1.soc4.nav.5000	bound	725	all	10_10	1	selection	5000	5000	nav	4_4	319	goedkoop	0.2565306538807062
-goedkoop.foc10.all.selection.bound.min1.soc4.nav.10000	bound	725	all	10_10	1	selection	10000	10000	nav	4_4	319	goedkoop	0.25492977290845575
-goedkoop.foc10.all.selection.bound.min1.soc4.nav.FOC	bound	725	all	10_10	1	selection	FOC	725	nav	4_4	319	goedkoop	0.2538633846052256
-goedkoop.foc10.all.selection.bound.min1.soc10.nav.5000	bound	725	all	10_10	1	selection	5000	5000	nav	10_10	319	goedkoop	0.24902725316775098
-goedkoop.foc10.all.selection.bound.min1.soc10.nav.10000	bound	725	all	10_10	1	selection	10000	10000	nav	10_10	319	goedkoop	0.25193313323132616
-goedkoop.foc10.all.selection.bound.min1.soc10.nav.FOC	bound	725	all	10_10	1	selection	FOC	725	nav	10_10	319	goedkoop	0.25737656120607416
-goedkoop.foc10.all.selection.bound.min1.soc4.all.5000	bound	725	all	10_10	1	selection	5000	5000	all	4_4	319	goedkoop	0.2540655449693789
-goedkoop.foc10.all.selection.bound.min1.soc4.all.10000	bound	725	all	10_10	1	selection	10000	10000	all	4_4	319	goedkoop	0.2560613106960984
-goedkoop.foc10.all.selection.bound.min1.soc4.all.FOC	bound	725	all	10_10	1	selection	FOC	725	all	4_4	319	goedkoop	0.2538633846052256
-goedkoop.foc10.all.selection.bound.min1.soc10.all.5000	bound	725	all	10_10	1	selection	5000	5000	all	10_10	319	goedkoop	0.244486149433773
-goedkoop.foc10.all.selection.bound.min1.soc10.all.10000	bound	725	all	10_10	1	selection	10000	10000	all	10_10	319	goedkoop	0.24886393274123478
-goedkoop.foc10.all.selection.bound.min1.soc10.all.FOC	bound	725	all	10_10	1	selection	FOC	725	all	10_10	319	goedkoop	0.25737656120607416
-goedkoop.foc10.all.no.bound.min1.soc4.nav.5000	bound	1136	all	10_10	1	no	5000	5000	nav	4_4	320	goedkoop	0.24768579414808065
-goedkoop.foc10.all.no.bound.min1.soc4.nav.10000	bound	1136	all	10_10	1	no	10000	10000	nav	4_4	320	goedkoop	0.24339420117122146
-goedkoop.foc10.all.no.bound.min1.soc4.nav.FOC	bound	1136	all	10_10	1	no	FOC	1136	nav	4_4	320	goedkoop	0.24595801602893022
-goedkoop.foc10.all.no.bound.min1.soc10.nav.5000	bound	1136	all	10_10	1	no	5000	5000	nav	10_10	320	goedkoop	0.2447334428269002
-goedkoop.foc10.all.no.bound.min1.soc10.nav.10000	bound	1136	all	10_10	1	no	10000	10000	nav	10_10	320	goedkoop	0.24579498179403486
-goedkoop.foc10.all.no.bound.min1.soc10.nav.FOC	bound	1136	all	10_10	1	no	FOC	1136	nav	10_10	320	goedkoop	0.24605521382412002
-goedkoop.foc10.all.no.bound.min1.soc4.all.5000	bound	1136	all	10_10	1	no	5000	5000	all	4_4	320	goedkoop	0.24655896551180942
-goedkoop.foc10.all.no.bound.min1.soc4.all.10000	bound	1136	all	10_10	1	no	10000	10000	all	4_4	320	goedkoop	0.24552075402095108
-goedkoop.foc10.all.no.bound.min1.soc4.all.FOC	bound	1136	all	10_10	1	no	FOC	1136	all	4_4	320	goedkoop	0.24595801602893022
-goedkoop.foc10.all.no.bound.min1.soc10.all.5000	bound	1136	all	10_10	1	no	5000	5000	all	10_10	320	goedkoop	0.23963277076630662
-goedkoop.foc10.all.no.bound.min1.soc10.all.10000	bound	1136	all	10_10	1	no	10000	10000	all	10_10	320	goedkoop	0.24296739095387246
-goedkoop.foc10.all.no.bound.min1.soc10.all.FOC	bound	1136	all	10_10	1	no	FOC	1136	all	10_10	320	goedkoop	0.24605521382412002
-goedkoop.foc5.nav.weight.bound.min1.soc4.nav.5000	bound	452	nav	5_5	1	weight	5000	5000	nav	4_4	314	goedkoop	0.2622350180650856
-goedkoop.foc5.nav.weight.bound.min1.soc4.nav.10000	bound	452	nav	5_5	1	weight	10000	10000	nav	4_4	314	goedkoop	0.2609594751350005
-goedkoop.foc5.nav.weight.bound.min1.soc4.nav.FOC	bound	452	nav	5_5	1	weight	FOC	452	nav	4_4	314	goedkoop	0.2774058981786554
-goedkoop.foc5.nav.weight.bound.min1.soc10.nav.5000	bound	452	nav	5_5	1	weight	5000	5000	nav	10_10	314	goedkoop	0.25319773510405374
-goedkoop.foc5.nav.weight.bound.min1.soc10.nav.10000	bound	452	nav	5_5	1	weight	10000	10000	nav	10_10	314	goedkoop	0.25336839771981
-goedkoop.foc5.nav.weight.bound.min1.soc10.nav.FOC	bound	452	nav	5_5	1	weight	FOC	452	nav	10_10	314	goedkoop	0.26148808622297287
-goedkoop.foc5.nav.weight.bound.min1.soc4.all.5000	bound	452	nav	5_5	1	weight	5000	5000	all	4_4	314	goedkoop	0.2611728731332176
-goedkoop.foc5.nav.weight.bound.min1.soc4.all.10000	bound	452	nav	5_5	1	weight	10000	10000	all	4_4	314	goedkoop	0.26040417555198203
-goedkoop.foc5.nav.weight.bound.min1.soc4.all.FOC	bound	452	nav	5_5	1	weight	FOC	452	all	4_4	314	goedkoop	0.2774058981786554
-goedkoop.foc5.nav.weight.bound.min1.soc10.all.5000	bound	452	nav	5_5	1	weight	5000	5000	all	10_10	314	goedkoop	0.24987947514340264
-goedkoop.foc5.nav.weight.bound.min1.soc10.all.10000	bound	452	nav	5_5	1	weight	10000	10000	all	10_10	314	goedkoop	0.25153482885939465
-goedkoop.foc5.nav.weight.bound.min1.soc10.all.FOC	bound	452	nav	5_5	1	weight	FOC	452	all	10_10	314	goedkoop	0.26148808622297287
-goedkoop.foc5.nav.selection.bound.min1.soc4.nav.5000	bound	452	nav	5_5	1	selection	5000	5000	nav	4_4	314	goedkoop	0.26030696916456286
-goedkoop.foc5.nav.selection.bound.min1.soc4.nav.10000	bound	452	nav	5_5	1	selection	10000	10000	nav	4_4	314	goedkoop	0.2572091603788997
-goedkoop.foc5.nav.selection.bound.min1.soc4.nav.FOC	bound	452	nav	5_5	1	selection	FOC	452	nav	4_4	314	goedkoop	0.26869686407189536
-goedkoop.foc5.nav.selection.bound.min1.soc10.nav.5000	bound	452	nav	5_5	1	selection	5000	5000	nav	10_10	314	goedkoop	0.2541861602416118
-goedkoop.foc5.nav.selection.bound.min1.soc10.nav.10000	bound	452	nav	5_5	1	selection	10000	10000	nav	10_10	314	goedkoop	0.2558590257752628
-goedkoop.foc5.nav.selection.bound.min1.soc10.nav.FOC	bound	452	nav	5_5	1	selection	FOC	452	nav	10_10	314	goedkoop	0.2616227852740382
-goedkoop.foc5.nav.selection.bound.min1.soc4.all.5000	bound	452	nav	5_5	1	selection	5000	5000	all	4_4	314	goedkoop	0.2616004282964425
-goedkoop.foc5.nav.selection.bound.min1.soc4.all.10000	bound	452	nav	5_5	1	selection	10000	10000	all	4_4	314	goedkoop	0.2618225016693274
-goedkoop.foc5.nav.selection.bound.min1.soc4.all.FOC	bound	452	nav	5_5	1	selection	FOC	452	all	4_4	314	goedkoop	0.26869686407189536
-goedkoop.foc5.nav.selection.bound.min1.soc10.all.5000	bound	452	nav	5_5	1	selection	5000	5000	all	10_10	314	goedkoop	0.2518332677759195
-goedkoop.foc5.nav.selection.bound.min1.soc10.all.10000	bound	452	nav	5_5	1	selection	10000	10000	all	10_10	314	goedkoop	0.2554825822816757
-goedkoop.foc5.nav.selection.bound.min1.soc10.all.FOC	bound	452	nav	5_5	1	selection	FOC	452	all	10_10	314	goedkoop	0.2616227852740382
-goedkoop.foc5.nav.no.bound.min1.soc4.nav.5000	bound	631	nav	5_5	1	no	5000	5000	nav	4_4	320	goedkoop	0.263781152381143
-goedkoop.foc5.nav.no.bound.min1.soc4.nav.10000	bound	631	nav	5_5	1	no	10000	10000	nav	4_4	320	goedkoop	0.2596345945804893
-goedkoop.foc5.nav.no.bound.min1.soc4.nav.FOC	bound	631	nav	5_5	1	no	FOC	631	nav	4_4	320	goedkoop	0.26782024015075395
-goedkoop.foc5.nav.no.bound.min1.soc10.nav.5000	bound	631	nav	5_5	1	no	5000	5000	nav	10_10	320	goedkoop	0.256050308082891
-goedkoop.foc5.nav.no.bound.min1.soc10.nav.10000	bound	631	nav	5_5	1	no	10000	10000	nav	10_10	320	goedkoop	0.25491863395861586
-goedkoop.foc5.nav.no.bound.min1.soc10.nav.FOC	bound	631	nav	5_5	1	no	FOC	631	nav	10_10	320	goedkoop	0.2592775534979255
-goedkoop.foc5.nav.no.bound.min1.soc4.all.5000	bound	631	nav	5_5	1	no	5000	5000	all	4_4	320	goedkoop	0.2658513300903183
-goedkoop.foc5.nav.no.bound.min1.soc4.all.10000	bound	631	nav	5_5	1	no	10000	10000	all	4_4	320	goedkoop	0.26408511125033307
-goedkoop.foc5.nav.no.bound.min1.soc4.all.FOC	bound	631	nav	5_5	1	no	FOC	631	all	4_4	320	goedkoop	0.26782024015075395
-goedkoop.foc5.nav.no.bound.min1.soc10.all.5000	bound	631	nav	5_5	1	no	5000	5000	all	10_10	320	goedkoop	0.2548704562992979
-goedkoop.foc5.nav.no.bound.min1.soc10.all.10000	bound	631	nav	5_5	1	no	10000	10000	all	10_10	320	goedkoop	0.2571811612550521
-goedkoop.foc5.nav.no.bound.min1.soc10.all.FOC	bound	631	nav	5_5	1	no	FOC	631	all	10_10	320	goedkoop	0.2592775534979255
-goedkoop.foc5.all.weight.bound.min1.soc4.nav.5000	bound	528	all	5_5	1	weight	5000	5000	nav	4_4	316	goedkoop	0.26111941427050167
-goedkoop.foc5.all.weight.bound.min1.soc4.nav.10000	bound	528	all	5_5	1	weight	10000	10000	nav	4_4	316	goedkoop	0.2605406320507608
-goedkoop.foc5.all.weight.bound.min1.soc4.nav.FOC	bound	528	all	5_5	1	weight	FOC	528	nav	4_4	316	goedkoop	0.27970011205182654
-goedkoop.foc5.all.weight.bound.min1.soc10.nav.5000	bound	528	all	5_5	1	weight	5000	5000	nav	10_10	316	goedkoop	0.25287789316472287
-goedkoop.foc5.all.weight.bound.min1.soc10.nav.10000	bound	528	all	5_5	1	weight	10000	10000	nav	10_10	316	goedkoop	0.2526933463641777
-goedkoop.foc5.all.weight.bound.min1.soc10.nav.FOC	bound	528	all	5_5	1	weight	FOC	528	nav	10_10	316	goedkoop	0.2680490233198499
-goedkoop.foc5.all.weight.bound.min1.soc4.all.5000	bound	528	all	5_5	1	weight	5000	5000	all	4_4	316	goedkoop	0.25899211765100394
-goedkoop.foc5.all.weight.bound.min1.soc4.all.10000	bound	528	all	5_5	1	weight	10000	10000	all	4_4	316	goedkoop	0.2575568045509915
-goedkoop.foc5.all.weight.bound.min1.soc4.all.FOC	bound	528	all	5_5	1	weight	FOC	528	all	4_4	316	goedkoop	0.27970011205182654
-goedkoop.foc5.all.weight.bound.min1.soc10.all.5000	bound	528	all	5_5	1	weight	5000	5000	all	10_10	316	goedkoop	0.24893314919549922
-goedkoop.foc5.all.weight.bound.min1.soc10.all.10000	bound	528	all	5_5	1	weight	10000	10000	all	10_10	316	goedkoop	0.2496139205587197
-goedkoop.foc5.all.weight.bound.min1.soc10.all.FOC	bound	528	all	5_5	1	weight	FOC	528	all	10_10	316	goedkoop	0.2680490233198499
-goedkoop.foc5.all.selection.bound.min1.soc4.nav.5000	bound	528	all	5_5	1	selection	5000	5000	nav	4_4	316	goedkoop	0.2609751962771986
-goedkoop.foc5.all.selection.bound.min1.soc4.nav.10000	bound	528	all	5_5	1	selection	10000	10000	nav	4_4	316	goedkoop	0.26023568290097027
-goedkoop.foc5.all.selection.bound.min1.soc4.nav.FOC	bound	528	all	5_5	1	selection	FOC	528	nav	4_4	316	goedkoop	0.26486695641667046
-goedkoop.foc5.all.selection.bound.min1.soc10.nav.5000	bound	528	all	5_5	1	selection	5000	5000	nav	10_10	316	goedkoop	0.25369467405273677
-goedkoop.foc5.all.selection.bound.min1.soc10.nav.10000	bound	528	all	5_5	1	selection	10000	10000	nav	10_10	316	goedkoop	0.25631739036177625
-goedkoop.foc5.all.selection.bound.min1.soc10.nav.FOC	bound	528	all	5_5	1	selection	FOC	528	nav	10_10	316	goedkoop	0.26075326652662534
-goedkoop.foc5.all.selection.bound.min1.soc4.all.5000	bound	528	all	5_5	1	selection	5000	5000	all	4_4	316	goedkoop	0.26048615050577956
-goedkoop.foc5.all.selection.bound.min1.soc4.all.10000	bound	528	all	5_5	1	selection	10000	10000	all	4_4	316	goedkoop	0.2616562185127609
-goedkoop.foc5.all.selection.bound.min1.soc4.all.FOC	bound	528	all	5_5	1	selection	FOC	528	all	4_4	316	goedkoop	0.26486695641667046
-goedkoop.foc5.all.selection.bound.min1.soc10.all.5000	bound	528	all	5_5	1	selection	5000	5000	all	10_10	316	goedkoop	0.2502259822411577
-goedkoop.foc5.all.selection.bound.min1.soc10.all.10000	bound	528	all	5_5	1	selection	10000	10000	all	10_10	316	goedkoop	0.25364063383119995
-goedkoop.foc5.all.selection.bound.min1.soc10.all.FOC	bound	528	all	5_5	1	selection	FOC	528	all	10_10	316	goedkoop	0.26075326652662534
-goedkoop.foc5.all.no.bound.min1.soc4.nav.5000	bound	770	all	5_5	1	no	5000	5000	nav	4_4	320	goedkoop	0.2623182814904976
-goedkoop.foc5.all.no.bound.min1.soc4.nav.10000	bound	770	all	5_5	1	no	10000	10000	nav	4_4	320	goedkoop	0.26374084571735257
-goedkoop.foc5.all.no.bound.min1.soc4.nav.FOC	bound	770	all	5_5	1	no	FOC	770	nav	4_4	320	goedkoop	0.2601168355046175
-goedkoop.foc5.all.no.bound.min1.soc10.nav.5000	bound	770	all	5_5	1	no	5000	5000	nav	10_10	320	goedkoop	0.2557839822964631
-goedkoop.foc5.all.no.bound.min1.soc10.nav.10000	bound	770	all	5_5	1	no	10000	10000	nav	10_10	320	goedkoop	0.2576231478588696
-goedkoop.foc5.all.no.bound.min1.soc10.nav.FOC	bound	770	all	5_5	1	no	FOC	770	nav	10_10	320	goedkoop	0.2630849497113943
-goedkoop.foc5.all.no.bound.min1.soc4.all.5000	bound	770	all	5_5	1	no	5000	5000	all	4_4	320	goedkoop	0.2605903435883303
-goedkoop.foc5.all.no.bound.min1.soc4.all.10000	bound	770	all	5_5	1	no	10000	10000	all	4_4	320	goedkoop	0.2622045837800046
-goedkoop.foc5.all.no.bound.min1.soc4.all.FOC	bound	770	all	5_5	1	no	FOC	770	all	4_4	320	goedkoop	0.2601168355046175
-goedkoop.foc5.all.no.bound.min1.soc10.all.5000	bound	770	all	5_5	1	no	5000	5000	all	10_10	320	goedkoop	0.2521363913451144
-goedkoop.foc5.all.no.bound.min1.soc10.all.10000	bound	770	all	5_5	1	no	10000	10000	all	10_10	320	goedkoop	0.2555341907420239
-goedkoop.foc5.all.no.bound.min1.soc10.all.FOC	bound	770	all	5_5	1	no	FOC	770	all	10_10	320	goedkoop	0.2630849497113943
+_model	model.x	model.y	foc_boundaries	foc_context_words	foc_foc_pos	foc_foc_win	foc_minimum_features	foc_ppmi	soc_length	soc_length_num	soc_soc_pos	soc_soc_win	tokens	type	stress
+goedkoop.foc10.nav.weight.bound.min1.soc4.nav.5000	-0.15814064531415314	-0.15472543826884158	bound	622	nav	10_10	1	weight	5000	5000	nav	4_4	319	goedkoop	0.2645468291683116
+goedkoop.foc10.nav.weight.bound.min1.soc4.nav.10000	-0.18793972572819717	-0.16695529151193195	bound	622	nav	10_10	1	weight	10000	10000	nav	4_4	319	goedkoop	0.26520531146463844
+goedkoop.foc10.nav.weight.bound.min1.soc4.nav.FOC	-0.19735261459151493	-0.20248054207748722	bound	622	nav	10_10	1	weight	FOC	622	nav	4_4	319	goedkoop	0.2793392572482562
+goedkoop.foc10.nav.weight.bound.min1.soc10.nav.5000	-0.15938348101940764	-0.18664143109209017	bound	622	nav	10_10	1	weight	5000	5000	nav	10_10	319	goedkoop	0.2566549606126725
+goedkoop.foc10.nav.weight.bound.min1.soc10.nav.10000	-0.1813676910259547	-0.19197440667574123	bound	622	nav	10_10	1	weight	10000	10000	nav	10_10	319	goedkoop	0.2582604015028457
+goedkoop.foc10.nav.weight.bound.min1.soc10.nav.FOC	-0.2089242408951697	-0.24035389568778628	bound	622	nav	10_10	1	weight	FOC	622	nav	10_10	319	goedkoop	0.2681901631858477
+goedkoop.foc10.nav.weight.bound.min1.soc4.all.5000	-0.15083630724209177	-0.15514440484161737	bound	622	nav	10_10	1	weight	5000	5000	all	4_4	319	goedkoop	0.26407976365261604
+goedkoop.foc10.nav.weight.bound.min1.soc4.all.10000	-0.17040908994134307	-0.15964497297014138	bound	622	nav	10_10	1	weight	10000	10000	all	4_4	319	goedkoop	0.26346403149648723
+goedkoop.foc10.nav.weight.bound.min1.soc4.all.FOC	-0.19735261461492543	-0.20248054205396493	bound	622	nav	10_10	1	weight	FOC	622	all	4_4	319	goedkoop	0.2793392572482562
+goedkoop.foc10.nav.weight.bound.min1.soc10.all.5000	-0.15147277662428105	-0.18734962618686776	bound	622	nav	10_10	1	weight	5000	5000	all	10_10	319	goedkoop	0.25301313389673596
+goedkoop.foc10.nav.weight.bound.min1.soc10.all.10000	-0.16920156511754528	-0.18767554511486886	bound	622	nav	10_10	1	weight	10000	10000	all	10_10	319	goedkoop	0.25540612970592086
+goedkoop.foc10.nav.weight.bound.min1.soc10.all.FOC	-0.20892424101061882	-0.24035389554327113	bound	622	nav	10_10	1	weight	FOC	622	all	10_10	319	goedkoop	0.2681901631858477
+goedkoop.foc10.nav.selection.bound.min1.soc4.nav.5000	0.032843419364557515	-0.10067125748201294	bound	622	nav	10_10	1	selection	5000	5000	nav	4_4	319	goedkoop	0.25347737728726577
+goedkoop.foc10.nav.selection.bound.min1.soc4.nav.10000	0.03237985766194596	-0.09920455646449075	bound	622	nav	10_10	1	selection	10000	10000	nav	4_4	319	goedkoop	0.25135144156283956
+goedkoop.foc10.nav.selection.bound.min1.soc4.nav.FOC	-0.015421288868184915	-0.14842243266268765	bound	622	nav	10_10	1	selection	FOC	622	nav	4_4	319	goedkoop	0.2641004006592295
+goedkoop.foc10.nav.selection.bound.min1.soc10.nav.5000	0.0194594578617938	-0.13822896316062486	bound	622	nav	10_10	1	selection	5000	5000	nav	10_10	319	goedkoop	0.25203515148102495
+goedkoop.foc10.nav.selection.bound.min1.soc10.nav.10000	0.013752126640807476	-0.1361764840800178	bound	622	nav	10_10	1	selection	10000	10000	nav	10_10	319	goedkoop	0.25322861232794674
+goedkoop.foc10.nav.selection.bound.min1.soc10.nav.FOC	-0.030556206779251843	-0.2120264965903297	bound	622	nav	10_10	1	selection	FOC	622	nav	10_10	319	goedkoop	0.2604893021034081
+goedkoop.foc10.nav.selection.bound.min1.soc4.all.5000	0.03984401381516051	-0.09895847207608721	bound	622	nav	10_10	1	selection	5000	5000	all	4_4	319	goedkoop	0.25303082169853025
+goedkoop.foc10.nav.selection.bound.min1.soc4.all.10000	0.03490194873530522	-0.09664395804501245	bound	622	nav	10_10	1	selection	10000	10000	all	4_4	319	goedkoop	0.25316622920725607
+goedkoop.foc10.nav.selection.bound.min1.soc4.all.FOC	-0.015421288866810068	-0.1484224326725423	bound	622	nav	10_10	1	selection	FOC	622	all	4_4	319	goedkoop	0.2641004006592295
+goedkoop.foc10.nav.selection.bound.min1.soc10.all.5000	0.027246190195298167	-0.13775537221528503	bound	622	nav	10_10	1	selection	5000	5000	all	10_10	319	goedkoop	0.2497164982123196
+goedkoop.foc10.nav.selection.bound.min1.soc10.all.10000	0.015884403278523626	-0.13492040089941135	bound	622	nav	10_10	1	selection	10000	10000	all	10_10	319	goedkoop	0.25243322523089085
+goedkoop.foc10.nav.selection.bound.min1.soc10.all.FOC	-0.030556206779292747	-0.2120264965943491	bound	622	nav	10_10	1	selection	FOC	622	all	10_10	319	goedkoop	0.2604893021034081
+goedkoop.foc10.nav.no.bound.min1.soc4.nav.5000	0.12362922065388439	-0.1571751529920196	bound	954	nav	10_10	1	no	5000	5000	nav	4_4	320	goedkoop	0.25977102195476653
+goedkoop.foc10.nav.no.bound.min1.soc4.nav.10000	0.13847107467445843	-0.17340928640457062	bound	954	nav	10_10	1	no	10000	10000	nav	4_4	320	goedkoop	0.2563183411959111
+goedkoop.foc10.nav.no.bound.min1.soc4.nav.FOC	0.07438764836019551	-0.16279122346858746	bound	954	nav	10_10	1	no	FOC	954	nav	4_4	320	goedkoop	0.2619796461470776
+goedkoop.foc10.nav.no.bound.min1.soc10.nav.5000	0.12098624843789899	-0.21177911907544195	bound	954	nav	10_10	1	no	5000	5000	nav	10_10	320	goedkoop	0.2509373716776224
+goedkoop.foc10.nav.no.bound.min1.soc10.nav.10000	0.12475113922284954	-0.22362161099266176	bound	954	nav	10_10	1	no	10000	10000	nav	10_10	320	goedkoop	0.25007590424994813
+goedkoop.foc10.nav.no.bound.min1.soc10.nav.FOC	0.06393396565515098	-0.22560330947845333	bound	954	nav	10_10	1	no	FOC	954	nav	10_10	320	goedkoop	0.256531434928887
+goedkoop.foc10.nav.no.bound.min1.soc4.all.5000	0.12983157886785238	-0.1571766102722346	bound	954	nav	10_10	1	no	5000	5000	all	4_4	320	goedkoop	0.2615750919183241
+goedkoop.foc10.nav.no.bound.min1.soc4.all.10000	0.1334603800793641	-0.16495290609901134	bound	954	nav	10_10	1	no	10000	10000	all	4_4	320	goedkoop	0.25968505689847554
+goedkoop.foc10.nav.no.bound.min1.soc4.all.FOC	0.074387648363075	-0.1627912234592806	bound	954	nav	10_10	1	no	FOC	954	all	4_4	320	goedkoop	0.2619796461470776
+goedkoop.foc10.nav.no.bound.min1.soc10.all.5000	0.13082955488804932	-0.21208727439230138	bound	954	nav	10_10	1	no	5000	5000	all	10_10	320	goedkoop	0.2517127338873746
+goedkoop.foc10.nav.no.bound.min1.soc10.all.10000	0.12392880787749838	-0.21826621739410387	bound	954	nav	10_10	1	no	10000	10000	all	10_10	320	goedkoop	0.2526547675757776
+goedkoop.foc10.nav.no.bound.min1.soc10.all.FOC	0.06393396565816838	-0.22560330947930815	bound	954	nav	10_10	1	no	FOC	954	all	10_10	320	goedkoop	0.256531434928887
+goedkoop.foc10.all.weight.bound.min1.soc4.nav.5000	-0.11942676386121136	-0.1610374752561913	bound	725	all	10_10	1	weight	5000	5000	nav	4_4	319	goedkoop	0.261007947268699
+goedkoop.foc10.all.weight.bound.min1.soc4.nav.10000	-0.13487461724591548	-0.19459035650828047	bound	725	all	10_10	1	weight	10000	10000	nav	4_4	319	goedkoop	0.26139208485163284
+goedkoop.foc10.all.weight.bound.min1.soc4.nav.FOC	-0.14335185365655886	-0.22948969125804702	bound	725	all	10_10	1	weight	FOC	725	nav	4_4	319	goedkoop	0.2791284364693489
+goedkoop.foc10.all.weight.bound.min1.soc10.nav.5000	-0.12176099573722146	-0.1968899137023668	bound	725	all	10_10	1	weight	5000	5000	nav	10_10	319	goedkoop	0.25362858006618666
+goedkoop.foc10.all.weight.bound.min1.soc10.nav.10000	-0.1462835394274017	-0.21033416404550728	bound	725	all	10_10	1	weight	10000	10000	nav	10_10	319	goedkoop	0.2560549315646652
+goedkoop.foc10.all.weight.bound.min1.soc10.nav.FOC	-0.1631523209714513	-0.25916272120053874	bound	725	all	10_10	1	weight	FOC	725	nav	10_10	319	goedkoop	0.26590257313534804
+goedkoop.foc10.all.weight.bound.min1.soc4.all.5000	-0.10895173806381153	-0.15768539295801157	bound	725	all	10_10	1	weight	5000	5000	all	4_4	319	goedkoop	0.26029597501203855
+goedkoop.foc10.all.weight.bound.min1.soc4.all.10000	-0.12393859851448512	-0.16745825577422438	bound	725	all	10_10	1	weight	10000	10000	all	4_4	319	goedkoop	0.25958329615139436
+goedkoop.foc10.all.weight.bound.min1.soc4.all.FOC	-0.14335185241150708	-0.22948969194016128	bound	725	all	10_10	1	weight	FOC	725	all	4_4	319	goedkoop	0.2791284364693489
+goedkoop.foc10.all.weight.bound.min1.soc10.all.5000	-0.11147733992851382	-0.19463771841542993	bound	725	all	10_10	1	weight	5000	5000	all	10_10	319	goedkoop	0.24995405423229025
+goedkoop.foc10.all.weight.bound.min1.soc10.all.10000	-0.12766645102905594	-0.19810320533835052	bound	725	all	10_10	1	weight	10000	10000	all	10_10	319	goedkoop	0.25261550347174927
+goedkoop.foc10.all.weight.bound.min1.soc10.all.FOC	-0.1631523207093972	-0.2591627213465806	bound	725	all	10_10	1	weight	FOC	725	all	10_10	319	goedkoop	0.26590257313534804
+goedkoop.foc10.all.selection.bound.min1.soc4.nav.5000	0.29643008140836874	-0.014307937438021943	bound	725	all	10_10	1	selection	5000	5000	nav	4_4	319	goedkoop	0.2565306538807062
+goedkoop.foc10.all.selection.bound.min1.soc4.nav.10000	0.33204119324107895	0.0038001813642624758	bound	725	all	10_10	1	selection	10000	10000	nav	4_4	319	goedkoop	0.25492977290845575
+goedkoop.foc10.all.selection.bound.min1.soc4.nav.FOC	0.22411385698708775	-0.07290381445485541	bound	725	all	10_10	1	selection	FOC	725	nav	4_4	319	goedkoop	0.2538633846052256
+goedkoop.foc10.all.selection.bound.min1.soc10.nav.5000	0.1982261408482134	-0.05373805333154457	bound	725	all	10_10	1	selection	5000	5000	nav	10_10	319	goedkoop	0.24902725316775098
+goedkoop.foc10.all.selection.bound.min1.soc10.nav.10000	0.20990708373266867	-0.050026644666333296	bound	725	all	10_10	1	selection	10000	10000	nav	10_10	319	goedkoop	0.25193313323132616
+goedkoop.foc10.all.selection.bound.min1.soc10.nav.FOC	0.16129487306696894	-0.09693249990412539	bound	725	all	10_10	1	selection	FOC	725	nav	10_10	319	goedkoop	0.25737656120607416
+goedkoop.foc10.all.selection.bound.min1.soc4.all.5000	0.28417200557674177	-0.01946452794309037	bound	725	all	10_10	1	selection	5000	5000	all	4_4	319	goedkoop	0.2540655449693789
+goedkoop.foc10.all.selection.bound.min1.soc4.all.10000	0.30156394019251037	-0.011393690812648601	bound	725	all	10_10	1	selection	10000	10000	all	4_4	319	goedkoop	0.2560613106960984
+goedkoop.foc10.all.selection.bound.min1.soc4.all.FOC	0.2241138380765258	-0.07290399361106417	bound	725	all	10_10	1	selection	FOC	725	all	4_4	319	goedkoop	0.2538633846052256
+goedkoop.foc10.all.selection.bound.min1.soc10.all.5000	0.20474466189108156	-0.057682174577457064	bound	725	all	10_10	1	selection	5000	5000	all	10_10	319	goedkoop	0.244486149433773
+goedkoop.foc10.all.selection.bound.min1.soc10.all.10000	0.19773459411255356	-0.049994786377064976	bound	725	all	10_10	1	selection	10000	10000	all	10_10	319	goedkoop	0.24886393274123478
+goedkoop.foc10.all.selection.bound.min1.soc10.all.FOC	0.1612948730801614	-0.09693249999854037	bound	725	all	10_10	1	selection	FOC	725	all	10_10	319	goedkoop	0.25737656120607416
+goedkoop.foc10.all.no.bound.min1.soc4.nav.5000	0.5132325292346807	-0.046863610469431896	bound	1136	all	10_10	1	no	5000	5000	nav	4_4	320	goedkoop	0.24768579414808065
+goedkoop.foc10.all.no.bound.min1.soc4.nav.10000	0.5486429069145984	-0.04505264152022644	bound	1136	all	10_10	1	no	10000	10000	nav	4_4	320	goedkoop	0.24339420117122146
+goedkoop.foc10.all.no.bound.min1.soc4.nav.FOC	0.420759921965446	-0.08528876764159996	bound	1136	all	10_10	1	no	FOC	1136	nav	4_4	320	goedkoop	0.24595801602893022
+goedkoop.foc10.all.no.bound.min1.soc10.nav.5000	0.3941761555066131	-0.11159472742579618	bound	1136	all	10_10	1	no	5000	5000	nav	10_10	320	goedkoop	0.2447334428269002
+goedkoop.foc10.all.no.bound.min1.soc10.nav.10000	0.4176286640919909	-0.10981247210259515	bound	1136	all	10_10	1	no	10000	10000	nav	10_10	320	goedkoop	0.24579498179403486
+goedkoop.foc10.all.no.bound.min1.soc10.nav.FOC	0.3063533696117901	-0.14521679667281642	bound	1136	all	10_10	1	no	FOC	1136	nav	10_10	320	goedkoop	0.24605521382412002
+goedkoop.foc10.all.no.bound.min1.soc4.all.5000	0.5007409698251111	-0.052827161038254106	bound	1136	all	10_10	1	no	5000	5000	all	4_4	320	goedkoop	0.24655896551180942
+goedkoop.foc10.all.no.bound.min1.soc4.all.10000	0.5227633114379225	-0.04847018059780965	bound	1136	all	10_10	1	no	10000	10000	all	4_4	320	goedkoop	0.24552075402095108
+goedkoop.foc10.all.no.bound.min1.soc4.all.FOC	0.42075950774821486	-0.08528872795295321	bound	1136	all	10_10	1	no	FOC	1136	all	4_4	320	goedkoop	0.24595801602893022
+goedkoop.foc10.all.no.bound.min1.soc10.all.5000	0.3954063352381923	-0.11004590060076282	bound	1136	all	10_10	1	no	5000	5000	all	10_10	320	goedkoop	0.23963277076630662
+goedkoop.foc10.all.no.bound.min1.soc10.all.10000	0.4015542314049569	-0.11021763411128535	bound	1136	all	10_10	1	no	10000	10000	all	10_10	320	goedkoop	0.24296739095387246
+goedkoop.foc10.all.no.bound.min1.soc10.all.FOC	0.30635332381200847	-0.14521692053173701	bound	1136	all	10_10	1	no	FOC	1136	all	10_10	320	goedkoop	0.24605521382412002
+goedkoop.foc5.nav.weight.bound.min1.soc4.nav.5000	-0.26413562438962224	0.09062326457031779	bound	452	nav	5_5	1	weight	5000	5000	nav	4_4	314	goedkoop	0.2622350180650856
+goedkoop.foc5.nav.weight.bound.min1.soc4.nav.10000	-0.2923524851952607	0.10287442249401005	bound	452	nav	5_5	1	weight	10000	10000	nav	4_4	314	goedkoop	0.2609594751350005
+goedkoop.foc5.nav.weight.bound.min1.soc4.nav.FOC	-0.3057934126897158	0.04613210262650716	bound	452	nav	5_5	1	weight	FOC	452	nav	4_4	314	goedkoop	0.2774058981786554
+goedkoop.foc5.nav.weight.bound.min1.soc10.nav.5000	-0.25846431417959626	0.03729491344073363	bound	452	nav	5_5	1	weight	5000	5000	nav	10_10	314	goedkoop	0.25319773510405374
+goedkoop.foc5.nav.weight.bound.min1.soc10.nav.10000	-0.27766313457231195	0.04680415171071157	bound	452	nav	5_5	1	weight	10000	10000	nav	10_10	314	goedkoop	0.25336839771981
+goedkoop.foc5.nav.weight.bound.min1.soc10.nav.FOC	-0.3186471530086036	0.006787358838020788	bound	452	nav	5_5	1	weight	FOC	452	nav	10_10	314	goedkoop	0.26148808622297287
+goedkoop.foc5.nav.weight.bound.min1.soc4.all.5000	-0.2577241228206227	0.08917312947626214	bound	452	nav	5_5	1	weight	5000	5000	all	4_4	314	goedkoop	0.2611728731332176
+goedkoop.foc5.nav.weight.bound.min1.soc4.all.10000	-0.2769087772339128	0.09677902894381289	bound	452	nav	5_5	1	weight	10000	10000	all	4_4	314	goedkoop	0.26040417555198203
+goedkoop.foc5.nav.weight.bound.min1.soc4.all.FOC	-0.30579341268925586	0.04613210269855333	bound	452	nav	5_5	1	weight	FOC	452	all	4_4	314	goedkoop	0.2774058981786554
+goedkoop.foc5.nav.weight.bound.min1.soc10.all.5000	-0.2540604675848154	0.038946712687820864	bound	452	nav	5_5	1	weight	5000	5000	all	10_10	314	goedkoop	0.24987947514340264
+goedkoop.foc5.nav.weight.bound.min1.soc10.all.10000	-0.26532446130284937	0.043965873246302224	bound	452	nav	5_5	1	weight	10000	10000	all	10_10	314	goedkoop	0.25153482885939465
+goedkoop.foc5.nav.weight.bound.min1.soc10.all.FOC	-0.3186471530012487	0.006787358773448445	bound	452	nav	5_5	1	weight	FOC	452	all	10_10	314	goedkoop	0.26148808622297287
+goedkoop.foc5.nav.selection.bound.min1.soc4.nav.5000	-0.153077733458596	0.22893595415628334	bound	452	nav	5_5	1	selection	5000	5000	nav	4_4	314	goedkoop	0.26030696916456286
+goedkoop.foc5.nav.selection.bound.min1.soc4.nav.10000	-0.16305894171508403	0.24716021764133378	bound	452	nav	5_5	1	selection	10000	10000	nav	4_4	314	goedkoop	0.2572091603788997
+goedkoop.foc5.nav.selection.bound.min1.soc4.nav.FOC	-0.1801572682032216	0.13993522614703618	bound	452	nav	5_5	1	selection	FOC	452	nav	4_4	314	goedkoop	0.26869686407189536
+goedkoop.foc5.nav.selection.bound.min1.soc10.nav.5000	-0.1352048226893692	0.13540155550067384	bound	452	nav	5_5	1	selection	5000	5000	nav	10_10	314	goedkoop	0.2541861602416118
+goedkoop.foc5.nav.selection.bound.min1.soc10.nav.10000	-0.1493507158343665	0.1482530288434524	bound	452	nav	5_5	1	selection	10000	10000	nav	10_10	314	goedkoop	0.2558590257752628
+goedkoop.foc5.nav.selection.bound.min1.soc10.nav.FOC	-0.18855503563978607	0.08329880980803088	bound	452	nav	5_5	1	selection	FOC	452	nav	10_10	314	goedkoop	0.2616227852740382
+goedkoop.foc5.nav.selection.bound.min1.soc4.all.5000	-0.1457950113886004	0.22540064375437338	bound	452	nav	5_5	1	selection	5000	5000	all	4_4	314	goedkoop	0.2616004282964425
+goedkoop.foc5.nav.selection.bound.min1.soc4.all.10000	-0.15677559266922347	0.23394390314799288	bound	452	nav	5_5	1	selection	10000	10000	all	4_4	314	goedkoop	0.2618225016693274
+goedkoop.foc5.nav.selection.bound.min1.soc4.all.FOC	-0.18015726820394878	0.13993522614235998	bound	452	nav	5_5	1	selection	FOC	452	all	4_4	314	goedkoop	0.26869686407189536
+goedkoop.foc5.nav.selection.bound.min1.soc10.all.5000	-0.1299755462607529	0.13656434263112754	bound	452	nav	5_5	1	selection	5000	5000	all	10_10	314	goedkoop	0.2518332677759195
+goedkoop.foc5.nav.selection.bound.min1.soc10.all.10000	-0.1410727820131077	0.13912483440595255	bound	452	nav	5_5	1	selection	10000	10000	all	10_10	314	goedkoop	0.2554825822816757
+goedkoop.foc5.nav.selection.bound.min1.soc10.all.FOC	-0.18855503575032176	0.0832988187504342	bound	452	nav	5_5	1	selection	FOC	452	all	10_10	314	goedkoop	0.2616227852740382
+goedkoop.foc5.nav.no.bound.min1.soc4.nav.5000	-0.07736615337348542	0.199456486331003	bound	631	nav	5_5	1	no	5000	5000	nav	4_4	320	goedkoop	0.263781152381143
+goedkoop.foc5.nav.no.bound.min1.soc4.nav.10000	-0.09099657313945302	0.2264463782479676	bound	631	nav	5_5	1	no	10000	10000	nav	4_4	320	goedkoop	0.2596345945804893
+goedkoop.foc5.nav.no.bound.min1.soc4.nav.FOC	-0.09658543794138266	0.10465423127292697	bound	631	nav	5_5	1	no	FOC	631	nav	4_4	320	goedkoop	0.26782024015075395
+goedkoop.foc5.nav.no.bound.min1.soc10.nav.5000	-0.058997736237508126	0.11206612890140774	bound	631	nav	5_5	1	no	5000	5000	nav	10_10	320	goedkoop	0.256050308082891
+goedkoop.foc5.nav.no.bound.min1.soc10.nav.10000	-0.07104093819639348	0.12773824485479873	bound	631	nav	5_5	1	no	10000	10000	nav	10_10	320	goedkoop	0.25491863395861586
+goedkoop.foc5.nav.no.bound.min1.soc10.nav.FOC	-0.10769865406951776	0.059553481795240545	bound	631	nav	5_5	1	no	FOC	631	nav	10_10	320	goedkoop	0.2592775534979255
+goedkoop.foc5.nav.no.bound.min1.soc4.all.5000	-0.0683570027216673	0.1934692283099564	bound	631	nav	5_5	1	no	5000	5000	all	4_4	320	goedkoop	0.2658513300903183
+goedkoop.foc5.nav.no.bound.min1.soc4.all.10000	-0.08011628599363281	0.20628388033743916	bound	631	nav	5_5	1	no	10000	10000	all	4_4	320	goedkoop	0.26408511125033307
+goedkoop.foc5.nav.no.bound.min1.soc4.all.FOC	-0.09658543794358153	0.10465423127260498	bound	631	nav	5_5	1	no	FOC	631	all	4_4	320	goedkoop	0.26782024015075395
+goedkoop.foc5.nav.no.bound.min1.soc10.all.5000	-0.05024315401505683	0.11118533548106181	bound	631	nav	5_5	1	no	5000	5000	all	10_10	320	goedkoop	0.2548704562992979
+goedkoop.foc5.nav.no.bound.min1.soc10.all.10000	-0.06324696033213593	0.11700824076469613	bound	631	nav	5_5	1	no	10000	10000	all	10_10	320	goedkoop	0.2571811612550521
+goedkoop.foc5.nav.no.bound.min1.soc10.all.FOC	-0.10769865407202918	0.05955348179110572	bound	631	nav	5_5	1	no	FOC	631	all	10_10	320	goedkoop	0.2592775534979255
+goedkoop.foc5.all.weight.bound.min1.soc4.nav.5000	-0.23801319679835595	0.09289678680971676	bound	528	all	5_5	1	weight	5000	5000	nav	4_4	316	goedkoop	0.26111941427050167
+goedkoop.foc5.all.weight.bound.min1.soc4.nav.10000	-0.2689131468964773	0.12369734866895847	bound	528	all	5_5	1	weight	10000	10000	nav	4_4	316	goedkoop	0.2605406320507608
+goedkoop.foc5.all.weight.bound.min1.soc4.nav.FOC	-0.2807160551821573	0.05997967457659266	bound	528	all	5_5	1	weight	FOC	528	nav	4_4	316	goedkoop	0.27970011205182654
+goedkoop.foc5.all.weight.bound.min1.soc10.nav.5000	-0.23229482072612698	0.041193733214357396	bound	528	all	5_5	1	weight	5000	5000	nav	10_10	316	goedkoop	0.25287789316472287
+goedkoop.foc5.all.weight.bound.min1.soc10.nav.10000	-0.26071175146604786	0.055184154684227806	bound	528	all	5_5	1	weight	10000	10000	nav	10_10	316	goedkoop	0.2526933463641777
+goedkoop.foc5.all.weight.bound.min1.soc10.nav.FOC	-0.2985997353976795	0.011564930521143579	bound	528	all	5_5	1	weight	FOC	528	nav	10_10	316	goedkoop	0.2680490233198499
+goedkoop.foc5.all.weight.bound.min1.soc4.all.5000	-0.22745050153595736	0.08583099574989085	bound	528	all	5_5	1	weight	5000	5000	all	4_4	316	goedkoop	0.25899211765100394
+goedkoop.foc5.all.weight.bound.min1.soc4.all.10000	-0.24769006579053143	0.10569159069562292	bound	528	all	5_5	1	weight	10000	10000	all	4_4	316	goedkoop	0.2575568045509915
+goedkoop.foc5.all.weight.bound.min1.soc4.all.FOC	-0.2807160254064209	0.059979810396301195	bound	528	all	5_5	1	weight	FOC	528	all	4_4	316	goedkoop	0.27970011205182654
+goedkoop.foc5.all.weight.bound.min1.soc10.all.5000	-0.22155155900889523	0.04006888399879905	bound	528	all	5_5	1	weight	5000	5000	all	10_10	316	goedkoop	0.24893314919549922
+goedkoop.foc5.all.weight.bound.min1.soc10.all.10000	-0.23960915721989906	0.04833026139480144	bound	528	all	5_5	1	weight	10000	10000	all	10_10	316	goedkoop	0.2496139205587197
+goedkoop.foc5.all.weight.bound.min1.soc10.all.FOC	-0.2985997355585064	0.011564931069801271	bound	528	all	5_5	1	weight	FOC	528	all	10_10	316	goedkoop	0.2680490233198499
+goedkoop.foc5.all.selection.bound.min1.soc4.nav.5000	0.08628391163283092	0.3200280059801992	bound	528	all	5_5	1	selection	5000	5000	nav	4_4	316	goedkoop	0.2609751962771986
+goedkoop.foc5.all.selection.bound.min1.soc4.nav.10000	0.09817933819002111	0.3562757128411095	bound	528	all	5_5	1	selection	10000	10000	nav	4_4	316	goedkoop	0.26023568290097027
+goedkoop.foc5.all.selection.bound.min1.soc4.nav.FOC	0.036795409406086436	0.24182836964065496	bound	528	all	5_5	1	selection	FOC	528	nav	4_4	316	goedkoop	0.26486695641667046
+goedkoop.foc5.all.selection.bound.min1.soc10.nav.5000	0.04936803708567786	0.20557868355259176	bound	528	all	5_5	1	selection	5000	5000	nav	10_10	316	goedkoop	0.25369467405273677
+goedkoop.foc5.all.selection.bound.min1.soc10.nav.10000	0.05170687338346703	0.23272150270143147	bound	528	all	5_5	1	selection	10000	10000	nav	10_10	316	goedkoop	0.25631739036177625
+goedkoop.foc5.all.selection.bound.min1.soc10.nav.FOC	0.006365888819914456	0.15990692502771578	bound	528	all	5_5	1	selection	FOC	528	nav	10_10	316	goedkoop	0.26075326652662534
+goedkoop.foc5.all.selection.bound.min1.soc4.all.5000	0.08585862900481402	0.30346818205192155	bound	528	all	5_5	1	selection	5000	5000	all	4_4	316	goedkoop	0.26048615050577956
+goedkoop.foc5.all.selection.bound.min1.soc4.all.10000	0.08947958594226509	0.324176392738931	bound	528	all	5_5	1	selection	10000	10000	all	4_4	316	goedkoop	0.2616562185127609
+goedkoop.foc5.all.selection.bound.min1.soc4.all.FOC	0.03679540932295867	0.24182836969726104	bound	528	all	5_5	1	selection	FOC	528	all	4_4	316	goedkoop	0.26486695641667046
+goedkoop.foc5.all.selection.bound.min1.soc10.all.5000	0.05410120296150038	0.19980224094302076	bound	528	all	5_5	1	selection	5000	5000	all	10_10	316	goedkoop	0.2502259822411577
+goedkoop.foc5.all.selection.bound.min1.soc10.all.10000	0.04713976287685315	0.21098490482135318	bound	528	all	5_5	1	selection	10000	10000	all	10_10	316	goedkoop	0.25364063383119995
+goedkoop.foc5.all.selection.bound.min1.soc10.all.FOC	0.006365888819173377	0.15990692502966247	bound	528	all	5_5	1	selection	FOC	528	all	10_10	316	goedkoop	0.26075326652662534
+goedkoop.foc5.all.no.bound.min1.soc4.nav.5000	0.34339540211192443	0.2708878590741576	bound	770	all	5_5	1	no	5000	5000	nav	4_4	320	goedkoop	0.2623182814904976
+goedkoop.foc5.all.no.bound.min1.soc4.nav.10000	0.37721135262086897	0.28206384843622406	bound	770	all	5_5	1	no	10000	10000	nav	4_4	320	goedkoop	0.26374084571735257
+goedkoop.foc5.all.no.bound.min1.soc4.nav.FOC	0.22812939192209183	0.20775145281308247	bound	770	all	5_5	1	no	FOC	770	nav	4_4	320	goedkoop	0.2601168355046175
+goedkoop.foc5.all.no.bound.min1.soc10.nav.5000	0.2354659195093442	0.175253067989737	bound	770	all	5_5	1	no	5000	5000	nav	10_10	320	goedkoop	0.2557839822964631
+goedkoop.foc5.all.no.bound.min1.soc10.nav.10000	0.2519140039566432	0.18619890625792274	bound	770	all	5_5	1	no	10000	10000	nav	10_10	320	goedkoop	0.2576231478588696
+goedkoop.foc5.all.no.bound.min1.soc10.nav.FOC	0.141053669319641	0.13061767995694898	bound	770	all	5_5	1	no	FOC	770	nav	10_10	320	goedkoop	0.2630849497113943
+goedkoop.foc5.all.no.bound.min1.soc4.all.5000	0.32967289703587105	0.2575264422307516	bound	770	all	5_5	1	no	5000	5000	all	4_4	320	goedkoop	0.2605903435883303
+goedkoop.foc5.all.no.bound.min1.soc4.all.10000	0.3506116859116352	0.27177898551736757	bound	770	all	5_5	1	no	10000	10000	all	4_4	320	goedkoop	0.2622045837800046
+goedkoop.foc5.all.no.bound.min1.soc4.all.FOC	0.22812939191619544	0.2077514528198817	bound	770	all	5_5	1	no	FOC	770	all	4_4	320	goedkoop	0.2601168355046175
+goedkoop.foc5.all.no.bound.min1.soc10.all.5000	0.23501922326858418	0.17332751732495144	bound	770	all	5_5	1	no	5000	5000	all	10_10	320	goedkoop	0.2521363913451144
+goedkoop.foc5.all.no.bound.min1.soc10.all.10000	0.23874982385968482	0.1790253096547358	bound	770	all	5_5	1	no	10000	10000	all	10_10	320	goedkoop	0.2555341907420239
+goedkoop.foc5.all.no.bound.min1.soc10.all.FOC	0.14105366931699487	0.13061767995728937	bound	770	all	5_5	1	no	FOC	770	all	10_10	320	goedkoop	0.2630849497113943
