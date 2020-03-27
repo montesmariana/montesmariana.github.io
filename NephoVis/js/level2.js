@@ -149,8 +149,6 @@ function execute(datasets, type, alternatives) {
       updateTokSelection(tokenSelection);
     });
 
-    console.log(modelSelection)
-
     // Set up scales (axes) - coordinates multiplied to get some padding in a way
     const xvalues = d3.merge(modelSelection.map(function (m) {
       console.log(m)
