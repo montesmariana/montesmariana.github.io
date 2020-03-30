@@ -168,7 +168,8 @@ function getValues(dataset, colname) {
 }
 
 function classifyColnames(dataset) {
-    const colnames = dataset.columns;
+    // const colnames = dataset.columns;
+    const colnames = _.keys(dataset[0])
     const variables = colnames.filter(d => {
         return (!d.endsWith(".x") &&
             !d.endsWith(".y") &&
@@ -275,6 +276,10 @@ function offerAlternatives(datasets, alternatives, type) {
     } else { // if "tokens remains"
         return (datasets["tokens"]);
     }
+}
+
+function mergeVariables(coordinates, variables) {
+    coordinates.forEach((coordRow) => {_.assign(coordRow, variables.filter(varRow => varRow["_id"] === coordRow["_id"])[0])});
 }
 
 // ########################################################################################################################

@@ -69,8 +69,10 @@ function execute(datasets, type, alternatives) {
   // Draw the plot based on the right dataset
   function deploy(coordinates) {
     const dataset = _.clone(coordinates);
-    _.merge(dataset, datasets["variables"]);
-    
+    // _.merge(dataset, datasets["variables"]);
+    mergeVariables(dataset, datasets["variables"]);
+    console.log(dataset)
+
     const solutionName = JSON.parse(localStorage.getItem("solution-" + type));
     if (!(_.isNull(solutionName))) {
       const technique = solutionName.toLowerCase().search("tsne") > -1 ? "t-SNE, perplexity: " + solutionName.match("[0-9]+") : solutionName.toUpperCase();
