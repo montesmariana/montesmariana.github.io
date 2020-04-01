@@ -299,7 +299,7 @@ function execute(datasets, type, alternatives) {
       // const tooltiptext = typeof(ctxtvar) == "string" ? d[ctxtvar].replace(/<em>/g, "<em style='color:" +tooltipcolor + ";font-weight:bold;'>") : ""
       const ctxt = colnames["all"].filter(function (d) { return (d.startsWith("_ctxt") && d.endsWith(".raw")); })[0];
       const tooltipText1 = "<p><b>" + d["_id"] + "</b></p><p>";
-      const tooltipText2 = d[ctxtvar].replace(/class=["']target["']/g, 'style="color:' + tooltipColor + ';font-weight:bold;"') + "</p>";
+      const tooltipText2 = d[ctxt].replace(/class=["']target["']/g, 'style="color:' + tooltipColor + ';font-weight:bold;"') + "</p>";
       
       d3.select("#concordance").append("p")
         .attr("class", "text-center p-2 ml-2")
