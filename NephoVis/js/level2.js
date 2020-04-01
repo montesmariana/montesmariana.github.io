@@ -7,7 +7,7 @@ function execute(datasets, type, alternatives) {
   // SET UP WORKSPACE ###############################################################################################################################
 
   d3.select("h1").html("Level 2 (<em>" + type + "</em>)");
-  d3.select("#concordance").style("height", "50px");
+  d3.select("#concordance").style("height", "100px");
 
   // Set buttons behaviour ##########################################################
   d3.select("#toLevel1").on("click", function () {
