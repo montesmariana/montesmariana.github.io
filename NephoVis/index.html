@@ -29,7 +29,8 @@
 	}
 
 	a.btn {
-		background-color: var(--pal1);
+		background-image: radial-gradient(var(--white), var(--pal1), var(--pal5), var(--pal3));
+		/* background-color: var(--pal1); */
 		color: var(--pal3);
 	}
 
@@ -58,7 +59,7 @@
             <h2>Pilot cases</h2>
 			<p>Models of "church/n" in GloWbE (English) and of "zwart/adj" in the QLVLNews corpus (Dutch).</p>
 			<p>Distance matrices of tokens are mapped to 2D with non-metric MDS.</p>
-			<a role="button" class="btn shadow-sm" href="pilotTypes.html"><i class="fas fa-cloud"></i> Go to page </a>
+			<a role="button" class="btn rounded-pill" href="pilotTypes.html"><i class="fas fa-cloud"></i> Go to page </a>
           </div>
 		  <div class="block">
             <h2>34 Dutch types</h2>
@@ -66,11 +67,13 @@
 			<p>Distance matrices of tokens are mapped to 2D with non-metric MDS and with t-SNE with different perplexities;
 				it is possible to swith between solutions.
 			</p>
-			<div class="btn-group-vertical">
-				<a role="button" class="btn shadow-sm" href="reports/DutchCaseStudies.html"><i class="fas fa-file-alt"></i> About this research </a>
-				<a role="button" class="btn shadow-sm" href="reports/overview.html"><i class="fas fa-file-alt"></i> Overview of the annotation </a>
-				<a role="button" class="btn shadow-sm" href="nounsIndex.html"><i class="fas fa-cloud"></i> Go to nouns </a>
-				<a role="button" class="btn shadow-sm" href="adjectivesIndex.html"><i class="fas fa-cloud"></i> Go to adjectives </a>
+			<div class="btn-group my-1 shadow">
+				<a role="button" class="btn rounded-pill" href="reports/DutchCaseStudies.html"><i class="fas fa-file-alt"></i> About this research </a>
+				<a role="button" class="btn rounded-pill" href="reports/overview.html"><i class="fas fa-file-alt"></i> Overview of the annotation </a>
+			</div>
+			<div class="btn-group">
+				<a role="button" class="btn rounded-pill" href="nounsIndex.html"><i class="fas fa-cloud"></i> Go to nouns </a>
+				<a role="button" class="btn rounded-pill" href="adjectivesIndex.html"><i class="fas fa-cloud"></i> Go to adjectives </a>
 			</div>
           </div>
         </div>

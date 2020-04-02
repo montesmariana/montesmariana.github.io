@@ -2,14 +2,16 @@
 // set up general variables for all scripts
 const myColors = [
     "#E16A86",
-    "#CB7F2F",
     "#50A315",
     "#9F9400",
+    "#CB7F2F",
     "#00AC79",
+    "#DA65C3",
     "#00AAB7",
     "#009ADE",
-    "#DA65C3",
-    "#A87BE4"
+    "#A87BE4",
+    "#000000",
+    "#999999"
 ] // colorblind friendly palette, from colorspace
 
 // Color, shape, size palettes
