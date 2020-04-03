@@ -52,8 +52,8 @@ function execute(datasets, type, alternatives) {
   deploy(offerAlternatives(datasets, alternatives, type));
   d3.select("#solutions").selectAll("button").on("click", function (d) {
     localStorage.setItem("solution-" + type, JSON.stringify(d));
-    d3.select("#solutions").selectAll("button").html(d => {
-      return (d === chosenSolution ? "<b>" + d + "</b>" : d);
+    d3.select("#solutions").selectAll("button").html(t => {
+      return (t === d ? "<b>" + t + "</b>" : t);
     });
     deploy(datasets[d], tokenSelection);
   });
