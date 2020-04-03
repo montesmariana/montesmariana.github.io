@@ -319,6 +319,7 @@ function execute(datasets, type, alternatives) {
         .size(function (d) { return (code(d, sizevar, size, 64)); })
       )
         .style("fill", function (d) { return code(d, colorvar, color, "#1f77b4"); })
+        .style("opacity", tokenSelection.length > 0 ? 1 : 0.7)
         .classed("lighter", function (d) { return (tokenSelection.length > 0 ? (tokenSelection.indexOf(d["_id"]) === -1) : false); })
         // .classed("lost", function(d) {return (!exists(d, model)); })
         .on("mouseover", showContext)

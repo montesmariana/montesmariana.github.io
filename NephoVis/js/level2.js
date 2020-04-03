@@ -52,6 +52,9 @@ function execute(datasets, type, alternatives) {
   deploy(offerAlternatives(datasets, alternatives, type));
   d3.select("#solutions").selectAll("button").on("click", function (d) {
     localStorage.setItem("solution-" + type, JSON.stringify(d));
+    d3.select("#solutions").selectAll("button").html(d => {
+      return (d === chosenSolution ? "<b>" + d + "</b>" : d);
+    });
     deploy(datasets[d], tokenSelection);
   });
 
@@ -318,7 +321,7 @@ function execute(datasets, type, alternatives) {
           .type(function (d) { return (code(d, shapevar, shape, d3.symbolCircle)); }) //set up shape
           .size(function (d) { return (code(d, sizevar, size, 50)); })) // set up size
         .style("fill", function (d) { return (code(d, colorvar, color, "#1f77b4")); }) // set up color
-        .style("opacity", 1)
+        .style("opacity", tokenSelection.length > 0 ? 1 : 0.7)
         .attr("model", d3.select(this.parentNode.parentNode).attr("model"))
         //.attr("token_id", function(d) {return(d["_id"])})
         .classed("lighter", function (d) { //ise selected?
