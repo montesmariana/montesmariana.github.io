@@ -243,6 +243,7 @@ function updateSelection(selection, level, type) {
     // if something is selected everything else is translucent
     d3.selectAll(".dot")
         .selectAll("path.graph")
+        .style("opacity", selection.length > 0 ? 1 : 0.7)
         .classed("lighter", function (d) {
             const id = level === "model" ? "_model" : "_id";
             return (selection.length > 0 ? selection.indexOf(d[id]) === -1 : false);
@@ -255,7 +256,8 @@ function updateSelection(selection, level, type) {
 
 function offerAlternatives(datasets, alternatives, type) {
     if (d3.keys(datasets).indexOf("tokens") === -1 && !_.isNull(alternatives)) {
-        const chosenSolution = JSON.parse(localStorage.getItem("solution-" + type));
+        const storageSolution = JSON.parse(localStorage.getItem("solution-" + type));
+        const chosenSolution = _.isNull(storageSolution) ? alternatives[0] : storageSolution;
         const alts = d3.select("#moveAround").append("div") // setup the dropdown for the alternatives
             .attr("class", "btn-group");
         alts.append("button")
@@ -266,14 +268,14 @@ function offerAlternatives(datasets, alternatives, type) {
         alts.append("div")
             .attr("class", "dropdown-menu")
             .attr("id", "solutions");
-        buildDropdown("solutions", alternatives);
+        buildDropdown("solutions", alternatives,
+        valueFunction = d => d,
+        textFunction = d => {
+          return (d === chosenSolution ? "<b>" + d + "</b>" : d);
+        });
 
-        if (_.isNull(chosenSolution)) {
-            localStorage.setItem("solution-" + type, JSON.stringify(alternatives[0]));
-            return (datasets[alternatives[0]]);
-        } else {
-            return (datasets[chosenSolution]);
-        }
+        localStorage.setItem("solution-" + type, JSON.stringify(chosenSolution));
+        return (datasets[chosenSolution]);
 
     } else { // if "tokens remains"
         return (datasets["tokens"]);
