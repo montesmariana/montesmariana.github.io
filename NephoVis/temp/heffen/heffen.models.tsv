@@ -1,0 +1,103 @@
+LEMMAPATH	LEMMAREL	_model	base	foc_boundaries	foc_context_words	foc_foc_pos	foc_foc_win	foc_minimum_features	foc_ppmi	soc_length	soc_length_num	soc_soc_pos	soc_soc_win	tokens	type
+		heffen.BOWbound10lex.PPMIweight.LENGTH5000	BOW	bound	366	lex	10_10	1	weight	5000	5000	nav	4_4	217	heffen
+		heffen.BOWbound10lex.PPMIweight.LENGTHFOC	BOW	bound	366	lex	10_10	1	weight	FOC	366	nav	4_4	217	heffen
+		heffen.BOWbound10lex.PPMIselection.LENGTH5000	BOW	bound	366	lex	10_10	1	selection	5000	5000	nav	4_4	217	heffen
+		heffen.BOWbound10lex.PPMIselection.LENGTHFOC	BOW	bound	366	lex	10_10	1	selection	FOC	366	nav	4_4	217	heffen
+		heffen.BOWbound10lex.PPMIno.LENGTH5000	BOW	bound	718	lex	10_10	1	no	5000	5000	nav	4_4	218	heffen
+		heffen.BOWbound10lex.PPMIno.LENGTHFOC	BOW	bound	718	lex	10_10	1	no	FOC	718	nav	4_4	218	heffen
+		heffen.BOWbound10all.PPMIweight.LENGTH5000	BOW	bound	475	all	10_10	1	weight	5000	5000	nav	4_4	218	heffen
+		heffen.BOWbound10all.PPMIweight.LENGTHFOC	BOW	bound	475	all	10_10	1	weight	FOC	475	nav	4_4	218	heffen
+		heffen.BOWbound10all.PPMIselection.LENGTH5000	BOW	bound	475	all	10_10	1	selection	5000	5000	nav	4_4	218	heffen
+		heffen.BOWbound10all.PPMIselection.LENGTHFOC	BOW	bound	475	all	10_10	1	selection	FOC	475	nav	4_4	218	heffen
+		heffen.BOWbound10all.PPMIno.LENGTH5000	BOW	bound	960	all	10_10	1	no	5000	5000	nav	4_4	218	heffen
+		heffen.BOWbound10all.PPMIno.LENGTHFOC	BOW	bound	960	all	10_10	1	no	FOC	960	nav	4_4	218	heffen
+		heffen.BOWbound5lex.PPMIweight.LENGTH5000	BOW	bound	279	lex	5_5	1	weight	5000	5000	nav	4_4	216	heffen
+		heffen.BOWbound5lex.PPMIweight.LENGTHFOC	BOW	bound	279	lex	5_5	1	weight	FOC	279	nav	4_4	216	heffen
+		heffen.BOWbound5lex.PPMIselection.LENGTH5000	BOW	bound	279	lex	5_5	1	selection	5000	5000	nav	4_4	216	heffen
+		heffen.BOWbound5lex.PPMIselection.LENGTHFOC	BOW	bound	279	lex	5_5	1	selection	FOC	279	nav	4_4	216	heffen
+		heffen.BOWbound5lex.PPMIno.LENGTH5000	BOW	bound	433	lex	5_5	1	no	5000	5000	nav	4_4	218	heffen
+		heffen.BOWbound5lex.PPMIno.LENGTHFOC	BOW	bound	433	lex	5_5	1	no	FOC	433	nav	4_4	218	heffen
+		heffen.BOWbound5all.PPMIweight.LENGTH5000	BOW	bound	361	all	5_5	1	weight	5000	5000	nav	4_4	217	heffen
+		heffen.BOWbound5all.PPMIweight.LENGTHFOC	BOW	bound	361	all	5_5	1	weight	FOC	361	nav	4_4	217	heffen
+		heffen.BOWbound5all.PPMIselection.LENGTH5000	BOW	bound	361	all	5_5	1	selection	5000	5000	nav	4_4	217	heffen
+		heffen.BOWbound5all.PPMIselection.LENGTHFOC	BOW	bound	361	all	5_5	1	selection	FOC	361	nav	4_4	217	heffen
+		heffen.BOWbound5all.PPMIno.LENGTH5000	BOW	bound	580	all	5_5	1	no	5000	5000	nav	4_4	218	heffen
+		heffen.BOWbound5all.PPMIno.LENGTHFOC	BOW	bound	580	all	5_5	1	no	FOC	580	nav	4_4	218	heffen
+		heffen.BOWbound3lex.PPMIweight.LENGTH5000	BOW	bound	202	lex	3_3	1	weight	5000	5000	nav	4_4	204	heffen
+		heffen.BOWbound3lex.PPMIweight.LENGTHFOC	BOW	bound	202	lex	3_3	1	weight	FOC	202	nav	4_4	204	heffen
+		heffen.BOWbound3lex.PPMIselection.LENGTH5000	BOW	bound	202	lex	3_3	1	selection	5000	5000	nav	4_4	204	heffen
+		heffen.BOWbound3lex.PPMIselection.LENGTHFOC	BOW	bound	202	lex	3_3	1	selection	FOC	202	nav	4_4	204	heffen
+		heffen.BOWbound3lex.PPMIno.LENGTH5000	BOW	bound	280	lex	3_3	1	no	5000	5000	nav	4_4	213	heffen
+		heffen.BOWbound3lex.PPMIno.LENGTHFOC	BOW	bound	280	lex	3_3	1	no	FOC	280	nav	4_4	213	heffen
+		heffen.BOWbound3all.PPMIweight.LENGTH5000	BOW	bound	261	all	3_3	1	weight	5000	5000	nav	4_4	216	heffen
+		heffen.BOWbound3all.PPMIweight.LENGTHFOC	BOW	bound	261	all	3_3	1	weight	FOC	261	nav	4_4	216	heffen
+		heffen.BOWbound3all.PPMIselection.LENGTH5000	BOW	bound	261	all	3_3	1	selection	5000	5000	nav	4_4	216	heffen
+		heffen.BOWbound3all.PPMIselection.LENGTHFOC	BOW	bound	261	all	3_3	1	selection	FOC	261	nav	4_4	216	heffen
+		heffen.BOWbound3all.PPMIno.LENGTH5000	BOW	bound	372	all	3_3	1	no	5000	5000	nav	4_4	217	heffen
+		heffen.BOWbound3all.PPMIno.LENGTHFOC	BOW	bound	372	all	3_3	1	no	FOC	372	nav	4_4	217	heffen
+		heffen.BOWnobound10lex.PPMIweight.LENGTH5000	BOW	nobound	454	lex	10_10	1	weight	5000	5000	nav	4_4	218	heffen
+		heffen.BOWnobound10lex.PPMIweight.LENGTHFOC	BOW	nobound	454	lex	10_10	1	weight	FOC	454	nav	4_4	218	heffen
+		heffen.BOWnobound10lex.PPMIselection.LENGTH5000	BOW	nobound	454	lex	10_10	1	selection	5000	5000	nav	4_4	218	heffen
+		heffen.BOWnobound10lex.PPMIselection.LENGTHFOC	BOW	nobound	454	lex	10_10	1	selection	FOC	454	nav	4_4	218	heffen
+		heffen.BOWnobound10lex.PPMIno.LENGTH5000	BOW	nobound	991	lex	10_10	1	no	5000	5000	nav	4_4	218	heffen
+		heffen.BOWnobound10lex.PPMIno.LENGTHFOC	BOW	nobound	991	lex	10_10	1	no	FOC	991	nav	4_4	218	heffen
+		heffen.BOWnobound10all.PPMIweight.LENGTH5000	BOW	nobound	598	all	10_10	1	weight	5000	5000	nav	4_4	218	heffen
+		heffen.BOWnobound10all.PPMIweight.LENGTHFOC	BOW	nobound	598	all	10_10	1	weight	FOC	598	nav	4_4	218	heffen
+		heffen.BOWnobound10all.PPMIselection.LENGTH5000	BOW	nobound	598	all	10_10	1	selection	5000	5000	nav	4_4	218	heffen
+		heffen.BOWnobound10all.PPMIselection.LENGTHFOC	BOW	nobound	598	all	10_10	1	selection	FOC	598	nav	4_4	218	heffen
+		heffen.BOWnobound10all.PPMIno.LENGTH5000	BOW	nobound	1325	all	10_10	1	no	5000	5000	nav	4_4	218	heffen
+		heffen.BOWnobound10all.PPMIno.LENGTHFOC	BOW	nobound	1325	all	10_10	1	no	FOC	1325	nav	4_4	218	heffen
+		heffen.BOWnobound5lex.PPMIweight.LENGTH5000	BOW	nobound	322	lex	5_5	1	weight	5000	5000	nav	4_4	217	heffen
+		heffen.BOWnobound5lex.PPMIweight.LENGTHFOC	BOW	nobound	322	lex	5_5	1	weight	FOC	322	nav	4_4	217	heffen
+		heffen.BOWnobound5lex.PPMIselection.LENGTH5000	BOW	nobound	322	lex	5_5	1	selection	5000	5000	nav	4_4	217	heffen
+		heffen.BOWnobound5lex.PPMIselection.LENGTHFOC	BOW	nobound	322	lex	5_5	1	selection	FOC	322	nav	4_4	217	heffen
+		heffen.BOWnobound5lex.PPMIno.LENGTH5000	BOW	nobound	515	lex	5_5	1	no	5000	5000	nav	4_4	218	heffen
+		heffen.BOWnobound5lex.PPMIno.LENGTHFOC	BOW	nobound	515	lex	5_5	1	no	FOC	515	nav	4_4	218	heffen
+		heffen.BOWnobound5all.PPMIweight.LENGTH5000	BOW	nobound	427	all	5_5	1	weight	5000	5000	nav	4_4	218	heffen
+		heffen.BOWnobound5all.PPMIweight.LENGTHFOC	BOW	nobound	427	all	5_5	1	weight	FOC	427	nav	4_4	218	heffen
+		heffen.BOWnobound5all.PPMIselection.LENGTH5000	BOW	nobound	427	all	5_5	1	selection	5000	5000	nav	4_4	218	heffen
+		heffen.BOWnobound5all.PPMIselection.LENGTHFOC	BOW	nobound	427	all	5_5	1	selection	FOC	427	nav	4_4	218	heffen
+		heffen.BOWnobound5all.PPMIno.LENGTH5000	BOW	nobound	698	all	5_5	1	no	5000	5000	nav	4_4	218	heffen
+		heffen.BOWnobound5all.PPMIno.LENGTHFOC	BOW	nobound	698	all	5_5	1	no	FOC	698	nav	4_4	218	heffen
+		heffen.BOWnobound3lex.PPMIweight.LENGTH5000	BOW	nobound	220	lex	3_3	1	weight	5000	5000	nav	4_4	207	heffen
+		heffen.BOWnobound3lex.PPMIweight.LENGTHFOC	BOW	nobound	220	lex	3_3	1	weight	FOC	220	nav	4_4	207	heffen
+		heffen.BOWnobound3lex.PPMIselection.LENGTH5000	BOW	nobound	220	lex	3_3	1	selection	5000	5000	nav	4_4	207	heffen
+		heffen.BOWnobound3lex.PPMIselection.LENGTHFOC	BOW	nobound	220	lex	3_3	1	selection	FOC	220	nav	4_4	207	heffen
+		heffen.BOWnobound3lex.PPMIno.LENGTH5000	BOW	nobound	312	lex	3_3	1	no	5000	5000	nav	4_4	214	heffen
+		heffen.BOWnobound3lex.PPMIno.LENGTHFOC	BOW	nobound	312	lex	3_3	1	no	FOC	312	nav	4_4	214	heffen
+		heffen.BOWnobound3all.PPMIweight.LENGTH5000	BOW	nobound	290	all	3_3	1	weight	5000	5000	nav	4_4	216	heffen
+		heffen.BOWnobound3all.PPMIweight.LENGTHFOC	BOW	nobound	290	all	3_3	1	weight	FOC	290	nav	4_4	216	heffen
+		heffen.BOWnobound3all.PPMIselection.LENGTH5000	BOW	nobound	290	all	3_3	1	selection	5000	5000	nav	4_4	216	heffen
+		heffen.BOWnobound3all.PPMIselection.LENGTHFOC	BOW	nobound	290	all	3_3	1	selection	FOC	290	nav	4_4	216	heffen
+		heffen.BOWnobound3all.PPMIno.LENGTH5000	BOW	nobound	421	all	3_3	1	no	5000	5000	nav	4_4	218	heffen
+		heffen.BOWnobound3all.PPMIno.LENGTHFOC	BOW	nobound	421	all	3_3	1	no	FOC	421	nav	4_4	218	heffen
+selection2		heffen.LEMMAPATHselection2.PPMIweight.LENGTH5000	dependency	bound	133			1	weight	5000	5000	nav	4_4	217	heffen
+selection2		heffen.LEMMAPATHselection2.PPMIweight.LENGTHFOC	dependency	bound	133			1	weight	FOC	133	nav	4_4	217	heffen
+selection2		heffen.LEMMAPATHselection2.PPMIselection.LENGTH5000	dependency	bound	133			1	selection	5000	5000	nav	4_4	217	heffen
+selection2		heffen.LEMMAPATHselection2.PPMIselection.LENGTHFOC	dependency	bound	133			1	selection	FOC	133	nav	4_4	217	heffen
+selection2		heffen.LEMMAPATHselection2.PPMIno.LENGTH5000	dependency	bound	545			1	no	5000	5000	nav	4_4	247	heffen
+selection2		heffen.LEMMAPATHselection2.PPMIno.LENGTHFOC	dependency	bound	545			1	no	FOC	545	nav	4_4	247	heffen
+selection3		heffen.LEMMAPATHselection3.PPMIweight.LENGTH5000	dependency	bound	176			1	weight	5000	5000	nav	4_4	237	heffen
+selection3		heffen.LEMMAPATHselection3.PPMIweight.LENGTHFOC	dependency	bound	176			1	weight	FOC	176	nav	4_4	237	heffen
+selection3		heffen.LEMMAPATHselection3.PPMIselection.LENGTH5000	dependency	bound	176			1	selection	5000	5000	nav	4_4	237	heffen
+selection3		heffen.LEMMAPATHselection3.PPMIselection.LENGTHFOC	dependency	bound	176			1	selection	FOC	176	nav	4_4	237	heffen
+selection3		heffen.LEMMAPATHselection3.PPMIno.LENGTH5000	dependency	bound	803			1	no	5000	5000	nav	4_4	247	heffen
+selection3		heffen.LEMMAPATHselection3.PPMIno.LENGTHFOC	dependency	bound	803			1	no	FOC	803	nav	4_4	247	heffen
+weight		heffen.LEMMAPATHweight.PPMIweight.LENGTH5000	dependency	bound	176			1	weight	5000	5000	nav	4_4	237	heffen
+weight		heffen.LEMMAPATHweight.PPMIweight.LENGTHFOC	dependency	bound	176			1	weight	FOC	176	nav	4_4	237	heffen
+weight		heffen.LEMMAPATHweight.PPMIselection.LENGTH5000	dependency	bound	176			1	selection	5000	5000	nav	4_4	237	heffen
+weight		heffen.LEMMAPATHweight.PPMIselection.LENGTHFOC	dependency	bound	176			1	selection	FOC	176	nav	4_4	237	heffen
+weight		heffen.LEMMAPATHweight.PPMIno.LENGTH5000	dependency	bound	803			1	no	5000	5000	nav	4_4	247	heffen
+weight		heffen.LEMMAPATHweight.PPMIno.LENGTHFOC	dependency	bound	803			1	no	FOC	803	nav	4_4	247	heffen
+	group1	heffen.LEMMAREL1.PPMIweight.LENGTH5000	dependency	bound	133			1	weight	5000	5000	nav	4_4	189	heffen
+	group1	heffen.LEMMAREL1.PPMIweight.LENGTHFOC	dependency	bound	133			1	weight	FOC	133	nav	4_4	189	heffen
+	group1	heffen.LEMMAREL1.PPMIselection.LENGTH5000	dependency	bound	133			1	selection	5000	5000	nav	4_4	189	heffen
+	group1	heffen.LEMMAREL1.PPMIselection.LENGTHFOC	dependency	bound	133			1	selection	FOC	133	nav	4_4	189	heffen
+	group1	heffen.LEMMAREL1.PPMIno.LENGTH5000	dependency	bound	199			1	no	5000	5000	nav	4_4	205	heffen
+	group1	heffen.LEMMAREL1.PPMIno.LENGTHFOC	dependency	bound	199			1	no	FOC	199	nav	4_4	205	heffen
+	group2	heffen.LEMMAREL2.PPMIweight.LENGTH5000	dependency	bound	208			1	weight	5000	5000	nav	4_4	210	heffen
+	group2	heffen.LEMMAREL2.PPMIweight.LENGTHFOC	dependency	bound	208			1	weight	FOC	208	nav	4_4	210	heffen
+	group2	heffen.LEMMAREL2.PPMIselection.LENGTH5000	dependency	bound	208			1	selection	5000	5000	nav	4_4	210	heffen
+	group2	heffen.LEMMAREL2.PPMIselection.LENGTHFOC	dependency	bound	208			1	selection	FOC	208	nav	4_4	210	heffen
+	group2	heffen.LEMMAREL2.PPMIno.LENGTH5000	dependency	bound	323			1	no	5000	5000	nav	4_4	211	heffen
+	group2	heffen.LEMMAREL2.PPMIno.LENGTHFOC	dependency	bound	323			1	no	FOC	323	nav	4_4	211	heffen

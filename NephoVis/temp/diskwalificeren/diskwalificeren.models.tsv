@@ -1,0 +1,103 @@
+LEMMAPATH	LEMMAREL	_model	base	foc_boundaries	foc_context_words	foc_foc_pos	foc_foc_win	foc_minimum_features	foc_ppmi	soc_length	soc_length_num	soc_soc_pos	soc_soc_win	tokens	type
+		diskwalificeren.BOWbound10lex.PPMIweight.LENGTH5000	BOW	bound	364	lex	10_10	1	weight	5000	5000	nav	4_4	227	diskwalificeren
+		diskwalificeren.BOWbound10lex.PPMIweight.LENGTHFOC	BOW	bound	364	lex	10_10	1	weight	FOC	364	nav	4_4	227	diskwalificeren
+		diskwalificeren.BOWbound10lex.PPMIselection.LENGTH5000	BOW	bound	364	lex	10_10	1	selection	5000	5000	nav	4_4	227	diskwalificeren
+		diskwalificeren.BOWbound10lex.PPMIselection.LENGTHFOC	BOW	bound	364	lex	10_10	1	selection	FOC	364	nav	4_4	227	diskwalificeren
+		diskwalificeren.BOWbound10lex.PPMIno.LENGTH5000	BOW	bound	672	lex	10_10	1	no	5000	5000	nav	4_4	233	diskwalificeren
+		diskwalificeren.BOWbound10lex.PPMIno.LENGTHFOC	BOW	bound	672	lex	10_10	1	no	FOC	672	nav	4_4	233	diskwalificeren
+		diskwalificeren.BOWbound10all.PPMIweight.LENGTH5000	BOW	bound	538	all	10_10	1	weight	5000	5000	nav	4_4	235	diskwalificeren
+		diskwalificeren.BOWbound10all.PPMIweight.LENGTHFOC	BOW	bound	538	all	10_10	1	weight	FOC	538	nav	4_4	235	diskwalificeren
+		diskwalificeren.BOWbound10all.PPMIselection.LENGTH5000	BOW	bound	538	all	10_10	1	selection	5000	5000	nav	4_4	235	diskwalificeren
+		diskwalificeren.BOWbound10all.PPMIselection.LENGTHFOC	BOW	bound	538	all	10_10	1	selection	FOC	538	nav	4_4	235	diskwalificeren
+		diskwalificeren.BOWbound10all.PPMIno.LENGTH5000	BOW	bound	996	all	10_10	1	no	5000	5000	nav	4_4	237	diskwalificeren
+		diskwalificeren.BOWbound10all.PPMIno.LENGTHFOC	BOW	bound	996	all	10_10	1	no	FOC	996	nav	4_4	237	diskwalificeren
+		diskwalificeren.BOWbound5lex.PPMIweight.LENGTH5000	BOW	bound	314	lex	5_5	1	weight	5000	5000	nav	4_4	222	diskwalificeren
+		diskwalificeren.BOWbound5lex.PPMIweight.LENGTHFOC	BOW	bound	314	lex	5_5	1	weight	FOC	314	nav	4_4	222	diskwalificeren
+		diskwalificeren.BOWbound5lex.PPMIselection.LENGTH5000	BOW	bound	314	lex	5_5	1	selection	5000	5000	nav	4_4	222	diskwalificeren
+		diskwalificeren.BOWbound5lex.PPMIselection.LENGTHFOC	BOW	bound	314	lex	5_5	1	selection	FOC	314	nav	4_4	222	diskwalificeren
+		diskwalificeren.BOWbound5lex.PPMIno.LENGTH5000	BOW	bound	418	lex	5_5	1	no	5000	5000	nav	4_4	230	diskwalificeren
+		diskwalificeren.BOWbound5lex.PPMIno.LENGTHFOC	BOW	bound	418	lex	5_5	1	no	FOC	418	nav	4_4	230	diskwalificeren
+		diskwalificeren.BOWbound5all.PPMIweight.LENGTH5000	BOW	bound	465	all	5_5	1	weight	5000	5000	nav	4_4	234	diskwalificeren
+		diskwalificeren.BOWbound5all.PPMIweight.LENGTHFOC	BOW	bound	465	all	5_5	1	weight	FOC	465	nav	4_4	234	diskwalificeren
+		diskwalificeren.BOWbound5all.PPMIselection.LENGTH5000	BOW	bound	465	all	5_5	1	selection	5000	5000	nav	4_4	234	diskwalificeren
+		diskwalificeren.BOWbound5all.PPMIselection.LENGTHFOC	BOW	bound	465	all	5_5	1	selection	FOC	465	nav	4_4	234	diskwalificeren
+		diskwalificeren.BOWbound5all.PPMIno.LENGTH5000	BOW	bound	637	all	5_5	1	no	5000	5000	nav	4_4	237	diskwalificeren
+		diskwalificeren.BOWbound5all.PPMIno.LENGTHFOC	BOW	bound	637	all	5_5	1	no	FOC	637	nav	4_4	237	diskwalificeren
+		diskwalificeren.BOWbound3lex.PPMIweight.LENGTH5000	BOW	bound	229	lex	3_3	1	weight	5000	5000	nav	4_4	206	diskwalificeren
+		diskwalificeren.BOWbound3lex.PPMIweight.LENGTHFOC	BOW	bound	229	lex	3_3	1	weight	FOC	229	nav	4_4	206	diskwalificeren
+		diskwalificeren.BOWbound3lex.PPMIselection.LENGTH5000	BOW	bound	229	lex	3_3	1	selection	5000	5000	nav	4_4	206	diskwalificeren
+		diskwalificeren.BOWbound3lex.PPMIselection.LENGTHFOC	BOW	bound	229	lex	3_3	1	selection	FOC	229	nav	4_4	206	diskwalificeren
+		diskwalificeren.BOWbound3lex.PPMIno.LENGTH5000	BOW	bound	270	lex	3_3	1	no	5000	5000	nav	4_4	216	diskwalificeren
+		diskwalificeren.BOWbound3lex.PPMIno.LENGTHFOC	BOW	bound	270	lex	3_3	1	no	FOC	270	nav	4_4	216	diskwalificeren
+		diskwalificeren.BOWbound3all.PPMIweight.LENGTH5000	BOW	bound	346	all	3_3	1	weight	5000	5000	nav	4_4	230	diskwalificeren
+		diskwalificeren.BOWbound3all.PPMIweight.LENGTHFOC	BOW	bound	346	all	3_3	1	weight	FOC	346	nav	4_4	230	diskwalificeren
+		diskwalificeren.BOWbound3all.PPMIselection.LENGTH5000	BOW	bound	346	all	3_3	1	selection	5000	5000	nav	4_4	230	diskwalificeren
+		diskwalificeren.BOWbound3all.PPMIselection.LENGTHFOC	BOW	bound	346	all	3_3	1	selection	FOC	346	nav	4_4	230	diskwalificeren
+		diskwalificeren.BOWbound3all.PPMIno.LENGTH5000	BOW	bound	419	all	3_3	1	no	5000	5000	nav	4_4	234	diskwalificeren
+		diskwalificeren.BOWbound3all.PPMIno.LENGTHFOC	BOW	bound	419	all	3_3	1	no	FOC	419	nav	4_4	234	diskwalificeren
+		diskwalificeren.BOWnobound10lex.PPMIweight.LENGTH5000	BOW	nobound	425	lex	10_10	1	weight	5000	5000	nav	4_4	233	diskwalificeren
+		diskwalificeren.BOWnobound10lex.PPMIweight.LENGTHFOC	BOW	nobound	425	lex	10_10	1	weight	FOC	425	nav	4_4	233	diskwalificeren
+		diskwalificeren.BOWnobound10lex.PPMIselection.LENGTH5000	BOW	nobound	425	lex	10_10	1	selection	5000	5000	nav	4_4	233	diskwalificeren
+		diskwalificeren.BOWnobound10lex.PPMIselection.LENGTHFOC	BOW	nobound	425	lex	10_10	1	selection	FOC	425	nav	4_4	233	diskwalificeren
+		diskwalificeren.BOWnobound10lex.PPMIno.LENGTH5000	BOW	nobound	936	lex	10_10	1	no	5000	5000	nav	4_4	237	diskwalificeren
+		diskwalificeren.BOWnobound10lex.PPMIno.LENGTHFOC	BOW	nobound	936	lex	10_10	1	no	FOC	936	nav	4_4	237	diskwalificeren
+		diskwalificeren.BOWnobound10all.PPMIweight.LENGTH5000	BOW	nobound	636	all	10_10	1	weight	5000	5000	nav	4_4	236	diskwalificeren
+		diskwalificeren.BOWnobound10all.PPMIweight.LENGTHFOC	BOW	nobound	636	all	10_10	1	weight	FOC	636	nav	4_4	236	diskwalificeren
+		diskwalificeren.BOWnobound10all.PPMIselection.LENGTH5000	BOW	nobound	636	all	10_10	1	selection	5000	5000	nav	4_4	236	diskwalificeren
+		diskwalificeren.BOWnobound10all.PPMIselection.LENGTHFOC	BOW	nobound	636	all	10_10	1	selection	FOC	636	nav	4_4	236	diskwalificeren
+		diskwalificeren.BOWnobound10all.PPMIno.LENGTH5000	BOW	nobound	1373	all	10_10	1	no	5000	5000	nav	4_4	238	diskwalificeren
+		diskwalificeren.BOWnobound10all.PPMIno.LENGTHFOC	BOW	nobound	1373	all	10_10	1	no	FOC	1373	nav	4_4	238	diskwalificeren
+		diskwalificeren.BOWnobound5lex.PPMIweight.LENGTH5000	BOW	nobound	354	lex	5_5	1	weight	5000	5000	nav	4_4	228	diskwalificeren
+		diskwalificeren.BOWnobound5lex.PPMIweight.LENGTHFOC	BOW	nobound	354	lex	5_5	1	weight	FOC	354	nav	4_4	228	diskwalificeren
+		diskwalificeren.BOWnobound5lex.PPMIselection.LENGTH5000	BOW	nobound	354	lex	5_5	1	selection	5000	5000	nav	4_4	228	diskwalificeren
+		diskwalificeren.BOWnobound5lex.PPMIselection.LENGTHFOC	BOW	nobound	354	lex	5_5	1	selection	FOC	354	nav	4_4	228	diskwalificeren
+		diskwalificeren.BOWnobound5lex.PPMIno.LENGTH5000	BOW	nobound	502	lex	5_5	1	no	5000	5000	nav	4_4	235	diskwalificeren
+		diskwalificeren.BOWnobound5lex.PPMIno.LENGTHFOC	BOW	nobound	502	lex	5_5	1	no	FOC	502	nav	4_4	235	diskwalificeren
+		diskwalificeren.BOWnobound5all.PPMIweight.LENGTH5000	BOW	nobound	526	all	5_5	1	weight	5000	5000	nav	4_4	236	diskwalificeren
+		diskwalificeren.BOWnobound5all.PPMIweight.LENGTHFOC	BOW	nobound	526	all	5_5	1	weight	FOC	526	nav	4_4	236	diskwalificeren
+		diskwalificeren.BOWnobound5all.PPMIselection.LENGTH5000	BOW	nobound	526	all	5_5	1	selection	5000	5000	nav	4_4	236	diskwalificeren
+		diskwalificeren.BOWnobound5all.PPMIselection.LENGTHFOC	BOW	nobound	526	all	5_5	1	selection	FOC	526	nav	4_4	236	diskwalificeren
+		diskwalificeren.BOWnobound5all.PPMIno.LENGTH5000	BOW	nobound	755	all	5_5	1	no	5000	5000	nav	4_4	237	diskwalificeren
+		diskwalificeren.BOWnobound5all.PPMIno.LENGTHFOC	BOW	nobound	755	all	5_5	1	no	FOC	755	nav	4_4	237	diskwalificeren
+		diskwalificeren.BOWnobound3lex.PPMIweight.LENGTH5000	BOW	nobound	251	lex	3_3	1	weight	5000	5000	nav	4_4	212	diskwalificeren
+		diskwalificeren.BOWnobound3lex.PPMIweight.LENGTHFOC	BOW	nobound	251	lex	3_3	1	weight	FOC	251	nav	4_4	212	diskwalificeren
+		diskwalificeren.BOWnobound3lex.PPMIselection.LENGTH5000	BOW	nobound	251	lex	3_3	1	selection	5000	5000	nav	4_4	212	diskwalificeren
+		diskwalificeren.BOWnobound3lex.PPMIselection.LENGTHFOC	BOW	nobound	251	lex	3_3	1	selection	FOC	251	nav	4_4	212	diskwalificeren
+		diskwalificeren.BOWnobound3lex.PPMIno.LENGTH5000	BOW	nobound	301	lex	3_3	1	no	5000	5000	nav	4_4	222	diskwalificeren
+		diskwalificeren.BOWnobound3lex.PPMIno.LENGTHFOC	BOW	nobound	301	lex	3_3	1	no	FOC	301	nav	4_4	222	diskwalificeren
+		diskwalificeren.BOWnobound3all.PPMIweight.LENGTH5000	BOW	nobound	382	all	3_3	1	weight	5000	5000	nav	4_4	233	diskwalificeren
+		diskwalificeren.BOWnobound3all.PPMIweight.LENGTHFOC	BOW	nobound	382	all	3_3	1	weight	FOC	382	nav	4_4	233	diskwalificeren
+		diskwalificeren.BOWnobound3all.PPMIselection.LENGTH5000	BOW	nobound	382	all	3_3	1	selection	5000	5000	nav	4_4	233	diskwalificeren
+		diskwalificeren.BOWnobound3all.PPMIselection.LENGTHFOC	BOW	nobound	382	all	3_3	1	selection	FOC	382	nav	4_4	233	diskwalificeren
+		diskwalificeren.BOWnobound3all.PPMIno.LENGTH5000	BOW	nobound	469	all	3_3	1	no	5000	5000	nav	4_4	235	diskwalificeren
+		diskwalificeren.BOWnobound3all.PPMIno.LENGTHFOC	BOW	nobound	469	all	3_3	1	no	FOC	469	nav	4_4	235	diskwalificeren
+selection2		diskwalificeren.LEMMAPATHselection2.PPMIweight.LENGTH5000	dependency	bound	100			1	weight	5000	5000	nav	4_4	185	diskwalificeren
+selection2		diskwalificeren.LEMMAPATHselection2.PPMIweight.LENGTHFOC	dependency	bound	100			1	weight	FOC	100	nav	4_4	185	diskwalificeren
+selection2		diskwalificeren.LEMMAPATHselection2.PPMIselection.LENGTH5000	dependency	bound	100			1	selection	5000	5000	nav	4_4	185	diskwalificeren
+selection2		diskwalificeren.LEMMAPATHselection2.PPMIselection.LENGTHFOC	dependency	bound	100			1	selection	FOC	100	nav	4_4	185	diskwalificeren
+selection2		diskwalificeren.LEMMAPATHselection2.PPMIno.LENGTH5000	dependency	bound	545			1	no	5000	5000	nav	4_4	247	diskwalificeren
+selection2		diskwalificeren.LEMMAPATHselection2.PPMIno.LENGTHFOC	dependency	bound	545			1	no	FOC	545	nav	4_4	247	diskwalificeren
+selection3		diskwalificeren.LEMMAPATHselection3.PPMIweight.LENGTH5000	dependency	bound	133			1	weight	5000	5000	nav	4_4	206	diskwalificeren
+selection3		diskwalificeren.LEMMAPATHselection3.PPMIweight.LENGTHFOC	dependency	bound	133			1	weight	FOC	133	nav	4_4	206	diskwalificeren
+selection3		diskwalificeren.LEMMAPATHselection3.PPMIselection.LENGTH5000	dependency	bound	133			1	selection	5000	5000	nav	4_4	206	diskwalificeren
+selection3		diskwalificeren.LEMMAPATHselection3.PPMIselection.LENGTHFOC	dependency	bound	133			1	selection	FOC	133	nav	4_4	206	diskwalificeren
+selection3		diskwalificeren.LEMMAPATHselection3.PPMIno.LENGTH5000	dependency	bound	803			1	no	5000	5000	nav	4_4	247	diskwalificeren
+selection3		diskwalificeren.LEMMAPATHselection3.PPMIno.LENGTHFOC	dependency	bound	803			1	no	FOC	803	nav	4_4	247	diskwalificeren
+weight		diskwalificeren.LEMMAPATHweight.PPMIweight.LENGTH5000	dependency	bound	133			1	weight	5000	5000	nav	4_4	206	diskwalificeren
+weight		diskwalificeren.LEMMAPATHweight.PPMIweight.LENGTHFOC	dependency	bound	133			1	weight	FOC	133	nav	4_4	206	diskwalificeren
+weight		diskwalificeren.LEMMAPATHweight.PPMIselection.LENGTH5000	dependency	bound	133			1	selection	5000	5000	nav	4_4	206	diskwalificeren
+weight		diskwalificeren.LEMMAPATHweight.PPMIselection.LENGTHFOC	dependency	bound	133			1	selection	FOC	133	nav	4_4	206	diskwalificeren
+weight		diskwalificeren.LEMMAPATHweight.PPMIno.LENGTH5000	dependency	bound	803			1	no	5000	5000	nav	4_4	247	diskwalificeren
+weight		diskwalificeren.LEMMAPATHweight.PPMIno.LENGTHFOC	dependency	bound	803			1	no	FOC	803	nav	4_4	247	diskwalificeren
+	group1	diskwalificeren.LEMMAREL1.PPMIweight.LENGTH5000	dependency	bound	165			1	weight	5000	5000	nav	4_4	198	diskwalificeren
+	group1	diskwalificeren.LEMMAREL1.PPMIweight.LENGTHFOC	dependency	bound	165			1	weight	FOC	165	nav	4_4	198	diskwalificeren
+	group1	diskwalificeren.LEMMAREL1.PPMIselection.LENGTH5000	dependency	bound	165			1	selection	5000	5000	nav	4_4	198	diskwalificeren
+	group1	diskwalificeren.LEMMAREL1.PPMIselection.LENGTHFOC	dependency	bound	165			1	selection	FOC	165	nav	4_4	198	diskwalificeren
+	group1	diskwalificeren.LEMMAREL1.PPMIno.LENGTH5000	dependency	bound	231			1	no	5000	5000	nav	4_4	215	diskwalificeren
+	group1	diskwalificeren.LEMMAREL1.PPMIno.LENGTHFOC	dependency	bound	231			1	no	FOC	231	nav	4_4	215	diskwalificeren
+	group2	diskwalificeren.LEMMAREL2.PPMIweight.LENGTH5000	dependency	bound	240			1	weight	5000	5000	nav	4_4	223	diskwalificeren
+	group2	diskwalificeren.LEMMAREL2.PPMIweight.LENGTHFOC	dependency	bound	240			1	weight	FOC	240	nav	4_4	223	diskwalificeren
+	group2	diskwalificeren.LEMMAREL2.PPMIselection.LENGTH5000	dependency	bound	240			1	selection	5000	5000	nav	4_4	223	diskwalificeren
+	group2	diskwalificeren.LEMMAREL2.PPMIselection.LENGTHFOC	dependency	bound	240			1	selection	FOC	240	nav	4_4	223	diskwalificeren
+	group2	diskwalificeren.LEMMAREL2.PPMIno.LENGTH5000	dependency	bound	345			1	no	5000	5000	nav	4_4	225	diskwalificeren
+	group2	diskwalificeren.LEMMAREL2.PPMIno.LENGTHFOC	dependency	bound	345			1	no	FOC	345	nav	4_4	225	diskwalificeren

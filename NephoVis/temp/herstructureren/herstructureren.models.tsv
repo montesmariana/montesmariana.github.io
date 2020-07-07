@@ -1,0 +1,103 @@
+LEMMAPATH	LEMMAREL	_model	base	foc_boundaries	foc_context_words	foc_foc_pos	foc_foc_win	foc_minimum_features	foc_ppmi	soc_length	soc_length_num	soc_soc_pos	soc_soc_win	tokens	type
+		herstructureren.BOWbound10lex.PPMIweight.LENGTH5000	BOW	bound	405	lex	10_10	1	weight	5000	5000	nav	4_4	233	herstructureren
+		herstructureren.BOWbound10lex.PPMIweight.LENGTHFOC	BOW	bound	405	lex	10_10	1	weight	FOC	405	nav	4_4	233	herstructureren
+		herstructureren.BOWbound10lex.PPMIselection.LENGTH5000	BOW	bound	405	lex	10_10	1	selection	5000	5000	nav	4_4	233	herstructureren
+		herstructureren.BOWbound10lex.PPMIselection.LENGTHFOC	BOW	bound	405	lex	10_10	1	selection	FOC	405	nav	4_4	233	herstructureren
+		herstructureren.BOWbound10lex.PPMIno.LENGTH5000	BOW	bound	722	lex	10_10	1	no	5000	5000	nav	4_4	236	herstructureren
+		herstructureren.BOWbound10lex.PPMIno.LENGTHFOC	BOW	bound	722	lex	10_10	1	no	FOC	722	nav	4_4	236	herstructureren
+		herstructureren.BOWbound10all.PPMIweight.LENGTH5000	BOW	bound	543	all	10_10	1	weight	5000	5000	nav	4_4	239	herstructureren
+		herstructureren.BOWbound10all.PPMIweight.LENGTHFOC	BOW	bound	543	all	10_10	1	weight	FOC	543	nav	4_4	239	herstructureren
+		herstructureren.BOWbound10all.PPMIselection.LENGTH5000	BOW	bound	543	all	10_10	1	selection	5000	5000	nav	4_4	239	herstructureren
+		herstructureren.BOWbound10all.PPMIselection.LENGTHFOC	BOW	bound	543	all	10_10	1	selection	FOC	543	nav	4_4	239	herstructureren
+		herstructureren.BOWbound10all.PPMIno.LENGTH5000	BOW	bound	1025	all	10_10	1	no	5000	5000	nav	4_4	239	herstructureren
+		herstructureren.BOWbound10all.PPMIno.LENGTHFOC	BOW	bound	1025	all	10_10	1	no	FOC	1025	nav	4_4	239	herstructureren
+		herstructureren.BOWbound5lex.PPMIweight.LENGTH5000	BOW	bound	344	lex	5_5	1	weight	5000	5000	nav	4_4	233	herstructureren
+		herstructureren.BOWbound5lex.PPMIweight.LENGTHFOC	BOW	bound	344	lex	5_5	1	weight	FOC	344	nav	4_4	233	herstructureren
+		herstructureren.BOWbound5lex.PPMIselection.LENGTH5000	BOW	bound	344	lex	5_5	1	selection	5000	5000	nav	4_4	233	herstructureren
+		herstructureren.BOWbound5lex.PPMIselection.LENGTHFOC	BOW	bound	344	lex	5_5	1	selection	FOC	344	nav	4_4	233	herstructureren
+		herstructureren.BOWbound5lex.PPMIno.LENGTH5000	BOW	bound	442	lex	5_5	1	no	5000	5000	nav	4_4	236	herstructureren
+		herstructureren.BOWbound5lex.PPMIno.LENGTHFOC	BOW	bound	442	lex	5_5	1	no	FOC	442	nav	4_4	236	herstructureren
+		herstructureren.BOWbound5all.PPMIweight.LENGTH5000	BOW	bound	460	all	5_5	1	weight	5000	5000	nav	4_4	239	herstructureren
+		herstructureren.BOWbound5all.PPMIweight.LENGTHFOC	BOW	bound	460	all	5_5	1	weight	FOC	460	nav	4_4	239	herstructureren
+		herstructureren.BOWbound5all.PPMIselection.LENGTH5000	BOW	bound	460	all	5_5	1	selection	5000	5000	nav	4_4	239	herstructureren
+		herstructureren.BOWbound5all.PPMIselection.LENGTHFOC	BOW	bound	460	all	5_5	1	selection	FOC	460	nav	4_4	239	herstructureren
+		herstructureren.BOWbound5all.PPMIno.LENGTH5000	BOW	bound	632	all	5_5	1	no	5000	5000	nav	4_4	239	herstructureren
+		herstructureren.BOWbound5all.PPMIno.LENGTHFOC	BOW	bound	632	all	5_5	1	no	FOC	632	nav	4_4	239	herstructureren
+		herstructureren.BOWbound3lex.PPMIweight.LENGTH5000	BOW	bound	249	lex	3_3	1	weight	5000	5000	nav	4_4	220	herstructureren
+		herstructureren.BOWbound3lex.PPMIweight.LENGTHFOC	BOW	bound	249	lex	3_3	1	weight	FOC	249	nav	4_4	220	herstructureren
+		herstructureren.BOWbound3lex.PPMIselection.LENGTH5000	BOW	bound	249	lex	3_3	1	selection	5000	5000	nav	4_4	220	herstructureren
+		herstructureren.BOWbound3lex.PPMIselection.LENGTHFOC	BOW	bound	249	lex	3_3	1	selection	FOC	249	nav	4_4	220	herstructureren
+		herstructureren.BOWbound3lex.PPMIno.LENGTH5000	BOW	bound	277	lex	3_3	1	no	5000	5000	nav	4_4	225	herstructureren
+		herstructureren.BOWbound3lex.PPMIno.LENGTHFOC	BOW	bound	277	lex	3_3	1	no	FOC	277	nav	4_4	225	herstructureren
+		herstructureren.BOWbound3all.PPMIweight.LENGTH5000	BOW	bound	331	all	3_3	1	weight	5000	5000	nav	4_4	238	herstructureren
+		herstructureren.BOWbound3all.PPMIweight.LENGTHFOC	BOW	bound	331	all	3_3	1	weight	FOC	331	nav	4_4	238	herstructureren
+		herstructureren.BOWbound3all.PPMIselection.LENGTH5000	BOW	bound	331	all	3_3	1	selection	5000	5000	nav	4_4	238	herstructureren
+		herstructureren.BOWbound3all.PPMIselection.LENGTHFOC	BOW	bound	331	all	3_3	1	selection	FOC	331	nav	4_4	238	herstructureren
+		herstructureren.BOWbound3all.PPMIno.LENGTH5000	BOW	bound	388	all	3_3	1	no	5000	5000	nav	4_4	239	herstructureren
+		herstructureren.BOWbound3all.PPMIno.LENGTHFOC	BOW	bound	388	all	3_3	1	no	FOC	388	nav	4_4	239	herstructureren
+		herstructureren.BOWnobound10lex.PPMIweight.LENGTH5000	BOW	nobound	471	lex	10_10	1	weight	5000	5000	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound10lex.PPMIweight.LENGTHFOC	BOW	nobound	471	lex	10_10	1	weight	FOC	471	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound10lex.PPMIselection.LENGTH5000	BOW	nobound	471	lex	10_10	1	selection	5000	5000	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound10lex.PPMIselection.LENGTHFOC	BOW	nobound	471	lex	10_10	1	selection	FOC	471	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound10lex.PPMIno.LENGTH5000	BOW	nobound	964	lex	10_10	1	no	5000	5000	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound10lex.PPMIno.LENGTHFOC	BOW	nobound	964	lex	10_10	1	no	FOC	964	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound10all.PPMIweight.LENGTH5000	BOW	nobound	652	all	10_10	1	weight	5000	5000	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound10all.PPMIweight.LENGTHFOC	BOW	nobound	652	all	10_10	1	weight	FOC	652	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound10all.PPMIselection.LENGTH5000	BOW	nobound	652	all	10_10	1	selection	5000	5000	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound10all.PPMIselection.LENGTHFOC	BOW	nobound	652	all	10_10	1	selection	FOC	652	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound10all.PPMIno.LENGTH5000	BOW	nobound	1412	all	10_10	1	no	5000	5000	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound10all.PPMIno.LENGTHFOC	BOW	nobound	1412	all	10_10	1	no	FOC	1412	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound5lex.PPMIweight.LENGTH5000	BOW	nobound	393	lex	5_5	1	weight	5000	5000	nav	4_4	238	herstructureren
+		herstructureren.BOWnobound5lex.PPMIweight.LENGTHFOC	BOW	nobound	393	lex	5_5	1	weight	FOC	393	nav	4_4	238	herstructureren
+		herstructureren.BOWnobound5lex.PPMIselection.LENGTH5000	BOW	nobound	393	lex	5_5	1	selection	5000	5000	nav	4_4	238	herstructureren
+		herstructureren.BOWnobound5lex.PPMIselection.LENGTHFOC	BOW	nobound	393	lex	5_5	1	selection	FOC	393	nav	4_4	238	herstructureren
+		herstructureren.BOWnobound5lex.PPMIno.LENGTH5000	BOW	nobound	526	lex	5_5	1	no	5000	5000	nav	4_4	238	herstructureren
+		herstructureren.BOWnobound5lex.PPMIno.LENGTHFOC	BOW	nobound	526	lex	5_5	1	no	FOC	526	nav	4_4	238	herstructureren
+		herstructureren.BOWnobound5all.PPMIweight.LENGTH5000	BOW	nobound	550	all	5_5	1	weight	5000	5000	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound5all.PPMIweight.LENGTHFOC	BOW	nobound	550	all	5_5	1	weight	FOC	550	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound5all.PPMIselection.LENGTH5000	BOW	nobound	550	all	5_5	1	selection	5000	5000	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound5all.PPMIselection.LENGTHFOC	BOW	nobound	550	all	5_5	1	selection	FOC	550	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound5all.PPMIno.LENGTH5000	BOW	nobound	779	all	5_5	1	no	5000	5000	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound5all.PPMIno.LENGTHFOC	BOW	nobound	779	all	5_5	1	no	FOC	779	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound3lex.PPMIweight.LENGTH5000	BOW	nobound	281	lex	3_3	1	weight	5000	5000	nav	4_4	227	herstructureren
+		herstructureren.BOWnobound3lex.PPMIweight.LENGTHFOC	BOW	nobound	281	lex	3_3	1	weight	FOC	281	nav	4_4	227	herstructureren
+		herstructureren.BOWnobound3lex.PPMIselection.LENGTH5000	BOW	nobound	281	lex	3_3	1	selection	5000	5000	nav	4_4	227	herstructureren
+		herstructureren.BOWnobound3lex.PPMIselection.LENGTHFOC	BOW	nobound	281	lex	3_3	1	selection	FOC	281	nav	4_4	227	herstructureren
+		herstructureren.BOWnobound3lex.PPMIno.LENGTH5000	BOW	nobound	316	lex	3_3	1	no	5000	5000	nav	4_4	231	herstructureren
+		herstructureren.BOWnobound3lex.PPMIno.LENGTHFOC	BOW	nobound	316	lex	3_3	1	no	FOC	316	nav	4_4	231	herstructureren
+		herstructureren.BOWnobound3all.PPMIweight.LENGTH5000	BOW	nobound	394	all	3_3	1	weight	5000	5000	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound3all.PPMIweight.LENGTHFOC	BOW	nobound	394	all	3_3	1	weight	FOC	394	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound3all.PPMIselection.LENGTH5000	BOW	nobound	394	all	3_3	1	selection	5000	5000	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound3all.PPMIselection.LENGTHFOC	BOW	nobound	394	all	3_3	1	selection	FOC	394	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound3all.PPMIno.LENGTH5000	BOW	nobound	464	all	3_3	1	no	5000	5000	nav	4_4	240	herstructureren
+		herstructureren.BOWnobound3all.PPMIno.LENGTHFOC	BOW	nobound	464	all	3_3	1	no	FOC	464	nav	4_4	240	herstructureren
+selection2		herstructureren.LEMMAPATHselection2.PPMIweight.LENGTH5000	dependency	bound	84			1	weight	5000	5000	nav	4_4	222	herstructureren
+selection2		herstructureren.LEMMAPATHselection2.PPMIweight.LENGTHFOC	dependency	bound	84			1	weight	FOC	84	nav	4_4	222	herstructureren
+selection2		herstructureren.LEMMAPATHselection2.PPMIselection.LENGTH5000	dependency	bound	84			1	selection	5000	5000	nav	4_4	222	herstructureren
+selection2		herstructureren.LEMMAPATHselection2.PPMIselection.LENGTHFOC	dependency	bound	84			1	selection	FOC	84	nav	4_4	222	herstructureren
+selection2		herstructureren.LEMMAPATHselection2.PPMIno.LENGTH5000	dependency	bound	545			1	no	5000	5000	nav	4_4	247	herstructureren
+selection2		herstructureren.LEMMAPATHselection2.PPMIno.LENGTHFOC	dependency	bound	545			1	no	FOC	545	nav	4_4	247	herstructureren
+selection3		herstructureren.LEMMAPATHselection3.PPMIweight.LENGTH5000	dependency	bound	117			1	weight	5000	5000	nav	4_4	235	herstructureren
+selection3		herstructureren.LEMMAPATHselection3.PPMIweight.LENGTHFOC	dependency	bound	117			1	weight	FOC	117	nav	4_4	235	herstructureren
+selection3		herstructureren.LEMMAPATHselection3.PPMIselection.LENGTH5000	dependency	bound	117			1	selection	5000	5000	nav	4_4	235	herstructureren
+selection3		herstructureren.LEMMAPATHselection3.PPMIselection.LENGTHFOC	dependency	bound	117			1	selection	FOC	117	nav	4_4	235	herstructureren
+selection3		herstructureren.LEMMAPATHselection3.PPMIno.LENGTH5000	dependency	bound	803			1	no	5000	5000	nav	4_4	247	herstructureren
+selection3		herstructureren.LEMMAPATHselection3.PPMIno.LENGTHFOC	dependency	bound	803			1	no	FOC	803	nav	4_4	247	herstructureren
+weight		herstructureren.LEMMAPATHweight.PPMIweight.LENGTH5000	dependency	bound	117			1	weight	5000	5000	nav	4_4	235	herstructureren
+weight		herstructureren.LEMMAPATHweight.PPMIweight.LENGTHFOC	dependency	bound	117			1	weight	FOC	117	nav	4_4	235	herstructureren
+weight		herstructureren.LEMMAPATHweight.PPMIselection.LENGTH5000	dependency	bound	117			1	selection	5000	5000	nav	4_4	235	herstructureren
+weight		herstructureren.LEMMAPATHweight.PPMIselection.LENGTHFOC	dependency	bound	117			1	selection	FOC	117	nav	4_4	235	herstructureren
+weight		herstructureren.LEMMAPATHweight.PPMIno.LENGTH5000	dependency	bound	803			1	no	5000	5000	nav	4_4	247	herstructureren
+weight		herstructureren.LEMMAPATHweight.PPMIno.LENGTHFOC	dependency	bound	803			1	no	FOC	803	nav	4_4	247	herstructureren
+	group1	herstructureren.LEMMAREL1.PPMIweight.LENGTH5000	dependency	bound	130			1	weight	5000	5000	nav	4_4	146	herstructureren
+	group1	herstructureren.LEMMAREL1.PPMIweight.LENGTHFOC	dependency	bound	130			1	weight	FOC	130	nav	4_4	146	herstructureren
+	group1	herstructureren.LEMMAREL1.PPMIselection.LENGTH5000	dependency	bound	130			1	selection	5000	5000	nav	4_4	146	herstructureren
+	group1	herstructureren.LEMMAREL1.PPMIselection.LENGTHFOC	dependency	bound	130			1	selection	FOC	130	nav	4_4	146	herstructureren
+	group1	herstructureren.LEMMAREL1.PPMIno.LENGTH5000	dependency	bound	176			1	no	5000	5000	nav	4_4	170	herstructureren
+	group1	herstructureren.LEMMAREL1.PPMIno.LENGTHFOC	dependency	bound	176			1	no	FOC	176	nav	4_4	170	herstructureren
+	group2	herstructureren.LEMMAREL2.PPMIweight.LENGTH5000	dependency	bound	185			1	weight	5000	5000	nav	4_4	206	herstructureren
+	group2	herstructureren.LEMMAREL2.PPMIweight.LENGTHFOC	dependency	bound	185			1	weight	FOC	185	nav	4_4	206	herstructureren
+	group2	herstructureren.LEMMAREL2.PPMIselection.LENGTH5000	dependency	bound	185			1	selection	5000	5000	nav	4_4	206	herstructureren
+	group2	herstructureren.LEMMAREL2.PPMIselection.LENGTHFOC	dependency	bound	185			1	selection	FOC	185	nav	4_4	206	herstructureren
+	group2	herstructureren.LEMMAREL2.PPMIno.LENGTH5000	dependency	bound	254			1	no	5000	5000	nav	4_4	209	herstructureren
+	group2	herstructureren.LEMMAREL2.PPMIno.LENGTHFOC	dependency	bound	254			1	no	FOC	254	nav	4_4	209	herstructureren
