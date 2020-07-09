@@ -1,205 +1,205 @@
-LEMMAPATH	LEMMAREL	_model	base	foc_boundaries	foc_context_words	foc_foc_pos	foc_foc_win	foc_minimum_features	foc_ppmi	soc_length	soc_length_num	soc_soc_pos	soc_soc_win	tokens	type	stress
-NA	NA	huldigen.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSnav	BOW	bound	335	lex	10_10	1	weight	5000	5000	nav	4_4	222	huldigen	NA
-NA	NA	huldigen.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSall	BOW	bound	335	lex	10_10	1	weight	5000	5000	all	4_4	222	huldigen	NA
-NA	NA	huldigen.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	bound	335	lex	10_10	1	weight	FOC	218	nav	4_4	222	huldigen	NA
-NA	NA	huldigen.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSall	BOW	bound	335	lex	10_10	1	weight	FOC	335	all	4_4	222	huldigen	NA
-NA	NA	huldigen.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSnav	BOW	bound	335	lex	10_10	1	selection	5000	5000	nav	4_4	222	huldigen	NA
-NA	NA	huldigen.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSall	BOW	bound	335	lex	10_10	1	selection	5000	5000	all	4_4	222	huldigen	NA
-NA	NA	huldigen.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	bound	335	lex	10_10	1	selection	FOC	218	nav	4_4	222	huldigen	NA
-NA	NA	huldigen.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSall	BOW	bound	335	lex	10_10	1	selection	FOC	335	all	4_4	222	huldigen	NA
-NA	NA	huldigen.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSnav	BOW	bound	637	lex	10_10	1	no	5000	5000	nav	4_4	225	huldigen	NA
-NA	NA	huldigen.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSall	BOW	bound	637	lex	10_10	1	no	5000	5000	all	4_4	225	huldigen	NA
-NA	NA	huldigen.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSnav	BOW	bound	637	lex	10_10	1	no	FOC	450	nav	4_4	225	huldigen	NA
-NA	NA	huldigen.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSall	BOW	bound	637	lex	10_10	1	no	FOC	637	all	4_4	225	huldigen	NA
-NA	NA	huldigen.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSnav	BOW	bound	596	all	10_10	1	weight	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSall	BOW	bound	596	all	10_10	1	weight	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	bound	596	all	10_10	1	weight	FOC	218	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSall	BOW	bound	596	all	10_10	1	weight	FOC	596	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSnav	BOW	bound	596	all	10_10	1	selection	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSall	BOW	bound	596	all	10_10	1	selection	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	bound	596	all	10_10	1	selection	FOC	218	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSall	BOW	bound	596	all	10_10	1	selection	FOC	596	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound10all.PPMIno.LENGTH5000.SOCPOSnav	BOW	bound	1059	all	10_10	1	no	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound10all.PPMIno.LENGTH5000.SOCPOSall	BOW	bound	1059	all	10_10	1	no	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSnav	BOW	bound	1059	all	10_10	1	no	FOC	450	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSall	BOW	bound	1059	all	10_10	1	no	FOC	1059	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSnav	BOW	bound	273	lex	5_5	1	weight	5000	5000	nav	4_4	213	huldigen	NA
-NA	NA	huldigen.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSall	BOW	bound	273	lex	5_5	1	weight	5000	5000	all	4_4	213	huldigen	NA
-NA	NA	huldigen.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	bound	273	lex	5_5	1	weight	FOC	179	nav	4_4	213	huldigen	NA
-NA	NA	huldigen.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSall	BOW	bound	273	lex	5_5	1	weight	FOC	273	all	4_4	213	huldigen	NA
-NA	NA	huldigen.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSnav	BOW	bound	273	lex	5_5	1	selection	5000	5000	nav	4_4	213	huldigen	NA
-NA	NA	huldigen.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSall	BOW	bound	273	lex	5_5	1	selection	5000	5000	all	4_4	213	huldigen	NA
-NA	NA	huldigen.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	bound	273	lex	5_5	1	selection	FOC	179	nav	4_4	213	huldigen	NA
-NA	NA	huldigen.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSall	BOW	bound	273	lex	5_5	1	selection	FOC	273	all	4_4	213	huldigen	NA
-NA	NA	huldigen.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSnav	BOW	bound	395	lex	5_5	1	no	5000	5000	nav	4_4	221	huldigen	NA
-NA	NA	huldigen.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSall	BOW	bound	395	lex	5_5	1	no	5000	5000	all	4_4	221	huldigen	NA
-NA	NA	huldigen.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSnav	BOW	bound	395	lex	5_5	1	no	FOC	276	nav	4_4	221	huldigen	NA
-NA	NA	huldigen.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSall	BOW	bound	395	lex	5_5	1	no	FOC	395	all	4_4	221	huldigen	NA
-NA	NA	huldigen.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSnav	BOW	bound	483	all	5_5	1	weight	5000	5000	nav	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSall	BOW	bound	483	all	5_5	1	weight	5000	5000	all	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	bound	483	all	5_5	1	weight	FOC	179	nav	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSall	BOW	bound	483	all	5_5	1	weight	FOC	483	all	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSnav	BOW	bound	483	all	5_5	1	selection	5000	5000	nav	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSall	BOW	bound	483	all	5_5	1	selection	5000	5000	all	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	bound	483	all	5_5	1	selection	FOC	179	nav	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSall	BOW	bound	483	all	5_5	1	selection	FOC	483	all	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWbound5all.PPMIno.LENGTH5000.SOCPOSnav	BOW	bound	681	all	5_5	1	no	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound5all.PPMIno.LENGTH5000.SOCPOSall	BOW	bound	681	all	5_5	1	no	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSnav	BOW	bound	681	all	5_5	1	no	FOC	276	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSall	BOW	bound	681	all	5_5	1	no	FOC	681	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSnav	BOW	bound	200	lex	3_3	1	weight	5000	5000	nav	4_4	202	huldigen	NA
-NA	NA	huldigen.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSall	BOW	bound	200	lex	3_3	1	weight	5000	5000	all	4_4	202	huldigen	NA
-NA	NA	huldigen.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	bound	200	lex	3_3	1	weight	FOC	126	nav	4_4	202	huldigen	NA
-NA	NA	huldigen.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSall	BOW	bound	200	lex	3_3	1	weight	FOC	200	all	4_4	202	huldigen	NA
-NA	NA	huldigen.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSnav	BOW	bound	200	lex	3_3	1	selection	5000	5000	nav	4_4	202	huldigen	NA
-NA	NA	huldigen.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSall	BOW	bound	200	lex	3_3	1	selection	5000	5000	all	4_4	202	huldigen	NA
-NA	NA	huldigen.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	bound	200	lex	3_3	1	selection	FOC	126	nav	4_4	202	huldigen	NA
-NA	NA	huldigen.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSall	BOW	bound	200	lex	3_3	1	selection	FOC	200	all	4_4	202	huldigen	NA
-NA	NA	huldigen.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSnav	BOW	bound	256	lex	3_3	1	no	5000	5000	nav	4_4	216	huldigen	NA
-NA	NA	huldigen.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSall	BOW	bound	256	lex	3_3	1	no	5000	5000	all	4_4	216	huldigen	NA
-NA	NA	huldigen.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSnav	BOW	bound	256	lex	3_3	1	no	FOC	169	nav	4_4	216	huldigen	NA
-NA	NA	huldigen.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSall	BOW	bound	256	lex	3_3	1	no	FOC	256	all	4_4	216	huldigen	NA
-NA	NA	huldigen.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSnav	BOW	bound	350	all	3_3	1	weight	5000	5000	nav	4_4	228	huldigen	NA
-NA	NA	huldigen.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSall	BOW	bound	350	all	3_3	1	weight	5000	5000	all	4_4	228	huldigen	NA
-NA	NA	huldigen.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	bound	350	all	3_3	1	weight	FOC	126	nav	4_4	228	huldigen	NA
-NA	NA	huldigen.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSall	BOW	bound	350	all	3_3	1	weight	FOC	350	all	4_4	228	huldigen	NA
-NA	NA	huldigen.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSnav	BOW	bound	350	all	3_3	1	selection	5000	5000	nav	4_4	228	huldigen	NA
-NA	NA	huldigen.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSall	BOW	bound	350	all	3_3	1	selection	5000	5000	all	4_4	228	huldigen	NA
-NA	NA	huldigen.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	bound	350	all	3_3	1	selection	FOC	126	nav	4_4	228	huldigen	NA
-NA	NA	huldigen.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSall	BOW	bound	350	all	3_3	1	selection	FOC	350	all	4_4	228	huldigen	NA
-NA	NA	huldigen.BOWbound3all.PPMIno.LENGTH5000.SOCPOSnav	BOW	bound	448	all	3_3	1	no	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound3all.PPMIno.LENGTH5000.SOCPOSall	BOW	bound	448	all	3_3	1	no	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSnav	BOW	bound	448	all	3_3	1	no	FOC	169	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSall	BOW	bound	448	all	3_3	1	no	FOC	448	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSnav	BOW	nobound	414	lex	10_10	1	weight	5000	5000	nav	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSall	BOW	nobound	414	lex	10_10	1	weight	5000	5000	all	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	nobound	414	lex	10_10	1	weight	FOC	269	nav	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSall	BOW	nobound	414	lex	10_10	1	weight	FOC	414	all	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSnav	BOW	nobound	414	lex	10_10	1	selection	5000	5000	nav	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSall	BOW	nobound	414	lex	10_10	1	selection	5000	5000	all	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	nobound	414	lex	10_10	1	selection	FOC	269	nav	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSall	BOW	nobound	414	lex	10_10	1	selection	FOC	414	all	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSnav	BOW	nobound	927	lex	10_10	1	no	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSall	BOW	nobound	927	lex	10_10	1	no	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSnav	BOW	nobound	927	lex	10_10	1	no	FOC	659	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSall	BOW	nobound	927	lex	10_10	1	no	FOC	927	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSnav	BOW	nobound	733	all	10_10	1	weight	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSall	BOW	nobound	733	all	10_10	1	weight	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	nobound	733	all	10_10	1	weight	FOC	269	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSall	BOW	nobound	733	all	10_10	1	weight	FOC	733	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSnav	BOW	nobound	733	all	10_10	1	selection	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSall	BOW	nobound	733	all	10_10	1	selection	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	nobound	733	all	10_10	1	selection	FOC	269	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSall	BOW	nobound	733	all	10_10	1	selection	FOC	733	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSnav	BOW	nobound	1478	all	10_10	1	no	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSall	BOW	nobound	1478	all	10_10	1	no	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSnav	BOW	nobound	1478	all	10_10	1	no	FOC	659	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSall	BOW	nobound	1478	all	10_10	1	no	FOC	1478	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSnav	BOW	nobound	324	lex	5_5	1	weight	5000	5000	nav	4_4	223	huldigen	NA
-NA	NA	huldigen.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSall	BOW	nobound	324	lex	5_5	1	weight	5000	5000	all	4_4	223	huldigen	NA
-NA	NA	huldigen.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	nobound	324	lex	5_5	1	weight	FOC	210	nav	4_4	223	huldigen	NA
-NA	NA	huldigen.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSall	BOW	nobound	324	lex	5_5	1	weight	FOC	324	all	4_4	223	huldigen	NA
-NA	NA	huldigen.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSnav	BOW	nobound	324	lex	5_5	1	selection	5000	5000	nav	4_4	223	huldigen	NA
-NA	NA	huldigen.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSall	BOW	nobound	324	lex	5_5	1	selection	5000	5000	all	4_4	223	huldigen	NA
-NA	NA	huldigen.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	nobound	324	lex	5_5	1	selection	FOC	210	nav	4_4	223	huldigen	NA
-NA	NA	huldigen.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSall	BOW	nobound	324	lex	5_5	1	selection	FOC	324	all	4_4	223	huldigen	NA
-NA	NA	huldigen.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSnav	BOW	nobound	484	lex	5_5	1	no	5000	5000	nav	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSall	BOW	nobound	484	lex	5_5	1	no	5000	5000	all	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSnav	BOW	nobound	484	lex	5_5	1	no	FOC	337	nav	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSall	BOW	nobound	484	lex	5_5	1	no	FOC	484	all	4_4	229	huldigen	NA
-NA	NA	huldigen.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSnav	BOW	nobound	568	all	5_5	1	weight	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSall	BOW	nobound	568	all	5_5	1	weight	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	nobound	568	all	5_5	1	weight	FOC	210	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSall	BOW	nobound	568	all	5_5	1	weight	FOC	568	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSnav	BOW	nobound	568	all	5_5	1	selection	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSall	BOW	nobound	568	all	5_5	1	selection	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	nobound	568	all	5_5	1	selection	FOC	210	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSall	BOW	nobound	568	all	5_5	1	selection	FOC	568	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSnav	BOW	nobound	815	all	5_5	1	no	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSall	BOW	nobound	815	all	5_5	1	no	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSnav	BOW	nobound	815	all	5_5	1	no	FOC	337	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSall	BOW	nobound	815	all	5_5	1	no	FOC	815	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSnav	BOW	nobound	219	lex	3_3	1	weight	5000	5000	nav	4_4	206	huldigen	NA
-NA	NA	huldigen.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSall	BOW	nobound	219	lex	3_3	1	weight	5000	5000	all	4_4	206	huldigen	NA
-NA	NA	huldigen.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	nobound	219	lex	3_3	1	weight	FOC	140	nav	4_4	206	huldigen	NA
-NA	NA	huldigen.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSall	BOW	nobound	219	lex	3_3	1	weight	FOC	219	all	4_4	206	huldigen	NA
-NA	NA	huldigen.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSnav	BOW	nobound	219	lex	3_3	1	selection	5000	5000	nav	4_4	206	huldigen	NA
-NA	NA	huldigen.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSall	BOW	nobound	219	lex	3_3	1	selection	5000	5000	all	4_4	206	huldigen	NA
-NA	NA	huldigen.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	nobound	219	lex	3_3	1	selection	FOC	140	nav	4_4	206	huldigen	NA
-NA	NA	huldigen.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSall	BOW	nobound	219	lex	3_3	1	selection	FOC	219	all	4_4	206	huldigen	NA
-NA	NA	huldigen.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSnav	BOW	nobound	283	lex	3_3	1	no	5000	5000	nav	4_4	220	huldigen	NA
-NA	NA	huldigen.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSall	BOW	nobound	283	lex	3_3	1	no	5000	5000	all	4_4	220	huldigen	NA
-NA	NA	huldigen.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSnav	BOW	nobound	283	lex	3_3	1	no	FOC	190	nav	4_4	220	huldigen	NA
-NA	NA	huldigen.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSall	BOW	nobound	283	lex	3_3	1	no	FOC	283	all	4_4	220	huldigen	NA
-NA	NA	huldigen.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSnav	BOW	nobound	389	all	3_3	1	weight	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSall	BOW	nobound	389	all	3_3	1	weight	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	nobound	389	all	3_3	1	weight	FOC	140	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSall	BOW	nobound	389	all	3_3	1	weight	FOC	389	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSnav	BOW	nobound	389	all	3_3	1	selection	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSall	BOW	nobound	389	all	3_3	1	selection	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	nobound	389	all	3_3	1	selection	FOC	140	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSall	BOW	nobound	389	all	3_3	1	selection	FOC	389	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSnav	BOW	nobound	497	all	3_3	1	no	5000	5000	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSall	BOW	nobound	497	all	3_3	1	no	5000	5000	all	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSnav	BOW	nobound	497	all	3_3	1	no	FOC	190	nav	4_4	230	huldigen	NA
-NA	NA	huldigen.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSall	BOW	nobound	497	all	3_3	1	no	FOC	497	all	4_4	230	huldigen	NA
-NA	group1	huldigen.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSnav	dependency	bound	184	NA	NA	1	weight	5000	5000	nav	4_4	209	huldigen	NA
-NA	group1	huldigen.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSall	dependency	bound	184	NA	NA	1	weight	5000	5000	all	4_4	209	huldigen	NA
-NA	group1	huldigen.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSnav	dependency	bound	184	NA	NA	1	weight	FOC	68	nav	4_4	209	huldigen	NA
-NA	group1	huldigen.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSall	dependency	bound	184	NA	NA	1	weight	FOC	184	all	4_4	209	huldigen	NA
-NA	group1	huldigen.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSnav	dependency	bound	184	NA	NA	1	selection	5000	5000	nav	4_4	209	huldigen	NA
-NA	group1	huldigen.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSall	dependency	bound	184	NA	NA	1	selection	5000	5000	all	4_4	209	huldigen	NA
-NA	group1	huldigen.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSnav	dependency	bound	184	NA	NA	1	selection	FOC	68	nav	4_4	209	huldigen	NA
-NA	group1	huldigen.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSall	dependency	bound	184	NA	NA	1	selection	FOC	184	all	4_4	209	huldigen	NA
-NA	group1	huldigen.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSnav	dependency	bound	266	NA	NA	1	no	5000	5000	nav	4_4	224	huldigen	NA
-NA	group1	huldigen.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSall	dependency	bound	266	NA	NA	1	no	5000	5000	all	4_4	224	huldigen	NA
-NA	group1	huldigen.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSnav	dependency	bound	266	NA	NA	1	no	FOC	92	nav	4_4	224	huldigen	NA
-NA	group1	huldigen.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSall	dependency	bound	266	NA	NA	1	no	FOC	266	all	4_4	224	huldigen	NA
-NA	group2	huldigen.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSnav	dependency	bound	261	NA	NA	1	weight	5000	5000	nav	4_4	225	huldigen	NA
-NA	group2	huldigen.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSall	dependency	bound	261	NA	NA	1	weight	5000	5000	all	4_4	225	huldigen	NA
-NA	group2	huldigen.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSnav	dependency	bound	261	NA	NA	1	weight	FOC	109	nav	4_4	225	huldigen	NA
-NA	group2	huldigen.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSall	dependency	bound	261	NA	NA	1	weight	FOC	261	all	4_4	225	huldigen	NA
-NA	group2	huldigen.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSnav	dependency	bound	261	NA	NA	1	selection	5000	5000	nav	4_4	225	huldigen	NA
-NA	group2	huldigen.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSall	dependency	bound	261	NA	NA	1	selection	5000	5000	all	4_4	225	huldigen	NA
-NA	group2	huldigen.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSnav	dependency	bound	261	NA	NA	1	selection	FOC	109	nav	4_4	225	huldigen	NA
-NA	group2	huldigen.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSall	dependency	bound	261	NA	NA	1	selection	FOC	261	all	4_4	225	huldigen	NA
-NA	group2	huldigen.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSnav	dependency	bound	392	NA	NA	1	no	5000	5000	nav	4_4	228	huldigen	NA
-NA	group2	huldigen.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSall	dependency	bound	392	NA	NA	1	no	5000	5000	all	4_4	228	huldigen	NA
-NA	group2	huldigen.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSnav	dependency	bound	392	NA	NA	1	no	FOC	172	nav	4_4	228	huldigen	NA
-NA	group2	huldigen.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSall	dependency	bound	392	NA	NA	1	no	FOC	392	all	4_4	228	huldigen	NA
-selection2	NA	huldigen.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSnav	dependency	bound	348	NA	NA	1	weight	5000	5000	nav	4_4	229	huldigen	0.22160805186833873
-selection2	NA	huldigen.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSall	dependency	bound	348	NA	NA	1	weight	5000	5000	all	4_4	229	huldigen	0.2502260234008487
-selection2	NA	huldigen.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSnav	dependency	bound	348	NA	NA	1	weight	FOC	134	nav	4_4	229	huldigen	0.2196860124885006
-selection2	NA	huldigen.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSall	dependency	bound	348	NA	NA	1	weight	FOC	348	all	4_4	229	huldigen	0.22345535967839805
-selection2	NA	huldigen.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSnav	dependency	bound	348	NA	NA	1	selection	5000	5000	nav	4_4	229	huldigen	0.22497325162805662
-selection2	NA	huldigen.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSall	dependency	bound	348	NA	NA	1	selection	5000	5000	all	4_4	229	huldigen	0.24133067862819868
-selection2	NA	huldigen.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSnav	dependency	bound	348	NA	NA	1	selection	FOC	134	nav	4_4	229	huldigen	0.2210164469204903
-selection2	NA	huldigen.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSall	dependency	bound	348	NA	NA	1	selection	FOC	348	all	4_4	229	huldigen	0.2334806355307615
-selection2	NA	huldigen.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSnav	dependency	bound	549	NA	NA	1	no	5000	5000	nav	4_4	229	huldigen	0.19460343884946252
-selection2	NA	huldigen.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSall	dependency	bound	549	NA	NA	1	no	5000	5000	all	4_4	229	huldigen	0.23906001716655317
-selection2	NA	huldigen.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSnav	dependency	bound	549	NA	NA	1	no	FOC	232	nav	4_4	229	huldigen	0.22084452894089268
-selection2	NA	huldigen.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSall	dependency	bound	549	NA	NA	1	no	FOC	549	all	4_4	229	huldigen	0.21714082483387978
-selection3	NA	huldigen.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSnav	dependency	bound	460	NA	NA	1	weight	5000	5000	nav	4_4	229	huldigen	0.22427501897627639
-selection3	NA	huldigen.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSall	dependency	bound	460	NA	NA	1	weight	5000	5000	all	4_4	229	huldigen	0.2531176629927341
-selection3	NA	huldigen.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSnav	dependency	bound	460	NA	NA	1	weight	FOC	169	nav	4_4	229	huldigen	0.22002200345135023
-selection3	NA	huldigen.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSall	dependency	bound	460	NA	NA	1	weight	FOC	460	all	4_4	229	huldigen	0.22069964068209968
-selection3	NA	huldigen.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSnav	dependency	bound	460	NA	NA	1	selection	5000	5000	nav	4_4	229	huldigen	0.2225681909808844
-selection3	NA	huldigen.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSall	dependency	bound	460	NA	NA	1	selection	5000	5000	all	4_4	229	huldigen	0.2383066570478216
-selection3	NA	huldigen.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSnav	dependency	bound	460	NA	NA	1	selection	FOC	169	nav	4_4	229	huldigen	0.21702452908153977
-selection3	NA	huldigen.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSall	dependency	bound	460	NA	NA	1	selection	FOC	460	all	4_4	229	huldigen	0.2199840399655238
-selection3	NA	huldigen.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSnav	dependency	bound	789	NA	NA	1	no	5000	5000	nav	4_4	229	huldigen	0.17898502053162926
-selection3	NA	huldigen.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSall	dependency	bound	789	NA	NA	1	no	5000	5000	all	4_4	229	huldigen	0.21760706992011114
-selection3	NA	huldigen.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSnav	dependency	bound	789	NA	NA	1	no	FOC	333	nav	4_4	229	huldigen	0.21014275363242021
-selection3	NA	huldigen.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSall	dependency	bound	789	NA	NA	1	no	FOC	789	all	4_4	229	huldigen	0.20564096437205304
-weight	NA	huldigen.LEMMAPATHweight.PPMIweight.LENGTH5000.SOCPOSnav	dependency	bound	460	NA	NA	1	weight	5000	5000	nav	4_4	229	huldigen	0.22427501897627639
-weight	NA	huldigen.LEMMAPATHweight.PPMIweight.LENGTH5000.SOCPOSall	dependency	bound	460	NA	NA	1	weight	5000	5000	all	4_4	229	huldigen	0.2531176629927341
-weight	NA	huldigen.LEMMAPATHweight.PPMIweight.LENGTHFOC.SOCPOSnav	dependency	bound	460	NA	NA	1	weight	FOC	169	nav	4_4	229	huldigen	0.22002200345135023
-weight	NA	huldigen.LEMMAPATHweight.PPMIweight.LENGTHFOC.SOCPOSall	dependency	bound	460	NA	NA	1	weight	FOC	460	all	4_4	229	huldigen	0.22069964068209968
-weight	NA	huldigen.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSnav	dependency	bound	460	NA	NA	1	selection	5000	5000	nav	4_4	229	huldigen	0.21685180166171342
-weight	NA	huldigen.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSall	dependency	bound	460	NA	NA	1	selection	5000	5000	all	4_4	229	huldigen	0.23335101202052003
-weight	NA	huldigen.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSnav	dependency	bound	460	NA	NA	1	selection	FOC	169	nav	4_4	229	huldigen	0.20978731482815985
-weight	NA	huldigen.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSall	dependency	bound	460	NA	NA	1	selection	FOC	460	all	4_4	229	huldigen	0.21947662883904945
-weight	NA	huldigen.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSnav	dependency	bound	789	NA	NA	1	no	5000	5000	nav	4_4	229	huldigen	0.17710220015747744
-weight	NA	huldigen.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSall	dependency	bound	789	NA	NA	1	no	5000	5000	all	4_4	229	huldigen	0.21852488051736849
-weight	NA	huldigen.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSnav	dependency	bound	789	NA	NA	1	no	FOC	333	nav	4_4	229	huldigen	0.20773214068045492
-weight	NA	huldigen.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSall	dependency	bound	789	NA	NA	1	no	FOC	789	all	4_4	229	huldigen	0.20432956361929533
+_model	model.x	model.y	LEMMAPATH	LEMMAREL	base	foc_boundaries	foc_context_words	foc_foc_pos	foc_foc_win	foc_minimum_features	foc_ppmi	soc_length	soc_length_num	soc_soc_pos	soc_soc_win	tokens	type	stress
+huldigen.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.15598512483248697	-0.06966631709008327	NA	NA	BOW	bound	335	lex	10_10	1	weight	5000	5000	nav	4_4	222	huldigen	0.22369696093960373
+huldigen.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSall	-0.15768899771096073	-0.10422933082789637	NA	NA	BOW	bound	335	lex	10_10	1	weight	5000	5000	all	4_4	222	huldigen	0.24873192201359762
+huldigen.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.11051493502583377	0.007127043091172278	NA	NA	BOW	bound	335	lex	10_10	1	weight	FOC	218	nav	4_4	222	huldigen	0.21767014080152605
+huldigen.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.11230241248982469	0.004543199285233878	NA	NA	BOW	bound	335	lex	10_10	1	weight	FOC	335	all	4_4	222	huldigen	0.2128456506434992
+huldigen.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.15204170001261624	-0.02411381299156352	NA	NA	BOW	bound	335	lex	10_10	1	selection	5000	5000	nav	4_4	222	huldigen	0.22397591105164627
+huldigen.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSall	-0.1296309185273058	-0.057288305767125396	NA	NA	BOW	bound	335	lex	10_10	1	selection	5000	5000	all	4_4	222	huldigen	0.24580409389122176
+huldigen.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.09768579334766471	0.08015409539229106	NA	NA	BOW	bound	335	lex	10_10	1	selection	FOC	218	nav	4_4	222	huldigen	0.2185576919361944
+huldigen.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.09786578814982826	0.07041922836141945	NA	NA	BOW	bound	335	lex	10_10	1	selection	FOC	335	all	4_4	222	huldigen	0.21107262307496963
+huldigen.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSnav	-0.07735830460009605	0.25700240805928704	NA	NA	BOW	bound	637	lex	10_10	1	no	5000	5000	nav	4_4	225	huldigen	0.21129844552202515
+huldigen.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSall	-0.08094618166395129	0.296145018338933	NA	NA	BOW	bound	637	lex	10_10	1	no	5000	5000	all	4_4	225	huldigen	0.2342299707584634
+huldigen.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.07023816720843526	0.18478864493506358	NA	NA	BOW	bound	637	lex	10_10	1	no	FOC	450	nav	4_4	225	huldigen	0.22412716467502858
+huldigen.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSall	-0.06661825309117826	0.17808537005132744	NA	NA	BOW	bound	637	lex	10_10	1	no	FOC	637	all	4_4	225	huldigen	0.21401420910589145
+huldigen.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSnav	-0.04392858412212341	-0.049661594703806274	NA	NA	BOW	bound	596	all	10_10	1	weight	5000	5000	nav	4_4	230	huldigen	0.2292568118042973
+huldigen.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSall	-0.05862608129175585	-0.09872774160205681	NA	NA	BOW	bound	596	all	10_10	1	weight	5000	5000	all	4_4	230	huldigen	0.25101972982149545
+huldigen.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.04794462959037027	0.013434386963113078	NA	NA	BOW	bound	596	all	10_10	1	weight	FOC	218	nav	4_4	230	huldigen	0.2282862828692146
+huldigen.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSall	-0.03660722543280681	0.01488887927261244	NA	NA	BOW	bound	596	all	10_10	1	weight	FOC	596	all	4_4	230	huldigen	0.224014791173328
+huldigen.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSnav	0.3310093794008028	0.022325871103990435	NA	NA	BOW	bound	596	all	10_10	1	selection	5000	5000	nav	4_4	230	huldigen	0.21176444070633424
+huldigen.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSall	0.3024265229508655	0.01721502106631732	NA	NA	BOW	bound	596	all	10_10	1	selection	5000	5000	all	4_4	230	huldigen	0.23006713778659818
+huldigen.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSnav	0.13540157486315937	0.06558544776366017	NA	NA	BOW	bound	596	all	10_10	1	selection	FOC	218	nav	4_4	230	huldigen	0.22333558155004074
+huldigen.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSall	0.16096717685152556	0.07523910267809476	NA	NA	BOW	bound	596	all	10_10	1	selection	FOC	596	all	4_4	230	huldigen	0.22301169393817102
+huldigen.BOWbound10all.PPMIno.LENGTH5000.SOCPOSnav	0.4637307492033977	0.09343322539518643	NA	NA	BOW	bound	1059	all	10_10	1	no	5000	5000	nav	4_4	230	huldigen	0.16947383083679377
+huldigen.BOWbound10all.PPMIno.LENGTH5000.SOCPOSall	0.4349174761701924	0.09003535200767541	NA	NA	BOW	bound	1059	all	10_10	1	no	5000	5000	all	4_4	230	huldigen	0.2036392363479813
+huldigen.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSnav	0.2607657646476193	0.12444293922612921	NA	NA	BOW	bound	1059	all	10_10	1	no	FOC	450	nav	4_4	230	huldigen	0.21394875210561842
+huldigen.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSall	0.2642664640137887	0.14553693041932309	NA	NA	BOW	bound	1059	all	10_10	1	no	FOC	1059	all	4_4	230	huldigen	0.20682459554702312
+huldigen.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.20947145458778896	-0.06737368943031645	NA	NA	BOW	bound	273	lex	5_5	1	weight	5000	5000	nav	4_4	213	huldigen	0.230253757023912
+huldigen.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSall	-0.21268324051822618	-0.09747445429792843	NA	NA	BOW	bound	273	lex	5_5	1	weight	5000	5000	all	4_4	213	huldigen	0.25816204826659445
+huldigen.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.1357421683731595	0.010290422656023375	NA	NA	BOW	bound	273	lex	5_5	1	weight	FOC	179	nav	4_4	213	huldigen	0.2219871829812647
+huldigen.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.13968478314459626	0.007437387640116052	NA	NA	BOW	bound	273	lex	5_5	1	weight	FOC	273	all	4_4	213	huldigen	0.22031948110132027
+huldigen.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.2306388532037354	-0.01703731222599794	NA	NA	BOW	bound	273	lex	5_5	1	selection	5000	5000	nav	4_4	213	huldigen	0.22459837845900263
+huldigen.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSall	-0.19690178737223873	-0.05687872354017714	NA	NA	BOW	bound	273	lex	5_5	1	selection	5000	5000	all	4_4	213	huldigen	0.24718429907700182
+huldigen.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.12042061866655515	0.053424801700192405	NA	NA	BOW	bound	273	lex	5_5	1	selection	FOC	179	nav	4_4	213	huldigen	0.22133884889281547
+huldigen.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.12085085427162964	0.04593083941119641	NA	NA	BOW	bound	273	lex	5_5	1	selection	FOC	273	all	4_4	213	huldigen	0.21307605885553424
+huldigen.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSnav	-0.2443161262329645	0.09340355818022465	NA	NA	BOW	bound	395	lex	5_5	1	no	5000	5000	nav	4_4	221	huldigen	0.22983640538639066
+huldigen.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSall	-0.25244460168105065	0.0777628592888011	NA	NA	BOW	bound	395	lex	5_5	1	no	5000	5000	all	4_4	221	huldigen	0.2502635442220195
+huldigen.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.10872953135056387	0.12853883498802116	NA	NA	BOW	bound	395	lex	5_5	1	no	FOC	276	nav	4_4	221	huldigen	0.22861675097035514
+huldigen.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSall	-0.10862482267606906	0.11878519037365431	NA	NA	BOW	bound	395	lex	5_5	1	no	FOC	395	all	4_4	221	huldigen	0.22024620504730247
+huldigen.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSnav	-0.09588009650437512	-0.05804118383327244	NA	NA	BOW	bound	483	all	5_5	1	weight	5000	5000	nav	4_4	229	huldigen	0.24171023892050486
+huldigen.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSall	-0.11518310910423608	-0.10713902801530295	NA	NA	BOW	bound	483	all	5_5	1	weight	5000	5000	all	4_4	229	huldigen	0.26123969793688434
+huldigen.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.07041694347835786	0.0211479495067642	NA	NA	BOW	bound	483	all	5_5	1	weight	FOC	179	nav	4_4	229	huldigen	0.2337225639418652
+huldigen.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSall	-0.05951193797644756	0.015575424253204179	NA	NA	BOW	bound	483	all	5_5	1	weight	FOC	483	all	4_4	229	huldigen	0.23402041852811173
+huldigen.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSnav	0.24782335361672667	0.0760013873635984	NA	NA	BOW	bound	483	all	5_5	1	selection	5000	5000	nav	4_4	229	huldigen	0.23973656851097222
+huldigen.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSall	0.20785020460046152	0.05084878765540893	NA	NA	BOW	bound	483	all	5_5	1	selection	5000	5000	all	4_4	229	huldigen	0.24230736018051163
+huldigen.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSnav	0.09266195271125141	0.10263748957686723	NA	NA	BOW	bound	483	all	5_5	1	selection	FOC	179	nav	4_4	229	huldigen	0.23838372131270383
+huldigen.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSall	0.11381974822533199	0.09510851283023415	NA	NA	BOW	bound	483	all	5_5	1	selection	FOC	483	all	4_4	229	huldigen	0.23278390437432864
+huldigen.BOWbound5all.PPMIno.LENGTH5000.SOCPOSnav	0.3777466446456536	0.12190819084217817	NA	NA	BOW	bound	681	all	5_5	1	no	5000	5000	nav	4_4	230	huldigen	0.21062645858520504
+huldigen.BOWbound5all.PPMIno.LENGTH5000.SOCPOSall	0.3237349931522087	0.07876265187902859	NA	NA	BOW	bound	681	all	5_5	1	no	5000	5000	all	4_4	230	huldigen	0.23897296655834072
+huldigen.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSnav	0.17401566692290113	0.14605115361203483	NA	NA	BOW	bound	681	all	5_5	1	no	FOC	276	nav	4_4	230	huldigen	0.23154659767885594
+huldigen.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSall	0.18273129776527666	0.13646968960236389	NA	NA	BOW	bound	681	all	5_5	1	no	FOC	681	all	4_4	230	huldigen	0.22603492361703717
+huldigen.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.2555086365260376	-0.09463031591517132	NA	NA	BOW	bound	200	lex	3_3	1	weight	5000	5000	nav	4_4	202	huldigen	0.2463475136700458
+huldigen.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSall	-0.2623153749159646	-0.12844901864931782	NA	NA	BOW	bound	200	lex	3_3	1	weight	5000	5000	all	4_4	202	huldigen	0.2578976721230205
+huldigen.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.1763938342031415	-0.004006314889964808	NA	NA	BOW	bound	200	lex	3_3	1	weight	FOC	126	nav	4_4	202	huldigen	0.23065167633133452
+huldigen.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.17203573738179306	-0.005217752620615249	NA	NA	BOW	bound	200	lex	3_3	1	weight	FOC	200	all	4_4	202	huldigen	0.22967368083734435
+huldigen.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.293246595132558	-0.05712547453780719	NA	NA	BOW	bound	200	lex	3_3	1	selection	5000	5000	nav	4_4	202	huldigen	0.24033057718002276
+huldigen.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSall	-0.2592190056954489	-0.10383550733793478	NA	NA	BOW	bound	200	lex	3_3	1	selection	5000	5000	all	4_4	202	huldigen	0.24920246651898403
+huldigen.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.16712327377173025	0.025777354868501093	NA	NA	BOW	bound	200	lex	3_3	1	selection	FOC	126	nav	4_4	202	huldigen	0.23456057640176495
+huldigen.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.16220538798168527	0.019786709773964177	NA	NA	BOW	bound	200	lex	3_3	1	selection	FOC	200	all	4_4	202	huldigen	0.2303618196484108
+huldigen.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSnav	-0.306666876502462	-0.01909665010717623	NA	NA	BOW	bound	256	lex	3_3	1	no	5000	5000	nav	4_4	216	huldigen	0.24730933168813202
+huldigen.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSall	-0.2671670639659918	-0.0697361391287351	NA	NA	BOW	bound	256	lex	3_3	1	no	5000	5000	all	4_4	216	huldigen	0.25826077100346395
+huldigen.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.15562569159347656	0.07539204487232583	NA	NA	BOW	bound	256	lex	3_3	1	no	FOC	169	nav	4_4	216	huldigen	0.24312193429705878
+huldigen.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSall	-0.1484515729547064	0.06343598069717205	NA	NA	BOW	bound	256	lex	3_3	1	no	FOC	256	all	4_4	216	huldigen	0.2325879202665492
+huldigen.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSnav	-0.17689440343000046	-0.11983566758151121	NA	NA	BOW	bound	350	all	3_3	1	weight	5000	5000	nav	4_4	228	huldigen	0.24154204224290723
+huldigen.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSall	-0.19309590204258073	-0.16554764095718227	NA	NA	BOW	bound	350	all	3_3	1	weight	5000	5000	all	4_4	228	huldigen	0.2585067318384443
+huldigen.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.12667565078824508	-0.0017402724886549973	NA	NA	BOW	bound	350	all	3_3	1	weight	FOC	126	nav	4_4	228	huldigen	0.2509242181588748
+huldigen.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSall	-0.08459560554850808	-4.0026181573047135e-4	NA	NA	BOW	bound	350	all	3_3	1	weight	FOC	350	all	4_4	228	huldigen	0.25281132949060625
+huldigen.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSnav	0.2655544081714175	0.0795558662719244	NA	NA	BOW	bound	350	all	3_3	1	selection	5000	5000	nav	4_4	228	huldigen	0.24969820482194294
+huldigen.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSall	0.2443898013742674	0.06020379869989549	NA	NA	BOW	bound	350	all	3_3	1	selection	5000	5000	all	4_4	228	huldigen	0.2551000664309045
+huldigen.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSnav	0.08138758527288796	0.16107457568059333	NA	NA	BOW	bound	350	all	3_3	1	selection	FOC	126	nav	4_4	228	huldigen	0.2492957108409006
+huldigen.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSall	0.10335543379752644	0.10990846357757084	NA	NA	BOW	bound	350	all	3_3	1	selection	FOC	350	all	4_4	228	huldigen	0.2496582083669867
+huldigen.BOWbound3all.PPMIno.LENGTH5000.SOCPOSnav	0.35859165900488327	0.16139582093240187	NA	NA	BOW	bound	448	all	3_3	1	no	5000	5000	nav	4_4	230	huldigen	0.23852379619954472
+huldigen.BOWbound3all.PPMIno.LENGTH5000.SOCPOSall	0.3251524740415909	0.12353168529176053	NA	NA	BOW	bound	448	all	3_3	1	no	5000	5000	all	4_4	230	huldigen	0.26353928685522665
+huldigen.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSnav	0.1510499023159509	0.24281966016290457	NA	NA	BOW	bound	448	all	3_3	1	no	FOC	169	nav	4_4	230	huldigen	0.2475041380826121
+huldigen.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSall	0.15995269513870036	0.1852212574732255	NA	NA	BOW	bound	448	all	3_3	1	no	FOC	448	all	4_4	230	huldigen	0.23446172593531947
+huldigen.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.19844237279469687	-0.04987149058145154	NA	NA	BOW	nobound	414	lex	10_10	1	weight	5000	5000	nav	4_4	229	huldigen	0.2327396947318986
+huldigen.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSall	-0.1911769795326177	-0.09449289434777908	NA	NA	BOW	nobound	414	lex	10_10	1	weight	5000	5000	all	4_4	229	huldigen	0.2527672452284177
+huldigen.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.1811960317154299	0.10303023973317184	NA	NA	BOW	nobound	414	lex	10_10	1	weight	FOC	269	nav	4_4	229	huldigen	0.22136539164607805
+huldigen.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.17652531989145515	0.09239747094371954	NA	NA	BOW	nobound	414	lex	10_10	1	weight	FOC	414	all	4_4	229	huldigen	0.21240507754827093
+huldigen.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.2153079426077662	0.12311501708769083	NA	NA	BOW	nobound	414	lex	10_10	1	selection	5000	5000	nav	4_4	229	huldigen	0.2341881182143829
+huldigen.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSall	-0.21258456530215789	0.16880882636088496	NA	NA	BOW	nobound	414	lex	10_10	1	selection	5000	5000	all	4_4	229	huldigen	0.25365180657068104
+huldigen.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.18379244318716598	0.1865917726727181	NA	NA	BOW	nobound	414	lex	10_10	1	selection	FOC	269	nav	4_4	229	huldigen	0.22729304945755102
+huldigen.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.18008515116258902	0.17599269099079395	NA	NA	BOW	nobound	414	lex	10_10	1	selection	FOC	414	all	4_4	229	huldigen	0.2179217598362261
+huldigen.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSnav	-0.11969581822939858	0.3209154649027451	NA	NA	BOW	nobound	927	lex	10_10	1	no	5000	5000	nav	4_4	230	huldigen	0.22629667186552962
+huldigen.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSall	-0.17553792015599454	0.3632001580841266	NA	NA	BOW	nobound	927	lex	10_10	1	no	5000	5000	all	4_4	230	huldigen	0.18860928143182934
+huldigen.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.12800437448625193	0.2751714754938324	NA	NA	BOW	nobound	927	lex	10_10	1	no	FOC	659	nav	4_4	230	huldigen	0.22419460469644586
+huldigen.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSall	-0.12272505608848268	0.2643125686908825	NA	NA	BOW	nobound	927	lex	10_10	1	no	FOC	927	all	4_4	230	huldigen	0.21076734265013142
+huldigen.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSnav	-0.07861292894630283	-0.044290699243695913	NA	NA	BOW	nobound	733	all	10_10	1	weight	5000	5000	nav	4_4	230	huldigen	0.23826738985501483
+huldigen.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSall	-0.08589810840887963	-0.0983542189336071	NA	NA	BOW	nobound	733	all	10_10	1	weight	5000	5000	all	4_4	230	huldigen	0.24525784468096035
+huldigen.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.11892418566917605	0.11919873367492959	NA	NA	BOW	nobound	733	all	10_10	1	weight	FOC	269	nav	4_4	230	huldigen	0.22055282409818855
+huldigen.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSall	-0.08028117508080192	0.11627063398244547	NA	NA	BOW	nobound	733	all	10_10	1	weight	FOC	733	all	4_4	230	huldigen	0.21896346340866252
+huldigen.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSnav	0.22330021406082745	0.09990156085296785	NA	NA	BOW	nobound	733	all	10_10	1	selection	5000	5000	nav	4_4	230	huldigen	0.24481550499423677
+huldigen.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSall	0.17690737431125086	0.29047048588474667	NA	NA	BOW	nobound	733	all	10_10	1	selection	5000	5000	all	4_4	230	huldigen	0.24068385190002872
+huldigen.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSnav	0.012614371834582723	0.24103413552574385	NA	NA	BOW	nobound	733	all	10_10	1	selection	FOC	269	nav	4_4	230	huldigen	0.22597451305928398
+huldigen.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSall	0.05832396772365404	0.2658331265673314	NA	NA	BOW	nobound	733	all	10_10	1	selection	FOC	733	all	4_4	230	huldigen	0.2212692483480605
+huldigen.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSnav	0.2978086320734855	0.27330147207341315	NA	NA	BOW	nobound	1478	all	10_10	1	no	5000	5000	nav	4_4	230	huldigen	0.2305620422814985
+huldigen.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSall	0.2704762780404844	0.3464173931011539	NA	NA	BOW	nobound	1478	all	10_10	1	no	5000	5000	all	4_4	230	huldigen	0.23201217953902215
+huldigen.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSnav	0.09750448415100715	0.3175708588779113	NA	NA	BOW	nobound	1478	all	10_10	1	no	FOC	659	nav	4_4	230	huldigen	0.21115509615220923
+huldigen.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSall	0.1271380045883358	0.34556808875744077	NA	NA	BOW	nobound	1478	all	10_10	1	no	FOC	1478	all	4_4	230	huldigen	0.2006639096787181
+huldigen.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.22695909444908882	-0.04183830019132422	NA	NA	BOW	nobound	324	lex	5_5	1	weight	5000	5000	nav	4_4	223	huldigen	0.2447414344821201
+huldigen.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSall	-0.2367273837448228	-0.07388389775844871	NA	NA	BOW	nobound	324	lex	5_5	1	weight	5000	5000	all	4_4	223	huldigen	0.2667980786195503
+huldigen.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.19345964237494961	0.06475732350624244	NA	NA	BOW	nobound	324	lex	5_5	1	weight	FOC	210	nav	4_4	223	huldigen	0.22798212784442742
+huldigen.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.17829978185649403	0.05127230305878213	NA	NA	BOW	nobound	324	lex	5_5	1	weight	FOC	324	all	4_4	223	huldigen	0.23083247086301564
+huldigen.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.25147263361293043	0.02165324175771652	NA	NA	BOW	nobound	324	lex	5_5	1	selection	5000	5000	nav	4_4	223	huldigen	0.23994373091494584
+huldigen.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSall	-0.25754168328308885	0.030483787026359215	NA	NA	BOW	nobound	324	lex	5_5	1	selection	5000	5000	all	4_4	223	huldigen	0.2595806612904258
+huldigen.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.17629248922168622	0.11992522793344262	NA	NA	BOW	nobound	324	lex	5_5	1	selection	FOC	210	nav	4_4	223	huldigen	0.2300445654825853
+huldigen.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.1637063847427066	0.10404705550447126	NA	NA	BOW	nobound	324	lex	5_5	1	selection	FOC	324	all	4_4	223	huldigen	0.22786724789001514
+huldigen.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSnav	-0.24348569320082497	0.13885713124780558	NA	NA	BOW	nobound	484	lex	5_5	1	no	5000	5000	nav	4_4	229	huldigen	0.24945445490211024
+huldigen.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSall	-0.28327807024698515	0.15613322602273133	NA	NA	BOW	nobound	484	lex	5_5	1	no	5000	5000	all	4_4	229	huldigen	0.25292921031833027
+huldigen.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.1579924588949487	0.17452686229510025	NA	NA	BOW	nobound	484	lex	5_5	1	no	FOC	337	nav	4_4	229	huldigen	0.24187448822775567
+huldigen.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSall	-0.15485364079160072	0.16471753975196318	NA	NA	BOW	nobound	484	lex	5_5	1	no	FOC	484	all	4_4	229	huldigen	0.23140278638483386
+huldigen.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSnav	-0.11368246567015021	-0.048912466145690066	NA	NA	BOW	nobound	568	all	5_5	1	weight	5000	5000	nav	4_4	230	huldigen	0.24442173984188026
+huldigen.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSall	-0.12922865569381858	-0.11132623035407166	NA	NA	BOW	nobound	568	all	5_5	1	weight	5000	5000	all	4_4	230	huldigen	0.2659279459588361
+huldigen.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.12479290538563773	0.0881214109987017	NA	NA	BOW	nobound	568	all	5_5	1	weight	FOC	210	nav	4_4	230	huldigen	0.23398431065596867
+huldigen.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSall	-0.08357758623520913	0.0733097652557996	NA	NA	BOW	nobound	568	all	5_5	1	weight	FOC	568	all	4_4	230	huldigen	0.23371410202572754
+huldigen.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSnav	0.1573253360409522	0.14330984189061374	NA	NA	BOW	nobound	568	all	5_5	1	selection	5000	5000	nav	4_4	230	huldigen	0.23808222281636596
+huldigen.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSall	0.13974251969565502	0.14631164256607015	NA	NA	BOW	nobound	568	all	5_5	1	selection	5000	5000	all	4_4	230	huldigen	0.2488157332276745
+huldigen.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSnav	0.012963772903585677	0.1709390247235878	NA	NA	BOW	nobound	568	all	5_5	1	selection	FOC	210	nav	4_4	230	huldigen	0.23132252375936768
+huldigen.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSall	0.04971720425029477	0.17458194445602893	NA	NA	BOW	nobound	568	all	5_5	1	selection	FOC	568	all	4_4	230	huldigen	0.22556724939343936
+huldigen.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSnav	0.2755238774264304	0.16311704089102505	NA	NA	BOW	nobound	815	all	5_5	1	no	5000	5000	nav	4_4	230	huldigen	0.2465616564683041
+huldigen.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSall	0.24532412496874553	0.16994573844399932	NA	NA	BOW	nobound	815	all	5_5	1	no	5000	5000	all	4_4	230	huldigen	0.24957392418063423
+huldigen.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSnav	0.07939585439893933	0.19911885448544653	NA	NA	BOW	nobound	815	all	5_5	1	no	FOC	337	nav	4_4	230	huldigen	0.23127048594212418
+huldigen.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSall	0.11086512494863318	0.19903023152520016	NA	NA	BOW	nobound	815	all	5_5	1	no	FOC	815	all	4_4	230	huldigen	0.2200691813026571
+huldigen.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.27225147523198284	-0.09706228779458854	NA	NA	BOW	nobound	219	lex	3_3	1	weight	5000	5000	nav	4_4	206	huldigen	0.250545695259413
+huldigen.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSall	-0.2777350316249702	-0.12829838781579808	NA	NA	BOW	nobound	219	lex	3_3	1	weight	5000	5000	all	4_4	206	huldigen	0.26201048080933187
+huldigen.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.2076555285248901	9.860073301013518e-4	NA	NA	BOW	nobound	219	lex	3_3	1	weight	FOC	140	nav	4_4	206	huldigen	0.23271739952329762
+huldigen.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.19652002827604417	-0.0017913706699002223	NA	NA	BOW	nobound	219	lex	3_3	1	weight	FOC	219	all	4_4	206	huldigen	0.23375405231663943
+huldigen.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.3113576856276208	-0.053191723905550596	NA	NA	BOW	nobound	219	lex	3_3	1	selection	5000	5000	nav	4_4	206	huldigen	0.239994368710358
+huldigen.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSall	-0.2828771440693073	-0.09877011791407833	NA	NA	BOW	nobound	219	lex	3_3	1	selection	5000	5000	all	4_4	206	huldigen	0.25374848022230334
+huldigen.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.20424741974233276	0.03001056647151494	NA	NA	BOW	nobound	219	lex	3_3	1	selection	FOC	140	nav	4_4	206	huldigen	0.23592934008218025
+huldigen.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.1916837553057913	0.02651231976505351	NA	NA	BOW	nobound	219	lex	3_3	1	selection	FOC	219	all	4_4	206	huldigen	0.22902957156716386
+huldigen.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSnav	-0.32772393001128286	-0.005168659237745167	NA	NA	BOW	nobound	283	lex	3_3	1	no	5000	5000	nav	4_4	220	huldigen	0.24607011643646162
+huldigen.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSall	-0.3083782293741305	-0.05779157244073077	NA	NA	BOW	nobound	283	lex	3_3	1	no	5000	5000	all	4_4	220	huldigen	0.2645448490487603
+huldigen.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.20564744067876078	0.09218704412329637	NA	NA	BOW	nobound	283	lex	3_3	1	no	FOC	190	nav	4_4	220	huldigen	0.24595004011566016
+huldigen.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSall	-0.1960103373860782	0.08504473991578919	NA	NA	BOW	nobound	283	lex	3_3	1	no	FOC	283	all	4_4	220	huldigen	0.23489812919089423
+huldigen.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSnav	-0.19404462865113964	-0.10545327292122035	NA	NA	BOW	nobound	389	all	3_3	1	weight	5000	5000	nav	4_4	230	huldigen	0.24622472544932494
+huldigen.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSall	-0.21048775789490615	-0.16877119100221205	NA	NA	BOW	nobound	389	all	3_3	1	weight	5000	5000	all	4_4	230	huldigen	0.25564016590453753
+huldigen.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.20209725944054713	0.042282586569262676	NA	NA	BOW	nobound	389	all	3_3	1	weight	FOC	140	nav	4_4	230	huldigen	0.24574556408033268
+huldigen.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSall	-0.10453227927937381	0.03912922698211048	NA	NA	BOW	nobound	389	all	3_3	1	weight	FOC	389	all	4_4	230	huldigen	0.24314244587144976
+huldigen.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSnav	0.18353913056063048	0.20531428007569613	NA	NA	BOW	nobound	389	all	3_3	1	selection	5000	5000	nav	4_4	230	huldigen	0.24104171171173686
+huldigen.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSall	0.18830530104412085	0.2186925466596149	NA	NA	BOW	nobound	389	all	3_3	1	selection	5000	5000	all	4_4	230	huldigen	0.24464836908729434
+huldigen.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSnav	0.02107325720614479	0.20289574586987047	NA	NA	BOW	nobound	389	all	3_3	1	selection	FOC	140	nav	4_4	230	huldigen	0.24364190419569828
+huldigen.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSall	0.06351202919558407	0.1656705876739722	NA	NA	BOW	nobound	389	all	3_3	1	selection	FOC	389	all	4_4	230	huldigen	0.23429213718350447
+huldigen.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSnav	0.28347061835640536	0.20182549119042104	NA	NA	BOW	nobound	497	all	3_3	1	no	5000	5000	nav	4_4	230	huldigen	0.2595410487147335
+huldigen.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSall	0.26998326326322625	0.22737476947831187	NA	NA	BOW	nobound	497	all	3_3	1	no	5000	5000	all	4_4	230	huldigen	0.2541915952318958
+huldigen.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSnav	0.08616505829561426	0.2394627405031888	NA	NA	BOW	nobound	497	all	3_3	1	no	FOC	190	nav	4_4	230	huldigen	0.2495660154393038
+huldigen.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSall	0.11889799627376947	0.2221173392248077	NA	NA	BOW	nobound	497	all	3_3	1	no	FOC	497	all	4_4	230	huldigen	0.22571085129817475
+huldigen.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSnav	4.79993211078051e-5	-0.3297478733086733	NA	group1	dependency	bound	184	NA	NA	1	weight	5000	5000	nav	4_4	209	huldigen	0.24506056647046653
+huldigen.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSall	-6.872894274357036e-4	-0.3493885761276617	NA	group1	dependency	bound	184	NA	NA	1	weight	5000	5000	all	4_4	209	huldigen	0.25408310931344424
+huldigen.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSnav	-0.033893809507183306	-0.36654660225598434	NA	group1	dependency	bound	184	NA	NA	1	weight	FOC	68	nav	4_4	209	huldigen	0.28486132726144076
+huldigen.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSall	-0.006185980736071212	-0.32084265534504547	NA	group1	dependency	bound	184	NA	NA	1	weight	FOC	184	all	4_4	209	huldigen	0.2705317593317013
+huldigen.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSnav	0.19160085355733247	-0.3615590349068017	NA	group1	dependency	bound	184	NA	NA	1	selection	5000	5000	nav	4_4	209	huldigen	0.2487307619230885
+huldigen.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSall	0.203776976086847	-0.37792903396825706	NA	group1	dependency	bound	184	NA	NA	1	selection	5000	5000	all	4_4	209	huldigen	0.24336916900101743
+huldigen.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSnav	0.09683020488885177	-0.3572964061480472	NA	group1	dependency	bound	184	NA	NA	1	selection	FOC	68	nav	4_4	209	huldigen	0.26656691069786226
+huldigen.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSall	0.11146699112763456	-0.3145038940128248	NA	group1	dependency	bound	184	NA	NA	1	selection	FOC	184	all	4_4	209	huldigen	0.2634229332438225
+huldigen.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSnav	0.2780291249882327	-0.36797156682080256	NA	group1	dependency	bound	266	NA	NA	1	no	5000	5000	nav	4_4	224	huldigen	0.2519208069677748
+huldigen.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSall	0.31141554650255554	-0.3844064417517554	NA	group1	dependency	bound	266	NA	NA	1	no	5000	5000	all	4_4	224	huldigen	0.2487846587647983
+huldigen.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSnav	0.15945425099519037	-0.4027404051270943	NA	group1	dependency	bound	266	NA	NA	1	no	FOC	92	nav	4_4	224	huldigen	0.2719258567699998
+huldigen.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSall	0.1791908350545847	-0.3400643093650184	NA	group1	dependency	bound	266	NA	NA	1	no	FOC	266	all	4_4	224	huldigen	0.2596627901114858
+huldigen.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSnav	-0.12952366765834075	-0.24578518584594486	NA	group2	dependency	bound	261	NA	NA	1	weight	5000	5000	nav	4_4	225	huldigen	0.22630510676861468
+huldigen.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSall	-0.12171632354819302	-0.2417472056840132	NA	group2	dependency	bound	261	NA	NA	1	weight	5000	5000	all	4_4	225	huldigen	0.2471302549703754
+huldigen.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSnav	-0.08152325977501848	-0.1660076974743803	NA	group2	dependency	bound	261	NA	NA	1	weight	FOC	109	nav	4_4	225	huldigen	0.2266667885613051
+huldigen.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSall	-0.06292687305601488	-0.14911452003159942	NA	group2	dependency	bound	261	NA	NA	1	weight	FOC	261	all	4_4	225	huldigen	0.23123804935197695
+huldigen.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSnav	0.05199092449691718	-0.23292910982711515	NA	group2	dependency	bound	261	NA	NA	1	selection	5000	5000	nav	4_4	225	huldigen	0.2281643089609369
+huldigen.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSall	0.06369514123750235	-0.24187108058917273	NA	group2	dependency	bound	261	NA	NA	1	selection	5000	5000	all	4_4	225	huldigen	0.23453387421599084
+huldigen.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSnav	0.037079832634845766	-0.14502942163142224	NA	group2	dependency	bound	261	NA	NA	1	selection	FOC	109	nav	4_4	225	huldigen	0.23275135068577638
+huldigen.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSall	0.04339186159630283	-0.12090284190178233	NA	group2	dependency	bound	261	NA	NA	1	selection	FOC	261	all	4_4	225	huldigen	0.23305096558551278
+huldigen.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSnav	0.15816480277085174	-0.2387525522540762	NA	group2	dependency	bound	392	NA	NA	1	no	5000	5000	nav	4_4	228	huldigen	0.23056209094710806
+huldigen.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSall	0.17897964509126674	-0.24958336894568606	NA	group2	dependency	bound	392	NA	NA	1	no	5000	5000	all	4_4	228	huldigen	0.24594485499841073
+huldigen.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSnav	0.1018381636101328	-0.1472659772739044	NA	group2	dependency	bound	392	NA	NA	1	no	FOC	172	nav	4_4	228	huldigen	0.2407237075697654
+huldigen.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSall	0.11100232587201403	-0.12813758648359305	NA	group2	dependency	bound	392	NA	NA	1	no	FOC	392	all	4_4	228	huldigen	0.23724369992353742
+huldigen.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSnav	-0.09442072428486273	-0.2190990827519089	selection2	NA	dependency	bound	348	NA	NA	1	weight	5000	5000	nav	4_4	229	huldigen	0.22160805186833873
+huldigen.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSall	-0.10704081187057961	-0.23663672392034552	selection2	NA	dependency	bound	348	NA	NA	1	weight	5000	5000	all	4_4	229	huldigen	0.2502260234008487
+huldigen.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSnav	-0.052805583766853195	-0.13235559861168855	selection2	NA	dependency	bound	348	NA	NA	1	weight	FOC	134	nav	4_4	229	huldigen	0.2196860124885006
+huldigen.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSall	-0.040202983552863	-0.12132941196808862	selection2	NA	dependency	bound	348	NA	NA	1	weight	FOC	348	all	4_4	229	huldigen	0.22345535967839805
+huldigen.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSnav	0.177589936621841	-0.178107593408672	selection2	NA	dependency	bound	348	NA	NA	1	selection	5000	5000	nav	4_4	229	huldigen	0.22497325162805662
+huldigen.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSall	0.19642890091753815	-0.22382280313661748	selection2	NA	dependency	bound	348	NA	NA	1	selection	5000	5000	all	4_4	229	huldigen	0.24133067862819868
+huldigen.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSnav	0.10546830492570416	-0.09812842370620047	selection2	NA	dependency	bound	348	NA	NA	1	selection	FOC	134	nav	4_4	229	huldigen	0.2210164469204903
+huldigen.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSall	0.11604357944448822	-0.09024482414274894	selection2	NA	dependency	bound	348	NA	NA	1	selection	FOC	348	all	4_4	229	huldigen	0.2334806355307615
+huldigen.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSnav	0.3454626209579254	-0.1238944838314495	selection2	NA	dependency	bound	549	NA	NA	1	no	5000	5000	nav	4_4	229	huldigen	0.19460343884946252
+huldigen.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSall	0.36475125371547595	-0.18015007642372202	selection2	NA	dependency	bound	549	NA	NA	1	no	5000	5000	all	4_4	229	huldigen	0.23906001716655317
+huldigen.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSnav	0.2039484989266126	-0.07182829334709356	selection2	NA	dependency	bound	549	NA	NA	1	no	FOC	232	nav	4_4	229	huldigen	0.22084452894089268
+huldigen.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSall	0.21634303761441662	-0.06991611365458998	selection2	NA	dependency	bound	549	NA	NA	1	no	FOC	549	all	4_4	229	huldigen	0.21714082483387978
+huldigen.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSnav	-0.046587786256942085	-0.14792835381827873	selection3	NA	dependency	bound	460	NA	NA	1	weight	5000	5000	nav	4_4	229	huldigen	0.22427501897627639
+huldigen.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSall	-0.07117604310178041	-0.18103680177414413	selection3	NA	dependency	bound	460	NA	NA	1	weight	5000	5000	all	4_4	229	huldigen	0.2531176629927341
+huldigen.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSnav	-0.04138095829474349	-0.07268259617404585	selection3	NA	dependency	bound	460	NA	NA	1	weight	FOC	169	nav	4_4	229	huldigen	0.22002200345135023
+huldigen.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSall	-0.030909378196896764	-0.07113624599407954	selection3	NA	dependency	bound	460	NA	NA	1	weight	FOC	460	all	4_4	229	huldigen	0.22069964068209968
+huldigen.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSnav	0.28000561133297147	-0.11350880795434794	selection3	NA	dependency	bound	460	NA	NA	1	selection	5000	5000	nav	4_4	229	huldigen	0.2225681909808844
+huldigen.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSall	0.26380955682873375	-0.1565701130517874	selection3	NA	dependency	bound	460	NA	NA	1	selection	5000	5000	all	4_4	229	huldigen	0.2383066570478216
+huldigen.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSnav	0.15708108328953185	-0.05027732101501362	selection3	NA	dependency	bound	460	NA	NA	1	selection	FOC	169	nav	4_4	229	huldigen	0.21702452908153977
+huldigen.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSall	0.1653651159255437	-0.048655638945942215	selection3	NA	dependency	bound	460	NA	NA	1	selection	FOC	460	all	4_4	229	huldigen	0.2199840399655238
+huldigen.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSnav	0.45663890778151744	-0.0495268471552387	selection3	NA	dependency	bound	789	NA	NA	1	no	5000	5000	nav	4_4	229	huldigen	0.17898502053162926
+huldigen.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSall	0.4279715886646142	-0.09267022676792865	selection3	NA	dependency	bound	789	NA	NA	1	no	5000	5000	all	4_4	229	huldigen	0.21760706992011114
+huldigen.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSnav	0.26859702153855997	-0.0233797296730314	selection3	NA	dependency	bound	789	NA	NA	1	no	FOC	333	nav	4_4	229	huldigen	0.21014275363242021
+huldigen.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSall	0.2763040270460498	-0.023673093902434772	selection3	NA	dependency	bound	789	NA	NA	1	no	FOC	789	all	4_4	229	huldigen	0.20564096437205304
+huldigen.LEMMAPATHweight.PPMIweight.LENGTH5000.SOCPOSnav	-0.046587786256942085	-0.14792835381827873	weight	NA	dependency	bound	460	NA	NA	1	weight	5000	5000	nav	4_4	229	huldigen	0.22427501897627639
+huldigen.LEMMAPATHweight.PPMIweight.LENGTH5000.SOCPOSall	-0.07117604310178041	-0.18103680177414413	weight	NA	dependency	bound	460	NA	NA	1	weight	5000	5000	all	4_4	229	huldigen	0.2531176629927341
+huldigen.LEMMAPATHweight.PPMIweight.LENGTHFOC.SOCPOSnav	-0.04138095829474349	-0.07268259617404584	weight	NA	dependency	bound	460	NA	NA	1	weight	FOC	169	nav	4_4	229	huldigen	0.22002200345135023
+huldigen.LEMMAPATHweight.PPMIweight.LENGTHFOC.SOCPOSall	-0.030909378196896764	-0.07113624599407954	weight	NA	dependency	bound	460	NA	NA	1	weight	FOC	460	all	4_4	229	huldigen	0.22069964068209968
+huldigen.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSnav	0.19398656738330058	-0.14752132590990663	weight	NA	dependency	bound	460	NA	NA	1	selection	5000	5000	nav	4_4	229	huldigen	0.21685180166171342
+huldigen.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSall	0.19248014551060985	-0.17440973845254884	weight	NA	dependency	bound	460	NA	NA	1	selection	5000	5000	all	4_4	229	huldigen	0.23335101202052003
+huldigen.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSnav	0.10118452928557456	-0.06355374509956244	weight	NA	dependency	bound	460	NA	NA	1	selection	FOC	169	nav	4_4	229	huldigen	0.20978731482815985
+huldigen.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSall	0.11024647631283829	-0.058002072679635176	weight	NA	dependency	bound	460	NA	NA	1	selection	FOC	460	all	4_4	229	huldigen	0.21947662883904945
+huldigen.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSnav	0.3699831430354129	-0.10392048453510207	weight	NA	dependency	bound	789	NA	NA	1	no	5000	5000	nav	4_4	229	huldigen	0.17710220015747744
+huldigen.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSall	0.35753664762403053	-0.14222189544584762	weight	NA	dependency	bound	789	NA	NA	1	no	5000	5000	all	4_4	229	huldigen	0.21852488051736849
+huldigen.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSnav	0.2020505420585677	-0.04813623997685931	weight	NA	dependency	bound	789	NA	NA	1	no	FOC	333	nav	4_4	229	huldigen	0.20773214068045492
+huldigen.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSall	0.21271785029619603	-0.04760452882244457	weight	NA	dependency	bound	789	NA	NA	1	no	FOC	789	all	4_4	229	huldigen	0.20432956361929533

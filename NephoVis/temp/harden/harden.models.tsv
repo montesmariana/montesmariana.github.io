@@ -1,205 +1,205 @@
-LEMMAPATH	LEMMAREL	_model	base	foc_boundaries	foc_context_words	foc_foc_pos	foc_foc_win	foc_minimum_features	foc_ppmi	soc_length	soc_length_num	soc_soc_pos	soc_soc_win	tokens	type	stress
-NA	NA	harden.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSnav	BOW	bound	326	lex	10_10	1	weight	5000	5000	nav	4_4	277	harden	NA
-NA	NA	harden.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSall	BOW	bound	326	lex	10_10	1	weight	5000	5000	all	4_4	277	harden	NA
-NA	NA	harden.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	bound	326	lex	10_10	1	weight	FOC	221	nav	4_4	277	harden	NA
-NA	NA	harden.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSall	BOW	bound	326	lex	10_10	1	weight	FOC	326	all	4_4	277	harden	NA
-NA	NA	harden.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSnav	BOW	bound	326	lex	10_10	1	selection	5000	5000	nav	4_4	277	harden	NA
-NA	NA	harden.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSall	BOW	bound	326	lex	10_10	1	selection	5000	5000	all	4_4	277	harden	NA
-NA	NA	harden.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	bound	326	lex	10_10	1	selection	FOC	221	nav	4_4	277	harden	NA
-NA	NA	harden.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSall	BOW	bound	326	lex	10_10	1	selection	FOC	326	all	4_4	277	harden	NA
-NA	NA	harden.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSnav	BOW	bound	691	lex	10_10	1	no	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSall	BOW	bound	691	lex	10_10	1	no	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSnav	BOW	bound	691	lex	10_10	1	no	FOC	491	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSall	BOW	bound	691	lex	10_10	1	no	FOC	691	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSnav	BOW	bound	417	all	10_10	1	weight	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSall	BOW	bound	417	all	10_10	1	weight	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	bound	417	all	10_10	1	weight	FOC	221	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSall	BOW	bound	417	all	10_10	1	weight	FOC	417	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSnav	BOW	bound	417	all	10_10	1	selection	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSall	BOW	bound	417	all	10_10	1	selection	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	bound	417	all	10_10	1	selection	FOC	221	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSall	BOW	bound	417	all	10_10	1	selection	FOC	417	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound10all.PPMIno.LENGTH5000.SOCPOSnav	BOW	bound	896	all	10_10	1	no	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound10all.PPMIno.LENGTH5000.SOCPOSall	BOW	bound	896	all	10_10	1	no	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSnav	BOW	bound	896	all	10_10	1	no	FOC	491	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSall	BOW	bound	896	all	10_10	1	no	FOC	896	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSnav	BOW	bound	259	lex	5_5	1	weight	5000	5000	nav	4_4	276	harden	NA
-NA	NA	harden.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSall	BOW	bound	259	lex	5_5	1	weight	5000	5000	all	4_4	276	harden	NA
-NA	NA	harden.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	bound	259	lex	5_5	1	weight	FOC	174	nav	4_4	276	harden	NA
-NA	NA	harden.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSall	BOW	bound	259	lex	5_5	1	weight	FOC	259	all	4_4	276	harden	NA
-NA	NA	harden.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSnav	BOW	bound	259	lex	5_5	1	selection	5000	5000	nav	4_4	276	harden	NA
-NA	NA	harden.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSall	BOW	bound	259	lex	5_5	1	selection	5000	5000	all	4_4	276	harden	NA
-NA	NA	harden.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	bound	259	lex	5_5	1	selection	FOC	174	nav	4_4	276	harden	NA
-NA	NA	harden.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSall	BOW	bound	259	lex	5_5	1	selection	FOC	259	all	4_4	276	harden	NA
-NA	NA	harden.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSnav	BOW	bound	365	lex	5_5	1	no	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSall	BOW	bound	365	lex	5_5	1	no	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSnav	BOW	bound	365	lex	5_5	1	no	FOC	254	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSall	BOW	bound	365	lex	5_5	1	no	FOC	365	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSnav	BOW	bound	340	all	5_5	1	weight	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSall	BOW	bound	340	all	5_5	1	weight	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	bound	340	all	5_5	1	weight	FOC	174	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSall	BOW	bound	340	all	5_5	1	weight	FOC	340	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSnav	BOW	bound	340	all	5_5	1	selection	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSall	BOW	bound	340	all	5_5	1	selection	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	bound	340	all	5_5	1	selection	FOC	174	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSall	BOW	bound	340	all	5_5	1	selection	FOC	340	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound5all.PPMIno.LENGTH5000.SOCPOSnav	BOW	bound	504	all	5_5	1	no	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound5all.PPMIno.LENGTH5000.SOCPOSall	BOW	bound	504	all	5_5	1	no	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSnav	BOW	bound	504	all	5_5	1	no	FOC	254	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSall	BOW	bound	504	all	5_5	1	no	FOC	504	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSnav	BOW	bound	176	lex	3_3	1	weight	5000	5000	nav	4_4	271	harden	NA
-NA	NA	harden.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSall	BOW	bound	176	lex	3_3	1	weight	5000	5000	all	4_4	271	harden	NA
-NA	NA	harden.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	bound	176	lex	3_3	1	weight	FOC	116	nav	4_4	271	harden	NA
-NA	NA	harden.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSall	BOW	bound	176	lex	3_3	1	weight	FOC	176	all	4_4	271	harden	NA
-NA	NA	harden.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSnav	BOW	bound	176	lex	3_3	1	selection	5000	5000	nav	4_4	271	harden	NA
-NA	NA	harden.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSall	BOW	bound	176	lex	3_3	1	selection	5000	5000	all	4_4	271	harden	NA
-NA	NA	harden.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	bound	176	lex	3_3	1	selection	FOC	116	nav	4_4	271	harden	NA
-NA	NA	harden.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSall	BOW	bound	176	lex	3_3	1	selection	FOC	176	all	4_4	271	harden	NA
-NA	NA	harden.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSnav	BOW	bound	204	lex	3_3	1	no	5000	5000	nav	4_4	275	harden	NA
-NA	NA	harden.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSall	BOW	bound	204	lex	3_3	1	no	5000	5000	all	4_4	275	harden	NA
-NA	NA	harden.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSnav	BOW	bound	204	lex	3_3	1	no	FOC	139	nav	4_4	275	harden	NA
-NA	NA	harden.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSall	BOW	bound	204	lex	3_3	1	no	FOC	204	all	4_4	275	harden	NA
-NA	NA	harden.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSnav	BOW	bound	232	all	3_3	1	weight	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSall	BOW	bound	232	all	3_3	1	weight	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	bound	232	all	3_3	1	weight	FOC	116	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSall	BOW	bound	232	all	3_3	1	weight	FOC	232	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSnav	BOW	bound	232	all	3_3	1	selection	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSall	BOW	bound	232	all	3_3	1	selection	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	bound	232	all	3_3	1	selection	FOC	116	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSall	BOW	bound	232	all	3_3	1	selection	FOC	232	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound3all.PPMIno.LENGTH5000.SOCPOSnav	BOW	bound	295	all	3_3	1	no	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound3all.PPMIno.LENGTH5000.SOCPOSall	BOW	bound	295	all	3_3	1	no	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSnav	BOW	bound	295	all	3_3	1	no	FOC	139	nav	4_4	279	harden	NA
-NA	NA	harden.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSall	BOW	bound	295	all	3_3	1	no	FOC	295	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSnav	BOW	nobound	431	lex	10_10	1	weight	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSall	BOW	nobound	431	lex	10_10	1	weight	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	nobound	431	lex	10_10	1	weight	FOC	295	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSall	BOW	nobound	431	lex	10_10	1	weight	FOC	431	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSnav	BOW	nobound	431	lex	10_10	1	selection	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSall	BOW	nobound	431	lex	10_10	1	selection	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	nobound	431	lex	10_10	1	selection	FOC	295	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSall	BOW	nobound	431	lex	10_10	1	selection	FOC	431	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSnav	BOW	nobound	1107	lex	10_10	1	no	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSall	BOW	nobound	1107	lex	10_10	1	no	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSnav	BOW	nobound	1107	lex	10_10	1	no	FOC	790	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSall	BOW	nobound	1107	lex	10_10	1	no	FOC	1107	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSnav	BOW	nobound	556	all	10_10	1	weight	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSall	BOW	nobound	556	all	10_10	1	weight	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	nobound	556	all	10_10	1	weight	FOC	295	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSall	BOW	nobound	556	all	10_10	1	weight	FOC	556	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSnav	BOW	nobound	556	all	10_10	1	selection	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSall	BOW	nobound	556	all	10_10	1	selection	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	nobound	556	all	10_10	1	selection	FOC	295	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSall	BOW	nobound	556	all	10_10	1	selection	FOC	556	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSnav	BOW	nobound	1444	all	10_10	1	no	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSall	BOW	nobound	1444	all	10_10	1	no	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSnav	BOW	nobound	1444	all	10_10	1	no	FOC	790	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSall	BOW	nobound	1444	all	10_10	1	no	FOC	1444	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSnav	BOW	nobound	349	lex	5_5	1	weight	5000	5000	nav	4_4	278	harden	NA
-NA	NA	harden.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSall	BOW	nobound	349	lex	5_5	1	weight	5000	5000	all	4_4	278	harden	NA
-NA	NA	harden.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	nobound	349	lex	5_5	1	weight	FOC	237	nav	4_4	278	harden	NA
-NA	NA	harden.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSall	BOW	nobound	349	lex	5_5	1	weight	FOC	349	all	4_4	278	harden	NA
-NA	NA	harden.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSnav	BOW	nobound	349	lex	5_5	1	selection	5000	5000	nav	4_4	278	harden	NA
-NA	NA	harden.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSall	BOW	nobound	349	lex	5_5	1	selection	5000	5000	all	4_4	278	harden	NA
-NA	NA	harden.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	nobound	349	lex	5_5	1	selection	FOC	237	nav	4_4	278	harden	NA
-NA	NA	harden.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSall	BOW	nobound	349	lex	5_5	1	selection	FOC	349	all	4_4	278	harden	NA
-NA	NA	harden.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSnav	BOW	nobound	515	lex	5_5	1	no	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSall	BOW	nobound	515	lex	5_5	1	no	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSnav	BOW	nobound	515	lex	5_5	1	no	FOC	362	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSall	BOW	nobound	515	lex	5_5	1	no	FOC	515	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSnav	BOW	nobound	462	all	5_5	1	weight	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSall	BOW	nobound	462	all	5_5	1	weight	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	nobound	462	all	5_5	1	weight	FOC	237	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSall	BOW	nobound	462	all	5_5	1	weight	FOC	462	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSnav	BOW	nobound	462	all	5_5	1	selection	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSall	BOW	nobound	462	all	5_5	1	selection	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	nobound	462	all	5_5	1	selection	FOC	237	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSall	BOW	nobound	462	all	5_5	1	selection	FOC	462	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSnav	BOW	nobound	704	all	5_5	1	no	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSall	BOW	nobound	704	all	5_5	1	no	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSnav	BOW	nobound	704	all	5_5	1	no	FOC	362	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSall	BOW	nobound	704	all	5_5	1	no	FOC	704	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSnav	BOW	nobound	221	lex	3_3	1	weight	5000	5000	nav	4_4	273	harden	NA
-NA	NA	harden.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSall	BOW	nobound	221	lex	3_3	1	weight	5000	5000	all	4_4	273	harden	NA
-NA	NA	harden.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	nobound	221	lex	3_3	1	weight	FOC	145	nav	4_4	273	harden	NA
-NA	NA	harden.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSall	BOW	nobound	221	lex	3_3	1	weight	FOC	221	all	4_4	273	harden	NA
-NA	NA	harden.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSnav	BOW	nobound	221	lex	3_3	1	selection	5000	5000	nav	4_4	273	harden	NA
-NA	NA	harden.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSall	BOW	nobound	221	lex	3_3	1	selection	5000	5000	all	4_4	273	harden	NA
-NA	NA	harden.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	nobound	221	lex	3_3	1	selection	FOC	145	nav	4_4	273	harden	NA
-NA	NA	harden.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSall	BOW	nobound	221	lex	3_3	1	selection	FOC	221	all	4_4	273	harden	NA
-NA	NA	harden.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSnav	BOW	nobound	259	lex	3_3	1	no	5000	5000	nav	4_4	276	harden	NA
-NA	NA	harden.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSall	BOW	nobound	259	lex	3_3	1	no	5000	5000	all	4_4	276	harden	NA
-NA	NA	harden.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSnav	BOW	nobound	259	lex	3_3	1	no	FOC	176	nav	4_4	276	harden	NA
-NA	NA	harden.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSall	BOW	nobound	259	lex	3_3	1	no	FOC	259	all	4_4	276	harden	NA
-NA	NA	harden.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSnav	BOW	nobound	300	all	3_3	1	weight	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSall	BOW	nobound	300	all	3_3	1	weight	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSnav	BOW	nobound	300	all	3_3	1	weight	FOC	145	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSall	BOW	nobound	300	all	3_3	1	weight	FOC	300	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSnav	BOW	nobound	300	all	3_3	1	selection	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSall	BOW	nobound	300	all	3_3	1	selection	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSnav	BOW	nobound	300	all	3_3	1	selection	FOC	145	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSall	BOW	nobound	300	all	3_3	1	selection	FOC	300	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSnav	BOW	nobound	384	all	3_3	1	no	5000	5000	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSall	BOW	nobound	384	all	3_3	1	no	5000	5000	all	4_4	279	harden	NA
-NA	NA	harden.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSnav	BOW	nobound	384	all	3_3	1	no	FOC	176	nav	4_4	279	harden	NA
-NA	NA	harden.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSall	BOW	nobound	384	all	3_3	1	no	FOC	384	all	4_4	279	harden	NA
-NA	group1	harden.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSnav	dependency	bound	116	NA	NA	1	weight	5000	5000	nav	4_4	244	harden	NA
-NA	group1	harden.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSall	dependency	bound	116	NA	NA	1	weight	5000	5000	all	4_4	244	harden	NA
-NA	group1	harden.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSnav	dependency	bound	116	NA	NA	1	weight	FOC	41	nav	4_4	244	harden	NA
-NA	group1	harden.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSall	dependency	bound	116	NA	NA	1	weight	FOC	116	all	4_4	244	harden	NA
-NA	group1	harden.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSnav	dependency	bound	116	NA	NA	1	selection	5000	5000	nav	4_4	244	harden	NA
-NA	group1	harden.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSall	dependency	bound	116	NA	NA	1	selection	5000	5000	all	4_4	244	harden	NA
-NA	group1	harden.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSnav	dependency	bound	116	NA	NA	1	selection	FOC	41	nav	4_4	244	harden	NA
-NA	group1	harden.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSall	dependency	bound	116	NA	NA	1	selection	FOC	116	all	4_4	244	harden	NA
-NA	group1	harden.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSnav	dependency	bound	162	NA	NA	1	no	5000	5000	nav	4_4	251	harden	NA
-NA	group1	harden.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSall	dependency	bound	162	NA	NA	1	no	5000	5000	all	4_4	251	harden	NA
-NA	group1	harden.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSnav	dependency	bound	162	NA	NA	1	no	FOC	58	nav	4_4	251	harden	NA
-NA	group1	harden.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSall	dependency	bound	162	NA	NA	1	no	FOC	162	all	4_4	251	harden	NA
-NA	group2	harden.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSnav	dependency	bound	173	NA	NA	1	weight	5000	5000	nav	4_4	266	harden	NA
-NA	group2	harden.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSall	dependency	bound	173	NA	NA	1	weight	5000	5000	all	4_4	266	harden	NA
-NA	group2	harden.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSnav	dependency	bound	173	NA	NA	1	weight	FOC	83	nav	4_4	266	harden	NA
-NA	group2	harden.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSall	dependency	bound	173	NA	NA	1	weight	FOC	173	all	4_4	266	harden	NA
-NA	group2	harden.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSnav	dependency	bound	173	NA	NA	1	selection	5000	5000	nav	4_4	266	harden	NA
-NA	group2	harden.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSall	dependency	bound	173	NA	NA	1	selection	5000	5000	all	4_4	266	harden	NA
-NA	group2	harden.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSnav	dependency	bound	173	NA	NA	1	selection	FOC	83	nav	4_4	266	harden	NA
-NA	group2	harden.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSall	dependency	bound	173	NA	NA	1	selection	FOC	173	all	4_4	266	harden	NA
-NA	group2	harden.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSnav	dependency	bound	267	NA	NA	1	no	5000	5000	nav	4_4	268	harden	NA
-NA	group2	harden.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSall	dependency	bound	267	NA	NA	1	no	5000	5000	all	4_4	268	harden	NA
-NA	group2	harden.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSnav	dependency	bound	267	NA	NA	1	no	FOC	137	nav	4_4	268	harden	NA
-NA	group2	harden.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSall	dependency	bound	267	NA	NA	1	no	FOC	267	all	4_4	268	harden	NA
-selection2	NA	harden.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSnav	dependency	bound	205	NA	NA	1	weight	5000	5000	nav	4_4	274	harden	0.1867568063047627
-selection2	NA	harden.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSall	dependency	bound	205	NA	NA	1	weight	5000	5000	all	4_4	274	harden	0.23581847523170235
-selection2	NA	harden.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSnav	dependency	bound	205	NA	NA	1	weight	FOC	92	nav	4_4	274	harden	0.1900126470921764
-selection2	NA	harden.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSall	dependency	bound	205	NA	NA	1	weight	FOC	205	all	4_4	274	harden	0.1838186053928295
-selection2	NA	harden.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSnav	dependency	bound	205	NA	NA	1	selection	5000	5000	nav	4_4	274	harden	0.17584141726797298
-selection2	NA	harden.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSall	dependency	bound	205	NA	NA	1	selection	5000	5000	all	4_4	274	harden	0.24373403140718017
-selection2	NA	harden.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSnav	dependency	bound	205	NA	NA	1	selection	FOC	92	nav	4_4	274	harden	0.18288899979598505
-selection2	NA	harden.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSall	dependency	bound	205	NA	NA	1	selection	FOC	205	all	4_4	274	harden	0.162515747910892
-selection2	NA	harden.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSnav	dependency	bound	350	NA	NA	1	no	5000	5000	nav	4_4	276	harden	0.2000076855835762
-selection2	NA	harden.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSall	dependency	bound	350	NA	NA	1	no	5000	5000	all	4_4	276	harden	0.24230049315932167
-selection2	NA	harden.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSnav	dependency	bound	350	NA	NA	1	no	FOC	162	nav	4_4	276	harden	0.20550052565358123
-selection2	NA	harden.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSall	dependency	bound	350	NA	NA	1	no	FOC	350	all	4_4	276	harden	0.19235155818194877
-selection3	NA	harden.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSnav	dependency	bound	283	NA	NA	1	weight	5000	5000	nav	4_4	276	harden	0.20484322611156874
-selection3	NA	harden.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSall	dependency	bound	283	NA	NA	1	weight	5000	5000	all	4_4	276	harden	0.2574002684496445
-selection3	NA	harden.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSnav	dependency	bound	283	NA	NA	1	weight	FOC	143	nav	4_4	276	harden	0.19859049235094112
-selection3	NA	harden.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSall	dependency	bound	283	NA	NA	1	weight	FOC	283	all	4_4	276	harden	0.2014547392258814
-selection3	NA	harden.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSnav	dependency	bound	283	NA	NA	1	selection	5000	5000	nav	4_4	276	harden	0.1983803041625621
-selection3	NA	harden.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSall	dependency	bound	283	NA	NA	1	selection	5000	5000	all	4_4	276	harden	0.26405315148802994
-selection3	NA	harden.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSnav	dependency	bound	283	NA	NA	1	selection	FOC	143	nav	4_4	276	harden	0.20159082668474945
-selection3	NA	harden.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSall	dependency	bound	283	NA	NA	1	selection	FOC	283	all	4_4	276	harden	0.19954546165865036
-selection3	NA	harden.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSnav	dependency	bound	527	NA	NA	1	no	5000	5000	nav	4_4	276	harden	0.2219874305875147
-selection3	NA	harden.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSall	dependency	bound	527	NA	NA	1	no	5000	5000	all	4_4	276	harden	0.27250375442491603
-selection3	NA	harden.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSnav	dependency	bound	527	NA	NA	1	no	FOC	271	nav	4_4	276	harden	0.22427809378206223
-selection3	NA	harden.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSall	dependency	bound	527	NA	NA	1	no	FOC	527	all	4_4	276	harden	0.22300533427971433
-weight	NA	harden.LEMMAPATHweight.PPMIweight.LENGTH5000.SOCPOSnav	dependency	bound	283	NA	NA	1	weight	5000	5000	nav	4_4	276	harden	0.20484322611156874
-weight	NA	harden.LEMMAPATHweight.PPMIweight.LENGTH5000.SOCPOSall	dependency	bound	283	NA	NA	1	weight	5000	5000	all	4_4	276	harden	0.2574002684496445
-weight	NA	harden.LEMMAPATHweight.PPMIweight.LENGTHFOC.SOCPOSnav	dependency	bound	283	NA	NA	1	weight	FOC	143	nav	4_4	276	harden	0.19859049235094112
-weight	NA	harden.LEMMAPATHweight.PPMIweight.LENGTHFOC.SOCPOSall	dependency	bound	283	NA	NA	1	weight	FOC	283	all	4_4	276	harden	0.2014547392258814
-weight	NA	harden.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSnav	dependency	bound	283	NA	NA	1	selection	5000	5000	nav	4_4	276	harden	0.17969700769358052
-weight	NA	harden.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSall	dependency	bound	283	NA	NA	1	selection	5000	5000	all	4_4	276	harden	0.24778863027158848
-weight	NA	harden.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSnav	dependency	bound	283	NA	NA	1	selection	FOC	143	nav	4_4	276	harden	0.1912709581707725
-weight	NA	harden.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSall	dependency	bound	283	NA	NA	1	selection	FOC	283	all	4_4	276	harden	0.17759886239602812
-weight	NA	harden.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSnav	dependency	bound	527	NA	NA	1	no	5000	5000	nav	4_4	276	harden	0.20000768430534063
-weight	NA	harden.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSall	dependency	bound	527	NA	NA	1	no	5000	5000	all	4_4	276	harden	0.25417634253589994
-weight	NA	harden.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSnav	dependency	bound	527	NA	NA	1	no	FOC	271	nav	4_4	276	harden	0.20911871766305498
-weight	NA	harden.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSall	dependency	bound	527	NA	NA	1	no	FOC	527	all	4_4	276	harden	0.20225955136228999
+_model	model.x	model.y	LEMMAPATH	LEMMAREL	base	foc_boundaries	foc_context_words	foc_foc_pos	foc_foc_win	foc_minimum_features	foc_ppmi	soc_length	soc_length_num	soc_soc_pos	soc_soc_win	tokens	type	stress
+harden.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.10716382573709024	-0.054487316536238665	NA	NA	BOW	bound	326	lex	10_10	1	weight	5000	5000	nav	4_4	277	harden	NA
+harden.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSall	-0.21537414450208464	-0.013402389119669386	NA	NA	BOW	bound	326	lex	10_10	1	weight	5000	5000	all	4_4	277	harden	NA
+harden.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.13220510676965022	-0.13952304417035755	NA	NA	BOW	bound	326	lex	10_10	1	weight	FOC	221	nav	4_4	277	harden	NA
+harden.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.0903430010486565	-0.09980573698067756	NA	NA	BOW	bound	326	lex	10_10	1	weight	FOC	326	all	4_4	277	harden	NA
+harden.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.029814302410112046	0.022166846387274015	NA	NA	BOW	bound	326	lex	10_10	1	selection	5000	5000	nav	4_4	277	harden	NA
+harden.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSall	-0.20145766828160824	0.08998419965906376	NA	NA	BOW	bound	326	lex	10_10	1	selection	5000	5000	all	4_4	277	harden	NA
+harden.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.07557125654082615	-0.07321458645033546	NA	NA	BOW	bound	326	lex	10_10	1	selection	FOC	221	nav	4_4	277	harden	NA
+harden.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.01985281009930012	-0.028802939240584087	NA	NA	BOW	bound	326	lex	10_10	1	selection	FOC	326	all	4_4	277	harden	NA
+harden.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSnav	-0.08586213567939273	0.021249883211010404	NA	NA	BOW	bound	691	lex	10_10	1	no	5000	5000	nav	4_4	279	harden	NA
+harden.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSall	-0.3652074805676153	0.09781776012983816	NA	NA	BOW	bound	691	lex	10_10	1	no	5000	5000	all	4_4	279	harden	NA
+harden.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.1291903311852763	-0.09777630665054726	NA	NA	BOW	bound	691	lex	10_10	1	no	FOC	491	nav	4_4	279	harden	NA
+harden.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSall	-0.08872017824457391	-0.05620493107323605	NA	NA	BOW	bound	691	lex	10_10	1	no	FOC	691	all	4_4	279	harden	NA
+harden.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSnav	-0.021340138312031336	-0.0866736491121438	NA	NA	BOW	bound	417	all	10_10	1	weight	5000	5000	nav	4_4	279	harden	NA
+harden.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSall	-0.21210213908847544	-0.018682988739768595	NA	NA	BOW	bound	417	all	10_10	1	weight	5000	5000	all	4_4	279	harden	NA
+harden.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.08432986131944183	-0.16086008651257108	NA	NA	BOW	bound	417	all	10_10	1	weight	FOC	221	nav	4_4	279	harden	NA
+harden.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSall	-0.034229922855029835	-0.11219331687660215	NA	NA	BOW	bound	417	all	10_10	1	weight	FOC	417	all	4_4	279	harden	NA
+harden.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSnav	0.05637484733252697	-0.041572921142352566	NA	NA	BOW	bound	417	all	10_10	1	selection	5000	5000	nav	4_4	279	harden	NA
+harden.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSall	-0.22933811928966177	0.09622719509607867	NA	NA	BOW	bound	417	all	10_10	1	selection	5000	5000	all	4_4	279	harden	NA
+harden.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.014083667996150776	-0.10779079876094295	NA	NA	BOW	bound	417	all	10_10	1	selection	FOC	221	nav	4_4	279	harden	NA
+harden.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSall	0.03286224299834311	-0.07470721655325757	NA	NA	BOW	bound	417	all	10_10	1	selection	FOC	417	all	4_4	279	harden	NA
+harden.BOWbound10all.PPMIno.LENGTH5000.SOCPOSnav	0.08570430690989958	-0.1913406290357157	NA	NA	BOW	bound	896	all	10_10	1	no	5000	5000	nav	4_4	279	harden	NA
+harden.BOWbound10all.PPMIno.LENGTH5000.SOCPOSall	-0.494824490358424	0.23924645383477758	NA	NA	BOW	bound	896	all	10_10	1	no	5000	5000	all	4_4	279	harden	NA
+harden.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSnav	-0.10136347472332437	-0.1835758455548475	NA	NA	BOW	bound	896	all	10_10	1	no	FOC	491	nav	4_4	279	harden	NA
+harden.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSall	-0.04075837855823392	-0.159124561358552	NA	NA	BOW	bound	896	all	10_10	1	no	FOC	896	all	4_4	279	harden	NA
+harden.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.05954699771635138	-0.00821086124081737	NA	NA	BOW	bound	259	lex	5_5	1	weight	5000	5000	nav	4_4	276	harden	NA
+harden.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSall	-0.17969406507092076	0.040346414496172524	NA	NA	BOW	bound	259	lex	5_5	1	weight	5000	5000	all	4_4	276	harden	NA
+harden.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.10558397937113712	-0.09542184886376563	NA	NA	BOW	bound	259	lex	5_5	1	weight	FOC	174	nav	4_4	276	harden	NA
+harden.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.04482192294207441	-0.043756146805368615	NA	NA	BOW	bound	259	lex	5_5	1	weight	FOC	259	all	4_4	276	harden	NA
+harden.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.00214443039448181	0.04904720793683437	NA	NA	BOW	bound	259	lex	5_5	1	selection	5000	5000	nav	4_4	276	harden	NA
+harden.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSall	-0.15343467974326797	0.1128459030949415	NA	NA	BOW	bound	259	lex	5_5	1	selection	5000	5000	all	4_4	276	harden	NA
+harden.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.05091799222620825	-0.029799708428657815	NA	NA	BOW	bound	259	lex	5_5	1	selection	FOC	174	nav	4_4	276	harden	NA
+harden.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSall	0.012420572693382401	0.0038413043863918996	NA	NA	BOW	bound	259	lex	5_5	1	selection	FOC	259	all	4_4	276	harden	NA
+harden.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSnav	-0.014234581187659728	0.04553354178211863	NA	NA	BOW	bound	365	lex	5_5	1	no	5000	5000	nav	4_4	279	harden	NA
+harden.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSall	-0.1928617881510755	0.12348362157262054	NA	NA	BOW	bound	365	lex	5_5	1	no	5000	5000	all	4_4	279	harden	NA
+harden.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.05709845099274693	-0.027410237740658202	NA	NA	BOW	bound	365	lex	5_5	1	no	FOC	254	nav	4_4	279	harden	NA
+harden.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSall	-0.001038870522325495	0.0020053248621163472	NA	NA	BOW	bound	365	lex	5_5	1	no	FOC	365	all	4_4	279	harden	NA
+harden.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSnav	0.012480186460881015	-0.05039921764863958	NA	NA	BOW	bound	340	all	5_5	1	weight	5000	5000	nav	4_4	279	harden	NA
+harden.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSall	-0.1736524047855092	0.02917568212392009	NA	NA	BOW	bound	340	all	5_5	1	weight	5000	5000	all	4_4	279	harden	NA
+harden.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.046091872062925	-0.12963077832677827	NA	NA	BOW	bound	340	all	5_5	1	weight	FOC	174	nav	4_4	279	harden	NA
+harden.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSall	3.144572603982018e-4	-0.07425109595045301	NA	NA	BOW	bound	340	all	5_5	1	weight	FOC	340	all	4_4	279	harden	NA
+harden.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSnav	0.06549824279982304	-0.01123890679128992	NA	NA	BOW	bound	340	all	5_5	1	selection	5000	5000	nav	4_4	279	harden	NA
+harden.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSall	-0.16375017175386972	0.11045312977646429	NA	NA	BOW	bound	340	all	5_5	1	selection	5000	5000	all	4_4	279	harden	NA
+harden.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSnav	0.00939431064662219	-0.06162214039553358	NA	NA	BOW	bound	340	all	5_5	1	selection	FOC	174	nav	4_4	279	harden	NA
+harden.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSall	0.04605696252938674	-0.03236420360409324	NA	NA	BOW	bound	340	all	5_5	1	selection	FOC	340	all	4_4	279	harden	NA
+harden.BOWbound5all.PPMIno.LENGTH5000.SOCPOSnav	0.033854518856453256	0.023733578460200022	NA	NA	BOW	bound	504	all	5_5	1	no	5000	5000	nav	4_4	279	harden	NA
+harden.BOWbound5all.PPMIno.LENGTH5000.SOCPOSall	-0.3182764775577248	0.23569530542757758	NA	NA	BOW	bound	504	all	5_5	1	no	5000	5000	all	4_4	279	harden	NA
+harden.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSnav	-0.025575248982694605	-0.06539895592001693	NA	NA	BOW	bound	504	all	5_5	1	no	FOC	254	nav	4_4	279	harden	NA
+harden.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSall	0.022288211485072224	-0.026478612330413723	NA	NA	BOW	bound	504	all	5_5	1	no	FOC	504	all	4_4	279	harden	NA
+harden.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSnav	0.11772015556364833	0.12095996912054402	NA	NA	BOW	bound	176	lex	3_3	1	weight	5000	5000	nav	4_4	271	harden	NA
+harden.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSall	0.05958789046499279	0.2469119758738058	NA	NA	BOW	bound	176	lex	3_3	1	weight	5000	5000	all	4_4	271	harden	NA
+harden.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSnav	0.14127430744469807	0.11219171665241504	NA	NA	BOW	bound	176	lex	3_3	1	weight	FOC	116	nav	4_4	271	harden	NA
+harden.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSall	0.14675727854773885	0.09311718758643735	NA	NA	BOW	bound	176	lex	3_3	1	weight	FOC	176	all	4_4	271	harden	NA
+harden.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSnav	0.11380656047702702	0.1246041226115365	NA	NA	BOW	bound	176	lex	3_3	1	selection	5000	5000	nav	4_4	271	harden	NA
+harden.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSall	0.04702813310352455	0.2600731618215007	NA	NA	BOW	bound	176	lex	3_3	1	selection	5000	5000	all	4_4	271	harden	NA
+harden.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSnav	0.13202087987191236	0.10088895046306312	NA	NA	BOW	bound	176	lex	3_3	1	selection	FOC	116	nav	4_4	271	harden	NA
+harden.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSall	0.14617796882792913	0.08312105976332237	NA	NA	BOW	bound	176	lex	3_3	1	selection	FOC	176	all	4_4	271	harden	NA
+harden.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSnav	0.11379514977630888	0.1312745636582972	NA	NA	BOW	bound	204	lex	3_3	1	no	5000	5000	nav	4_4	275	harden	NA
+harden.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSall	0.04012853891383283	0.2749327068507388	NA	NA	BOW	bound	204	lex	3_3	1	no	5000	5000	all	4_4	275	harden	NA
+harden.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSnav	0.13752377026541013	0.1012562288692289	NA	NA	BOW	bound	204	lex	3_3	1	no	FOC	139	nav	4_4	275	harden	NA
+harden.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSall	0.1498527882706765	0.08922110852286605	NA	NA	BOW	bound	204	lex	3_3	1	no	FOC	204	all	4_4	275	harden	NA
+harden.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSnav	0.16003363843571014	0.04705219129368641	NA	NA	BOW	bound	232	all	3_3	1	weight	5000	5000	nav	4_4	279	harden	NA
+harden.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSall	0.0692963027360432	0.22575353147542995	NA	NA	BOW	bound	232	all	3_3	1	weight	5000	5000	all	4_4	279	harden	NA
+harden.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSnav	0.16498080932938033	0.04768058533693774	NA	NA	BOW	bound	232	all	3_3	1	weight	FOC	116	nav	4_4	279	harden	NA
+harden.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSall	0.14686190146040193	0.034304271400862785	NA	NA	BOW	bound	232	all	3_3	1	weight	FOC	232	all	4_4	279	harden	NA
+harden.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSnav	0.15346971764688613	0.030979571047759454	NA	NA	BOW	bound	232	all	3_3	1	selection	5000	5000	nav	4_4	279	harden	NA
+harden.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSall	0.0493545816756567	0.2348166736541347	NA	NA	BOW	bound	232	all	3_3	1	selection	5000	5000	all	4_4	279	harden	NA
+harden.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSnav	0.14957022625416927	0.02439001233896885	NA	NA	BOW	bound	232	all	3_3	1	selection	FOC	116	nav	4_4	279	harden	NA
+harden.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSall	0.1476830541025481	0.019997801774917275	NA	NA	BOW	bound	232	all	3_3	1	selection	FOC	232	all	4_4	279	harden	NA
+harden.BOWbound3all.PPMIno.LENGTH5000.SOCPOSnav	0.15384152290107622	0.05108453696637028	NA	NA	BOW	bound	295	all	3_3	1	no	5000	5000	nav	4_4	279	harden	NA
+harden.BOWbound3all.PPMIno.LENGTH5000.SOCPOSall	0.01121793945077736	0.3021985507865345	NA	NA	BOW	bound	295	all	3_3	1	no	5000	5000	all	4_4	279	harden	NA
+harden.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSnav	0.14441871035295994	0.031471170076855674	NA	NA	BOW	bound	295	all	3_3	1	no	FOC	139	nav	4_4	279	harden	NA
+harden.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSall	0.1464667978335127	0.02728521764106572	NA	NA	BOW	bound	295	all	3_3	1	no	FOC	295	all	4_4	279	harden	NA
+harden.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.14237008828340872	-0.06888798366539613	NA	NA	BOW	nobound	431	lex	10_10	1	weight	5000	5000	nav	4_4	279	harden	NA
+harden.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSall	-0.24804250501331968	-0.030273446501229134	NA	NA	BOW	nobound	431	lex	10_10	1	weight	5000	5000	all	4_4	279	harden	NA
+harden.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.16772860786581145	-0.14331174768752444	NA	NA	BOW	nobound	431	lex	10_10	1	weight	FOC	295	nav	4_4	279	harden	NA
+harden.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.13355237036648862	-0.11319115940470785	NA	NA	BOW	nobound	431	lex	10_10	1	weight	FOC	431	all	4_4	279	harden	NA
+harden.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.09583082611970367	0.018930953916306257	NA	NA	BOW	nobound	431	lex	10_10	1	selection	5000	5000	nav	4_4	279	harden	NA
+harden.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSall	-0.30476406934934874	0.0726312157075732	NA	NA	BOW	nobound	431	lex	10_10	1	selection	5000	5000	all	4_4	279	harden	NA
+harden.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.1433076227640082	-0.10471283724740311	NA	NA	BOW	nobound	431	lex	10_10	1	selection	FOC	295	nav	4_4	279	harden	NA
+harden.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.0975435029615082	-0.05440004666303376	NA	NA	BOW	nobound	431	lex	10_10	1	selection	FOC	431	all	4_4	279	harden	NA
+harden.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSnav	-0.2427307714425649	-0.10992584580123883	NA	NA	BOW	nobound	1107	lex	10_10	1	no	5000	5000	nav	4_4	279	harden	NA
+harden.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSall	-0.5390959940280814	0.0049420461720861555	NA	NA	BOW	nobound	1107	lex	10_10	1	no	5000	5000	all	4_4	279	harden	NA
+harden.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.21952823374967154	-0.15051714136691902	NA	NA	BOW	nobound	1107	lex	10_10	1	no	FOC	790	nav	4_4	279	harden	NA
+harden.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSall	-0.2016184759185935	-0.1335491465533291	NA	NA	BOW	nobound	1107	lex	10_10	1	no	FOC	1107	all	4_4	279	harden	NA
+harden.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSnav	-0.06432555669273951	-0.09298015355558907	NA	NA	BOW	nobound	556	all	10_10	1	weight	5000	5000	nav	4_4	279	harden	NA
+harden.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSall	-0.2615552789402978	-0.03362676253885093	NA	NA	BOW	nobound	556	all	10_10	1	weight	5000	5000	all	4_4	279	harden	NA
+harden.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.1377543486988521	-0.16129870122018006	NA	NA	BOW	nobound	556	all	10_10	1	weight	FOC	295	nav	4_4	279	harden	NA
+harden.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSall	-0.09407500193456364	-0.12918873288423605	NA	NA	BOW	nobound	556	all	10_10	1	weight	FOC	556	all	4_4	279	harden	NA
+harden.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSnav	0.018353518098427214	-0.06602981867236629	NA	NA	BOW	nobound	556	all	10_10	1	selection	5000	5000	nav	4_4	279	harden	NA
+harden.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSall	-0.38937467926057323	0.0607005604256999	NA	NA	BOW	nobound	556	all	10_10	1	selection	5000	5000	all	4_4	279	harden	NA
+harden.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.0925221552384189	-0.15534324770141952	NA	NA	BOW	nobound	556	all	10_10	1	selection	FOC	295	nav	4_4	279	harden	NA
+harden.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSall	-0.05110473644871907	-0.15219821711894568	NA	NA	BOW	nobound	556	all	10_10	1	selection	FOC	556	all	4_4	279	harden	NA
+harden.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSnav	-0.23440508328806003	-0.18764925541475777	NA	NA	BOW	nobound	1444	all	10_10	1	no	5000	5000	nav	4_4	279	harden	NA
+harden.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSall	-0.5718007643538808	0.13072743055241473	NA	NA	BOW	nobound	1444	all	10_10	1	no	5000	5000	all	4_4	279	harden	NA
+harden.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSnav	-0.20889506100991054	-0.21472387559375497	NA	NA	BOW	nobound	1444	all	10_10	1	no	FOC	790	nav	4_4	279	harden	NA
+harden.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSall	-0.22244733866909325	-0.2122318317639437	NA	NA	BOW	nobound	1444	all	10_10	1	no	FOC	1444	all	4_4	279	harden	NA
+harden.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.08156872415337732	-0.010677539765869788	NA	NA	BOW	nobound	349	lex	5_5	1	weight	5000	5000	nav	4_4	278	harden	NA
+harden.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSall	-0.1984402355478563	0.031630850910880706	NA	NA	BOW	nobound	349	lex	5_5	1	weight	5000	5000	all	4_4	278	harden	NA
+harden.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.10691469297810886	-0.07353447406754035	NA	NA	BOW	nobound	349	lex	5_5	1	weight	FOC	237	nav	4_4	278	harden	NA
+harden.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.06032406516379705	-0.041090630062731004	NA	NA	BOW	nobound	349	lex	5_5	1	weight	FOC	349	all	4_4	278	harden	NA
+harden.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.025597798184591677	0.04849569905938626	NA	NA	BOW	nobound	349	lex	5_5	1	selection	5000	5000	nav	4_4	278	harden	NA
+harden.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSall	-0.19721246567915995	0.11931274565859723	NA	NA	BOW	nobound	349	lex	5_5	1	selection	5000	5000	all	4_4	278	harden	NA
+harden.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.053618021345136185	-0.016677268232785997	NA	NA	BOW	nobound	349	lex	5_5	1	selection	FOC	237	nav	4_4	278	harden	NA
+harden.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.005719511649347826	0.00800736330626481	NA	NA	BOW	nobound	349	lex	5_5	1	selection	FOC	349	all	4_4	278	harden	NA
+harden.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSnav	-0.05527402016699619	0.05332760871369465	NA	NA	BOW	nobound	515	lex	5_5	1	no	5000	5000	nav	4_4	279	harden	NA
+harden.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSall	-0.29106697628327766	0.13494328889035795	NA	NA	BOW	nobound	515	lex	5_5	1	no	5000	5000	all	4_4	279	harden	NA
+harden.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.08830165454590358	-0.016658879655280515	NA	NA	BOW	nobound	515	lex	5_5	1	no	FOC	362	nav	4_4	279	harden	NA
+harden.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSall	-0.03383675087058718	0.008486237797907052	NA	NA	BOW	nobound	515	lex	5_5	1	no	FOC	515	all	4_4	279	harden	NA
+harden.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSnav	-0.009319141757598362	-0.047630214484456944	NA	NA	BOW	nobound	462	all	5_5	1	weight	5000	5000	nav	4_4	279	harden	NA
+harden.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSall	-0.20521853887122096	0.024089779834571105	NA	NA	BOW	nobound	462	all	5_5	1	weight	5000	5000	all	4_4	279	harden	NA
+harden.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.06306885132902029	-0.10936687933123973	NA	NA	BOW	nobound	462	all	5_5	1	weight	FOC	237	nav	4_4	279	harden	NA
+harden.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSall	-0.02701746822931518	-0.07230846942636597	NA	NA	BOW	nobound	462	all	5_5	1	weight	FOC	462	all	4_4	279	harden	NA
+harden.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSnav	0.04738189116212052	-0.008590808423069416	NA	NA	BOW	nobound	462	all	5_5	1	selection	5000	5000	nav	4_4	279	harden	NA
+harden.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSall	-0.25971317685997763	0.13455949844499554	NA	NA	BOW	nobound	462	all	5_5	1	selection	5000	5000	all	4_4	279	harden	NA
+harden.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.007127559806856272	-0.06093441091308116	NA	NA	BOW	nobound	462	all	5_5	1	selection	FOC	237	nav	4_4	279	harden	NA
+harden.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSall	0.026885266592803617	-0.03477308710386953	NA	NA	BOW	nobound	462	all	5_5	1	selection	FOC	462	all	4_4	279	harden	NA
+harden.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSnav	-0.03669134085130668	0.07284874351688413	NA	NA	BOW	nobound	704	all	5_5	1	no	5000	5000	nav	4_4	279	harden	NA
+harden.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSall	-0.42753034799906525	0.27418868264755597	NA	NA	BOW	nobound	704	all	5_5	1	no	5000	5000	all	4_4	279	harden	NA
+harden.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSnav	-0.07645590282889099	-0.08278538368319155	NA	NA	BOW	nobound	704	all	5_5	1	no	FOC	362	nav	4_4	279	harden	NA
+harden.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSall	-0.05250865385200736	0.013052773963666069	NA	NA	BOW	nobound	704	all	5_5	1	no	FOC	704	all	4_4	279	harden	NA
+harden.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSnav	0.09916394094231656	0.1257527171038188	NA	NA	BOW	nobound	221	lex	3_3	1	weight	5000	5000	nav	4_4	273	harden	NA
+harden.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSall	0.025394080739026176	0.24966737997220653	NA	NA	BOW	nobound	221	lex	3_3	1	weight	5000	5000	all	4_4	273	harden	NA
+harden.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSnav	0.12240955698834687	0.1039100268468131	NA	NA	BOW	nobound	221	lex	3_3	1	weight	FOC	145	nav	4_4	273	harden	NA
+harden.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSall	0.1275355931297678	0.09333892237032375	NA	NA	BOW	nobound	221	lex	3_3	1	weight	FOC	221	all	4_4	273	harden	NA
+harden.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSnav	0.09725666757236756	0.12771168217816553	NA	NA	BOW	nobound	221	lex	3_3	1	selection	5000	5000	nav	4_4	273	harden	NA
+harden.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSall	0.0036184700610694463	0.2676950242620988	NA	NA	BOW	nobound	221	lex	3_3	1	selection	5000	5000	all	4_4	273	harden	NA
+harden.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSnav	0.1135652763776822	0.0886126894176354	NA	NA	BOW	nobound	221	lex	3_3	1	selection	FOC	145	nav	4_4	273	harden	NA
+harden.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSall	0.1280924926115704	0.08205045637867271	NA	NA	BOW	nobound	221	lex	3_3	1	selection	FOC	221	all	4_4	273	harden	NA
+harden.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSnav	0.09242518888590434	0.1334629288236623	NA	NA	BOW	nobound	259	lex	3_3	1	no	5000	5000	nav	4_4	276	harden	NA
+harden.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSall	-0.014626691122394052	0.28258835204690486	NA	NA	BOW	nobound	259	lex	3_3	1	no	5000	5000	all	4_4	276	harden	NA
+harden.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSnav	0.11455212441851342	0.09212368996403131	NA	NA	BOW	nobound	259	lex	3_3	1	no	FOC	176	nav	4_4	276	harden	NA
+harden.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSall	0.12782045486105087	0.0898804072976194	NA	NA	BOW	nobound	259	lex	3_3	1	no	FOC	259	all	4_4	276	harden	NA
+harden.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSnav	0.13893893232764895	0.054213595520824824	NA	NA	BOW	nobound	300	all	3_3	1	weight	5000	5000	nav	4_4	279	harden	NA
+harden.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSall	0.0045934489915682416	0.23805868754285914	NA	NA	BOW	nobound	300	all	3_3	1	weight	5000	5000	all	4_4	279	harden	NA
+harden.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSnav	0.14589432686470208	0.04824250512400698	NA	NA	BOW	nobound	300	all	3_3	1	weight	FOC	145	nav	4_4	279	harden	NA
+harden.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSall	0.13101244207955082	0.03846543160171266	NA	NA	BOW	nobound	300	all	3_3	1	weight	FOC	300	all	4_4	279	harden	NA
+harden.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSnav	0.1294086775381465	0.033638080675918	NA	NA	BOW	nobound	300	all	3_3	1	selection	5000	5000	nav	4_4	279	harden	NA
+harden.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSall	-0.05177027583084424	0.273108975267264	NA	NA	BOW	nobound	300	all	3_3	1	selection	5000	5000	all	4_4	279	harden	NA
+harden.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSnav	0.13000658688451683	0.023710600376507608	NA	NA	BOW	nobound	300	all	3_3	1	selection	FOC	145	nav	4_4	279	harden	NA
+harden.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSall	0.13260287932435608	0.02510512067455139	NA	NA	BOW	nobound	300	all	3_3	1	selection	FOC	300	all	4_4	279	harden	NA
+harden.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSnav	0.11510473622474843	0.058636650739304755	NA	NA	BOW	nobound	384	all	3_3	1	no	5000	5000	nav	4_4	279	harden	NA
+harden.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSall	-0.1527218378631702	0.38574075708476	NA	NA	BOW	nobound	384	all	3_3	1	no	5000	5000	all	4_4	279	harden	NA
+harden.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSnav	0.12273260380012434	0.035121458584043225	NA	NA	BOW	nobound	384	all	3_3	1	no	FOC	176	nav	4_4	279	harden	NA
+harden.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSall	0.12271183103831504	0.039814616968581386	NA	NA	BOW	nobound	384	all	3_3	1	no	FOC	384	all	4_4	279	harden	NA
+harden.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSnav	0.24491440985672863	0.0039061588505056644	NA	group1	dependency	bound	116	NA	NA	1	weight	5000	5000	nav	4_4	244	harden	NA
+harden.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSall	0.29215285207016495	0.0397043988824776	NA	group1	dependency	bound	116	NA	NA	1	weight	5000	5000	all	4_4	244	harden	NA
+harden.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSnav	0.26589586846079677	-0.014486182369991678	NA	group1	dependency	bound	116	NA	NA	1	weight	FOC	41	nav	4_4	244	harden	NA
+harden.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSall	0.24429402498858402	-0.02196758442103637	NA	group1	dependency	bound	116	NA	NA	1	weight	FOC	116	all	4_4	244	harden	NA
+harden.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSnav	0.2459940632737565	0.01201452659656496	NA	group1	dependency	bound	116	NA	NA	1	selection	5000	5000	nav	4_4	244	harden	NA
+harden.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSall	0.3236509354031058	0.047470040806761454	NA	group1	dependency	bound	116	NA	NA	1	selection	5000	5000	all	4_4	244	harden	NA
+harden.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSnav	0.27114920037047896	-0.011894835723004336	NA	group1	dependency	bound	116	NA	NA	1	selection	FOC	41	nav	4_4	244	harden	NA
+harden.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSall	0.24175884608435874	-0.019406881721445425	NA	group1	dependency	bound	116	NA	NA	1	selection	FOC	116	all	4_4	244	harden	NA
+harden.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSnav	0.26544009100232696	0.0015465030040935949	NA	group1	dependency	bound	162	NA	NA	1	no	5000	5000	nav	4_4	251	harden	NA
+harden.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSall	0.40325240702103066	0.08204582409818939	NA	group1	dependency	bound	162	NA	NA	1	no	5000	5000	all	4_4	251	harden	NA
+harden.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSnav	0.2754591060232904	-0.04021187569140177	NA	group1	dependency	bound	162	NA	NA	1	no	FOC	58	nav	4_4	251	harden	NA
+harden.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSall	0.23673718507729927	-0.030220072308555033	NA	group1	dependency	bound	162	NA	NA	1	no	FOC	162	all	4_4	251	harden	NA
+harden.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSnav	0.05672587551137205	-0.1667764451427378	NA	group2	dependency	bound	173	NA	NA	1	weight	5000	5000	nav	4_4	266	harden	NA
+harden.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSall	-0.043545117625307474	-0.25981023762775896	NA	group2	dependency	bound	173	NA	NA	1	weight	5000	5000	all	4_4	266	harden	NA
+harden.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSnav	-0.023294312731321282	-0.2791461175888529	NA	group2	dependency	bound	173	NA	NA	1	weight	FOC	83	nav	4_4	266	harden	NA
+harden.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSall	0.014909097589553345	-0.21175820315403304	NA	group2	dependency	bound	173	NA	NA	1	weight	FOC	173	all	4_4	266	harden	NA
+harden.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSnav	0.11842213668676216	-0.08072562210676519	NA	group2	dependency	bound	173	NA	NA	1	selection	5000	5000	nav	4_4	266	harden	NA
+harden.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSall	0.03101067444013909	-0.2369113630084038	NA	group2	dependency	bound	173	NA	NA	1	selection	5000	5000	all	4_4	266	harden	NA
+harden.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSnav	0.03039673886979656	-0.21687695583327812	NA	group2	dependency	bound	173	NA	NA	1	selection	FOC	83	nav	4_4	266	harden	NA
+harden.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSall	0.0737597881676423	-0.1401405519395553	NA	group2	dependency	bound	173	NA	NA	1	selection	FOC	173	all	4_4	266	harden	NA
+harden.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSnav	0.12160775440386151	-0.10704369494793543	NA	group2	dependency	bound	267	NA	NA	1	no	5000	5000	nav	4_4	268	harden	NA
+harden.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSall	-0.09826719901072953	-0.3353147295335874	NA	group2	dependency	bound	267	NA	NA	1	no	5000	5000	all	4_4	268	harden	NA
+harden.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSnav	0.005028238119773872	-0.23530885402461998	NA	group2	dependency	bound	267	NA	NA	1	no	FOC	137	nav	4_4	268	harden	NA
+harden.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSall	0.04818490650793813	-0.17557986611583556	NA	group2	dependency	bound	267	NA	NA	1	no	FOC	267	all	4_4	268	harden	NA
+harden.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSnav	0.19723015436728714	-0.027358888575114114	selection2	NA	dependency	bound	205	NA	NA	1	weight	5000	5000	nav	4_4	274	harden	0.1867568063047627
+harden.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSall	0.15828996410431107	0.19859297566157433	selection2	NA	dependency	bound	205	NA	NA	1	weight	5000	5000	all	4_4	274	harden	0.23581847523170235
+harden.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSnav	0.201178625704972	-0.050590120462839415	selection2	NA	dependency	bound	205	NA	NA	1	weight	FOC	92	nav	4_4	274	harden	0.1900126470921764
+harden.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSall	0.17932051062948082	-0.021272403830265574	selection2	NA	dependency	bound	205	NA	NA	1	weight	FOC	205	all	4_4	274	harden	0.1838186053928295
+harden.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSnav	0.19717037630383738	-0.041251666094772724	selection2	NA	dependency	bound	205	NA	NA	1	selection	5000	5000	nav	4_4	274	harden	0.17584141726797298
+harden.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSall	0.15426417016051067	0.20685208416212222	selection2	NA	dependency	bound	205	NA	NA	1	selection	5000	5000	all	4_4	274	harden	0.24373403140718017
+harden.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSnav	0.19276793841639245	-0.05200066325420009	selection2	NA	dependency	bound	205	NA	NA	1	selection	FOC	92	nav	4_4	274	harden	0.18288899979598505
+harden.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSall	0.1908323957799549	-0.035069976194551086	selection2	NA	dependency	bound	205	NA	NA	1	selection	FOC	205	all	4_4	274	harden	0.162515747910892
+harden.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSnav	0.21242262308282597	-0.04552078374094957	selection2	NA	dependency	bound	350	NA	NA	1	no	5000	5000	nav	4_4	276	harden	0.2000076855835762
+harden.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSall	0.18033984579950804	0.3157086431405217	selection2	NA	dependency	bound	350	NA	NA	1	no	5000	5000	all	4_4	276	harden	0.24230049315932167
+harden.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSnav	0.19998417516234734	-0.06009626008140264	selection2	NA	dependency	bound	350	NA	NA	1	no	FOC	162	nav	4_4	276	harden	0.20550052565358123
+harden.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSall	0.19326045737493183	-0.038328232321736995	selection2	NA	dependency	bound	350	NA	NA	1	no	FOC	350	all	4_4	276	harden	0.19235155818194877
+harden.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSnav	0.019786162301565307	-0.10665163957982916	selection3	NA	dependency	bound	283	NA	NA	1	weight	5000	5000	nav	4_4	276	harden	0.20484322611156874
+harden.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSall	-0.18152488131781852	-0.03113402830221663	selection3	NA	dependency	bound	283	NA	NA	1	weight	5000	5000	all	4_4	276	harden	0.2574002684496445
+harden.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSnav	-0.050734364010227385	-0.1962624851171553	selection3	NA	dependency	bound	283	NA	NA	1	weight	FOC	143	nav	4_4	276	harden	0.19859049235094112
+harden.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSall	0.0024812620080503266	-0.12051216768376123	selection3	NA	dependency	bound	283	NA	NA	1	weight	FOC	283	all	4_4	276	harden	0.2014547392258814
+harden.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSnav	0.09491105711000634	-0.05975077442872093	selection3	NA	dependency	bound	283	NA	NA	1	selection	5000	5000	nav	4_4	276	harden	0.1983803041625621
+harden.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSall	-0.13123530144669093	0.09577389171883377	selection3	NA	dependency	bound	283	NA	NA	1	selection	5000	5000	all	4_4	276	harden	0.26405315148802994
+harden.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSnav	0.023394475557650236	-0.13162467759926627	selection3	NA	dependency	bound	283	NA	NA	1	selection	FOC	143	nav	4_4	276	harden	0.20159082668474945
+harden.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSall	0.06709575961205273	-0.07386053322428894	selection3	NA	dependency	bound	283	NA	NA	1	selection	FOC	283	all	4_4	276	harden	0.19954546165865036
+harden.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSnav	0.10418741381458498	-0.09931404774716432	selection3	NA	dependency	bound	527	NA	NA	1	no	5000	5000	nav	4_4	276	harden	0.2219874305875147
+harden.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSall	-0.2691233392377496	0.2744146466576912	selection3	NA	dependency	bound	527	NA	NA	1	no	5000	5000	all	4_4	276	harden	0.27250375442491603
+harden.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSnav	0.03133497487637152	-0.14787668346115437	selection3	NA	dependency	bound	527	NA	NA	1	no	FOC	271	nav	4_4	276	harden	0.22427809378206223
+harden.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSall	0.06541614430270062	-0.10331308826307493	selection3	NA	dependency	bound	527	NA	NA	1	no	FOC	527	all	4_4	276	harden	0.22300533427971433
+harden.LEMMAPATHweight.PPMIweight.LENGTH5000.SOCPOSnav	0.019786162301565307	-0.10665163957982916	weight	NA	dependency	bound	283	NA	NA	1	weight	5000	5000	nav	4_4	276	harden	0.20484322611156874
+harden.LEMMAPATHweight.PPMIweight.LENGTH5000.SOCPOSall	-0.18152488131781852	-0.03113402830221663	weight	NA	dependency	bound	283	NA	NA	1	weight	5000	5000	all	4_4	276	harden	0.2574002684496445
+harden.LEMMAPATHweight.PPMIweight.LENGTHFOC.SOCPOSnav	-0.050734364010227385	-0.1962624851171553	weight	NA	dependency	bound	283	NA	NA	1	weight	FOC	143	nav	4_4	276	harden	0.19859049235094112
+harden.LEMMAPATHweight.PPMIweight.LENGTHFOC.SOCPOSall	0.0024812620080503266	-0.12051216768376123	weight	NA	dependency	bound	283	NA	NA	1	weight	FOC	283	all	4_4	276	harden	0.2014547392258814
+harden.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSnav	0.17174901349815336	-0.05333993815608466	weight	NA	dependency	bound	283	NA	NA	1	selection	5000	5000	nav	4_4	276	harden	0.17969700769358052
+harden.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSall	-1.384687570281734e-4	0.13745854187088866	weight	NA	dependency	bound	283	NA	NA	1	selection	5000	5000	all	4_4	276	harden	0.24778863027158848
+harden.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSnav	0.12507759831428147	-0.06850432991900922	weight	NA	dependency	bound	283	NA	NA	1	selection	FOC	143	nav	4_4	276	harden	0.1912709581707725
+harden.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSall	0.14119626491865306	-0.04746141570382518	weight	NA	dependency	bound	283	NA	NA	1	selection	FOC	283	all	4_4	276	harden	0.17759886239602812
+harden.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSnav	0.18016311096296572	-0.062039293569577506	weight	NA	dependency	bound	527	NA	NA	1	no	5000	5000	nav	4_4	276	harden	0.20000768430534063
+harden.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSall	-0.1084157491785922	0.3170943592172152	weight	NA	dependency	bound	527	NA	NA	1	no	5000	5000	all	4_4	276	harden	0.25417634253589994
+harden.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSnav	0.14228814013143895	-0.07644362386878965	weight	NA	dependency	bound	527	NA	NA	1	no	FOC	271	nav	4_4	276	harden	0.20911871766305498
+harden.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSall	0.14967941211140362	-0.06002095929254388	weight	NA	dependency	bound	527	NA	NA	1	no	FOC	527	all	4_4	276	harden	0.20225955136228999
