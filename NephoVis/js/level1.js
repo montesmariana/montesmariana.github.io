@@ -155,6 +155,7 @@ function execute(datasets, type) {
     })
     .on('click', function (d) {
       resetVariable(type + "-modselectionFromButtons");
+      console.log(modelSelection)
       modelSelection.indexOf(d["_model"]) === -1 ? modelSelection.push(d["_model"]) : _.pull(modelSelection, d["_model"]);
       updateModelSelection(modelSelection);
     });
@@ -265,7 +266,11 @@ function execute(datasets, type) {
       });
       return (filteredDataset);
     });
-    updateModelSelection(_.intersection(...selectedTokens));
+
+    
+    _.pullAll(modelSelection, modelSelection);
+    modelSelection.push(..._.intersection(...selectedTokens));
+    updateModelSelection(modelSelection)
   }
 
   function updateModelSelection(modelSelection) {
