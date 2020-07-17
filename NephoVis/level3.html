@@ -140,8 +140,10 @@
     <script src="js/level3.js"></script>
     <script src="js/loadData.js"></script>
     <script>
+    
     var type = getUrlParameter("type");
     
+    d3.select("title").text(type + ": Level 3");
     loadData(type = type, files = ["tokens", "variables"]);
     </script>
 

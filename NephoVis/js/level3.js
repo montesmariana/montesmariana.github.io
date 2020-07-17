@@ -127,7 +127,9 @@ function execute(datasets, type, alternatives) {
       });
 
     buildDropdown("ctxt", tailoredContexts, valueFunction = d => d.value, textFunction = d => d.key)
-      .on("click", function () { ctxtvar = updateVar(dataset, "ctxt", this.value, type)["variable"]; });
+      .on("click", function () {
+        ctxtvar = updateVar(dataset, "ctxt", this.value, type)["variable"];
+      });
 
     buildDropdown("models", modelSelection,
       valueFunction = d => d,

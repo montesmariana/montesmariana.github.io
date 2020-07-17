@@ -39,6 +39,9 @@
         <h1></h1>
       </div>
       <div class="row justify-content-center">
+        <h2 id="groupNumber"></h2>
+      </div>
+      <div class="row justify-content-center">
         <h4 id="solutionName"></h4>
       </div>
       <div class="row">
@@ -122,8 +125,10 @@
     <script src="js/level2.js"></script>
     <script src="js/loadData.js"></script>
     <script>
+    
     var type = getUrlParameter("type");
     
+    d3.select("title").text(type + ": Level 2");
     loadData(type = type, files = ["model", "distances", "tokens", "variables"]);
     </script>
   </body>

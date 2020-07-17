@@ -1,12 +1,33 @@
 function execute(datasets, type, alternatives) {
   const models = datasets["model"];
   const level = "token";
+  const group = getUrlParameter("group");
+  console.log(group)
   const tokenSelection = listFromLS(level + "selection-" + type);
 
 
   // SET UP WORKSPACE ###############################################################################################################################
 
   d3.select("h1").html("Level 2 (<em>" + type + "</em>)");
+
+  if (group !== "none") {
+    d3.select("#groupNumber").html("Group " + group)
+      .on("mouseover", function() {
+        d3.select(this).style("color", "red").text("Remove group " + group);
+      })
+      .on("mouseout", function() {
+        d3.select(this).style("color", "black").text("Group " + group);
+      })
+      .on("click", function() {
+        const LSselectionIndex = listFromLS("modelselection-" + type + "-groups");
+        _.pull(LSselectionIndex, parseInt(group));
+        console.log(LSselectionIndex)
+        localStorage.setItem("modelselection-" + type + "-groups", JSON.stringify(LSselectionIndex));
+        localStorage.removeItem("modelselection-" + type + "-group" + group);
+        window.close();
+      });
+  
+  }
   d3.select("#concordance").style("height", "100px");
 
   // Set buttons behaviour ##########################################################
@@ -23,18 +44,18 @@ function execute(datasets, type, alternatives) {
   d3.select("#clearSelect").on("click", () => { clearStorage(tokenSelection, level, type); });
 
   // first info from LocalStorage
-  const modelSelection = listFromLS("modelselection-" + type);
+  const modelSelection = listFromLS("modelselection-" + type + "-group" + group);
 
-  if (_.isEmpty(modelSelection)) {
-    window.alert("No models found in selection, let's go back to Level 1!");
-    window.open("level1.html" + "?type=" + type, "_self");
-  } else if (modelSelection.length > 9) {
-    window.alert("You have selected too many models, only the first 9 will be used.");
-    while (modelSelection.length > 9) {
-      modelSelection.pop();
-    }
-    localStorage.setItem("modelselection-" + type, JSON.stringify(modelSelection));
-  }
+  // if (_.isEmpty(modelSelection)) {
+  //   window.alert("No models found in selection, let's go back to Level 1!");
+  //   window.open("level1.html" + "?type=" + type, "_self");
+  // } else if (modelSelection.length > 9) {
+  //   window.alert("You have selected too many models, only the first 9 will be used.");
+  //   while (modelSelection.length > 9) {
+  //     modelSelection.pop();
+  //   }
+  //   localStorage.setItem("modelselection-" + type + "-group" + group, JSON.stringify(modelSelection));
+  // }
 
   // Set up that doesn't depend on the solution(s) ################################################################
 
@@ -118,7 +139,7 @@ function execute(datasets, type, alternatives) {
       updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
     });
     buildDropdown("models", modelSelection).on("click", function () {
-      window.open("level3.html" + "?type=" + type + "&model=" + this.value, "_self");
+      window.open("level3.html" + "?type=" + type + "&model=" + this.value);
     });
 
     // Set up canvas #######################################################################################
