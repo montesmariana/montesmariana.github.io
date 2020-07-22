@@ -15,7 +15,8 @@ function execute(datasets, type, alternatives) {
 
   d3.select("#modelSelect")
     .on("click", function () {
-      window.open("level2.html" + "?type=" + type, "_self");
+      const group = getUrlParameter("group");
+      window.open("level2.html" + "?type=" + type + "&group=" + group);
     });
 
   // set up that doesn't depend on the solution
@@ -128,7 +129,7 @@ function execute(datasets, type, alternatives) {
 
     buildDropdown("ctxt", tailoredContexts, valueFunction = d => d.value, textFunction = d => d.key)
       .on("click", function () {
-        ctxtvar = updateVar(dataset, "ctxt", this.value, type)["variable"];
+        ctxtvar = updateVar(dataset, "ctxt", this.value, level, type)["variable"];
       });
 
     buildDropdown("models", modelSelection,
@@ -323,13 +324,14 @@ function execute(datasets, type, alternatives) {
     // Token search
 
     function findByContext(column, by) {
-      const cw2search = d3.select("#findTokensBy" + by).property("value").toLowerCase();
+      const cw2search = d3.select("#findTokensBy" + by).property("value");
+      console.log(column);
       const result = dataset.filter(d => {
         return (d[column].search(cw2search) !== -1);
       });
       if (result.length > 0) {
         _.pullAll(tokenSelection, tokenSelection);
-        result.forEach(function (d) { tokenSelection.push(d["_id"]) });
+        result.forEach(function (d) { tokenSelection.push(d["_id"]); });
         updateTokSelection(tokenSelection);
       } else {
         const spec = by === "Feature" ? "as a feature" : "in a concordance";
@@ -418,7 +420,8 @@ function execute(datasets, type, alternatives) {
 
     // Updating color, shape and size after every button clicking
     function updatePlot() {
-      dot.style("fill", function (d) { return (code(d, colorvar, color, "#1f77b4")); })
+      console.log(colorvar)
+      d3.selectAll(".dot").selectAll("path").style("fill", function (d) { return (code(d, colorvar, color, "#1f77b4")); })
         .attr("d", d3.symbol()
           .type(function (d) { return (code(d, shapevar, shape, d3.symbolCircle)); })
           .size(function (d) { return (code(d, sizevar, size, 64)); }));

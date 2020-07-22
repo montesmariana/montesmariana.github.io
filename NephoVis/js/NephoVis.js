@@ -206,7 +206,7 @@ function updateVar(dataset, variable, name, level, type) {
     const variableName = name === "Reset" ? null : name;
     const values = name === "Reset" ? +0 : getValues(dataset, name);
 
-    localStorage.setItem(level + variable + "var-" + type, JSON.stringify(variableName));
+    localStorage.setItem(level + "-" + variable + "var-" + type, JSON.stringify(variableName));
     return ({ "variable": variableName, "values": values });
 }
 
@@ -223,7 +223,7 @@ function clearStorage(selection, level, type) {
 }
 
 function varFromLS(dataset, variable, level, type) {
-    const LS = JSON.parse(localStorage.getItem(level + variable + "var-" + type));
+    const LS = JSON.parse(localStorage.getItem(level + "-" + variable + "var-" + type));
     const values = _.isNull(LS) ? +0 : getValues(dataset, LS);
     return ({
         "variable": LS,
@@ -283,7 +283,9 @@ function offerAlternatives(datasets, alternatives, type) {
 }
 
 function mergeVariables(coordinates, variables) {
-    coordinates.forEach((coordRow) => {_.assign(coordRow, variables.filter(varRow => varRow["_id"] === coordRow["_id"])[0])});
+    coordinates.forEach((coordRow) => {
+        _.assign(coordRow, variables.filter(varRow => varRow["_id"] === coordRow["_id"])[0]);
+    });
 }
 
 // ########################################################################################################################

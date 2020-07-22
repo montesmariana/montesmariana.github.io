@@ -2,7 +2,6 @@ function execute(datasets, type, alternatives) {
   const models = datasets["model"];
   const level = "token";
   const group = getUrlParameter("group");
-  console.log(group)
   const tokenSelection = listFromLS(level + "selection-" + type);
 
 
@@ -46,16 +45,16 @@ function execute(datasets, type, alternatives) {
   // first info from LocalStorage
   const modelSelection = listFromLS("modelselection-" + type + "-group" + group);
 
-  // if (_.isEmpty(modelSelection)) {
-  //   window.alert("No models found in selection, let's go back to Level 1!");
-  //   window.open("level1.html" + "?type=" + type, "_self");
-  // } else if (modelSelection.length > 9) {
-  //   window.alert("You have selected too many models, only the first 9 will be used.");
-  //   while (modelSelection.length > 9) {
-  //     modelSelection.pop();
-  //   }
-  //   localStorage.setItem("modelselection-" + type + "-group" + group, JSON.stringify(modelSelection));
-  // }
+  if (_.isEmpty(modelSelection)) {
+    window.alert("No models found in selection, let's go back to Level 1!");
+    window.open("level1.html" + "?type=" + type, "_self");
+  } else if (modelSelection.length > 9) {
+    window.alert("You have selected too many models, only the first 9 will be used.");
+    while (modelSelection.length > 9) {
+      modelSelection.pop();
+    }
+    localStorage.setItem("modelselection-" + type + "-group" + group, JSON.stringify(modelSelection));
+  }
 
   // Set up that doesn't depend on the solution(s) ################################################################
 
@@ -139,7 +138,7 @@ function execute(datasets, type, alternatives) {
       updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
     });
     buildDropdown("models", modelSelection).on("click", function () {
-      window.open("level3.html" + "?type=" + type + "&model=" + this.value);
+      window.open("level3.html" + "?type=" + type + "&group=" + group + "&model=" + this.value);
     });
 
     // Set up canvas #######################################################################################
@@ -255,7 +254,7 @@ function execute(datasets, type, alternatives) {
           return (d.m.length > 40 ? d.m.substring(0, 37) + "..." : d.m);
         })
         .on("click", function (d) {
-          window.open("level3.html" + "?type=" + type + "&model=" + d.m, "_self");
+          window.open("level3.html" + "?type=" + type + "&group=" + group + "&model=" + d.m);
         })
         .on("mouseover", mouseoverCell)
         .on("mouseout", function () {
