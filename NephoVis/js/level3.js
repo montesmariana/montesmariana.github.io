@@ -98,7 +98,7 @@ function execute(datasets, type, alternatives) {
       findByContext((varFromLS(dataset, "ctxt", level, type)["variable"] || "_ctxt.raw"), "Context")
     });
     d3.select("#showTable").on("click", function () {
-      const params = "width=400,height=700,menubar=no,toolbar=no,location=no,status=no";
+      const params = "width=700,height=700,menubar=no,toolbar=no,location=no,status=no";
       window.open("frequencyTable.html?type=" + type + "&column=" + cwsColumn, "freqtable", params);
     });
 
