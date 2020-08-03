@@ -11,21 +11,20 @@ function execute(datasets, type, alternatives) {
 
   if (group !== "none") {
     d3.select("#groupNumber").html("Group " + group)
-      .on("mouseover", function() {
+      .on("mouseover", function () {
         d3.select(this).style("color", "red").text("Remove group " + group);
       })
-      .on("mouseout", function() {
+      .on("mouseout", function () {
         d3.select(this).style("color", "black").text("Group " + group);
       })
-      .on("click", function() {
+      .on("click", function () {
         const LSselectionIndex = listFromLS("modelselection-" + type + "-groups");
         _.pull(LSselectionIndex, parseInt(group));
-        console.log(LSselectionIndex)
         localStorage.setItem("modelselection-" + type + "-groups", JSON.stringify(LSselectionIndex));
         localStorage.removeItem("modelselection-" + type + "-group" + group);
         window.close();
       });
-  
+
   }
   d3.select("#concordance").style("height", "100px");
 
@@ -39,8 +38,6 @@ function execute(datasets, type, alternatives) {
     window.open("distanceMatrix.html?type=" + type, "distmatrix", params);
   });
 
-  // clear selection of models
-  d3.select("#clearSelect").on("click", () => { clearStorage(tokenSelection, level, type); });
 
   // first info from LocalStorage
   const modelSelection = listFromLS("modelselection-" + type + "-group" + group);
@@ -64,7 +61,7 @@ function execute(datasets, type, alternatives) {
   const height = 250;
   const padding = 30;
 
-  
+
   //add tooltip (before the svg so it is not on top of it?)
   const tooltip = setTooltip("#svgContainer");
 
@@ -94,7 +91,6 @@ function execute(datasets, type, alternatives) {
     const dataset = _.clone(coordinates);
     // _.merge(dataset, datasets["variables"]);
     mergeVariables(dataset, datasets["variables"]);
-    console.log(dataset)
 
     const solutionName = JSON.parse(localStorage.getItem("solution-" + type));
     if (!(_.isNull(solutionName))) {
@@ -107,19 +103,23 @@ function execute(datasets, type, alternatives) {
     initVars(dataset, level, type);
     const modelColors = classifyColnames(models)["nominals"];
     let colorModel = varFromLS(models, "color", "model", type);
-    
-    updateTokSelection(tokenSelection);
-    console.log(tokenSelection)
 
-    
+    updateTokSelection(tokenSelection);
+
+    // clear selection of models
+    d3.select("#clearSelect").on("click", () => {
+      if (!(brushCell === undefined)) { d3.select(brushCell).call(brush.move, null); }
+      clearStorage(tokenSelection, level, type);
+    });
+
     // set up dropdowns #############################################################################
     buildDropdown("modelColour", modelColors,
-    valueFunction = d => d,
-    textFunction = d => formatVariableName(d))
-    .on("click", function () {
-      colorModel = updateVar(models, "color", this.value, "model", type);
-      colorCircles();
-    });
+      valueFunction = d => d,
+      textFunction = d => formatVariableName(d))
+      .on("click", function () {
+        colorModel = updateVar(models, "color", this.value, "model", type);
+        colorCircles();
+      });
 
     buildDropdown("colour", nominals).on("click", function () {
       colorvar = updateVar(dataset, "color", this.value, level, type);
@@ -166,17 +166,18 @@ function execute(datasets, type, alternatives) {
         d3.selectAll(".cell").append("g")
           .attr("transform", "translate(" + padding + ", " + padding + ")")
           .attr("class", "brush")
+          .attr("id", (d) => { return (d.m); })
           .call(brush);
       } else {
         d3.selectAll(".brush").remove();
       }
+      _.pullAll(tokenSelection, tokenSelection);
       // tokenSelection = [];
       updateTokSelection(tokenSelection);
     });
 
     // Set up scales (axes) - coordinates multiplied to get some padding in a way
     const xvalues = d3.merge(modelSelection.map(function (m) {
-      console.log(m)
       return (getValues(dataset, m + ".x"));
     }));
     const yvalues = d3.merge(modelSelection.map(function (m) {
@@ -323,7 +324,7 @@ function execute(datasets, type, alternatives) {
       const ctxt = colnames["all"].filter(function (d) { return (d.startsWith("_ctxt") && d.endsWith(".raw")); })[0];
       const tooltipText1 = "<p><b>" + d["_id"] + "</b></p><p>";
       const tooltipText2 = d[ctxt].replace(/class=["']target["']/g, 'style="color:' + tooltipColor + ';font-weight:bold;"') + "</p>";
-      
+
       d3.select("#concordance").append("p")
         .attr("class", "text-center p-2 ml-2")
         .style("border", "solid")
@@ -368,12 +369,12 @@ function execute(datasets, type, alternatives) {
     }
 
     // For the brush
-    let brushCell; // this mess because of the cells
+    let brushCell;
     function brushstart() {
+      _.pullAll(tokenSelection, tokenSelection);
+      updateTokSelection(tokenSelection);
       if (!(brushCell === this)) {
-        if (!(brushCell === undefined)) { d3.selectAll(".brush").call(brush.move, null); }
-        _.pullAll(tokenSelection, tokenSelection);
-        updateTokSelection(tokenSelection);
+        if (!(brushCell === undefined)) { d3.select(brushCell).call(brush.move, null); }
         brushCell = this;
       }
     }
@@ -391,14 +392,16 @@ function execute(datasets, type, alternatives) {
     }
 
     function brushed() {
-      _.pullAll(tokenSelection, tokenSelection);
-      d3.selectAll(".dot").selectAll("path")
-        .each(function (d) {
-          if (!(d3.select(this).classed("lighter")) && tokenSelection.indexOf(d["_id"]) === -1) {
-            tokenSelection.push(d["_id"]);
-          }
-        });
-      updateTokSelection(tokenSelection);
+      const e = d3.event.selection;
+      if (!_.isNull(e)) {
+        d3.selectAll(".dot").selectAll("path")
+          .each(function (d) {
+            if (!(d3.select(this).classed("lighter")) && tokenSelection.indexOf(d["_id"]) === -1) {
+              tokenSelection.push(d["_id"]);
+            }
+          });
+        updateTokSelection(tokenSelection);
+      }
     }
 
 
