@@ -208,14 +208,13 @@ function execute(datasets, type, alternatives) {
   const xrange = setRange(xvalues, 1.05);
   const yrange = setRange(yvalues, 1.05);
 
-  const x = d3.scaleLinear()
+  let x = d3.scaleLinear()
     .domain(xrange)
     .range([padding, width]);
 
-  const y = d3.scaleLinear()
+  let y = d3.scaleLinear()
     .domain(yrange)
     .range([height, padding]);
-
 
   // Vertical center
   const xAxis = d3.axisBottom(x).tickSizeOuter(0);
@@ -243,6 +242,7 @@ function execute(datasets, type, alternatives) {
   // FUNCTIONS #################################################################################################################
 
   function adjustValues(solution, newX, newY, tduration = 1000) {
+    x = newX, y = newY;
     svg.selectAll(".xAxis").call(xAxis.scale(newX)); // x axis rescaled
     svg.selectAll(".yAxis").call(yAxis.scale(newY)); // y axis rescaled
     d3.selectAll("g.cell").each(moveDots);
@@ -256,7 +256,7 @@ function execute(datasets, type, alternatives) {
       d3.select(this).selectAll("path.present")
         .transition().duration(tduration)
         .attr("transform", function (d) {
-          return ("translate(" + newX(d[m + "-" + chosenSolution + ".x"]) + "," + newY(d[m + "-" + chosenSolution +  ".y"]) + ")");
+          return ("translate(" + newX(d[m + "-" + solution + ".x"]) + "," + newY(d[m + "-" + solution +  ".y"]) + ")");
         });
     }
   }
@@ -425,8 +425,8 @@ function execute(datasets, type, alternatives) {
     if (!_.isNull(e)) {
       d3.selectAll(".dot").selectAll("path")
         .classed("lighter", function (d) {
-          var xc = x(d[p.m + ".x"]);
-          var yc = y(d[p.m + ".y"]);
+          var xc = x(d[p.m + "-" + chosenSolution + ".x"]);
+          var yc = y(d[p.m + "-" + chosenSolution + ".y"]);
           return (xc < e[0][0] + padding || xc > e[1][0] + padding || yc < e[0][1] + padding || yc > e[1][1] + padding || !exists(d, p.m));
         });
     }
