@@ -100,7 +100,7 @@ function execute(datasets, type, alternatives) {
     const xrange = setRange(xvalues, 1.05);
     const yrange = setRange(yvalues, 1.05);
     newX = x.domain(xrange);
-    newY = x.domain(yrange);
+    newY = y.domain(yrange);
     adjustValues(solution, newX, newY);
   }
   // update token selection
