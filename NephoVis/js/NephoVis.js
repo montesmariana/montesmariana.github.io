@@ -239,6 +239,7 @@ function listFromLS(variable) {
 function updateSelection(selection, level, type) {
     if (selection.length > 0 && selection.indexOf("undefined") > -1) _.pull(selection, "undefined");
 
+    ["color", "shape", "size"].forEach((variable) => {boldenLegend(variable, level, type)});
     localStorage.setItem(level + "selection-" + type, selection.length > 0 ? JSON.stringify(selection) : JSON.stringify(null));
     // if something is selected everything else is translucent
     d3.selectAll(".dot")
