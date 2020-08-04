@@ -80,6 +80,8 @@ function execute(datasets, type, alternatives) {
     d3.select("#solutions").selectAll("button").html(t => {
       return (t === d ? "<b>" + t + "</b>" : t);
     });
+    const technique = d.toLowerCase().search("tsne") > -1 ? "t-SNE, perplexity: " + d.match("[0-9]+") : d.toUpperCase();
+    d3.select("h4#solutionName").text("Technique: " + technique);
     chosenSolution = d;
     applySolution(chosenSolution);
   });
