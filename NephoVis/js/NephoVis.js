@@ -254,8 +254,25 @@ function updateSelection(selection, level, type) {
 // #####################################################################################################################
 
 // For level 2 & 3: offer different solutions if they exist
+function subsetCoords(datasets, alt, model){
+    const data = datasets[alt];
+    const subset = data.map(d => {
+      const res = {"_id" : d["_id"]};
+      if (typeof model === "string") {
+        res[alt + ".x"] = d[model + ".x"];
+        res[alt + ".y"] = d[model + ".y"];
+      } else {
+          for (let i = 0; i < model.length; i++) {
+              res[model[i] + "-" + alt + ".x"] = d[model[i] + ".x"];
+              res[model[i] + "-" + alt + ".y"] = d[model[i] + ".y"];
+          }
+      }
+      return(res);
+    });
+    return(subset);
+  }
 
-function offerAlternatives(datasets, alternatives, type) {
+function offerAlternatives(datasets, alternatives, model, type) {
     if (d3.keys(datasets).indexOf("tokens") === -1 && !_.isNull(alternatives)) {
         const storageSolution = JSON.parse(localStorage.getItem("solution-" + type));
         const chosenSolution = _.isNull(storageSolution) ? alternatives[0] : storageSolution;
@@ -276,12 +293,44 @@ function offerAlternatives(datasets, alternatives, type) {
         });
 
         localStorage.setItem("solution-" + type, JSON.stringify(chosenSolution));
-        return (datasets[chosenSolution]);
+        const coords = subsetCoords(datasets, alternatives[0], model);
+        for (let i = 1; i < alternatives.length; i++){
+            mergeVariables(coords, subsetCoords(datasets, alternatives[i], model))
+        }
+        return(coords)
 
     } else { // if "tokens remains"
-        return (datasets["tokens"]);
+        return (datasets, "tokens", model);
     }
 }
+
+// function offerAlternatives(datasets, alternatives, type) {
+//     if (d3.keys(datasets).indexOf("tokens") === -1 && !_.isNull(alternatives)) {
+//         const storageSolution = JSON.parse(localStorage.getItem("solution-" + type));
+//         const chosenSolution = _.isNull(storageSolution) ? alternatives[0] : storageSolution;
+//         const alts = d3.select("#moveAround").append("div") // setup the dropdown for the alternatives
+//             .attr("class", "btn-group");
+//         alts.append("button")
+//             .attr("type", "button")
+//             .attr("class", "btn shadow-sm btn-marigreen dropdown-toggle")
+//             .attr("data-toggle", "dropdown")
+//             .html("<i class='fas fa-list-ul'></i> Switch solution");
+//         alts.append("div")
+//             .attr("class", "dropdown-menu")
+//             .attr("id", "solutions");
+//         buildDropdown("solutions", alternatives,
+//         valueFunction = d => d,
+//         textFunction = d => {
+//           return (d === chosenSolution ? "<b>" + d + "</b>" : d);
+//         });
+
+//         localStorage.setItem("solution-" + type, JSON.stringify(chosenSolution));
+//         return (datasets[chosenSolution]);
+
+//     } else { // if "tokens remains"
+//         return (datasets["tokens"]);
+//     }
+// }
 
 function mergeVariables(coordinates, variables) {
     coordinates.forEach((coordRow) => {
