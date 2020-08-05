@@ -1,17 +1,18 @@
 // ################################################################################################
 // set up general variables for all scripts
 const myColors = [
-    "#0072B2",
-    "#009E73",
-    "#D55E00",
-    "#ffd77d",
-    "#CC79A7",
-    "#F0E442",
-    "#56B4E9",
-    "#986042",
-    "#011f4b",
-    "#345534",
-    "#696969"] // colorblind friendly palette: six first from "seaborn" (other three may not be so)
+    "#0072B2", // darkish blue
+    "#009E73", // green
+    "#D55E00", // brick red
+    "#ffd77d", // orangy yellow
+    "#CC79A7", // pink-purple
+    "#F0E442", // bright yellow
+    "#56B4E9", // sky blue
+    "#986042", // brown
+    "#011f4b", // almost black
+    "#345534", //dark green
+    "#696969"] //gray
+    // colorblind friendly palette: six first from "seaborn" (other three may not be so)
 
 // Color, shape, size palettes
 const color = d3.scaleOrdinal(myColors);

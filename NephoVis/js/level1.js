@@ -59,6 +59,7 @@ function execute(datasets, type) {
   const soc = nominals.filter(function (d) { return (d.startsWith('soc_')); });
 
   const modelSelection = listFromLS(level + "selection-" + type);
+  d3.select("#numSelected").text(modelSelection.length);
 
   // Set up selection by buttons ###################################################
   
@@ -300,6 +301,7 @@ function execute(datasets, type) {
   }
 
   function updateModelSelection(modelSelection) {
+    d3.select("#numSelected").text(modelSelection.length);
     updateSelection(modelSelection, "model", type);
   }
 }
