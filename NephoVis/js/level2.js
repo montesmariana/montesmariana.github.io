@@ -382,6 +382,7 @@ function execute(datasets, type, alternatives) {
       .attr("d", d3.symbol()
         .type(function (d) { return (code(d, shapevar, shape, d3.symbolCircle)); }) //set up shape
         .size(function (d) { return (code(d, sizevar, size, 50)); })) // set up size
+      .style("stroke", "gray")
       .style("fill", function (d) { return (code(d, colorvar, color, "#1f77b4")); }) // set up color
       .style("opacity", tokenSelection.length > 0 ? 1 : 0.7)
       .attr("model", d3.select(this.parentNode.parentNode).attr("model"))

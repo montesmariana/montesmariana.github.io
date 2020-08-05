@@ -405,8 +405,10 @@ function execute(datasets, type, alternatives) {
       .style("border-color", "gray")
       .style("font-size", "0.8em")
       .html(tooltipText1 + tooltipText2);
+      
+    console.log(compColor(d3.select(this).style("fill")))
 
-    d3.select(".dot")
+    d3.select(this.parentNode)
       .append("path")
       .attr("class", "selector")
       .attr("transform", d3.select(this).attr("transform"))
@@ -422,6 +424,7 @@ function execute(datasets, type, alternatives) {
       .type(function (d) { return (code(d, shapevar, shape, d3.symbolCircle)); })
       .size(function (d) { return (code(d, sizevar, size, 64)); })
     )
+      .style("stroke", "gray")
       .style("fill", function (d) { return code(d, colorvar, color, "#1f77b4"); })
       .style("opacity", tokenSelection.length > 0 ? 1 : 0.7)
       .classed("lighter", function (d) { return (tokenSelection.length > 0 ? (tokenSelection.indexOf(d["_id"]) === -1) : false); })
