@@ -70,10 +70,8 @@ function execute(datasets, type, alternatives) {
   const tooltip = setTooltip("#svgContainer");
 
   const coordinates = offerAlternatives(datasets, alternatives, modelSelection, type);
-  console.log(coordinates)
   const storageSolution = JSON.parse(localStorage.getItem("solution-" + type));
   let chosenSolution = _.isNull(storageSolution) ? alternatives[0] : storageSolution;
-  console.log(chosenSolution)
 
   d3.select("#solutions").selectAll("button").on("click", function (d) {
     localStorage.setItem("solution-" + type, JSON.stringify(d));
@@ -428,7 +426,7 @@ function execute(datasets, type, alternatives) {
         .classed("lighter", function (d) {
           var xc = x(d[p.m + "-" + chosenSolution + ".x"]);
           var yc = y(d[p.m + "-" + chosenSolution + ".y"]);
-          return (xc < e[0][0] + padding || xc > e[1][0] + padding || yc < e[0][1] + padding || yc > e[1][1] + padding || !exists(d, p.m));
+          return (xc < e[0][0] + padding || xc > e[1][0] + padding || yc < e[0][1] + padding || yc > e[1][1] + padding || !exists(d, p.m + "-" + chosenSolution));
         });
     }
   }
@@ -450,8 +448,8 @@ function execute(datasets, type, alternatives) {
   // ACTUALLY PLOTTING STUFF!!
   function plotCell(p) {
     const cell = d3.select(this);
-    const present = dataset.filter(function (d) { return (exists(d, cell.attr("model"))); });
-    const bin = dataset.filter(function (d) { return (!exists(d, cell.attr("model"))); });
+    const present = dataset.filter(function (d) { return (exists(d, cell.attr("model") + "-" + chosenSolution)); });
+    const bin = dataset.filter(function (d) { return (!exists(d, cell.attr("model") + "-" + chosenSolution)); });
 
     titleCell(cell);
 
