@@ -392,6 +392,8 @@ function execute(datasets, type, alternatives) {
       .on("mouseover", mouseoverDot)
       .on("mouseout", function () { d3.select("#concordance").select("p").remove(); })
       .on("click", function (d) {
+        _.pullAll(tokenSelection, tokenSelection);
+        listFromLS(level + "selection-" + type).forEach(d => tokenSelection.push(d));
         tokenSelection.indexOf(d["_id"]) === -1 ? tokenSelection.push(d["_id"]) : _.pull(tokenSelection, d["_id"]);
         updateTokSelection(tokenSelection);
       });
