@@ -49,17 +49,17 @@ function execute(datasets, type, alternatives) {
   const modelSelection = listFromLS("modelselection-" + type);
   // const modelSelection = listFromLS("modelselection-" + type + "-group" + group);
 
-  // if (_.isEmpty(modelSelection)) {
-  //   window.alert("No models found in selection, let's go back to Level 1!");
-  //   window.open("level1.html" + "?type=" + type, "_self");
-  // } else if (modelSelection.length > 9) {
-  //   window.alert("You have selected too many models, only the first 9 will be used.");
-  //   while (modelSelection.length > 9) {
-  //     modelSelection.pop();
-  //   }
-  //   localStorage.setItem("modelselection-" + type, JSON.stringify(modelSelection));
-  //   // localStorage.setItem("modelselection-" + type + "-group" + group, JSON.stringify(modelSelection));
-  // }
+  if (_.isEmpty(modelSelection)) {
+    window.alert("No models found in selection, let's go back to Level 1!");
+    window.open("level1.html" + "?type=" + type, "_self");
+  } else if (modelSelection.length > 9) {
+    window.alert("You have selected too many models, only the first 9 will be used.");
+    while (modelSelection.length > 9) {
+      modelSelection.pop();
+    }
+    localStorage.setItem("modelselection-" + type, JSON.stringify(modelSelection));
+    // localStorage.setItem("modelselection-" + type + "-group" + group, JSON.stringify(modelSelection));
+  }
 
   // Set up that doesn't depend on the solution(s) ################################################################
 
@@ -187,6 +187,9 @@ function execute(datasets, type, alternatives) {
   // react to selection of brush/click
   $(document).on("change", 'input[name="selection"]', function () {
     if (d3.select(this).attr("value") === "brush") {
+      _.pullAll(tokenSelection, tokenSelection);
+      // tokenSelection = [];
+      updateTokSelection(tokenSelection);
       d3.selectAll(".cell").append("g")
         .attr("transform", "translate(" + padding + ", " + padding + ")")
         .attr("class", "brush")
@@ -195,9 +198,6 @@ function execute(datasets, type, alternatives) {
     } else {
       d3.selectAll(".brush").remove();
     }
-    _.pullAll(tokenSelection, tokenSelection);
-    // tokenSelection = [];
-    updateTokSelection(tokenSelection);
   });
 
   // Set up scales (axes) - coordinates multiplied to get some padding in a way
@@ -245,11 +245,15 @@ function execute(datasets, type, alternatives) {
 
   function adjustValues(solution, newX, newY, tduration = 1500) {
     x = newX, y = newY;
-    svg.selectAll(".xAxis").call(xAxis.scale(newX)); // x axis rescaled
-    svg.selectAll(".yAxis").call(yAxis.scale(newY)); // y axis rescaled
+    svg.selectAll(".xAxis").transition().duration(tduration)
+      .call(xAxis.scale(newX)); // x axis rescaled
+    svg.selectAll(".yAxis").transition().duration(tduration)
+      .call(yAxis.scale(newY)); // y axis rescaled
     d3.selectAll("g.cell").each(moveDots);
-    d3.selectAll(".xCenter").attr("x1", newX(0)).attr("x2", newX(0)); // central x rescaled
-    d3.selectAll(".yCenter").attr("y1", newY(0)).attr("y2", newY(0)); // central y rescaled
+    d3.selectAll(".xcenter").transition().duration(tduration)
+      .attr("x1", newX(0)).attr("x2", newX(0)); // central x rescaled
+    d3.selectAll(".ycenter").transition().duration(tduration)
+      .attr("y1", newY(0)).attr("y2", newY(0)); // central y rescaled
     svg.selectAll(".brush").remove();
 
     function moveDots(p) {
