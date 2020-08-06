@@ -1,7 +1,7 @@
 function execute(datasets, type, alternatives) {
   const models = datasets["model"];
   const level = "token";
-  const group = getUrlParameter("group");
+  // const group = getUrlParameter("group");
   const tokenSelection = listFromLS(level + "selection-" + type);
 
 
@@ -9,23 +9,23 @@ function execute(datasets, type, alternatives) {
 
   d3.select("h1").html("Level 2 (<em>" + type + "</em>)");
 
-  if (group !== "none") {
-    d3.select("#groupNumber").html("Group " + group)
-      .on("mouseover", function () {
-        d3.select(this).style("color", "red").text("Remove group " + group);
-      })
-      .on("mouseout", function () {
-        d3.select(this).style("color", "black").text("Group " + group);
-      })
-      .on("click", function () {
-        const LSselectionIndex = listFromLS("modelselection-" + type + "-groups");
-        _.pull(LSselectionIndex, parseInt(group));
-        localStorage.setItem("modelselection-" + type + "-groups", JSON.stringify(LSselectionIndex));
-        localStorage.removeItem("modelselection-" + type + "-group" + group);
-        window.close();
-      });
+  // if (group !== "none") {
+  //   d3.select("#groupNumber").html("Group " + group)
+  //     .on("mouseover", function () {
+  //       d3.select(this).style("color", "red").text("Remove group " + group);
+  //     })
+  //     .on("mouseout", function () {
+  //       d3.select(this).style("color", "black").text("Group " + group);
+  //     })
+  //     .on("click", function () {
+  //       const LSselectionIndex = listFromLS("modelselection-" + type + "-groups");
+  //       _.pull(LSselectionIndex, parseInt(group));
+  //       localStorage.setItem("modelselection-" + type + "-groups", JSON.stringify(LSselectionIndex));
+  //       localStorage.removeItem("modelselection-" + type + "-group" + group);
+  //       window.close();
+  //     });
 
-  }
+  // }
   d3.select("#concordance").style("height", "100px");
 
   // Set buttons behaviour ##########################################################
@@ -40,23 +40,26 @@ function execute(datasets, type, alternatives) {
 
   d3.select("#showTable").on("click", function () {
     const params = "width=700,height=700,menubar=no,toolbar=no,location=no,status=no";
-    window.open("cwsTable.html?type=" + type + "&group=" + group, "freqtable", params);
+    window.open("cwsTable.html?type=" + type + "freqtable", params);
+    // window.open("cwsTable.html?type=" + type + "&group=" + group, "freqtable", params);
   });
 
 
   // first info from LocalStorage
-  const modelSelection = listFromLS("modelselection-" + type + "-group" + group);
+  const modelSelection = listFromLS("modelselection-" + type);
+  // const modelSelection = listFromLS("modelselection-" + type + "-group" + group);
 
-  if (_.isEmpty(modelSelection)) {
-    window.alert("No models found in selection, let's go back to Level 1!");
-    window.open("level1.html" + "?type=" + type, "_self");
-  } else if (modelSelection.length > 9) {
-    window.alert("You have selected too many models, only the first 9 will be used.");
-    while (modelSelection.length > 9) {
-      modelSelection.pop();
-    }
-    localStorage.setItem("modelselection-" + type + "-group" + group, JSON.stringify(modelSelection));
-  }
+  // if (_.isEmpty(modelSelection)) {
+  //   window.alert("No models found in selection, let's go back to Level 1!");
+  //   window.open("level1.html" + "?type=" + type, "_self");
+  // } else if (modelSelection.length > 9) {
+  //   window.alert("You have selected too many models, only the first 9 will be used.");
+  //   while (modelSelection.length > 9) {
+  //     modelSelection.pop();
+  //   }
+  //   localStorage.setItem("modelselection-" + type, JSON.stringify(modelSelection));
+  //   // localStorage.setItem("modelselection-" + type + "-group" + group, JSON.stringify(modelSelection));
+  // }
 
   // Set up that doesn't depend on the solution(s) ################################################################
 
@@ -158,7 +161,8 @@ function execute(datasets, type, alternatives) {
     updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
   });
   buildDropdown("models", modelSelection).on("click", function () {
-    window.open("level3.html" + "?type=" + type + "&group=" + group + "&model=" + this.value);
+    window.open("level3.html" + "?type=" + type + "&model=" + this.value);
+    // window.open("level3.html" + "?type=" + type + "&group=" + group + "&model=" + this.value);
   });
 
   // Set up canvas #######################################################################################
@@ -294,7 +298,8 @@ function execute(datasets, type, alternatives) {
         return (d.m.length > 40 ? d.m.substring(0, 37) + "..." : d.m);
       })
       .on("click", function (d) {
-        window.open("level3.html" + "?type=" + type + "&group=" + group + "&model=" + d.m);
+        window.open("level3.html" + "?type=" + type + "&model=" + d.m);
+        // window.open("level3.html" + "?type=" + type + "&group=" + group + "&model=" + d.m);
       })
       .on("mouseover", mouseoverCell)
       .on("mouseout", function () {
