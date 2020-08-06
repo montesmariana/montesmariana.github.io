@@ -223,7 +223,7 @@ function execute(datasets, type) {
 
   function zoomed() {
     newY = d3.event.transform.rescaleY(y);
-    newX = d3.event.transform.rescaleY(x);
+    newX = d3.event.transform.rescaleX(x);
     svg.select('#xaxis').call(xAxis.scale(newX)); // x axis rescaled
     svg.select('#yaxis').call(yAxis.scale(newY)); // y axis rescaled
     dot.attr("transform", function (d) {
