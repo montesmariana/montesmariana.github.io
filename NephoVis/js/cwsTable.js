@@ -1,6 +1,7 @@
 function execute(datasets, type) {
-    const group = getUrlParameter("group");
-    const modelSelection = listFromLS("modelselection-" + type + "-group" + group);
+    // const group = getUrlParameter("group");
+    const modelSelection = listFromLS("modelselection-" + type);
+    // const modelSelection = listFromLS("modelselection-" + type + "-group" + group);
     const tokSelection = listFromLS("tokenselection-" + type);
     const bigdata = datasets["variables"].filter((t) => {
         return (tokSelection.indexOf(t["_id"]) !== -1);
