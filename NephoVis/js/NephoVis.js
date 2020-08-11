@@ -300,7 +300,7 @@ function offerAlternatives(datasets, alternatives, model, type) {
         return(coords)
 
     } else { // if "tokens remains"
-        return (datasets, "tokens", model);
+        return (subsetCoords(datasets, "tokens", model));
     }
 }
 

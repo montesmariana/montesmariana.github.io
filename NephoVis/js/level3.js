@@ -30,6 +30,8 @@ function execute(datasets, type, alternatives) {
   let dataset = offerAlternatives(datasets, alternatives, model, type);
   const storageSolution = JSON.parse(localStorage.getItem("solution-" + type));
   let chosenSolution = _.isNull(storageSolution) ? alternatives[0] : storageSolution;
+  if (chosenSolution === undefined) chosenSolution = "tokens"; 
+
   updateTokSelection(tokenSelection);
 
   // deploy(offerAlternatives(datasets, alternatives, type));

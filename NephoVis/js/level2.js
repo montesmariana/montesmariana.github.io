@@ -75,6 +75,7 @@ function execute(datasets, type, alternatives) {
   const coordinates = offerAlternatives(datasets, alternatives, modelSelection, type);
   const storageSolution = JSON.parse(localStorage.getItem("solution-" + type));
   let chosenSolution = _.isNull(storageSolution) ? alternatives[0] : storageSolution;
+  if (chosenSolution === undefined) chosenSolution = "tokens";
 
   d3.select("#solutions").selectAll("button").on("click", function (d) {
     localStorage.setItem("solution-" + type, JSON.stringify(d));
@@ -257,12 +258,12 @@ function execute(datasets, type, alternatives) {
     svg.selectAll(".brush").remove();
 
     function moveDots(p) {
-      const m = d3.select(this).attr("model");
+      const m = d3.select(this).attr("model") + "-" + solution;
 
       d3.select(this).selectAll("path.present")
         .transition().duration(tduration)
         .attr("transform", function (d) {
-          return ("translate(" + newX(d[m + "-" + solution + ".x"]) + "," + newY(d[m + "-" + solution +  ".y"]) + ")");
+          return ("translate(" + newX(d[m + ".x"]) + "," + newY(d[m + ".y"]) + ")");
         });
     }
   }
