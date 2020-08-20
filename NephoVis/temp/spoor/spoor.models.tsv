@@ -1,357 +1,213 @@
-_model	model.x	model.y	foc_length	foc_minimum_features	foc_part_of_speech	foc_sent_bound	foc_weighting	foc_window	soc_length	soc_length_num	soc_part_of_speech	soc_window	tokens	type	stress	LEMMAPATH	LEMMAREL	base	foc_boundaries	foc_context_words	foc_foc_pos	foc_foc_win	foc_ppmi	soc_soc_pos	soc_soc_win
-spoor.foc10.nav.ppmi_weight.bound.min1.soc4.nav.5000	-0.2022829253958218	-0.17140541095483666	513.0	1	nav	bound	ppmi_weight	10_10	5000	5000.0	nav	4_4	353	spoor	0.2502028093004967										
-spoor.foc10.nav.ppmi_weight.bound.min1.soc4.nav.10000	-0.21326842414177413	-0.21396493298613886	513.0	1	nav	bound	ppmi_weight	10_10	10000	10000.0	nav	4_4	353	spoor	0.2524767197673573										
-spoor.foc10.nav.ppmi_weight.bound.min1.soc4.nav.foc	-0.2140544113695491	-0.1747244291851718	513.0	1	nav	bound	ppmi_weight	10_10	foc	513.0	nav	4_4	353	spoor	0.27019342933847124										
-spoor.foc10.nav.ppmi_weight.bound.min1.soc10.nav.5000	-0.20012706334314725	-0.1290635298786515	513.0	1	nav	bound	ppmi_weight	10_10	5000	5000.0	nav	10_10	353	spoor	0.2371822465969173										
-spoor.foc10.nav.ppmi_weight.bound.min1.soc10.nav.10000	-0.20023755524930734	-0.1580744106415402	513.0	1	nav	bound	ppmi_weight	10_10	10000	10000.0	nav	10_10	353	spoor	0.2406822819713245										
-spoor.foc10.nav.ppmi_weight.bound.min1.soc10.nav.foc	-0.21068424523773072	-0.13834140100150147	513.0	1	nav	bound	ppmi_weight	10_10	foc	513.0	nav	10_10	353	spoor	0.25121210625121443										
-spoor.foc10.nav.ppmi_weight.bound.min1.soc4.all.5000	-0.19977180674033385	-0.16686417158636838	513.0	1	nav	bound	ppmi_weight	10_10	5000	5000.0	all	4_4	353	spoor	0.2474526374733585										
-spoor.foc10.nav.ppmi_weight.bound.min1.soc4.all.10000	-0.20381807004745747	-0.1905405340257877	513.0	1	nav	bound	ppmi_weight	10_10	10000	10000.0	all	4_4	353	spoor	0.24685013384895385										
-spoor.foc10.nav.ppmi_weight.bound.min1.soc4.all.foc	-0.21405441136954909	-0.17472442918517508	513.0	1	nav	bound	ppmi_weight	10_10	foc	513.0	all	4_4	353	spoor	0.2702873642040408										
-spoor.foc10.nav.ppmi_weight.bound.min1.soc10.all.5000	-0.19980513381173004	-0.1307659468910613	513.0	1	nav	bound	ppmi_weight	10_10	5000	5000.0	all	10_10	353	spoor	0.23572005121196166										
-spoor.foc10.nav.ppmi_weight.bound.min1.soc10.all.10000	-0.198644913555013	-0.14194791032853687	513.0	1	nav	bound	ppmi_weight	10_10	10000	10000.0	all	10_10	353	spoor	0.2375116655017771										
-spoor.foc10.nav.ppmi_weight.bound.min1.soc10.all.foc	-0.2106842452351522	-0.1383414009826839	513.0	1	nav	bound	ppmi_weight	10_10	foc	513.0	all	10_10	353	spoor	0.25122891749573617										
-spoor.foc10.nav.ppmi_sel.bound.min1.soc4.nav.5000	-0.2870392975910896	0.12666583543867538	513.0	1	nav	bound	ppmi_sel	10_10	5000	5000.0	nav	4_4	353	spoor	0.2600161321362077										
-spoor.foc10.nav.ppmi_sel.bound.min1.soc4.nav.10000	-0.29753015170694186	0.11312455670468932	513.0	1	nav	bound	ppmi_sel	10_10	10000	10000.0	nav	4_4	353	spoor	0.26233301606363074										
-spoor.foc10.nav.ppmi_sel.bound.min1.soc4.nav.foc	-0.21906599629758802	0.04458034374929789	513.0	1	nav	bound	ppmi_sel	10_10	foc	513.0	nav	4_4	353	spoor	0.2722523192810379										
-spoor.foc10.nav.ppmi_sel.bound.min1.soc10.nav.5000	-0.24700733720439916	0.10235454110531604	513.0	1	nav	bound	ppmi_sel	10_10	5000	5000.0	nav	10_10	353	spoor	0.2495185072955617										
-spoor.foc10.nav.ppmi_sel.bound.min1.soc10.nav.10000	-0.252170635020385	0.0904121062319528	513.0	1	nav	bound	ppmi_sel	10_10	10000	10000.0	nav	10_10	353	spoor	0.2523206625563987										
-spoor.foc10.nav.ppmi_sel.bound.min1.soc10.nav.foc	-0.21284115425819755	0.05250406834902554	513.0	1	nav	bound	ppmi_sel	10_10	foc	513.0	nav	10_10	353	spoor	0.2523342366806205										
-spoor.foc10.nav.ppmi_sel.bound.min1.soc4.all.5000	-0.28048297055847043	0.1289157895044265	513.0	1	nav	bound	ppmi_sel	10_10	5000	5000.0	all	4_4	353	spoor	0.2584589396853948										
-spoor.foc10.nav.ppmi_sel.bound.min1.soc4.all.10000	-0.27957315184424825	0.11176897075731332	513.0	1	nav	bound	ppmi_sel	10_10	10000	10000.0	all	4_4	353	spoor	0.26015580075491795										
-spoor.foc10.nav.ppmi_sel.bound.min1.soc4.all.foc	-0.21906599629758802	0.04458034374929789	513.0	1	nav	bound	ppmi_sel	10_10	foc	513.0	all	4_4	353	spoor	0.2721234642897308										
-spoor.foc10.nav.ppmi_sel.bound.min1.soc10.all.5000	-0.24206247755525995	0.10263404896666524	513.0	1	nav	bound	ppmi_sel	10_10	5000	5000.0	all	10_10	353	spoor	0.24913881250899636										
-spoor.foc10.nav.ppmi_sel.bound.min1.soc10.all.10000	-0.23810880313660646	0.09178374278291496	513.0	1	nav	bound	ppmi_sel	10_10	10000	10000.0	all	10_10	353	spoor	0.25148625720161843										
-spoor.foc10.nav.ppmi_sel.bound.min1.soc10.all.foc	-0.2128411542581974	0.05250406834902555	513.0	1	nav	bound	ppmi_sel	10_10	foc	513.0	all	10_10	353	spoor	0.2522546331147576										
-spoor.foc10.nav.no_ppmi.bound.min1.soc4.nav.5000	-0.2210264878318228	0.3089109135539815	915.0	1	nav	bound	no_ppmi	10_10	5000	5000.0	nav	4_4	359	spoor	0.2529432524580694										
-spoor.foc10.nav.no_ppmi.bound.min1.soc4.nav.10000	-0.22201145850465148	0.3112155143424412	915.0	1	nav	bound	no_ppmi	10_10	10000	10000.0	nav	4_4	359	spoor	0.2544149635187626										
-spoor.foc10.nav.no_ppmi.bound.min1.soc4.nav.foc	-0.19314972149770945	0.2401039844437921	915.0	1	nav	bound	no_ppmi	10_10	foc	915.0	nav	4_4	359	spoor	0.256782274054027										
-spoor.foc10.nav.no_ppmi.bound.min1.soc10.nav.5000	-0.2005877585626097	0.3171102210484674	915.0	1	nav	bound	no_ppmi	10_10	5000	5000.0	nav	10_10	359	spoor	0.24255117557234945										
-spoor.foc10.nav.no_ppmi.bound.min1.soc10.nav.10000	-0.20289336827734933	0.30895389463014283	915.0	1	nav	bound	no_ppmi	10_10	10000	10000.0	nav	10_10	359	spoor	0.24465621217870906										
-spoor.foc10.nav.no_ppmi.bound.min1.soc10.nav.foc	-0.18635482763512395	0.2530000240178174	915.0	1	nav	bound	no_ppmi	10_10	foc	915.0	nav	10_10	359	spoor	0.24342168087337146										
-spoor.foc10.nav.no_ppmi.bound.min1.soc4.all.5000	-0.21328277466637574	0.3135659187491656	915.0	1	nav	bound	no_ppmi	10_10	5000	5000.0	all	4_4	359	spoor	0.252427854306373										
-spoor.foc10.nav.no_ppmi.bound.min1.soc4.all.10000	-0.21617158726927949	0.3001384047665823	915.0	1	nav	bound	no_ppmi	10_10	10000	10000.0	all	4_4	359	spoor	0.25336026457374616										
-spoor.foc10.nav.no_ppmi.bound.min1.soc4.all.foc	-0.19314972149766	0.24010398444266715	915.0	1	nav	bound	no_ppmi	10_10	foc	915.0	all	4_4	359	spoor	0.2569993562928557										
-spoor.foc10.nav.no_ppmi.bound.min1.soc10.all.5000	-0.1959884813872448	0.31943584687217136	915.0	1	nav	bound	no_ppmi	10_10	5000	5000.0	all	10_10	359	spoor	0.24521088253447004										
-spoor.foc10.nav.no_ppmi.bound.min1.soc10.all.10000	-0.1965514054400088	0.3085789262848456	915.0	1	nav	bound	no_ppmi	10_10	10000	10000.0	all	10_10	359	spoor	0.24434454173028405										
-spoor.foc10.nav.no_ppmi.bound.min1.soc10.all.foc	-0.18635482763695585	0.2530000240437719	915.0	1	nav	bound	no_ppmi	10_10	foc	915.0	all	10_10	359	spoor	0.24342168087337146										
-spoor.foc10.all.ppmi_weight.bound.min1.soc4.nav.5000	0.05459495920505866	-0.32339489281862754	598.0	1	all	bound	ppmi_weight	10_10	5000	5000.0	nav	4_4	360	spoor	0.2505141545842135										
-spoor.foc10.all.ppmi_weight.bound.min1.soc4.nav.10000	0.0691402150827742	-0.3697233801004826	598.0	1	all	bound	ppmi_weight	10_10	10000	10000.0	nav	4_4	360	spoor	0.2494424108743121										
-spoor.foc10.all.ppmi_weight.bound.min1.soc4.nav.foc	0.03629465780163866	-0.2771343923181222	598.0	1	all	bound	ppmi_weight	10_10	foc	598.0	nav	4_4	360	spoor	0.2580577830906526										
-spoor.foc10.all.ppmi_weight.bound.min1.soc10.nav.5000	-0.008883096523033984	-0.2550907310546299	598.0	1	all	bound	ppmi_weight	10_10	5000	5000.0	nav	10_10	360	spoor	0.2415293910238347										
-spoor.foc10.all.ppmi_weight.bound.min1.soc10.nav.10000	-0.0036112239501484727	-0.3006490847716544	598.0	1	all	bound	ppmi_weight	10_10	10000	10000.0	nav	10_10	360	spoor	0.2462914111056625										
-spoor.foc10.all.ppmi_weight.bound.min1.soc10.nav.foc	-0.016050872619938088	-0.2568716234844556	598.0	1	all	bound	ppmi_weight	10_10	foc	598.0	nav	10_10	360	spoor	0.25083967290785										
-spoor.foc10.all.ppmi_weight.bound.min1.soc4.all.5000	0.043716758220892375	-0.3091106904208791	598.0	1	all	bound	ppmi_weight	10_10	5000	5000.0	all	4_4	360	spoor	0.24710407665869585										
-spoor.foc10.all.ppmi_weight.bound.min1.soc4.all.10000	0.05767201476899508	-0.33428476367265925	598.0	1	all	bound	ppmi_weight	10_10	10000	10000.0	all	4_4	360	spoor	0.2478653124456165										
-spoor.foc10.all.ppmi_weight.bound.min1.soc4.all.foc	0.03629465780529145	-0.27713439232596976	598.0	1	all	bound	ppmi_weight	10_10	foc	598.0	all	4_4	360	spoor	0.2580577830906526										
-spoor.foc10.all.ppmi_weight.bound.min1.soc10.all.5000	-0.012867051463752421	-0.24473605080163624	598.0	1	all	bound	ppmi_weight	10_10	5000	5000.0	all	10_10	360	spoor	0.24006090116219114										
-spoor.foc10.all.ppmi_weight.bound.min1.soc10.all.10000	-0.009915557658274562	-0.2730930949611544	598.0	1	all	bound	ppmi_weight	10_10	10000	10000.0	all	10_10	360	spoor	0.2434277680914381										
-spoor.foc10.all.ppmi_weight.bound.min1.soc10.all.foc	-0.016050872528748403	-0.2568716235503793	598.0	1	all	bound	ppmi_weight	10_10	foc	598.0	all	10_10	360	spoor	0.2506677708246782										
-spoor.foc10.all.ppmi_sel.bound.min1.soc4.nav.5000	0.4133703192977765	0.19104242966909646	598.0	1	all	bound	ppmi_sel	10_10	5000	5000.0	nav	4_4	360	spoor	0.2533226995163231										
-spoor.foc10.all.ppmi_sel.bound.min1.soc4.nav.10000	0.42702269239894775	0.1910378996022643	598.0	1	all	bound	ppmi_sel	10_10	10000	10000.0	nav	4_4	360	spoor	0.24353645481610264										
-spoor.foc10.all.ppmi_sel.bound.min1.soc4.nav.foc	0.3171414617494833	0.14226447270084264	598.0	1	all	bound	ppmi_sel	10_10	foc	598.0	nav	4_4	360	spoor	0.25924260022145457										
-spoor.foc10.all.ppmi_sel.bound.min1.soc10.nav.5000	0.2550717287665633	0.15452746218124505	598.0	1	all	bound	ppmi_sel	10_10	5000	5000.0	nav	10_10	360	spoor	0.2578650482928685										
-spoor.foc10.all.ppmi_sel.bound.min1.soc10.nav.10000	0.2666201850248429	0.15140924107056186	598.0	1	all	bound	ppmi_sel	10_10	10000	10000.0	nav	10_10	360	spoor	0.2516695446750519										
-spoor.foc10.all.ppmi_sel.bound.min1.soc10.nav.foc	0.1953630787482392	0.10654189229331468	598.0	1	all	bound	ppmi_sel	10_10	foc	598.0	nav	10_10	360	spoor	0.25455886470190753										
-spoor.foc10.all.ppmi_sel.bound.min1.soc4.all.5000	0.39435337043718827	0.18407835586081134	598.0	1	all	bound	ppmi_sel	10_10	5000	5000.0	all	4_4	360	spoor	0.2583424193172351										
-spoor.foc10.all.ppmi_sel.bound.min1.soc4.all.10000	0.4095262771047468	0.19017071376570094	598.0	1	all	bound	ppmi_sel	10_10	10000	10000.0	all	4_4	360	spoor	0.25490022203498475										
-spoor.foc10.all.ppmi_sel.bound.min1.soc4.all.foc	0.31714146184641684	0.1422644727369802	598.0	1	all	bound	ppmi_sel	10_10	foc	598.0	all	4_4	360	spoor	0.26048970685905865										
-spoor.foc10.all.ppmi_sel.bound.min1.soc10.all.5000	0.2426240989909576	0.1471644934251287	598.0	1	all	bound	ppmi_sel	10_10	5000	5000.0	all	10_10	360	spoor	0.25787193222831645										
-spoor.foc10.all.ppmi_sel.bound.min1.soc10.all.10000	0.2502472293329774	0.15016311689963566	598.0	1	all	bound	ppmi_sel	10_10	10000	10000.0	all	10_10	360	spoor	0.259232204043129										
-spoor.foc10.all.ppmi_sel.bound.min1.soc10.all.foc	0.19536307874547926	0.1065418922932306	598.0	1	all	bound	ppmi_sel	10_10	foc	598.0	all	10_10	360	spoor	0.25455886470190753										
-spoor.foc10.all.no_ppmi.bound.min1.soc4.nav.5000	0.3450949303749285	0.28735387183016203	1094.0	1	all	bound	no_ppmi	10_10	5000	5000.0	nav	4_4	360	spoor	0.24832875384325784										
-spoor.foc10.all.no_ppmi.bound.min1.soc4.nav.10000	0.3646626674801237	0.2865149516717649	1094.0	1	all	bound	no_ppmi	10_10	10000	10000.0	nav	4_4	360	spoor	0.2360077834326537										
-spoor.foc10.all.no_ppmi.bound.min1.soc4.nav.foc	0.27991270021008346	0.2629251648910363	1094.0	1	all	bound	no_ppmi	10_10	foc	1094.0	nav	4_4	360	spoor	0.2549315963328343										
-spoor.foc10.all.no_ppmi.bound.min1.soc10.nav.5000	0.20324715184812436	0.29982273276093224	1094.0	1	all	bound	no_ppmi	10_10	5000	5000.0	nav	10_10	360	spoor	0.2543104993300728										
-spoor.foc10.all.no_ppmi.bound.min1.soc10.nav.10000	0.21593986046448266	0.29932546319988224	1094.0	1	all	bound	no_ppmi	10_10	10000	10000.0	nav	10_10	360	spoor	0.2489428096411729										
-spoor.foc10.all.no_ppmi.bound.min1.soc10.nav.foc	0.15324290151413705	0.2568909588552393	1094.0	1	all	bound	no_ppmi	10_10	foc	1094.0	nav	10_10	360	spoor	0.25300373604348925										
-spoor.foc10.all.no_ppmi.bound.min1.soc4.all.5000	0.3310800457271136	0.293299160841264	1094.0	1	all	bound	no_ppmi	10_10	5000	5000.0	all	4_4	360	spoor	0.2479716397747263										
-spoor.foc10.all.no_ppmi.bound.min1.soc4.all.10000	0.3412906399584767	0.2918034906535352	1094.0	1	all	bound	no_ppmi	10_10	10000	10000.0	all	4_4	360	spoor	0.2462538462151609										
-spoor.foc10.all.no_ppmi.bound.min1.soc4.all.foc	0.2799126982405967	0.26292516334234456	1094.0	1	all	bound	no_ppmi	10_10	foc	1094.0	all	4_4	360	spoor	0.2548586765147155										
-spoor.foc10.all.no_ppmi.bound.min1.soc10.all.5000	0.1965225236030854	0.30781790469072234	1094.0	1	all	bound	no_ppmi	10_10	5000	5000.0	all	10_10	360	spoor	0.2547206528209809										
-spoor.foc10.all.no_ppmi.bound.min1.soc10.all.10000	0.2007225765335222	0.29906742702703665	1094.0	1	all	bound	no_ppmi	10_10	10000	10000.0	all	10_10	360	spoor	0.25336334669429794										
-spoor.foc10.all.no_ppmi.bound.min1.soc10.all.foc	0.15324290147936645	0.2568909588329932	1094.0	1	all	bound	no_ppmi	10_10	foc	1094.0	all	10_10	360	spoor	0.25300373604348925										
-spoor.foc5.nav.ppmi_weight.bound.min1.soc4.nav.5000	-0.24485220050436665	-0.16097769322673047	332.0	1	nav	bound	ppmi_weight	5_5	5000	5000.0	nav	4_4	342	spoor	0.2656626715838979										
-spoor.foc5.nav.ppmi_weight.bound.min1.soc4.nav.10000	-0.2456357774440312	-0.1934019163342306	332.0	1	nav	bound	ppmi_weight	5_5	10000	10000.0	nav	4_4	342	spoor	0.2611970962179174										
-spoor.foc5.nav.ppmi_weight.bound.min1.soc4.nav.foc	-0.25813614262748463	-0.14796150746289413	332.0	1	nav	bound	ppmi_weight	5_5	foc	332.0	nav	4_4	342	spoor	0.27806573181778915										
-spoor.foc5.nav.ppmi_weight.bound.min1.soc10.nav.5000	-0.2421047313843839	-0.11973960317550532	332.0	1	nav	bound	ppmi_weight	5_5	5000	5000.0	nav	10_10	342	spoor	0.2475734538677563										
-spoor.foc5.nav.ppmi_weight.bound.min1.soc10.nav.10000	-0.2432023414347248	-0.14042718481369088	332.0	1	nav	bound	ppmi_weight	5_5	10000	10000.0	nav	10_10	342	spoor	0.24726948942887955										
-spoor.foc5.nav.ppmi_weight.bound.min1.soc10.nav.foc	-0.26332198881248337	-0.12401823854758096	332.0	1	nav	bound	ppmi_weight	5_5	foc	332.0	nav	10_10	342	spoor	0.2587663783527209										
-spoor.foc5.nav.ppmi_weight.bound.min1.soc4.all.5000	-0.24177588749543386	-0.15692505169530346	332.0	1	nav	bound	ppmi_weight	5_5	5000	5000.0	all	4_4	342	spoor	0.26254451964360004										
-spoor.foc5.nav.ppmi_weight.bound.min1.soc4.all.10000	-0.24167778117364636	-0.17463051781639807	332.0	1	nav	bound	ppmi_weight	5_5	10000	10000.0	all	4_4	342	spoor	0.2575969102432709										
-spoor.foc5.nav.ppmi_weight.bound.min1.soc4.all.foc	-0.25813614262748463	-0.14796150746289413	332.0	1	nav	bound	ppmi_weight	5_5	foc	332.0	all	4_4	342	spoor	0.2777018289487208										
-spoor.foc5.nav.ppmi_weight.bound.min1.soc10.all.5000	-0.24112396579020196	-0.12118800174815884	332.0	1	nav	bound	ppmi_weight	5_5	5000	5000.0	all	10_10	342	spoor	0.2463598665046547										
-spoor.foc5.nav.ppmi_weight.bound.min1.soc10.all.10000	-0.24141563940703745	-0.12792243939574469	332.0	1	nav	bound	ppmi_weight	5_5	10000	10000.0	all	10_10	342	spoor	0.24595179964260255										
-spoor.foc5.nav.ppmi_weight.bound.min1.soc10.all.foc	-0.26332198881248337	-0.12401823854758096	332.0	1	nav	bound	ppmi_weight	5_5	foc	332.0	all	10_10	342	spoor	0.2587663783527209										
-spoor.foc5.nav.ppmi_sel.bound.min1.soc4.nav.5000	-0.3192303284240308	0.03279031420042501	332.0	1	nav	bound	ppmi_sel	5_5	5000	5000.0	nav	4_4	342	spoor	0.2704229598090705										
-spoor.foc5.nav.ppmi_sel.bound.min1.soc4.nav.10000	-0.32578593925670096	0.0165596842922684	332.0	1	nav	bound	ppmi_sel	5_5	10000	10000.0	nav	4_4	342	spoor	0.2686961944338544										
-spoor.foc5.nav.ppmi_sel.bound.min1.soc4.nav.foc	-0.2530926704649541	-0.022071146058764875	332.0	1	nav	bound	ppmi_sel	5_5	foc	332.0	nav	4_4	342	spoor	0.2778671173369632										
-spoor.foc5.nav.ppmi_sel.bound.min1.soc10.nav.5000	-0.26909081505104404	0.022540366611729545	332.0	1	nav	bound	ppmi_sel	5_5	5000	5000.0	nav	10_10	342	spoor	0.2545386678782367										
-spoor.foc5.nav.ppmi_sel.bound.min1.soc10.nav.10000	-0.2725739650191352	0.01559141619711826	332.0	1	nav	bound	ppmi_sel	5_5	10000	10000.0	nav	10_10	342	spoor	0.2568110472816265										
-spoor.foc5.nav.ppmi_sel.bound.min1.soc10.nav.foc	-0.2675871461424706	-0.02205412194783392	332.0	1	nav	bound	ppmi_sel	5_5	foc	332.0	nav	10_10	342	spoor	0.2567081660298369										
-spoor.foc5.nav.ppmi_sel.bound.min1.soc4.all.5000	-0.31433773804075765	0.03590066992687073	332.0	1	nav	bound	ppmi_sel	5_5	5000	5000.0	all	4_4	342	spoor	0.26872924323997355										
-spoor.foc5.nav.ppmi_sel.bound.min1.soc4.all.10000	-0.3114918619441521	0.022410938624507368	332.0	1	nav	bound	ppmi_sel	5_5	10000	10000.0	all	4_4	342	spoor	0.2681278622436207										
-spoor.foc5.nav.ppmi_sel.bound.min1.soc4.all.foc	-0.2530926704647374	-0.022071146059320236	332.0	1	nav	bound	ppmi_sel	5_5	foc	332.0	all	4_4	342	spoor	0.2772124717798486										
-spoor.foc5.nav.ppmi_sel.bound.min1.soc10.all.5000	-0.2686116196874413	0.02420600113927836	332.0	1	nav	bound	ppmi_sel	5_5	5000	5000.0	all	10_10	342	spoor	0.2538926060787764										
-spoor.foc5.nav.ppmi_sel.bound.min1.soc10.all.10000	-0.26360565375255723	0.01768290683228304	332.0	1	nav	bound	ppmi_sel	5_5	10000	10000.0	all	10_10	342	spoor	0.2550163418616597										
-spoor.foc5.nav.ppmi_sel.bound.min1.soc10.all.foc	-0.26758714614246704	-0.022054121947842755	332.0	1	nav	bound	ppmi_sel	5_5	foc	332.0	all	10_10	342	spoor	0.25662933816821304										
-spoor.foc5.nav.no_ppmi.bound.min1.soc4.nav.5000	-0.2594818526949512	0.18672728265155256	550.0	1	nav	bound	no_ppmi	5_5	5000	5000.0	nav	4_4	351	spoor	0.2699395190178153										
-spoor.foc5.nav.no_ppmi.bound.min1.soc4.nav.10000	-0.2647672128964422	0.1832433906355921	550.0	1	nav	bound	no_ppmi	5_5	10000	10000.0	nav	4_4	351	spoor	0.26852165255452226										
-spoor.foc5.nav.no_ppmi.bound.min1.soc4.nav.foc	-0.20899614172094627	0.1194663088508058	550.0	1	nav	bound	no_ppmi	5_5	foc	550.0	nav	4_4	351	spoor	0.2785191665233753										
-spoor.foc5.nav.no_ppmi.bound.min1.soc10.nav.5000	-0.2298754702948901	0.1757569757248202	550.0	1	nav	bound	no_ppmi	5_5	5000	5000.0	nav	10_10	351	spoor	0.2584624028874923										
-spoor.foc5.nav.no_ppmi.bound.min1.soc10.nav.10000	-0.23109618260013104	0.1670447542563865	550.0	1	nav	bound	no_ppmi	5_5	10000	10000.0	nav	10_10	351	spoor	0.25756497097578										
-spoor.foc5.nav.no_ppmi.bound.min1.soc10.nav.foc	-0.19851131791894405	0.1201888796970252	550.0	1	nav	bound	no_ppmi	5_5	foc	550.0	nav	10_10	351	spoor	0.26105925714195										
-spoor.foc5.nav.no_ppmi.bound.min1.soc4.all.5000	-0.2523341304151058	0.19118674492935336	550.0	1	nav	bound	no_ppmi	5_5	5000	5000.0	all	4_4	351	spoor	0.2698960628309949										
-spoor.foc5.nav.no_ppmi.bound.min1.soc4.all.10000	-0.24777537304670494	0.17806843730405114	550.0	1	nav	bound	no_ppmi	5_5	10000	10000.0	all	4_4	351	spoor	0.2678309478833167										
-spoor.foc5.nav.no_ppmi.bound.min1.soc4.all.foc	-0.20899614172094627	0.1194663088508058	550.0	1	nav	bound	no_ppmi	5_5	foc	550.0	all	4_4	351	spoor	0.2785191665233753										
-spoor.foc5.nav.no_ppmi.bound.min1.soc10.all.5000	-0.22589941190235274	0.1794461696855359	550.0	1	nav	bound	no_ppmi	5_5	5000	5000.0	all	10_10	351	spoor	0.2593513150098677										
-spoor.foc5.nav.no_ppmi.bound.min1.soc10.all.10000	-0.22350091033263594	0.16606162884578807	550.0	1	nav	bound	no_ppmi	5_5	10000	10000.0	all	10_10	351	spoor	0.2569235534177388										
-spoor.foc5.nav.no_ppmi.bound.min1.soc10.all.foc	-0.1985113179189423	0.12018887969702355	550.0	1	nav	bound	no_ppmi	5_5	foc	550.0	all	10_10	351	spoor	0.26105925714195										
-spoor.foc5.all.ppmi_weight.bound.min1.soc4.nav.5000	0.15212928226254974	-0.3383962743672093	402.0	1	all	bound	ppmi_weight	5_5	5000	5000.0	nav	4_4	360	spoor	0.25668436063056826										
-spoor.foc5.all.ppmi_weight.bound.min1.soc4.nav.10000	0.16658377917896788	-0.3651912533469123	402.0	1	all	bound	ppmi_weight	5_5	10000	10000.0	nav	4_4	360	spoor	0.25412555225908073										
-spoor.foc5.all.ppmi_weight.bound.min1.soc4.nav.foc	0.12307668068627928	-0.3096909582199016	402.0	1	all	bound	ppmi_weight	5_5	foc	402.0	nav	4_4	360	spoor	0.2610389542322944										
-spoor.foc5.all.ppmi_weight.bound.min1.soc10.nav.5000	0.07635280236654877	-0.2886238804421776	402.0	1	all	bound	ppmi_weight	5_5	5000	5000.0	nav	10_10	360	spoor	0.2474820971794369										
-spoor.foc5.all.ppmi_weight.bound.min1.soc10.nav.10000	0.09047096036940916	-0.3226081622650885	402.0	1	all	bound	ppmi_weight	5_5	10000	10000.0	nav	10_10	360	spoor	0.2492778261118119										
-spoor.foc5.all.ppmi_weight.bound.min1.soc10.nav.foc	0.056708417090502214	-0.2837930391063365	402.0	1	all	bound	ppmi_weight	5_5	foc	402.0	nav	10_10	360	spoor	0.2608388737662524										
-spoor.foc5.all.ppmi_weight.bound.min1.soc4.all.5000	0.1456386712346277	-0.3283294050039153	402.0	1	all	bound	ppmi_weight	5_5	5000	5000.0	all	4_4	360	spoor	0.252849434929848										
-spoor.foc5.all.ppmi_weight.bound.min1.soc4.all.10000	0.1547021913523057	-0.343687663376518	402.0	1	all	bound	ppmi_weight	5_5	10000	10000.0	all	4_4	360	spoor	0.2543319262217419										
-spoor.foc5.all.ppmi_weight.bound.min1.soc4.all.foc	0.12307668068596705	-0.30969095821961834	402.0	1	all	bound	ppmi_weight	5_5	foc	402.0	all	4_4	360	spoor	0.2610389542322944										
-spoor.foc5.all.ppmi_weight.bound.min1.soc10.all.5000	0.0733892827662804	-0.2776787774191319	402.0	1	all	bound	ppmi_weight	5_5	5000	5000.0	all	10_10	360	spoor	0.24769192560957146										
-spoor.foc5.all.ppmi_weight.bound.min1.soc10.all.10000	0.07898304774210335	-0.29770576451105285	402.0	1	all	bound	ppmi_weight	5_5	10000	10000.0	all	10_10	360	spoor	0.24916998735036205										
-spoor.foc5.all.ppmi_weight.bound.min1.soc10.all.foc	0.056708417090502124	-0.2837930391063365	402.0	1	all	bound	ppmi_weight	5_5	foc	402.0	all	10_10	360	spoor	0.2608388737662524										
-spoor.foc5.all.ppmi_sel.bound.min1.soc4.nav.5000	0.4867358165544981	-0.08338855160612285	402.0	1	all	bound	ppmi_sel	5_5	5000	5000.0	nav	4_4	360	spoor	0.2531812033344665										
-spoor.foc5.all.ppmi_sel.bound.min1.soc4.nav.10000	0.4951179775962286	-0.09063168881620932	402.0	1	all	bound	ppmi_sel	5_5	10000	10000.0	nav	4_4	360	spoor	0.25054544042965904										
-spoor.foc5.all.ppmi_sel.bound.min1.soc4.nav.foc	0.35398091228199435	-0.12093171356910914	402.0	1	all	bound	ppmi_sel	5_5	foc	402.0	nav	4_4	360	spoor	0.25796595876148826										
-spoor.foc5.all.ppmi_sel.bound.min1.soc10.nav.5000	0.3368918494186318	-0.07563098991041008	402.0	1	all	bound	ppmi_sel	5_5	5000	5000.0	nav	10_10	360	spoor	0.2643149856206508										
-spoor.foc5.all.ppmi_sel.bound.min1.soc10.nav.10000	0.3528259481471727	-0.08852063146473071	402.0	1	all	bound	ppmi_sel	5_5	10000	10000.0	nav	10_10	360	spoor	0.2603756545300794										
-spoor.foc5.all.ppmi_sel.bound.min1.soc10.nav.foc	0.2386978422623349	-0.1042438406884459	402.0	1	all	bound	ppmi_sel	5_5	foc	402.0	nav	10_10	360	spoor	0.2657876439918056										
-spoor.foc5.all.ppmi_sel.bound.min1.soc4.all.5000	0.4736661145762045	-0.08579658795071311	402.0	1	all	bound	ppmi_sel	5_5	5000	5000.0	all	4_4	360	spoor	0.2528112258675416										
-spoor.foc5.all.ppmi_sel.bound.min1.soc4.all.10000	0.4810037237074742	-0.08523974114620818	402.0	1	all	bound	ppmi_sel	5_5	10000	10000.0	all	4_4	360	spoor	0.2522878792324945										
-spoor.foc5.all.ppmi_sel.bound.min1.soc4.all.foc	0.3539809124043629	-0.12093171360142622	402.0	1	all	bound	ppmi_sel	5_5	foc	402.0	all	4_4	360	spoor	0.25796595876148826										
-spoor.foc5.all.ppmi_sel.bound.min1.soc10.all.5000	0.3230382087349674	-0.0741158530489493	402.0	1	all	bound	ppmi_sel	5_5	5000	5000.0	all	10_10	360	spoor	0.2644897114726734										
-spoor.foc5.all.ppmi_sel.bound.min1.soc10.all.10000	0.329991513907415	-0.08188902260578784	402.0	1	all	bound	ppmi_sel	5_5	10000	10000.0	all	10_10	360	spoor	0.2658448314659537										
-spoor.foc5.all.ppmi_sel.bound.min1.soc10.all.foc	0.238697842635764	-0.10424384062667323	402.0	1	all	bound	ppmi_sel	5_5	foc	402.0	all	10_10	360	spoor	0.2654350792021588										
-spoor.foc5.all.no_ppmi.bound.min1.soc4.nav.5000	0.4654787596669858	0.007722223344275845	683.0	1	all	bound	no_ppmi	5_5	5000	5000.0	nav	4_4	360	spoor	0.2602384294986969										
-spoor.foc5.all.no_ppmi.bound.min1.soc4.nav.10000	0.4727029202457578	0.001441529149682157	683.0	1	all	bound	no_ppmi	5_5	10000	10000.0	nav	4_4	360	spoor	0.2559833272803108										
-spoor.foc5.all.no_ppmi.bound.min1.soc4.nav.foc	0.3576913033513891	-0.009157468606279156	683.0	1	all	bound	no_ppmi	5_5	foc	683.0	nav	4_4	360	spoor	0.26869742662500223										
-spoor.foc5.all.no_ppmi.bound.min1.soc10.nav.5000	0.31637065840968115	0.0413872229919578	683.0	1	all	bound	no_ppmi	5_5	5000	5000.0	nav	10_10	360	spoor	0.2710435948803586										
-spoor.foc5.all.no_ppmi.bound.min1.soc10.nav.10000	0.3301159712772725	0.034173527099088205	683.0	1	all	bound	no_ppmi	5_5	10000	10000.0	nav	10_10	360	spoor	0.26574081220585954										
-spoor.foc5.all.no_ppmi.bound.min1.soc10.nav.foc	0.21810397363983453	0.02021329420138193	683.0	1	all	bound	no_ppmi	5_5	foc	683.0	nav	10_10	360	spoor	0.27523700913977445										
-spoor.foc5.all.no_ppmi.bound.min1.soc4.all.5000	0.4554194139008091	0.009058585051309269	683.0	1	all	bound	no_ppmi	5_5	5000	5000.0	all	4_4	360	spoor	0.2572509660884504										
-spoor.foc5.all.no_ppmi.bound.min1.soc4.all.10000	0.4581759150545668	0.008144369484121285	683.0	1	all	bound	no_ppmi	5_5	10000	10000.0	all	4_4	360	spoor	0.25872963586293724										
-spoor.foc5.all.no_ppmi.bound.min1.soc4.all.foc	0.3576913033534529	-0.0091574686062523	683.0	1	all	bound	no_ppmi	5_5	foc	683.0	all	4_4	360	spoor	0.26869388792539084										
-spoor.foc5.all.no_ppmi.bound.min1.soc10.all.5000	0.3034923804686509	0.04501775791012155	683.0	1	all	bound	no_ppmi	5_5	5000	5000.0	all	10_10	360	spoor	0.26948425995768543										
-spoor.foc5.all.no_ppmi.bound.min1.soc10.all.10000	0.3084357407183703	0.03765432543275665	683.0	1	all	bound	no_ppmi	5_5	10000	10000.0	all	10_10	360	spoor	0.2706311528775199										
-spoor.foc5.all.no_ppmi.bound.min1.soc10.all.foc	0.218103973641255	0.020213294202005832	683.0	1	all	bound	no_ppmi	5_5	foc	683.0	all	10_10	360	spoor	0.2746803315017785										
-spoor.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			348	spoor				BOW	bound	433	lex	10_10	weight	nav	4_4
-spoor.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			348	spoor				BOW	bound	433	lex	10_10	weight	all	4_4
-spoor.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	311			348	spoor				BOW	bound	433	lex	10_10	weight	nav	4_4
-spoor.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	433			348	spoor				BOW	bound	433	lex	10_10	weight	all	4_4
-spoor.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			348	spoor				BOW	bound	433	lex	10_10	selection	nav	4_4
-spoor.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			348	spoor				BOW	bound	433	lex	10_10	selection	all	4_4
-spoor.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	311			348	spoor				BOW	bound	433	lex	10_10	selection	nav	4_4
-spoor.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	433			348	spoor				BOW	bound	433	lex	10_10	selection	all	4_4
-spoor.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			357	spoor				BOW	bound	981	lex	10_10	no	nav	4_4
-spoor.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			357	spoor				BOW	bound	981	lex	10_10	no	all	4_4
-spoor.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	732			357	spoor				BOW	bound	981	lex	10_10	no	nav	4_4
-spoor.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	981			357	spoor				BOW	bound	981	lex	10_10	no	all	4_4
-spoor.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	bound	597	all	10_10	weight	nav	4_4
-spoor.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	bound	597	all	10_10	weight	all	4_4
-spoor.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	311			358	spoor				BOW	bound	597	all	10_10	weight	nav	4_4
-spoor.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	597			358	spoor				BOW	bound	597	all	10_10	weight	all	4_4
-spoor.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	bound	597	all	10_10	selection	nav	4_4
-spoor.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	bound	597	all	10_10	selection	all	4_4
-spoor.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	311			358	spoor				BOW	bound	597	all	10_10	selection	nav	4_4
-spoor.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	597			358	spoor				BOW	bound	597	all	10_10	selection	all	4_4
-spoor.BOWbound10all.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	bound	1362	all	10_10	no	nav	4_4
-spoor.BOWbound10all.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	bound	1362	all	10_10	no	all	4_4
-spoor.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	732			358	spoor				BOW	bound	1362	all	10_10	no	nav	4_4
-spoor.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	1362			358	spoor				BOW	bound	1362	all	10_10	no	all	4_4
-spoor.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			331	spoor				BOW	bound	326	lex	5_5	weight	nav	4_4
-spoor.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			331	spoor				BOW	bound	326	lex	5_5	weight	all	4_4
-spoor.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	233			331	spoor				BOW	bound	326	lex	5_5	weight	nav	4_4
-spoor.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	326			331	spoor				BOW	bound	326	lex	5_5	weight	all	4_4
-spoor.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			331	spoor				BOW	bound	326	lex	5_5	selection	nav	4_4
-spoor.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			331	spoor				BOW	bound	326	lex	5_5	selection	all	4_4
-spoor.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	233			331	spoor				BOW	bound	326	lex	5_5	selection	nav	4_4
-spoor.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	326			331	spoor				BOW	bound	326	lex	5_5	selection	all	4_4
-spoor.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			350	spoor				BOW	bound	593	lex	5_5	no	nav	4_4
-spoor.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			350	spoor				BOW	bound	593	lex	5_5	no	all	4_4
-spoor.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	450			350	spoor				BOW	bound	593	lex	5_5	no	nav	4_4
-spoor.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	593			350	spoor				BOW	bound	593	lex	5_5	no	all	4_4
-spoor.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	bound	463	all	5_5	weight	nav	4_4
-spoor.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	bound	463	all	5_5	weight	all	4_4
-spoor.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	233			358	spoor				BOW	bound	463	all	5_5	weight	nav	4_4
-spoor.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	463			358	spoor				BOW	bound	463	all	5_5	weight	all	4_4
-spoor.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	bound	463	all	5_5	selection	nav	4_4
-spoor.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	bound	463	all	5_5	selection	all	4_4
-spoor.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	233			358	spoor				BOW	bound	463	all	5_5	selection	nav	4_4
-spoor.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	463			358	spoor				BOW	bound	463	all	5_5	selection	all	4_4
-spoor.BOWbound5all.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	bound	843	all	5_5	no	nav	4_4
-spoor.BOWbound5all.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	bound	843	all	5_5	no	all	4_4
-spoor.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	450			358	spoor				BOW	bound	843	all	5_5	no	nav	4_4
-spoor.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	843			358	spoor				BOW	bound	843	all	5_5	no	all	4_4
-spoor.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			301	spoor				BOW	bound	221	lex	3_3	weight	nav	4_4
-spoor.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			301	spoor				BOW	bound	221	lex	3_3	weight	all	4_4
-spoor.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	168			301	spoor				BOW	bound	221	lex	3_3	weight	nav	4_4
-spoor.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	221			301	spoor				BOW	bound	221	lex	3_3	weight	all	4_4
-spoor.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			301	spoor				BOW	bound	221	lex	3_3	selection	nav	4_4
-spoor.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			301	spoor				BOW	bound	221	lex	3_3	selection	all	4_4
-spoor.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	168			301	spoor				BOW	bound	221	lex	3_3	selection	nav	4_4
-spoor.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	221			301	spoor				BOW	bound	221	lex	3_3	selection	all	4_4
-spoor.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			334	spoor				BOW	bound	358	lex	3_3	no	nav	4_4
-spoor.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			334	spoor				BOW	bound	358	lex	3_3	no	all	4_4
-spoor.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	278			334	spoor				BOW	bound	358	lex	3_3	no	nav	4_4
-spoor.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	358			334	spoor				BOW	bound	358	lex	3_3	no	all	4_4
-spoor.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			356	spoor				BOW	bound	328	all	3_3	weight	nav	4_4
-spoor.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			356	spoor				BOW	bound	328	all	3_3	weight	all	4_4
-spoor.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	168			356	spoor				BOW	bound	328	all	3_3	weight	nav	4_4
-spoor.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	328			356	spoor				BOW	bound	328	all	3_3	weight	all	4_4
-spoor.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			356	spoor				BOW	bound	328	all	3_3	selection	nav	4_4
-spoor.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			356	spoor				BOW	bound	328	all	3_3	selection	all	4_4
-spoor.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	168			356	spoor				BOW	bound	328	all	3_3	selection	nav	4_4
-spoor.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	328			356	spoor				BOW	bound	328	all	3_3	selection	all	4_4
-spoor.BOWbound3all.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	bound	536	all	3_3	no	nav	4_4
-spoor.BOWbound3all.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	bound	536	all	3_3	no	all	4_4
-spoor.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	278			358	spoor				BOW	bound	536	all	3_3	no	nav	4_4
-spoor.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	536			358	spoor				BOW	bound	536	all	3_3	no	all	4_4
-spoor.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			353	spoor				BOW	nobound	559	lex	10_10	weight	nav	4_4
-spoor.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			353	spoor				BOW	nobound	559	lex	10_10	weight	all	4_4
-spoor.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	387			353	spoor				BOW	nobound	559	lex	10_10	weight	nav	4_4
-spoor.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	559			353	spoor				BOW	nobound	559	lex	10_10	weight	all	4_4
-spoor.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			353	spoor				BOW	nobound	559	lex	10_10	selection	nav	4_4
-spoor.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			353	spoor				BOW	nobound	559	lex	10_10	selection	all	4_4
-spoor.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	387			353	spoor				BOW	nobound	559	lex	10_10	selection	nav	4_4
-spoor.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	559			353	spoor				BOW	nobound	559	lex	10_10	selection	all	4_4
-spoor.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	nobound	1431	lex	10_10	no	nav	4_4
-spoor.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	nobound	1431	lex	10_10	no	all	4_4
-spoor.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	1039			358	spoor				BOW	nobound	1431	lex	10_10	no	nav	4_4
-spoor.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	1431			358	spoor				BOW	nobound	1431	lex	10_10	no	all	4_4
-spoor.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	nobound	775	all	10_10	weight	nav	4_4
-spoor.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	nobound	775	all	10_10	weight	all	4_4
-spoor.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	387			358	spoor				BOW	nobound	775	all	10_10	weight	nav	4_4
-spoor.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	775			358	spoor				BOW	nobound	775	all	10_10	weight	all	4_4
-spoor.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	nobound	775	all	10_10	selection	nav	4_4
-spoor.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	nobound	775	all	10_10	selection	all	4_4
-spoor.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	387			358	spoor				BOW	nobound	775	all	10_10	selection	nav	4_4
-spoor.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	775			358	spoor				BOW	nobound	775	all	10_10	selection	all	4_4
-spoor.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	nobound	1966	all	10_10	no	nav	4_4
-spoor.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	nobound	1966	all	10_10	no	all	4_4
-spoor.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	1039			358	spoor				BOW	nobound	1966	all	10_10	no	nav	4_4
-spoor.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	1966			358	spoor				BOW	nobound	1966	all	10_10	no	all	4_4
-spoor.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			336	spoor				BOW	nobound	363	lex	5_5	weight	nav	4_4
-spoor.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			336	spoor				BOW	nobound	363	lex	5_5	weight	all	4_4
-spoor.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	249			336	spoor				BOW	nobound	363	lex	5_5	weight	nav	4_4
-spoor.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	363			336	spoor				BOW	nobound	363	lex	5_5	weight	all	4_4
-spoor.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			336	spoor				BOW	nobound	363	lex	5_5	selection	nav	4_4
-spoor.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			336	spoor				BOW	nobound	363	lex	5_5	selection	all	4_4
-spoor.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	249			336	spoor				BOW	nobound	363	lex	5_5	selection	nav	4_4
-spoor.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	363			336	spoor				BOW	nobound	363	lex	5_5	selection	all	4_4
-spoor.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			355	spoor				BOW	nobound	703	lex	5_5	no	nav	4_4
-spoor.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			355	spoor				BOW	nobound	703	lex	5_5	no	all	4_4
-spoor.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	517			355	spoor				BOW	nobound	703	lex	5_5	no	nav	4_4
-spoor.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	703			355	spoor				BOW	nobound	703	lex	5_5	no	all	4_4
-spoor.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	nobound	525	all	5_5	weight	nav	4_4
-spoor.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	nobound	525	all	5_5	weight	all	4_4
-spoor.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	249			358	spoor				BOW	nobound	525	all	5_5	weight	nav	4_4
-spoor.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	525			358	spoor				BOW	nobound	525	all	5_5	weight	all	4_4
-spoor.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	nobound	525	all	5_5	selection	nav	4_4
-spoor.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	nobound	525	all	5_5	selection	all	4_4
-spoor.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	249			358	spoor				BOW	nobound	525	all	5_5	selection	nav	4_4
-spoor.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	525			358	spoor				BOW	nobound	525	all	5_5	selection	all	4_4
-spoor.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	nobound	1002	all	5_5	no	nav	4_4
-spoor.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	nobound	1002	all	5_5	no	all	4_4
-spoor.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	517			358	spoor				BOW	nobound	1002	all	5_5	no	nav	4_4
-spoor.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	1002			358	spoor				BOW	nobound	1002	all	5_5	no	all	4_4
-spoor.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			305	spoor				BOW	nobound	236	lex	3_3	weight	nav	4_4
-spoor.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			305	spoor				BOW	nobound	236	lex	3_3	weight	all	4_4
-spoor.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	176			305	spoor				BOW	nobound	236	lex	3_3	weight	nav	4_4
-spoor.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	236			305	spoor				BOW	nobound	236	lex	3_3	weight	all	4_4
-spoor.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			305	spoor				BOW	nobound	236	lex	3_3	selection	nav	4_4
-spoor.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			305	spoor				BOW	nobound	236	lex	3_3	selection	all	4_4
-spoor.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	176			305	spoor				BOW	nobound	236	lex	3_3	selection	nav	4_4
-spoor.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	236			305	spoor				BOW	nobound	236	lex	3_3	selection	all	4_4
-spoor.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			340	spoor				BOW	nobound	391	lex	3_3	no	nav	4_4
-spoor.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			340	spoor				BOW	nobound	391	lex	3_3	no	all	4_4
-spoor.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	299			340	spoor				BOW	nobound	391	lex	3_3	no	nav	4_4
-spoor.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	391			340	spoor				BOW	nobound	391	lex	3_3	no	all	4_4
-spoor.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			356	spoor				BOW	nobound	362	all	3_3	weight	nav	4_4
-spoor.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			356	spoor				BOW	nobound	362	all	3_3	weight	all	4_4
-spoor.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	176			356	spoor				BOW	nobound	362	all	3_3	weight	nav	4_4
-spoor.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	362			356	spoor				BOW	nobound	362	all	3_3	weight	all	4_4
-spoor.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			356	spoor				BOW	nobound	362	all	3_3	selection	nav	4_4
-spoor.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			356	spoor				BOW	nobound	362	all	3_3	selection	all	4_4
-spoor.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	176			356	spoor				BOW	nobound	362	all	3_3	selection	nav	4_4
-spoor.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	362			356	spoor				BOW	nobound	362	all	3_3	selection	all	4_4
-spoor.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			358	spoor				BOW	nobound	598	all	3_3	no	nav	4_4
-spoor.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			358	spoor				BOW	nobound	598	all	3_3	no	all	4_4
-spoor.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	299			358	spoor				BOW	nobound	598	all	3_3	no	nav	4_4
-spoor.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	598			358	spoor				BOW	nobound	598	all	3_3	no	all	4_4
-spoor.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			356	spoor		selection2		dependency	bound	286			weight	nav	4_4
-spoor.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			356	spoor		selection2		dependency	bound	286			weight	all	4_4
-spoor.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	158			356	spoor		selection2		dependency	bound	286			weight	nav	4_4
-spoor.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	286			356	spoor		selection2		dependency	bound	286			weight	all	4_4
-spoor.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			356	spoor		selection2		dependency	bound	286			selection	nav	4_4
-spoor.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			356	spoor		selection2		dependency	bound	286			selection	all	4_4
-spoor.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	158			356	spoor		selection2		dependency	bound	286			selection	nav	4_4
-spoor.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	286			356	spoor		selection2		dependency	bound	286			selection	all	4_4
-spoor.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			357	spoor		selection2		dependency	bound	487			no	nav	4_4
-spoor.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			357	spoor		selection2		dependency	bound	487			no	all	4_4
-spoor.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	267			357	spoor		selection2		dependency	bound	487			no	nav	4_4
-spoor.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	487			357	spoor		selection2		dependency	bound	487			no	all	4_4
-spoor.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			357	spoor		selection3		dependency	bound	417			weight	nav	4_4
-spoor.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			357	spoor		selection3		dependency	bound	417			weight	all	4_4
-spoor.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	227			357	spoor		selection3		dependency	bound	417			weight	nav	4_4
-spoor.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	417			357	spoor		selection3		dependency	bound	417			weight	all	4_4
-spoor.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			357	spoor		selection3		dependency	bound	417			selection	nav	4_4
-spoor.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			357	spoor		selection3		dependency	bound	417			selection	all	4_4
-spoor.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	227			357	spoor		selection3		dependency	bound	417			selection	nav	4_4
-spoor.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	417			357	spoor		selection3		dependency	bound	417			selection	all	4_4
-spoor.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			357	spoor		selection3		dependency	bound	800			no	nav	4_4
-spoor.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			357	spoor		selection3		dependency	bound	800			no	all	4_4
-spoor.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	434			357	spoor		selection3		dependency	bound	800			no	nav	4_4
-spoor.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	800			357	spoor		selection3		dependency	bound	800			no	all	4_4
-spoor.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			357	spoor		weight		dependency	bound	417			selection	nav	4_4
-spoor.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			357	spoor		weight		dependency	bound	417			selection	all	4_4
-spoor.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	227			357	spoor		weight		dependency	bound	417			selection	nav	4_4
-spoor.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	417			357	spoor		weight		dependency	bound	417			selection	all	4_4
-spoor.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			357	spoor		weight		dependency	bound	800			no	nav	4_4
-spoor.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			357	spoor		weight		dependency	bound	800			no	all	4_4
-spoor.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	434			357	spoor		weight		dependency	bound	800			no	nav	4_4
-spoor.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	800			357	spoor		weight		dependency	bound	800			no	all	4_4
-spoor.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			354	spoor			group1	dependency	bound	104			weight	nav	4_4
-spoor.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			354	spoor			group1	dependency	bound	104			weight	all	4_4
-spoor.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	60			354	spoor			group1	dependency	bound	104			weight	nav	4_4
-spoor.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	104			354	spoor			group1	dependency	bound	104			weight	all	4_4
-spoor.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			354	spoor			group1	dependency	bound	104			selection	nav	4_4
-spoor.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			354	spoor			group1	dependency	bound	104			selection	all	4_4
-spoor.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	60			354	spoor			group1	dependency	bound	104			selection	nav	4_4
-spoor.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	104			354	spoor			group1	dependency	bound	104			selection	all	4_4
-spoor.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			356	spoor			group1	dependency	bound	139			no	nav	4_4
-spoor.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			356	spoor			group1	dependency	bound	139			no	all	4_4
-spoor.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	73			356	spoor			group1	dependency	bound	139			no	nav	4_4
-spoor.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	139			356	spoor			group1	dependency	bound	139			no	all	4_4
-spoor.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			355	spoor			group2	dependency	bound	204			weight	nav	4_4
-spoor.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			355	spoor			group2	dependency	bound	204			weight	all	4_4
-spoor.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	128			355	spoor			group2	dependency	bound	204			weight	nav	4_4
-spoor.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	204			355	spoor			group2	dependency	bound	204			weight	all	4_4
-spoor.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			355	spoor			group2	dependency	bound	204			selection	nav	4_4
-spoor.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			355	spoor			group2	dependency	bound	204			selection	all	4_4
-spoor.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	128			355	spoor			group2	dependency	bound	204			selection	nav	4_4
-spoor.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	204			355	spoor			group2	dependency	bound	204			selection	all	4_4
-spoor.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			356	spoor			group2	dependency	bound	307			no	nav	4_4
-spoor.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			356	spoor			group2	dependency	bound	307			no	all	4_4
-spoor.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	196			356	spoor			group2	dependency	bound	307			no	nav	4_4
-spoor.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	307			356	spoor			group2	dependency	bound	307			no	all	4_4
-spoor.LEMMAREL3.PPMIweight.LENGTH5000.SOCPOSnav				1					5000	5000			355	spoor			group3	dependency	bound	247			weight	nav	4_4
-spoor.LEMMAREL3.PPMIweight.LENGTH5000.SOCPOSall				1					5000	5000			355	spoor			group3	dependency	bound	247			weight	all	4_4
-spoor.LEMMAREL3.PPMIweight.LENGTHFOC.SOCPOSnav				1					FOC	140			355	spoor			group3	dependency	bound	247			weight	nav	4_4
-spoor.LEMMAREL3.PPMIweight.LENGTHFOC.SOCPOSall				1					FOC	247			355	spoor			group3	dependency	bound	247			weight	all	4_4
-spoor.LEMMAREL3.PPMIselection.LENGTH5000.SOCPOSnav				1					5000	5000			355	spoor			group3	dependency	bound	247			selection	nav	4_4
-spoor.LEMMAREL3.PPMIselection.LENGTH5000.SOCPOSall				1					5000	5000			355	spoor			group3	dependency	bound	247			selection	all	4_4
-spoor.LEMMAREL3.PPMIselection.LENGTHFOC.SOCPOSnav				1					FOC	140			355	spoor			group3	dependency	bound	247			selection	nav	4_4
-spoor.LEMMAREL3.PPMIselection.LENGTHFOC.SOCPOSall				1					FOC	247			355	spoor			group3	dependency	bound	247			selection	all	4_4
-spoor.LEMMAREL3.PPMIno.LENGTH5000.SOCPOSnav				1					5000	5000			356	spoor			group3	dependency	bound	396			no	nav	4_4
-spoor.LEMMAREL3.PPMIno.LENGTH5000.SOCPOSall				1					5000	5000			356	spoor			group3	dependency	bound	396			no	all	4_4
-spoor.LEMMAREL3.PPMIno.LENGTHFOC.SOCPOSnav				1					FOC	224			356	spoor			group3	dependency	bound	396			no	nav	4_4
-spoor.LEMMAREL3.PPMIno.LENGTHFOC.SOCPOSall				1					FOC	396			356	spoor			group3	dependency	bound	396			no	all	4_4
+_model	model.x	model.y	foc_minimum_features	soc_length	soc_length_num	tokens	type	LEMMAPATH	LEMMAREL	base	foc_boundaries	foc_context_words	foc_foc_pos	foc_foc_win	foc_ppmi	soc_soc_pos	soc_soc_win	stress
+spoor.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.14216556174189918	-0.003153342834163425	1	5000	5000	348	spoor	NA	NA	BOW	bound	433	lex	10_10	weight	nav	4_4	0.26990216596709915
+spoor.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSall	-0.29004838752190465	-0.014790863640424277	1	5000	5000	348	spoor	NA	NA	BOW	bound	433	lex	10_10	weight	all	4_4	0.27187390125897626
+spoor.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.1303142207851984	0.009897885642097114	1	FOC	311	348	spoor	NA	NA	BOW	bound	433	lex	10_10	weight	nav	4_4	0.2819612318745829
+spoor.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.1401592673162017	0.011014781858792658	1	FOC	433	348	spoor	NA	NA	BOW	bound	433	lex	10_10	weight	all	4_4	0.2754108526124342
+spoor.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.17283511239728588	0.04136691641281168	1	5000	5000	348	spoor	NA	NA	BOW	bound	433	lex	10_10	selection	nav	4_4	0.2686597721653121
+spoor.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSall	-0.26814437508488687	0.020388483913494754	1	5000	5000	348	spoor	NA	NA	BOW	bound	433	lex	10_10	selection	all	4_4	0.2709843686468992
+spoor.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.14355233425269043	0.04290931165598161	1	FOC	311	348	spoor	NA	NA	BOW	bound	433	lex	10_10	selection	nav	4_4	0.2777290611332399
+spoor.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.15629948861808055	0.04383817389643826	1	FOC	433	348	spoor	NA	NA	BOW	bound	433	lex	10_10	selection	all	4_4	0.27184321259137934
+spoor.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSnav	-0.21863587119441388	0.14939409413262	1	5000	5000	357	spoor	NA	NA	BOW	bound	981	lex	10_10	no	nav	4_4	0.2610219516966046
+spoor.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSall	-0.35902883060524415	0.16417544152827362	1	5000	5000	357	spoor	NA	NA	BOW	bound	981	lex	10_10	no	all	4_4	0.266019538130628
+spoor.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.22258807611583759	0.13379405537758937	1	FOC	732	357	spoor	NA	NA	BOW	bound	981	lex	10_10	no	nav	4_4	0.25927491874511027
+spoor.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSall	-0.24925576745183822	0.14132440087054132	1	FOC	981	357	spoor	NA	NA	BOW	bound	981	lex	10_10	no	all	4_4	0.25463296696747745
+spoor.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSnav	0.057077819605903433	-0.009848054719788474	1	5000	5000	358	spoor	NA	NA	BOW	bound	597	all	10_10	weight	nav	4_4	0.25293665455338493
+spoor.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSall	0.02081840595092293	-0.09123643328572303	1	5000	5000	358	spoor	NA	NA	BOW	bound	597	all	10_10	weight	all	4_4	0.2584020241482471
+spoor.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSnav	0.015879419321948123	-0.00502891668753839	1	FOC	311	358	spoor	NA	NA	BOW	bound	597	all	10_10	weight	nav	4_4	0.24800676122833437
+spoor.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSall	0.012220407455493163	-8.475449134262252e-4	1	FOC	597	358	spoor	NA	NA	BOW	bound	597	all	10_10	weight	all	4_4	0.24684098513282698
+spoor.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSnav	0.10384362772648983	0.10162557050451923	1	5000	5000	358	spoor	NA	NA	BOW	bound	597	all	10_10	selection	nav	4_4	0.2445888522192327
+spoor.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSall	0.12152867043887697	0.18068301133158246	1	5000	5000	358	spoor	NA	NA	BOW	bound	597	all	10_10	selection	all	4_4	0.2477511614544787
+spoor.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSnav	0.029453995242314724	0.0585165359861825	1	FOC	311	358	spoor	NA	NA	BOW	bound	597	all	10_10	selection	nav	4_4	0.2559893911361468
+spoor.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSall	0.028946774448155313	0.06389833356603349	1	FOC	597	358	spoor	NA	NA	BOW	bound	597	all	10_10	selection	all	4_4	0.25559514224260366
+spoor.BOWbound10all.PPMIno.LENGTH5000.SOCPOSnav	0.015176198248265391	0.20006538020039358	1	5000	5000	358	spoor	NA	NA	BOW	bound	1362	all	10_10	no	nav	4_4	0.22628724606336686
+spoor.BOWbound10all.PPMIno.LENGTH5000.SOCPOSall	-0.029202345937263022	0.38159691621457936	1	5000	5000	358	spoor	NA	NA	BOW	bound	1362	all	10_10	no	all	4_4	0.24109635297780932
+spoor.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSnav	-0.04750359124720783	0.17119286283756785	1	FOC	732	358	spoor	NA	NA	BOW	bound	1362	all	10_10	no	nav	4_4	0.25160983627494027
+spoor.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSall	-0.07299521438078094	0.21639021355056737	1	FOC	1362	358	spoor	NA	NA	BOW	bound	1362	all	10_10	no	all	4_4	0.24267664287052162
+spoor.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.16686421007536587	-0.059173757504645284	1	5000	5000	331	spoor	NA	NA	BOW	bound	326	lex	5_5	weight	nav	4_4	0.2737079638326329
+spoor.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSall	-0.3159848031861721	-0.06681837232485811	1	5000	5000	331	spoor	NA	NA	BOW	bound	326	lex	5_5	weight	all	4_4	0.27745790120034886
+spoor.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.14108006035720372	-0.0420283254474877	1	FOC	233	331	spoor	NA	NA	BOW	bound	326	lex	5_5	weight	nav	4_4	0.27647500850549706
+spoor.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.15283874839817158	-0.04200989790968885	1	FOC	326	331	spoor	NA	NA	BOW	bound	326	lex	5_5	weight	all	4_4	0.27416376052340086
+spoor.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.18712369666306294	-0.04875768467923125	1	5000	5000	331	spoor	NA	NA	BOW	bound	326	lex	5_5	selection	nav	4_4	0.2726358816918141
+spoor.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSall	-0.2901431667279728	-0.04678264037138252	1	5000	5000	331	spoor	NA	NA	BOW	bound	326	lex	5_5	selection	all	4_4	0.27123147800187575
+spoor.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.15356537729168004	-0.020290287935409483	1	FOC	233	331	spoor	NA	NA	BOW	bound	326	lex	5_5	selection	nav	4_4	0.2758311656256174
+spoor.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.16534439722250255	-0.017636148308963238	1	FOC	326	331	spoor	NA	NA	BOW	bound	326	lex	5_5	selection	all	4_4	0.2723444711274406
+spoor.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSnav	-0.2096412220480825	0.02244669880958664	1	5000	5000	350	spoor	NA	NA	BOW	bound	593	lex	5_5	no	nav	4_4	0.27811254349661996
+spoor.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSall	-0.3859920470948392	-4.172474813142768e-4	1	5000	5000	350	spoor	NA	NA	BOW	bound	593	lex	5_5	no	all	4_4	0.2745071730974861
+spoor.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.211875286143421	0.027875953976889432	1	FOC	450	350	spoor	NA	NA	BOW	bound	593	lex	5_5	no	nav	4_4	0.27703350162060986
+spoor.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSall	-0.2288252769078383	0.03913170291732588	1	FOC	593	350	spoor	NA	NA	BOW	bound	593	lex	5_5	no	all	4_4	0.2740862067262232
+spoor.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSnav	0.08960039460094593	-0.0320642625118685	1	5000	5000	358	spoor	NA	NA	BOW	bound	463	all	5_5	weight	nav	4_4	0.2550228573979008
+spoor.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSall	0.06465436051210038	-0.11603004780320794	1	5000	5000	358	spoor	NA	NA	BOW	bound	463	all	5_5	weight	all	4_4	0.2641821092449151
+spoor.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSnav	0.03648649969087226	-0.03083151071776089	1	FOC	233	358	spoor	NA	NA	BOW	bound	463	all	5_5	weight	nav	4_4	0.25314282963413287
+spoor.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSall	0.04024916407969548	-0.024069461085925076	1	FOC	463	358	spoor	NA	NA	BOW	bound	463	all	5_5	weight	all	4_4	0.2623885198656431
+spoor.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSnav	0.14766546409418171	0.06227685749773832	1	5000	5000	358	spoor	NA	NA	BOW	bound	463	all	5_5	selection	nav	4_4	0.2522780132447539
+spoor.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSall	0.17478975264409563	0.13175859081159627	1	5000	5000	358	spoor	NA	NA	BOW	bound	463	all	5_5	selection	all	4_4	0.24881010901032422
+spoor.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSnav	0.05159255585776301	0.019133562814365585	1	FOC	233	358	spoor	NA	NA	BOW	bound	463	all	5_5	selection	nav	4_4	0.2524077108384207
+spoor.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSall	0.05607294758853077	0.028039513422566775	1	FOC	463	358	spoor	NA	NA	BOW	bound	463	all	5_5	selection	all	4_4	0.2618506594507431
+spoor.BOWbound5all.PPMIno.LENGTH5000.SOCPOSnav	0.10372359378277476	0.08773067888400653	1	5000	5000	358	spoor	NA	NA	BOW	bound	843	all	5_5	no	nav	4_4	0.2469619956593568
+spoor.BOWbound5all.PPMIno.LENGTH5000.SOCPOSall	0.10602063161830168	-0.2068434346395018	1	5000	5000	358	spoor	NA	NA	BOW	bound	843	all	5_5	no	all	4_4	0.26184175862072145
+spoor.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSnav	0.024062051753544485	0.053748538083326546	1	FOC	450	358	spoor	NA	NA	BOW	bound	843	all	5_5	no	nav	4_4	0.2654981244575039
+spoor.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSall	0.0176817363897713	0.08197180308407387	1	FOC	843	358	spoor	NA	NA	BOW	bound	843	all	5_5	no	all	4_4	0.25440850857779723
+spoor.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.182189995948248	-0.2176480599122593	1	5000	5000	301	spoor	NA	NA	BOW	bound	221	lex	3_3	weight	nav	4_4	0.27597990522586713
+spoor.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSall	-0.2798047360834448	-0.29779169823453977	1	5000	5000	301	spoor	NA	NA	BOW	bound	221	lex	3_3	weight	all	4_4	0.2732638472036143
+spoor.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.1559413897479786	-0.15389672883554167	1	FOC	168	301	spoor	NA	NA	BOW	bound	221	lex	3_3	weight	nav	4_4	0.2933257743493355
+spoor.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.17532708004345893	-0.1669582623925542	1	FOC	221	301	spoor	NA	NA	BOW	bound	221	lex	3_3	weight	all	4_4	0.28814337193483425
+spoor.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.190659170130011	-0.20570576371630855	1	5000	5000	301	spoor	NA	NA	BOW	bound	221	lex	3_3	selection	nav	4_4	0.2751818222106317
+spoor.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSall	-0.2669759824339529	-0.24526534479931317	1	5000	5000	301	spoor	NA	NA	BOW	bound	221	lex	3_3	selection	all	4_4	0.27255381513873544
+spoor.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.1605881073003355	-0.1454655582598322	1	FOC	168	301	spoor	NA	NA	BOW	bound	221	lex	3_3	selection	nav	4_4	0.2886624123859357
+spoor.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.182114544662943	-0.16299315200674697	1	FOC	221	301	spoor	NA	NA	BOW	bound	221	lex	3_3	selection	all	4_4	0.28041617173577443
+spoor.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSnav	-0.24209799198152868	-0.19063200276494105	1	5000	5000	334	spoor	NA	NA	BOW	bound	358	lex	3_3	no	nav	4_4	0.27586871649104133
+spoor.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSall	-0.341685322717454	-0.2623021250706163	1	5000	5000	334	spoor	NA	NA	BOW	bound	358	lex	3_3	no	all	4_4	0.2665356485360801
+spoor.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.22219601138898595	-0.1577069284888477	1	FOC	278	334	spoor	NA	NA	BOW	bound	358	lex	3_3	no	nav	4_4	0.2895446302231902
+spoor.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSall	-0.25893150793679115	-0.18257015119728998	1	FOC	358	334	spoor	NA	NA	BOW	bound	358	lex	3_3	no	all	4_4	0.28439452898162515
+spoor.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSnav	0.14284862955793548	-0.07371858343084536	1	5000	5000	356	spoor	NA	NA	BOW	bound	328	all	3_3	weight	nav	4_4	0.25784467673169026
+spoor.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSall	0.14321647723457953	-0.1548265592931812	1	5000	5000	356	spoor	NA	NA	BOW	bound	328	all	3_3	weight	all	4_4	0.25983121169494516
+spoor.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSnav	0.09703274213062477	-0.07639505125458745	1	FOC	168	356	spoor	NA	NA	BOW	bound	328	all	3_3	weight	nav	4_4	0.2508947244891345
+spoor.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSall	0.10213819413452223	-0.06923649275279872	1	FOC	328	356	spoor	NA	NA	BOW	bound	328	all	3_3	weight	all	4_4	0.26451801833837574
+spoor.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSnav	0.18860328831144793	0.017150462239383244	1	5000	5000	356	spoor	NA	NA	BOW	bound	328	all	3_3	selection	nav	4_4	0.24349055279373583
+spoor.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSall	0.2347762010696649	0.07524293188968818	1	5000	5000	356	spoor	NA	NA	BOW	bound	328	all	3_3	selection	all	4_4	0.2442621746527719
+spoor.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSnav	0.1143023391843372	-0.02035861762732248	1	FOC	168	356	spoor	NA	NA	BOW	bound	328	all	3_3	selection	nav	4_4	0.24176407111340786
+spoor.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSall	0.11782105863304264	-0.013216847761067099	1	FOC	328	356	spoor	NA	NA	BOW	bound	328	all	3_3	selection	all	4_4	0.252086384632916
+spoor.BOWbound3all.PPMIno.LENGTH5000.SOCPOSnav	0.17148963467394168	0.028784230580490528	1	5000	5000	358	spoor	NA	NA	BOW	bound	536	all	3_3	no	nav	4_4	0.2465764417731523
+spoor.BOWbound3all.PPMIno.LENGTH5000.SOCPOSall	0.2184309403679416	0.10395385027680591	1	5000	5000	358	spoor	NA	NA	BOW	bound	536	all	3_3	no	all	4_4	0.2549333813431402
+spoor.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSnav	0.10002007764402635	-5.953786468485222e-4	1	FOC	278	358	spoor	NA	NA	BOW	bound	536	all	3_3	no	nav	4_4	0.2511905512845177
+spoor.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSall	0.10480495879217795	0.011418303913607595	1	FOC	536	358	spoor	NA	NA	BOW	bound	536	all	3_3	no	all	4_4	0.25005976309154937
+spoor.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.16016773237150145	0.027544019829537338	1	5000	5000	353	spoor	NA	NA	BOW	nobound	559	lex	10_10	weight	nav	4_4	0.26702337030322804
+spoor.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSall	-0.3032024097960601	0.013848637491973978	1	5000	5000	353	spoor	NA	NA	BOW	nobound	559	lex	10_10	weight	all	4_4	0.2643601965064877
+spoor.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.1479395573301695	0.054170275045380106	1	FOC	387	353	spoor	NA	NA	BOW	nobound	559	lex	10_10	weight	nav	4_4	0.27065636624750194
+spoor.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.1587696282754683	0.051869599027942	1	FOC	559	353	spoor	NA	NA	BOW	nobound	559	lex	10_10	weight	all	4_4	0.26353182922753954
+spoor.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.22920778519683138	0.10200935925668339	1	5000	5000	353	spoor	NA	NA	BOW	nobound	559	lex	10_10	selection	nav	4_4	0.26795841716132324
+spoor.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSall	-0.3246581437203533	0.07616777952113438	1	5000	5000	353	spoor	NA	NA	BOW	nobound	559	lex	10_10	selection	all	4_4	0.2634709007875465
+spoor.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.20433225745861655	0.10984147996492663	1	FOC	387	353	spoor	NA	NA	BOW	nobound	559	lex	10_10	selection	nav	4_4	0.26339226867184934
+spoor.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.2219474328113378	0.11201934621863241	1	FOC	559	353	spoor	NA	NA	BOW	nobound	559	lex	10_10	selection	all	4_4	0.2572383163390613
+spoor.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSnav	-0.3275117248720171	0.22335322260478765	1	5000	5000	358	spoor	NA	NA	BOW	nobound	1431	lex	10_10	no	nav	4_4	0.26361440239066514
+spoor.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSall	-0.5172456788900152	0.27899619711405405	1	5000	5000	358	spoor	NA	NA	BOW	nobound	1431	lex	10_10	no	all	4_4	0.2617396208738148
+spoor.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.3243429907001183	0.22914713819207236	1	FOC	1039	358	spoor	NA	NA	BOW	nobound	1431	lex	10_10	no	nav	4_4	0.2483962773857326
+spoor.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSall	-0.3484750822829528	0.23426631664984293	1	FOC	1431	358	spoor	NA	NA	BOW	nobound	1431	lex	10_10	no	all	4_4	0.24382316281456126
+spoor.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSnav	0.02682392462316052	0.005082518263213803	1	5000	5000	358	spoor	NA	NA	BOW	nobound	775	all	10_10	weight	nav	4_4	0.250772490692969
+spoor.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSall	-0.009841375984854472	0.13557025365730332	1	5000	5000	358	spoor	NA	NA	BOW	nobound	775	all	10_10	weight	all	4_4	0.25686661281349615
+spoor.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.018696669499987037	0.02071263047488049	1	FOC	387	358	spoor	NA	NA	BOW	nobound	775	all	10_10	weight	nav	4_4	0.24905885640429376
+spoor.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSall	-0.024240257720045098	0.022620226622989223	1	FOC	775	358	spoor	NA	NA	BOW	nobound	775	all	10_10	weight	all	4_4	0.25131126538051357
+spoor.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSnav	0.05779497200344728	0.14596517861799696	1	5000	5000	358	spoor	NA	NA	BOW	nobound	775	all	10_10	selection	nav	4_4	0.27193699779904235
+spoor.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSall	0.10184177415818843	0.323771305968784	1	5000	5000	358	spoor	NA	NA	BOW	nobound	775	all	10_10	selection	all	4_4	0.26108417896407415
+spoor.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.02281980409106336	0.11315952157492068	1	FOC	387	358	spoor	NA	NA	BOW	nobound	775	all	10_10	selection	nav	4_4	0.2582627517868226
+spoor.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSall	-0.027276221693640027	0.12187501172190701	1	FOC	775	358	spoor	NA	NA	BOW	nobound	775	all	10_10	selection	all	4_4	0.2552271496299191
+spoor.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSnav	-0.11946521134790217	0.316094938008167	1	5000	5000	358	spoor	NA	NA	BOW	nobound	1966	all	10_10	no	nav	4_4	0.2674885196801857
+spoor.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSall	-0.28665097112579896	0.6265662343241537	1	5000	5000	358	spoor	NA	NA	BOW	nobound	1966	all	10_10	no	all	4_4	0.1742643111258631
+spoor.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSnav	-0.18471503356439123	0.28811849964753145	1	FOC	1039	358	spoor	NA	NA	BOW	nobound	1966	all	10_10	no	nav	4_4	0.25675464715273866
+spoor.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSall	-0.22534118805415354	0.339422850936484	1	FOC	1966	358	spoor	NA	NA	BOW	nobound	1966	all	10_10	no	all	4_4	0.24258916563230193
+spoor.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.1786644899249585	-0.04159328851661327	1	5000	5000	336	spoor	NA	NA	BOW	nobound	363	lex	5_5	weight	nav	4_4	0.2705973102409055
+spoor.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSall	-0.31890758995313323	-0.048505508116106794	1	5000	5000	336	spoor	NA	NA	BOW	nobound	363	lex	5_5	weight	all	4_4	0.27509631113116645
+spoor.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.15018631908043378	-0.02968349591463635	1	FOC	249	336	spoor	NA	NA	BOW	nobound	363	lex	5_5	weight	nav	4_4	0.27668585825117115
+spoor.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.1584622130545065	-0.025238136068141227	1	FOC	363	336	spoor	NA	NA	BOW	nobound	363	lex	5_5	weight	all	4_4	0.2693971775540853
+spoor.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.22063053008884917	-0.031291756718361007	1	5000	5000	336	spoor	NA	NA	BOW	nobound	363	lex	5_5	selection	nav	4_4	0.272399455594096
+spoor.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSall	-0.3018169680573117	-0.02953483127626603	1	5000	5000	336	spoor	NA	NA	BOW	nobound	363	lex	5_5	selection	all	4_4	0.2731905426354058
+spoor.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.16727110438957196	-0.0034344998630375725	1	FOC	249	336	spoor	NA	NA	BOW	nobound	363	lex	5_5	selection	nav	4_4	0.27239620922673674
+spoor.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.17765770868207592	-5.353861735492514e-4	1	FOC	363	336	spoor	NA	NA	BOW	nobound	363	lex	5_5	selection	all	4_4	0.2675685282935789
+spoor.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSnav	-0.2413767232085754	0.05461272477236067	1	5000	5000	355	spoor	NA	NA	BOW	nobound	703	lex	5_5	no	nav	4_4	0.24127695500789914
+spoor.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSall	-0.43319013558189	0.03594918894502286	1	5000	5000	355	spoor	NA	NA	BOW	nobound	703	lex	5_5	no	all	4_4	0.27164907741522837
+spoor.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.24048713840574346	0.06637615819188498	1	FOC	517	355	spoor	NA	NA	BOW	nobound	703	lex	5_5	no	nav	4_4	0.2616373288352017
+spoor.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSall	-0.26499543830687305	0.07984517063844639	1	FOC	703	355	spoor	NA	NA	BOW	nobound	703	lex	5_5	no	all	4_4	0.2535596658673525
+spoor.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSnav	0.07907502681491964	-0.03174508732187934	1	5000	5000	358	spoor	NA	NA	BOW	nobound	525	all	5_5	weight	nav	4_4	0.25408199040847484
+spoor.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSall	0.047383460437203116	-0.11397163834180582	1	5000	5000	358	spoor	NA	NA	BOW	nobound	525	all	5_5	weight	all	4_4	0.26339765273981214
+spoor.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSnav	0.016210137875369436	-0.026141358301468288	1	FOC	249	358	spoor	NA	NA	BOW	nobound	525	all	5_5	weight	nav	4_4	0.25198126436094154
+spoor.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSall	0.015476713126030286	-0.020672143466285334	1	FOC	525	358	spoor	NA	NA	BOW	nobound	525	all	5_5	weight	all	4_4	0.26008592674122405
+spoor.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSnav	0.1293637489330191	0.06835225447038519	1	5000	5000	358	spoor	NA	NA	BOW	nobound	525	all	5_5	selection	nav	4_4	0.2523949313926383
+spoor.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSall	0.1622061258628344	0.1594685450748014	1	5000	5000	358	spoor	NA	NA	BOW	nobound	525	all	5_5	selection	all	4_4	0.24981029101202282
+spoor.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSnav	0.03053479701994095	0.026770788525332566	1	FOC	249	358	spoor	NA	NA	BOW	nobound	525	all	5_5	selection	nav	4_4	0.2533846685289051
+spoor.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSall	0.027242542553896614	0.03674798455363633	1	FOC	525	358	spoor	NA	NA	BOW	nobound	525	all	5_5	selection	all	4_4	0.26180424189203755
+spoor.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSnav	0.08455945866951882	0.10763358958779556	1	5000	5000	358	spoor	NA	NA	BOW	nobound	1002	all	5_5	no	nav	4_4	0.2519281905902617
+spoor.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSall	0.11208956182551995	0.31474971526739703	1	5000	5000	358	spoor	NA	NA	BOW	nobound	1002	all	5_5	no	all	4_4	0.26966285410219565
+spoor.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSnav	-0.005517178161666033	0.07476410357234402	1	FOC	517	358	spoor	NA	NA	BOW	nobound	1002	all	5_5	no	nav	4_4	0.2634701562608433
+spoor.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSall	-0.01880921266693333	0.11051141362489582	1	FOC	1002	358	spoor	NA	NA	BOW	nobound	1002	all	5_5	no	all	4_4	0.25470478810220637
+spoor.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.1942135824147597	-0.21836189035556788	1	5000	5000	305	spoor	NA	NA	BOW	nobound	236	lex	3_3	weight	nav	4_4	0.2805697337480401
+spoor.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSall	-0.3003885432285456	-0.2867424267602984	1	5000	5000	305	spoor	NA	NA	BOW	nobound	236	lex	3_3	weight	all	4_4	0.27679588625601176
+spoor.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.17244544075623863	-0.1523467489567347	1	FOC	176	305	spoor	NA	NA	BOW	nobound	236	lex	3_3	weight	nav	4_4	0.29345499455561497
+spoor.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.194119717824202	-0.16188218124488313	1	FOC	236	305	spoor	NA	NA	BOW	nobound	236	lex	3_3	weight	all	4_4	0.2901656793253756
+spoor.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.21250095153183127	-0.2042549893295563	1	5000	5000	305	spoor	NA	NA	BOW	nobound	236	lex	3_3	selection	nav	4_4	0.27592317900626606
+spoor.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSall	-0.30945285341927226	-0.2226507573255382	1	5000	5000	305	spoor	NA	NA	BOW	nobound	236	lex	3_3	selection	all	4_4	0.2760308977010786
+spoor.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.18731009274802546	-0.14494266328059616	1	FOC	176	305	spoor	NA	NA	BOW	nobound	236	lex	3_3	selection	nav	4_4	0.2881643449868257
+spoor.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.21072050998121397	-0.1560237009277278	1	FOC	236	305	spoor	NA	NA	BOW	nobound	236	lex	3_3	selection	all	4_4	0.2829877195354393
+spoor.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSnav	-0.2684395002550715	-0.1882472076645761	1	5000	5000	340	spoor	NA	NA	BOW	nobound	391	lex	3_3	no	nav	4_4	0.27874476150481947
+spoor.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSall	-0.3915366532010905	-0.2476198114549353	1	5000	5000	340	spoor	NA	NA	BOW	nobound	391	lex	3_3	no	all	4_4	0.27247713637351273
+spoor.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.25676189230102336	-0.16465305819221962	1	FOC	299	340	spoor	NA	NA	BOW	nobound	391	lex	3_3	no	nav	4_4	0.28607115418742585
+spoor.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSall	-0.29483152010846353	-0.1740296602602998	1	FOC	391	340	spoor	NA	NA	BOW	nobound	391	lex	3_3	no	all	4_4	0.28089938968795275
+spoor.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSnav	0.13845908238477556	-0.07534560417975777	1	5000	5000	356	spoor	NA	NA	BOW	nobound	362	all	3_3	weight	nav	4_4	0.2589082663151601
+spoor.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSall	0.1345229168723511	-0.16020777254826796	1	5000	5000	356	spoor	NA	NA	BOW	nobound	362	all	3_3	weight	all	4_4	0.25868208751760235
+spoor.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSnav	0.08653760770036606	-0.0770221094253644	1	FOC	176	356	spoor	NA	NA	BOW	nobound	362	all	3_3	weight	nav	4_4	0.25262753779649216
+spoor.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSall	0.08915813050231586	-0.0701833412409886	1	FOC	362	356	spoor	NA	NA	BOW	nobound	362	all	3_3	weight	all	4_4	0.2663253786367854
+spoor.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSnav	0.18417582709036032	0.021305510542015765	1	5000	5000	356	spoor	NA	NA	BOW	nobound	362	all	3_3	selection	nav	4_4	0.24910314115883359
+spoor.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSall	0.23863665795444297	0.09034905686400342	1	5000	5000	356	spoor	NA	NA	BOW	nobound	362	all	3_3	selection	all	4_4	0.24349668367458285
+spoor.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSnav	0.10220836477490398	-0.019431532764341806	1	FOC	176	356	spoor	NA	NA	BOW	nobound	362	all	3_3	selection	nav	4_4	0.24889294154695504
+spoor.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSall	0.1021100723248588	-0.010801564101780164	1	FOC	362	356	spoor	NA	NA	BOW	nobound	362	all	3_3	selection	all	4_4	0.2622951873324378
+spoor.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSnav	0.17099045753085923	0.03613900323202336	1	5000	5000	358	spoor	NA	NA	BOW	nobound	598	all	3_3	no	nav	4_4	0.25441426787290244
+spoor.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSall	0.24125140239299137	0.13532668147106416	1	5000	5000	358	spoor	NA	NA	BOW	nobound	598	all	3_3	no	all	4_4	0.2555295380513085
+spoor.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSnav	0.08452765514515766	0.0016160182953874598	1	FOC	299	358	spoor	NA	NA	BOW	nobound	598	all	3_3	no	nav	4_4	0.26641245112575473
+spoor.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSall	0.08556207233699276	0.027055756867948894	1	FOC	598	358	spoor	NA	NA	BOW	nobound	598	all	3_3	no	all	4_4	0.2607525630583022
+spoor.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSnav	0.16605513579758463	-0.05363007295783696	1	5000	5000	356	spoor	selection2	NA	dependency	bound	286	NA	NA	weight	nav	4_4	0.246705464882992
+spoor.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSall	0.19359905449718437	-0.12612452208826633	1	5000	5000	356	spoor	selection2	NA	dependency	bound	286	NA	NA	weight	all	4_4	0.2490787347968558
+spoor.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSnav	0.12619384792197424	-0.07293389586847611	1	FOC	158	356	spoor	selection2	NA	dependency	bound	286	NA	NA	weight	nav	4_4	0.2536364248149273
+spoor.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSall	0.1209466899875723	-0.0629987412807863	1	FOC	286	356	spoor	selection2	NA	dependency	bound	286	NA	NA	weight	all	4_4	0.25647572065794855
+spoor.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSnav	0.20885117524166721	-0.002530085988515037	1	5000	5000	356	spoor	selection2	NA	dependency	bound	286	NA	NA	selection	nav	4_4	0.2364804795330843
+spoor.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSall	0.27220138083614737	0.031884360187183165	1	5000	5000	356	spoor	selection2	NA	dependency	bound	286	NA	NA	selection	all	4_4	0.2345844982331879
+spoor.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSnav	0.15245850047536938	-0.020049812292892207	1	FOC	158	356	spoor	selection2	NA	dependency	bound	286	NA	NA	selection	nav	4_4	0.23617730334784953
+spoor.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSall	0.15062262811736568	-0.017373337039171304	1	FOC	286	356	spoor	selection2	NA	dependency	bound	286	NA	NA	selection	all	4_4	0.24370141928156544
+spoor.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSnav	0.19918632212571644	0.0053386468320461644	1	5000	5000	357	spoor	selection2	NA	dependency	bound	487	NA	NA	no	nav	4_4	0.2354845900548389
+spoor.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSall	0.273961395802955	0.057714436570431855	1	5000	5000	357	spoor	selection2	NA	dependency	bound	487	NA	NA	no	all	4_4	0.2331527829762532
+spoor.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSnav	0.14778613768027277	-0.006928351219439488	1	FOC	267	357	spoor	selection2	NA	dependency	bound	487	NA	NA	no	nav	4_4	0.24843839043269098
+spoor.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSall	0.14680949394233272	-0.0019704995128277955	1	FOC	487	357	spoor	selection2	NA	dependency	bound	487	NA	NA	no	all	4_4	0.24475366971927545
+spoor.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSnav	0.10571941458818035	-0.03445580510332299	1	5000	5000	357	spoor	selection3	NA	dependency	bound	417	NA	NA	weight	nav	4_4	0.25623154310714014
+spoor.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSall	0.08270805450974889	-0.1113028703010652	1	5000	5000	357	spoor	selection3	NA	dependency	bound	417	NA	NA	weight	all	4_4	0.26058111332534145
+spoor.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSnav	0.05094133043352537	-0.03639211147445105	1	FOC	227	357	spoor	selection3	NA	dependency	bound	417	NA	NA	weight	nav	4_4	0.2452215390164895
+spoor.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSall	0.05071151712827643	-0.03142674887706316	1	FOC	417	357	spoor	selection3	NA	dependency	bound	417	NA	NA	weight	all	4_4	0.2541012879447655
+spoor.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSnav	0.15016933445651504	0.032568348004075515	1	5000	5000	357	spoor	selection3	NA	dependency	bound	417	NA	NA	selection	nav	4_4	0.2508050206560497
+spoor.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSall	0.17896740569871922	0.1023189459032329	1	5000	5000	357	spoor	selection3	NA	dependency	bound	417	NA	NA	selection	all	4_4	0.24250292019867642
+spoor.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSnav	0.08028449881733223	0.012480511546228052	1	FOC	227	357	spoor	selection3	NA	dependency	bound	417	NA	NA	selection	nav	4_4	0.2527367451192533
+spoor.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSall	0.08419899292569724	0.01733921321086663	1	FOC	417	357	spoor	selection3	NA	dependency	bound	417	NA	NA	selection	all	4_4	0.2557713818366248
+spoor.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSnav	0.1168628072180915	0.05054768015421056	1	5000	5000	357	spoor	selection3	NA	dependency	bound	800	NA	NA	no	nav	4_4	0.2448559482305964
+spoor.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSall	0.14436425527996452	0.15564378132051215	1	5000	5000	357	spoor	selection3	NA	dependency	bound	800	NA	NA	no	all	4_4	0.25206079251408364
+spoor.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSnav	0.06767953631496863	0.03763862671515857	1	FOC	434	357	spoor	selection3	NA	dependency	bound	800	NA	NA	no	nav	4_4	0.2572305888670424
+spoor.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSall	0.0704959262547652	0.05938047039289211	1	FOC	800	357	spoor	selection3	NA	dependency	bound	800	NA	NA	no	all	4_4	0.2503322367916099
+spoor.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSnav	0.18978943844462048	-9.124335322059086e-4	1	5000	5000	357	spoor	weight	NA	dependency	bound	417	NA	NA	selection	nav	4_4	0.235601285957403
+spoor.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSall	0.22017260418012452	0.03662413357202226	1	5000	5000	357	spoor	weight	NA	dependency	bound	417	NA	NA	selection	all	4_4	0.2347563798226158
+spoor.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSnav	0.13777469944859433	-0.008232324558611708	1	FOC	227	357	spoor	weight	NA	dependency	bound	417	NA	NA	selection	nav	4_4	0.22894849086153046
+spoor.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSall	0.13971026173350173	-0.004318195861672266	1	FOC	417	357	spoor	weight	NA	dependency	bound	417	NA	NA	selection	all	4_4	0.23617434420690697
+spoor.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSnav	0.17789709096105574	0.005329844256301906	1	5000	5000	357	spoor	weight	NA	dependency	bound	800	NA	NA	no	nav	4_4	0.23422489131463867
+spoor.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSall	0.2043629598888845	0.0562423224329807	1	5000	5000	357	spoor	weight	NA	dependency	bound	800	NA	NA	no	all	4_4	0.23372093069451008
+spoor.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSnav	0.13425594339769625	0.0017152147783237037	1	FOC	434	357	spoor	weight	NA	dependency	bound	800	NA	NA	no	nav	4_4	0.24023279050429336
+spoor.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSall	0.13898295919202577	0.007728341052401611	1	FOC	800	357	spoor	weight	NA	dependency	bound	800	NA	NA	no	all	4_4	0.2361375101594251
+spoor.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSnav	0.21223075388247284	-0.05344027169170376	1	5000	5000	354	spoor	NA	group1	dependency	bound	104	NA	NA	weight	nav	4_4	0.21477054264512682
+spoor.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSall	0.2331773517486757	-0.07769002880831923	1	5000	5000	354	spoor	NA	group1	dependency	bound	104	NA	NA	weight	all	4_4	0.23602838528290726
+spoor.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSnav	0.22192538445747892	-0.09159700507319946	1	FOC	60	354	spoor	NA	group1	dependency	bound	104	NA	NA	weight	nav	4_4	0.23932386298605055
+spoor.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSall	0.23460118590463216	-0.09529595492139306	1	FOC	104	354	spoor	NA	group1	dependency	bound	104	NA	NA	weight	all	4_4	0.24109505541690388
+spoor.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSnav	0.22380335126683829	-0.02667629746909981	1	5000	5000	354	spoor	NA	group1	dependency	bound	104	NA	NA	selection	nav	4_4	0.20869012458988706
+spoor.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSall	0.2655454266064988	-0.034581771667284496	1	5000	5000	354	spoor	NA	group1	dependency	bound	104	NA	NA	selection	all	4_4	0.2387638170670231
+spoor.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSnav	0.23329522496102986	-0.059659352875590745	1	FOC	60	354	spoor	NA	group1	dependency	bound	104	NA	NA	selection	nav	4_4	0.22875154749431115
+spoor.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSall	0.24368414782464096	-0.07158658395770244	1	FOC	104	354	spoor	NA	group1	dependency	bound	104	NA	NA	selection	all	4_4	0.23666106528752384
+spoor.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSnav	0.21799646920962512	-0.02248033735899755	1	5000	5000	356	spoor	NA	group1	dependency	bound	139	NA	NA	no	nav	4_4	0.20886937847148912
+spoor.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSall	0.2614756740147053	-0.025175167449082374	1	5000	5000	356	spoor	NA	group1	dependency	bound	139	NA	NA	no	all	4_4	0.23954615767599008
+spoor.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSnav	0.2406897475122043	-0.06026502079114484	1	FOC	73	356	spoor	NA	group1	dependency	bound	139	NA	NA	no	nav	4_4	0.2340444008419385
+spoor.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSall	0.2464084123122907	-0.06851527976905512	1	FOC	139	356	spoor	NA	group1	dependency	bound	139	NA	NA	no	all	4_4	0.23822199299459035
+spoor.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSnav	0.1900605847458374	-0.05604823045768652	1	5000	5000	355	spoor	NA	group2	dependency	bound	204	NA	NA	weight	nav	4_4	0.2390661478348857
+spoor.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSall	0.20167879612008124	-0.10769632905463847	1	5000	5000	355	spoor	NA	group2	dependency	bound	204	NA	NA	weight	all	4_4	0.24864097885489508
+spoor.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSnav	0.1692850410207506	-0.07922646156261365	1	FOC	128	355	spoor	NA	group2	dependency	bound	204	NA	NA	weight	nav	4_4	0.24138584378274489
+spoor.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSall	0.16582492084907188	-0.0712678939512076	1	FOC	204	355	spoor	NA	group2	dependency	bound	204	NA	NA	weight	all	4_4	0.2445481015180447
+spoor.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSnav	0.2052785256534347	-0.022649751947998294	1	5000	5000	355	spoor	NA	group2	dependency	bound	204	NA	NA	selection	nav	4_4	0.21821196630739878
+spoor.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSall	0.25687709448085866	-0.033333060950255906	1	5000	5000	355	spoor	NA	group2	dependency	bound	204	NA	NA	selection	all	4_4	0.24285723961775904
+spoor.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSnav	0.18609018965484198	-0.04206166281626813	1	FOC	128	355	spoor	NA	group2	dependency	bound	204	NA	NA	selection	nav	4_4	0.22291957236100027
+spoor.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSall	0.1823150222690258	-0.0370857246032633	1	FOC	204	355	spoor	NA	group2	dependency	bound	204	NA	NA	selection	all	4_4	0.2309539442236814
+spoor.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSnav	0.1946690503463259	-0.017912763381042137	1	5000	5000	356	spoor	NA	group2	dependency	bound	307	NA	NA	no	nav	4_4	0.220847771624294
+spoor.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSall	0.2551182123197524	-0.020525449973870957	1	5000	5000	356	spoor	NA	group2	dependency	bound	307	NA	NA	no	all	4_4	0.2451293440841934
+spoor.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSnav	0.1694404000786985	-0.02725286766692383	1	FOC	196	356	spoor	NA	group2	dependency	bound	307	NA	NA	no	nav	4_4	0.23745666782595093
+spoor.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSall	0.16699904313863098	-0.027624755145291585	1	FOC	307	356	spoor	NA	group2	dependency	bound	307	NA	NA	no	all	4_4	0.2402876637654495
+spoor.LEMMAREL3.PPMIweight.LENGTH5000.SOCPOSnav	0.19706573717126866	-0.05709230245520001	1	5000	5000	355	spoor	NA	group3	dependency	bound	247	NA	NA	weight	nav	4_4	0.24768791965743767
+spoor.LEMMAREL3.PPMIweight.LENGTH5000.SOCPOSall	0.22379723943674376	-0.1121846510668151	1	5000	5000	355	spoor	NA	group3	dependency	bound	247	NA	NA	weight	all	4_4	0.2585460391617436
+spoor.LEMMAREL3.PPMIweight.LENGTHFOC.SOCPOSnav	0.16072345581870998	-0.0768666294681584	1	FOC	140	355	spoor	NA	group3	dependency	bound	247	NA	NA	weight	nav	4_4	0.2509979725565312
+spoor.LEMMAREL3.PPMIweight.LENGTHFOC.SOCPOSall	0.15565540287638335	-0.07099962302028154	1	FOC	247	355	spoor	NA	group3	dependency	bound	247	NA	NA	weight	all	4_4	0.2556958774618823
+spoor.LEMMAREL3.PPMIselection.LENGTH5000.SOCPOSnav	0.2313351417834863	-0.01080635436060372	1	5000	5000	355	spoor	NA	group3	dependency	bound	247	NA	NA	selection	nav	4_4	0.2353689920309764
+spoor.LEMMAREL3.PPMIselection.LENGTH5000.SOCPOSall	0.29758046199308774	0.009335305318537435	1	5000	5000	355	spoor	NA	group3	dependency	bound	247	NA	NA	selection	all	4_4	0.23722257895794535
+spoor.LEMMAREL3.PPMIselection.LENGTHFOC.SOCPOSnav	0.18196993472522768	-0.027056895799312804	1	FOC	140	355	spoor	NA	group3	dependency	bound	247	NA	NA	selection	nav	4_4	0.23462823517397555
+spoor.LEMMAREL3.PPMIselection.LENGTHFOC.SOCPOSall	0.18379689454971737	-0.027121344510796043	1	FOC	247	355	spoor	NA	group3	dependency	bound	247	NA	NA	selection	all	4_4	0.23943813495472763
+spoor.LEMMAREL3.PPMIno.LENGTH5000.SOCPOSnav	0.22328617330674602	-0.004224086785673923	1	5000	5000	356	spoor	NA	group3	dependency	bound	396	NA	NA	no	nav	4_4	0.23776269546573708
+spoor.LEMMAREL3.PPMIno.LENGTH5000.SOCPOSall	0.29807332984743856	0.03062408043999961	1	5000	5000	356	spoor	NA	group3	dependency	bound	396	NA	NA	no	all	4_4	0.23586158367964524
+spoor.LEMMAREL3.PPMIno.LENGTHFOC.SOCPOSnav	0.17693727293285283	-0.016764953164926537	1	FOC	224	356	spoor	NA	group3	dependency	bound	396	NA	NA	no	nav	4_4	0.24733877789500777
+spoor.LEMMAREL3.PPMIno.LENGTHFOC.SOCPOSall	0.1728763894446069	-0.01557615332962737	1	FOC	396	356	spoor	NA	group3	dependency	bound	396	NA	NA	no	all	4_4	0.24807398039878195

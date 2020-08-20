@@ -1,9 +1,6 @@
 type	common_tokens	models	stress	date	corpus	part_of_speech	total_tokens
 church	284	144	NA	2019-01-20	GloWbE	noun	300
 zwart	211	144	NA	2019-10-28	QLVLNews	adjective	300
-schaal	308	144	0.1213	2020-03-10	QLVLNews	noun	320
-blik	261	144	0.1476	2020-03-11	QLVLNews	noun	280
-spoor	342	144	0.1456	2020-03-11	QLVLNews	noun	360
 heilzaam	235	144	0.1375	2020-03-24	QLVLNews	adj	239
 hoekig	275	144	0.1573	2020-03-24	QLVLNews	adj	278
 gekleurd	271	144	0.1833	2020-03-24	QLVLNews	adj	279
@@ -34,3 +31,6 @@ hoop	263	212	0.1483	2020-08-20	QLVLNews	noun	312
 spot	187	212	0.1617	2020-08-20	QLVLNews	noun	219
 staal	226	212	0.1201	2020-08-20	QLVLNews	noun	311
 stof	292	212	0.1203	2020-08-20	QLVLNews	noun	313
+schaal	280	212	0.1332	2020-08-20	QLVLNews	noun	318
+blik	233	212	0.1459	2020-08-20	QLVLNews	noun	276
+spoor	301	212	0.1508	2020-08-20	QLVLNews	noun	358
