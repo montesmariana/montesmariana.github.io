@@ -1,145 +1,213 @@
-_model	model.x	model.y	foc_length	foc_minimum_features	foc_part_of_speech	foc_sent_bound	foc_weighting	foc_window	soc_length	soc_length_num	soc_part_of_speech	soc_window	tokens	type	stress
-staal.foc10.nav.ppmi_weight.bound.min1.soc4.nav.5000	-0.1981649983508597	-0.06764841781654984	754	1	nav	bound	ppmi_weight	10_10	5000	5e3	nav	4_4	320	staal	0.21439552767720882
-staal.foc10.nav.ppmi_weight.bound.min1.soc4.nav.10000	-0.22080584546824103	-0.06323872339838792	754	1	nav	bound	ppmi_weight	10_10	10000	1e4	nav	4_4	320	staal	0.21357066111607065
-staal.foc10.nav.ppmi_weight.bound.min1.soc4.nav.foc	-0.23187815403446885	-0.09197005233169218	754	1	nav	bound	ppmi_weight	10_10	foc	754	nav	4_4	320	staal	0.21396885253826933
-staal.foc10.nav.ppmi_weight.bound.min1.soc10.nav.5000	-0.1739828932876853	-0.09346621571193962	754	1	nav	bound	ppmi_weight	10_10	5000	5e3	nav	10_10	320	staal	0.20525356282362003
-staal.foc10.nav.ppmi_weight.bound.min1.soc10.nav.10000	-0.1934502498087693	-0.07511560093483213	754	1	nav	bound	ppmi_weight	10_10	10000	1e4	nav	10_10	320	staal	0.20723041864833333
-staal.foc10.nav.ppmi_weight.bound.min1.soc10.nav.foc	-0.22035809546225044	-0.11793170602220707	754	1	nav	bound	ppmi_weight	10_10	foc	754	nav	10_10	320	staal	0.20380061838259267
-staal.foc10.nav.ppmi_weight.bound.min1.soc4.all.5000	-0.19907813393071966	-0.06983109193350642	754	1	nav	bound	ppmi_weight	10_10	5000	5e3	all	4_4	320	staal	0.215701116682705
-staal.foc10.nav.ppmi_weight.bound.min1.soc4.all.10000	-0.21261126832383848	-0.06583904460730429	754	1	nav	bound	ppmi_weight	10_10	10000	1e4	all	4_4	320	staal	0.21505171803065493
-staal.foc10.nav.ppmi_weight.bound.min1.soc4.all.foc	-0.2318804237660918	-0.09197123577060262	754	1	nav	bound	ppmi_weight	10_10	foc	754	all	4_4	320	staal	0.21396885253826933
-staal.foc10.nav.ppmi_weight.bound.min1.soc10.all.5000	-0.17069274158252443	-0.09763544889650405	754	1	nav	bound	ppmi_weight	10_10	5000	5e3	all	10_10	320	staal	0.2054670241593411
-staal.foc10.nav.ppmi_weight.bound.min1.soc10.all.10000	-0.18399338853795005	-0.08000005393155778	754	1	nav	bound	ppmi_weight	10_10	10000	1e4	all	10_10	320	staal	0.20825095436725016
-staal.foc10.nav.ppmi_weight.bound.min1.soc10.all.foc	-0.22035811910043798	-0.11793172044852633	754	1	nav	bound	ppmi_weight	10_10	foc	754	all	10_10	320	staal	0.20380061838259267
-staal.foc10.nav.ppmi_sel.bound.min1.soc4.nav.5000	-0.031660964150688295	-0.18225229622270467	754	1	nav	bound	ppmi_sel	10_10	5000	5e3	nav	4_4	320	staal	0.22748532989525685
-staal.foc10.nav.ppmi_sel.bound.min1.soc4.nav.10000	-0.026057160849465723	-0.18106505399430994	754	1	nav	bound	ppmi_sel	10_10	10000	1e4	nav	4_4	320	staal	0.228076322251893
-staal.foc10.nav.ppmi_sel.bound.min1.soc4.nav.foc	-0.1016713767037641	-0.13711763580170352	754	1	nav	bound	ppmi_sel	10_10	foc	754	nav	4_4	320	staal	0.21207441823578854
-staal.foc10.nav.ppmi_sel.bound.min1.soc10.nav.5000	-0.04190025001909429	-0.17950899236129084	754	1	nav	bound	ppmi_sel	10_10	5000	5e3	nav	10_10	320	staal	0.21196024859439258
-staal.foc10.nav.ppmi_sel.bound.min1.soc10.nav.10000	-0.03160932397366854	-0.16435635799966108	754	1	nav	bound	ppmi_sel	10_10	10000	1e4	nav	10_10	320	staal	0.21264186512772734
-staal.foc10.nav.ppmi_sel.bound.min1.soc10.nav.foc	-0.10458934341110546	-0.1589219568102184	754	1	nav	bound	ppmi_sel	10_10	foc	754	nav	10_10	320	staal	0.19958045940751692
-staal.foc10.nav.ppmi_sel.bound.min1.soc4.all.5000	-0.027998929849111582	-0.2008824499155754	754	1	nav	bound	ppmi_sel	10_10	5000	5e3	all	4_4	320	staal	0.23015265671394552
-staal.foc10.nav.ppmi_sel.bound.min1.soc4.all.10000	-0.02150026157635719	-0.19472603681305833	754	1	nav	bound	ppmi_sel	10_10	10000	1e4	all	4_4	320	staal	0.22992277527498572
-staal.foc10.nav.ppmi_sel.bound.min1.soc4.all.foc	-0.10167161361827169	-0.1371175133889301	754	1	nav	bound	ppmi_sel	10_10	foc	754	all	4_4	320	staal	0.21207441823578854
-staal.foc10.nav.ppmi_sel.bound.min1.soc10.all.5000	-0.04086152130220295	-0.19442048295510778	754	1	nav	bound	ppmi_sel	10_10	5000	5e3	all	10_10	320	staal	0.21342785629293626
-staal.foc10.nav.ppmi_sel.bound.min1.soc10.all.10000	-0.027303978588620225	-0.17323452694232278	754	1	nav	bound	ppmi_sel	10_10	10000	1e4	all	10_10	320	staal	0.21559549966794822
-staal.foc10.nav.ppmi_sel.bound.min1.soc10.all.foc	-0.10458771546336115	-0.15892292883846068	754	1	nav	bound	ppmi_sel	10_10	foc	754	all	10_10	320	staal	0.19958045940751692
-staal.foc10.nav.no_ppmi.bound.min1.soc4.nav.5000	0.03228037403079187	-0.20708796062022397	999	1	nav	bound	no_ppmi	10_10	5000	5e3	nav	4_4	320	staal	0.23080303047767337
-staal.foc10.nav.no_ppmi.bound.min1.soc4.nav.10000	0.03644822706764696	-0.2183534526568801	999	1	nav	bound	no_ppmi	10_10	10000	1e4	nav	4_4	320	staal	0.22865086843510674
-staal.foc10.nav.no_ppmi.bound.min1.soc4.nav.foc	-0.05247449746955693	-0.1286680337118639	999	1	nav	bound	no_ppmi	10_10	foc	999	nav	4_4	320	staal	0.21149085826045805
-staal.foc10.nav.no_ppmi.bound.min1.soc10.nav.5000	0.01577591208117093	-0.21150282526306796	999	1	nav	bound	no_ppmi	10_10	5000	5e3	nav	10_10	320	staal	0.21674775358459714
-staal.foc10.nav.no_ppmi.bound.min1.soc10.nav.10000	0.02205185888380675	-0.19746800449436833	999	1	nav	bound	no_ppmi	10_10	10000	1e4	nav	10_10	320	staal	0.21519400369250857
-staal.foc10.nav.no_ppmi.bound.min1.soc10.nav.foc	-0.05875266319974736	-0.14927722417457692	999	1	nav	bound	no_ppmi	10_10	foc	999	nav	10_10	320	staal	0.2012066478250336
-staal.foc10.nav.no_ppmi.bound.min1.soc4.all.5000	0.04484232005311826	-0.22644856934987925	999	1	nav	bound	no_ppmi	10_10	5000	5e3	all	4_4	320	staal	0.23419171715610812
-staal.foc10.nav.no_ppmi.bound.min1.soc4.all.10000	0.04893749964749223	-0.2219699013070095	999	1	nav	bound	no_ppmi	10_10	10000	1e4	all	4_4	320	staal	0.233269300183858
-staal.foc10.nav.no_ppmi.bound.min1.soc4.all.foc	-0.052474471325726774	-0.12866805228356926	999	1	nav	bound	no_ppmi	10_10	foc	999	all	4_4	320	staal	0.21149085826045805
-staal.foc10.nav.no_ppmi.bound.min1.soc10.all.5000	0.023807761708714893	-0.2313089012282614	999	1	nav	bound	no_ppmi	10_10	5000	5e3	all	10_10	320	staal	0.2202734585477691
-staal.foc10.nav.no_ppmi.bound.min1.soc10.all.10000	0.02873862579595491	-0.20935722664047815	999	1	nav	bound	no_ppmi	10_10	10000	1e4	all	10_10	320	staal	0.22061138428869695
-staal.foc10.nav.no_ppmi.bound.min1.soc10.all.foc	-0.05875262541493381	-0.1492772526678605	999	1	nav	bound	no_ppmi	10_10	foc	999	all	10_10	320	staal	0.2012066478250336
-staal.foc10.all.ppmi_weight.bound.min1.soc4.nav.5000	-0.18958705704418669	-0.08655377586551735	848	1	all	bound	ppmi_weight	10_10	5000	5e3	nav	4_4	320	staal	0.2090309784920022
-staal.foc10.all.ppmi_weight.bound.min1.soc4.nav.10000	-0.2477026538670466	-0.0748777881178236	848	1	all	bound	ppmi_weight	10_10	10000	1e4	nav	4_4	320	staal	0.20803940900124818
-staal.foc10.all.ppmi_weight.bound.min1.soc4.nav.foc	-0.2456022746237399	-0.10334045811637105	848	1	all	bound	ppmi_weight	10_10	foc	848	nav	4_4	320	staal	0.20381590001100142
-staal.foc10.all.ppmi_weight.bound.min1.soc10.nav.5000	-0.1725316715824672	-0.10159508046782925	848	1	all	bound	ppmi_weight	10_10	5000	5e3	nav	10_10	320	staal	0.20443015894884906
-staal.foc10.all.ppmi_weight.bound.min1.soc10.nav.10000	-0.19996232484915263	-0.10346656992473081	848	1	all	bound	ppmi_weight	10_10	10000	1e4	nav	10_10	320	staal	0.20368989433629175
-staal.foc10.all.ppmi_weight.bound.min1.soc10.nav.foc	-0.23112462866008712	-0.1229327708979746	848	1	all	bound	ppmi_weight	10_10	foc	848	nav	10_10	320	staal	0.19899393256835973
-staal.foc10.all.ppmi_weight.bound.min1.soc4.all.5000	-0.18305191266686274	-0.09238791450610578	848	1	all	bound	ppmi_weight	10_10	5000	5e3	all	4_4	320	staal	0.2106257162774394
-staal.foc10.all.ppmi_weight.bound.min1.soc4.all.10000	-0.22694495841259574	-0.07817161194435264	848	1	all	bound	ppmi_weight	10_10	10000	1e4	all	4_4	320	staal	0.209017072996287
-staal.foc10.all.ppmi_weight.bound.min1.soc4.all.foc	-0.24560234323280483	-0.10334049165107446	848	1	all	bound	ppmi_weight	10_10	foc	848	all	4_4	320	staal	0.20381590001100142
-staal.foc10.all.ppmi_weight.bound.min1.soc10.all.5000	-0.16861144797675498	-0.10306346704580552	848	1	all	bound	ppmi_weight	10_10	5000	5e3	all	10_10	320	staal	0.20543130915911198
-staal.foc10.all.ppmi_weight.bound.min1.soc10.all.10000	-0.1848885903047468	-0.10316445237768014	848	1	all	bound	ppmi_weight	10_10	10000	1e4	all	10_10	320	staal	0.20597263003477617
-staal.foc10.all.ppmi_weight.bound.min1.soc10.all.foc	-0.23112469023652335	-0.12293281317947896	848	1	all	bound	ppmi_weight	10_10	foc	848	all	10_10	320	staal	0.19899393256835973
-staal.foc10.all.ppmi_sel.bound.min1.soc4.nav.5000	0.43131325020141253	-0.08653655558682886	848	1	all	bound	ppmi_sel	10_10	5000	5e3	nav	4_4	320	staal	0.23636443080325084
-staal.foc10.all.ppmi_sel.bound.min1.soc4.nav.10000	0.470572167991299	-0.0765211057056418	848	1	all	bound	ppmi_sel	10_10	10000	1e4	nav	4_4	320	staal	0.23097421581693364
-staal.foc10.all.ppmi_sel.bound.min1.soc4.nav.foc	0.20788142842832436	-0.09686426224690575	848	1	all	bound	ppmi_sel	10_10	foc	848	nav	4_4	320	staal	0.21336483628938827
-staal.foc10.all.ppmi_sel.bound.min1.soc10.nav.5000	0.23480363342624963	-0.1286771669025613	848	1	all	bound	ppmi_sel	10_10	5000	5e3	nav	10_10	320	staal	0.21581196684808332
-staal.foc10.all.ppmi_sel.bound.min1.soc10.nav.10000	0.25724158588605484	-0.12788302877497432	848	1	all	bound	ppmi_sel	10_10	10000	1e4	nav	10_10	320	staal	0.2150405488556881
-staal.foc10.all.ppmi_sel.bound.min1.soc10.nav.foc	0.11109879061897415	-0.1109073288561936	848	1	all	bound	ppmi_sel	10_10	foc	848	nav	10_10	320	staal	0.19869063841448065
-staal.foc10.all.ppmi_sel.bound.min1.soc4.all.5000	0.44165719418925076	-0.08621279434997862	848	1	all	bound	ppmi_sel	10_10	5000	5e3	all	4_4	320	staal	0.24254127478685295
-staal.foc10.all.ppmi_sel.bound.min1.soc4.all.10000	0.47015983065501465	-0.07943262732573231	848	1	all	bound	ppmi_sel	10_10	10000	1e4	all	4_4	320	staal	0.23813433793062774
-staal.foc10.all.ppmi_sel.bound.min1.soc4.all.foc	0.20788141089195716	-0.09686434926823423	848	1	all	bound	ppmi_sel	10_10	foc	848	all	4_4	320	staal	0.21336483628938827
-staal.foc10.all.ppmi_sel.bound.min1.soc10.all.5000	0.24785459947020658	-0.13179272541622777	848	1	all	bound	ppmi_sel	10_10	5000	5e3	all	10_10	320	staal	0.21975332781705081
-staal.foc10.all.ppmi_sel.bound.min1.soc10.all.10000	0.2645936974212264	-0.12541518802579776	848	1	all	bound	ppmi_sel	10_10	10000	1e4	all	10_10	320	staal	0.2191449099313224
-staal.foc10.all.ppmi_sel.bound.min1.soc10.all.foc	0.11109687691101176	-0.1109070677040173	848	1	all	bound	ppmi_sel	10_10	foc	848	all	10_10	320	staal	0.19869063841448065
-staal.foc10.all.no_ppmi.bound.min1.soc4.nav.5000	0.45329943258636646	-0.12894808020814932	1172	1	all	bound	no_ppmi	10_10	5000	5e3	nav	4_4	320	staal	0.2318139691114434
-staal.foc10.all.no_ppmi.bound.min1.soc4.nav.10000	0.4899904569948288	-0.12278225495368933	1172	1	all	bound	no_ppmi	10_10	10000	1e4	nav	4_4	320	staal	0.22529443019133805
-staal.foc10.all.no_ppmi.bound.min1.soc4.nav.foc	0.2502898331051907	-0.10589997530820003	1172	1	all	bound	no_ppmi	10_10	foc	1172	nav	4_4	320	staal	0.21695024487347453
-staal.foc10.all.no_ppmi.bound.min1.soc10.nav.5000	0.290815009097694	-0.15940266133603892	1172	1	all	bound	no_ppmi	10_10	5000	5e3	nav	10_10	320	staal	0.21587745131787361
-staal.foc10.all.no_ppmi.bound.min1.soc10.nav.10000	0.3112158163691128	-0.15534443256514127	1172	1	all	bound	no_ppmi	10_10	10000	1e4	nav	10_10	320	staal	0.21327650015433022
-staal.foc10.all.no_ppmi.bound.min1.soc10.nav.foc	0.1448236173855987	-0.12288254329426739	1172	1	all	bound	no_ppmi	10_10	foc	1172	nav	10_10	320	staal	0.19936681784472304
-staal.foc10.all.no_ppmi.bound.min1.soc4.all.5000	0.471225152673643	-0.13365063818033326	1172	1	all	bound	no_ppmi	10_10	5000	5e3	all	4_4	320	staal	0.23663037734122822
-staal.foc10.all.no_ppmi.bound.min1.soc4.all.10000	0.49225299478040685	-0.12722259121943352	1172	1	all	bound	no_ppmi	10_10	10000	1e4	all	4_4	320	staal	0.2286386853783549
-staal.foc10.all.no_ppmi.bound.min1.soc4.all.foc	0.2503021950744508	-0.1059041732610523	1172	1	all	bound	no_ppmi	10_10	foc	1172	all	4_4	320	staal	0.21695024487347453
-staal.foc10.all.no_ppmi.bound.min1.soc10.all.5000	0.31068934762851635	-0.17040958037464526	1172	1	all	bound	no_ppmi	10_10	5000	5e3	all	10_10	320	staal	0.22151505684971126
-staal.foc10.all.no_ppmi.bound.min1.soc10.all.10000	0.3186957460196497	-0.1575300848567231	1172	1	all	bound	no_ppmi	10_10	10000	1e4	all	10_10	320	staal	0.21958471939220392
-staal.foc10.all.no_ppmi.bound.min1.soc10.all.foc	0.14482117331338698	-0.1228820897062681	1172	1	all	bound	no_ppmi	10_10	foc	1172	all	10_10	320	staal	0.19936681784472304
-staal.foc5.nav.ppmi_weight.bound.min1.soc4.nav.5000	-0.22631880059122672	0.09908417063893879	478	1	nav	bound	ppmi_weight	5_5	5000	5e3	nav	4_4	313	staal	0.2276292212372397
-staal.foc5.nav.ppmi_weight.bound.min1.soc4.nav.10000	-0.2459792801975485	0.11446260005893356	478	1	nav	bound	ppmi_weight	5_5	10000	1e4	nav	4_4	313	staal	0.2271906311209883
-staal.foc5.nav.ppmi_weight.bound.min1.soc4.nav.foc	-0.2629236946241648	0.06868509168990736	478	1	nav	bound	ppmi_weight	5_5	foc	478	nav	4_4	313	staal	0.23130906495776318
-staal.foc5.nav.ppmi_weight.bound.min1.soc10.nav.5000	-0.21214071102673487	0.07949676354560667	478	1	nav	bound	ppmi_weight	5_5	5000	5e3	nav	10_10	313	staal	0.21764826716049218
-staal.foc5.nav.ppmi_weight.bound.min1.soc10.nav.10000	-0.2232972544480487	0.09161043146412232	478	1	nav	bound	ppmi_weight	5_5	10000	1e4	nav	10_10	313	staal	0.21806847225102183
-staal.foc5.nav.ppmi_weight.bound.min1.soc10.nav.foc	-0.25700289381883473	0.05365223301511088	478	1	nav	bound	ppmi_weight	5_5	foc	478	nav	10_10	313	staal	0.21742496019037022
-staal.foc5.nav.ppmi_weight.bound.min1.soc4.all.5000	-0.2290902136527693	0.10287281431995535	478	1	nav	bound	ppmi_weight	5_5	5000	5e3	all	4_4	313	staal	0.22784950567392434
-staal.foc5.nav.ppmi_weight.bound.min1.soc4.all.10000	-0.23800838747986566	0.11444872155190278	478	1	nav	bound	ppmi_weight	5_5	10000	1e4	all	4_4	313	staal	0.22893849914046166
-staal.foc5.nav.ppmi_weight.bound.min1.soc4.all.foc	-0.2629243853443733	0.0686852468817575	478	1	nav	bound	ppmi_weight	5_5	foc	478	all	4_4	313	staal	0.23130906495776318
-staal.foc5.nav.ppmi_weight.bound.min1.soc10.all.5000	-0.21269729939997728	0.08017058290047586	478	1	nav	bound	ppmi_weight	5_5	5000	5e3	all	10_10	313	staal	0.21789791421739418
-staal.foc5.nav.ppmi_weight.bound.min1.soc10.all.10000	-0.21695538299178352	0.09446370738876603	478	1	nav	bound	ppmi_weight	5_5	10000	1e4	all	10_10	313	staal	0.22031736052398762
-staal.foc5.nav.ppmi_weight.bound.min1.soc10.all.foc	-0.25700262360558535	0.053652129728181015	478	1	nav	bound	ppmi_weight	5_5	foc	478	all	10_10	313	staal	0.21742496019037022
-staal.foc5.nav.ppmi_sel.bound.min1.soc4.nav.5000	-0.07693940442182685	0.13542886619943564	478	1	nav	bound	ppmi_sel	5_5	5000	5e3	nav	4_4	313	staal	0.23678979224251037
-staal.foc5.nav.ppmi_sel.bound.min1.soc4.nav.10000	-0.07615968314682463	0.14915377063783225	478	1	nav	bound	ppmi_sel	5_5	10000	1e4	nav	4_4	313	staal	0.2351078576216544
-staal.foc5.nav.ppmi_sel.bound.min1.soc4.nav.foc	-0.15067530527273923	0.06284188369894497	478	1	nav	bound	ppmi_sel	5_5	foc	478	nav	4_4	313	staal	0.22235871688742564
-staal.foc5.nav.ppmi_sel.bound.min1.soc10.nav.5000	-0.07952423980295016	0.08813085300159997	478	1	nav	bound	ppmi_sel	5_5	5000	5e3	nav	10_10	313	staal	0.22307138241436894
-staal.foc5.nav.ppmi_sel.bound.min1.soc10.nav.10000	-0.07591994258054417	0.08756825541552339	478	1	nav	bound	ppmi_sel	5_5	10000	1e4	nav	10_10	313	staal	0.2244507417645966
-staal.foc5.nav.ppmi_sel.bound.min1.soc10.nav.foc	-0.14224794129228896	0.04561246063967161	478	1	nav	bound	ppmi_sel	5_5	foc	478	nav	10_10	313	staal	0.2089039510014075
-staal.foc5.nav.ppmi_sel.bound.min1.soc4.all.5000	-0.07613690715756098	0.15329283768905558	478	1	nav	bound	ppmi_sel	5_5	5000	5e3	all	4_4	313	staal	0.23749163150082203
-staal.foc5.nav.ppmi_sel.bound.min1.soc4.all.10000	-0.06939081127906344	0.15472120002893816	478	1	nav	bound	ppmi_sel	5_5	10000	1e4	all	4_4	313	staal	0.23844886531535914
-staal.foc5.nav.ppmi_sel.bound.min1.soc4.all.foc	-0.15067525977729948	0.06284186101863128	478	1	nav	bound	ppmi_sel	5_5	foc	478	all	4_4	313	staal	0.22235871688742564
-staal.foc5.nav.ppmi_sel.bound.min1.soc10.all.5000	-0.07857670742728523	0.09800084028534509	478	1	nav	bound	ppmi_sel	5_5	5000	5e3	all	10_10	313	staal	0.22408204991364095
-staal.foc5.nav.ppmi_sel.bound.min1.soc10.all.10000	-0.07330980624140743	0.09216665640006788	478	1	nav	bound	ppmi_sel	5_5	10000	1e4	all	10_10	313	staal	0.22811695039759705
-staal.foc5.nav.ppmi_sel.bound.min1.soc10.all.foc	-0.14224790453288486	0.04561251697814962	478	1	nav	bound	ppmi_sel	5_5	foc	478	all	10_10	313	staal	0.2089039510014075
-staal.foc5.nav.no_ppmi.bound.min1.soc4.nav.5000	-0.04555835452379423	0.16298406926877462	629	1	nav	bound	no_ppmi	5_5	5000	5e3	nav	4_4	317	staal	0.22846246127051037
-staal.foc5.nav.no_ppmi.bound.min1.soc4.nav.10000	-0.04563835936662129	0.18334891059453842	629	1	nav	bound	no_ppmi	5_5	10000	1e4	nav	4_4	317	staal	0.2253429518249616
-staal.foc5.nav.no_ppmi.bound.min1.soc4.nav.foc	-0.12116442627972983	0.060860047425236506	629	1	nav	bound	no_ppmi	5_5	foc	629	nav	4_4	317	staal	0.21477675043576355
-staal.foc5.nav.no_ppmi.bound.min1.soc10.nav.5000	-0.04681173764167934	0.10237679979331543	629	1	nav	bound	no_ppmi	5_5	5000	5e3	nav	10_10	317	staal	0.2172320041504206
-staal.foc5.nav.no_ppmi.bound.min1.soc10.nav.10000	-0.045536507282559445	0.10931563867907669	629	1	nav	bound	no_ppmi	5_5	10000	1e4	nav	10_10	317	staal	0.21431098523318143
-staal.foc5.nav.no_ppmi.bound.min1.soc10.nav.foc	-0.11643429534457297	0.042695946635773	629	1	nav	bound	no_ppmi	5_5	foc	629	nav	10_10	317	staal	0.20403858486703802
-staal.foc5.nav.no_ppmi.bound.min1.soc4.all.5000	-0.03987531864399868	0.1843039043021788	629	1	nav	bound	no_ppmi	5_5	5000	5e3	all	4_4	317	staal	0.22924826106211135
-staal.foc5.nav.no_ppmi.bound.min1.soc4.all.10000	-0.0355648979939804	0.19088346468416903	629	1	nav	bound	no_ppmi	5_5	10000	1e4	all	4_4	317	staal	0.22864173060837797
-staal.foc5.nav.no_ppmi.bound.min1.soc4.all.foc	-0.12116442731104347	0.060859972729274424	629	1	nav	bound	no_ppmi	5_5	foc	629	all	4_4	317	staal	0.21477675043576355
-staal.foc5.nav.no_ppmi.bound.min1.soc10.all.5000	-0.04051318485623715	0.12216216709828238	629	1	nav	bound	no_ppmi	5_5	5000	5e3	all	10_10	317	staal	0.21940989597872163
-staal.foc5.nav.no_ppmi.bound.min1.soc10.all.10000	-0.04067454523510997	0.1200540502077814	629	1	nav	bound	no_ppmi	5_5	10000	1e4	all	10_10	317	staal	0.21997968061118295
-staal.foc5.nav.no_ppmi.bound.min1.soc10.all.foc	-0.11643424714824926	0.042695977821938465	629	1	nav	bound	no_ppmi	5_5	foc	629	all	10_10	317	staal	0.20403858486703802
-staal.foc5.all.ppmi_weight.bound.min1.soc4.nav.5000	-0.19500466963326366	0.16333116563607597	545	1	all	bound	ppmi_weight	5_5	5000	5e3	nav	4_4	320	staal	0.21889348787977977
-staal.foc5.all.ppmi_weight.bound.min1.soc4.nav.10000	-0.21359914947138856	0.1980207612467779	545	1	all	bound	ppmi_weight	5_5	10000	1e4	nav	4_4	320	staal	0.22139313093174653
-staal.foc5.all.ppmi_weight.bound.min1.soc4.nav.foc	-0.24611988623178718	0.1394012198280636	545	1	all	bound	ppmi_weight	5_5	foc	545	nav	4_4	320	staal	0.22656398242764658
-staal.foc5.all.ppmi_weight.bound.min1.soc10.nav.5000	-0.18956551772319968	0.12148610501616516	545	1	all	bound	ppmi_weight	5_5	5000	5e3	nav	10_10	320	staal	0.21402109916334963
-staal.foc5.all.ppmi_weight.bound.min1.soc10.nav.10000	-0.20739767898043354	0.15138632308615754	545	1	all	bound	ppmi_weight	5_5	10000	1e4	nav	10_10	320	staal	0.21168446100062682
-staal.foc5.all.ppmi_weight.bound.min1.soc10.nav.foc	-0.2540668029220951	0.08568126821847642	545	1	all	bound	ppmi_weight	5_5	foc	545	nav	10_10	320	staal	0.21565107683342197
-staal.foc5.all.ppmi_weight.bound.min1.soc4.all.5000	-0.19245562115391726	0.16829788673630608	545	1	all	bound	ppmi_weight	5_5	5000	5e3	all	4_4	320	staal	0.2203336016285389
-staal.foc5.all.ppmi_weight.bound.min1.soc4.all.10000	-0.20169232987344987	0.19553171376606768	545	1	all	bound	ppmi_weight	5_5	10000	1e4	all	4_4	320	staal	0.22270585970911605
-staal.foc5.all.ppmi_weight.bound.min1.soc4.all.foc	-0.2461265346731801	0.13940664105122919	545	1	all	bound	ppmi_weight	5_5	foc	545	all	4_4	320	staal	0.22656398242764658
-staal.foc5.all.ppmi_weight.bound.min1.soc10.all.5000	-0.18618539690941294	0.1255918476090512	545	1	all	bound	ppmi_weight	5_5	5000	5e3	all	10_10	320	staal	0.2153082358381934
-staal.foc5.all.ppmi_weight.bound.min1.soc10.all.10000	-0.1976549273538749	0.1450096599351298	545	1	all	bound	ppmi_weight	5_5	10000	1e4	all	10_10	320	staal	0.21502040039509215
-staal.foc5.all.ppmi_weight.bound.min1.soc10.all.foc	-0.2540665655742496	0.08568124444968088	545	1	all	bound	ppmi_weight	5_5	foc	545	all	10_10	320	staal	0.21565107683342197
-staal.foc5.all.ppmi_sel.bound.min1.soc4.nav.5000	0.34379895125077886	0.2626656351544642	545	1	all	bound	ppmi_sel	5_5	5000	5e3	nav	4_4	320	staal	0.24727203468555656
-staal.foc5.all.ppmi_sel.bound.min1.soc4.nav.10000	0.3744261586529883	0.2765323993271692	545	1	all	bound	ppmi_sel	5_5	10000	1e4	nav	4_4	320	staal	0.24243644355003163
-staal.foc5.all.ppmi_sel.bound.min1.soc4.nav.foc	0.13158980921203817	0.19410162863979874	545	1	all	bound	ppmi_sel	5_5	foc	545	nav	4_4	320	staal	0.22657349150652814
-staal.foc5.all.ppmi_sel.bound.min1.soc10.nav.5000	0.18016201987341088	0.15734255120378526	545	1	all	bound	ppmi_sel	5_5	5000	5e3	nav	10_10	320	staal	0.22637317001134755
-staal.foc5.all.ppmi_sel.bound.min1.soc10.nav.10000	0.20089202965121417	0.17173809837528464	545	1	all	bound	ppmi_sel	5_5	10000	1e4	nav	10_10	320	staal	0.2257079595741603
-staal.foc5.all.ppmi_sel.bound.min1.soc10.nav.foc	0.07076674184435713	0.11193824981411843	545	1	all	bound	ppmi_sel	5_5	foc	545	nav	10_10	320	staal	0.2124595768076191
-staal.foc5.all.ppmi_sel.bound.min1.soc4.all.5000	0.3519019872374098	0.2709476114391466	545	1	all	bound	ppmi_sel	5_5	5000	5e3	all	4_4	320	staal	0.2525362703042936
-staal.foc5.all.ppmi_sel.bound.min1.soc4.all.10000	0.3794512108759823	0.2743729955523721	545	1	all	bound	ppmi_sel	5_5	10000	1e4	all	4_4	320	staal	0.24832284545544261
-staal.foc5.all.ppmi_sel.bound.min1.soc4.all.foc	0.1315841054004919	0.19409852343445197	545	1	all	bound	ppmi_sel	5_5	foc	545	all	4_4	320	staal	0.22657349150652814
-staal.foc5.all.ppmi_sel.bound.min1.soc10.all.5000	0.19698444667276258	0.16844005123788522	545	1	all	bound	ppmi_sel	5_5	5000	5e3	all	10_10	320	staal	0.23158019584610812
-staal.foc5.all.ppmi_sel.bound.min1.soc10.all.10000	0.20876813597642946	0.17386177698399516	545	1	all	bound	ppmi_sel	5_5	10000	1e4	all	10_10	320	staal	0.2313403247068141
-staal.foc5.all.ppmi_sel.bound.min1.soc10.all.foc	0.07076678635673338	0.11193825712001422	545	1	all	bound	ppmi_sel	5_5	foc	545	all	10_10	320	staal	0.2124595768076191
-staal.foc5.all.no_ppmi.bound.min1.soc4.nav.5000	0.3776476689278116	0.20502087954150142	753	1	all	bound	no_ppmi	5_5	5000	5e3	nav	4_4	320	staal	0.23752484318676254
-staal.foc5.all.no_ppmi.bound.min1.soc4.nav.10000	0.411188013439906	0.21800746833292964	753	1	all	bound	no_ppmi	5_5	10000	1e4	nav	4_4	320	staal	0.2302948569247747
-staal.foc5.all.no_ppmi.bound.min1.soc4.nav.foc	0.14763932495995433	0.13421785285087132	753	1	all	bound	no_ppmi	5_5	foc	753	nav	4_4	320	staal	0.22256459970643827
-staal.foc5.all.no_ppmi.bound.min1.soc10.nav.5000	0.22346158806186503	0.11762641572877983	753	1	all	bound	no_ppmi	5_5	5000	5e3	nav	10_10	320	staal	0.21805022301945187
-staal.foc5.all.no_ppmi.bound.min1.soc10.nav.10000	0.24547330867203948	0.1305500898247961	753	1	all	bound	no_ppmi	5_5	10000	1e4	nav	10_10	320	staal	0.21531136021513536
-staal.foc5.all.no_ppmi.bound.min1.soc10.nav.foc	0.08080946004760416	0.06972154260761042	753	1	all	bound	no_ppmi	5_5	foc	753	nav	10_10	320	staal	0.20637750042101144
-staal.foc5.all.no_ppmi.bound.min1.soc4.all.5000	0.3952005704509255	0.21158283261007507	753	1	all	bound	no_ppmi	5_5	5000	5e3	all	4_4	320	staal	0.24214143656827036
-staal.foc5.all.no_ppmi.bound.min1.soc4.all.10000	0.4174886521228885	0.21564845017656153	753	1	all	bound	no_ppmi	5_5	10000	1e4	all	4_4	320	staal	0.2377979945990448
-staal.foc5.all.no_ppmi.bound.min1.soc4.all.foc	0.14763901601172869	0.13421772386544256	753	1	all	bound	no_ppmi	5_5	foc	753	all	4_4	320	staal	0.22256459970643827
-staal.foc5.all.no_ppmi.bound.min1.soc10.all.5000	0.24426805045590672	0.13355055880941688	753	1	all	bound	no_ppmi	5_5	5000	5e3	all	10_10	320	staal	0.2237654479746172
-staal.foc5.all.no_ppmi.bound.min1.soc10.all.10000	0.2531305027873972	0.13532703450997394	753	1	all	bound	no_ppmi	5_5	10000	1e4	all	10_10	320	staal	0.2232441574016806
-staal.foc5.all.no_ppmi.bound.min1.soc10.all.foc	0.08080942493675065	0.0697215396299547	753	1	all	bound	no_ppmi	5_5	foc	753	all	10_10	320	staal	0.20637750042101144
+_model	model.x	model.y	foc_minimum_features	soc_length	soc_length_num	tokens	type	LEMMAPATH	LEMMAREL	base	foc_boundaries	foc_context_words	foc_foc_pos	foc_foc_win	foc_ppmi	soc_soc_pos	soc_soc_win
+staal.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.1925842571074116	-0.009319719731905889	1	5000	5000	308	staal	NA	NA	BOW	bound	603	lex	10_10	weight	nav	4_4
+staal.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSall	0.013874455238808816	-0.28288709143357904	1	5000	5000	308	staal	NA	NA	BOW	bound	603	lex	10_10	weight	all	4_4
+staal.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.21482455622104848	0.009607156004873895	1	FOC	459	308	staal	NA	NA	BOW	bound	603	lex	10_10	weight	nav	4_4
+staal.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.21675803497326113	0.007103796624119476	1	FOC	603	308	staal	NA	NA	BOW	bound	603	lex	10_10	weight	all	4_4
+staal.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.1855651207346456	-0.06996550225843791	1	5000	5000	308	staal	NA	NA	BOW	bound	603	lex	10_10	selection	nav	4_4
+staal.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSall	0.03414975955699268	-0.40608978215166225	1	5000	5000	308	staal	NA	NA	BOW	bound	603	lex	10_10	selection	all	4_4
+staal.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.20909042127030256	-0.027663449071889435	1	FOC	459	308	staal	NA	NA	BOW	bound	603	lex	10_10	selection	nav	4_4
+staal.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.20751609392532516	-0.0278411065843682	1	FOC	603	308	staal	NA	NA	BOW	bound	603	lex	10_10	selection	all	4_4
+staal.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSnav	-0.201798536958029	-0.09157049272788623	1	5000	5000	310	staal	NA	NA	BOW	bound	1033	lex	10_10	no	nav	4_4
+staal.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSall	0.09681212328252058	-0.46981772634107766	1	5000	5000	310	staal	NA	NA	BOW	bound	1033	lex	10_10	no	all	4_4
+staal.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.19803447250496875	-0.04463679160928676	1	FOC	776	310	staal	NA	NA	BOW	bound	1033	lex	10_10	no	nav	4_4
+staal.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSall	-0.194955815746477	-0.044880816851171006	1	FOC	1033	310	staal	NA	NA	BOW	bound	1033	lex	10_10	no	all	4_4
+staal.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSnav	-0.1360082830202551	0.0038993726898166733	1	5000	5000	310	staal	NA	NA	BOW	bound	775	all	10_10	weight	nav	4_4
+staal.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSall	0.13346000756138057	-0.19931674849013	1	5000	5000	310	staal	NA	NA	BOW	bound	775	all	10_10	weight	all	4_4
+staal.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.17986477545637386	0.014262490220364884	1	FOC	459	310	staal	NA	NA	BOW	bound	775	all	10_10	weight	nav	4_4
+staal.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSall	-0.15722278323966543	-0.005081247905788683	1	FOC	775	310	staal	NA	NA	BOW	bound	775	all	10_10	weight	all	4_4
+staal.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSnav	-0.05919124300512018	-0.09579583572263858	1	5000	5000	310	staal	NA	NA	BOW	bound	775	all	10_10	selection	nav	4_4
+staal.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSall	0.3588010877185748	-0.28594771961298315	1	5000	5000	310	staal	NA	NA	BOW	bound	775	all	10_10	selection	all	4_4
+staal.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.12960033026485646	-0.04347322755379692	1	FOC	459	310	staal	NA	NA	BOW	bound	775	all	10_10	selection	nav	4_4
+staal.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSall	-0.10440915930542642	-0.05577089851240847	1	FOC	775	310	staal	NA	NA	BOW	bound	775	all	10_10	selection	all	4_4
+staal.BOWbound10all.PPMIno.LENGTH5000.SOCPOSnav	-0.14312164755830048	-0.14746115755154685	1	5000	5000	311	staal	NA	NA	BOW	bound	1375	all	10_10	no	nav	4_4
+staal.BOWbound10all.PPMIno.LENGTH5000.SOCPOSall	0.3716139406566593	-0.3626773528937827	1	5000	5000	311	staal	NA	NA	BOW	bound	1375	all	10_10	no	all	4_4
+staal.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSnav	-0.14500530929524164	-0.0698174522483986	1	FOC	776	311	staal	NA	NA	BOW	bound	1375	all	10_10	no	nav	4_4
+staal.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSall	-0.11711852525483445	-0.09674460446321684	1	FOC	1375	311	staal	NA	NA	BOW	bound	1375	all	10_10	no	all	4_4
+staal.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.16309725024630048	0.01123981114886052	1	5000	5000	305	staal	NA	NA	BOW	bound	465	lex	5_5	weight	nav	4_4
+staal.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSall	0.040984999040921136	-0.27282140695038953	1	5000	5000	305	staal	NA	NA	BOW	bound	465	lex	5_5	weight	all	4_4
+staal.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.18696705693674434	0.03126688262749317	1	FOC	354	305	staal	NA	NA	BOW	bound	465	lex	5_5	weight	nav	4_4
+staal.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.18939668531394047	0.026668848111760794	1	FOC	465	305	staal	NA	NA	BOW	bound	465	lex	5_5	weight	all	4_4
+staal.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.14750834149419262	-0.03878878225630038	1	5000	5000	305	staal	NA	NA	BOW	bound	465	lex	5_5	selection	nav	4_4
+staal.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSall	0.07075232512586085	-0.3496839542603886	1	5000	5000	305	staal	NA	NA	BOW	bound	465	lex	5_5	selection	all	4_4
+staal.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.16579618932431964	-0.001871302174976282	1	FOC	354	305	staal	NA	NA	BOW	bound	465	lex	5_5	selection	nav	4_4
+staal.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.16738082638232324	-0.0032260364188569867	1	FOC	465	305	staal	NA	NA	BOW	bound	465	lex	5_5	selection	all	4_4
+staal.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSnav	-0.15835572876166046	-0.05984318129685612	1	5000	5000	309	staal	NA	NA	BOW	bound	655	lex	5_5	no	nav	4_4
+staal.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSall	0.1106647845635888	-0.3734359167622509	1	5000	5000	309	staal	NA	NA	BOW	bound	655	lex	5_5	no	all	4_4
+staal.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.1680417135613321	-0.012247754376389083	1	FOC	501	309	staal	NA	NA	BOW	bound	655	lex	5_5	no	nav	4_4
+staal.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSall	-0.17111837648941425	-0.014291705419997547	1	FOC	655	309	staal	NA	NA	BOW	bound	655	lex	5_5	no	all	4_4
+staal.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSnav	-0.10620000014064856	0.04242640435955341	1	5000	5000	310	staal	NA	NA	BOW	bound	596	all	5_5	weight	nav	4_4
+staal.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSall	0.16215327971804736	-0.1480769824266698	1	5000	5000	310	staal	NA	NA	BOW	bound	596	all	5_5	weight	all	4_4
+staal.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.1281227822510253	0.03914179914341333	1	FOC	354	310	staal	NA	NA	BOW	bound	596	all	5_5	weight	nav	4_4
+staal.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSall	-0.11940694622311203	0.025122414638089376	1	FOC	596	310	staal	NA	NA	BOW	bound	596	all	5_5	weight	all	4_4
+staal.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSnav	0.01842516042607243	-3.291897819760724e-4	1	5000	5000	310	staal	NA	NA	BOW	bound	596	all	5_5	selection	nav	4_4
+staal.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSall	0.39548413306821917	-0.1523735063315252	1	5000	5000	310	staal	NA	NA	BOW	bound	596	all	5_5	selection	all	4_4
+staal.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.08556947733360906	0.008273468362791584	1	FOC	354	310	staal	NA	NA	BOW	bound	596	all	5_5	selection	nav	4_4
+staal.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSall	-0.06606964463002789	-0.005671629616143454	1	FOC	596	310	staal	NA	NA	BOW	bound	596	all	5_5	selection	all	4_4
+staal.BOWbound5all.PPMIno.LENGTH5000.SOCPOSnav	-0.012866936786501476	-0.039022515870639325	1	5000	5000	311	staal	NA	NA	BOW	bound	865	all	5_5	no	nav	4_4
+staal.BOWbound5all.PPMIno.LENGTH5000.SOCPOSall	0.3927146460355635	-0.21727111509815983	1	5000	5000	311	staal	NA	NA	BOW	bound	865	all	5_5	no	all	4_4
+staal.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSnav	-0.09640454413043589	-0.0019369983600877733	1	FOC	501	311	staal	NA	NA	BOW	bound	865	all	5_5	no	nav	4_4
+staal.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSall	-0.0747286655060923	-0.022927016771138786	1	FOC	865	311	staal	NA	NA	BOW	bound	865	all	5_5	no	all	4_4
+staal.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.15602791888820408	0.04567688004739147	1	5000	5000	292	staal	NA	NA	BOW	bound	319	lex	3_3	weight	nav	4_4
+staal.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSall	0.0574109420896773	-0.26376915109487037	1	5000	5000	292	staal	NA	NA	BOW	bound	319	lex	3_3	weight	all	4_4
+staal.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.16756883408748147	0.05678619869704012	1	FOC	247	292	staal	NA	NA	BOW	bound	319	lex	3_3	weight	nav	4_4
+staal.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.17463268613335917	0.05558530384536922	1	FOC	319	292	staal	NA	NA	BOW	bound	319	lex	3_3	weight	all	4_4
+staal.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.12581394230997517	-0.01107747214019165	1	5000	5000	292	staal	NA	NA	BOW	bound	319	lex	3_3	selection	nav	4_4
+staal.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSall	0.09697081210243748	-0.2894767311473101	1	5000	5000	292	staal	NA	NA	BOW	bound	319	lex	3_3	selection	all	4_4
+staal.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.14599836581154668	0.03316164318254039	1	FOC	247	292	staal	NA	NA	BOW	bound	319	lex	3_3	selection	nav	4_4
+staal.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.15440145165470828	0.03380297410801504	1	FOC	319	292	staal	NA	NA	BOW	bound	319	lex	3_3	selection	all	4_4
+staal.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSnav	-0.13096266134385876	-0.03443300328589015	1	5000	5000	301	staal	NA	NA	BOW	bound	411	lex	3_3	no	nav	4_4
+staal.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSall	0.09895428449723571	-0.32740630984900293	1	5000	5000	301	staal	NA	NA	BOW	bound	411	lex	3_3	no	all	4_4
+staal.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.15954291759019243	0.03443493794425954	1	FOC	318	301	staal	NA	NA	BOW	bound	411	lex	3_3	no	nav	4_4
+staal.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSall	-0.17011991862554313	0.03617287757458652	1	FOC	411	301	staal	NA	NA	BOW	bound	411	lex	3_3	no	all	4_4
+staal.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSnav	-0.07683172269001438	0.09748925467032975	1	5000	5000	309	staal	NA	NA	BOW	bound	415	all	3_3	weight	nav	4_4
+staal.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSall	0.2109585045909222	-0.09261329310562817	1	5000	5000	309	staal	NA	NA	BOW	bound	415	all	3_3	weight	all	4_4
+staal.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.11610371571855803	0.07711404269859466	1	FOC	247	309	staal	NA	NA	BOW	bound	415	all	3_3	weight	nav	4_4
+staal.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSall	-0.10505844131874971	0.06522189322570249	1	FOC	415	309	staal	NA	NA	BOW	bound	415	all	3_3	weight	all	4_4
+staal.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSnav	0.09415600116001716	0.08009713230298814	1	5000	5000	309	staal	NA	NA	BOW	bound	415	all	3_3	selection	nav	4_4
+staal.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSall	0.4114949924111143	-0.016476259264116565	1	5000	5000	309	staal	NA	NA	BOW	bound	415	all	3_3	selection	all	4_4
+staal.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.05947119915454609	0.04959340801721825	1	FOC	247	309	staal	NA	NA	BOW	bound	415	all	3_3	selection	nav	4_4
+staal.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSall	-0.0373660981243972	0.034912226547850415	1	FOC	415	309	staal	NA	NA	BOW	bound	415	all	3_3	selection	all	4_4
+staal.BOWbound3all.PPMIno.LENGTH5000.SOCPOSnav	0.06690892639264188	0.060597968188086326	1	5000	5000	310	staal	NA	NA	BOW	bound	542	all	3_3	no	nav	4_4
+staal.BOWbound3all.PPMIno.LENGTH5000.SOCPOSall	0.37208449893320916	-0.06494467518727184	1	5000	5000	310	staal	NA	NA	BOW	bound	542	all	3_3	no	all	4_4
+staal.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSnav	-0.06970523648009228	0.04494647534451219	1	FOC	318	310	staal	NA	NA	BOW	bound	542	all	3_3	no	nav	4_4
+staal.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSall	-0.049422617515481354	0.024280530218350475	1	FOC	542	310	staal	NA	NA	BOW	bound	542	all	3_3	no	all	4_4
+staal.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.2090250775029613	-0.019269681986758744	1	5000	5000	311	staal	NA	NA	BOW	nobound	715	lex	10_10	weight	nav	4_4
+staal.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSall	-0.0056452288449888996	-0.28435853323142957	1	5000	5000	311	staal	NA	NA	BOW	nobound	715	lex	10_10	weight	all	4_4
+staal.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.22357102600276496	-0.006668092966824312	1	FOC	553	311	staal	NA	NA	BOW	nobound	715	lex	10_10	weight	nav	4_4
+staal.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.22299695101419414	-0.010320757451794877	1	FOC	715	311	staal	NA	NA	BOW	nobound	715	lex	10_10	weight	all	4_4
+staal.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.2063123019820371	-0.08024561131203123	1	5000	5000	311	staal	NA	NA	BOW	nobound	715	lex	10_10	selection	nav	4_4
+staal.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSall	0.008713198230530189	-0.4500994316532242	1	5000	5000	311	staal	NA	NA	BOW	nobound	715	lex	10_10	selection	all	4_4
+staal.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.22546870117101966	-0.042603052441635175	1	FOC	553	311	staal	NA	NA	BOW	nobound	715	lex	10_10	selection	nav	4_4
+staal.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.2200016777649273	-0.042994629198095456	1	FOC	715	311	staal	NA	NA	BOW	nobound	715	lex	10_10	selection	all	4_4
+staal.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSnav	-0.22776815112082766	-0.10897792949142937	1	5000	5000	311	staal	NA	NA	BOW	nobound	1376	lex	10_10	no	nav	4_4
+staal.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSall	0.05467522390578803	-0.5165650444026306	1	5000	5000	311	staal	NA	NA	BOW	nobound	1376	lex	10_10	no	all	4_4
+staal.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.22360358033882138	-0.06376325595653909	1	FOC	1041	311	staal	NA	NA	BOW	nobound	1376	lex	10_10	no	nav	4_4
+staal.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSall	-0.21769738965184363	-0.0653306188288825	1	FOC	1376	311	staal	NA	NA	BOW	nobound	1376	lex	10_10	no	all	4_4
+staal.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSnav	-0.16023110039193253	-0.027992501679990487	1	5000	5000	311	staal	NA	NA	BOW	nobound	915	all	10_10	weight	nav	4_4
+staal.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSall	0.11996190064714075	-0.23107611385674026	1	5000	5000	311	staal	NA	NA	BOW	nobound	915	all	10_10	weight	all	4_4
+staal.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.20547208633744174	-0.0030141337330647695	1	FOC	553	311	staal	NA	NA	BOW	nobound	915	all	10_10	weight	nav	4_4
+staal.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSall	-0.1916884008302213	-0.02542454359559644	1	FOC	915	311	staal	NA	NA	BOW	nobound	915	all	10_10	weight	all	4_4
+staal.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSnav	-0.1283227731266498	-0.13629409116130392	1	5000	5000	311	staal	NA	NA	BOW	nobound	915	all	10_10	selection	nav	4_4
+staal.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSall	0.3496861667319061	-0.38639209911570943	1	5000	5000	311	staal	NA	NA	BOW	nobound	915	all	10_10	selection	all	4_4
+staal.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.16041881896360813	-0.07154550537446078	1	FOC	553	311	staal	NA	NA	BOW	nobound	915	all	10_10	selection	nav	4_4
+staal.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSall	-0.13217485357572537	-0.08413306383199409	1	FOC	915	311	staal	NA	NA	BOW	nobound	915	all	10_10	selection	all	4_4
+staal.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSnav	-0.20467587770427564	-0.15505516600963556	1	5000	5000	311	staal	NA	NA	BOW	nobound	1812	all	10_10	no	nav	4_4
+staal.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSall	0.3277851273261117	-0.467124339456023	1	5000	5000	311	staal	NA	NA	BOW	nobound	1812	all	10_10	no	all	4_4
+staal.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSnav	-0.18813709789440397	-0.0950885937440177	1	FOC	1041	311	staal	NA	NA	BOW	nobound	1812	all	10_10	no	nav	4_4
+staal.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSall	-0.16240844141084787	-0.12749704153333608	1	FOC	1812	311	staal	NA	NA	BOW	nobound	1812	all	10_10	no	all	4_4
+staal.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.16727552394637643	0.010176959125691047	1	5000	5000	308	staal	NA	NA	BOW	nobound	514	lex	5_5	weight	nav	4_4
+staal.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSall	0.035926314071644816	-0.27330525392648275	1	5000	5000	308	staal	NA	NA	BOW	nobound	514	lex	5_5	weight	all	4_4
+staal.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.19435546311031807	0.029084944430627535	1	FOC	392	308	staal	NA	NA	BOW	nobound	514	lex	5_5	weight	nav	4_4
+staal.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.19411690443623741	0.023829918826127703	1	FOC	514	308	staal	NA	NA	BOW	nobound	514	lex	5_5	weight	all	4_4
+staal.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.15139335650348218	-0.04004329627686345	1	5000	5000	308	staal	NA	NA	BOW	nobound	514	lex	5_5	selection	nav	4_4
+staal.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSall	0.06425735977479394	-0.35935771606930145	1	5000	5000	308	staal	NA	NA	BOW	nobound	514	lex	5_5	selection	all	4_4
+staal.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.17340276582456773	-0.0044209611602213416	1	FOC	392	308	staal	NA	NA	BOW	nobound	514	lex	5_5	selection	nav	4_4
+staal.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.17281390015097428	-0.0067862712233047575	1	FOC	514	308	staal	NA	NA	BOW	nobound	514	lex	5_5	selection	all	4_4
+staal.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSnav	-0.1614533748202099	-0.06195875764753114	1	5000	5000	311	staal	NA	NA	BOW	nobound	732	lex	5_5	no	nav	4_4
+staal.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSall	0.12942675184882976	-0.39931129733907567	1	5000	5000	311	staal	NA	NA	BOW	nobound	732	lex	5_5	no	all	4_4
+staal.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.17263239261004149	-0.015905315551118956	1	FOC	562	311	staal	NA	NA	BOW	nobound	732	lex	5_5	no	nav	4_4
+staal.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSall	-0.1725211373602979	-0.0184797061537407	1	FOC	732	311	staal	NA	NA	BOW	nobound	732	lex	5_5	no	all	4_4
+staal.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSnav	-0.11498843596122213	0.041803364097149895	1	5000	5000	311	staal	NA	NA	BOW	nobound	658	all	5_5	weight	nav	4_4
+staal.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSall	0.1574389094925456	-0.15648665545724963	1	5000	5000	311	staal	NA	NA	BOW	nobound	658	all	5_5	weight	all	4_4
+staal.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.14080746201938732	0.03620173735226695	1	FOC	392	311	staal	NA	NA	BOW	nobound	658	all	5_5	weight	nav	4_4
+staal.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSall	-0.12860302639238994	0.021872108465242287	1	FOC	658	311	staal	NA	NA	BOW	nobound	658	all	5_5	weight	all	4_4
+staal.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSnav	0.009156842742329765	-0.014894068837477301	1	5000	5000	311	staal	NA	NA	BOW	nobound	658	all	5_5	selection	nav	4_4
+staal.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSall	0.4095040503753413	-0.19092383408519192	1	5000	5000	311	staal	NA	NA	BOW	nobound	658	all	5_5	selection	all	4_4
+staal.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.09402452927827507	0.0011842636821135914	1	FOC	392	311	staal	NA	NA	BOW	nobound	658	all	5_5	selection	nav	4_4
+staal.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSall	-0.07389340127026453	-0.012265909388092053	1	FOC	658	311	staal	NA	NA	BOW	nobound	658	all	5_5	selection	all	4_4
+staal.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSnav	-0.027876239626025423	-0.054958366583314114	1	5000	5000	311	staal	NA	NA	BOW	nobound	968	all	5_5	no	nav	4_4
+staal.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSall	0.40318475766403444	-0.2672070688617792	1	5000	5000	311	staal	NA	NA	BOW	nobound	968	all	5_5	no	all	4_4
+staal.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSnav	-0.10351875110558212	-0.008977444036659617	1	FOC	562	311	staal	NA	NA	BOW	nobound	968	all	5_5	no	nav	4_4
+staal.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSall	-0.08044863928373813	-0.03294154648577051	1	FOC	968	311	staal	NA	NA	BOW	nobound	968	all	5_5	no	all	4_4
+staal.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.15996243960649068	0.045118762114917874	1	5000	5000	296	staal	NA	NA	BOW	nobound	337	lex	3_3	weight	nav	4_4
+staal.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSall	0.04887072116310552	-0.2678871740497532	1	5000	5000	296	staal	NA	NA	BOW	nobound	337	lex	3_3	weight	all	4_4
+staal.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.17108884197362992	0.058550642303550685	1	FOC	263	296	staal	NA	NA	BOW	nobound	337	lex	3_3	weight	nav	4_4
+staal.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.17518451289744372	0.05440493503353894	1	FOC	337	296	staal	NA	NA	BOW	nobound	337	lex	3_3	weight	all	4_4
+staal.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.12766350988518696	-0.013124349079197123	1	5000	5000	296	staal	NA	NA	BOW	nobound	337	lex	3_3	selection	nav	4_4
+staal.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSall	0.08960772809779396	-0.29711530594631097	1	5000	5000	296	staal	NA	NA	BOW	nobound	337	lex	3_3	selection	all	4_4
+staal.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.14865821595588588	0.03626386495529329	1	FOC	263	296	staal	NA	NA	BOW	nobound	337	lex	3_3	selection	nav	4_4
+staal.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.15450120076042537	0.03210794894978043	1	FOC	337	296	staal	NA	NA	BOW	nobound	337	lex	3_3	selection	all	4_4
+staal.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSnav	-0.13733343253964247	-0.03815806656143518	1	5000	5000	304	staal	NA	NA	BOW	nobound	438	lex	3_3	no	nav	4_4
+staal.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSall	0.09945269119494925	-0.3398460180471537	1	5000	5000	304	staal	NA	NA	BOW	nobound	438	lex	3_3	no	all	4_4
+staal.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.1666238462082137	0.03318906401985627	1	FOC	340	304	staal	NA	NA	BOW	nobound	438	lex	3_3	no	nav	4_4
+staal.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSall	-0.17522173612974395	0.0332705883768941	1	FOC	438	304	staal	NA	NA	BOW	nobound	438	lex	3_3	no	all	4_4
+staal.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSnav	-0.08406795623250365	0.09052750447820557	1	5000	5000	309	staal	NA	NA	BOW	nobound	439	all	3_3	weight	nav	4_4
+staal.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSall	0.2046488363549131	-0.1002946939077717	1	5000	5000	309	staal	NA	NA	BOW	nobound	439	all	3_3	weight	all	4_4
+staal.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.12397571859466382	0.07680842214545215	1	FOC	263	309	staal	NA	NA	BOW	nobound	439	all	3_3	weight	nav	4_4
+staal.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSall	-0.11365329992300177	0.06418005412070217	1	FOC	439	309	staal	NA	NA	BOW	nobound	439	all	3_3	weight	all	4_4
+staal.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSnav	0.08796982891460615	0.06894173822603096	1	5000	5000	309	staal	NA	NA	BOW	nobound	439	all	3_3	selection	nav	4_4
+staal.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSall	0.4212877599302624	-0.033884705616122855	1	5000	5000	309	staal	NA	NA	BOW	nobound	439	all	3_3	selection	all	4_4
+staal.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.06604253319832784	0.04760834161468181	1	FOC	263	309	staal	NA	NA	BOW	nobound	439	all	3_3	selection	nav	4_4
+staal.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSall	-0.043969670895384005	0.032109736155816665	1	FOC	439	309	staal	NA	NA	BOW	nobound	439	all	3_3	selection	all	4_4
+staal.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSnav	0.06370326773486337	0.05408744885011674	1	5000	5000	311	staal	NA	NA	BOW	nobound	579	all	3_3	no	nav	4_4
+staal.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSall	0.38546157392325453	-0.10417991829273146	1	5000	5000	311	staal	NA	NA	BOW	nobound	579	all	3_3	no	all	4_4
+staal.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSnav	-0.07498023674888024	0.04390080928862032	1	FOC	340	311	staal	NA	NA	BOW	nobound	579	all	3_3	no	nav	4_4
+staal.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSall	-0.05326702186464033	0.02129581762494929	1	FOC	579	311	staal	NA	NA	BOW	nobound	579	all	3_3	no	all	4_4
+staal.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSnav	-0.03945051712917168	0.17206800649153484	1	5000	5000	309	staal	selection2	NA	dependency	bound	310	NA	NA	weight	nav	4_4
+staal.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSall	0.25703752737744523	0.024620097801993784	1	5000	5000	309	staal	selection2	NA	dependency	bound	310	NA	NA	weight	all	4_4
+staal.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSnav	-0.09754935613469674	0.1455624029747108	1	FOC	206	309	staal	selection2	NA	dependency	bound	310	NA	NA	weight	nav	4_4
+staal.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSall	-0.09477085451834255	0.14394016774655283	1	FOC	310	309	staal	selection2	NA	dependency	bound	310	NA	NA	weight	all	4_4
+staal.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSnav	0.10876969113921382	0.1761852255813864	1	5000	5000	309	staal	selection2	NA	dependency	bound	310	NA	NA	selection	nav	4_4
+staal.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSall	0.4409781000341503	0.0899727277819274	1	5000	5000	309	staal	selection2	NA	dependency	bound	310	NA	NA	selection	all	4_4
+staal.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSnav	-0.02613176907906637	0.1248032922013669	1	FOC	206	309	staal	selection2	NA	dependency	bound	310	NA	NA	selection	nav	4_4
+staal.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSall	-0.01618171833943182	0.12136421179632545	1	FOC	310	309	staal	selection2	NA	dependency	bound	310	NA	NA	selection	all	4_4
+staal.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSnav	0.08066352444763426	0.15854389187859347	1	5000	5000	311	staal	selection2	NA	dependency	bound	438	NA	NA	no	nav	4_4
+staal.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSall	0.42716542371839344	0.055868416063682126	1	5000	5000	311	staal	selection2	NA	dependency	bound	438	NA	NA	no	all	4_4
+staal.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSnav	-0.0348450607092953	0.11577684611155066	1	FOC	277	311	staal	selection2	NA	dependency	bound	438	NA	NA	no	nav	4_4
+staal.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSall	-0.025005667906747436	0.11045041175884401	1	FOC	438	311	staal	selection2	NA	dependency	bound	438	NA	NA	no	all	4_4
+staal.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSnav	-0.07185401700869605	0.13803000345228644	1	5000	5000	310	staal	selection3	NA	dependency	bound	476	NA	NA	weight	nav	4_4
+staal.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSall	0.2233076506368269	-0.07873080717416646	1	5000	5000	310	staal	selection3	NA	dependency	bound	476	NA	NA	weight	all	4_4
+staal.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSnav	-0.11480593504088234	0.09409394648256612	1	FOC	301	310	staal	selection3	NA	dependency	bound	476	NA	NA	weight	nav	4_4
+staal.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSall	-0.10734004043022291	0.08598344429253472	1	FOC	476	310	staal	selection3	NA	dependency	bound	476	NA	NA	weight	all	4_4
+staal.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSnav	0.08301847880326244	0.09396425345987168	1	5000	5000	310	staal	selection3	NA	dependency	bound	476	NA	NA	selection	nav	4_4
+staal.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSall	0.42961237331406626	-0.0461578313406235	1	5000	5000	310	staal	selection3	NA	dependency	bound	476	NA	NA	selection	all	4_4
+staal.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSnav	-0.04614583561731304	0.06180366340386377	1	FOC	301	310	staal	selection3	NA	dependency	bound	476	NA	NA	selection	nav	4_4
+staal.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSall	-0.03709943976295009	0.05664380261476082	1	FOC	476	310	staal	selection3	NA	dependency	bound	476	NA	NA	selection	all	4_4
+staal.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSnav	0.0628860158679492	0.07597271533046154	1	5000	5000	311	staal	selection3	NA	dependency	bound	709	NA	NA	no	nav	4_4
+staal.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSall	0.39712372152453923	-0.09367039911351162	1	5000	5000	311	staal	selection3	NA	dependency	bound	709	NA	NA	no	all	4_4
+staal.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSnav	-0.053086832147400335	0.05965018677563532	1	FOC	431	311	staal	selection3	NA	dependency	bound	709	NA	NA	no	nav	4_4
+staal.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSall	-0.03954665093262202	0.049761155055934744	1	FOC	709	311	staal	selection3	NA	dependency	bound	709	NA	NA	no	all	4_4
+staal.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSnav	0.12446178305185929	0.16799808507568117	1	5000	5000	310	staal	weight	NA	dependency	bound	476	NA	NA	selection	nav	4_4
+staal.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSall	0.38909541812573784	0.07791659505312058	1	5000	5000	310	staal	weight	NA	dependency	bound	476	NA	NA	selection	all	4_4
+staal.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSnav	-0.0018933458975862124	0.10644764528542787	1	FOC	301	310	staal	weight	NA	dependency	bound	476	NA	NA	selection	nav	4_4
+staal.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSall	0.01120200702834844	0.10641970945222409	1	FOC	476	310	staal	weight	NA	dependency	bound	476	NA	NA	selection	all	4_4
+staal.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSnav	0.097969154076878	0.15096396422653402	1	5000	5000	311	staal	weight	NA	dependency	bound	709	NA	NA	no	nav	4_4
+staal.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSall	0.370029136106271	0.049414321072760725	1	5000	5000	311	staal	weight	NA	dependency	bound	709	NA	NA	no	all	4_4
+staal.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSnav	-0.0091362674934518991	0.10013265484016977	1	FOC	431	311	staal	weight	NA	dependency	bound	709	NA	NA	no	nav	4_4
+staal.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSall	0.003748704289999184	0.09706486858587725	1	FOC	709	311	staal	weight	NA	dependency	bound	709	NA	NA	no	all	4_4
+staal.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSnav	0.15349106127188691	0.2929625792475921	1	5000	5000	226	staal	NA	group1	dependency	bound	96	NA	NA	weight	nav	4_4
+staal.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSall	0.298579142679422	0.22752012356365747	1	5000	5000	226	staal	NA	group1	dependency	bound	96	NA	NA	weight	all	4_4
+staal.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSnav	0.19788854439905817	0.40066735072115195	1	FOC	54	226	staal	NA	group1	dependency	bound	96	NA	NA	weight	nav	4_4
+staal.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSall	0.18999632819160703	0.4002036121029323	1	FOC	96	226	staal	NA	group1	dependency	bound	96	NA	NA	weight	all	4_4
+staal.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSnav	0.2451501821896433	0.29097058240352175	1	5000	5000	226	staal	NA	group1	dependency	bound	96	NA	NA	selection	nav	4_4
+staal.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSall	0.43380125854769863	0.26763792980609935	1	5000	5000	226	staal	NA	group1	dependency	bound	96	NA	NA	selection	all	4_4
+staal.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSnav	0.22822155927517881	0.37249522356787074	1	FOC	54	226	staal	NA	group1	dependency	bound	96	NA	NA	selection	nav	4_4
+staal.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSall	0.20587649134011565	0.32881874709536757	1	FOC	96	226	staal	NA	group1	dependency	bound	96	NA	NA	selection	all	4_4
+staal.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSnav	0.2459394207720914	0.29235894500863174	1	5000	5000	236	staal	NA	group1	dependency	bound	128	NA	NA	no	nav	4_4
+staal.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSall	0.43284337337414613	0.25800256418506606	1	5000	5000	236	staal	NA	group1	dependency	bound	128	NA	NA	no	all	4_4
+staal.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSnav	0.23895356823167319	0.36628275542900535	1	FOC	69	236	staal	NA	group1	dependency	bound	128	NA	NA	no	nav	4_4
+staal.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSall	0.21694842988063187	0.3200760926776605	1	FOC	128	236	staal	NA	group1	dependency	bound	128	NA	NA	no	all	4_4
+staal.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSnav	-0.04269362883642152	0.17489573899873453	1	5000	5000	296	staal	NA	group2	dependency	bound	247	NA	NA	weight	nav	4_4
+staal.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSall	0.2483228496956754	0.08088349659419569	1	5000	5000	296	staal	NA	group2	dependency	bound	247	NA	NA	weight	all	4_4
+staal.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSnav	-0.09366584548708116	0.1541090121512264	1	FOC	174	296	staal	NA	group2	dependency	bound	247	NA	NA	weight	nav	4_4
+staal.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSall	-0.08948692144189385	0.15578200817528162	1	FOC	247	296	staal	NA	group2	dependency	bound	247	NA	NA	weight	all	4_4
+staal.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSnav	0.10457901238460723	0.19244917977635762	1	5000	5000	296	staal	NA	group2	dependency	bound	247	NA	NA	selection	nav	4_4
+staal.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSall	0.4430445354186304	0.16803620901819774	1	5000	5000	296	staal	NA	group2	dependency	bound	247	NA	NA	selection	all	4_4
+staal.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSnav	-0.020352493855209937	0.1521512290883836	1	FOC	174	296	staal	NA	group2	dependency	bound	247	NA	NA	selection	nav	4_4
+staal.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSall	-0.015497172165364437	0.15499093337237982	1	FOC	247	296	staal	NA	group2	dependency	bound	247	NA	NA	selection	all	4_4
+staal.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSnav	0.09307744363378363	0.18879175745759638	1	5000	5000	303	staal	NA	group2	dependency	bound	321	NA	NA	no	nav	4_4
+staal.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSall	0.4467859311633383	0.14907341991738796	1	5000	5000	303	staal	NA	group2	dependency	bound	321	NA	NA	no	all	4_4
+staal.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSnav	-0.0251157323183571	0.15160345098522865	1	FOC	221	303	staal	NA	group2	dependency	bound	321	NA	NA	no	nav	4_4
+staal.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSall	-0.020336614539040166	0.1543209428246706	1	FOC	321	303	staal	NA	group2	dependency	bound	321	NA	NA	no	all	4_4
+staal.LEMMAREL3.PPMIweight.LENGTH5000.SOCPOSnav	-0.04704306801058387	0.16814229774501846	1	5000	5000	297	staal	NA	group3	dependency	bound	264	NA	NA	weight	nav	4_4
+staal.LEMMAREL3.PPMIweight.LENGTH5000.SOCPOSall	0.24600743823434115	0.08121709896049965	1	5000	5000	297	staal	NA	group3	dependency	bound	264	NA	NA	weight	all	4_4
+staal.LEMMAREL3.PPMIweight.LENGTHFOC.SOCPOSnav	-0.08763464321808827	0.14838587466323117	1	FOC	183	297	staal	NA	group3	dependency	bound	264	NA	NA	weight	nav	4_4
+staal.LEMMAREL3.PPMIweight.LENGTHFOC.SOCPOSall	-0.09311585493834017	0.14747735407398607	1	FOC	264	297	staal	NA	group3	dependency	bound	264	NA	NA	weight	all	4_4
+staal.LEMMAREL3.PPMIselection.LENGTH5000.SOCPOSnav	0.10076917417399199	0.18922617523537918	1	5000	5000	297	staal	NA	group3	dependency	bound	264	NA	NA	selection	nav	4_4
+staal.LEMMAREL3.PPMIselection.LENGTH5000.SOCPOSall	0.45892716471206063	0.1644565420605371	1	5000	5000	297	staal	NA	group3	dependency	bound	264	NA	NA	selection	all	4_4
+staal.LEMMAREL3.PPMIselection.LENGTHFOC.SOCPOSnav	-0.02417147464325243	0.1407617006344366	1	FOC	183	297	staal	NA	group3	dependency	bound	264	NA	NA	selection	nav	4_4
+staal.LEMMAREL3.PPMIselection.LENGTHFOC.SOCPOSall	-0.021551876866692563	0.13966261245584183	1	FOC	264	297	staal	NA	group3	dependency	bound	264	NA	NA	selection	all	4_4
+staal.LEMMAREL3.PPMIno.LENGTH5000.SOCPOSnav	0.08678295761176001	0.1824432689192316	1	5000	5000	303	staal	NA	group3	dependency	bound	359	NA	NA	no	nav	4_4
+staal.LEMMAREL3.PPMIno.LENGTH5000.SOCPOSall	0.46941326915676684	0.13711981042900043	1	5000	5000	303	staal	NA	group3	dependency	bound	359	NA	NA	no	all	4_4
+staal.LEMMAREL3.PPMIno.LENGTHFOC.SOCPOSnav	-0.03208699855678558	0.1363148830138984	1	FOC	235	303	staal	NA	group3	dependency	bound	359	NA	NA	no	nav	4_4
+staal.LEMMAREL3.PPMIno.LENGTHFOC.SOCPOSall	-0.02975361560802709	0.1367678033990473	1	FOC	359	303	staal	NA	group3	dependency	bound	359	NA	NA	no	all	4_4

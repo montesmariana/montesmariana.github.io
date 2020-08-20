@@ -1,145 +1,213 @@
-_model	model.x	model.y	foc_length	foc_minimum_features	foc_part_of_speech	foc_sent_bound	foc_weighting	foc_window	soc_length	soc_length_num	soc_part_of_speech	soc_window	tokens	type	stress
-stof.foc10.nav.ppmi_weight.bound.min1.soc4.nav.5000	-0.1725515026925366	-0.04228138516230098	728	1	nav	bound	ppmi_weight	10_10	5000	5e3	nav	4_4	317	stof	0.23287994290179337
-stof.foc10.nav.ppmi_weight.bound.min1.soc4.nav.10000	-0.18193655444061863	-0.06486146338664259	728	1	nav	bound	ppmi_weight	10_10	10000	1e4	nav	4_4	317	stof	0.23217046837767308
-stof.foc10.nav.ppmi_weight.bound.min1.soc4.nav.foc	-0.20397794475657816	-0.07458428505627526	728	1	nav	bound	ppmi_weight	10_10	foc	728	nav	4_4	317	stof	0.23064271285660926
-stof.foc10.nav.ppmi_weight.bound.min1.soc10.nav.5000	-0.17015407858092566	-0.025488968518659855	728	1	nav	bound	ppmi_weight	10_10	5000	5e3	nav	10_10	317	stof	0.22202484934814387
-stof.foc10.nav.ppmi_weight.bound.min1.soc10.nav.10000	-0.1711227634921574	-0.05084958642844693	728	1	nav	bound	ppmi_weight	10_10	10000	1e4	nav	10_10	317	stof	0.22459583313742953
-stof.foc10.nav.ppmi_weight.bound.min1.soc10.nav.foc	-0.21583687792792686	-0.08763782588160027	728	1	nav	bound	ppmi_weight	10_10	foc	728	nav	10_10	317	stof	0.21809887457372545
-stof.foc10.nav.ppmi_weight.bound.min1.soc4.all.5000	-0.17594456341594206	-0.038909447855376506	728	1	nav	bound	ppmi_weight	10_10	5000	5e3	all	4_4	317	stof	0.23744435791924634
-stof.foc10.nav.ppmi_weight.bound.min1.soc4.all.10000	-0.17987855228491223	-0.059950837535774834	728	1	nav	bound	ppmi_weight	10_10	10000	1e4	all	4_4	317	stof	0.23296695692566066
-stof.foc10.nav.ppmi_weight.bound.min1.soc4.all.foc	-0.20397794475658043	-0.07458428505626577	728	1	nav	bound	ppmi_weight	10_10	foc	728	all	4_4	317	stof	0.22871961748076336
-stof.foc10.nav.ppmi_weight.bound.min1.soc10.all.5000	-0.17354128955858916	-0.021836826790572354	728	1	nav	bound	ppmi_weight	10_10	5000	5e3	all	10_10	317	stof	0.2245253702262157
-stof.foc10.nav.ppmi_weight.bound.min1.soc10.all.10000	-0.17040208391298697	-0.03987491411044653	728	1	nav	bound	ppmi_weight	10_10	10000	1e4	all	10_10	317	stof	0.22501538183999018
-stof.foc10.nav.ppmi_weight.bound.min1.soc10.all.foc	-0.21583687792799797	-0.08763782588318826	728	1	nav	bound	ppmi_weight	10_10	foc	728	all	10_10	317	stof	0.217159008894464
-stof.foc10.nav.ppmi_sel.bound.min1.soc4.nav.5000	-0.08636418763855401	0.19610534845131075	728	1	nav	bound	ppmi_sel	10_10	5000	5e3	nav	4_4	317	stof	0.2349665770223605
-stof.foc10.nav.ppmi_sel.bound.min1.soc4.nav.10000	-0.08187547159762976	0.19223928411567243	728	1	nav	bound	ppmi_sel	10_10	10000	1e4	nav	4_4	317	stof	0.23305636260212567
-stof.foc10.nav.ppmi_sel.bound.min1.soc4.nav.foc	-0.11074979630784285	0.08822482157578655	728	1	nav	bound	ppmi_sel	10_10	foc	728	nav	4_4	317	stof	0.2252164139285167
-stof.foc10.nav.ppmi_sel.bound.min1.soc10.nav.5000	-0.08852891926024756	0.16484807967566528	728	1	nav	bound	ppmi_sel	10_10	5000	5e3	nav	10_10	317	stof	0.22332998604410845
-stof.foc10.nav.ppmi_sel.bound.min1.soc10.nav.10000	-0.0872739351661732	0.1360824912291013	728	1	nav	bound	ppmi_sel	10_10	10000	1e4	nav	10_10	317	stof	0.22358271652660117
-stof.foc10.nav.ppmi_sel.bound.min1.soc10.nav.foc	-0.11247347358641437	0.07718958581585918	728	1	nav	bound	ppmi_sel	10_10	foc	728	nav	10_10	317	stof	0.2123773698760814
-stof.foc10.nav.ppmi_sel.bound.min1.soc4.all.5000	-0.08429761907748715	0.22055712491411353	728	1	nav	bound	ppmi_sel	10_10	5000	5e3	all	4_4	317	stof	0.23501156640223902
-stof.foc10.nav.ppmi_sel.bound.min1.soc4.all.10000	-0.08292500947050453	0.20954318129355612	728	1	nav	bound	ppmi_sel	10_10	10000	1e4	all	4_4	317	stof	0.23444261418204015
-stof.foc10.nav.ppmi_sel.bound.min1.soc4.all.foc	-0.1107497963078413	0.08822482157578247	728	1	nav	bound	ppmi_sel	10_10	foc	728	all	4_4	317	stof	0.2252164139285167
-stof.foc10.nav.ppmi_sel.bound.min1.soc10.all.5000	-0.0889333618549793	0.19285846245261148	728	1	nav	bound	ppmi_sel	10_10	5000	5e3	all	10_10	317	stof	0.22383184150216537
-stof.foc10.nav.ppmi_sel.bound.min1.soc10.all.10000	-0.08778564387738026	0.15521094633603666	728	1	nav	bound	ppmi_sel	10_10	10000	1e4	all	10_10	317	stof	0.22507362865898067
-stof.foc10.nav.ppmi_sel.bound.min1.soc10.all.foc	-0.11247347358641364	0.07718958581585453	728	1	nav	bound	ppmi_sel	10_10	foc	728	all	10_10	317	stof	0.2123773698760814
-stof.foc10.nav.no_ppmi.bound.min1.soc4.nav.5000	0.027713987868834618	0.2638055260831361	1093	1	nav	bound	no_ppmi	10_10	5000	5e3	nav	4_4	320	stof	0.23906830755646113
-stof.foc10.nav.no_ppmi.bound.min1.soc4.nav.10000	0.04121917958704516	0.2609148770603474	1093	1	nav	bound	no_ppmi	10_10	10000	1e4	nav	4_4	320	stof	0.23634844416599982
-stof.foc10.nav.no_ppmi.bound.min1.soc4.nav.foc	-0.0308164412095636	0.14943354196068118	1093	1	nav	bound	no_ppmi	10_10	foc	1093	nav	4_4	320	stof	0.22405170603602953
-stof.foc10.nav.no_ppmi.bound.min1.soc10.nav.5000	0.008921837299935184	0.26550059478237403	1093	1	nav	bound	no_ppmi	10_10	5000	5e3	nav	10_10	320	stof	0.22811537879132662
-stof.foc10.nav.no_ppmi.bound.min1.soc10.nav.10000	0.01740652904553683	0.2312018758702125	1093	1	nav	bound	no_ppmi	10_10	10000	1e4	nav	10_10	320	stof	0.2284474590120141
-stof.foc10.nav.no_ppmi.bound.min1.soc10.nav.foc	-0.04043704030318865	0.14088189084139802	1093	1	nav	bound	no_ppmi	10_10	foc	1093	nav	10_10	320	stof	0.21459615743498656
-stof.foc10.nav.no_ppmi.bound.min1.soc4.all.5000	0.04123343915527864	0.29144002934422525	1093	1	nav	bound	no_ppmi	10_10	5000	5e3	all	4_4	320	stof	0.2425843405865768
-stof.foc10.nav.no_ppmi.bound.min1.soc4.all.10000	0.048844369550895765	0.27739299680508933	1093	1	nav	bound	no_ppmi	10_10	10000	1e4	all	4_4	320	stof	0.24171980593015907
-stof.foc10.nav.no_ppmi.bound.min1.soc4.all.foc	-0.030816441209564744	0.14943354196068534	1093	1	nav	bound	no_ppmi	10_10	foc	1093	all	4_4	320	stof	0.22404079171131314
-stof.foc10.nav.no_ppmi.bound.min1.soc10.all.5000	0.019859346086315698	0.29380221368237663	1093	1	nav	bound	no_ppmi	10_10	5000	5e3	all	10_10	320	stof	0.23149160729033885
-stof.foc10.nav.no_ppmi.bound.min1.soc10.all.10000	0.021398905200731053	0.26052450948294725	1093	1	nav	bound	no_ppmi	10_10	10000	1e4	all	10_10	320	stof	0.23335008546922262
-stof.foc10.nav.no_ppmi.bound.min1.soc10.all.foc	-0.040437040303187954	0.14088189084139321	1093	1	nav	bound	no_ppmi	10_10	foc	1093	all	10_10	320	stof	0.21459576271527794
-stof.foc10.all.ppmi_weight.bound.min1.soc4.nav.5000	-0.07588762958285232	-0.1285341167149819	823	1	all	bound	ppmi_weight	10_10	5000	5e3	nav	4_4	320	stof	0.2193370239308103
-stof.foc10.all.ppmi_weight.bound.min1.soc4.nav.10000	-0.07762714377365655	-0.1898103835536038	823	1	all	bound	ppmi_weight	10_10	10000	1e4	nav	4_4	320	stof	0.21626695816861824
-stof.foc10.all.ppmi_weight.bound.min1.soc4.nav.foc	-0.10791653980283615	-0.1547133618462767	823	1	all	bound	ppmi_weight	10_10	foc	823	nav	4_4	320	stof	0.2083761413447702
-stof.foc10.all.ppmi_weight.bound.min1.soc10.nav.5000	-0.09513243768426152	-0.0975667765195745	823	1	all	bound	ppmi_weight	10_10	5000	5e3	nav	10_10	320	stof	0.21417628223885216
-stof.foc10.all.ppmi_weight.bound.min1.soc10.nav.10000	-0.09412328752083345	-0.14012174367673308	823	1	all	bound	ppmi_weight	10_10	10000	1e4	nav	10_10	320	stof	0.21227727342614805
-stof.foc10.all.ppmi_weight.bound.min1.soc10.nav.foc	-0.129851828781207	-0.14862871363251753	823	1	all	bound	ppmi_weight	10_10	foc	823	nav	10_10	320	stof	0.20297170710319715
-stof.foc10.all.ppmi_weight.bound.min1.soc4.all.5000	-0.07317155990934444	-0.12255556109850016	823	1	all	bound	ppmi_weight	10_10	5000	5e3	all	4_4	320	stof	0.22610143580945097
-stof.foc10.all.ppmi_weight.bound.min1.soc4.all.10000	-0.07662244177333477	-0.17676040531126347	823	1	all	bound	ppmi_weight	10_10	10000	1e4	all	4_4	320	stof	0.219127605676725
-stof.foc10.all.ppmi_weight.bound.min1.soc4.all.foc	-0.10791653980283346	-0.15471336184628087	823	1	all	bound	ppmi_weight	10_10	foc	823	all	4_4	320	stof	0.2083761413447702
-stof.foc10.all.ppmi_weight.bound.min1.soc10.all.5000	-0.09072152608172154	-0.0935250942497698	823	1	all	bound	ppmi_weight	10_10	5000	5e3	all	10_10	320	stof	0.2184698783893691
-stof.foc10.all.ppmi_weight.bound.min1.soc10.all.10000	-0.09357274252641412	-0.11857725284062937	823	1	all	bound	ppmi_weight	10_10	10000	1e4	all	10_10	320	stof	0.2173978948763053
-stof.foc10.all.ppmi_weight.bound.min1.soc10.all.foc	-0.1298518287812016	-0.1486287136325173	823	1	all	bound	ppmi_weight	10_10	foc	823	all	10_10	320	stof	0.20297170710319715
-stof.foc10.all.ppmi_sel.bound.min1.soc4.nav.5000	0.467534909225771	0.08401250108811903	823	1	all	bound	ppmi_sel	10_10	5000	5e3	nav	4_4	320	stof	0.2560147517547429
-stof.foc10.all.ppmi_sel.bound.min1.soc4.nav.10000	0.49261237328493085	0.08116994416570376	823	1	all	bound	ppmi_sel	10_10	10000	1e4	nav	4_4	320	stof	0.2498626026975773
-stof.foc10.all.ppmi_sel.bound.min1.soc4.nav.foc	0.24580983630082234	0.04262828153091884	823	1	all	bound	ppmi_sel	10_10	foc	823	nav	4_4	320	stof	0.22543596354177536
-stof.foc10.all.ppmi_sel.bound.min1.soc10.nav.5000	0.28102737882333156	0.08511929440586996	823	1	all	bound	ppmi_sel	10_10	5000	5e3	nav	10_10	320	stof	0.2375820593024409
-stof.foc10.all.ppmi_sel.bound.min1.soc10.nav.10000	0.2818526153477564	0.06941180295521157	823	1	all	bound	ppmi_sel	10_10	10000	1e4	nav	10_10	320	stof	0.23520262536569114
-stof.foc10.all.ppmi_sel.bound.min1.soc10.nav.foc	0.1242937604553656	0.01756377904828818	823	1	all	bound	ppmi_sel	10_10	foc	823	nav	10_10	320	stof	0.21016201079318717
-stof.foc10.all.ppmi_sel.bound.min1.soc4.all.5000	0.46856027131956907	0.0834810231002356	823	1	all	bound	ppmi_sel	10_10	5000	5e3	all	4_4	320	stof	0.2634223182579289
-stof.foc10.all.ppmi_sel.bound.min1.soc4.all.10000	0.4886576138615883	0.07891211542252893	823	1	all	bound	ppmi_sel	10_10	10000	1e4	all	4_4	320	stof	0.25899724820891173
-stof.foc10.all.ppmi_sel.bound.min1.soc4.all.foc	0.24580983630082157	0.04262828153093353	823	1	all	bound	ppmi_sel	10_10	foc	823	all	4_4	320	stof	0.22541255183131229
-stof.foc10.all.ppmi_sel.bound.min1.soc10.all.5000	0.29674404185994097	0.09202721951004018	823	1	all	bound	ppmi_sel	10_10	5000	5e3	all	10_10	320	stof	0.24395462439496846
-stof.foc10.all.ppmi_sel.bound.min1.soc10.all.10000	0.2925693819302237	0.0747381793823852	823	1	all	bound	ppmi_sel	10_10	10000	1e4	all	10_10	320	stof	0.24280340350113427
-stof.foc10.all.ppmi_sel.bound.min1.soc10.all.foc	0.12429376045525417	0.017563779048123597	823	1	all	bound	ppmi_sel	10_10	foc	823	all	10_10	320	stof	0.21016201079318717
-stof.foc10.all.no_ppmi.bound.min1.soc4.nav.5000	0.4723915129128475	0.15534991636994924	1275	1	all	bound	no_ppmi	10_10	5000	5e3	nav	4_4	320	stof	0.24891369088111573
-stof.foc10.all.no_ppmi.bound.min1.soc4.nav.10000	0.4963319324274296	0.15264327944817316	1275	1	all	bound	no_ppmi	10_10	10000	1e4	nav	4_4	320	stof	0.2404578659240644
-stof.foc10.all.no_ppmi.bound.min1.soc4.nav.foc	0.31922372682474054	0.1189656643567931	1275	1	all	bound	no_ppmi	10_10	foc	1275	nav	4_4	320	stof	0.22390827438487854
-stof.foc10.all.no_ppmi.bound.min1.soc10.nav.5000	0.33086486536501086	0.18370403427947765	1275	1	all	bound	no_ppmi	10_10	5000	5e3	nav	10_10	320	stof	0.23345720934570813
-stof.foc10.all.no_ppmi.bound.min1.soc10.nav.10000	0.34019628902492627	0.16495976394090694	1275	1	all	bound	no_ppmi	10_10	10000	1e4	nav	10_10	320	stof	0.22864966403940934
-stof.foc10.all.no_ppmi.bound.min1.soc10.nav.foc	0.1845501638261061	0.10309963727041442	1275	1	all	bound	no_ppmi	10_10	foc	1275	nav	10_10	320	stof	0.21238664400279164
-stof.foc10.all.no_ppmi.bound.min1.soc4.all.5000	0.4828118653266945	0.16416397368643176	1275	1	all	bound	no_ppmi	10_10	5000	5e3	all	4_4	320	stof	0.2520256593502052
-stof.foc10.all.no_ppmi.bound.min1.soc4.all.10000	0.49608579792016383	0.15555399654837096	1275	1	all	bound	no_ppmi	10_10	10000	1e4	all	4_4	320	stof	0.2478313091892711
-stof.foc10.all.no_ppmi.bound.min1.soc4.all.foc	0.3192237269958773	0.11896566442158431	1275	1	all	bound	no_ppmi	10_10	foc	1275	all	4_4	320	stof	0.22390827438487854
-stof.foc10.all.no_ppmi.bound.min1.soc10.all.5000	0.35158890471626525	0.19832222506589617	1275	1	all	bound	no_ppmi	10_10	5000	5e3	all	10_10	320	stof	0.23890208217931735
-stof.foc10.all.no_ppmi.bound.min1.soc10.all.10000	0.3516936996174153	0.17642737339721876	1275	1	all	bound	no_ppmi	10_10	10000	1e4	all	10_10	320	stof	0.2376505984578295
-stof.foc10.all.no_ppmi.bound.min1.soc10.all.foc	0.18455016382610467	0.10309963727041958	1275	1	all	bound	no_ppmi	10_10	foc	1275	all	10_10	320	stof	0.21238664400279164
-stof.foc5.nav.ppmi_weight.bound.min1.soc4.nav.5000	-0.25148281986501586	-0.07030948670853258	490	1	nav	bound	ppmi_weight	5_5	5000	5e3	nav	4_4	314	stof	0.23880594133355507
-stof.foc5.nav.ppmi_weight.bound.min1.soc4.nav.10000	-0.26091781816524023	-0.11811946417407221	490	1	nav	bound	ppmi_weight	5_5	10000	1e4	nav	4_4	314	stof	0.23658795121855167
-stof.foc5.nav.ppmi_weight.bound.min1.soc4.nav.foc	-0.26452516108024265	-0.10070677214729468	490	1	nav	bound	ppmi_weight	5_5	foc	490	nav	4_4	314	stof	0.2431163901526488
-stof.foc5.nav.ppmi_weight.bound.min1.soc10.nav.5000	-0.24771323026095227	-0.049621625484232025	490	1	nav	bound	ppmi_weight	5_5	5000	5e3	nav	10_10	314	stof	0.22563570363703017
-stof.foc5.nav.ppmi_weight.bound.min1.soc10.nav.10000	-0.25234381975435694	-0.07666977498979671	490	1	nav	bound	ppmi_weight	5_5	10000	1e4	nav	10_10	314	stof	0.22734609915380194
-stof.foc5.nav.ppmi_weight.bound.min1.soc10.nav.foc	-0.27775947261837375	-0.0924697895627261	490	1	nav	bound	ppmi_weight	5_5	foc	490	nav	10_10	314	stof	0.2215499937943447
-stof.foc5.nav.ppmi_weight.bound.min1.soc4.all.5000	-0.25445926209099384	-0.06837664129729432	490	1	nav	bound	ppmi_weight	5_5	5000	5e3	all	4_4	314	stof	0.24495387864692136
-stof.foc5.nav.ppmi_weight.bound.min1.soc4.all.10000	-0.2575493611996799	-0.11252018215381861	490	1	nav	bound	ppmi_weight	5_5	10000	1e4	all	4_4	314	stof	0.23874853792001172
-stof.foc5.nav.ppmi_weight.bound.min1.soc4.all.foc	-0.26452516107640356	-0.10070677215319365	490	1	nav	bound	ppmi_weight	5_5	foc	490	all	4_4	314	stof	0.2425030995874544
-stof.foc5.nav.ppmi_weight.bound.min1.soc10.all.5000	-0.25363623724672474	-0.04631545298460367	490	1	nav	bound	ppmi_weight	5_5	5000	5e3	all	10_10	314	stof	0.2283840209221901
-stof.foc5.nav.ppmi_weight.bound.min1.soc10.all.10000	-0.25343845249654945	-0.06265779834645097	490	1	nav	bound	ppmi_weight	5_5	10000	1e4	all	10_10	314	stof	0.2301316290873994
-stof.foc5.nav.ppmi_weight.bound.min1.soc10.all.foc	-0.2777594726273943	-0.09246978954039782	490	1	nav	bound	ppmi_weight	5_5	foc	490	all	10_10	314	stof	0.22081474622049976
-stof.foc5.nav.ppmi_sel.bound.min1.soc4.nav.5000	-0.24478724685108935	0.09444624981682859	490	1	nav	bound	ppmi_sel	5_5	5000	5e3	nav	4_4	314	stof	0.23525773485096685
-stof.foc5.nav.ppmi_sel.bound.min1.soc4.nav.10000	-0.2540426962060029	0.0840738376522082	490	1	nav	bound	ppmi_sel	5_5	10000	1e4	nav	4_4	314	stof	0.23271964809490475
-stof.foc5.nav.ppmi_sel.bound.min1.soc4.nav.foc	-0.2381294231546837	0.02286499629075578	490	1	nav	bound	ppmi_sel	5_5	foc	490	nav	4_4	314	stof	0.23793919409464764
-stof.foc5.nav.ppmi_sel.bound.min1.soc10.nav.5000	-0.22837091272112758	0.07991161176090315	490	1	nav	bound	ppmi_sel	5_5	5000	5e3	nav	10_10	314	stof	0.2228846234624738
-stof.foc5.nav.ppmi_sel.bound.min1.soc10.nav.10000	-0.21966730573048787	0.05585301472343081	490	1	nav	bound	ppmi_sel	5_5	10000	1e4	nav	10_10	314	stof	0.22345831598344812
-stof.foc5.nav.ppmi_sel.bound.min1.soc10.nav.foc	-0.2489308755131756	0.017636868568323142	490	1	nav	bound	ppmi_sel	5_5	foc	490	nav	10_10	314	stof	0.22146145499299585
-stof.foc5.nav.ppmi_sel.bound.min1.soc4.all.5000	-0.25554741235440476	0.10850259619526129	490	1	nav	bound	ppmi_sel	5_5	5000	5e3	all	4_4	314	stof	0.23656126006072514
-stof.foc5.nav.ppmi_sel.bound.min1.soc4.all.10000	-0.25816162631398293	0.09381965890092124	490	1	nav	bound	ppmi_sel	5_5	10000	1e4	all	4_4	314	stof	0.235009077249661
-stof.foc5.nav.ppmi_sel.bound.min1.soc4.all.foc	-0.23812942315468633	0.022864996290752518	490	1	nav	bound	ppmi_sel	5_5	foc	490	all	4_4	314	stof	0.2384412889512816
-stof.foc5.nav.ppmi_sel.bound.min1.soc10.all.5000	-0.23533758475447905	0.10115898422449217	490	1	nav	bound	ppmi_sel	5_5	5000	5e3	all	10_10	314	stof	0.22447699985901354
-stof.foc5.nav.ppmi_sel.bound.min1.soc10.all.10000	-0.22690711012243384	0.07099282180213966	490	1	nav	bound	ppmi_sel	5_5	10000	1e4	all	10_10	314	stof	0.22595969681230857
-stof.foc5.nav.ppmi_sel.bound.min1.soc10.all.foc	-0.2489308755131729	0.017636868568326428	490	1	nav	bound	ppmi_sel	5_5	foc	490	all	10_10	314	stof	0.22146145499299585
-stof.foc5.nav.no_ppmi.bound.min1.soc4.nav.5000	-0.1954631780377428	0.19927360743824427	677	1	nav	bound	no_ppmi	5_5	5000	5e3	nav	4_4	319	stof	0.24043262398054147
-stof.foc5.nav.no_ppmi.bound.min1.soc4.nav.10000	-0.2082534456054874	0.19656449030012757	677	1	nav	bound	no_ppmi	5_5	10000	1e4	nav	4_4	319	stof	0.23604994344546276
-stof.foc5.nav.no_ppmi.bound.min1.soc4.nav.foc	-0.196663903600345	0.08288570855328724	677	1	nav	bound	no_ppmi	5_5	foc	677	nav	4_4	319	stof	0.2337909714228821
-stof.foc5.nav.no_ppmi.bound.min1.soc10.nav.5000	-0.19895527768488075	0.1818817455854663	677	1	nav	bound	no_ppmi	5_5	5000	5e3	nav	10_10	319	stof	0.22941989268424395
-stof.foc5.nav.no_ppmi.bound.min1.soc10.nav.10000	-0.1918980738266103	0.1572194764739226	677	1	nav	bound	no_ppmi	5_5	10000	1e4	nav	10_10	319	stof	0.22775925371216743
-stof.foc5.nav.no_ppmi.bound.min1.soc10.nav.foc	-0.20339156960096497	0.07638680812348693	677	1	nav	bound	no_ppmi	5_5	foc	677	nav	10_10	319	stof	0.22288296264921154
-stof.foc5.nav.no_ppmi.bound.min1.soc4.all.5000	-0.19700538101035042	0.22840851459676353	677	1	nav	bound	no_ppmi	5_5	5000	5e3	all	4_4	319	stof	0.24196211789880887
-stof.foc5.nav.no_ppmi.bound.min1.soc4.all.10000	-0.19499957796202205	0.21764032043416812	677	1	nav	bound	no_ppmi	5_5	10000	1e4	all	4_4	319	stof	0.2406995525406623
-stof.foc5.nav.no_ppmi.bound.min1.soc4.all.foc	-0.196663903600343	0.08288570855328119	677	1	nav	bound	no_ppmi	5_5	foc	677	all	4_4	319	stof	0.23328760005367882
-stof.foc5.nav.no_ppmi.bound.min1.soc10.all.5000	-0.19897149867382333	0.2124729347142503	677	1	nav	bound	no_ppmi	5_5	5000	5e3	all	10_10	319	stof	0.2327714266821543
-stof.foc5.nav.no_ppmi.bound.min1.soc10.all.10000	-0.19015877505631515	0.17993996056976228	677	1	nav	bound	no_ppmi	5_5	10000	1e4	all	10_10	319	stof	0.232575285986796
-stof.foc5.nav.no_ppmi.bound.min1.soc10.all.foc	-0.20339156960096408	0.076386808123481	677	1	nav	bound	no_ppmi	5_5	foc	677	all	10_10	319	stof	0.22222355704991442
-stof.foc5.all.ppmi_weight.bound.min1.soc4.nav.5000	-0.11948152688804793	-0.20823210890973357	569	1	all	bound	ppmi_weight	5_5	5000	5e3	nav	4_4	320	stof	0.22758627577117044
-stof.foc5.all.ppmi_weight.bound.min1.soc4.nav.10000	-0.1236852620182622	-0.2556782528030688	569	1	all	bound	ppmi_weight	5_5	10000	1e4	nav	4_4	320	stof	0.22045942621769346
-stof.foc5.all.ppmi_weight.bound.min1.soc4.nav.foc	-0.1612143643055217	-0.20709594081036095	569	1	all	bound	ppmi_weight	5_5	foc	569	nav	4_4	320	stof	0.23218168216901408
-stof.foc5.all.ppmi_weight.bound.min1.soc10.nav.5000	-0.15121785684515612	-0.16593395060921784	569	1	all	bound	ppmi_weight	5_5	5000	5e3	nav	10_10	320	stof	0.22288664130478328
-stof.foc5.all.ppmi_weight.bound.min1.soc10.nav.10000	-0.14714712593524548	-0.2079436996375333	569	1	all	bound	ppmi_weight	5_5	10000	1e4	nav	10_10	320	stof	0.2186354419473076
-stof.foc5.all.ppmi_weight.bound.min1.soc10.nav.foc	-0.1868102544044082	-0.19169715854260508	569	1	all	bound	ppmi_weight	5_5	foc	569	nav	10_10	320	stof	0.21909229767498462
-stof.foc5.all.ppmi_weight.bound.min1.soc4.all.5000	-0.11789337745259626	-0.2041357519297304	569	1	all	bound	ppmi_weight	5_5	5000	5e3	all	4_4	320	stof	0.23506744676409194
-stof.foc5.all.ppmi_weight.bound.min1.soc4.all.10000	-0.11981117669442772	-0.24556851734277985	569	1	all	bound	ppmi_weight	5_5	10000	1e4	all	4_4	320	stof	0.22603053465689305
-stof.foc5.all.ppmi_weight.bound.min1.soc4.all.foc	-0.1612143643055275	-0.20709594081035784	569	1	all	bound	ppmi_weight	5_5	foc	569	all	4_4	320	stof	0.23218168216901408
-stof.foc5.all.ppmi_weight.bound.min1.soc10.all.5000	-0.15404202486014534	-0.1630154700353222	569	1	all	bound	ppmi_weight	5_5	5000	5e3	all	10_10	320	stof	0.2262109225541003
-stof.foc5.all.ppmi_weight.bound.min1.soc10.all.10000	-0.14840743217668143	-0.19015306083053485	569	1	all	bound	ppmi_weight	5_5	10000	1e4	all	10_10	320	stof	0.22483066395793116
-stof.foc5.all.ppmi_weight.bound.min1.soc10.all.foc	-0.18681025440440432	-0.19169715854260805	569	1	all	bound	ppmi_weight	5_5	foc	569	all	10_10	320	stof	0.21909229767498462
-stof.foc5.all.ppmi_sel.bound.min1.soc4.nav.5000	0.38580495175626767	-0.2579673785819603	569	1	all	bound	ppmi_sel	5_5	5000	5e3	nav	4_4	320	stof	0.25744354604875436
-stof.foc5.all.ppmi_sel.bound.min1.soc4.nav.10000	0.3961582733984155	-0.26522331474662736	569	1	all	bound	ppmi_sel	5_5	10000	1e4	nav	4_4	320	stof	0.25376971497790135
-stof.foc5.all.ppmi_sel.bound.min1.soc4.nav.foc	0.14345646058681064	-0.17913480259517944	569	1	all	bound	ppmi_sel	5_5	foc	569	nav	4_4	320	stof	0.23506844922682393
-stof.foc5.all.ppmi_sel.bound.min1.soc10.nav.5000	0.21685811552290818	-0.16748264832063267	569	1	all	bound	ppmi_sel	5_5	5000	5e3	nav	10_10	320	stof	0.23920835831521792
-stof.foc5.all.ppmi_sel.bound.min1.soc10.nav.10000	0.21147993338600649	-0.17926310223029712	569	1	all	bound	ppmi_sel	5_5	10000	1e4	nav	10_10	320	stof	0.23640371113491102
-stof.foc5.all.ppmi_sel.bound.min1.soc10.nav.foc	0.05547987138094289	-0.1340356145522804	569	1	all	bound	ppmi_sel	5_5	foc	569	nav	10_10	320	stof	0.22002959285065
-stof.foc5.all.ppmi_sel.bound.min1.soc4.all.5000	0.39154716112189664	-0.26237550978028706	569	1	all	bound	ppmi_sel	5_5	5000	5e3	all	4_4	320	stof	0.257196963012145
-stof.foc5.all.ppmi_sel.bound.min1.soc4.all.10000	0.3997816058327407	-0.26779905232914136	569	1	all	bound	ppmi_sel	5_5	10000	1e4	all	4_4	320	stof	0.25728336284143727
-stof.foc5.all.ppmi_sel.bound.min1.soc4.all.foc	0.14345646058685282	-0.17913480259519618	569	1	all	bound	ppmi_sel	5_5	foc	569	all	4_4	320	stof	0.23487707282979642
-stof.foc5.all.ppmi_sel.bound.min1.soc10.all.5000	0.23529959843169268	-0.17859758251325528	569	1	all	bound	ppmi_sel	5_5	5000	5e3	all	10_10	320	stof	0.24459498957729847
-stof.foc5.all.ppmi_sel.bound.min1.soc10.all.10000	0.2282347253936139	-0.1829869820697748	569	1	all	bound	ppmi_sel	5_5	10000	1e4	all	10_10	320	stof	0.24351119258595766
-stof.foc5.all.ppmi_sel.bound.min1.soc10.all.foc	0.05547987138094194	-0.13403561455228413	569	1	all	bound	ppmi_sel	5_5	foc	569	all	10_10	320	stof	0.22001452191705928
-stof.foc5.all.no_ppmi.bound.min1.soc4.nav.5000	0.4314576935415557	-0.17610553599003176	823	1	all	bound	no_ppmi	5_5	5000	5e3	nav	4_4	320	stof	0.24873839496455397
-stof.foc5.all.no_ppmi.bound.min1.soc4.nav.10000	0.4447783829782815	-0.19207500543392916	823	1	all	bound	no_ppmi	5_5	10000	1e4	nav	4_4	320	stof	0.24516508835124864
-stof.foc5.all.no_ppmi.bound.min1.soc4.nav.foc	0.2130799579287256	-0.1256729068008496	823	1	all	bound	no_ppmi	5_5	foc	823	nav	4_4	320	stof	0.22459502207693577
-stof.foc5.all.no_ppmi.bound.min1.soc10.nav.5000	0.28568014692063554	-0.09938767178904684	823	1	all	bound	no_ppmi	5_5	5000	5e3	nav	10_10	320	stof	0.2341459895589995
-stof.foc5.all.no_ppmi.bound.min1.soc10.nav.10000	0.2872886682329022	-0.11477549372382186	823	1	all	bound	no_ppmi	5_5	10000	1e4	nav	10_10	320	stof	0.23078171851878929
-stof.foc5.all.no_ppmi.bound.min1.soc10.nav.foc	0.10623933434160276	-0.08176748582519988	823	1	all	bound	no_ppmi	5_5	foc	823	nav	10_10	320	stof	0.21315838255364516
-stof.foc5.all.no_ppmi.bound.min1.soc4.all.5000	0.4431790939236812	-0.18074529413710558	823	1	all	bound	no_ppmi	5_5	5000	5e3	all	4_4	320	stof	0.2531984127571651
-stof.foc5.all.no_ppmi.bound.min1.soc4.all.10000	0.4509431480162062	-0.18825486300611127	823	1	all	bound	no_ppmi	5_5	10000	1e4	all	4_4	320	stof	0.25140549900970244
-stof.foc5.all.no_ppmi.bound.min1.soc4.all.foc	0.21307995792881568	-0.12567290680066107	823	1	all	bound	no_ppmi	5_5	foc	823	all	4_4	320	stof	0.22459502207693577
-stof.foc5.all.no_ppmi.bound.min1.soc10.all.5000	0.315573700337917	-0.1084653033463866	823	1	all	bound	no_ppmi	5_5	5000	5e3	all	10_10	320	stof	0.23869920218109159
-stof.foc5.all.no_ppmi.bound.min1.soc10.all.10000	0.3046456569326031	-0.1151571229910775	823	1	all	bound	no_ppmi	5_5	10000	1e4	all	10_10	320	stof	0.2382069183149661
-stof.foc5.all.no_ppmi.bound.min1.soc10.all.foc	0.10623933434160325	-0.08176748582519375	823	1	all	bound	no_ppmi	5_5	foc	823	all	10_10	320	stof	0.21314133161665771
+_model	model.x	model.y	foc_minimum_features	soc_length	soc_length_num	tokens	type	LEMMAPATH	LEMMAREL	base	foc_boundaries	foc_context_words	foc_foc_pos	foc_foc_win	foc_ppmi	soc_soc_pos	soc_soc_win
+stof.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.16551482913902507	-0.04432217373506914	1	5000	5000	311	stof	NA	NA	BOW	bound	648	lex	10_10	weight	nav	4_4
+stof.BOWbound10lex.PPMIweight.LENGTH5000.SOCPOSall	0.1339818036409036	-0.29472757048316905	1	5000	5000	311	stof	NA	NA	BOW	bound	648	lex	10_10	weight	all	4_4
+stof.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.2266327187679158	-0.023817488519168813	1	FOC	507	311	stof	NA	NA	BOW	bound	648	lex	10_10	weight	nav	4_4
+stof.BOWbound10lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.22694297136203956	-0.026189909995159317	1	FOC	648	311	stof	NA	NA	BOW	bound	648	lex	10_10	weight	all	4_4
+stof.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.16291549816900402	-0.08460006004656413	1	5000	5000	311	stof	NA	NA	BOW	bound	648	lex	10_10	selection	nav	4_4
+stof.BOWbound10lex.PPMIselection.LENGTH5000.SOCPOSall	0.1967429782983809	-0.36254672260528564	1	5000	5000	311	stof	NA	NA	BOW	bound	648	lex	10_10	selection	all	4_4
+stof.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.21809156901906604	-0.04384232431664896	1	FOC	507	311	stof	NA	NA	BOW	bound	648	lex	10_10	selection	nav	4_4
+stof.BOWbound10lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.2172479954085462	-0.04673218342897419	1	FOC	648	311	stof	NA	NA	BOW	bound	648	lex	10_10	selection	all	4_4
+stof.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSnav	-0.17767578800958556	-0.10727577970717904	1	5000	5000	313	stof	NA	NA	BOW	bound	1132	lex	10_10	no	nav	4_4
+stof.BOWbound10lex.PPMIno.LENGTH5000.SOCPOSall	0.30095452840108433	-0.5063286802699282	1	5000	5000	313	stof	NA	NA	BOW	bound	1132	lex	10_10	no	all	4_4
+stof.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.21455481261751053	-0.06315133533193233	1	FOC	870	313	stof	NA	NA	BOW	bound	1132	lex	10_10	no	nav	4_4
+stof.BOWbound10lex.PPMIno.LENGTHFOC.SOCPOSall	-0.21411530112214672	-0.06615962533003916	1	FOC	1132	313	stof	NA	NA	BOW	bound	1132	lex	10_10	no	all	4_4
+stof.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSnav	-0.12632072856028284	-0.03609082081510533	1	5000	5000	313	stof	NA	NA	BOW	bound	766	all	10_10	weight	nav	4_4
+stof.BOWbound10all.PPMIweight.LENGTH5000.SOCPOSall	0.2238058335520268	-0.15615044641426348	1	5000	5000	313	stof	NA	NA	BOW	bound	766	all	10_10	weight	all	4_4
+stof.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.19203525676275623	-0.004298520916616283	1	FOC	507	313	stof	NA	NA	BOW	bound	766	all	10_10	weight	nav	4_4
+stof.BOWbound10all.PPMIweight.LENGTHFOC.SOCPOSall	-0.18267329608215868	-0.006187538150743909	1	FOC	766	313	stof	NA	NA	BOW	bound	766	all	10_10	weight	all	4_4
+stof.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSnav	0.028629659168962478	-0.009461147865864168	1	5000	5000	313	stof	NA	NA	BOW	bound	766	all	10_10	selection	nav	4_4
+stof.BOWbound10all.PPMIselection.LENGTH5000.SOCPOSall	0.5845866983697646	-0.038021448734291245	1	5000	5000	313	stof	NA	NA	BOW	bound	766	all	10_10	selection	all	4_4
+stof.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.15415576969046457	-0.005574956456493327	1	FOC	507	313	stof	NA	NA	BOW	bound	766	all	10_10	selection	nav	4_4
+stof.BOWbound10all.PPMIselection.LENGTHFOC.SOCPOSall	-0.1435873231969982	-0.011090514785217432	1	FOC	766	313	stof	NA	NA	BOW	bound	766	all	10_10	selection	all	4_4
+stof.BOWbound10all.PPMIno.LENGTH5000.SOCPOSnav	-0.053204221777488125	-0.14455278447123845	1	5000	5000	313	stof	NA	NA	BOW	bound	1416	all	10_10	no	nav	4_4
+stof.BOWbound10all.PPMIno.LENGTH5000.SOCPOSall	0.652128028516142	-0.14893217703585754	1	5000	5000	313	stof	NA	NA	BOW	bound	1416	all	10_10	no	all	4_4
+stof.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSnav	-0.14454407635665223	-0.0546487367896675	1	FOC	870	313	stof	NA	NA	BOW	bound	1416	all	10_10	no	nav	4_4
+stof.BOWbound10all.PPMIno.LENGTHFOC.SOCPOSall	-0.12550648089949346	-0.08872217547488724	1	FOC	1416	313	stof	NA	NA	BOW	bound	1416	all	10_10	no	all	4_4
+stof.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.16144320995475925	-0.04264427341856369	1	5000	5000	307	stof	NA	NA	BOW	bound	483	lex	5_5	weight	nav	4_4
+stof.BOWbound5lex.PPMIweight.LENGTH5000.SOCPOSall	0.1584338652622766	-0.2885180957793224	1	5000	5000	307	stof	NA	NA	BOW	bound	483	lex	5_5	weight	all	4_4
+stof.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.21171613331380307	-0.01963255669471694	1	FOC	375	307	stof	NA	NA	BOW	bound	483	lex	5_5	weight	nav	4_4
+stof.BOWbound5lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.2072633169721213	-0.021616160374072445	1	FOC	483	307	stof	NA	NA	BOW	bound	483	lex	5_5	weight	all	4_4
+stof.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.15605288557250077	-0.07228930674107295	1	5000	5000	307	stof	NA	NA	BOW	bound	483	lex	5_5	selection	nav	4_4
+stof.BOWbound5lex.PPMIselection.LENGTH5000.SOCPOSall	0.21874756974782067	-0.34477181544158503	1	5000	5000	307	stof	NA	NA	BOW	bound	483	lex	5_5	selection	all	4_4
+stof.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.19909083335866642	-0.0273461996477794	1	FOC	375	307	stof	NA	NA	BOW	bound	483	lex	5_5	selection	nav	4_4
+stof.BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.19588257459341746	-0.031011008899753747	1	FOC	483	307	stof	NA	NA	BOW	bound	483	lex	5_5	selection	all	4_4
+stof.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSnav	-0.1443581521427043	-0.0798653879290198	1	5000	5000	312	stof	NA	NA	BOW	bound	711	lex	5_5	no	nav	4_4
+stof.BOWbound5lex.PPMIno.LENGTH5000.SOCPOSall	0.2761075671582416	-0.3791712569483256	1	5000	5000	312	stof	NA	NA	BOW	bound	711	lex	5_5	no	all	4_4
+stof.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.19265310039905806	-0.04546595930273343	1	FOC	542	312	stof	NA	NA	BOW	bound	711	lex	5_5	no	nav	4_4
+stof.BOWbound5lex.PPMIno.LENGTHFOC.SOCPOSall	-0.19036340294568724	-0.05039007611407553	1	FOC	711	312	stof	NA	NA	BOW	bound	711	lex	5_5	no	all	4_4
+stof.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSnav	-0.11260018047604121	-0.03145713107662794	1	5000	5000	313	stof	NA	NA	BOW	bound	583	all	5_5	weight	nav	4_4
+stof.BOWbound5all.PPMIweight.LENGTH5000.SOCPOSall	0.2513471784492703	-0.13259920523842614	1	5000	5000	313	stof	NA	NA	BOW	bound	583	all	5_5	weight	all	4_4
+stof.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.1816912352073916	0.0022652452580835722	1	FOC	375	313	stof	NA	NA	BOW	bound	583	all	5_5	weight	nav	4_4
+stof.BOWbound5all.PPMIweight.LENGTHFOC.SOCPOSall	-0.1691541417678902	-2.5590573422652942e-5	1	FOC	583	313	stof	NA	NA	BOW	bound	583	all	5_5	weight	all	4_4
+stof.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSnav	0.08562989473155123	0.06802350470751992	1	5000	5000	313	stof	NA	NA	BOW	bound	583	all	5_5	selection	nav	4_4
+stof.BOWbound5all.PPMIselection.LENGTH5000.SOCPOSall	0.5128634259462085	0.05474238706804037	1	5000	5000	313	stof	NA	NA	BOW	bound	583	all	5_5	selection	all	4_4
+stof.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.12044788991861802	0.007300637830700689	1	FOC	375	313	stof	NA	NA	BOW	bound	583	all	5_5	selection	nav	4_4
+stof.BOWbound5all.PPMIselection.LENGTHFOC.SOCPOSall	-0.10708169642102451	0.0036138844383882796	1	FOC	583	313	stof	NA	NA	BOW	bound	583	all	5_5	selection	all	4_4
+stof.BOWbound5all.PPMIno.LENGTH5000.SOCPOSnav	0.049229640362668504	0.034565809456416595	1	5000	5000	313	stof	NA	NA	BOW	bound	896	all	5_5	no	nav	4_4
+stof.BOWbound5all.PPMIno.LENGTH5000.SOCPOSall	0.5719385561321467	0.011516868962778258	1	5000	5000	313	stof	NA	NA	BOW	bound	896	all	5_5	no	all	4_4
+stof.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSnav	-0.11614178950124365	-0.0092562373725734	1	FOC	542	313	stof	NA	NA	BOW	bound	896	all	5_5	no	nav	4_4
+stof.BOWbound5all.PPMIno.LENGTHFOC.SOCPOSall	-0.10027368885145516	-0.017049769234774945	1	FOC	896	313	stof	NA	NA	BOW	bound	896	all	5_5	no	all	4_4
+stof.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.14888753998543305	-0.02977711961722584	1	5000	5000	292	stof	NA	NA	BOW	bound	341	lex	3_3	weight	nav	4_4
+stof.BOWbound3lex.PPMIweight.LENGTH5000.SOCPOSall	0.16435698946251662	-0.28528142958929315	1	5000	5000	292	stof	NA	NA	BOW	bound	341	lex	3_3	weight	all	4_4
+stof.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.22175501984535614	0.017414560038280943	1	FOC	259	292	stof	NA	NA	BOW	bound	341	lex	3_3	weight	nav	4_4
+stof.BOWbound3lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.21381829302809136	0.014108256590270254	1	FOC	341	292	stof	NA	NA	BOW	bound	341	lex	3_3	weight	all	4_4
+stof.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.13278106858721048	-0.06876111363757345	1	5000	5000	292	stof	NA	NA	BOW	bound	341	lex	3_3	selection	nav	4_4
+stof.BOWbound3lex.PPMIselection.LENGTH5000.SOCPOSall	0.22646279374730427	-0.32235409389374664	1	5000	5000	292	stof	NA	NA	BOW	bound	341	lex	3_3	selection	all	4_4
+stof.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.20264656735017617	0.014394298026255326	1	FOC	259	292	stof	NA	NA	BOW	bound	341	lex	3_3	selection	nav	4_4
+stof.BOWbound3lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.2025806639764561	0.011246385296527425	1	FOC	341	292	stof	NA	NA	BOW	bound	341	lex	3_3	selection	all	4_4
+stof.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSnav	-0.13586962221154664	-0.09954953924715779	1	5000	5000	307	stof	NA	NA	BOW	bound	455	lex	3_3	no	nav	4_4
+stof.BOWbound3lex.PPMIno.LENGTH5000.SOCPOSall	0.2478557987587781	-0.3938942476179882	1	5000	5000	307	stof	NA	NA	BOW	bound	455	lex	3_3	no	all	4_4
+stof.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.21358122747899272	0.009503759000758527	1	FOC	341	307	stof	NA	NA	BOW	bound	455	lex	3_3	no	nav	4_4
+stof.BOWbound3lex.PPMIno.LENGTHFOC.SOCPOSall	-0.21865190684117047	0.007159399762477637	1	FOC	455	307	stof	NA	NA	BOW	bound	455	lex	3_3	no	all	4_4
+stof.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSnav	-0.07269286591929525	-0.01325111701399133	1	5000	5000	312	stof	NA	NA	BOW	bound	418	all	3_3	weight	nav	4_4
+stof.BOWbound3all.PPMIweight.LENGTH5000.SOCPOSall	0.2753850879986739	-0.09462333535335683	1	5000	5000	312	stof	NA	NA	BOW	bound	418	all	3_3	weight	all	4_4
+stof.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.18618459025024311	0.041829772934658706	1	FOC	259	312	stof	NA	NA	BOW	bound	418	all	3_3	weight	nav	4_4
+stof.BOWbound3all.PPMIweight.LENGTHFOC.SOCPOSall	-0.16569819635045227	0.035644515358091614	1	FOC	418	312	stof	NA	NA	BOW	bound	418	all	3_3	weight	all	4_4
+stof.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSnav	0.1273273861345376	0.15298361167724114	1	5000	5000	312	stof	NA	NA	BOW	bound	418	all	3_3	selection	nav	4_4
+stof.BOWbound3all.PPMIselection.LENGTH5000.SOCPOSall	0.46860474539027747	0.1402741930861369	1	5000	5000	312	stof	NA	NA	BOW	bound	418	all	3_3	selection	all	4_4
+stof.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.10522388984646518	0.04618298395452202	1	FOC	259	312	stof	NA	NA	BOW	bound	418	all	3_3	selection	nav	4_4
+stof.BOWbound3all.PPMIselection.LENGTHFOC.SOCPOSall	-0.08685999352423569	0.039239395799359984	1	FOC	418	312	stof	NA	NA	BOW	bound	418	all	3_3	selection	all	4_4
+stof.BOWbound3all.PPMIno.LENGTH5000.SOCPOSnav	0.09924838569456933	0.11069882722763601	1	5000	5000	312	stof	NA	NA	BOW	bound	590	all	3_3	no	nav	4_4
+stof.BOWbound3all.PPMIno.LENGTH5000.SOCPOSall	0.514637200482015	0.10424668993480295	1	5000	5000	312	stof	NA	NA	BOW	bound	590	all	3_3	no	all	4_4
+stof.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSnav	-0.10806029191512366	0.029508210825272486	1	FOC	341	312	stof	NA	NA	BOW	bound	590	all	3_3	no	nav	4_4
+stof.BOWbound3all.PPMIno.LENGTHFOC.SOCPOSall	-0.08674970542439092	0.02107077267089059	1	FOC	590	312	stof	NA	NA	BOW	bound	590	all	3_3	no	all	4_4
+stof.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.1783819568777154	-0.05264460434611779	1	5000	5000	311	stof	NA	NA	BOW	nobound	747	lex	10_10	weight	nav	4_4
+stof.BOWnobound10lex.PPMIweight.LENGTH5000.SOCPOSall	0.11181937574184249	-0.29514836580079035	1	5000	5000	311	stof	NA	NA	BOW	nobound	747	lex	10_10	weight	all	4_4
+stof.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.24119320128921873	-0.02784931246293477	1	FOC	579	311	stof	NA	NA	BOW	nobound	747	lex	10_10	weight	nav	4_4
+stof.BOWnobound10lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.24175965647759673	-0.03099156228056177	1	FOC	747	311	stof	NA	NA	BOW	nobound	747	lex	10_10	weight	all	4_4
+stof.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.1948232976500511	-0.09944770434165433	1	5000	5000	311	stof	NA	NA	BOW	nobound	747	lex	10_10	selection	nav	4_4
+stof.BOWnobound10lex.PPMIselection.LENGTH5000.SOCPOSall	0.17895495705880918	-0.3873424823136746	1	5000	5000	311	stof	NA	NA	BOW	nobound	747	lex	10_10	selection	all	4_4
+stof.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.2420317106781421	-0.0518162494748654	1	FOC	579	311	stof	NA	NA	BOW	nobound	747	lex	10_10	selection	nav	4_4
+stof.BOWnobound10lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.2422353912615486	-0.05404630532160087	1	FOC	747	311	stof	NA	NA	BOW	nobound	747	lex	10_10	selection	all	4_4
+stof.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSnav	-0.22814772208716286	-0.11934921435792417	1	5000	5000	313	stof	NA	NA	BOW	nobound	1452	lex	10_10	no	nav	4_4
+stof.BOWnobound10lex.PPMIno.LENGTH5000.SOCPOSall	0.18760454393867795	-0.6246295689798155	1	5000	5000	313	stof	NA	NA	BOW	nobound	1452	lex	10_10	no	all	4_4
+stof.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.24400138967872956	-0.07418561196299855	1	FOC	1112	313	stof	NA	NA	BOW	nobound	1452	lex	10_10	no	nav	4_4
+stof.BOWnobound10lex.PPMIno.LENGTHFOC.SOCPOSall	-0.24209848572846834	-0.07620099486687665	1	FOC	1452	313	stof	NA	NA	BOW	nobound	1452	lex	10_10	no	all	4_4
+stof.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSnav	-0.14251667646849692	-0.047028106614671154	1	5000	5000	313	stof	NA	NA	BOW	nobound	889	all	10_10	weight	nav	4_4
+stof.BOWnobound10all.PPMIweight.LENGTH5000.SOCPOSall	0.20306716983530934	-0.1735670247811388	1	5000	5000	313	stof	NA	NA	BOW	nobound	889	all	10_10	weight	all	4_4
+stof.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.2172689077765761	-0.014658662070637322	1	FOC	579	313	stof	NA	NA	BOW	nobound	889	all	10_10	weight	nav	4_4
+stof.BOWnobound10all.PPMIweight.LENGTHFOC.SOCPOSall	-0.19571618312300848	-0.015811439313221466	1	FOC	889	313	stof	NA	NA	BOW	nobound	889	all	10_10	weight	all	4_4
+stof.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSnav	-0.035875661542305315	-0.10274293955199425	1	5000	5000	313	stof	NA	NA	BOW	nobound	889	all	10_10	selection	nav	4_4
+stof.BOWnobound10all.PPMIselection.LENGTH5000.SOCPOSall	0.6756420448669858	-0.09063587081071982	1	5000	5000	313	stof	NA	NA	BOW	nobound	889	all	10_10	selection	all	4_4
+stof.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.19150370603009864	-0.03804803236319986	1	FOC	579	313	stof	NA	NA	BOW	nobound	889	all	10_10	selection	nav	4_4
+stof.BOWnobound10all.PPMIselection.LENGTHFOC.SOCPOSall	-0.17501499926584127	-0.036835108440206696	1	FOC	889	313	stof	NA	NA	BOW	nobound	889	all	10_10	selection	all	4_4
+stof.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSnav	-0.17622947799214528	-0.19739995196609597	1	5000	5000	313	stof	NA	NA	BOW	nobound	1845	all	10_10	no	nav	4_4
+stof.BOWnobound10all.PPMIno.LENGTH5000.SOCPOSall	0.6638000347449378	-0.26289052350252806	1	5000	5000	313	stof	NA	NA	BOW	nobound	1845	all	10_10	no	all	4_4
+stof.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSnav	-0.21552685411201014	-0.10154057220311974	1	FOC	1112	313	stof	NA	NA	BOW	nobound	1845	all	10_10	no	nav	4_4
+stof.BOWnobound10all.PPMIno.LENGTHFOC.SOCPOSall	-0.20468568817449687	-0.13651940900149442	1	FOC	1845	313	stof	NA	NA	BOW	nobound	1845	all	10_10	no	all	4_4
+stof.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.16865507778292516	-0.0464703964238752	1	5000	5000	310	stof	NA	NA	BOW	nobound	513	lex	5_5	weight	nav	4_4
+stof.BOWnobound5lex.PPMIweight.LENGTH5000.SOCPOSall	0.14399967872124617	-0.2989423359765714	1	5000	5000	310	stof	NA	NA	BOW	nobound	513	lex	5_5	weight	all	4_4
+stof.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.21878506969310577	-0.02076489059505138	1	FOC	395	310	stof	NA	NA	BOW	nobound	513	lex	5_5	weight	nav	4_4
+stof.BOWnobound5lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.21344640751555846	-0.024366700517924934	1	FOC	513	310	stof	NA	NA	BOW	nobound	513	lex	5_5	weight	all	4_4
+stof.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.16468185186791776	-0.0845036585907236	1	5000	5000	310	stof	NA	NA	BOW	nobound	513	lex	5_5	selection	nav	4_4
+stof.BOWnobound5lex.PPMIselection.LENGTH5000.SOCPOSall	0.21403715681325858	-0.35911065842500667	1	5000	5000	310	stof	NA	NA	BOW	nobound	513	lex	5_5	selection	all	4_4
+stof.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.20512383738056025	-0.033673376741666185	1	FOC	395	310	stof	NA	NA	BOW	nobound	513	lex	5_5	selection	nav	4_4
+stof.BOWnobound5lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.20290309108697313	-0.037815653542723274	1	FOC	513	310	stof	NA	NA	BOW	nobound	513	lex	5_5	selection	all	4_4
+stof.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSnav	-0.15721030874792435	-0.09058464902063307	1	5000	5000	313	stof	NA	NA	BOW	nobound	799	lex	5_5	no	nav	4_4
+stof.BOWnobound5lex.PPMIno.LENGTH5000.SOCPOSall	0.28555117172843514	-0.4370754603218399	1	5000	5000	313	stof	NA	NA	BOW	nobound	799	lex	5_5	no	all	4_4
+stof.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.198088742666625	-0.050547798977294396	1	FOC	601	313	stof	NA	NA	BOW	nobound	799	lex	5_5	no	nav	4_4
+stof.BOWnobound5lex.PPMIno.LENGTHFOC.SOCPOSall	-0.19635940943478808	-0.05611347361276755	1	FOC	799	313	stof	NA	NA	BOW	nobound	799	lex	5_5	no	all	4_4
+stof.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSnav	-0.12081319208081293	-0.03444365426608057	1	5000	5000	313	stof	NA	NA	BOW	nobound	624	all	5_5	weight	nav	4_4
+stof.BOWnobound5all.PPMIweight.LENGTH5000.SOCPOSall	0.24110781854936414	-0.1465411805755865	1	5000	5000	313	stof	NA	NA	BOW	nobound	624	all	5_5	weight	all	4_4
+stof.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.18498336486610653	-1.3473301984951998e-4	1	FOC	395	313	stof	NA	NA	BOW	nobound	624	all	5_5	weight	nav	4_4
+stof.BOWnobound5all.PPMIweight.LENGTHFOC.SOCPOSall	-0.17202654364845912	-0.0023924082156989808	1	FOC	624	313	stof	NA	NA	BOW	nobound	624	all	5_5	weight	all	4_4
+stof.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSnav	0.08138684159056284	0.05190148761781815	1	5000	5000	313	stof	NA	NA	BOW	nobound	624	all	5_5	selection	nav	4_4
+stof.BOWnobound5all.PPMIselection.LENGTH5000.SOCPOSall	0.5522354754684634	0.04186975204028001	1	5000	5000	313	stof	NA	NA	BOW	nobound	624	all	5_5	selection	all	4_4
+stof.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.1276571633592525	0.0032999791607686195	1	FOC	395	313	stof	NA	NA	BOW	nobound	624	all	5_5	selection	nav	4_4
+stof.BOWnobound5all.PPMIselection.LENGTHFOC.SOCPOSall	-0.11296911176589738	-1.8574584365452183e-4	1	FOC	624	313	stof	NA	NA	BOW	nobound	624	all	5_5	selection	all	4_4
+stof.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSnav	0.0345624920071627	0.00936180225546489	1	5000	5000	313	stof	NA	NA	BOW	nobound	1016	all	5_5	no	nav	4_4
+stof.BOWnobound5all.PPMIno.LENGTH5000.SOCPOSall	0.613660197078402	-0.02392905477550689	1	5000	5000	313	stof	NA	NA	BOW	nobound	1016	all	5_5	no	all	4_4
+stof.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSnav	-0.12637722485595387	-0.015184497208788577	1	FOC	601	313	stof	NA	NA	BOW	nobound	1016	all	5_5	no	nav	4_4
+stof.BOWnobound5all.PPMIno.LENGTHFOC.SOCPOSall	-0.10388455328785819	-0.027479232221064635	1	FOC	1016	313	stof	NA	NA	BOW	nobound	1016	all	5_5	no	all	4_4
+stof.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSnav	-0.15327459268817287	-0.03145794409148798	1	5000	5000	294	stof	NA	NA	BOW	nobound	352	lex	3_3	weight	nav	4_4
+stof.BOWnobound3lex.PPMIweight.LENGTH5000.SOCPOSall	0.15843734947465798	-0.29376060927725406	1	5000	5000	294	stof	NA	NA	BOW	nobound	352	lex	3_3	weight	all	4_4
+stof.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSnav	-0.22719728985585377	0.014323253342731632	1	FOC	269	294	stof	NA	NA	BOW	nobound	352	lex	3_3	weight	nav	4_4
+stof.BOWnobound3lex.PPMIweight.LENGTHFOC.SOCPOSall	-0.22041608791049877	0.012787251736790513	1	FOC	352	294	stof	NA	NA	BOW	nobound	352	lex	3_3	weight	all	4_4
+stof.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSnav	-0.13948713029974733	-0.0704092721194067	1	5000	5000	294	stof	NA	NA	BOW	nobound	352	lex	3_3	selection	nav	4_4
+stof.BOWnobound3lex.PPMIselection.LENGTH5000.SOCPOSall	0.22567815229857183	-0.33260513056554986	1	5000	5000	294	stof	NA	NA	BOW	nobound	352	lex	3_3	selection	all	4_4
+stof.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSnav	-0.20673108877994964	0.010394378221856921	1	FOC	269	294	stof	NA	NA	BOW	nobound	352	lex	3_3	selection	nav	4_4
+stof.BOWnobound3lex.PPMIselection.LENGTHFOC.SOCPOSall	-0.2070254497226299	0.007649741585099096	1	FOC	352	294	stof	NA	NA	BOW	nobound	352	lex	3_3	selection	all	4_4
+stof.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSnav	-0.14694794143702486	-0.10102820854930594	1	5000	5000	309	stof	NA	NA	BOW	nobound	484	lex	3_3	no	nav	4_4
+stof.BOWnobound3lex.PPMIno.LENGTH5000.SOCPOSall	0.25035514210263715	-0.4384255064449732	1	5000	5000	309	stof	NA	NA	BOW	nobound	484	lex	3_3	no	all	4_4
+stof.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSnav	-0.22092459572254614	0.004947631679621632	1	FOC	363	309	stof	NA	NA	BOW	nobound	484	lex	3_3	no	nav	4_4
+stof.BOWnobound3lex.PPMIno.LENGTHFOC.SOCPOSall	-0.22676179935831609	0.0018156859035902894	1	FOC	484	309	stof	NA	NA	BOW	nobound	484	lex	3_3	no	all	4_4
+stof.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSnav	-0.07886236204951505	-0.018251798338133965	1	5000	5000	313	stof	NA	NA	BOW	nobound	434	all	3_3	weight	nav	4_4
+stof.BOWnobound3all.PPMIweight.LENGTH5000.SOCPOSall	0.27505107864874206	-0.1018815517822032	1	5000	5000	313	stof	NA	NA	BOW	nobound	434	all	3_3	weight	all	4_4
+stof.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSnav	-0.19107779330364774	0.03989684346349585	1	FOC	269	313	stof	NA	NA	BOW	nobound	434	all	3_3	weight	nav	4_4
+stof.BOWnobound3all.PPMIweight.LENGTHFOC.SOCPOSall	-0.17113795989723904	0.03426247024803651	1	FOC	434	313	stof	NA	NA	BOW	nobound	434	all	3_3	weight	all	4_4
+stof.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSnav	0.12898408038319203	0.1612724954577557	1	5000	5000	313	stof	NA	NA	BOW	nobound	434	all	3_3	selection	nav	4_4
+stof.BOWnobound3all.PPMIselection.LENGTH5000.SOCPOSall	0.482868243169109	0.14773274053846294	1	5000	5000	313	stof	NA	NA	BOW	nobound	434	all	3_3	selection	all	4_4
+stof.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSnav	-0.107231057012376	0.045113462432372284	1	FOC	269	313	stof	NA	NA	BOW	nobound	434	all	3_3	selection	nav	4_4
+stof.BOWnobound3all.PPMIselection.LENGTHFOC.SOCPOSall	-0.08985345647891764	0.038272032933665434	1	FOC	434	313	stof	NA	NA	BOW	nobound	434	all	3_3	selection	all	4_4
+stof.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSnav	0.10092918478950526	0.11794392809303174	1	5000	5000	313	stof	NA	NA	BOW	nobound	628	all	3_3	no	nav	4_4
+stof.BOWnobound3all.PPMIno.LENGTH5000.SOCPOSall	0.5442048346623722	0.10733123779332934	1	5000	5000	313	stof	NA	NA	BOW	nobound	628	all	3_3	no	all	4_4
+stof.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSnav	-0.11028033733559824	0.029047303193033808	1	FOC	363	313	stof	NA	NA	BOW	nobound	628	all	3_3	no	nav	4_4
+stof.BOWnobound3all.PPMIno.LENGTHFOC.SOCPOSall	-0.08599707842246071	0.01718674287918567	1	FOC	628	313	stof	NA	NA	BOW	nobound	628	all	3_3	no	all	4_4
+stof.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSnav	-0.07577487111661912	0.07297707581768112	1	5000	5000	313	stof	selection2	NA	dependency	bound	399	NA	NA	weight	nav	4_4
+stof.LEMMAPATHselection2.PPMIweight.LENGTH5000.SOCPOSall	0.2935522789903646	-0.06222272072511071	1	5000	5000	313	stof	selection2	NA	dependency	bound	399	NA	NA	weight	all	4_4
+stof.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSnav	-0.19426520172011014	0.08162831377350462	1	FOC	254	313	stof	selection2	NA	dependency	bound	399	NA	NA	weight	nav	4_4
+stof.LEMMAPATHselection2.PPMIweight.LENGTHFOC.SOCPOSall	-0.17580359825021893	0.075300342360645	1	FOC	399	313	stof	selection2	NA	dependency	bound	399	NA	NA	weight	all	4_4
+stof.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSnav	0.11096453474263022	0.19591204807788762	1	5000	5000	313	stof	selection2	NA	dependency	bound	399	NA	NA	selection	nav	4_4
+stof.LEMMAPATHselection2.PPMIselection.LENGTH5000.SOCPOSall	0.4579582143235524	0.2003214366283964	1	5000	5000	313	stof	selection2	NA	dependency	bound	399	NA	NA	selection	all	4_4
+stof.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSnav	-0.10341061096084833	0.08418107860036952	1	FOC	254	313	stof	selection2	NA	dependency	bound	399	NA	NA	selection	nav	4_4
+stof.LEMMAPATHselection2.PPMIselection.LENGTHFOC.SOCPOSall	-0.09304680480091512	0.08000428216180369	1	FOC	399	313	stof	selection2	NA	dependency	bound	399	NA	NA	selection	all	4_4
+stof.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSnav	0.09345773195888309	0.17792399896779904	1	5000	5000	313	stof	selection2	NA	dependency	bound	563	NA	NA	no	nav	4_4
+stof.LEMMAPATHselection2.PPMIno.LENGTH5000.SOCPOSall	0.4793545430099795	0.181458952531377	1	5000	5000	313	stof	selection2	NA	dependency	bound	563	NA	NA	no	all	4_4
+stof.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSnav	-0.09697399071187993	0.07486876847039609	1	FOC	342	313	stof	selection2	NA	dependency	bound	563	NA	NA	no	nav	4_4
+stof.LEMMAPATHselection2.PPMIno.LENGTHFOC.SOCPOSall	-0.08695365962435449	0.08037484344775148	1	FOC	563	313	stof	selection2	NA	dependency	bound	563	NA	NA	no	all	4_4
+stof.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSnav	-0.09257138878834828	-0.0074888334448213675	1	5000	5000	313	stof	selection3	NA	dependency	bound	534	NA	NA	weight	nav	4_4
+stof.LEMMAPATHselection3.PPMIweight.LENGTH5000.SOCPOSall	0.26154987532407276	-0.11119202226984014	1	5000	5000	313	stof	selection3	NA	dependency	bound	534	NA	NA	weight	all	4_4
+stof.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSnav	-0.19317792204793602	0.039311659486212874	1	FOC	346	313	stof	selection3	NA	dependency	bound	534	NA	NA	weight	nav	4_4
+stof.LEMMAPATHselection3.PPMIweight.LENGTHFOC.SOCPOSall	-0.17663006996960456	0.031984072334912995	1	FOC	534	313	stof	selection3	NA	dependency	bound	534	NA	NA	weight	all	4_4
+stof.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSnav	0.10305090761458523	0.14640335715043495	1	5000	5000	313	stof	selection3	NA	dependency	bound	534	NA	NA	selection	nav	4_4
+stof.LEMMAPATHselection3.PPMIselection.LENGTH5000.SOCPOSall	0.531556675523862	0.13090651619668128	1	5000	5000	313	stof	selection3	NA	dependency	bound	534	NA	NA	selection	all	4_4
+stof.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSnav	-0.11789677160424619	0.03789292777090345	1	FOC	346	313	stof	selection3	NA	dependency	bound	534	NA	NA	selection	nav	4_4
+stof.LEMMAPATHselection3.PPMIselection.LENGTHFOC.SOCPOSall	-0.10325098072526266	0.031049139532265436	1	FOC	534	313	stof	selection3	NA	dependency	bound	534	NA	NA	selection	all	4_4
+stof.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSnav	0.08047991805618523	0.11638148873052573	1	5000	5000	313	stof	selection3	NA	dependency	bound	849	NA	NA	no	nav	4_4
+stof.LEMMAPATHselection3.PPMIno.LENGTH5000.SOCPOSall	0.5873517575978554	0.07317074205892395	1	5000	5000	313	stof	selection3	NA	dependency	bound	849	NA	NA	no	all	4_4
+stof.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSnav	-0.09823946049899511	0.026369002594231333	1	FOC	526	313	stof	selection3	NA	dependency	bound	849	NA	NA	no	nav	4_4
+stof.LEMMAPATHselection3.PPMIno.LENGTHFOC.SOCPOSall	-0.07933960568769964	0.01874818377429084	1	FOC	849	313	stof	selection3	NA	dependency	bound	849	NA	NA	no	all	4_4
+stof.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSnav	0.10793323125640675	0.19157659916474593	1	5000	5000	313	stof	weight	NA	dependency	bound	534	NA	NA	selection	nav	4_4
+stof.LEMMAPATHweight.PPMIselection.LENGTH5000.SOCPOSall	0.4433479951055393	0.19666486858403354	1	5000	5000	313	stof	weight	NA	dependency	bound	534	NA	NA	selection	all	4_4
+stof.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSnav	-0.07983816374949336	0.06374939049075008	1	FOC	346	313	stof	weight	NA	dependency	bound	534	NA	NA	selection	nav	4_4
+stof.LEMMAPATHweight.PPMIselection.LENGTHFOC.SOCPOSall	-0.07069821369978341	0.061044631260062134	1	FOC	534	313	stof	weight	NA	dependency	bound	534	NA	NA	selection	all	4_4
+stof.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSnav	0.08994557858748553	0.16877673734590248	1	5000	5000	313	stof	weight	NA	dependency	bound	849	NA	NA	no	nav	4_4
+stof.LEMMAPATHweight.PPMIno.LENGTH5000.SOCPOSall	0.4693847212581899	0.18123013220940334	1	5000	5000	313	stof	weight	NA	dependency	bound	849	NA	NA	no	all	4_4
+stof.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSnav	-0.06673824613968135	0.061577416234381045	1	FOC	526	313	stof	weight	NA	dependency	bound	849	NA	NA	no	nav	4_4
+stof.LEMMAPATHweight.PPMIno.LENGTHFOC.SOCPOSall	-0.0574294350121121	0.06265738167824834	1	FOC	849	313	stof	weight	NA	dependency	bound	849	NA	NA	no	all	4_4
+stof.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSnav	-0.016069724927142925	0.2142545074464797	1	5000	5000	298	stof	NA	group1	dependency	bound	176	NA	NA	weight	nav	4_4
+stof.LEMMAREL1.PPMIweight.LENGTH5000.SOCPOSall	0.2930515489086527	0.19404548848916084	1	5000	5000	298	stof	NA	group1	dependency	bound	176	NA	NA	weight	all	4_4
+stof.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSnav	-0.10142488798946854	0.22403467882566508	1	FOC	112	298	stof	NA	group1	dependency	bound	176	NA	NA	weight	nav	4_4
+stof.LEMMAREL1.PPMIweight.LENGTHFOC.SOCPOSall	-0.08521658362043012	0.21402845120863392	1	FOC	176	298	stof	NA	group1	dependency	bound	176	NA	NA	weight	all	4_4
+stof.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSnav	0.12411673394342636	0.29531135105709533	1	5000	5000	298	stof	NA	group1	dependency	bound	176	NA	NA	selection	nav	4_4
+stof.LEMMAREL1.PPMIselection.LENGTH5000.SOCPOSall	0.33880242529312493	0.3128754889770463	1	5000	5000	298	stof	NA	group1	dependency	bound	176	NA	NA	selection	all	4_4
+stof.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSnav	-0.041949332303461734	0.21110003989141182	1	FOC	112	298	stof	NA	group1	dependency	bound	176	NA	NA	selection	nav	4_4
+stof.LEMMAREL1.PPMIselection.LENGTHFOC.SOCPOSall	-0.02454289282849729	0.21162182178994018	1	FOC	176	298	stof	NA	group1	dependency	bound	176	NA	NA	selection	all	4_4
+stof.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSnav	0.12264805236639549	0.2883155467303779	1	5000	5000	300	stof	NA	group1	dependency	bound	200	NA	NA	no	nav	4_4
+stof.LEMMAREL1.PPMIno.LENGTH5000.SOCPOSall	0.35248750369352877	0.3044710292515949	1	5000	5000	300	stof	NA	group1	dependency	bound	200	NA	NA	no	all	4_4
+stof.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSnav	-0.04986615551259499	0.19742600960074944	1	FOC	125	300	stof	NA	group1	dependency	bound	200	NA	NA	no	nav	4_4
+stof.LEMMAREL1.PPMIno.LENGTHFOC.SOCPOSall	-0.029502296543284637	0.19401181687208915	1	FOC	200	300	stof	NA	group1	dependency	bound	200	NA	NA	no	all	4_4
+stof.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSnav	-0.10401127438628856	0.1648682988855786	1	5000	5000	309	stof	NA	group2	dependency	bound	278	NA	NA	weight	nav	4_4
+stof.LEMMAREL2.PPMIweight.LENGTH5000.SOCPOSall	0.30864831360283446	0.06225228382297308	1	5000	5000	309	stof	NA	group2	dependency	bound	278	NA	NA	weight	all	4_4
+stof.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSnav	-0.1735426327414494	0.12749508312639843	1	FOC	193	309	stof	NA	group2	dependency	bound	278	NA	NA	weight	nav	4_4
+stof.LEMMAREL2.PPMIweight.LENGTHFOC.SOCPOSall	-0.1584445458111834	0.13039517895448183	1	FOC	278	309	stof	NA	group2	dependency	bound	278	NA	NA	weight	all	4_4
+stof.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSnav	0.08728671086382989	0.2524998594871047	1	5000	5000	309	stof	NA	group2	dependency	bound	278	NA	NA	selection	nav	4_4
+stof.LEMMAREL2.PPMIselection.LENGTH5000.SOCPOSall	0.35651521089348676	0.2876288494637512	1	5000	5000	309	stof	NA	group2	dependency	bound	278	NA	NA	selection	all	4_4
+stof.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSnav	-0.08400322909074798	0.13538168204052065	1	FOC	193	309	stof	NA	group2	dependency	bound	278	NA	NA	selection	nav	4_4
+stof.LEMMAREL2.PPMIselection.LENGTHFOC.SOCPOSall	-0.07410715769461752	0.1353554969859092	1	FOC	278	309	stof	NA	group2	dependency	bound	278	NA	NA	selection	all	4_4
+stof.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSnav	0.0794674645733719	0.2371264957080734	1	5000	5000	311	stof	NA	group2	dependency	bound	339	NA	NA	no	nav	4_4
+stof.LEMMAREL2.PPMIno.LENGTH5000.SOCPOSall	0.3737144437751416	0.27233917614229836	1	5000	5000	311	stof	NA	group2	dependency	bound	339	NA	NA	no	all	4_4
+stof.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSnav	-0.09083842708014994	0.12310113817496901	1	FOC	232	311	stof	NA	group2	dependency	bound	339	NA	NA	no	nav	4_4
+stof.LEMMAREL2.PPMIno.LENGTHFOC.SOCPOSall	-0.07912964320416595	0.12394106151789883	1	FOC	339	311	stof	NA	group2	dependency	bound	339	NA	NA	no	all	4_4
+stof.LEMMAREL3.PPMIweight.LENGTH5000.SOCPOSnav	-0.10161842484593651	0.15728111657773372	1	5000	5000	311	stof	NA	group3	dependency	bound	318	NA	NA	weight	nav	4_4
+stof.LEMMAREL3.PPMIweight.LENGTH5000.SOCPOSall	0.3200307618027722	0.031069269991425497	1	5000	5000	311	stof	NA	group3	dependency	bound	318	NA	NA	weight	all	4_4
+stof.LEMMAREL3.PPMIweight.LENGTHFOC.SOCPOSnav	-0.17483807332172865	0.11968767208552852	1	FOC	208	311	stof	NA	group3	dependency	bound	318	NA	NA	weight	nav	4_4
+stof.LEMMAREL3.PPMIweight.LENGTHFOC.SOCPOSall	-0.15837818228177863	0.1183716905210919	1	FOC	318	311	stof	NA	group3	dependency	bound	318	NA	NA	weight	all	4_4
+stof.LEMMAREL3.PPMIselection.LENGTH5000.SOCPOSnav	0.116003312973339	0.2571572438056996	1	5000	5000	311	stof	NA	group3	dependency	bound	318	NA	NA	selection	nav	4_4
+stof.LEMMAREL3.PPMIselection.LENGTH5000.SOCPOSall	0.4222174423205192	0.28973881712306854	1	5000	5000	311	stof	NA	group3	dependency	bound	318	NA	NA	selection	all	4_4
+stof.LEMMAREL3.PPMIselection.LENGTHFOC.SOCPOSnav	-0.07581206748274448	0.13585832913123222	1	FOC	208	311	stof	NA	group3	dependency	bound	318	NA	NA	selection	nav	4_4
+stof.LEMMAREL3.PPMIselection.LENGTHFOC.SOCPOSall	-0.06560363122308607	0.13368226011966386	1	FOC	318	311	stof	NA	group3	dependency	bound	318	NA	NA	selection	all	4_4
+stof.LEMMAREL3.PPMIno.LENGTH5000.SOCPOSnav	0.10569542973432185	0.24247193166262423	1	5000	5000	312	stof	NA	group3	dependency	bound	433	NA	NA	no	nav	4_4
+stof.LEMMAREL3.PPMIno.LENGTH5000.SOCPOSall	0.4445902023027532	0.28203841776232585	1	5000	5000	312	stof	NA	group3	dependency	bound	433	NA	NA	no	all	4_4
+stof.LEMMAREL3.PPMIno.LENGTHFOC.SOCPOSnav	-0.07649687352456444	0.11716896848905647	1	FOC	267	312	stof	NA	group3	dependency	bound	433	NA	NA	no	nav	4_4
+stof.LEMMAREL3.PPMIno.LENGTHFOC.SOCPOSall	-0.070514880553045	0.1275437924101051	1	FOC	433	312	stof	NA	group3	dependency	bound	433	NA	NA	no	all	4_4
