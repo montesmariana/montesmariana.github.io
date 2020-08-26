@@ -434,7 +434,7 @@ function execute(datasets, type, alternatives) {
       .style("fill", function (d) { return code(d, colorvar, color, "#1f77b4"); })
       .style("opacity", tokenSelection.length > 0 ? 1 : 0.7)
       .classed("lighter", function (d) { return (tokenSelection.length > 0 ? (tokenSelection.indexOf(d["_id"]) === -1) : false); })
-      // .classed("lost", function(d) {return (!exists(d, model)); })
+      // .classed("lost", function(d) {return (!exists(d, chosenSolution)); })
       .on("mouseover", showContext)
       .on("mouseout", function () {
         d3.select("#concordance").select("p").remove();
@@ -470,7 +470,7 @@ function execute(datasets, type, alternatives) {
   function brushed(p) {
     _.pullAll(tokenSelection);
     dot.each(function (d) {
-      if (!(d3.select(this).classed("lighter")) && exists(d, model)) {
+      if (!(d3.select(this).classed("lighter")) && exists(d, chosenSolution)) {
         tokenSelection.push(d["_id"]);
       }
     });
