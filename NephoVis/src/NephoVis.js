@@ -15,28 +15,24 @@ const myColors = [
     // colorblind friendly palette: six first from "seaborn" (other three may not be so)
 
 // Color, shape, size palettes
-const color = d3.scaleOrdinal(myColors);
-// var color = d3.scaleOrdinal(d3.schemeCategory10);
-const shape = d3.scaleOrdinal(d3.symbols);
-const size = d3.scaleLinear()
-    .range([40, 200]); // remember to set the domain (current variable) before assigning a value
-
-let colnames, nominals, numerals;
-let colorvar, shapevar, sizevar;
-let colorSelection, shapeSelection;
-
+const globals = {
+    color = d3.scaleOrdinal(myColors),
+    shape = d3.scaleOrdinal(d3.symbols),
+    size = d3.scaleLinear().range([40, 200])
+}
 function initVars(data, level, type) {
     // sets the values of variables to access the data
-    colnames = classifyColnames(data);
-    nominals = colnames["nominals"];
-    numerals = colnames["numerals"];
-    colorvar = varFromLS(data, "color", level, type);
-    colorSelection = [];
-
-    shapevar = varFromLS(data, "shape", level, type);
-    shapeSelection = [];
-
-    sizevar = varFromLS(data, "size", level, type);
+    return {
+        dataset = data,
+        colnames = classifyColnames(data),
+        nominals = colnames["nominals"],
+        numerals = colnames["numerals"],
+        colorvar = varFromLS(data, "color", level, type),
+        colorSelection = [],
+        shapevar = varFromLS(data, "shape", level, type),
+        shapeSelection = [],
+        sizevar = varFromLS(data, "size", level, type)
+    }
 }
 
 function buildDropdown(where, data, valueFunction = d => d, textFunction = d => d) {
@@ -51,7 +47,6 @@ function buildDropdown(where, data, valueFunction = d => d, textFunction = d => 
             .html(textFunction)
     );
 }
-
 
 // ################################################################################################
 // Functions to help draw the plot
@@ -93,12 +88,11 @@ function setPointerEvents(svg, width, height) {
 
 
 // Make svg responsive with script from: https://brendansudol.com/writing/responsive-d3
-function responsivefy(svg) {
+function responsivefy(d3, svg) {
     // get container + svg aspect ratio
     const container = d3.select(svg.node().parentNode);
     const width = parseInt(svg.style("width"));
     const height = parseInt(svg.style("height"));
-    const aspect = width / height;
 
     // add viewBox and preserveAspectRatio properties,
     // and call resize so that svg resizes on inital page load
@@ -110,14 +104,18 @@ function responsivefy(svg) {
     // you need to add namespace, i.e., "click.foo"
     // necessary if you call invoke this function for multiple svgs
     // api docs: https://github.com/mbostock/d3/wiki/Selections#on
-    d3.select(window).on("resize." + container.attr("id"), resize);
+    d3.select(window).on("resize." + container.attr("id"), resize);    
+}
+// get width of container and resize svg to fit it
+function resize(svg) {
+    const container = d3.select(svg.node().parentNode);
+    const width = parseInt(svg.style("width"));
+    const height = parseInt(svg.style("height"));
+    const aspect = width / height;
 
-    // get width of container and resize svg to fit it
-    function resize() {
-        const targetWidth = parseInt(container.style("width"));
-        svg.attr("width", targetWidth)
-            .attr("height", Math.round(targetWidth / aspect));
-    }
+    const targetWidth = parseInt(container.style("width"));
+    svg.attr("width", targetWidth)
+        .attr("height", Math.round(targetWidth / aspect));
 }
 
 

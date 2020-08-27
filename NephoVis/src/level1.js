@@ -1,14 +1,30 @@
-function execute(datasets, type) {
-  const width = 600;
-  const height = 600;
-  const padding = 40;
-  const dataset = datasets["model"];
-  const level = 'model';
-  // const LSselectionIndex = listFromLS("modelselection-" + type + "-groups");
-  // LSselectionIndex.filter((d) => {return(d3.keys(localStorage).indexOf("modelselection-" + type + "-group" + d) > -1)});
-  // console.log(LSselectionIndex);
-  // let selectionIndex = LSselectionIndex.length === 0 ? +0 : _.max(LSselectionIndex);
+const settings = {
+  width = 600,
+  height = 600,
+  padding = 40,
+  level = 'model'  
+}
 
+const inLS = {};
+
+function addCheckbox(d3, data, type){
+  checkboxSections("focrow", data.foc, data.data); // create buttons for "foc"
+  checkboxSections("socrow", data.soc, data.data); // create buttons for "soc"
+  
+  $(document).on('change', 'input', clickCheckbox(d3, data, type));
+}
+
+function clickCheckbox(d3, data, type) {
+  const checked = d3.select(this).attr('id');
+  const key = checked.split(":")[0];
+  const value = checked.split(":")[1];
+  data.variableSelection[key].indexOf(value) === -1 ? data.variableSelection[key].push(value) : _.pull(data.variableSelection[key], value);
+  localStorage.setItem(type + "-modselectionFromButtons", JSON.stringify(data.variableSelection));
+  updateCheckbox(data.data, data.variableSelection);
+}
+function execute(datasets, type) {
+  const dataset = datasets["model"];
+  
   /// SET UP WORKSPACE ######################################################################################################################
 
   d3.select("h1").html("Level 1 (<em>" + type + "</em>)");
@@ -24,61 +40,27 @@ function execute(datasets, type) {
     });
 
   d3.select("#modelSelect").on("click", function () {
-    // localStorage.setItem("modelselection-" + type + "-groupnone", JSON.stringify(modelSelection));
     window.open("level2.html" + "?type=" + type);
-    // window.open("level2.html" + "?type=" + type + "&group=none");
   });
-
-  // d3.select("#modelGroup").on("click", function () {
-  //   LSselectionIndex.filter((d) => {return(d3.keys(localStorage).indexOf("modelselection-" + type + "-group" + d) > -1)});
-  //   console.log(LSselectionIndex)
-  //   if (LSselectionIndex.length > 0 && selectionIndex == _.max(LSselectionIndex)) selectionIndex += 1;
-  //   localStorage.setItem("modelselection-" + type + "-group" + selectionIndex, JSON.stringify(modelSelection));
-  //   LSselectionIndex.push(selectionIndex);
-  //   localStorage.setItem("modelselection-" + type + "-groups", JSON.stringify(LSselectionIndex));
-  //   window.open("level2.html" + "?type=" + type + "&group=" + selectionIndex);
-  // });
-
-  // d3.select("#model2buttons")
-  //   .selectAll("button")
-  //   .data(LSselectionIndex).enter()
-  //   .append("button").attr("type", "button")
-  //   .attr("class", "btn shadow-sm btn-marigreen p-2")
-  //   .attr("id", (d) => {return("level2group" + d); })
-  //   .style("font-weight", "bold")
-  //   .text((d)=>{return(d); })
-  //   .on("click", (d) => {window.open("level2.html" + "?type=" + type + "&group=" + d);});
-
 
   d3.select("#go2index").on("click", function () {
     window.open("index.html", "_self");
   });
 
-  initVars(dataset, "mod"); // sets colnames, nominals, numerals, sizevar, colorvar...
+  const data = initVars(dataset, "mod"); // sets colnames, nominals, numerals, sizevar, colorvar...
+  data.foc = data.nominals.filter(function (d) { return (d.startsWith('foc_')); });
+  data.soc = data.nominals.filter(function (d) { return (d.startsWith('soc_')); });
 
-  const foc = nominals.filter(function (d) { return (d.startsWith('foc_')); });
-  const soc = nominals.filter(function (d) { return (d.startsWith('soc_')); });
-
-  const modelSelection = listFromLS(level + "selection-" + type);
-  d3.select("#numSelected").text(modelSelection.length);
+  inLS.modelSelection = listFromLS(level + "selection-" + type);
+  d3.select("#numSelected").text(inLS.modelSelection.length);
 
   // Set up selection by buttons ###################################################
   
-  const VSFromLS = JSON.parse(localStorage.getItem(type + "-modselectionFromButtons"));
-  const variableSelection = _.isNull(VSFromLS) ? _.fromPairs(_.map(nominals, function (x) { return ([x, []]); })) : VSFromLS;
-  checkboxSections("focrow", foc, dataset); // create buttons for "foc"
-  checkboxSections("socrow", soc, dataset); // create buttons for "soc"
+  inLS.VSFromLS = JSON.parse(localStorage.getItem(type + "-modselectionFromButtons"));
+  inLS.variableSelection = _.isNull(data.VSFromLS) ? _.fromPairs(_.map(data.nominals, function (x) { return ([x, []]); })) : data.VSFromLS;
   
-  $(document).on('change', 'input', function () {
-    const checked = d3.select(this).attr('id');
-    const key = checked.split(":")[0];
-    const value = checked.split(":")[1];
-    variableSelection[key].indexOf(value) === -1 ? variableSelection[key].push(value) : _.pull(variableSelection[key], value);
-    localStorage.setItem(type + "-modselectionFromButtons", JSON.stringify(variableSelection));
-    updateCheckbox(dataset, variableSelection);
-  });
-
-
+  addCheckbox(d3, data, type);
+ 
   // Set up dropdowns ################################################################
 
   buildDropdown("colour", nominals,
