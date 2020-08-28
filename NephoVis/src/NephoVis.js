@@ -20,6 +20,7 @@ const globals = {
     shape = d3.scaleOrdinal(d3.symbols),
     size = d3.scaleLinear().range([40, 200])
 }
+
 function initVars(data, level, type) {
     // sets the values of variables to access the data
     return {
@@ -35,16 +36,22 @@ function initVars(data, level, type) {
     }
 }
 
-function buildDropdown(where, data, valueFunction = d => d, textFunction = d => d) {
+function buildDropdown(d3, key, variable, data, settings, valueFunction = d => d, textFunction = d => d) {
     return (
-        d3.select("#" + where)
+        d3.select("#" + key)
             .selectAll("button")
-            .data(data).enter()
+            .data(variable).enter()
             .append("button")
-            .attr("class", "dropdown-item " + where.slice(0, 3))
+            .attr("class", "dropdown-item " + key.slice(0, 3))
             .attr("xlink:href", "#")
             .attr("value", valueFunction)
             .html(textFunction)
+            .on("click", function () {
+                data[key + "var"] = updateVar(data.data, key, this.value, settings.level, settings.type);
+                data[key + "Selection"] = [];
+                updatePlot();
+                updateLegend(data, settings);
+              })
     );
 }
 
