@@ -1,21 +1,19 @@
 const settings = {
-  width = 600,
-  height = 600,
-  padding = 40,
-  level = 'model'
+  width : 600,
+  height : 600,
+  padding : 40,
+  level : 'model'
 }
-
-const inLS = {};
 
 // Functions
-function htmlText(d3, settings) {
+function htmlText(d3, data, settings) {
   d3.select("h1").html("Level 1 (<em>" + settings.type + "</em>)");
 
-  d3.select("#numSelected").text(inLS[settings.level + "Selection"].length);
+  d3.select("#numSelected").text(data[settings.level + "Selection"].length);
 }
 
-function htmlButtons(d3, settings, inLS) {
-  d3.select("#clearSelect").on("click", clearButton(settings, inLS));
+function htmlButtons(d3, data, settings) {
+  d3.select("#clearSelect").on("click", clearButton(settings, data));
 
   d3.select("#modelSelect").on("click", goTo("level2", settings));
 
@@ -23,24 +21,21 @@ function htmlButtons(d3, settings, inLS) {
 }
 
 function htmlDropdowns(d3, data, settings) {
-  buildDropdown(d3, "color", data.nominals, data, settings,
-    valueFunction = d => d,
-    textFunction = d => formatVariableName(d));
-
-  buildDropdown(d3, "shape", data.nominals, data, settings,
-    valueFunction = d => d,
-    textFunction = d => formatVariableName(d));
-
-  buildDropdown(d3, "size", data.numerals, data, settings,
-    valueFunction = d => d,
-    textFunction = d => formatVariableName(d));
-
+  [{
+    name : "color", datatype : "nominals",
+    name : "shape", datatype : "nominals",
+    name : "size", datatype : "numerals"
+  }].forEach((x) => {
+    buildDropdown(d3, x.name, x.datatype, data, settings,
+      valueFunction = d => d,
+      textFunction = d => formatVariableName(d));
+  });
 }
-function clearButton(settings, inLS) {
-  clearStorage(inLS[settings.level + "Selection"], settings.level, settings, type);
+function clearButton(settings, data) {
+  clearStorage(data[settings.level + "Selection"], settings.level, settings, type);
   if (settings.level === "model") {
     resetVariable(settings.type + "-modselectionFromButtions");
-    _.keys(inLS.variableSelection).forEach(v => _.pullAll(inLS.variablesSelection[v], inLS.variableSelection[v]))
+    _.keys(data.variableSelection).forEach(v => data.variablesSelection[v] = [])
     d3.selectAll("label[name='selectionByButtons']").classed("active", false);
   }
 }
@@ -64,10 +59,11 @@ function clickCheckbox(d3, data, type) {
   const checked = d3.select(this).attr('id');
   const key = checked.split(":")[0];
   const value = checked.split(":")[1];
-  data.variableSelection[key].indexOf(value) === -1 ? data.variableSelection[key].push(value) : _.pull(data.variableSelection[key], value);
+  updateArray(data.variableSelection[key], value);
   localStorage.setItem(type + "-modselectionFromButtons", JSON.stringify(data.variableSelection));
   updateCheckbox(data.data, data.variableSelection);
 }
+
 function setOneCloud(d3, settings, coordScale) {
   const width = settings.width;
   const height = settings.height;
@@ -100,7 +96,7 @@ function setOneCloud(d3, settings, coordScale) {
   const yCenter = traceCenter(svg, x1 = settings.padding, x2 = width - settings.padding, y1 = coordScale.y(0), y2 = coordScale.y(0));
 
   return {
-    svg = svg, xAxis = xAxis, yAxis = yAxis, xCenter = xCenter, yCenter = yCenter
+    svg : svg, xAxis : xAxis, yAxis : yAxis, xCenter : xCenter, yCenter : yCenter
   }
 
 }
@@ -117,7 +113,7 @@ function setScales(d3, data, settings) {
     .domain(yrange)
     .range([settings.height - settings.padding, settings.padding]);
 
-  return { x = x, y = y }
+  return { x : x, y : y }
 }
 
 
@@ -126,10 +122,10 @@ function locateDot(d, modelname, coords){
 }
 
 function styleDot(d3, dot, data, globals){
-  dot.style('fill', (d) => code(d, data.colorvar, globals.color, "#1f77b4")) // original color
+  dot.style('fill', (d) => code(d3, d, data.colorvar, globals.color, "#1f77b4")) // original color
     .attr("d", d3.symbol() // original look
-      .type((d) => code(d, data.shapevar, globals.shape, d3.symbolWye)) // original shape
-      .size((d) => code(d, data.sizevar, globals.size, 64)));
+      .type((d) => code(d3, d, data.shapevar, globals.shape, d3.symbolWye)) // original shape
+      .size((d) => code(d3, d, data.sizevar, globals.size, 64)));
 }
 
 function removeTooltip(d3, tooltip){
@@ -137,16 +133,12 @@ function removeTooltip(d3, tooltip){
   d3.selectAll(".selector").remove();
 }
 
-function highlightDot(d, selection, level){
-  const id = level == "model" ? "_model" : "_id";
-  return selection.length > 0 && selection.indexOf(d[id]) === -1;
-}
 
 function toggleDot(d, selection, level){
   const id = level == "model" ? "_model" : "_id";
-  selection.indexOf(d[id]) === -1 ? selection.push(d[id]) : _.pull(selection, d[id]);
+  updateArray(selection, d[id]);
 }
-function makeDots(d3, svg, data, coords) {
+function makeDots(d3, svg, data, coords, settings, globals) {
   //add tooltip (before the svg so it is not on top of it?)
   const tooltip = setTooltip("#svgContainer");
 
@@ -157,18 +149,27 @@ function makeDots(d3, svg, data, coords) {
     .append('path')
     .attr("class", "graph")
     .attr("transform", (d) => locateDot(d, "model", coords)) // coordinates!
-    .classed("lighter", (d) => highlightDot(d, data.modelSelection, settings.level)) // is selected?
     .on("mouseover", (d) => mouseoverDot(d3, d, data, svg, tooltip))
     .on('mouseout', removeTooltip(d3, tooltip))
     .on('click', function (d) {
       resetVariable(settings.type + "-modselectionFromButtons");
       toggleDot(d, data.modelSelection, settings.level);
-      updateModelSelection(data.modelSelection);
+      updateSelection(d3, data, settings);
     });
 
   styleDot(d3, dot, data, globals);
-
+  highlightDot(d3, data.modelSelection, settings.level);
   return(dot);
+}
+
+function reportVariables(d3, data, variable){
+  const thisVar = data[variable + "var"]["variable"];
+  if (_.isNull(thisVar)) {
+    return "";
+  } else {
+    const thisValue = variable === "size" ? d3.format(".r")(+d[thisVar]) : d[thisVar];
+    return("<br><b>" + thisVar + "</b>: " + thisValue);
+  }
 }
 
 function mouseoverDot(d3, d, data, svg, tooltip) {
@@ -182,10 +183,8 @@ function mouseoverDot(d3, d, data, svg, tooltip) {
     .duration(200)
     .style("opacity", 1);
 
-  const colorData = _.isNull(data.colorvar['variable']) ? "" : "<br><b>" + data.colorvar['variable'] + "</b>: " + d[data.colorvar['variable']];
-  const shapeData = _.isNull(data.shapevar['variable']) ? "" : "<br><b>" + data.shapevar['variable'] + "</b>: " + d[data.shapevar['variable']];
-  const sizeData = _.isNull(data.sizevar['variable']) ? "" : "<br><b>" + data.sizevar['variable'] + "</b>: " + d3.format(".3r")(+d[data.sizevar['variable']]);
-  tooltip.html("<b>" + d['_model'] + "</b>" + colorData + shapeData + sizeData)
+  const reportedVariables = reportVariables(d3, data, "color") + reportVariables(d3, data, "shape") + reportVariables(d3, data, "size");
+  tooltip.html("<b>" + d['_model'] + "</b>" + reportedVariables)
     .style("left", (xcoord) + "px")
     .style("top", (ycoord) + "px");
   svg.select(".dot")
@@ -194,7 +193,7 @@ function mouseoverDot(d3, d, data, svg, tooltip) {
     .attr("transform", d3.select(this).attr("transform"))
     .attr("d", d3.symbol().type(d3.symbolCircle).size(250))
     .style("fill", "none")
-    .style("stroke", compColor(d3.select(this).style("fill")))
+    .style("stroke", compColor(d3, d3.select(this).style("fill")))
     .style("stroke-width", 2);
 }
 
@@ -243,42 +242,35 @@ function appendCheckbox(d3, data, p) {
     .attr("id", (d) => p + ":" + d);
 }
 
-function updateCheckbox(dataset, variableSelection) {
+function updateCheckbox(data, variableSelection) {
   const selectedValues = _.omitBy(variableSelection, _.isEmpty);
 
-  const selectedTokens = d3.keys(selectedValues).map(function (v) {
-    const filteredDataset = dataset.filter(function (row) { // filter by variable
-      return (selectedValues[v].indexOf(row[v]) > -1);
-    }).map(function (row) { // extract modelname
-      return (row["_model"]);
-    });
+  const selectedTokens = d3.keys(selectedValues).map( (v) => {
+    const filteredDataset = data.data
+      .filter((row) => selectedValues[v].indexOf(row[v]) > -1 ) // filter by variable
+      .map((row) => row["_model"]);// extract modelname
     return (filteredDataset);
   });
 
-  _.pullAll(modelSelection, modelSelection);
-  modelSelection.push(..._.intersection(...selectedTokens));
-  updateModelSelection(modelSelection)
+  data.modelSelection = [];
+  data.modelSelection.push(..._.intersection(...selectedTokens));
+  updateSelection(d3, data, settings);
 }
 
-function updateModelSelection(selection, type) {
-  d3.select("#numSelected").text(selection.length);
-  updateSelection(selection, "model", type);
-}
 function execute(datasets, type) {
   settings.type = type;
   const dataset = datasets["model"];
-  inLS.modelSelection = listFromLS(settings.level + "selection-" + settings.type);
-
+  
   const data = initVars(dataset, "mod"); // sets colnames, nominals, numerals, sizevar, colorvar...
-  data.foc = data.nominals.filter(function (d) { return (d.startsWith('foc_')); });
-  data.soc = data.nominals.filter(function (d) { return (d.startsWith('soc_')); });
-  data.data = dataset;
+  data.modelSelection = listFromLS(settings.level + "selection-" + settings.type);
 
-  inLS.VSFromLS = JSON.parse(localStorage.getItem(type + "-modselectionFromButtons"));
-  inLS.variableSelection = _.isNull(data.VSFromLS) ? _.fromPairs(_.map(data.nominals, function (x) { return ([x, []]); })) : data.VSFromLS;
+  data.foc = data.nominals.filter( (d) => d.startsWith('foc_'));
+  data.soc = data.nominals.filter( (d) => d.startsWith('soc_'));
+  data.VSFromLS = JSON.parse(localStorage.getItem(type + "-modselectionFromButtons"));
+  data.variableSelection = _.isNull(data.VSFromLS) ? _.fromPairs(_.map(data.nominals, (x) => [x, []])) : data.VSFromLS;
 
-  htmlText(d3, settings);
-  htmlButtons(d3, settings, inLS);
+  htmlText(d3, data, settings);
+  htmlButtons(d3, data, settings);
   htmlDropdowns(d3, data, settings);
   addCheckbox(d3, data, type);
 
@@ -286,11 +278,11 @@ function execute(datasets, type) {
   // Set up canvas ######################################################################
   const coordScale = setScales(d3, data.data, settings);
   const svg = setOneCloud(d3, settings, coordScale);
-  const dot = makeDots(d3, svg, data, coords);
+  const dot = makeDots(d3, svg, data, coordScale, settings, globals);
 
   // Run basic functions
   updateCheckbox(data.data, data.variableSelection);
   updateLegend(data, settings);
-  updateModelSelection(data.modelSelection, settings.type);
+  updateSelection(d3, data, settings);
 
 }
