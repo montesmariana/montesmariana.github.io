@@ -1,0 +1,11 @@
+{
+  "name": "nephovis",
+  "version": "1.0.0",
+  "description": "The visualization tool of the Nephological Semantics projects.",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Montes, Mariana",
+  "license": "ISC"
+}
