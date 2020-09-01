@@ -13,8 +13,9 @@ function execute(datasets, type) {
     const cwsColumns = modelSelection.map(findCwsColumn);
 
     const infoOptions = [
-        {name : "Only frequency", value : "freq"},
+        {name : "Absolute frequency", value : "freq"},
         {name : "Selected and non selected", value : "both"},
+        {name : "Absolute and relative frequencies", value :"prop"},
         {name : "Ratio selected/non selected", value : "ratio"}
     ]
 
@@ -35,6 +36,17 @@ function execute(datasets, type) {
         }
         return(start);
     }
+
+    function addProp(d, freqcols, selectedTokens, deselectedTokens){
+        const totalProp = countTokens(d, selectedTokens)/(countTokens(d, deselectedTokens)+countTokens(d, selectedTokens));
+        const start = { "CWs": d, "total-A" : countTokens(d, selectedTokens), "total-R" : d3.format(".3r")(totalProp)}
+        for (let i = 0; i < freqcols.length; i++) {
+            const partialProp = countCws(cwsColumns[i], d, selectedTokens)/(countCws(cwsColumns[i], d, deselectedTokens)+countCws(cwsColumns[i], d, selectedTokens));
+            start[freqcols[i] + "-A"] = countCws(cwsColumns[i], d, selectedTokens);
+            start[freqcols[i] + "-R"] = d3.format(".3r")(partialProp);
+        }
+        return(start);
+    }
     function addBothFreqs(d, freqcols, selectedTokens, deselectedTokens){
         const start = { "CWs": d, "total+" : countTokens(d, selectedTokens), "total-": countTokens(d, deselectedTokens)}
         for (let i = 0; i < freqcols.length; i++) {
@@ -52,14 +64,32 @@ function execute(datasets, type) {
         }
         return(start);
     }
-    function createTable(info, freqcols){
-        const cols = info === "both" ? ["CWs", "total+", "total-"] : ["CWs", "total", ...freqcols];
-        if (info === "both") {
+
+    function nameColumns(info, freqcols){
+        const cols = ["CWs"]
+        if (info === "freq" | info === "ratio") {
+            cols.push("total");
+            cols.push(...freqcols);
+        } else if (info === "both") {
+            cols.push("total+");
+            cols.push("total-");
             freqcols.forEach((d) => {
                 cols.push(d + "+");
                 cols.push(d + "-");
             });
+        } else if (info === "prop") {
+            cols.push("total-A");
+            cols.push("total-R");
+            freqcols.forEach((d) => {
+                cols.push(d + "-A");
+                cols.push(d + "-R");
+            });
         }
+        console.log(cols)
+        return(cols);
+    }
+
+    function createTable(info, freqcols){
         const tableData = _.uniq(cws).map((d) => {
             if (info === "freq"){
                 return(addRawFreq(d, freqcols, selectedTokens));
@@ -67,9 +97,11 @@ function execute(datasets, type) {
                 return(addBothFreqs(d, freqcols, selectedTokens, deselectedTokens));
             } else if (info === "ratio") {
                 return(addRatio(d, freqcols, selectedTokens, deselectedTokens));
+            } else if (info === "prop") {
+                return(addProp(d, freqcols, selectedTokens, deselectedTokens));
             }
         });
-        return({tableData : tableData, cols : cols});
+        return({tableData : tableData, cols : nameColumns(info, freqcols)});
     }
     
     function drawTable(info, freqcols){
@@ -95,7 +127,7 @@ function execute(datasets, type) {
             .data((d) => tableData.cols.map((k) => {return({ 'name': k, 'value': d[k] })}))
                 .enter()
             .append('td')
-            .attr("class", d => typeof d.name === "string" && d.name.endsWith("+") ? "plus" : "minus")
+            .attr("class", d => typeof d.name === "string" && (d.name.endsWith("+") | d.name.endsWith("A")) ? "plus" : "minus")
             .attr('data-th', d => d.name)
             .text(d => d.value);
 
