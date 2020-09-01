@@ -94,6 +94,7 @@
     <!-- d3 component for zoom -->
     <script src="https://d3js.org/d3-zoom.v1.min.js"></script>
     <!-- My own set of functions! -->
+    <script src="src/utils/url.js"></script>
     <script src="NephoVis.js"></script>
 
     <script>
@@ -101,7 +102,7 @@
       var type, level;
       var width, height, padding;
 
-      type = getUrlParameter('type');
+      type = URLUtils.getUrlParameter(window.location, 'type');
       d3.select("h1").html("Level 1 (<em>" + type + "</em>)");
       level = "model";
       

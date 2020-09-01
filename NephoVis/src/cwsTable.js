@@ -1,5 +1,5 @@
 function execute(datasets, type) {
-    // const group = getUrlParameter("group");
+    // const group = URLUtils.getUrlParameter(window.location, "group");
     const modelSelection = listFromLS("modelselection-" + type);
     // const modelSelection = listFromLS("modelselection-" + type + "-group" + group);
     const tokSelection = listFromLS("tokenselection-" + type);

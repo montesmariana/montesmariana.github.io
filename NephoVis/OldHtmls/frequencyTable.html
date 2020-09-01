@@ -29,14 +29,15 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
         <!-- My own set of functions! -->
+        <script src="src/utils/url.js"></script>
         <script src="NephoVis.js"></script>
 
         <script>
             
             var type, weights, tokselection, table, cws_column, cws;
-
-            type = getUrlParameter('type');
-            cws_column = getUrlParameter('column');
+            
+            type = URLUtils.getUrlParameter(window.location, 'type');
+            cws_column = URLUtils.getUrlParameter(window.location, 'column');
 
             // Identify name of correct weights-file (FIND A BETTER WAY!!)
             // if (type === 'church'){
