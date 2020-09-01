@@ -4,8 +4,11 @@
   "description": "The visualization tool of the Nephological Semantics projects.",
   "main": "index.html",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "author": "Montes, Mariana",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
 }
