@@ -45,10 +45,10 @@ function execute(datasets, type) {
     }
     function addRatio(d, freqcols, selectedTokens, deselectedTokens){
         const totalRatio = countTokens(d, selectedTokens)/(countTokens(d, deselectedTokens)+0.00001);
-        const start = { "CWs": d, "total" : totalRatio > 1000 ? totalRatio.toExponential(2) : totalRatio}
+        const start = { "CWs": d, "total" : totalRatio > 1000 ? totalRatio.toExponential(2) : d3.format(".3r")(totalRatio)}
         for (let i = 0; i < freqcols.length; i++) {
             const partialRatio = countCws(cwsColumns[i], d, selectedTokens)/(countCws(cwsColumns[i], d, deselectedTokens)+0.00001);
-            start[freqcols[i]] = partialRatio > 1000 ? partialRatio.toExponential(2) : partialRatio;
+            start[freqcols[i]] = partialRatio > 1000 ? partialRatio.toExponential(2) : d3.format(".3r")(partialRatio);
         }
         return(start);
     }
