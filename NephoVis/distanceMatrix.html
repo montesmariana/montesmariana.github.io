@@ -30,11 +30,12 @@
     <!-- lodash -->
     <script src="js/lodash.min.js"></script>
     <!-- My own set of functions! -->
+    <script src="src/utils/url.js"></script>
     <script src="src/NephoVis.js"></script>
     <script src="src/distanceMatrix.js"></script>
     <script src="src/loadData.js"></script>
     <script>
-        var type = getUrlParameter('type');
+      var type = getUrlParameter(window.location, 'type');
 
         loadData(type = type, files = ['distances']);
     </script>

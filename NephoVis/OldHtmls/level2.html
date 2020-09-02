@@ -109,13 +109,14 @@
     <!-- d3 component for sequential color palettes -->
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <!-- My own set of functions! -->
+    <script src="src/utils/url.js"></script>
     <script src="NephoVis.js"></script>
     
     <script>
       var type, modselection, tokselection, level;
       var ncol, nrow, width, height, padding;
 
-      type = getUrlParameter('type');
+      type =  getUrlParameter(window.location, 'type');
       d3.select("h1").html("Level 2 (<em>" + type + "</em>)");
       level = "token";
 

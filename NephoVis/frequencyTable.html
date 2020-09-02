@@ -42,12 +42,13 @@
   <!-- lodash -->
   <script src="js/lodash.min.js"></script>
   <!-- My own set of functions! -->
+  <script src="src/utils/url.js"></script>
   <script src="src/NephoVis.js"></script>
   <script src="src/frequencyTable.js"></script>
   <script src="src/loadData.js"></script>
   <script>
-    var type = getUrlParameter('type');
-    var cws_column = getUrlParameter('column');
+    var type = getUrlParameter(window.location,'type');
+    var cws_column = getUrlParameter(window.location,'column');
 
     loadData(type = type, files = ['variables', 'weights'], other_args = cws_column);
   </script>

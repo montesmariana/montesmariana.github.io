@@ -28,11 +28,12 @@
     <!-- d3 component for sequential color palettes -->
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <!-- My own set of functions! -->
+    <script src="src/utils/url.js"></script>
     <script src="NephoVis.js"></script>
 
     <script>
             
-        type = getUrlParameter('type');
+        type = getUrlParameter(window.location, 'type');
 
         d3.tsv(type + "/" + type + ".models.dist.tsv", function(error, data) {
             if (error && error.target.status === 404) {
