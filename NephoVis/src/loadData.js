@@ -1,5 +1,5 @@
 
-// var type = URLUtils.getUrlParameter(window.location, "type");
+// var type = getUrlParameter(window.location, "type");
 function loadData(type, files, other_args = null) {
     
     var toLoad = [];

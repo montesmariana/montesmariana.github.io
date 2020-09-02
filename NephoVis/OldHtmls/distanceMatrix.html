@@ -33,7 +33,7 @@
 
     <script>
             
-        type = URLUtils.getUrlParameter(window.location, 'type');
+        type = getUrlParameter(window.location, 'type');
 
         d3.tsv(type + "/" + type + ".models.dist.tsv", function(error, data) {
             if (error && error.target.status === 404) {

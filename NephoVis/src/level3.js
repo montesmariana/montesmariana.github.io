@@ -1,6 +1,6 @@
 function execute(datasets, type, alternatives) {
   const level = "token";
-  let model = URLUtils.getUrlParameter(window.location, "model");
+  let model = getUrlParameter(window.location, "model");
 
   // SET UP WORKSPACE ###############################################################################################################################
   d3.select("h1").html("Level 3 (<em>" + type + "</em>)");
@@ -15,7 +15,7 @@ function execute(datasets, type, alternatives) {
 
   d3.select("#modelSelect")
     .on("click", function () {
-      const group = URLUtils.getUrlParameter(window.location, "group");
+      const group = getUrlParameter(window.location, "group");
       window.open("level2.html" + "?type=" + type + "&group=" + group);
     });
 

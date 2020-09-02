@@ -47,8 +47,8 @@
   <script src="src/frequencyTable.js"></script>
   <script src="src/loadData.js"></script>
   <script>
-    var type = URLUtils.getUrlParameter(window.location,'type');
-    var cws_column = URLUtils.getUrlParameter(window.location,'column');
+    var type = getUrlParameter(window.location,'type');
+    var cws_column = getUrlParameter(window.location,'column');
 
     loadData(type = type, files = ['variables', 'weights'], other_args = cws_column);
   </script>

@@ -145,7 +145,7 @@
     <script src="src/loadData.js"></script>
     <script>
     
-    var type = URLUtils.getUrlParameter(window.location, "type");
+    var type = getUrlParameter(window.location, "type");
     
     d3.select("title").text(type + ": Level 3");
     loadData(type = type, files = ["tokens", "variables"]);

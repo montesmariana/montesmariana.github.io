@@ -36,8 +36,8 @@
             
             var type, weights, tokselection, table, cws_column, cws;
             
-            type = URLUtils.getUrlParameter(window.location, 'type');
-            cws_column = URLUtils.getUrlParameter(window.location, 'column');
+            type = getUrlParameter(window.location, 'type');
+            cws_column = getUrlParameter(window.location, 'column');
 
             // Identify name of correct weights-file (FIND A BETTER WAY!!)
             // if (type === 'church'){

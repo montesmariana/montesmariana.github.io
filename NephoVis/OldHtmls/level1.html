@@ -102,7 +102,7 @@
       var type, level;
       var width, height, padding;
 
-      type = URLUtils.getUrlParameter(window.location, 'type');
+      type = getUrlParameter(window.location, 'type');
       d3.select("h1").html("Level 1 (<em>" + type + "</em>)");
       level = "model";
       
