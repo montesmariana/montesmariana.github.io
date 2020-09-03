@@ -1,3 +1,104 @@
+function countTokens(cw, df, cwsColumns) {
+    let res = []
+    for (let i = 0; i < cwsColumns.length; i++){
+        const m = cwsColumns[i];
+        const tids = df
+            .filter((t) => t[m].split(";").indexOf(cw) !== -1 )
+            .map((t) => t["_id"] );
+        res.push(...tids);
+    }
+    return(_.uniq(res).length);
+}
+
+function countCws(m, cw, df) {
+    const res = df.map((d) => d[m])
+        .join(";").split(";")
+        .filter((w) => w === cw );
+    return (res.length);
+}
+
+function createModelCT(m, cw, selectedTokens, deselectedTokens){
+    const inModel = selectedTokens.map((d) => d[m]);
+    const notInModel = deselectedTokens.map((d) => d[m]);
+    const a = inModel.join(";").split(";").filter((w) => w === cw).length;
+    const b = notInModel.join(";").split(";").filter((w) => w === cw).length;
+    const c = inModel.length - a;
+    const d = notInModel.length - b;
+
+    return ({ a : a, b : b, c : c, d : d, n : a+b+c+d})
+}
+
+function createFullCT(cw, selectedTokens, deselectedTokens, cwsColumns){
+    const a = countTokens(cw, selectedTokens, cwsColumns);
+    const b = countTokens(cw, deselectedTokens, cwsColumns);
+    const c = selectedTokens.length - a;
+    const d = deselectedTokens.length - b;
+    const n = selectedTokens.length + deselectedTokens.length;
+
+    return ({a : a, b : b, c : c, d : d, n : n});
+
+}
+
+function cueValidity(contingency){
+    const res = contingency.a / (contingency.a + contingency.b);
+    return (d3.format(".3r")(res));
+}
+function deltaP(contingency){
+    const first = cueValidity(contingency);
+    const second = contingency.c / (contingency.c + contingency.d);
+    return (d3.format(".3r")(first-second));
+}
+function logFisher(contingency){
+    const fisher = exact22(contingency.a, contingency.b, contingency.c, contingency.d);
+    const aExp = (contingency.a+contingency.b)*(contingency.a+contingency.c)/(contingency.n);
+    const logF = contingency.a < aExp ? Math.log10(fisher) : -Math.log10(fisher);
+    return (d3.format(".3r")(logF));
+}
+
+function oddsRatio(contingency){
+    // smoothed with +0.5 to avoid 0s
+    const first = (contingency.a + 0.05) / (contingency.c+0.5);
+    const second = (contingency.b + 0.05) / (contingency.d+0.5);
+    return (d3.format(".3r")(first/second));
+}
+
+function freqFunctions(d, freqcols, cwsColumns, selectedTokens, deselectedTokens) {
+    const contingency = createFullCT(d, selectedTokens, deselectedTokens, cwsColumns);
+    const raw = {"CWs" : d, "total" : contingency.a}
+    const both = {"CWs" : d, "total+" : contingency.a, "total-" : contingency.b}
+    const cueV = {"CWs" : d, "total+" : contingency.a, "total-cv" : cueValidity(contingency)}
+    const dp = {"CWs" : d, "total+" : contingency.a, "total-dp" : deltaP(contingency)}
+    const fisher = {"CWs" : d, "total+" : contingency.a, "total-F" : logFisher(contingency)}
+    const OR = {"CWs" : d, "total+" : contingency.a, "total-OR" : oddsRatio(contingency)}
+    for (let i = 0; i < freqcols.length; i++) {
+        const contingency = createModelCT(cwsColumns[i], d, selectedTokens, deselectedTokens);
+        const col = freqcols[i];
+        raw[col] = both[col+"+"] = cueV[col+"+"] = dp[col+"+"] = fisher[col+"+"] = OR[col+"+"] = contingency.a;
+        both[col + "-"] = contingency.b;
+        cueV[col + "-cv"] = cueValidity(contingency);
+        dp[col + "-dp"] = cueValidity(contingency);
+        fisher[col + "-F"] = logFisher(contingency);
+        OR[col + "-OR"] = oddsRatio(contingency);
+    }
+    return ({raw : raw, both : both, cue : cueV, dp : dp, fisher : fisher, odds : OR});
+}
+
+function nameColumns(suffix, freqcols){
+    console.log(suffix)
+    const cols = ["CWs"];
+    if (suffix === "raw"){
+        cols.push("total");
+        cols.push(...freqcols);
+    } else {
+        cols.push("total+");
+        cols.push("total" + suffix);
+        freqcols.forEach((d) => {
+            cols.push(d + "+");
+            cols.push(d + suffix);
+        });
+    }
+    return(cols);
+}
 function execute(datasets, type) {
     // const group = getUrlParameter(window.location, "group");
     const modelSelection = listFromLS("modelselection-" + type);
@@ -5,6 +106,8 @@ function execute(datasets, type) {
     const tokSelection = listFromLS("tokenselection-" + type);
     const selectedTokens = datasets["variables"].filter((t) => tokSelection.indexOf(t["_id"]) !== -1 );
     const deselectedTokens = datasets["variables"].filter((t) => tokSelection.indexOf(t["_id"]) === -1 );
+    console.log(selectedTokens.length);
+    console.log(deselectedTokens.length);
     function findCwsColumn(m) {
         return (datasets["variables"].columns.filter((d) => {
             return (d.startsWith("_cws.") && m.search(d.slice(5)) === 0)
@@ -13,95 +116,31 @@ function execute(datasets, type) {
     const cwsColumns = modelSelection.map(findCwsColumn);
 
     const infoOptions = [
-        {name : "Absolute frequency", value : "freq"},
-        {name : "Selected and non selected", value : "both"},
-        {name : "Absolute and relative frequencies", value :"prop"},
-        {name : "Ratio selected/non selected", value : "ratio"}
+        {name : "Absolute frequency", value : "raw", suffix : "raw"},
+        {name : "Selected and non selected", value : "both", suffix : "-"},
+        {name : "Cue validity", value :"cue", suffix : "-cv"},
+        {name : "Log Fisher Exact p-value", value : "fisher", suffix : "-F"},
+        {name : "(Smoothed) odds ratio", value : "odds", suffix : "-OR"},
+        {name : "&Delta;P", value : "dp", suffix : "-dp"}
     ]
 
     buildDropdown("info", infoOptions,
         valueFunction = (d) => d.value, textFunction = (d) => d.name)
-        .on("click", (d) => {drawTable(d.value, freqcols)});
+        .on("click", (d) => drawTable(d, freqcols));
 
     const cws = cwsColumns.map((m) => { // for each model
         return (selectedTokens.map((d) => { return (d[m]); }).join(";"));
     }).join(";").split(";").filter((d) => {return(d !== "NA"); });
 
-    const freqcols = modelSelection.map((d) => modelSelection.indexOf(d) + 1 );
+    const freqcols = modelSelection.map((d) => modelSelection.indexOf(d) + 1 ); 
 
-    function addRawFreq(d, freqcols, selectedTokens){
-        const start = { "CWs": d, "total" : countTokens(d, selectedTokens)}
-        for (let i = 0; i < freqcols.length; i++) {
-            start[freqcols[i]] = countCws(cwsColumns[i], d, selectedTokens);
-        }
-        return(start);
-    }
-
-    function addProp(d, freqcols, selectedTokens, deselectedTokens){
-        const totalProp = countTokens(d, selectedTokens)/(countTokens(d, deselectedTokens)+countTokens(d, selectedTokens));
-        const start = { "CWs": d, "total-A" : countTokens(d, selectedTokens), "total-R" : d3.format(".3r")(totalProp)}
-        for (let i = 0; i < freqcols.length; i++) {
-            const partialProp = countCws(cwsColumns[i], d, selectedTokens)/(countCws(cwsColumns[i], d, deselectedTokens)+countCws(cwsColumns[i], d, selectedTokens));
-            start[freqcols[i] + "-A"] = countCws(cwsColumns[i], d, selectedTokens);
-            start[freqcols[i] + "-R"] = d3.format(".3r")(partialProp);
-        }
-        return(start);
-    }
-    function addBothFreqs(d, freqcols, selectedTokens, deselectedTokens){
-        const start = { "CWs": d, "total+" : countTokens(d, selectedTokens), "total-": countTokens(d, deselectedTokens)}
-        for (let i = 0; i < freqcols.length; i++) {
-            start[freqcols[i] + "+"] = countCws(cwsColumns[i], d, selectedTokens);
-            start[freqcols[i] + "-"] = countCws(cwsColumns[i], d, deselectedTokens);
-        }
-        return(start);
-    }
-    function addRatio(d, freqcols, selectedTokens, deselectedTokens){
-        const totalRatio = countTokens(d, selectedTokens)/(countTokens(d, deselectedTokens)+0.00001);
-        const start = { "CWs": d, "total" : totalRatio > 1000 ? totalRatio.toExponential(2) : d3.format(".3r")(totalRatio)}
-        for (let i = 0; i < freqcols.length; i++) {
-            const partialRatio = countCws(cwsColumns[i], d, selectedTokens)/(countCws(cwsColumns[i], d, deselectedTokens)+0.00001);
-            start[freqcols[i]] = partialRatio > 1000 ? partialRatio.toExponential(2) : d3.format(".3r")(partialRatio);
-        }
-        return(start);
-    }
-
-    function nameColumns(info, freqcols){
-        const cols = ["CWs"]
-        if (info === "freq" | info === "ratio") {
-            cols.push("total");
-            cols.push(...freqcols);
-        } else if (info === "both") {
-            cols.push("total+");
-            cols.push("total-");
-            freqcols.forEach((d) => {
-                cols.push(d + "+");
-                cols.push(d + "-");
-            });
-        } else if (info === "prop") {
-            cols.push("total-A");
-            cols.push("total-R");
-            freqcols.forEach((d) => {
-                cols.push(d + "-A");
-                cols.push(d + "-R");
-            });
-        }
-        console.log(cols)
-        return(cols);
-    }
+    const cwsFrequencies = _.uniq(cws).map((d) =>
+        freqFunctions(d, freqcols, cwsColumns, selectedTokens, deselectedTokens)
+        );
 
     function createTable(info, freqcols){
-        const tableData = _.uniq(cws).map((d) => {
-            if (info === "freq"){
-                return(addRawFreq(d, freqcols, selectedTokens));
-            } else if (info === "both") {
-                return(addBothFreqs(d, freqcols, selectedTokens, deselectedTokens));
-            } else if (info === "ratio") {
-                return(addRatio(d, freqcols, selectedTokens, deselectedTokens));
-            } else if (info === "prop") {
-                return(addProp(d, freqcols, selectedTokens, deselectedTokens));
-            }
-        });
-        return({tableData : tableData, cols : nameColumns(info, freqcols)});
+        const tableData = cwsFrequencies.map((d) => d[info.value]);
+        return({tableData : tableData, cols : nameColumns(info.suffix, freqcols)});
     }
     
     function drawTable(info, freqcols){
@@ -138,26 +177,6 @@ function execute(datasets, type) {
         });
     }
 
-   
-
-    function countTokens(cw, df) {
-        let res = []
-        for (let i = 0; i < cwsColumns.length; i++){
-            const m = cwsColumns[i];
-            const tids = df
-                .filter((t) => t[m].split(";").indexOf(cw) !== -1 )
-                .map((t) => t["_id"] );
-            res.push(...tids);
-        }
-        return(_.uniq(res).length);
-    }
-
-    function countCws(m, cw, df) {
-        const res = df.map((d) => d[m])
-            .join(";").split(";")
-            .filter((w) => w === cw );
-        return (res.length);
-    }
-
-    drawTable("freq", freqcols);
+    
+    drawTable(infoOptions[0], freqcols);
 }
