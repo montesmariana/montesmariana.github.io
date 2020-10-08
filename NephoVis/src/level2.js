@@ -93,17 +93,8 @@ function execute(datasets, type, alternatives) {
   // FUNCTIONS ###############################################################################################################
 
   function applySolution(solution) {
-    const xvalues = d3.merge(modelSelection.map(function (m) {
-      return (getValues(dataset, m + "-" + solution + ".x"));
-    }));
-    const yvalues = d3.merge(modelSelection.map(function (m) {
-      return (getValues(dataset, m + "-" + solution + ".y"));
-    }));
-    const xrange = setRange(xvalues, 1.05);
-    const yrange = setRange(yvalues, 1.05);
-    newX = x.domain(xrange);
-    newY = y.domain(yrange);
-    adjustValues(solution, newX, newY);
+    d3.selectAll("g.miniplot").each((p) => adjustValues(p, solution));
+    svg.selectAll(".brush").remove();
   }
   // update token selection
   function updateTokSelection(tokenSelection) {
@@ -191,7 +182,7 @@ function execute(datasets, type, alternatives) {
       _.pullAll(tokenSelection, tokenSelection);
       // tokenSelection = [];
       updateTokSelection(tokenSelection);
-      d3.selectAll(".cell").append("g")
+      d3.selectAll(".miniplot").append("g")
         .attr("transform", "translate(" + padding + ", " + padding + ")")
         .attr("class", "brush")
         .attr("id", (d) => { return (d.m); })
@@ -202,34 +193,52 @@ function execute(datasets, type, alternatives) {
   });
 
   // Set up scales (axes) - coordinates multiplied to get some padding in a way
-  const xvalues = d3.merge(modelSelection.map(function (m) {
-    return (getValues(dataset, m + "-" + chosenSolution + ".x"));
-  }));
-  const yvalues = d3.merge(modelSelection.map(function (m) {
-    return (getValues(dataset,  m + "-" + chosenSolution + ".y"));
-  }));
-  const xrange = setRange(xvalues, 1.05);
-  const yrange = setRange(yvalues, 1.05);
+  function setUpScales(m, solution, padding, height, width){
+    const xrange = setRange(getValues(dataset, m + "-" + solution + ".x"), 1.05);
+    const yrange = setRange(getValues(dataset,  m + "-" + solution + ".y"), 1.05);
+    
+    const x = d3.scaleLinear()
+      .domain(xrange)
+      .range([padding, width]);
+  
+    const y = d3.scaleLinear()
+      .domain(yrange)
+      .range([height, padding]);
+  
+    // Vertical center
+    const xAxis = d3.axisBottom(x).ticks(0).tickSizeOuter(0);
+    const yAxis = d3.axisLeft(y).ticks(0).tickSizeOuter(0);
+    return({x : x, y : y, xAxis : xAxis, yAxis : yAxis});
+  
+  }
+  // const xvalues = d3.merge(modelSelection.map(function (m) {
+  //   return (getValues(dataset, m + "-" + chosenSolution + ".x"));
+  // }));
+  // const yvalues = d3.merge(modelSelection.map(function (m) {
+  //   return (getValues(dataset,  m + "-" + chosenSolution + ".y"));
+  // }));
+  // const xrange = setRange(xvalues, 1.05);
+  // const yrange = setRange(yvalues, 1.05);
 
-  let x = d3.scaleLinear()
-    .domain(xrange)
-    .range([padding, width]);
+  // let x = d3.scaleLinear()
+  //   .domain(xrange)
+  //   .range([padding, width]);
 
-  let y = d3.scaleLinear()
-    .domain(yrange)
-    .range([height, padding]);
+  // let y = d3.scaleLinear()
+  //   .domain(yrange)
+  //   .range([height, padding]);
 
-  // Vertical center
-  const xAxis = d3.axisBottom(x).tickSizeOuter(0);
-  const yAxis = d3.axisLeft(y).tickSizeOuter(0);
+  // // Vertical center
+  // const xAxis = d3.axisBottom(x).tickSizeOuter(0);
+  // const yAxis = d3.axisLeft(y).tickSizeOuter(0);
 
   // DRAW PLOT ##############################################################################################################
 
-  cells = svg.selectAll(".cell")
+  miniplots = svg.selectAll(".miniplot")
     .data(modelSelection.map(combine))
     .enter()
     .append("g")
-    .attr("class", "cell")
+    .attr("class", "miniplot")
     .attr("transform", function (d) {
       return ("translate(" + (+d.i) * (width + padding) + ", " + +((height + padding / 2) * (+d.j)) + ")");
     })
@@ -244,40 +253,43 @@ function execute(datasets, type, alternatives) {
 
   // FUNCTIONS #################################################################################################################
 
-  function adjustValues(solution, newX, newY, tduration = 1500) {
-    x = newX, y = newY;
-    svg.selectAll(".xAxis").transition().duration(tduration)
-      .call(xAxis.scale(newX)); // x axis rescaled
-    svg.selectAll(".yAxis").transition().duration(tduration)
-      .call(yAxis.scale(newY)); // y axis rescaled
-    d3.selectAll("g.cell").each(moveDots);
-    d3.selectAll(".xcenter").transition().duration(tduration)
-      .attr("x1", newX(0)).attr("x2", newX(0)); // central x rescaled
-    d3.selectAll(".ycenter").transition().duration(tduration)
-      .attr("y1", newY(0)).attr("y2", newY(0)); // central y rescaled
-    svg.selectAll(".brush").remove();
-
-    function moveDots(p) {
-      const m = d3.select(this).attr("model") + "-" + solution;
-
-      d3.select(this).selectAll("path.present")
-        .transition().duration(tduration)
-        .attr("transform", function (d) {
-          return ("translate(" + newX(d[m + ".x"]) + "," + newY(d[m + ".y"]) + ")");
-        });
-    }
+  function adjustValues(p, solution, tduration = 1500) {
+    const newValues = setUpScales(p.m, solution, padding, height, width);
+    
+    const c = d3.select(".miniplot[model='" + p.m + "']");
+    let x = newValues.x, y = newValues.y;
+    c.select(".xAxis").transition().duration(tduration)
+      .call(newValues.xAxis.scale(x)); // x axis rescaled
+    c.selectAll(".yAxis").transition().duration(tduration)
+      .call(newValues.yAxis.scale(y)); // y axis rescaled
+    
+    c.select(".xcenter").transition().duration(tduration)
+      .attr("x1", x(0)).attr("x2", x(0)); // central x rescaled
+    c.select(".ycenter").transition().duration(tduration)
+      .attr("y1", y(0)).attr("y2", y(0)); // central y rescaled
+    
+    c.selectAll("path.present")
+      .transition().duration(tduration)
+      .attr("transform", (d) => {
+        return ("translate(" + x(d[p.m + "-" + solution + ".x"]) + "," + y(d[p.m + "-" + solution + ".y"]) + ")");
+      });
   }
 
   // To combine data of the models in one
   function combine(m, i) {
+    const scales = setUpScales(m, chosenSolution, padding, height, width);
     return ({
       m: m,
       j: Math.floor(i / ncol),
-      i: i - ncol * Math.floor(i / ncol)
+      i: i - ncol * Math.floor(i / ncol),
+      x: scales.x,
+      y: scales.y,
+      xAxis: scales.xAxis,
+      yAxis: scales.yAxis
     });
   }
 
-  // Styling the mini plots (cells)
+  // Styling the mini plots
 
   function mouseoverCell(d) {
     tooltip.transition()
@@ -292,8 +304,8 @@ function execute(datasets, type, alternatives) {
   }
 
 
-  function titleCell(cell) {
-    cell.append("text")
+  function titleCell(miniplot) {
+    miniplot.append("text")
       .attr("x", padding * 1.5)
       .attr("y", padding)
       .attr("dy", "-0.5em")
@@ -313,9 +325,9 @@ function execute(datasets, type, alternatives) {
       });
   }
 
-  function drawFrame(cell) {
+  function drawFrame(miniplot, p) {
     // Draw frame
-    cell.append("rect")
+    miniplot.append("rect")
       .attr("x", padding)
       .attr("y", padding)
       .attr("width", width - padding)
@@ -325,20 +337,20 @@ function execute(datasets, type, alternatives) {
       .style("pointer-events", "all")
       .style("stroke-width", 0.5);
 
-    traceCenter(cell, x1 = x(0), x2 = x(0), y1 = padding, y2 = height).attr("class", "xcenter");
+    traceCenter(miniplot, x1 = p.x(0), x2 = p.x(0), y1 = padding, y2 = height).attr("class", "xcenter");
 
-    traceCenter(cell, x1 = padding, x2 = width, y1 = y(0), y2 = y(0)).attr("class", "ycenter");
+    traceCenter(miniplot, x1 = padding, x2 = width, y1 = p.y(0), y2 = p.y(0)).attr("class", "ycenter");
 
     // Draw axes
-    cell.append("g")
+    miniplot.append("g")
       .attr("class", "axis xAxis")
       .attr("transform", "translate(0, " + height + ")")
-      .call(xAxis);
+      .call(p.xAxis);
 
-    cell.append("g")
+    miniplot.append("g")
       .attr("class", "axis yAxis")
       .attr("transform", "translate(" + padding + ", " + 0 + ")")
-      .call(yAxis);
+      .call(p.yAxis);
   }
 
   function colorCircles() {
@@ -349,14 +361,14 @@ function execute(datasets, type, alternatives) {
       });
   }
 
-  function numberCell(cell) {
+  function numberCell(miniplot) {
     // Show number of model
-    cell.append("circle")
+    miniplot.append("circle")
       .attr("cx", padding)
       .attr("cy", padding)
       .attr("r", padding * 0.4)
 
-    cell.append("text")
+    miniplot.append("text")
       .attr("x", padding)
       .attr("y", padding)
       .attr("dx", "-0.3em")
@@ -385,23 +397,21 @@ function execute(datasets, type, alternatives) {
 
   // Styling the dots in the plots
 
-  function styleDot() {
+  function styleDot(x, p) {
     d3.select(this)
       .attr("d", d3.symbol()
-        .type(function (d) { return (code(d, shapevar, shape, d3.symbolCircle)); }) //set up shape
-        .size(function (d) { return (code(d, sizevar, size, 50)); })) // set up size
+        .type((d) => code(d, shapevar, shape, d3.symbolCircle)) //set up shape
+        .size((d) => code(d, sizevar, size, 50))) // set up size
       .style("stroke", "#a1a09f")
       // .style("stroke-width", 0.5)
-      .style("fill", function (d) { return (code(d, colorvar, color, "#1f77b4")); }) // set up color
+      .style("fill", (d) => code(d, colorvar, color, "#1f77b4")) // set up color
       .style("opacity", tokenSelection.length > 0 ? 1 : 0.7)
       .attr("model", d3.select(this.parentNode.parentNode).attr("model"))
       //.attr("token_id", function(d) {return(d["_id"])})
-      .classed("lighter", function (d) { //ise selected?
-        return (tokenSelection.length > 0 ? (tokenSelection.indexOf(d["_id"]) === -1) : false);
-      })
+      .classed("lighter", (d) => tokenSelection.length > 0 && tokenSelection.indexOf(d["_id"]) === -1)
       // .classed("lost", function(d) {return(!exists(d, cell)); })
       .on("mouseover", mouseoverDot)
-      .on("mouseout", function () { d3.select("#concordance").select("p").remove(); })
+      .on("mouseout", () => d3.select("#concordance").select("p").remove())
       .on("click", function (d) {
         _.pullAll(tokenSelection, tokenSelection);
         listFromLS(level + "selection-" + type).forEach(d => tokenSelection.push(d));
@@ -413,12 +423,9 @@ function execute(datasets, type, alternatives) {
   // Updating color, shape and size after every button clicking
   function updatePlot() {
     d3.selectAll(".dot").selectAll("path")
-      .style("fill", function (d) { return (code(d, colorvar, color, "#1f77b4")); })
-      .attr("d", d3.symbol().type(function (d) {
-        return (code(d, shapevar, shape, d3.symbolCircle));
-      }).size(function (d) {
-        return (code(d, sizevar, size, 50));
-      }));
+      .style("fill", (d) => code(d, colorvar, color, "#1f77b4"))
+      .attr("d", d3.symbol().type((d) => code(d, shapevar, shape, d3.symbolCircle))
+        .size((d) => code(d, sizevar, size, 50)));
   }
 
   // For the brush
@@ -460,19 +467,19 @@ function execute(datasets, type, alternatives) {
 
   // ACTUALLY PLOTTING STUFF!!
   function plotCell(p) {
-    const cell = d3.select(this);
-    const present = dataset.filter(function (d) { return (exists(d, cell.attr("model") + "-" + chosenSolution)); });
-    const bin = dataset.filter(function (d) { return (!exists(d, cell.attr("model") + "-" + chosenSolution)); });
+    const miniplot = d3.select(this);
+    const present = dataset.filter((d) => exists(d, p.m + "-" + chosenSolution));
+    const bin = dataset.filter( (d) => (!exists(d, p.m + "-" + chosenSolution)));
+    
+    titleCell(miniplot);
 
-    titleCell(cell);
+    drawFrame(miniplot, p);
 
-    drawFrame(cell);
-
-    numberCell(cell);
+    numberCell(miniplot);
 
     // Draw present tokens
 
-    cell.append("g")
+    miniplot.append("g")
       .attr("transform", "translate(0,0)")
       .attr("class", "dot")
       .selectAll("path")
@@ -480,13 +487,13 @@ function execute(datasets, type, alternatives) {
       .append("path")
       .attr("class", "graph present")
       .attr("transform", function (d) {
-        return ("translate(" + x(d[cell.attr("model") + "-" + chosenSolution + ".x"]) + "," + y(d[cell.attr("model") + "-" + chosenSolution +  ".y"]) + ")");
+        return ("translate(" + p.x(d[p.m + "-" + chosenSolution + ".x"]) + "," + p.y(d[p.m + "-" + chosenSolution +  ".y"]) + ")");
       })
       .each(styleDot);
 
     // Draw lost tokens
 
-    cell.append("g")
+    miniplot.append("g")
       .attr("transform", "translate(" + (width + padding / 4) + "," + padding / 2 + ")")
       .attr("class", "dot")
       .selectAll("path")
