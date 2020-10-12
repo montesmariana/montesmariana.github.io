@@ -254,8 +254,7 @@ function execute(datasets, type, alternatives) {
   // FUNCTIONS #################################################################################################################
 
   function adjustValues(p, solution, tduration = 1500) {
-    const newValues = setUpScales(p.m, solution, padding, height, width);
-    
+    const newValues = p[solution]
     const c = d3.select(".miniplot[model='" + p.m + "']");
     let x = newValues.x, y = newValues.y;
     c.select(".xAxis").transition().duration(tduration)
@@ -277,16 +276,13 @@ function execute(datasets, type, alternatives) {
 
   // To combine data of the models in one
   function combine(m, i) {
-    const scales = setUpScales(m, chosenSolution, padding, height, width);
-    return ({
+    const base = {
       m: m,
       j: Math.floor(i / ncol),
-      i: i - ncol * Math.floor(i / ncol),
-      x: scales.x,
-      y: scales.y,
-      xAxis: scales.xAxis,
-      yAxis: scales.yAxis
-    });
+      i: i - ncol * Math.floor(i / ncol)
+    }
+    alternatives.forEach((solution) => base[solution] = setUpScales(m, solution, padding, height, width));
+    return (base);
   }
 
   // Styling the mini plots
@@ -337,20 +333,20 @@ function execute(datasets, type, alternatives) {
       .style("pointer-events", "all")
       .style("stroke-width", 0.5);
 
-    traceCenter(miniplot, x1 = p.x(0), x2 = p.x(0), y1 = padding, y2 = height).attr("class", "xcenter");
+    traceCenter(miniplot, x1 = p[chosenSolution].x(0), x2 = p[chosenSolution].x(0), y1 = padding, y2 = height).attr("class", "xcenter");
 
-    traceCenter(miniplot, x1 = padding, x2 = width, y1 = p.y(0), y2 = p.y(0)).attr("class", "ycenter");
+    traceCenter(miniplot, x1 = padding, x2 = width, y1 = p[chosenSolution].y(0), y2 = p[chosenSolution].y(0)).attr("class", "ycenter");
 
     // Draw axes
     miniplot.append("g")
       .attr("class", "axis xAxis")
       .attr("transform", "translate(0, " + height + ")")
-      .call(p.xAxis);
+      .call(p[chosenSolution].xAxis);
 
     miniplot.append("g")
       .attr("class", "axis yAxis")
       .attr("transform", "translate(" + padding + ", " + 0 + ")")
-      .call(p.yAxis);
+      .call(p[chosenSolution].yAxis);
   }
 
   function colorCircles() {
@@ -444,8 +440,8 @@ function execute(datasets, type, alternatives) {
     if (!_.isNull(e)) {
       d3.selectAll(".dot").selectAll("path")
         .classed("lighter", function (d) {
-          var xc = x(d[p.m + "-" + chosenSolution + ".x"]);
-          var yc = y(d[p.m + "-" + chosenSolution + ".y"]);
+          var xc = p[chosenSolution].x(d[p.m + "-" + chosenSolution + ".x"]);
+          var yc = p[chosenSolution].y(d[p.m + "-" + chosenSolution + ".y"]);
           return (xc < e[0][0] + padding || xc > e[1][0] + padding || yc < e[0][1] + padding || yc > e[1][1] + padding || !exists(d, p.m + "-" + chosenSolution));
         });
     }
@@ -487,7 +483,7 @@ function execute(datasets, type, alternatives) {
       .append("path")
       .attr("class", "graph present")
       .attr("transform", function (d) {
-        return ("translate(" + p.x(d[p.m + "-" + chosenSolution + ".x"]) + "," + p.y(d[p.m + "-" + chosenSolution +  ".y"]) + ")");
+        return ("translate(" + p[chosenSolution].x(d[p.m + "-" + chosenSolution + ".x"]) + "," + p[chosenSolution].y(d[p.m + "-" + chosenSolution +  ".y"]) + ")");
       })
       .each(styleDot);
 
