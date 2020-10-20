@@ -2,13 +2,13 @@
 // var type = getUrlParameter(window.location, "type");
 function loadData(type, files, other_args = null) {
     
-    var toLoad = [];
     var allFiles = {
         "model" : "data/" + type + "/" + type + ".models.tsv",
         "distances" : "data/" + type + "/" + type + ".models.dist.tsv",
         "tokens" : "data/" + type + "/" + type + ".tsv",
         "weights" : "data/" + type + "/" + type + ".ppmi.tsv",
-        "variables" : "data/" + type + "/" + type + ".variables.tsv"
+        "variables" : "data/" + type + "/" + type + ".variables.tsv",
+        "medoids" : "data/" + type + "/" + type + ".medoids.tsv"
     };
 
     fetch("data/" + type + "/" + type + ".solutions.json").then(response => {
@@ -26,15 +26,26 @@ function loadData(type, files, other_args = null) {
                 if (other_args === null) other_args = d3.keys(data);
             }
             
-            toLoad = files.map(function(f) {return(d3.tsv(allFiles[f])); });
-            // files.forEach(function(f) {
-            //     toLoad.push(d3.tsv(allFiles[f]));
-            // });
-            Promise.all(toLoad).then(function(results) {
-                const loadedDatasets = _.fromPairs(_.zip(files, results));
-                
-                execute(datasets = loadedDatasets, type = type, other_args = other_args);
-            });
+            if (files.indexOf("medoids") !== -1) {
+                fetch(allFiles.medoids).then((response) => {
+                    if (!response.ok) {
+                        _.pull(files, "medoids");
+                    }
+                    retrieveFiles(files, allFiles, type, other_args);
+                })
+            } else {
+                retrieveFiles(files, allFiles, type, other_args);
+            }
         });
     
+}
+
+function retrieveFiles(files, allFiles, type, other_args){
+    toLoad = files.map(function(f) {return(d3.tsv(allFiles[f])); });
+    
+    Promise.all(toLoad).then(function(results) {
+        const loadedDatasets = _.fromPairs(_.zip(files, results));
+        
+        execute(datasets = loadedDatasets, type = type, other_args = other_args);
+    });
 }

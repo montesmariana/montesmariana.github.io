@@ -40,7 +40,7 @@ function createFullCT(cw, selectedTokens, deselectedTokens, cwsColumns){
 }
 
 function cueValidity(contingency){
-    const res = contingency.a / (contingency.a + contingency.b);
+    const res = contingency.a === 0 ? 0 : contingency.a / (contingency.a + contingency.b);
     return (d3.format(".3r")(res));
 }
 function deltaP(contingency){

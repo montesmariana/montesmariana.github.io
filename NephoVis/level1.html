@@ -50,6 +50,7 @@
           <hr>
           <p><b>Selected models: </b><span id="numSelected"></span></p>
           <button type="button" class="btn shadow-sm btn-secondary" id="clearSelect"><i class="fas fa-eraser"></i> Clear model selection</button>
+          <button type="button" class="btn shadow-sm btn-secondary" id="medoidsSelect"><i class="fas fa-filter"></i> Select medoids </button>
           <hr>
           <div class="btn-group">
             <button type="button" class="btn shadow-sm btn-marigreen" id="go2index"><i class="fas fa-home"></i></button>
@@ -110,7 +111,7 @@
     
     d3.select("title").text(type + ": Level 1");
 
-    loadData(type = type, files = ['model']);
+    loadData(type = type, files = ["model", "medoids"]);
     </script>
   </body>
 </html>

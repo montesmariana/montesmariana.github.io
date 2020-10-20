@@ -19,10 +19,17 @@ function execute(datasets, type) {
     .on("click", () =>  {
       clearStorage(modelSelection, level, type);
       resetVariable(type + "-modselectionFromButtons");
+      d3.select("#numSelected").text(modelSelection.length);
       _.keys(variableSelection).forEach(v => _.pullAll(variableSelection[v], variableSelection[v]))
       d3.selectAll("label[name='selectionByButtons']").classed("active", false);
     });
 
+  d3.select("#medoidsSelect")
+    .attr("disabled", () => {return(d3.keys(datasets).indexOf("medoids") === -1 ? true : null)})
+    .on("click", () => {
+      const medoids = datasets["medoids"].map((d) => d.medoid);
+      updateModelSelection(medoids);
+    });
   d3.select("#modelSelect").on("click", function () {
     // localStorage.setItem("modelselection-" + type + "-groupnone", JSON.stringify(modelSelection));
     window.open("level2.html" + "?type=" + type);
