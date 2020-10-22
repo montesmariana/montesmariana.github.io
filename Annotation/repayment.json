@@ -1,0 +1,38 @@
+{
+    "aflossing": [
+        {
+            "code": "aflossing-sense1",
+            "label": "het aflossen: in zijn taak of werkzaamheid vervangen of door anderen doen vervangen"
+        },
+        {
+            "code": "aflossing-sense2",
+            "label": "de personen die aflossen, de aflossende manschappen"
+        },
+        {
+            "code": "aflossing-sense3",
+            "label": "het inlossen van een schuld, het terugbetalen van geleend geld"
+        },
+        {
+            "code": "aflossing-sense4",
+            "label": "termijn waarin een schuld afgelost wordt"
+        },
+        {
+            "code": "aflossing-sense5",
+            "label": "aflossingsbedrag: bedrag waarmee een schuld in termijnen wordt afgelost"
+        },
+        {
+            "code": "aflossing-sense6",
+            "label": "estafette: snelheidswedstrijd tussen verschillende teams"
+        }
+    ],
+    "afbetaling": [
+        {
+            "code": "afbetaling-sense1",
+            "label": "volledige betaling"
+        },
+        {
+            "code": "afbetaling-sense2",
+            "label": "betaling in mindering op een schuld of rekening"
+        }
+    ]
+}

@@ -5,7 +5,7 @@ function loadData() {
         input: "text",
         inputPlaceholder: "name",
         inputValidator: (value) => { // only accept names included in users.json
-            if (["esther", "joni"].indexOf(value) === -1) {
+            if (["stefano"].indexOf(value) === -1) {
                 // return msg['not_login_text'];
                 return "Wrong username, please try again.";
             }
@@ -26,22 +26,18 @@ function loadData() {
             saved = JSON.stringify(text);
 
             Promise.all([
-                d3.tsv("contact.batch-" + user + ".tsv"),
-                d3.tsv("foreigner.batch-" + user + ".tsv"),
-                d3.tsv("introduction.batch-" + user + ".tsv"),
-                d3.tsv("password.batch-" + user + ".tsv"),
+                d3.tsv("dip.batch-" + user + ".tsv"),
+                d3.tsv("repayment.batch-" + user + ".tsv"),
                 d3.json("senses.json"),
                 d3.json("inoutconcept.json"),
                 d3.json("messages.json")
             ]).then(function (files) {
                 const concordances = {
-                    "contact" : files[0],
-                    "foreigner" : files[1],
-                    "introduction" : files[2],
-                    "password" : files[3]
+                    "dip" : files[0],
+                    "repayment" : files[1]
                 }
                 // console.log(JSON.parse(files[1]));
-                execute(concordance = concordances, category1 = files[4], category2 = files[5], messages = files[6]);
+                execute(concordance = concordances, category1 = files[2], category2 = files[3], messages = files[4]);
             });
         }
     });
