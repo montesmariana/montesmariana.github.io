@@ -28,6 +28,10 @@
             {
                 "code": "aflossing-sense6",
                 "label": "estafette: snelheidswedstrijd tussen verschillende teams"
+            },
+            {
+                "code": "aflossing-sense7",
+                "label": "overige"
             }
         ],
         "afbetaling": [
@@ -38,6 +42,10 @@
             {
                 "code": "afbetaling-sense2",
                 "label": "betaling in mindering op een schuld of rekening"
+            },
+            {
+                "code": "afbetaling-sense3",
+                "label": "overige"
             }
         ],
         "dip": [
@@ -47,11 +55,15 @@
             },
             {
                 "code": "dip-sense2",
-                "label": "plaats waar iets lager is dan het omliggende"
+                "label": "toestand van tijdelijke, lichamelijke of geestelijke verslapping"
             },
             {
                 "code": "dip-sense3",
-                "label": "toestand van tijdelijke, lichamelijke of geestelijke verslapping"
+                "label": "vermindering van bloei, productie, intensiteit enz."
+            },
+            {
+                "code": "dip-sense5",
+                "label": "overige"
             }
         ],
         "inzinking": [
@@ -73,7 +85,11 @@
             },
             {
                 "code": "inzinking-sense5",
-                "label": "het inelkaarvoegen van constructiedelen door een keep of sponning"
+                "label": "het in-elkaar-voegen van constructiedelen door een keep of sponning"
+            },
+            {
+                "code": "inzinking-sense6",
+                "label": "overige"
             }
         ]
     }
