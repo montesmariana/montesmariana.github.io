@@ -23,6 +23,10 @@
         {
             "code": "aflossing-sense6",
             "label": "estafette: snelheidswedstrijd tussen verschillende teams"
+        },
+        {
+            "code": "aflossing-sense7",
+            "label": "overige"
         }
     ],
     "afbetaling": [
@@ -33,6 +37,10 @@
         {
             "code": "afbetaling-sense2",
             "label": "betaling in mindering op een schuld of rekening"
+        },
+        {
+            "code": "afbetaling-sense3",
+            "label": "overige"
         }
     ]
 }
