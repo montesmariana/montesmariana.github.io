@@ -20,9 +20,11 @@ function loadData(type, files, other_args = null) {
             if (files.indexOf("tokens") > -1) {
                 d3.keys(data).forEach(function(d) {
                     allFiles[d] = "data/" + type + "/" + type + data[d] + ".tsv";
+                    allFiles[d + ".cws"] = "data/" + type + "/" + type + data[d] + ".cws.tsv";
                     files.push(d);
+                    files.push(d + ".cws");
                 });
-                if (d3.keys(data).length > 0) _.pull(files, "tokens");
+                if (d3.keys(data).length > 0) _.pull(files, "tokens"); _.pull(files, "focdists")
                 if (other_args === null) other_args = d3.keys(data);
             }
             
@@ -31,8 +33,18 @@ function loadData(type, files, other_args = null) {
                     if (!response.ok) {
                         _.pull(files, "medoids");
                     }
-                    retrieveFiles(files, allFiles, type, other_args);
-                })
+                    if (files.indexOf("mds.cws") !== -1) {
+                        fetch(allFiles["mds.cws"]).then((response) => {
+                            if (!response.ok) {
+                                _.pull(files, [...files.map((d) => d.endswith("cws"))])
+                            }
+                            retrieveFiles(files, allFiles, type, other_args);
+                        })
+                    } else {
+                        retrieveFiles(files, allFiles, type, other_args);
+                    }
+                    
+                });
             } else {
                 retrieveFiles(files, allFiles, type, other_args);
             }
