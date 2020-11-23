@@ -12,7 +12,7 @@ const myColors = [
     "#011f4b", // almost black
     "#345534", //dark green
     "#696969"] //gray
-    // colorblind friendly palette: six first from "seaborn" (other three may not be so)
+// colorblind friendly palette: six first from "seaborn" (other three may not be so)
 
 // Color, shape, size palettes
 const color = d3.scaleOrdinal(myColors);
@@ -37,6 +37,24 @@ function initVars(data, level, type) {
     shapeSelection = [];
 
     sizevar = varFromLS(data, "size", level, type);
+}
+
+function initVars2(settings) {
+    const { dataset, level, type } = settings;
+    // sets the values of variables to access the data
+    const colnames = classifyColnames(dataset);
+    return ({
+        colnames: colnames,
+        nominals: colnames["nominals"],
+        numerals: colnames["numerals"],
+        colorvar: varFromLS(dataset, "color", level, type),
+        colorSelection: [],
+
+        shapevar: varFromLS(dataset, "shape", level, type),
+        shapeSelection: [],
+
+        sizevar: varFromLS(dataset, "size", level, type)
+    })
 }
 
 function buildDropdown(where, data, valueFunction = d => d, textFunction = d => d) {
@@ -72,53 +90,48 @@ function traceCenter(p, x1, x2, y1, y2) {
 }
 
 function setTooltip(where) {
-    return (
-        d3.select(where).append("div")
-            .attr("class", "tooltip")
-            .style("width", 500)
-            //   .attr("height", 20)
-            .style("position", "absolute")
-            .style("opacity", 0)
-    );
+    return (d3.select(where).append("div").attr("class", "tooltip"));
 }
 
 function setPointerEvents(svg, width, height) {
     svg.append("rect")
-        .attr("width", width)
-        .attr("height", height)
-        .attr("transform", "translate(0,0)")
+        .attr("viewBox", `0 0 ${width} ${height}`)
+        // .attr("width", width)
+        // .attr("height", height)
+        // .attr("transform", "translate(0,0)")
+        .classed("svgPlot", true)
         .style("pointer-events", "all")
         .style("fill", "none");
 }
 
 
-// Make svg responsive with script from: https://brendansudol.com/writing/responsive-d3
-function responsivefy(svg) {
-    // get container + svg aspect ratio
-    const container = d3.select(svg.node().parentNode);
-    const width = parseInt(svg.style("width"));
-    const height = parseInt(svg.style("height"));
-    const aspect = width / height;
+// // Make svg responsive with script from: https://brendansudol.com/writing/responsive-d3
+// function responsivefy(svg) {
+//     // get container + svg aspect ratio
+//     const container = d3.select(svg.node().parentNode);
+//     const width = parseInt(svg.style("width"));
+//     const height = parseInt(svg.style("height"));
+//     const aspect = width / height;
 
-    // add viewBox and preserveAspectRatio properties,
-    // and call resize so that svg resizes on inital page load
-    svg.attr("viewBox", "0 0 " + width + " " + height)
-        .attr("perserveAspectRatio", "xMidYMid")
-        .call(resize);
+//     // add viewBox and preserveAspectRatio properties,
+//     // and call resize so that svg resizes on inital page load
+//     svg.attr("viewBox", "0 0 " + width + " " + height)
+//         .attr("perserveAspectRatio", "xMidYMid")
+//         .call(resize);
 
-    // to register multiple listeners for same event type, 
-    // you need to add namespace, i.e., "click.foo"
-    // necessary if you call invoke this function for multiple svgs
-    // api docs: https://github.com/mbostock/d3/wiki/Selections#on
-    d3.select(window).on("resize." + container.attr("id"), resize);
+//     // to register multiple listeners for same event type, 
+//     // you need to add namespace, i.e., "click.foo"
+//     // necessary if you call invoke this function for multiple svgs
+//     // api docs: https://github.com/mbostock/d3/wiki/Selections#on
+//     d3.select(window).on("resize." + container.attr("id"), resize);
 
-    // get width of container and resize svg to fit it
-    function resize() {
-        const targetWidth = parseInt(container.style("width"));
-        svg.attr("width", targetWidth)
-            .attr("height", Math.round(targetWidth / aspect));
-    }
-}
+//     // get width of container and resize svg to fit it
+//     function resize() {
+//         const targetWidth = parseInt(container.style("width"));
+//         svg.attr("width", targetWidth)
+//             .attr("height", Math.round(targetWidth / aspect));
+//     }
+// }
 
 
 function code(d, variable, schema, default_value) {
@@ -136,8 +149,8 @@ function code(d, variable, schema, default_value) {
 }
 
 function formatVariableName(varName) {
-    return(_.toUpper(_.kebabCase(_.replace(varName, /^[f|s]oc_/, ""))))
-  }
+    return (_.toUpper(_.kebabCase(_.replace(varName, /^[f|s]oc_/, ""))))
+}
 
 // Generate complementary colors for the circle on hover
 function compColor(col) {
@@ -239,7 +252,7 @@ function listFromLS(variable) {
 function updateSelection(selection, level, type) {
     if (selection.length > 0 && selection.indexOf("undefined") > -1) _.pull(selection, "undefined");
 
-    ["color", "shape", "size"].forEach((variable) => {boldenLegend(variable, level, type)});
+    ["color", "shape", "size"].forEach((variable) => { boldenLegend(variable, level, type) });
     localStorage.setItem(level + "selection-" + type, selection.length > 0 ? JSON.stringify(selection) : JSON.stringify(null));
     // if something is selected everything else is translucent
     d3.selectAll(".dot")
@@ -254,23 +267,24 @@ function updateSelection(selection, level, type) {
 // #####################################################################################################################
 
 // For level 2 & 3: offer different solutions if they exist
-function subsetCoords(datasets, alt, model){
+function subsetCoords(datasets, alt, model, actualAlt = null) {
     const data = datasets[alt];
+    actualAlt = actualAlt === null ? alt : actualAlt;
     const subset = data.map(d => {
-      const res = {"_id" : d["_id"]};
-      if (typeof model === "string") {
-        res[alt + ".x"] = d[model + ".x"] === undefined ? 0.0 : d[model + ".x"];
-        res[alt + ".y"] = d[model + ".y"] === undefined ? 0.0 : d[model + ".y"];
-      } else {
-          for (let i = 0; i < model.length; i++) {
-              res[model[i] + "-" + alt + ".x"] = d[model[i] + ".x"] === undefined ? 0.0 : d[model[i] + ".x"];
-              res[model[i] + "-" + alt + ".y"] = d[model[i] + ".y"] === undefined ? 0.0 : d[model[i] + ".y"];
-          }
-      }
-      return(res);
+        const res = { "_id": d["_id"] };
+        if (typeof model === "string") {
+            res[actualAlt + ".x"] = d[model + ".x"] === undefined ? 0.0 : d[model + ".x"];
+            res[actualAlt + ".y"] = d[model + ".y"] === undefined ? 0.0 : d[model + ".y"];
+        } else {
+            for (let i = 0; i < model.length; i++) {
+                res[model[i] + "-" + actualAlt + ".x"] = d[model[i] + ".x"] === undefined ? 0.0 : d[model[i] + ".x"];
+                res[model[i] + "-" + actualAlt + ".y"] = d[model[i] + ".y"] === undefined ? 0.0 : d[model[i] + ".y"];
+            }
+        }
+        return (res);
     });
-    return(subset);
-  }
+    return (subset);
+}
 
 function offerAlternatives(datasets, alternatives, model, type) {
     if (d3.keys(datasets).indexOf("tokens") === -1 && !_.isNull(alternatives)) {
@@ -287,50 +301,22 @@ function offerAlternatives(datasets, alternatives, model, type) {
             .attr("class", "dropdown-menu")
             .attr("id", "solutions");
         buildDropdown("solutions", alternatives,
-        valueFunction = d => d,
-        textFunction = d => {
-          return (d === chosenSolution ? "<b>" + d + "</b>" : d);
-        });
+            valueFunction = d => d,
+            textFunction = d => {
+                return (d === chosenSolution ? "<b>" + d + "</b>" : d);
+            });
 
         localStorage.setItem("solution-" + type, JSON.stringify(chosenSolution));
         const coords = subsetCoords(datasets, alternatives[0], model);
-        for (let i = 1; i < alternatives.length; i++){
+        for (let i = 1; i < alternatives.length; i++) {
             mergeVariables(coords, subsetCoords(datasets, alternatives[i], model))
         }
-        return(coords)
+        return (coords)
 
     } else { // if "tokens remains"
         return (subsetCoords(datasets, "tokens", model));
     }
 }
-
-// function offerAlternatives(datasets, alternatives, type) {
-//     if (d3.keys(datasets).indexOf("tokens") === -1 && !_.isNull(alternatives)) {
-//         const storageSolution = JSON.parse(localStorage.getItem("solution-" + type));
-//         const chosenSolution = _.isNull(storageSolution) ? alternatives[0] : storageSolution;
-//         const alts = d3.select("#moveAround").append("div") // setup the dropdown for the alternatives
-//             .attr("class", "btn-group");
-//         alts.append("button")
-//             .attr("type", "button")
-//             .attr("class", "btn shadow-sm btn-marigreen dropdown-toggle")
-//             .attr("data-toggle", "dropdown")
-//             .html("<i class='fas fa-list-ul'></i> Switch solution");
-//         alts.append("div")
-//             .attr("class", "dropdown-menu")
-//             .attr("id", "solutions");
-//         buildDropdown("solutions", alternatives,
-//         valueFunction = d => d,
-//         textFunction = d => {
-//           return (d === chosenSolution ? "<b>" + d + "</b>" : d);
-//         });
-
-//         localStorage.setItem("solution-" + type, JSON.stringify(chosenSolution));
-//         return (datasets[chosenSolution]);
-
-//     } else { // if "tokens remains"
-//         return (datasets["tokens"]);
-//     }
-// }
 
 function mergeVariables(coordinates, variables) {
     coordinates.forEach((coordRow) => {
@@ -372,10 +358,12 @@ function selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset) {
     updateSelection(selection, level, type);
 }
 
+function updateLegend2(settings) {
+    updateLegend(settings.colorvar, settings.shapevar, settings.sizevar, settings.padding, settings.level, settings.type, settings.dataset);
+}
 function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset) {
-    const legendList = [];
-    const legendContainer = d3.select("#legendContainer");
-    legendContainer.selectAll("svg").remove();
+    // const legendList = [];
+    d3.select(".legendBar").selectAll("svg").remove();
 
     const colorValues = colorvar["values"];
     const shapeValues = shapevar["values"];
@@ -404,10 +392,11 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
                 selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset);
             });;
 
-        legendContainer.append("svg")
-            // .attr("width", lCWidth)
-            .style("height", (colorValues.length * 25 + padding) + "px")
-            .attr("height", "100%")
+
+        d3.select("#colorLegendContainer").append("svg")
+            .style("width", d3.select(".legendBar").style("width"))
+            // .style("height", (colorValues.length * 25 + padding) + "px")
+            // .attr("height", "100%")
             .attr("transform", "translate(0,0)")
             .attr("id", "legendColor")
             .append("g")
@@ -415,12 +404,13 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
             .attr("transform", "translate(" + 0 + ", " + padding / 2 + ")")
             .call(legendColor);
 
-        legendList.push("color");
+        // legendList.push("color");
 
-    } else {
-        if (legendList.indexOf("color") > -1) _.pull(legendList, "color");
-        legendContainer.select("#legendColor").remove();
     }
+    // else {
+    //     if (legendList.indexOf("color") > -1) _.pull(legendList, "color");
+    //     legendContainer.select("#legendColor").remove();
+    // }
 
     // Update shape legend
     if (_.isArray(shapeValues)) {
@@ -444,10 +434,10 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
 
         // halign = legendList.indexOf("color") == -1 ? 0 : 150;
 
-        legendContainer.append("svg")
-            // .attr("width", lCWidth)
-            .style("height", (shapeValues.length * 30 + padding) + "px")
-            .attr("height", "100%")
+        d3.select("#shapeLegendContainer").append("svg")
+            .style("width", d3.select(".legendBar").style("width"))
+            // .style("height", (shapeValues.length * 30 + padding) + "px")
+            // .attr("height", "100%")
             .attr("transform", "translate(0,0)")
             .attr("id", "legendShape")
             .append("g")
@@ -455,15 +445,17 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
             .attr("transform", "translate(" + 0 + ", " + padding / 2 + ")")
             .call(legendShape);
 
-        legendList.push("shape");
+        // legendList.push("shape");
 
-    } else {
-        if (legendList.indexOf("shape") > -1) _.pull(legendList, "shape");
-        legendContainer.select("#legendShape").remove();
-    }
+    } 
+    // else {
+    //     if (legendList.indexOf("shape") > -1) _.pull(legendList, "shape");
+    //     legendContainer.select("#legendShape").remove();
+    // }
 
     // Update size legend
     if (_.isArray(sizeValues)) {
+
         const sizeScale = d3.scaleLinear()
             .domain(d3.extent(sizeValues))
             .range([5, 8]);
@@ -487,10 +479,10 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
                 }
             });
 
-        legendContainer.append("svg")
-            // .attr("width", lCWidth)
-            .style("height", (300 + padding) + "px")
-            .attr("height", "100%")
+        d3.select("#sizeLegendContainer").append("svg")
+            .style("width", d3.select(".legendBar").style("width"))
+            // .style("height", (300 + padding) + "px")
+            // .attr("height", "100%")
             .attr("transform", "translate(0,0)")
             .attr("id", "legendSize")
             .append("g")
@@ -498,15 +490,17 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
             .attr("transform", "translate(" + 0 + ", " + padding / 2 + ")")
             .call(legendSize);
 
-        legendList.push("size");
+        // legendList.push("size");
 
-    } else {
-        if (legendList.indexOf("size") > -1) _.pull(legendList, "size");
-        legendContainer.select("#legendSize").remove();
-    }
+    } 
+    // else {
+    //     if (legendList.indexOf("size") > -1) _.pull(legendList, "size");
+    //     legendContainer.select("#legendSize").remove();
+    // }
 
-    if (legendList.length > 0) {
-        legendContainer.selectAll("svg").call(responsivefy);
+    // if (legendList.length > 0) {
+        // legendContainer.selectAll("svg")
+        // .call(responsivefy);
         ["color", "shape", "size"].forEach(function (x) { boldenLegend(x, level, type) });
-    }
+    // }
 }
