@@ -9876,6 +9876,7 @@ main {
   top : 0;
   left : 0;
 }
+
 .legendBar {
   flex : 0 1 150px;
   overflow : auto;
@@ -9920,6 +9921,10 @@ main {
 }
 
 .largeSvg {
-  flex : 1 1 400px;
+  flex : 1 1 40vh;
   resize: horizontal;
+}
+
+svg text {
+  font-family: FontAwesome;
 }

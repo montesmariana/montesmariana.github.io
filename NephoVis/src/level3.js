@@ -284,6 +284,13 @@ function setUpCanvas(container, settings, target) {
     svgData.tooltip = d3.select("body").append("div")
       .attr("class", "tooltip")
       .style("opacity", 0);
+    svgData.removeButton = svg.append("text")
+      .attr("x", width-padding*2)
+      .attr("y", padding)
+      .html("&#x274C;")
+      .style("border", "solid 1px red")
+      .style("cursor", "pointer")
+      .on("click", removeFocDists);
   }
   // Dots on plot
   svg.append("g")
@@ -304,13 +311,14 @@ function setUpCanvas(container, settings, target) {
     const dotsPerRow = Math.floor((sidebarWidth - 20) / 10);
     const dotsColumns = Math.ceil(svgData.bin.length/dotsPerRow);
     const lostitem = target === "tokenSvg" ? "tokens" : "FOCs";
+    // sidebar.style("height", dotsColumns*10 + 20)
     sidebar.append("hr");
-    sidebar.append("h4")
+    sidebar.append("h5")
       .text("Lost " + lostitem);
 
     sidebar.append("svg")
       .attr("width", sidebarWidth)
-      .attr("height", dotsColumns*10)
+      .attr("height", dotsColumns*10 + padding/2)
       .attr("transform", "translate(0,0)")
       .append("g")
       .attr("transform", "translate(" + 10 + "," + 10 + ")")
@@ -529,6 +537,24 @@ function offerFocDists(datasets, alternatives, model) {
   return (coords)
 }
 
+function removeFocDists() {
+  d3.select("#svgContainer2").remove();
+  settings.tokenSvg.svg
+    .append("text")
+    .attr("id", "addFocDists")
+    .attr("x", settings.width-settings.padding*2)
+    .attr("y", settings.padding)
+    .html("&#x2795;")
+    .style("color", "green")
+    .style("cursor", "pointer")
+    .on("click", () => {
+      d3.select("#miniPlots").append("div").attr("id", "svgContainer2").attr("class", "largeSvg");
+      setUpCanvas(d3.select("#svgContainer2"), settings, target = "focSvg");
+      d3.select("#addFocDists").remove();
+    });
+
+}
+
 function execute(datasets, type, alternatives) {
   settings.type = type;
   settings.alternatives = alternatives;
@@ -582,7 +608,7 @@ function execute(datasets, type, alternatives) {
   if (d3.keys(datasets).indexOf("mds.cws") !== -1) {
     setUpCanvas(d3.select("#svgContainer2"), settings, target = "focSvg");
   }
-
+  
   settings.tokenSvg.brush = d3.brush()
     .extent([[0, 0], [settings.width, settings.height]])
     .on("start", () => _.pullAll(settings.tokenSelection, settings.tokenSelection))
