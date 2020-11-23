@@ -9923,3 +9923,7 @@ main {
 .largeSvg {
   flex : 1 1 400px;
 }
+
+.largeSvg > div {
+  resize: horizontal;
+}
