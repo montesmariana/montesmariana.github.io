@@ -64,7 +64,7 @@ function execute(datasets, type, alternatives) {
   // Set up that doesn't depend on the solution(s) ################################################################
 
   const ncol = 3; // number of columns in the grid
-  const nrow = Math.ceil(modelSelection.length / ncol); // number of rows in the grid
+  // const nrow = Math.ceil(modelSelection.length / ncol); // number of rows in the grid
   const width = 250;
   const height = 250;
   const padding = 20;
@@ -239,6 +239,7 @@ function execute(datasets, type, alternatives) {
     .attr("preserveAspectRatio", "xMinYMin meet")
     // .classed("svgPlot", true)
     .append("g")
+    .attr("class", "miniplot")
     .attr("model", (d) => d.m)
     .attr("transform", "translate(0,0)")
     .each(plotCell);
