@@ -122,10 +122,12 @@ function execute(datasets, type) {
   // Set up canvas ######################################################################
 
   const svg = d3.select("#svgContainer").append("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .call(responsivefy)
-    .attr("transform", "translate(0,0)")
+    .attr("viewBox", `0 0 ${height} ${width}`)
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .classed("svgPlot", true)
+    // .attr("height", height)
+    // .call(responsivefy)
+    // .attr("transform", "translate(0,0)")
     .append("g")
     .call(d3.zoom().on('zoom', zoomed));
 
@@ -157,17 +159,17 @@ function execute(datasets, type) {
   const yCenter = traceCenter(svg, x1 = padding, x2 = width - padding, y1 = newY(0), y2 = newY(0));
 
   // Axes (tickSizeOuter(0) avoids overlap of axes)
-  const xAxis = d3.axisBottom(newX).tickSizeOuter(0);
-  svg.append("g")
-    .attr("id", "xaxis")
-    .attr("transform", "translate(0, " + (height - padding) + ")")
-    .call(xAxis);
+  // const xAxis = d3.axisBottom(newX).ticks(0).tickSizeOuter(0);
+  // svg.append("g")
+  //   .attr("id", "xaxis")
+  //   .attr("transform", "translate(0, " + (height - padding) + ")")
+  //   .call(xAxis);
 
-  const yAxis = d3.axisLeft(newY).tickSizeOuter(0);
-  svg.append("g")
-    .attr("id", "yaxis")
-    .attr("transform", "translate(" + padding + ", 0)")
-    .call(yAxis);
+  // const yAxis = d3.axisLeft(newY).ticks(0).tickSizeOuter(0);
+  // svg.append("g")
+  //   .attr("id", "yaxis")
+  //   .attr("transform", "translate(" + padding + ", 0)")
+  //   .call(yAxis);
 
   // Design of The Dot ###############################################################################################################
 
@@ -204,9 +206,13 @@ function execute(datasets, type) {
   function mouseoverDot(d) {
     // Extract coordinates from the 'transform' attribute
     const position = d3.select(this).attr("transform").split(',');
-    const xcoord = parseInt(position[0].split('(')[1]) / 1.1;
-    // xcoord = +xcoord > 250 ? +(xcoord) - 100 : +xcoord;
-    const ycoord = parseInt(position[1].split(')')[0]) / 1.1;
+    
+    const positionX = parseFloat(position[0].split('(')[1]);
+    const svgWidth = parseFloat(d3.select(".svgPlot").style("width"));
+    const xcoord = svgWidth/width*positionX;
+    const positionY = parseFloat(position[1].split(')')[0]);
+    const svgHeight = parseFloat(d3.select(".svgPlot").style("height"));
+    const ycoord = svgHeight/height*positionY;
 
     tooltip.transition() // show tooltip
       .duration(200)
@@ -216,8 +222,10 @@ function execute(datasets, type) {
     var shapeData = _.isNull(shapevar['variable']) ? "" : "<br><b>" + shapevar['variable'] + "</b>: " + d[shapevar['variable']];
     var sizeData = _.isNull(sizevar['variable']) ? "" : "<br><b>" + sizevar['variable'] + "</b>: " + d3.format(".3r")(+d[sizevar['variable']]);
     tooltip.html("<b>" + d['_model'] + "</b>" + colorData + shapeData + sizeData)
-      .style("left", (xcoord) + "px")
       .style("top", (ycoord) + "px");
+    tooltipWidth = tooltip.style("width");
+    tooltip.style("left", svgWidth-xcoord > parseInt(tooltipWidth) ? xcoord + "px" : Math.max(0, (xcoord-tooltipWidth)) + "px");
+      
     svg.select(".dot")
       .append("path")
       .attr("class", "selector")

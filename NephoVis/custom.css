@@ -9819,3 +9819,107 @@ h3 {
 }
 
 /*# sourceMappingURL=custom.css.map */
+
+
+path.lighter {
+  fill-opacity: .1;
+}
+
+.blueh2 {
+  color: #00407a;
+}
+
+.vizPage {
+  display : grid;
+  grid-template-rows : auto 85vh auto;
+  /* justify-content: left; */
+}
+
+header, footer {
+  /* grid-column : 1/4; */
+  justify-content: center;
+}
+
+h1, h3, h4 {
+  text-align: center;
+}
+
+main {
+  display : flex;
+  justify-content: space-between;
+}
+
+.sidebar {
+  overflow: auto;
+  resize: horizontal;
+}
+
+.centered {
+  place-items: center;
+}
+
+.plotArea {
+  width : 80vh;
+  overflow : auto;
+}
+
+#svgContainer {
+  display : inline-block;
+  position : relative;
+  vertical-align: top;
+  height : 100%;
+  width : 100%;
+}
+.svgPlot {
+  display : inline-block;
+  position : absolute; 
+  top : 0;
+  left : 0;
+}
+.legendBar {
+  flex : 1 1 150px;
+  overflow : auto;
+  grid-template-rows : repeat(3, 1fr);
+}
+
+.andTokens {
+  grid-template-rows : repeat(4, 1fr);
+}
+
+.tooltip {
+  width : auto;
+  position : absolute;
+  border : 1px solid gray;
+  background-color : white;
+  padding : 4px;
+  opacity : 0;
+}
+
+.withConc {
+  display : grid;
+  grid-template-rows: minmax(100px, 20%) 1fr;
+}
+
+.resizable {
+  resize: horizontal;
+  width: 68vw;
+  box-shadow:
+    0 0  0 2px rgb(255,255,255),
+    0.3em 0.3em 1em rgba(0,0,0,0.3);
+  margin: 1rem;
+}
+
+#miniPlots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items : flex-start;
+  align-content: flex-start;
+}
+
+.miniSvg {
+  flex: 0 1 250px;
+}
+
+.largeSvg {
+  flex : 1 1 400px;
+}

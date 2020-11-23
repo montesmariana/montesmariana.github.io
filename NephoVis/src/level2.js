@@ -67,10 +67,10 @@ function execute(datasets, type, alternatives) {
   const nrow = Math.ceil(modelSelection.length / ncol); // number of rows in the grid
   const width = 250;
   const height = 250;
-  const padding = 30;
+  const padding = 20;
 
   //add tooltip (before the svg so it is not on top of it?)
-  const tooltip = setTooltip("#svgContainer");
+  const tooltip = setTooltip("#miniPlots");
 
   const coordinates = offerAlternatives(datasets, alternatives, modelSelection, type);
   const storageSolution = JSON.parse(localStorage.getItem("solution-" + type));
@@ -94,7 +94,7 @@ function execute(datasets, type, alternatives) {
 
   function applySolution(solution) {
     d3.selectAll("g.miniplot").each((p) => adjustValues(p, solution));
-    svg.selectAll(".brush").remove();
+    // svg.selectAll(".brush").remove();
   }
   // update token selection
   function updateTokSelection(tokenSelection) {
@@ -159,15 +159,8 @@ function execute(datasets, type, alternatives) {
 
   // Set up canvas #######################################################################################
 
-  d3.select("#svgContainer").selectAll("svg").remove();
-  const svg = d3.select("#svgContainer").append("svg")
-    .attr("width", width * ncol + padding * ncol)
-    .attr("height", height * nrow + padding * (nrow - 1))
-    .call(responsivefy)
-    //.style("background-color", "lightgray")
-    .attr("transform", "translate(0,0)")
-    .append("g");
-
+  d3.select("#miniPlots").selectAll("div").remove();
+  
 
   // Set up brush
   const brush = d3.brush()
@@ -234,19 +227,36 @@ function execute(datasets, type, alternatives) {
 
   // DRAW PLOT ##############################################################################################################
 
-  miniplots = svg.selectAll(".miniplot")
+  const miniplots = d3.select("#miniPlots")
+    .selectAll("div.miniSvg")
     .data(modelSelection.map(combine))
     .enter()
-    .append("g")
+    .append("div")
+    .attr("class", "miniSvg")
+    .append("svg")
     .attr("class", "miniplot")
-    .attr("transform", function (d) {
-      return ("translate(" + (+d.i) * (width + padding) + ", " + +((height + padding / 2) * (+d.j)) + ")");
-    })
-    .attr("model", function (d) { return (d.m) })
+    .attr("viewBox", `0 0 ${height + padding} ${width + padding}`)
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    // .classed("svgPlot", true)
+    .append("g")
+    .attr("model", (d) => d.m)
+    .attr("transform", "translate(0,0)")
     .each(plotCell);
 
+
+  // miniplots = svg.selectAll(".miniplot")
+  //   .data(modelSelection.map(combine))
+  //   .enter()
+  //   .append("g")
+  //   .attr("class", "miniplot")
+  //   .attr("transform", function (d) {
+  //     return ("translate(" + (+d.i) * (width + padding) + ", " + +((height + padding / 2) * (+d.j)) + ")");
+  //   })
+  //   .attr("model", function (d) { return (d.m) })
+  //   .each(plotCell);
+
   colorCircles();
-  updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
+  updateLegend(colorvar, shapevar, sizevar, padding+10, level, type, dataset);
   updatePlot();
 
 
@@ -362,7 +372,7 @@ function execute(datasets, type, alternatives) {
     miniplot.append("circle")
       .attr("cx", padding)
       .attr("cy", padding)
-      .attr("r", padding * 0.4)
+      .attr("r", padding * 0.6)
 
     miniplot.append("text")
       .attr("x", padding)
