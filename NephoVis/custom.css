@@ -9877,13 +9877,12 @@ main {
   left : 0;
 }
 .legendBar {
-  flex : 1 1 150px;
+  flex : 0 1 150px;
   overflow : auto;
-  grid-template-rows : repeat(3, 1fr);
-}
-
-.andTokens {
-  grid-template-rows : repeat(4, 1fr);
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  align-content: flex-start;  
 }
 
 .tooltip {
@@ -9922,8 +9921,5 @@ main {
 
 .largeSvg {
   flex : 1 1 400px;
-}
-
-.largeSvg > div {
   resize: horizontal;
 }

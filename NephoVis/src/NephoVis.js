@@ -395,7 +395,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
 
         d3.select("#colorLegendContainer").append("svg")
             .style("width", d3.select(".legendBar").style("width"))
-            // .style("height", (colorValues.length * 25 + padding) + "px")
+            .style("height", (colorValues.length * 25 + padding) + "px")
             // .attr("height", "100%")
             .attr("transform", "translate(0,0)")
             .attr("id", "legendColor")
@@ -436,7 +436,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
 
         d3.select("#shapeLegendContainer").append("svg")
             .style("width", d3.select(".legendBar").style("width"))
-            // .style("height", (shapeValues.length * 30 + padding) + "px")
+            .style("height", (shapeValues.length * 30 + padding) + "px")
             // .attr("height", "100%")
             .attr("transform", "translate(0,0)")
             .attr("id", "legendShape")
