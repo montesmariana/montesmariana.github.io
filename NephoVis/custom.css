@@ -9924,7 +9924,3 @@ main {
   flex : 1 1 40vh;
   resize: horizontal;
 }
-
-svg text {
-  font-family: FontAwesome;
-}
