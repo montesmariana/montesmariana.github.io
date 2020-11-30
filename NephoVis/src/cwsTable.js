@@ -153,7 +153,7 @@ function execute(datasets, type) {
         console.log(tableData.cols)
         console.log(typeof tableData.cols[3])
         
-        const table = d3.select("#cwsFreq").append("table");
+        const table = d3.select("#cwsFreq").append("table").attr("class", "hover");
         table.append('thead').append('tr')
             .selectAll('th')
             .data(tableData.cols).enter()
