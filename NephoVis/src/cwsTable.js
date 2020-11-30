@@ -64,12 +64,12 @@ function oddsRatio(contingency){
 
 function freqFunctions(d, freqcols, cwsColumns, selectedTokens, deselectedTokens) {
     const contingency = createFullCT(d, selectedTokens, deselectedTokens, cwsColumns);
-    const raw = {"CWs" : d, "total" : contingency.a}
-    const both = {"CWs" : d, "total+" : contingency.a, "total-" : contingency.b}
-    const cueV = {"CWs" : d, "total+" : contingency.a, "total-cv" : cueValidity(contingency)}
-    const dp = {"CWs" : d, "total+" : contingency.a, "total-dp" : deltaP(contingency)}
-    const fisher = {"CWs" : d, "total+" : contingency.a, "total-F" : logFisher(contingency)}
-    const OR = {"CWs" : d, "total+" : contingency.a, "total-OR" : oddsRatio(contingency)}
+    const raw = {"Feature" : d, "total" : contingency.a}
+    const both = {"Feature" : d, "total+" : contingency.a, "total-" : contingency.b}
+    const cueV = {"Feature" : d, "total+" : contingency.a, "total-cv" : cueValidity(contingency)}
+    const dp = {"Feature" : d, "total+" : contingency.a, "total-dp" : deltaP(contingency)}
+    const fisher = {"Feature" : d, "total+" : contingency.a, "total-F" : logFisher(contingency)}
+    const OR = {"Feature" : d, "total+" : contingency.a, "total-OR" : oddsRatio(contingency)}
     for (let i = 0; i < freqcols.length; i++) {
         const contingency = createModelCT(cwsColumns[i], d, selectedTokens, deselectedTokens);
         const col = freqcols[i];
@@ -85,7 +85,7 @@ function freqFunctions(d, freqcols, cwsColumns, selectedTokens, deselectedTokens
 
 function nameColumns(suffix, freqcols){
     console.log(suffix)
-    const cols = ["CWs"];
+    const cols = ["Feature"];
     if (suffix === "raw"){
         cols.push("total");
         cols.push(...freqcols);
@@ -144,6 +144,8 @@ function execute(datasets, type) {
     }
     
     function drawTable(info, freqcols){
+        d3.select("#report")
+            .text(`Frequency table with ${info.name}`)
         d3.select("#cwsFreq").selectAll("div").remove();
         d3.select("#cwsFreq").selectAll("table").remove();
         
