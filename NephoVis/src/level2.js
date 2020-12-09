@@ -371,7 +371,7 @@ function execute(datasets, type, alternatives) {
     d3.selectAll("circle")
       .style("fill", function (d) {
         const m = models.filter(function (row) { return (row["_model"] === d.m) })[0];
-        return (code(m, colorModel, color, "#1f77b4"));
+        return (code(m, colorModel, color8, "#1f77b4"));
       });
   }
 
@@ -394,6 +394,7 @@ function execute(datasets, type, alternatives) {
   }
 
   function mouseoverDot(d) {
+    const color = colorvar.values.length <= 8 ? color8 : color12;
     const tooltipColor = code(d, colorvar, color, "#1f77b4")
     // const tooltiptext = typeof(ctxtvar) == "string" ? d[ctxtvar].replace(/<em>/g, "<em style='color:" +tooltipcolor + ";font-weight:bold;'>") : ""
     const ctxt = colnames["all"].filter(function (d) { return (d.startsWith("_ctxt") && d.endsWith(".raw")); })[0];
@@ -412,6 +413,7 @@ function execute(datasets, type, alternatives) {
   // Styling the dots in the plots
 
   function styleDot(x, p) {
+    const color = colorvar.values.length <= 8 ? color8 : color12;
     d3.select(this)
       .attr("d", d3.symbol()
         .type((d) => code(d, shapevar, shape, d3.symbolCircle)) //set up shape
@@ -436,6 +438,7 @@ function execute(datasets, type, alternatives) {
 
   // Updating color, shape and size after every button clicking
   function updatePlot() {
+    const color = colorvar.values.length <= 8 ? color8 : color12;
     d3.selectAll(".dot").selectAll("path")
       .style("fill", (d) => code(d, colorvar, color, "#1f77b4"))
       .attr("d", d3.symbol().type((d) => code(d, shapevar, shape, d3.symbolCircle))

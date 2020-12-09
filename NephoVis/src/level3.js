@@ -375,6 +375,8 @@ function styleDot(selection, settings, target) {
 function styleToken(selection, settings) {
 
   const { shapevar, sizevar, colorvar, tokenSelection, shape, size, level, type } = settings;
+  
+  const color = colorvar.values.length <= 8 ? settings.color : d3.scaleOrdinal(d3.schemeSet3);
   selection.attr("d", d3.symbol()
     .type((d) => code(d, shapevar, shape, d3.symbolCircle))
     .size((d) => code(d, sizevar, size, 64))
@@ -436,7 +438,8 @@ function styleCw(selection, settings) {
 }
 
 function showContext(d) {
-  const { colorvar, color, tailoredContexts, dataset, level, type } = settings;
+  const { colorvar, tailoredContexts, dataset, level, type } = settings;
+  const color = colorvar.values.length <= 8 ? settings.color : d3.scaleOrdinal(d3.schemeSet3);
 
   const tooltipColor = code(d, colorvar, color, "#1f77b4");
   // var tooltiptext = typeof(ctxtvar) == "string" ? d[ctxtvar].replace(/<em>/g, "<em style="color:" +tooltipcolor + ";font-weight:bold;">") : ""
@@ -532,7 +535,8 @@ function brushedFocs(settings) {
 
 // Updating color, shape and size after every button clicking
 function updatePlot(settings) {
-  const { colorvar, shapevar, sizevar } = settings;
+  const { colorvar, shapevar, sizevar, shape, size } = settings;
+  const color = colorvar.values.length <= 8 ? settings.color : d3.scaleOrdinal(d3.schemeSet3);
   d3.selectAll(".dot").selectAll("path").style("fill", (d) => code(d, colorvar, color, "#1f77b4"))
     .attr("d", d3.symbol()
       .type((d) => code(d, shapevar, shape, d3.symbolCircle))

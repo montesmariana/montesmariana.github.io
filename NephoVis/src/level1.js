@@ -187,7 +187,7 @@ function execute(datasets, type) {
     .attr("d", d3.symbol() // original look
       .type(function (d) { return (code(d, shapevar, shape, d3.symbolWye)); }) // original shape
       .size(function (d) { return (code(d, sizevar, size, 64)); })) // original size
-    .style('fill', function (d) { return (code(d, colorvar, color, "#1f77b4")); }) // original color
+    .style('fill', function (d) { return (code(d, colorvar, color8, "#1f77b4")); }) // original color
     .classed("lighter", function (d) { return (modelSelection.length > 0 ? modelSelection.indexOf(d['_model']) === -1 : false); }) // is selected?
     .on("mouseover", mouseoverDot)
     .on('mouseout', function () {
@@ -254,7 +254,7 @@ function execute(datasets, type) {
 
   // Updating color, shape and size after every button clicking
   function updatePlot() {
-    dot.style("fill", function (d) { return (code(d, colorvar, color, "#1f77b4")); })
+    dot.style("fill", function (d) { return (code(d, colorvar, color8, "#1f77b4")); })
       .attr("d", d3.symbol().type(function (d) {
         return (code(d, shapevar, shape, d3.symbolWye));
       }).size(function (d) {

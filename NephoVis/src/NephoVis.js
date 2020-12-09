@@ -1,21 +1,19 @@
 // ################################################################################################
 // set up general variables for all scripts
 const myColors = [
-    "#0072B2", // darkish blue
-    "#009E73", // green
-    "#D55E00", // brick red
-    "#ffd77d", // orangy yellow
-    "#CC79A7", // pink-purple
-    "#F0E442", // bright yellow
-    "#56B4E9", // sky blue
-    "#986042", // brown
-    "#011f4b", // almost black
-    "#345534", //dark green
-    "#696969"] //gray
-// colorblind friendly palette: six first from "seaborn" (other three may not be so)
+    "#E69F00",
+    "#56B4E9",
+    "#009E73",
+    "#F0E442",
+    "#0072B2",
+    "#D55E00",
+    "#CC79A7",
+    "#999999"] //gray
+// Okabe Ito palette (taken from colorblindr::palette_OkabeIto)
 
 // Color, shape, size palettes
-const color = d3.scaleOrdinal(myColors);
+const color8 = d3.scaleOrdinal(myColors);
+const color12 = d3.scaleOrdinal(d3.schemeSet3);
 // var color = d3.scaleOrdinal(d3.schemeCategory10);
 const shape = d3.scaleOrdinal(d3.symbols);
 const size = d3.scaleLinear()
@@ -372,7 +370,7 @@ function updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset
     if (_.isArray(colorValues)) {
         const colorScale = d3.scaleOrdinal()
             .domain(colorValues)
-            .range(myColors);
+            .range(colorValues.length <= 8 ? myColors : d3.schemeSet3);
         // .range(colorValues.map(d => {
         //     return (color(colorValues.indexOf(d)));
         // }));
