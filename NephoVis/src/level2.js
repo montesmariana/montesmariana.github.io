@@ -139,18 +139,18 @@ function execute(datasets, type, alternatives) {
   buildDropdown("colour", nominals).on("click", function () {
     colorvar = updateVar(dataset, "color", this.value, level, type);
     updatePlot();
-    updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
+    updateLegend(colorvar, shapevar, sizevar, padding+10, level, type, dataset);
   });
   buildDropdown("shape",
     nominals.filter(function (d) { return (d === "Reset" || getValues(dataset, d).length <= 7); })).on("click", function () {
       shapevar = updateVar(dataset, "shape", this.value, level, type);
       updatePlot();
-      updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
+      updateLegend(colorvar, shapevar, sizevar, padding+10, level, type, dataset);
     });
   buildDropdown("size", numerals).on("click", function () {
     sizevar = updateVar(dataset, "size", this.value, level, type);
     updatePlot();
-    updateLegend(colorvar, shapevar, sizevar, padding, level, type, dataset);
+    updateLegend(colorvar, shapevar, sizevar, padding+10, level, type, dataset);
   });
   buildDropdown("models", modelSelection).on("click", function () {
     window.open("level3.html" + "?type=" + type + "&model=" + this.value);
@@ -187,22 +187,30 @@ function execute(datasets, type, alternatives) {
 
   // Set up scales (axes) - coordinates multiplied to get some padding in a way
   function setUpScales(m, solution, padding, height, width){
-    const xrange = setRange(getValues(dataset, m + "-" + solution + ".x"), 1.05);
-    const yrange = setRange(getValues(dataset,  m + "-" + solution + ".y"), 1.05);
+    modelRange = [...getValues(dataset, m + "-" + solution + ".x"), ...getValues(dataset, m + "-" + solution + ".y")]
+    const range = setRange(modelRange, 1.05);
+    // const xrange = setRange(getValues(dataset, m + "-" + solution + ".x"), 1.05);
+    // const yrange = setRange(getValues(dataset,  m + "-" + solution + ".y"), 1.05);
     
     const x = d3.scaleLinear()
-      .domain(xrange)
+      // .domain(xrange)
+      .domain(range)
       .range([padding, width]);
   
     const y = d3.scaleLinear()
-      .domain(yrange)
+      // .domain(yrange)
+      .domain(range)
       .range([height, padding]);
   
     // Vertical center
-    const xAxis = d3.axisBottom(x).ticks(0).tickSizeOuter(0);
-    const yAxis = d3.axisLeft(y).ticks(0).tickSizeOuter(0);
-    return({x : x, y : y, xAxis : xAxis, yAxis : yAxis});
-  
+    const xAxis = d3.axisBottom(x)
+      .ticks(0)
+      // .tickSizeOuter(0);
+    const yAxis = d3.axisLeft(y)
+      .ticks(0)
+      // .tickSizeOuter(0);
+    // return({x : x, y : y, xAxis : xAxis, yAxis : yAxis});
+    return({x : x, y : y});
   }
   // const xvalues = d3.merge(modelSelection.map(function (m) {
   //   return (getValues(dataset, m + "-" + chosenSolution + ".x"));
@@ -244,7 +252,6 @@ function execute(datasets, type, alternatives) {
     .attr("transform", "translate(0,0)")
     .each(plotCell);
 
-
   // miniplots = svg.selectAll(".miniplot")
   //   .data(modelSelection.map(combine))
   //   .enter()
@@ -268,10 +275,10 @@ function execute(datasets, type, alternatives) {
     const newValues = p[solution]
     const c = d3.select(".miniplot[model='" + p.m + "']");
     let x = newValues.x, y = newValues.y;
-    c.select(".xAxis").transition().duration(tduration)
-      .call(newValues.xAxis.scale(x)); // x axis rescaled
-    c.selectAll(".yAxis").transition().duration(tduration)
-      .call(newValues.yAxis.scale(y)); // y axis rescaled
+    // c.select(".xAxis").transition().duration(tduration)
+    //   .call(newValues.xAxis.scale(x)); // x axis rescaled
+    // c.selectAll(".yAxis").transition().duration(tduration)
+    //   .call(newValues.yAxis.scale(y)); // y axis rescaled
     
     c.select(".xcenter").transition().duration(tduration)
       .attr("x1", x(0)).attr("x2", x(0)); // central x rescaled
@@ -340,24 +347,24 @@ function execute(datasets, type, alternatives) {
       .attr("width", width - padding)
       .attr("height", height - padding)
       .style("fill", "none")
-      .style("stroke", "black")
+      .style("stroke", "gray")
       .style("pointer-events", "all")
-      .style("stroke-width", 0.5);
+      .style("stroke-width", 0.6);
 
     traceCenter(miniplot, x1 = p[chosenSolution].x(0), x2 = p[chosenSolution].x(0), y1 = padding, y2 = height).attr("class", "xcenter");
 
     traceCenter(miniplot, x1 = padding, x2 = width, y1 = p[chosenSolution].y(0), y2 = p[chosenSolution].y(0)).attr("class", "ycenter");
 
     // Draw axes
-    miniplot.append("g")
-      .attr("class", "axis xAxis")
-      .attr("transform", "translate(0, " + height + ")")
-      .call(p[chosenSolution].xAxis);
+  //   miniplot.append("g")
+  //     .attr("class", "axis xAxis")
+  //     .attr("transform", "translate(0, " + height + ")")
+  //     .call(p[chosenSolution].xAxis);
 
-    miniplot.append("g")
-      .attr("class", "axis yAxis")
-      .attr("transform", "translate(" + padding + ", " + 0 + ")")
-      .call(p[chosenSolution].yAxis);
+  //   miniplot.append("g")
+  //     .attr("class", "axis yAxis")
+  //     .attr("transform", "translate(" + padding + ", " + 0 + ")")
+  //     .call(p[chosenSolution].yAxis);
   }
 
   function colorCircles() {

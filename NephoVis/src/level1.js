@@ -138,15 +138,19 @@ function execute(datasets, type) {
   setPointerEvents(svg, width, height);
 
   // Set up SCALES (axes) - coordinates multiplied to get some padding in a way
-  const xrange = setRange(getValues(dataset, 'model.x'), 1.1);
-  const yrange = setRange(getValues(dataset, 'model.y'), 1.1);
+  modelRange = [...getValues(dataset, "model.x"), ...getValues(dataset, "model.y")]
+  const range = setRange(modelRange, 1.05);
+  // const xrange = setRange(getValues(dataset, 'model.x'), 1.1);
+  // const yrange = setRange(getValues(dataset, 'model.y'), 1.1);
 
   const x = d3.scaleLinear()
-    .domain(xrange)
+    // .domain(xrange)
+    .domain(range)
     .range([padding, width - padding]);
 
   const y = d3.scaleLinear()
-    .domain(yrange)
+    // .domain(yrange)
+    .domain(range)
     .range([height - padding, padding]);
 
   let newX = x;

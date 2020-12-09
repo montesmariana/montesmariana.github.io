@@ -211,12 +211,13 @@ function adjustValues(settings, tduration = 1000) {
   adjustPlot(settings.focSvg, settings.chosenSolution, tduration);
 }
 function adjustPlot(valueSet, chosenSolution, tduration = 1000) {
-  const { svg, xAxis, yAxis, newX, newY, dot_present } = valueSet;
+  // const { svg, xAxis, yAxis, newX, newY, dot_present } = valueSet;
+  const { svg, newX, newY, dot_present } = valueSet;
 
-  svg.select("#xaxis").transition().duration(tduration)
-    .call(xAxis.scale(newX)); // x axis rescaled
-  svg.select("#yaxis").transition().duration(tduration)
-    .call(yAxis.scale(newY)); // y axis rescaled
+  // svg.select("#xaxis").transition().duration(tduration)
+  //   .call(xAxis.scale(newX)); // x axis rescaled
+  // svg.select("#yaxis").transition().duration(tduration)
+  //   .call(yAxis.scale(newY)); // y axis rescaled
   dot_present
     .transition().duration(tduration)
     .attr("transform", d => "translate(" + newX(d[chosenSolution + ".x"]) + "," + newY(d[chosenSolution + ".y"]) + ")"); // dots repositioned
@@ -243,14 +244,19 @@ function setUpCanvas(container, settings, target) {
     .attr("id", "zoom-" + target)
     .call(d3.zoom().on('zoom', zoomed));
 
-  const xrange = setRange(getValues(dataset, chosenSolution + ".x"), 1.1);
-  const yrange = setRange(getValues(dataset, chosenSolution + ".y"), 1.1);
+  modelRange = [...getValues(dataset, chosenSolution + ".x"), ...getValues(dataset, chosenSolution + ".y")]
+  const range = setRange(modelRange, 1.05);
+
+  // const xrange = setRange(getValues(dataset, chosenSolution + ".x"), 1.1);
+  // const yrange = setRange(getValues(dataset, chosenSolution + ".y"), 1.1);
   svgData.x = d3.scaleLinear()
-    .domain(xrange)
+    // .domain(xrange)
+    .domain(range)
     .range([padding, width - padding]);
 
   svgData.y = d3.scaleLinear()
-    .domain(yrange)
+    // .domain(yrange)
+    .domain(range)
     .range([height - padding, padding]);
   svgData.newX = svgData.x;
   svgData.newY = svgData.y;
@@ -263,17 +269,21 @@ function setUpCanvas(container, settings, target) {
     .attr("id", "yCenter");
 
   // Axes (tickSizeOuter(0) avoids overlap of axes)
-  svgData.xAxis = d3.axisBottom(svgData.newX).ticks(0).tickSizeOuter(0);
-  svg.append("g")
-    .attr("id", "xaxis")
-    .attr("transform", "translate(0, " + (height - padding) + ")")
-    .call(svgData.xAxis);
+  // svgData.xAxis = d3.axisBottom(svgData.newX)
+  //   // .ticks(0)
+  //   .tickSizeOuter(0);
+  // svg.append("g")
+  //   .attr("id", "xaxis")
+  //   .attr("transform", "translate(0, " + (height - padding) + ")")
+  //   .call(svgData.xAxis);
 
-  svgData.yAxis = d3.axisLeft(svgData.newY).ticks(0).tickSizeOuter(0);
-  svg.append("g")
-    .attr("id", "yaxis")
-    .attr("transform", "translate(" + padding + ", 0)")
-    .call(svgData.yAxis);
+  // svgData.yAxis = d3.axisLeft(svgData.newY)
+  //   // .ticks(0)
+  //   .tickSizeOuter(0);
+  // svg.append("g")
+  //   .attr("id", "yaxis")
+  //   .attr("transform", "translate(" + padding + ", 0)")
+  //   .call(svgData.yAxis);
 
   setPointerEvents(svg, width, height);
 
@@ -399,7 +409,7 @@ function countTokensForCw(settings, cw2search) {
 
 function styleCw(selection, settings) {
   const tooltip = settings.focSvg.tooltip;
-  selection.attr("d", d3.symbol().type(d3.symbolCircle)
+  selection.attr("d", d3.symbol().type(d3.symbolStar)
     .size((d) => {
     const isSelected = settings.cwSelection.indexOf(d["_id"]) !== -1;
     return(isSelected ? settings.size.domain([1, settings.tokenSelection.length])(countTokensForCw(settings, d["_id"])) : 64);
