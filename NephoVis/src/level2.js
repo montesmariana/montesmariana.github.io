@@ -70,7 +70,7 @@ function execute(datasets, type, alternatives) {
   const padding = 20;
 
   //add tooltip (before the svg so it is not on top of it?)
-  const tooltip = setTooltip("#miniPlots");
+  const tooltip = setTooltip("body");
 
   const coordinates = offerAlternatives(datasets, alternatives, modelSelection, type);
   const storageSolution = JSON.parse(localStorage.getItem("solution-" + type));
@@ -159,7 +159,7 @@ function execute(datasets, type, alternatives) {
 
   // Set up canvas #######################################################################################
 
-  d3.select("#miniPlots").selectAll("div").remove();
+  d3.select("#miniPlots").selectAll("div.miniSvg").remove();
   
 
   // Set up brush
@@ -235,7 +235,7 @@ function execute(datasets, type, alternatives) {
 
   // DRAW PLOT ##############################################################################################################
 
-  const miniplots = d3.select("#miniPlots")
+  d3.select("#miniPlots")
     .selectAll("div.miniSvg")
     .data(modelSelection.map(combine))
     .enter()
@@ -307,14 +307,15 @@ function execute(datasets, type, alternatives) {
 
   function mouseoverCell(d) {
     tooltip.transition()
-      .duration(200)
+      .duration(20)
       .style("opacity", 1)
       .style("background-color", "white")
       .style("border", "solid")
       .style("border-color", "lightgray");
+    console.log(d.m)
     tooltip.html(d.m)
-      .style("left", (+d.i) * (width - padding) + padding + "px")
-      .style("top", (height - padding) * (+d.j) + padding + "px");
+      .style("left", (d3.event.pageX) + "px")		
+      .style("top", (d3.event.pageY) + "px");
   }
 
 
@@ -331,11 +332,6 @@ function execute(datasets, type, alternatives) {
       .on("click", function (d) {
         window.open("level3.html" + "?type=" + type + "&model=" + d.m);
         // window.open("level3.html" + "?type=" + type + "&group=" + group + "&model=" + d.m);
-      })
-      .on("mouseover", mouseoverCell)
-      .on("mouseout", function () {
-        tooltip.transition().duration(200).style("opacity", 0);
-        d3.selectAll(".selector").remove();
       });
   }
 
@@ -381,13 +377,17 @@ function execute(datasets, type, alternatives) {
       .attr("cx", padding)
       .attr("cy", padding)
       .attr("r", padding * 0.6)
+      .on("mouseover", mouseoverCell)
+      .on("mouseout", function () {
+        tooltip.transition().duration(10000).style("opacity", 0);
+      });
 
     miniplot.append("text")
       .attr("x", padding)
       .attr("y", padding)
       .attr("dx", "-0.3em")
       .attr("dy", "0.3em")
-      .text(function (d) { return (modelSelection.indexOf(d.m) + 1); })
+      .text((d) => modelSelection.indexOf(d.m) + 1)
       .style("fill", "white")
       .style("font-weight", "bold")
       .style("font-size", "0.8em");
