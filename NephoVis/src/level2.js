@@ -234,7 +234,6 @@ function execute(datasets, type, alternatives) {
   // const yAxis = d3.axisLeft(y).tickSizeOuter(0);
 
   // DRAW PLOT ##############################################################################################################
-
   d3.select("#miniPlots")
     .selectAll("div.miniSvg")
     .data(modelSelection.map(combine))

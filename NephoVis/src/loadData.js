@@ -18,16 +18,19 @@ function loadData(type, files, other_args = null) {
         return response.json();
         }).then(data => {
             if (files.indexOf("tokens") > -1) {
-                d3.keys(data).forEach(function(d) {
-                    allFiles[d] = "data/" + type + "/" + type + data[d] + ".tsv";
-                    allFiles[d + ".cws"] = "data/" + type + "/" + type + data[d] + ".cws.tsv";
+                const solutions = d3.keys(data).length > 0 ? d3.keys(data) : ["unique"];
+                solutions.forEach(function(d) {
+                    const suffix = d === "unique" ? "" : data[d];
+                    allFiles[d] = "data/" + type + "/" + type + suffix + ".tsv";
+                    if (files.indexOf("focdists") > -1) {
+                        allFiles[d + ".cws"] = "data/" + type + "/" + type + suffix + ".cws.tsv";
+                        files.push(d + ".cws");
+                    }
                     files.push(d);
-                    files.push(d + ".cws");
                 });
-                if (d3.keys(data).length > 0) _.pull(files, "tokens"); _.pull(files, "focdists")
-                if (other_args === null) other_args = d3.keys(data);
+                _.pull(files, "tokens"); _.pull(files, "focdists")
+                if (other_args === null) other_args = solutions;
             }
-            
             if (files.indexOf("medoids") !== -1) {
                 fetch(allFiles.medoids).then((response) => {
                     if (!response.ok) {
@@ -46,6 +49,9 @@ function loadData(type, files, other_args = null) {
                     
                 });
             } else {
+                
+            console.log(files)
+            console.log(allFiles)
                 retrieveFiles(files, allFiles, type, other_args);
             }
         });

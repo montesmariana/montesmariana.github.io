@@ -346,14 +346,19 @@ function selectionByLegend(colorvar, shapevar, sizevar, level, type, dataset) {
     const sizeSelection = listFromLS(_.join(["sizesel", level, type], "-"));
     ["color", "shape", "size"].forEach(function (x) { boldenLegend(x, level, type) });
     const id = level === "model" ? "_model" : "_id";
-    const selection = _.uniq(_.map(dataset, function (d) {
+    console.log(colorSelection);
+    console.log(shapeSelection);
+    console.log(sizeSelection);
+    const selection = _.uniq(dataset.filter((d) => {
         const hasColor = colorSelection.length > 0 ? colorSelection.indexOf(d[colorvar["variable"]]) !== -1 : true;
         const hasShape = shapeSelection.length > 0 ? shapeSelection.indexOf(d[shapevar["variable"]]) !== -1 : true;
         const hasSize = sizeSelection.length > 0 ? sizeSelection.indexOf(+d[sizevar["variable"]]) !== -1 : true;
-        if (hasColor && hasShape && hasSize) return (d[id]);
-    }));
+        if (hasColor && hasShape && hasSize) return (d);
+    }).map((d) => d[id]));
+    console.log(selection);
     if (colorSelection.length + shapeSelection.length + sizeSelection.length === 0) { _.pullAll(selection, selection); }
     updateSelection(selection, level, type);
+    if (level === "model") { d3.select("#numSelected").text(selection.length); }
 }
 
 function updateLegend2(settings) {
